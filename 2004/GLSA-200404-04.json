@@ -1,0 +1,97 @@
+{
+  "ID": "200404-04",
+  "Title": "Multiple vulnerabilities in sysstat",
+  "Synopsis": "\n    Multiple vulnerabilities in the way sysstat handles symlinks may allow an\n    attacker to execute arbitrary code or overwrite arbitrary files\n  ",
+  "Product": {
+    "Text": "sysstat",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-04-06",
+  "Revised": {
+    "Text": "2004-04-06",
+    "Count": "01"
+  },
+  "Bug": [
+    "45159"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-admin/sysstat",
+        "Auto": "yes",
+        "Arch": "x86 ppc sparc amd64",
+        "Unaffected": [
+          {
+            "Text": "5.0.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.0.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    sysstat is a package containing a number of performance monitoring\n    utilities for Linux, including sar, mpstat, iostat and sa tools\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    There are two vulnerabilities in the way sysstat handles symlinks:\n    </p>\n\t<ol>\n    <li>The isag utility, which displays sysstat data in a graphical format,\n    creates a temporary file in an insecure manner.</li>\n    <li>Two scripts in the sysstat package, post and trigger, create temporary\n    files in an insecure manner.</li>\n\t</ol>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    Both vulnerabilities may allow an attacker to overwrite arbitrary files\n    under the permissions of the user executing any of the affected \n    utilities.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    A workaround is not currently known for this issue. All users are advised\n    to upgrade to the latest version of the affected package.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    Systat users should upgrade to version 4.2 or later:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv \">=app-admin/sysstat-5.0.2\"\n    # emerge \">=app-admin/sysstat-5.0.2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE (1)",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0107"
+      },
+      {
+        "Text": "CVE (2)",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0108"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "klieber",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

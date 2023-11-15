@@ -1,0 +1,164 @@
+{
+  "ID": "200607-09",
+  "Title": "Wireshark: Multiple vulnerabilities",
+  "Synopsis": "\n    Wireshark (formerly known as Ethereal) is vulnerable to several security\n    issues, potentially allowing the execution of arbitrary code by a remote\n    attacker.\n  ",
+  "Product": {
+    "Text": "wireshark ethereal",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-07-25",
+  "Revised": {
+    "Text": "2006-07-25",
+    "Count": "01"
+  },
+  "Bug": [
+    "140856"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-analyzer/wireshark",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.99.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.99.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "net-analyzer/ethereal",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": null,
+        "Vulnerable": [
+          {
+            "Text": "0.99.0-r1",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Wireshark, formerly known as Ethereal, is a popular network protocol\n    analyzer.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Wireshark dissectors have been found vulnerable to a large number of\n    exploits, including off-by-one errors, buffer overflows, format string\n    overflows and an infinite loop.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    Running an affected version of Wireshark or Ethereal could allow for a\n    remote attacker to execute arbitrary code on the user's computer by\n    sending specially crafted packets.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Wireshark users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Ethereal users should migrate to Wireshark:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    To keep the [saved] configuration from Ethereal and reuse it with\n    Wireshark:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/wireshark-0.99.2\"",
+      "\n    # emerge --sync\n    # emerge --ask --unmerge net-analyzer/ethereal\n    # emerge --ask --oneshot --verbose \">=net-analyzer/wireshark-0.99.2\"",
+      "\n    # mv ~/.ethereal ~/.wireshark"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Wireshark wnpa-sec-2006-01",
+        "Link": "https://www.wireshark.org/security/wnpa-sec-2006-01.html"
+      },
+      {
+        "Text": "CVE-2006-3627",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3627"
+      },
+      {
+        "Text": "CVE-2006-3628",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3628"
+      },
+      {
+        "Text": "CVE-2006-3629",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3629"
+      },
+      {
+        "Text": "CVE-2006-3630",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3630"
+      },
+      {
+        "Text": "CVE-2006-3631",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3631"
+      },
+      {
+        "Text": "CVE-2006-3632",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3632"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-07-19T16:53:04Z"
+    },
+    {
+      "Text": "\n    dizzutch\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-07-19T18:04:14Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-07-22T20:10:22Z"
+    }
+  ]
+}

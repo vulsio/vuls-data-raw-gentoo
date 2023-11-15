@@ -1,0 +1,244 @@
+{
+  "ID": "200507-26",
+  "Title": "GNU Gadu, CenterICQ, Kadu, EKG, libgadu: Remote code execution in Gadu library",
+  "Synopsis": "\n    GNU Gadu, CenterICQ, Kadu, EKG and libgadu are vulnerable to an integer\n    overflow which could potentially lead to the execution of arbitrary code or\n    a Denial of Service.\n  ",
+  "Product": {
+    "Text": "gnugadu centericq kadu ekg libgadu",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-07-27",
+  "Revised": {
+    "Text": "2007-02-26",
+    "Count": "02"
+  },
+  "Bug": [
+    "99816",
+    "99890",
+    "99583"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-im/gnugadu",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.2.6-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.2.6-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "net-im/centericq",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.20.0-r3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.20.0-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "net-im/kadu",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.4.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.4.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "net-im/ekg",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.6_rc3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.6_rc3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "net-libs/libgadu",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.7.0_pre20050719",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.7.0_pre20050719",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    GNU Gadu, CenterICQ, Kadu and EKG are instant messaging applications\n    created to support Gadu Gadu instant messaging protocol. libgadu is a\n    library that implements the client side of the Gadu-Gadu protocol.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    GNU Gadu, CenterICQ, Kadu, EKG and libgadu are vulnerable to an integer\n    overflow.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker could exploit the integer overflow to execute\n    arbitrary code or cause a Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All GNU Gadu users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Kadu users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All EKG users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All libgadu users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All CenterICQ users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    CenterICQ is no longer distributed with Gadu Gadu support, affected\n    users are encouraged to migrate to an alternative package.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-im/gnugadu-2.2.6-r1\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-im/kadu-0.4.1\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-im/ekg-1.6_rc3\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-libs/libgadu-20050719\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-im/centericq-4.20.0-r3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-1852",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1852"
+      },
+      {
+        "Text": "BugTraq Announcement",
+        "Link": "http://www.securityfocus.com/archive/1/406026/30/"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-07-23T12:05:13Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-07-23T12:53:13Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-07-26T19:58:40Z"
+    }
+  ]
+}

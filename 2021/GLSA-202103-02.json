@@ -1,0 +1,115 @@
+{
+  "ID": "202103-02",
+  "Title": "Redis: Remote code execution",
+  "Synopsis": "A vulnerability in Redis could lead to remote code execution.",
+  "Product": {
+    "Text": "redis",
+    "Type": "ebuild"
+  },
+  "Announced": "2021-03-31",
+  "Revised": {
+    "Text": "2021-03-31",
+    "Count": "1"
+  },
+  "Bug": [
+    "773328"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-db/redis",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.0.12",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "6.0.12",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "6.0.12",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Redis is an open source (BSD licensed), in-memory data structure store,\n      used as a database, cache and message broker.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was discovered that there were a number of integer overflow issues in\n      Redis.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker, able to connect to a Redis instance, could send a\n      malicious crafted large request possibly resulting in the execution of\n      arbitrary code with the privileges of the process or a Denial of Service\n      condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Redis 5.x users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All Redis 6.x users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-db/redis-5.0.12\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-db/redis-6.0.12\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2021-21309",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-21309"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2021-03-31T11:56:33Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2021-03-31T12:15:15Z"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "ID": "200802-12",
+  "Title": "xine-lib: User-assisted execution of arbitrary code",
+  "Synopsis": "\n    xine-lib is vulnerable to multiple buffer overflows when processing FLAC\n    and ASF streams.\n  ",
+  "Product": {
+    "Text": "xine-lib",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-02-26",
+  "Revised": {
+    "Text": "2008-03-03",
+    "Count": "02"
+  },
+  "Bug": [
+    "209106",
+    "208100"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/xine-lib",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.1.10.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.10.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    xine-lib is the core library package for the xine media player.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Damian Frizza and Alfredo Ortega (Core Security Technologies)\n    discovered a stack-based buffer overflow within the open_flac_file()\n    function in the file demux_flac.c when parsing tags within a FLAC file\n    (CVE-2008-0486). A buffer overflow when parsing ASF headers, which is\n    similar to CVE-2006-1664, has also been discovered (CVE-2008-1110).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to play specially crafted FLAC or\n    ASF video streams with a player using xine-lib, potentially resulting\n    in the execution of arbitrary code with the privileges of the user\n    running the player.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All xine-lib users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/xine-lib-1.1.10.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-1664",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1664"
+      },
+      {
+        "Text": "CVE-2008-0486",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0486"
+      },
+      {
+        "Text": "CVE-2008-1110",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1110"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-02-20T08:36:00Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-02-20T08:36:16Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-02-23T19:46:42Z"
+    }
+  ]
+}

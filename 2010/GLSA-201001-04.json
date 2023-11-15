@@ -1,0 +1,201 @@
+{
+  "ID": "201001-04",
+  "Title": "VirtualBox: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities in VirtualBox were found, the worst of which\n    allowing for privilege escalation.\n  ",
+  "Product": {
+    "Text": "virtualbox-bin virtualbox-ose virtualbox-guest-additions virtualbox-ose-additions",
+    "Type": "ebuild"
+  },
+  "Announced": "2010-01-13",
+  "Revised": {
+    "Text": "2010-01-13",
+    "Count": "01"
+  },
+  "Bug": [
+    "288836",
+    "294678"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-emulation/virtualbox-bin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.0.12",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.0.12",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "app-emulation/virtualbox-ose",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.0.12",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.0.12",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "app-emulation/virtualbox-guest-additions",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.0.12",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.0.12",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "app-emulation/virtualbox-ose-additions",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.0.12",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.0.12",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The VirtualBox family provides powerful x86 virtualization products.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Thomas Biege of SUSE discovered multiple vulnerabilities:\n    </p>\n    <ul><li>A shell metacharacter injection in popen() (CVE-2009-3692) and\n    a possible buffer overflow in strncpy() in the VBoxNetAdpCtl\n    configuration tool.</li>\n    <li>An unspecified vulnerability in VirtualBox\n    Guest Additions (CVE-2009-3940).</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local, unprivileged attacker with the permission to run VirtualBox\n    could gain root privileges. A guest OS local user could cause a Denial\n    of Service (memory consumption) on the guest OS via unknown vectors.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All users of the binary version of VirtualBox should upgrade to the\n    latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All users of the Open Source version of VirtualBox should upgrade to\n    the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All users of the binary VirtualBox Guest Additions should upgrade to\n    the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All users of the Open Source VirtualBox Guest Additions should upgrade\n    to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-emulation/virtualbox-bin-3.0.12\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-emulation/virtualbox-ose-3.0.12\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-emulation/virtualbox-guest-additions-3.0.12\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-emulation/virtualbox-ose-additions-3.0.12\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-3692",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3692"
+      },
+      {
+        "Text": "CVE-2009-3940",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3940"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    craig\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-11-09T23:19:24Z"
+    },
+    {
+      "Text": "\n    craig\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2010-01-05T20:50:17Z"
+    },
+    {
+      "Text": "\n    craig\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2010-01-10T19:41:20Z"
+    }
+  ]
+}

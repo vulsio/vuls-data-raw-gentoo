@@ -1,0 +1,103 @@
+{
+  "ID": "200606-07",
+  "Title": "Vixie Cron: Privilege Escalation",
+  "Synopsis": "\n    Vixie Cron allows local users to execute programs as root.\n  ",
+  "Product": {
+    "Text": "vixie-cron",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-06-09",
+  "Revised": {
+    "Text": "2006-06-09",
+    "Count": "01"
+  },
+  "Bug": [
+    "134194"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-process/vixie-cron",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.1-r9",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.1-r9",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Vixie Cron is a command scheduler with extended syntax over cron.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Roman Veretelnikov discovered that Vixie Cron fails to properly\n    check whether it can drop privileges accordingly if setuid() in\n    do_command.c fails due to a user exceeding assigned resource limits.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    Local users can execute code with root privileges by deliberately\n    exceeding their assigned resource limits and then starting a command\n    through Vixie Cron. This requires resource limits to be in place on the\n    machine.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Vixie Cron users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-process/vixie-cron-4.1-r9\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-2607",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2607"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-06-07T19:26:16Z"
+    },
+    {
+      "Text": "\n    frilled\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-06-07T20:17:38Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-06-09T03:56:58Z"
+    }
+  ]
+}

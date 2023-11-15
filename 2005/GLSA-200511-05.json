@@ -1,0 +1,111 @@
+{
+  "ID": "200511-05",
+  "Title": "GNUMP3d: Directory traversal and XSS vulnerabilities",
+  "Synopsis": "\n    GNUMP3d is vulnerable to directory traversal and cross-site scripting\n    attacks that may result in information disclosure or the compromise of a\n    browser.\n  ",
+  "Product": {
+    "Text": "gnump3d",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-11-06",
+  "Revised": {
+    "Text": "2007-08-21",
+    "Count": "02"
+  },
+  "Bug": [
+    "109667"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-sound/gnump3d",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.9_pre7",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.9_pre7",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    GNUMP3d is a streaming server for MP3s, OGG vorbis files, movies and\n    other media formats.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Steve Kemp reported about two cross-site scripting attacks that are\n    related to the handling of files (CVE-2005-3424, CVE-2005-3425). Also\n    reported is a directory traversal vulnerability which comes from the\n    attempt to sanitize input paths (CVE-2005-3123).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could exploit this to disclose sensitive information\n    or inject and execute malicious script code, potentially compromising\n    the victim's browser.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All GNUMP3d users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-sound/gnump3d-2.9_pre7\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-3123",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3123"
+      },
+      {
+        "Text": "CVE-2005-3424",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3424"
+      },
+      {
+        "Text": "CVE-2005-3425",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3425"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-11-03T12:32:56Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-11-04T13:55:23Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-11-05T08:54:39Z"
+    }
+  ]
+}

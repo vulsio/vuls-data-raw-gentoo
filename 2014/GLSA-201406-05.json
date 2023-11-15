@@ -1,0 +1,98 @@
+{
+  "ID": "201406-05",
+  "Title": "Mutt: Arbitrary code execution",
+  "Synopsis": "A vulnerability in Mutt could allow remote attackers to execute\n    arbitrary code or cause a Denial of Service condition.\n  ",
+  "Product": {
+    "Text": "mutt",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-06-05",
+  "Revised": {
+    "Text": "2014-06-05",
+    "Count": "1"
+  },
+  "Bug": [
+    "504462"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "mail-client/mutt",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.5.22-r3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.5.22-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Mutt is a small but powerful text-based mail client. </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A heap-based buffer overflow has been discovered in the mutt_copy_hdr\n      function.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A remote attacker could send a specially crafted message, possibly\n      resulting in execution of arbitrary code with the privileges of the user\n      running Mutt or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Mutt users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=mail-client/mutt-1.5.22-r3\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-0467",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0467"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "requester",
+      "Timestamp": "2014-05-20T03:40:42Z"
+    },
+    {
+      "Text": "\n    creffett\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2014-06-05T00:18:36Z"
+    }
+  ]
+}

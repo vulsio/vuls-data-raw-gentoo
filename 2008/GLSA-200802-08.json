@@ -1,0 +1,107 @@
+{
+  "ID": "200802-08",
+  "Title": "Boost: Denial of service",
+  "Synopsis": "\n    Two vulnerabilities have been reported in Boost, each one possibly\n    resulting in a Denial of Service.\n  ",
+  "Product": {
+    "Text": "boost",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-02-14",
+  "Revised": {
+    "Text": "2008-02-14",
+    "Count": "01"
+  },
+  "Bug": [
+    "205955"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/boost",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.34.1-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.34.1-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Boost is a set of C++ libraries, including the Boost.Regex library to\n    process regular expressions.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Tavis Ormandy and Will Drewry from the Google Security Team reported a\n    failed assertion in file regex/v4/perl_matcher_non_recursive.hpp\n    (CVE-2008-0171) and a NULL pointer dereference in function\n    get_repeat_type() file basic_regex_creator.hpp (CVE-2008-0172) when\n    processing regular expressions.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could provide specially crafted regular expressions\n    to an application using Boost, resulting in a crash.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Boost users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/boost-1.34.1-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-0171",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0171"
+      },
+      {
+        "Text": "CVE-2008-0172",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0172"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-02-10T14:26:57Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-02-10T14:27:09Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-02-13T20:51:31Z"
+    }
+  ]
+}

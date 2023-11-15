@@ -1,0 +1,103 @@
+{
+  "ID": "200503-06",
+  "Title": "BidWatcher: Format string vulnerability",
+  "Synopsis": "\n    BidWatcher is vulnerable to a format string vulnerability, potentially\n    allowing arbitrary code execution.\n  ",
+  "Product": {
+    "Text": "bidwatcher",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-03-03",
+  "Revised": {
+    "Text": "2005-03-03",
+    "Count": "01"
+  },
+  "Bug": [
+    "82460"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/bidwatcher",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.3.17",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.3.17",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    BidWatcher is a free auction tool for eBay users to keep track of\n    their auctions.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Ulf Harnhammar discovered a format string vulnerability in\n    \"netstuff.cpp\".\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    Remote attackers can potentially exploit this vulnerability by\n    sending specially crafted responses via an eBay HTTP server or a\n    man-in-the-middle attack to execute arbitrary malicious code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All BidWatcher users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/bidwatcher-1.13.17\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-0158",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0158"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-03-01T08:44:34Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-03-01T15:30:43Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-03-02T20:11:39Z"
+    }
+  ]
+}

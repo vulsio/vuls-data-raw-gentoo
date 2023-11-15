@@ -1,0 +1,107 @@
+{
+  "ID": "200606-26",
+  "Title": "EnergyMech: Denial of service",
+  "Synopsis": "\n    A Denial of Service vulnerability was discovered in EnergyMech that is\n    easily exploitable via IRC.\n  ",
+  "Product": {
+    "Text": "emech",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-06-26",
+  "Revised": {
+    "Text": "2006-07-29",
+    "Count": "02"
+  },
+  "Bug": [
+    "132749"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-irc/emech",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.0.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.0.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    EnergyMech is an IRC bot programmed in C.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    A bug in EnergyMech fails to handle empty CTCP NOTICEs correctly, and\n    will cause a crash from a segmentation fault.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    By sending an empty CTCP NOTICE, a remote attacker could exploit this\n    vulnerability to cause a Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All EnergyMech users should update to the latest stable version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      " \n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-irc/emech-3.0.2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "EnergyMech Changelog",
+        "Link": "http://www.energymech.net/versions-3.0.html"
+      },
+      {
+        "Text": "CVE-2006-3293",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3293"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-06-22T18:15:43Z"
+    },
+    {
+      "Text": "\n    hlieberman\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-06-22T23:37:12Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-06-23T18:56:34Z"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "ID": "201612-04",
+  "Title": "BusyBox: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in BusyBox, the worst of\n    which allows remote attackers to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "busybox",
+    "Type": "ebuild"
+  },
+  "Announced": "2016-12-04",
+  "Revised": {
+    "Text": "2016-12-04",
+    "Count": "1"
+  },
+  "Bug": [
+    "564246",
+    "577610"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-apps/busybox",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.24.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.24.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>BusyBox is a set of tools for embedded systems and is a replacement for\n      GNU Coreutils.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in BusyBox. Please review\n      the CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could possibly execute arbitrary code with the\n      privileges of the process, or cause a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time. However, on Gentoo, the\n      remote code execution vulnerability can be avoided if you don’t use\n      BusyBox’s udhcpc or build the package without the “ipv6” USE flag\n      enabled.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All BusyBox users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-apps/busybox-1.24.2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2016-2147",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-2147"
+      },
+      {
+        "Text": "CVE-2016-2148",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-2148"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "requester",
+      "Timestamp": "2015-12-31T06:28:35Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2016-12-04T06:39:16Z"
+    }
+  ]
+}

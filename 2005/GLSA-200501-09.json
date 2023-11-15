@@ -1,0 +1,102 @@
+{
+  "ID": "200501-09",
+  "Title": "xzgv: Multiple overflows",
+  "Synopsis": "\n    xzgv contains multiple overflows that may lead to the execution of\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "xzgv",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-01-06",
+  "Revised": {
+    "Text": "2005-01-06",
+    "Count": "01"
+  },
+  "Bug": [
+    "74069"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-gfx/xzgv",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.8-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.8",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    xzgv is a picture viewer for X, with a thumbnail-based file\n    selector.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Multiple overflows have been found in the image processing code of\n    xzgv, including an integer overflow in the PRF parsing code\n    (CAN-2004-0994).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could entice a user to open or browse a\n    specially-crafted image file, potentially resulting in the execution of\n    arbitrary code with the rights of the user running xzgv.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All xzgv users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/xzgv-0.8-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-0994",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0994"
+      },
+      {
+        "Text": "iDEFENSE Advisory",
+        "Link": "http://www.idefense.com/application/poi/display?id=160&type=vulnerabilities&flashstatus=true"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-01-06T12:54:06Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-01-06T12:55:35Z"
+    }
+  ]
+}

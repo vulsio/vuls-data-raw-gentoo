@@ -1,0 +1,98 @@
+{
+  "ID": "201402-10",
+  "Title": "PulseAudio: Insecure temporary file usage",
+  "Synopsis": "An insecure temporary file usage has been reported in PulseAudio,\n    possibly allowing symlink attacks.\n  ",
+  "Product": {
+    "Text": "pulseaudio",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-02-07",
+  "Revised": {
+    "Text": "2014-02-07",
+    "Count": "1"
+  },
+  "Bug": [
+    "313329"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-sound/pulseaudio",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.9.22",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.9.22",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>PulseAudio is a sound system for POSIX OSes.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>The pa_make_secure_dir function in core-util.c does not handle temporary\n      files securely.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A local attacker could perform symlink attacks to overwrite arbitrary\n      files with the privileges of the user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All PulseAudio users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-sound/pulseaudio-0.9.22\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-1299",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-1299"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "craig",
+      "Tag": "requester",
+      "Timestamp": "2011-10-08T22:12:38Z"
+    },
+    {
+      "Text": "Zlogene",
+      "Tag": "submitter",
+      "Timestamp": "2014-02-07T20:28:06Z"
+    }
+  ]
+}

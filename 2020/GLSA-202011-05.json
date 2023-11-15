@@ -1,0 +1,98 @@
+{
+  "ID": "202011-05",
+  "Title": "libssh: Denial of service",
+  "Synopsis": "A vulnerability in libssh could lead to a Denial of Service\n    condition.\n  ",
+  "Product": {
+    "Text": "libssh",
+    "Type": "ebuild"
+  },
+  "Announced": "2020-11-03",
+  "Revised": {
+    "Text": "2020-11-03",
+    "Count": "1"
+  },
+  "Bug": [
+    "734624"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-libs/libssh",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.9.5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.9.5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>libssh is a multiplatform C library implementing the SSHv2 protocol on\n      client and server side.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>libssh was found to have a NULL pointer dereference in tftpserver.c if\n      the function ssh_buffer_new returns NULL.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>An attacker could cause a possible Denial of Service condition.</p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All libssh users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-libs/libssh-0.9.5\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2020-16135",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-16135"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "sam_c",
+      "Tag": "requester",
+      "Timestamp": "2020-10-15T18:56:19Z"
+    },
+    {
+      "Text": "sam_c",
+      "Tag": "submitter",
+      "Timestamp": "2020-11-03T00:34:45Z"
+    }
+  ]
+}

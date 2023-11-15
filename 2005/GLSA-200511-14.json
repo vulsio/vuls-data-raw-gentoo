@@ -1,0 +1,151 @@
+{
+  "ID": "200511-14",
+  "Title": "GTK+ 2, GdkPixbuf: Multiple XPM decoding vulnerabilities",
+  "Synopsis": "\n    The GdkPixbuf library, that is also included in GTK+ 2, contains\n    vulnerabilities that could lead to a Denial of Service or the execution of\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "gtk+",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-11-16",
+  "Revised": {
+    "Text": "2005-11-16",
+    "Count": "01"
+  },
+  "Bug": [
+    "112608"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "x11-libs/gtk+",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.8.6-r1",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "2.6.10-r1",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "2.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.8.6-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "media-libs/gdk-pixbuf",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.22.0-r5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.22.0-r5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    GTK+ (the GIMP Toolkit) is a toolkit for creating graphical user\n    interfaces. The GdkPixbuf library provides facilities for image\n    handling. It is available as a standalone library and also packaged\n    with GTK+ 2.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    iDEFENSE reported a possible heap overflow in the XPM loader\n    (CVE-2005-3186). Upon further inspection, Ludwig Nussel discovered two\n    additional issues in the XPM processing functions : an integer overflow\n    (CVE-2005-2976) that affects only gdk-pixbuf, and an infinite loop\n    (CVE-2005-2975).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    Using a specially crafted XPM image an attacker could cause an\n    affected application to enter an infinite loop or trigger the\n    overflows, potentially allowing the execution of arbitrary code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All GTK+ 2 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All GdkPixbuf users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose x11-libs/gtk+",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/gdk-pixbuf-0.22.0-r5\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-2975",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2975"
+      },
+      {
+        "Text": "CVE-2005-2976",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2976"
+      },
+      {
+        "Text": "CVE-2005-3186",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3186"
+      },
+      {
+        "Text": "iDefense Security Advisory 11.15.05",
+        "Link": "http://www.idefense.com/application/poi/display?id=339&type=vulnerabilities"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-11-14T14:55:40Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-11-16T12:54:54Z"
+    }
+  ]
+}

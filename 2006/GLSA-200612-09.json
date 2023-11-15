@@ -1,0 +1,103 @@
+{
+  "ID": "200612-09",
+  "Title": "MadWifi: Kernel driver buffer overflow",
+  "Synopsis": "\n    MadWifi is vulnerable to a buffer overflow that could potentially lead to\n    the remote execution of arbitrary code with root privileges.\n  ",
+  "Product": {
+    "Text": "madwifi-ng",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-12-10",
+  "Revised": {
+    "Text": "2006-12-10",
+    "Count": "01"
+  },
+  "Bug": [
+    "157449"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-wireless/madwifi-ng",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.9.2.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.9.2.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    MadWifi (Multiband Atheros Driver for Wireless Fidelity) provides a\n    Linux kernel device driver for Atheros-based Wireless LAN devices.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Laurent Butti, Jerome Raznieski and Julien Tinnes reported a buffer\n    overflow in the encode_ie() and the giwscan_cb() functions from\n    ieee80211_wireless.c.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker could send specially crafted wireless WPA packets\n    containing malicious RSN Information Headers (IE) that could\n    potentially lead to the remote execution of arbitrary code as the root\n    user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All MadWifi users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-wireless/madwifi-ng-0.9.2.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-6332",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6332"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-12-07T19:16:43Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-12-07T22:47:16Z"
+    },
+    {
+      "Text": "\n    vorlon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-12-10T21:00:26Z"
+    }
+  ]
+}

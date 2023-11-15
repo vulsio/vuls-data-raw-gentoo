@@ -1,0 +1,98 @@
+{
+  "ID": "200503-24",
+  "Title": "LTris: Buffer overflow",
+  "Synopsis": "\n    LTris is vulnerable to a buffer overflow which could lead to the execution\n    of arbitrary code.\n  ",
+  "Product": {
+    "Text": "LTris",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-03-20",
+  "Revised": {
+    "Text": "2005-03-20",
+    "Count": "01"
+  },
+  "Bug": [
+    "85770"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "games-puzzle/ltris",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.10",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.10",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    LTris is a Tetris clone.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    LTris is vulnerable to a buffer overflow when reading the global\n    highscores file.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    By modifying the global highscores file a malicious user could\n    trick another user to execute arbitrary code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All LTris users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=games-puzzle/ltris-1.0.10\""
+    ]
+  },
+  "References": {
+    "URI": null
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-03-18T18:14:03Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-03-20T14:43:57Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-03-20T17:00:38Z"
+    }
+  ]
+}

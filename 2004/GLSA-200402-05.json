@@ -1,0 +1,87 @@
+{
+  "ID": "200402-05",
+  "Title": "phpMyAdmin < 2.5.6-rc1: possible attack against export.php",
+  "Synopsis": "\n    A vulnerability in phpMyAdmin which was not properly verifying user\n    generated input could lead to a directory traversal attack.\n  ",
+  "Product": {
+    "Text": "phpmyadmin",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-02-17",
+  "Revised": {
+    "Text": "2004-02-17",
+    "Count": "01"
+  },
+  "Bug": [
+    "40268"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-db/phpmyadmin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.5.6_rc1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.5.5_p1",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    phpMyAdmin is a tool written in PHP intended to handle the administration\n    of MySQL databased over the Web.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    One component of the phpMyAdmin software package (export.php) does not\n    properly verify input that is passed to it from a remote user.  Since the\n    input is used to include other files, it is possible to launch a directory\n    traversal attack.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    Private information could be gleaned from the remote server if an attacker\n    uses a malformed URL such as http://phpmyadmin.example.com/export.php?what=../../../[existing_file] \n    </p>\n    <p>\n    In this scenario, the script does not sanitize the \"what\" argument passed\n    to it, allowing directory traversal attacks to take place, disclosing\n    the contents of files if the file is readable as the web-server user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    The workaround is to either patch the export.php file using the \n    referenced CVS patch or upgrade the software via Portage.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    Users are encouraged to upgrade to phpMyAdmin-2.5.6_rc1:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    # emerge -pv \">=dev-db/phpmyadmin-2.5.6_rc1\"\n    # emerge \">=dev-db/phpmyadmin-2.5.6_rc1\"\n    # emerge clean"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVS Patch",
+        "Link": "https://cvs.sourceforge.net/viewcvs.py/phpmyadmin/phpMyAdmin/export.php?r1=2.3&r2=2.3.2.1"
+      }
+    ]
+  },
+  "Metadata": null
+}

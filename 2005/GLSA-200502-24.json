@@ -1,0 +1,115 @@
+{
+  "ID": "200502-24",
+  "Title": "Midnight Commander: Multiple vulnerabilities",
+  "Synopsis": "\n    Midnight Commander contains several format string errors, buffer overflows\n    and one buffer underflow leading to execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "mc",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-02-17",
+  "Revised": {
+    "Text": "2005-02-17",
+    "Count": "01"
+  },
+  "Bug": [
+    "77992"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-misc/mc",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.6.0-r13",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.6.0-r13",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Midnight Commander is a visual console file manager.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Midnight Commander contains several format string vulnerabilities\n    (CAN-2004-1004), buffer overflows (CAN-2004-1005), a memory\n    deallocation error (CAN-2004-1092) and a buffer underflow\n    (CAN-2004-1176).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could exploit these vulnerabilities to execute\n    arbitrary code with the permissions of the user running Midnight\n    Commander or cause Denial of Service by freeing unallocated memory.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Midnight Commander users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-misc/mc-4.6.0-r13\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-1004",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1004"
+      },
+      {
+        "Text": "CAN-2004-1005",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1005"
+      },
+      {
+        "Text": "CAN-2004-1092",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1092"
+      },
+      {
+        "Text": "CAN-2004-1176",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1176"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-02-14T20:35:43Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-02-15T16:08:08Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-02-15T20:09:31Z"
+    }
+  ]
+}

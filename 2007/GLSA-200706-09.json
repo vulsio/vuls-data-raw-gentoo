@@ -1,0 +1,103 @@
+{
+  "ID": "200706-09",
+  "Title": "libexif: Buffer overflow",
+  "Synopsis": "\n    libexif does not properly handle image EXIF information, possibly allowing\n    for the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "libexif",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-06-26",
+  "Revised": {
+    "Text": "2007-06-26",
+    "Count": "01"
+  },
+  "Bug": [
+    "181922"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/libexif",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.6.16",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.6.16",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    libexif is a library for parsing, editing and saving EXIF metadata from\n    images.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    iDefense Labs have discovered that the exif_data_load_data_entry()\n    function in libexif/exif-data.c improperly handles integer data while\n    working with an image with many EXIF components, allowing an integer\n    overflow possibly leading to a heap-based buffer overflow.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could entice a user of an application making use of a\n    vulnerable version of libexif to load a specially crafted image file,\n    possibly resulting in a crash of the application or the execution of\n    arbitrary code with the rights of the user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All libexif users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/libexif-0.6.16\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-4168",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4168"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-06-16T06:17:21Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-06-16T06:17:44Z"
+    },
+    {
+      "Text": "\n    shellsage\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-06-19T02:58:18Z"
+    }
+  ]
+}

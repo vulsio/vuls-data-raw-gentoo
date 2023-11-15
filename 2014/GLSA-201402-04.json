@@ -1,0 +1,114 @@
+{
+  "ID": "201402-04",
+  "Title": "libwww-perl: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in libwww-perl, the worst\n    of which could allow attackers to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "libwww-perl",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-02-04",
+  "Revised": {
+    "Text": "2014-02-04",
+    "Count": "1"
+  },
+  "Bug": [
+    "329943",
+    "386309"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-perl/libwww-perl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "6.30.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "6.30.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>libwww is a collection of Perl modules providing a consistent interface\n      to the World-Wide Web.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in libwww-perl. Please\n      review the CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to download a specially-crafted\n      file with an application linked against libwww-perl, which could result\n      in overwritten files or arbitrary code execution by writing to a dotfile\n      in the user’s home directory (such as .bashrc). Additionally, a remote\n      attacker could perform a Man-in-the-Middle attack.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All libwww-perl users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "NOTE: This is a legacy GLSA. Updates for all affected architectures are\n      available since December 18, 2011. It is likely that your system is\n      already no longer affected by this issue.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-perl/libwww-perl-6.30.0\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2010-2253",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-2253"
+      },
+      {
+        "Text": "CVE-2011-0633",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-0633"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    underling\n  ",
+      "Tag": "requester",
+      "Timestamp": "2011-10-07T23:38:06Z"
+    },
+    {
+      "Text": "\n    pinkbyte\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2014-02-04T15:57:46Z"
+    }
+  ]
+}

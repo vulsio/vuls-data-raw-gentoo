@@ -1,0 +1,103 @@
+{
+  "ID": "200710-14",
+  "Title": "DenyHosts: Denial of service",
+  "Synopsis": "\n    DenyHosts does not correctly parse log entries, potentially causing a\n    remote Denial of Service.\n  ",
+  "Product": {
+    "Text": "denyhosts",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-10-13",
+  "Revised": {
+    "Text": "2007-10-13",
+    "Count": "01"
+  },
+  "Bug": [
+    "181213"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-admin/denyhosts",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.6-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.6-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    DenyHosts is designed to monitor SSH servers for repeated failed login\n    attempts.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Daniel B. Cid discovered that DenyHosts used an incomplete regular\n    expression to parse failed login attempts, a different issue than GLSA\n    200701-01.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote unauthenticated attacker can add arbitrary hosts into the\n    blacklist, including the \"all\" keyword, by submitting specially crafted\n    version identification strings to the SSH server banner. An attacker\n    may use this to prevent legitimate users from accessing a host\n    remotely.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All DenyHosts users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-admin/denyhosts-2.6-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-4323",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4323"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-10-06T13:32:04Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-10-06T13:32:42Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-10-07T22:16:56Z"
+    }
+  ]
+}

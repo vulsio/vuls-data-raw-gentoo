@@ -1,0 +1,125 @@
+{
+  "ID": "200904-02",
+  "Title": "GLib: Execution of arbitrary code",
+  "Synopsis": "\n    Multiple integer overflows might allow for the execution of arbitrary code\n    when performing base64 conversion.\n  ",
+  "Product": {
+    "Text": "glib",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-04-03",
+  "Revised": {
+    "Text": "2009-04-05",
+    "Count": "02"
+  },
+  "Bug": [
+    "249214"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/glib",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.18.4-r1",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "2.16.6-r1",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.18.4-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The GLib is a library of C routines that is used by a multitude of\n    programs.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Diego E. Petteno` reported multiple integer overflows in glib/gbase64.c\n    when converting a long string from or to a base64 representation.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user or automated system to perform a\n    base64 conversion via an application using GLib, possibly resulting in\n    the execution of arbitrary code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All GLib 2.18 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All GLib 2.16 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/glib-2.18.4-r1\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/glib-2.16.6-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-4316",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4316"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-04-02T12:01:03Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-04-02T12:09:57Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-04-02T12:10:20Z"
+    }
+  ]
+}

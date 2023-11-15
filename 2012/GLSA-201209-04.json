@@ -1,0 +1,117 @@
+{
+  "ID": "201209-04",
+  "Title": "BIND: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in BIND, the worst of\n    which may allow remote Denial of Service.\n  ",
+  "Product": {
+    "Text": "bind",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-09-24",
+  "Revised": {
+    "Text": "2012-09-24",
+    "Count": "1"
+  },
+  "Bug": [
+    "402661",
+    "419637",
+    "427966",
+    "434876"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-dns/bind",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "9.9.1_p3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "9.9.1_p3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>BIND is the Berkeley Internet Name Domain Server.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in BIND:</p>\n    \n    <ul>\n      <li>Domain names are not properly revoked due to an error in the cache\n        update policy (CVE-2012-1033).\n      </li>\n      <li>BIND accepts records with zero-length RDATA fields (CVE-2012-1667).</li>\n      <li>An assertion failure from the failing-query cache could occur when\n        DNSSEC validation is enabled (CVE-2012-3817).\n      </li>\n      <li>A memory leak may occur under high TCP query loads (CVE-2012-3868).</li>\n      <li>An assertion error can occur when a query is performed for a record\n        with RDATA greater than 65535 bytes (CVE-2012-4244).\n      </li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker may be able to cause a Denial of Service condition or\n      keep domain names resolvable after it has been deleted from registration.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All BIND users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-dns/bind-9.9.1_p3\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-1033",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1033"
+      },
+      {
+        "Text": "CVE-2012-1667",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1667"
+      },
+      {
+        "Text": "CVE-2012-3817",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3817"
+      },
+      {
+        "Text": "CVE-2012-3868",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3868"
+      },
+      {
+        "Text": "CVE-2012-4244",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-4244"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "craig",
+      "Tag": "requester",
+      "Timestamp": "2012-03-06T01:12:32Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-09-24T00:04:59Z"
+    }
+  ]
+}

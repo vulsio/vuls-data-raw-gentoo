@@ -1,0 +1,108 @@
+{
+  "ID": "201006-12",
+  "Title": "Fetchmail: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities have been reported in Fetchmail, allowing remote\n    attackers to execute arbitrary code or to conduct Man-in-the-Middle\n    attacks.\n  ",
+  "Product": {
+    "Text": "fetchmail",
+    "Type": "ebuild"
+  },
+  "Announced": "2010-06-01",
+  "Revised": {
+    "Text": "2010-06-01",
+    "Count": "01"
+  },
+  "Bug": [
+    "280537",
+    "307761"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-mail/fetchmail",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "6.3.14",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "6.3.14",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Fetchmail is a remote mail retrieval and forwarding utility.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Multiple vulnerabilities have been reported in Fetchmail:\n    </p>\n    <ul>\n    <li>The sdump() function might trigger a heap-based buffer overflow\n    during the escaping of non-printable characters with the high bit set\n    from an X.509 certificate (CVE-2010-0562).</li>\n    <li>The vendor reported\n    that Fetchmail does not properly handle Common Name (CN) fields in\n    X.509 certificates that contain an ASCII NUL character. Specifically,\n    the processing of such fields is stopped at the first occurrence of a\n    NUL character. This type of vulnerability was recently discovered by\n    Dan Kaminsky and Moxie Marlinspike (CVE-2009-2666).</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to connect with Fetchmail to a\n    specially crafted SSL-enabled server in verbose mode, possibly\n    resulting in the execution of arbitrary code with the privileges of the\n    user running the application. NOTE: The issue is only existent on\n    platforms on which char is signed.\n    </p>\n    <p>\n    Furthermore, a remote attacker might employ a specially crafted X.509\n    certificate, containing a NUL character in the Common Name field to\n    conduct man-in-the-middle attacks on SSL connections made using\n    Fetchmail.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Fetchmail users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-mail/fetchmail-6.3.14\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2010-0562",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0562"
+      },
+      {
+        "Text": "CVE-2009-2666",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2666"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    craig\n  ",
+      "Tag": "requester",
+      "Timestamp": "2010-03-29T22:13:20Z"
+    },
+    {
+      "Text": "\n    craig\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2010-04-11T12:34:40Z"
+    },
+    {
+      "Text": "\n    vorlon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2010-05-27T17:49:00Z"
+    }
+  ]
+}

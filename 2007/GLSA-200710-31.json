@@ -1,0 +1,102 @@
+{
+  "ID": "200710-31",
+  "Title": "Opera: Multiple vulnerabilities",
+  "Synopsis": "\n    Opera contains multiple vulnerabilities, which may allow the execution of\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "opera",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-10-30",
+  "Revised": {
+    "Text": "2007-10-30",
+    "Count": "01"
+  },
+  "Bug": [
+    "196164"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-client/opera",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "9.24",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "9.24",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Opera is a multi-platform web browser.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Michael A. Puls II discovered an unspecified flaw when launching\n    external email or newsgroup clients (CVE-2007-5541). David Bloom\n    discovered that when displaying frames from different websites, the\n    same-origin policy is not correctly enforced (CVE-2007-5540).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could potentially exploit the first vulnerability to\n    execute arbitrary code with the privileges of the user running Opera by\n    enticing a user to visit a specially crafted URL. Note that this\n    vulnerability requires an external e-mail or newsgroup client\n    configured in Opera to be exploitable. The second vulnerability allows\n    an attacker to execute arbitrary script code in a user's browser\n    session in context of other sites or the theft of browser credentials.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time for all these\n    vulnerabilities.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Opera users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/opera-9.24\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-5540",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5540"
+      },
+      {
+        "Text": "CVE-2007-5541",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5541"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-10-21T22:07:58Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-10-22T21:37:32Z"
+    }
+  ]
+}

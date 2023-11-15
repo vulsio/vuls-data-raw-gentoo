@@ -1,0 +1,98 @@
+{
+  "ID": "201206-17",
+  "Title": "virtualenv: Insecure temporary file usage",
+  "Synopsis": "An insecure temporary file usage has been reported in virtualenv,\n    possibly allowing symlink attacks.\n  ",
+  "Product": {
+    "Text": "virtualenv",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-06-22",
+  "Revised": {
+    "Text": "2012-06-22",
+    "Count": "1"
+  },
+  "Bug": [
+    "395285"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-python/virtualenv",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.5.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.5.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>virtualenv is a virtual Python environment builder.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>The virtualenv.py script in virtualenv does not handle temporary files\n      securely.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A local attacker could perform symlink attacks to overwrite arbitrary\n      files with the privileges of the user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All virtualenv users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-python/virtualenv-1.5.1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2011-4617",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-4617"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2012-03-06T21:31:00Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-06-22T16:31:54Z"
+    }
+  ]
+}

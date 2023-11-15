@@ -1,0 +1,107 @@
+{
+  "ID": "200603-14",
+  "Title": "Heimdal: rshd privilege escalation",
+  "Synopsis": "\n    An error in the rshd daemon of Heimdal could allow authenticated users to\n    elevate privileges.\n  ",
+  "Product": {
+    "Text": "heimdal",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-03-17",
+  "Revised": {
+    "Text": "2006-03-17",
+    "Count": "01"
+  },
+  "Bug": [
+    "121839"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-crypt/heimdal",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.7.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.7.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Heimdal is a free implementation of Kerberos 5.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    An unspecified privilege escalation vulnerability in the rshd\n    server of Heimdal has been reported.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    Authenticated users could exploit the vulnerability to escalate\n    privileges or to change the ownership and content of arbitrary files.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Heimdal users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-crypt/heimdal-0.7.2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-0582",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0582"
+      },
+      {
+        "Text": "Heimdal Advisory 2006-02-06",
+        "Link": "https://www.pdc.kth.se/heimdal/advisory/2006-02-06/"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-03-14T18:02:33Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-03-16T09:34:15Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-03-17T10:14:03Z"
+    }
+  ]
+}

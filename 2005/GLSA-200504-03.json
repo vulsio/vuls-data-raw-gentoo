@@ -1,0 +1,103 @@
+{
+  "ID": "200504-03",
+  "Title": "Dnsmasq: Poisoning and Denial of Service vulnerabilities",
+  "Synopsis": "\n    Dnsmasq is vulnerable to DNS cache poisoning attacks and a potential Denial\n    of Service from the local network.\n  ",
+  "Product": {
+    "Text": "Dnsmasq",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-04-04",
+  "Revised": {
+    "Text": "2005-04-04",
+    "Count": "01"
+  },
+  "Bug": [
+    "86718"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-dns/dnsmasq",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.22",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.22",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Dnsmasq is a lightweight and easily-configurable DNS forwarder and\n    DHCP server.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Dnsmasq does not properly detect that DNS replies received do not\n    correspond to any DNS query that was sent. Rob Holland of the Gentoo\n    Linux Security Audit team also discovered two off-by-one buffer\n    overflows that could crash DHCP lease files parsing.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    A remote attacker could send malicious answers to insert arbitrary\n    DNS data into the Dnsmasq cache. These attacks would in turn help an\n    attacker to perform man-in-the-middle and site impersonation attacks.\n    The buffer overflows might allow an attacker on the local network to\n    crash Dnsmasq upon restart.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Dnsmasq users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dns/dnsmasq-2.22\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Dnsmasq Changelog",
+        "Link": "http://www.thekelleys.org.uk/dnsmasq/CHANGELOG"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-03-28T07:00:46Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-03-28T13:54:22Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-04-04T11:10:45Z"
+    }
+  ]
+}

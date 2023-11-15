@@ -1,0 +1,106 @@
+{
+  "ID": "201205-02",
+  "Title": "ConnMan: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in ConnMan, allowing\n    attackers to execute arbitrary code or cause Denial of Service.\n  ",
+  "Product": {
+    "Text": "ConnMan",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-05-15",
+  "Revised": {
+    "Text": "2012-05-15",
+    "Count": "1"
+  },
+  "Bug": [
+    "415415"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/connman",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>ConnMan provides a daemon for managing Internet connections.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been found in ConnMan:</p>\n    \n    <ul>\n      <li>Errors in inet.c and rtnl.c prevent ConnMan from checking the origin\n        of netlink messages (CVE-2012-2320).\n      </li>\n      <li>ConnMan does not properly check for shell escapes when requesting a\n        hostname via DHCP (CVE-2012-2321).\n      </li>\n      <li>An infinite loop error exists in client.c (CVE-2012-2322).</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could execute arbitrary code with the privileges of\n      the process or cause a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All ConnMan users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/connman-1.0-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-2320",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-2320"
+      },
+      {
+        "Text": "CVE-2012-2321",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-2321"
+      },
+      {
+        "Text": "CVE-2012-2322",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-2322"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2012-05-11T12:11:41Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-05-15T21:51:20Z"
+    }
+  ]
+}

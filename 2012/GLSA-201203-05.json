@@ -1,0 +1,98 @@
+{
+  "ID": "201203-05",
+  "Title": "Rack: Denial of service",
+  "Synopsis": "A hash collision vulnerability in Rack allows remote attackers to\n    cause a Denial of Service condition.\n  ",
+  "Product": {
+    "Text": "rack",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-03-06",
+  "Revised": {
+    "Text": "2012-03-06",
+    "Count": "1"
+  },
+  "Bug": [
+    "396455"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-ruby/rack",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.1.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Rack is a modular Ruby web server interface.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Rack does not properly randomize hash functions to protect against hash\n      collision attacks.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could send a specially crafted form post, possibly\n      resulting in a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Rack users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-ruby/rack-1.1.3\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2011-5036",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-5036"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2012-03-04T21:22:25Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-03-06T01:05:34Z"
+    }
+  ]
+}

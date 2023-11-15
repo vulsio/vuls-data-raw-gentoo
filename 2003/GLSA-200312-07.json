@@ -1,0 +1,87 @@
+{
+  "ID": "200312-07",
+  "Title": "Two buffer overflows in lftp",
+  "Synopsis": "\n    Two buffer overflow problems are found in lftp that, in case the user visits\n    a malicious ftp server, could lead to malicious code being executed.\n  ",
+  "Product": {
+    "Text": "lftp",
+    "Type": "ebuild"
+  },
+  "Announced": "2003-12-13",
+  "Revised": {
+    "Text": "2003-12-07",
+    "Count": "2"
+  },
+  "Bug": [
+    "35866"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-ftp/lftp",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.6.10",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.6.10",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    lftp is a multithreaded command-line based FTP client. It allows you to\n    execute multiple commands simultaneously or in the background. If features\n    mirroring capabilities, resuming downloads, etc.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Two buffer overflows exist in lftp. Both can occur when the user connects to\n    a malicious web server using the HTTP or HTTPS protocol and issues lftp's\n    \"ls\" or \"rels\" commands.\n    </p>\n    <p>\n    Ulf Harnhammar explains:\n    </p>\n    <p>\n    Technically, the problem lies in the file src/HttpDir.cc and the\n    functions try_netscape_proxy() and try_squid_eplf(), which both\n    have sscanf() calls that take data of an arbitrary length and\n    store it in a char array with 32 elements. (Back in version 2.3.0,\n    the problematic code was located in some other function, but the\n    problem existed back then too.) Depending on the HTML document in the \n    specially prepared directory, buffers will be overflown in either one \n    function or the other.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    When a user issues \"ls\" or \"rels\" on a malicious server, the tftp\n    application can be tricked into running arbitrary code on the user his\n    machine.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no workaround available.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Gentoo users who have net-ftp/lftp installed should update to use\n    version 2.6.0 or higher using these commands:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    # emerge -pv '>=net-ftp/lftp-2.6.10'\n    # emerge '>=net-ftp/lftp-2.6.10'\n    # emerge clean"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Initial report by Ulf Harnhammar",
+        "Link": "http://www.securityfocus.com/archive/1/347587/2003-12-13/2003-12-19/0"
+      }
+    ]
+  },
+  "Metadata": null
+}

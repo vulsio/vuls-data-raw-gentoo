@@ -1,0 +1,98 @@
+{
+  "ID": "201703-04",
+  "Title": "cURL: Certificate validation error",
+  "Synopsis": "A coding error has been found in cURL, causing the TLS Certificate\n    Status Request extension check to always return true.\n  ",
+  "Product": {
+    "Text": "curl",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-03-28",
+  "Revised": {
+    "Text": "2017-03-28",
+    "Count": "1"
+  },
+  "Bug": [
+    "610572"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/curl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "7.53.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "7.53.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>cURL is a tool and libcurl is a library for transferring data with URL\n      syntax.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>cURL and applications linked against libcurl support “OCSP\n      stapling”, also known as the TLS Certificate Status Request extension\n      (using the CURLOPT_SSL_VERIFYSTATUS option). When telling cURL to use\n      this feature, it uses that TLS extension to ask for a fresh proof of the\n      server’s certificate’s validity. If the server doesn’t support the\n      extension, or fails to provide said proof, cURL is expected to return an\n      error.\n      Due to a coding mistake, the code that checks for a test success or\n      failure, ends up always thinking there’s valid proof, even when there\n      is none or if the server doesn’t support the TLS extension in question.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>Due to the error, a user maybe does not detect when a server’s\n      certificate goes invalid or otherwise be mislead that the server is in a\n      better shape than it is in reality.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All cURL users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/curl-7.53.0\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2017-2629",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-2629"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "BlueKnight",
+      "Tag": "requester",
+      "Timestamp": "2017-03-07T21:41:04Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2017-03-28T01:57:09Z"
+    }
+  ]
+}

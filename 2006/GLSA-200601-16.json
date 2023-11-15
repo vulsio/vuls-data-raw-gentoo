@@ -1,0 +1,103 @@
+{
+  "ID": "200601-16",
+  "Title": "MyDNS: Denial of service",
+  "Synopsis": "\n    MyDNS contains a vulnerability that may lead to a Denial of Service attack.\n  ",
+  "Product": {
+    "Text": "MyDNS",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-01-30",
+  "Revised": {
+    "Text": "2006-01-30",
+    "Count": "01"
+  },
+  "Bug": [
+    "119548"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-dns/mydns",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.1.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    MyDNS is a DNS server using a MySQL database as a backend. It is\n    designed to allow for fast updates and small resource usage.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    MyDNS contains an unspecified flaw that may allow a remote Denial\n    of Service.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could cause a Denial of Service by sending malformed\n    DNS queries to the MyDNS server.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All MyDNS users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dns/mydns-1.1.0\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-0351",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0351"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-01-25T19:31:44Z"
+    },
+    {
+      "Text": "\n    frilled\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-01-27T05:37:45Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-01-27T21:29:58Z"
+    }
+  ]
+}

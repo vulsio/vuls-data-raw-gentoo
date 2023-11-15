@@ -1,0 +1,98 @@
+{
+  "ID": "201611-05",
+  "Title": "tnftp: Arbitrary code execution ",
+  "Synopsis": "tnftp is vulnerable to remote code execution if output file is not\n    specified. \n  ",
+  "Product": {
+    "Text": "tnftp",
+    "Type": "ebuild"
+  },
+  "Announced": "2016-11-15",
+  "Revised": {
+    "Text": "2016-11-15",
+    "Count": "1"
+  },
+  "Bug": [
+    "527302"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-ftp/tnftp",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "20141104",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "20141104",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>tnftp is a NetBSD FTP client with several advanced features.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n          <p>The fetch_url function in usr.bin/ftp/fetch.c allows remote\n            attackers to execute arbitrary commands via a\n          </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could possibly execute arbitrary code with the\n      privileges of the process.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All tnftp users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --verbose --oneshot \">=net-ftp/tnftp-20141104\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-8517",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-8517"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "requester",
+      "Timestamp": "2015-12-21T19:31:36Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2016-11-15T06:40:01Z"
+    }
+  ]
+}

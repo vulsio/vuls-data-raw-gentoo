@@ -1,0 +1,117 @@
+{
+  "ID": "200812-07",
+  "Title": "Mantis: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities have been discovered in Mantis, the most severe of\n    which leading to the remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "mantisbt",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-12-02",
+  "Revised": {
+    "Text": "2008-12-02",
+    "Count": "01"
+  },
+  "Bug": [
+    "238570",
+    "241940",
+    "242722"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/mantisbt",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.1.4-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.4-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Mantis is a PHP/MySQL/Web based bugtracking system.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Multiple issues have been reported in Mantis:\n    </p>\n    <ul>\n    <li>\n    EgiX reported that manage_proj_page.php does not correctly sanitize the\n    sort parameter before passing it to create_function() in\n    core/utility_api.php (CVE-2008-4687).\n    </li>\n    <li>\n    Privileges of viewers are not sufficiently checked before composing a\n    link with issue data in the source anchor (CVE-2008-4688).\n    </li>\n    <li>\n    Mantis does not unset the session cookie during logout (CVE-2008-4689).\n    </li>\n    <li>\n    Mantis does not set the secure flag for the session cookie in an HTTPS\n    session (CVE-2008-3102).\n    </li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    Remote unauthenticated attackers could exploit these vulnerabilities to\n    execute arbitrary PHP commands, disclose sensitive issue data, or\n    hijack a user's sessions.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Mantis users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/mantisbt-1.1.4-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-3102",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3102"
+      },
+      {
+        "Text": "CVE-2008-4687",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4687"
+      },
+      {
+        "Text": "CVE-2008-4688",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4688"
+      },
+      {
+        "Text": "CVE-2008-4689",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4689"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-10-31T21:35:00Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-11-26T19:39:16Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-11-26T19:39:31Z"
+    }
+  ]
+}

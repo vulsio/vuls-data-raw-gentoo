@@ -1,0 +1,123 @@
+{
+  "ID": "201710-25",
+  "Title": "PCRE: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in the PCRE Library, the\n    worst of which may allow remote attackers to cause a Denial of Service\n    condition.\n  ",
+  "Product": {
+    "Text": "libpcre",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-10-23",
+  "Revised": {
+    "Text": "2017-10-23",
+    "Count": "1"
+  },
+  "Bug": [
+    "614048",
+    "614052",
+    "614054"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/libpcre",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "8.41",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "8.41",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>The PCRE Library provides functions for Perl-compatible regular\n      expressions.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in The PCRE Library.\n      Please review the references below for details.\n    </p>\n    \n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could possibly cause a Denial of Service condition or\n      other unspecified impacts via a specially crafted file.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All PCRE users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "Packages which depend on this library may need to be recompiled. Tools\n      such as revdep-rebuild may assist in identifying some of these packages.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/libpcre-8.41\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2017-7186\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-7186"
+      },
+      {
+        "Text": "\n      CVE-2017-7244\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-7244"
+      },
+      {
+        "Text": "\n      CVE-2017-7245\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-7245"
+      },
+      {
+        "Text": "\n      CVE-2017-7246\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-7246"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "b-man",
+      "Tag": "requester",
+      "Timestamp": "2017-10-18T23:44:30Z"
+    },
+    {
+      "Text": "chrisadr",
+      "Tag": "submitter",
+      "Timestamp": "2017-10-23T01:19:24Z"
+    }
+  ]
+}

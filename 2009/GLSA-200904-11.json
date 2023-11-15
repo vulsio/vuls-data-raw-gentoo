@@ -1,0 +1,129 @@
+{
+  "ID": "200904-11",
+  "Title": "Tor: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities in Tor might allow for heap corruption, Denial of\n    Service, escalation of privileges and information disclosure.\n  ",
+  "Product": {
+    "Text": "tor",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-04-08",
+  "Revised": {
+    "Text": "2009-04-08",
+    "Count": "01"
+  },
+  "Bug": [
+    "250018",
+    "256078",
+    "258833"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/tor",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.2.0.34",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.2.0.34",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Tor is an implementation of second generation Onion Routing, a\n    connection-oriented anonymizing communication service.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <ul>\n    <li>\n    Theo de Raadt reported that the application does not properly drop\n    privileges to the primary groups of the user specified via the \"User\"\n    configuration option (CVE-2008-5397).\n    </li>\n    <li>\n    rovv reported that the \"ClientDNSRejectInternalAddresses\" configuration\n    option is not always enforced (CVE-2008-5398).\n    </li>\n    <li>\n    Ilja van Sprundel reported a heap-corruption vulnerability that might\n    be remotely triggerable on some platforms (CVE-2009-0414).\n    </li>\n    <li>\n    It has been reported that incomplete IPv4 addresses are treated as\n    valid, violating the specification (CVE-2009-0939).\n    </li>\n    <li>\n    Three unspecified vulnerabilities have also been reported\n    (CVE-2009-0936, CVE-2009-0937, CVE-2009-0938).\n    </li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A local attacker could escalate privileges by leveraging unintended\n    supplementary group memberships of the Tor process. A remote attacker\n    could exploit these vulnerabilities to cause a heap corruption with\n    unknown impact and attack vectors, to cause a Denial of Service via CPU\n    consuption or daemon crash, and to weaken anonymity provided by the\n    service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Tor users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/tor-0.2.0.34\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-5397",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5397"
+      },
+      {
+        "Text": "CVE-2008-5398",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5398"
+      },
+      {
+        "Text": "CVE-2009-0414",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0414"
+      },
+      {
+        "Text": "CVE-2009-0936",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0936"
+      },
+      {
+        "Text": "CVE-2009-0937",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0937"
+      },
+      {
+        "Text": "CVE-2009-0938",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0938"
+      },
+      {
+        "Text": "CVE-2009-0939",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0939"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    craig\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-01-25T14:41:40Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-02-12T16:48:01Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-02-12T16:48:17Z"
+    }
+  ]
+}

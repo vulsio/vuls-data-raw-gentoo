@@ -1,0 +1,98 @@
+{
+  "ID": "201709-06",
+  "Title": "Supervisor: command injection vulnerability",
+  "Synopsis": "A vulnerability in Supervisor might allow remote attackers to\n    execute arbitrary code.\n    \n  ",
+  "Product": {
+    "Text": "supervisor",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-09-17",
+  "Revised": {
+    "Text": "2017-09-17",
+    "Count": "1"
+  },
+  "Bug": [
+    "626100"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-admin/supervisor",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.1.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.1.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Supervisor is a client/server system that allows its users to monitor\n      and control a number of processes on UNIX-like operating systems.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A vulnerability in Supervisor was discovered in which an authenticated\n      client could send malicious XML-RPC requests and supervidord will run\n      them as shell commands with process privileges. In some cases,\n      supervisord is configured with root permissions.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A remote attacker could execute arbitrary code with the privileges of\n      the process.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Supervisor users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \"=app-admin/supervisor-3.1.4\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2017-11610\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-11610"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "b-man",
+      "Tag": "requester",
+      "Timestamp": "2017-07-27T14:58:00Z"
+    },
+    {
+      "Text": "chrisadr",
+      "Tag": "submitter",
+      "Timestamp": "2017-09-17T15:45:48Z"
+    }
+  ]
+}

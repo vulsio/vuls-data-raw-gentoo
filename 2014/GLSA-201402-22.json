@@ -1,0 +1,109 @@
+{
+  "ID": "201402-22",
+  "Title": "TCPTrack: Arbitrary code execution",
+  "Synopsis": "A heap-based buffer overflow in TCPTrack might allow a remote\n    attacker to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "tcptrack",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-02-21",
+  "Revised": {
+    "Text": "2014-02-21",
+    "Count": "1"
+  },
+  "Bug": [
+    "377917"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-analyzer/tcptrack",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>TCPTrack is a simple libpcap based program for live TCP connection\n      monitoring.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A heap-based buffer overflow vulnerability exists in TCPTrack’s\n      parsing of command line arguments. This is only a vulnerability in\n      limited scenarios in which TCPTrack is “configured as a handler for\n      other applications.”\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could possibly execute arbitrary code with the\n      privileges of the process or cause a Denial of Service condition with a\n      specially crafted command-line argument.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All TCPTrack users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "NOTE: This is a legacy GLSA. Updates for all affected architectures are\n      available since August 06, 2011. It is likely that your system is already\n      no longer affected by this issue.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-analyzer/tcptrack-1.4.2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2011-2903",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2903"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    underling\n  ",
+      "Tag": "requester",
+      "Timestamp": "2011-10-07T23:38:14Z"
+    },
+    {
+      "Text": "\n    creffett\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2014-02-21T15:21:47Z"
+    }
+  ]
+}

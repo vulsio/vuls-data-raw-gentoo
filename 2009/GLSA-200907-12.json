@@ -1,0 +1,103 @@
+{
+  "ID": "200907-12",
+  "Title": "ISC DHCP: dhcpclient Remote execution of arbitrary code",
+  "Synopsis": "\n    A buffer overflow in dhclient as included in the ISC DHCP implementation\n    allows for the remote execution of arbitrary code with root privileges.\n  ",
+  "Product": {
+    "Text": "dhcp",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-07-14",
+  "Revised": {
+    "Text": "2009-07-14",
+    "Count": "01"
+  },
+  "Bug": [
+    "277729"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/dhcp",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.1.1-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.1.1-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    ISC DHCP is the reference implementation of the Dynamic Host\n    Configuration Protocol as specified in RFC 2131.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The Mandriva Linux Engineering Team has reported a stack-based buffer\n    overflow in the subnet-mask handling of dhclient.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker might set up a rogue DHCP server in a victim's local\n    network, possibly leading to the execution of arbitrary code with root\n    privileges.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All ISC DHCP users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/dhcp-3.1.1-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-0692",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0692"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-07-12T14:21:43Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-07-12T14:58:48Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-07-14T17:38:51Z"
+    }
+  ]
+}

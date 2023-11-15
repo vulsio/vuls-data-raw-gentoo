@@ -1,0 +1,107 @@
+{
+  "ID": "201710-20",
+  "Title": "Nagios: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in Nagios, the worst of\n    which could lead to the remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "nagios",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-10-18",
+  "Revised": {
+    "Text": "2017-10-18",
+    "Count": "1"
+  },
+  "Bug": [
+    "602216",
+    "628086"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-analyzer/nagios-core",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.3.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.3.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Nagios is an open source host, service and network monitoring program.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in Nagios. Please review\n      the referenced CVE identifiers for details.\n    </p>\n    \n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could possibly escalate privileges to root, thus\n      allowing the execution of arbitrary code, by leveraging CVE-2016-9565. \n      Additionally, a local attacker could cause a Denial of Service condition\n      against arbitrary processes due to the improper dropping of privileges.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Nagios users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-analyzer/nagios-core-4.3.3\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2016-9565\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-9565"
+      },
+      {
+        "Text": "\n      CVE-2016-9566\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-9566"
+      },
+      {
+        "Text": "\n      CVE-2017-12847\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-12847"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "BlueKnight",
+      "Tag": "requester",
+      "Timestamp": "2017-10-02T06:35:45Z"
+    },
+    {
+      "Text": "chrisadr",
+      "Tag": "submitter",
+      "Timestamp": "2017-10-18T01:17:41Z"
+    }
+  ]
+}

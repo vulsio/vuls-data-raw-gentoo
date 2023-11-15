@@ -1,0 +1,103 @@
+{
+  "ID": "201001-07",
+  "Title": "Blender: Untrusted search path",
+  "Synopsis": "\n    An untrusted search path vulnerability in Blender might result in the\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "blender",
+    "Type": "ebuild"
+  },
+  "Announced": "2010-01-13",
+  "Revised": {
+    "Text": "2010-01-13",
+    "Count": "01"
+  },
+  "Bug": [
+    "245310"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-gfx/blender",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.48a-r3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.48a-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Blender is a 3D Creation/Animation/Publishing System.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Steffen Joeris reported that Blender's BPY_interface calls\n    PySys_SetArgv() in such a way that Python prepends sys.path with an\n    empty string.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could entice a user to run \"blender\" from a directory\n    containing a specially crafted Python module, resulting in the\n    execution of arbitrary code with the privileges of the user running the\n    application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Blender users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/blender-2.48a-r3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-4863",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4863"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-11-30T19:04:32Z"
+    },
+    {
+      "Text": "\n    craig\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2010-01-05T21:25:09Z"
+    },
+    {
+      "Text": "\n    craig\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2010-01-10T19:40:27Z"
+    }
+  ]
+}

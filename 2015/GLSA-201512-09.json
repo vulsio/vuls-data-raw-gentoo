@@ -1,0 +1,98 @@
+{
+  "ID": "201512-09",
+  "Title": "encfs: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in encfs, the worst of\n    which can allow remote attackers to execute arbitrary code or cause a\n    Denial of Service condition.\n  ",
+  "Product": {
+    "Text": "encfs",
+    "Type": "ebuild"
+  },
+  "Announced": "2015-12-30",
+  "Revised": {
+    "Text": "2015-12-30",
+    "Count": "1"
+  },
+  "Bug": [
+    "510290"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-fs/encfs",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.7.5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.7.5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Encfs is an implementation of encrypted filesystem in user-space using\n      FUSE.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in encfs. Please review\n      the CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A local attacker can utilize a  possible buffer overflow in the\n      encodeName method of StreamNameIO and BlockNameIO to execute arbitrary\n      code or cause a Denial of Service. Also multiple weak cryptographics\n      practices have been found in encfs. \n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All encfs users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-fs/encfs-1.7.5\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-3462",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-3462"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "K_F",
+      "Tag": "requester",
+      "Timestamp": "2015-05-11T16:35:36Z"
+    },
+    {
+      "Text": "mrueg",
+      "Tag": "submitter",
+      "Timestamp": "2015-12-30T14:32:13Z"
+    }
+  ]
+}

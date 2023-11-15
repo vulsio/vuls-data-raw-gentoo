@@ -1,0 +1,98 @@
+{
+  "ID": "202003-33",
+  "Title": "GStreamer Base Plugins: Heap-based buffer overflow",
+  "Synopsis": "A heap-based buffer overflow in GStreamer Base Plugins might allow\n    remote attackers to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "gst-plugins-base",
+    "Type": "ebuild"
+  },
+  "Announced": "2020-03-15",
+  "Revised": {
+    "Text": "2020-03-15",
+    "Count": "1"
+  },
+  "Bug": [
+    "701294"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/gst-plugins-base",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.14.5-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.14.5-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>A well-groomed and well-maintained collection of GStreamer plug-ins and\n      elements, spanning the range of possible types of elements one would want\n      to write for GStreamer.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was discovered that GStreamer Base Plugins did not correctly handle\n      certain malformed RTSP streams.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted RTSP\n      stream with a GStreamer application, possibly resulting in the execution\n      of arbitrary code or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All GStreamer Base Plugins users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=media-libs/gst-plugins-base-1.14.5-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2019-9928",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2019-9928"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2020-03-15T19:49:56Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2020-03-15T19:54:43Z"
+    }
+  ]
+}

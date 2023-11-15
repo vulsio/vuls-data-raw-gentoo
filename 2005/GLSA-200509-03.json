@@ -1,0 +1,107 @@
+{
+  "ID": "200509-03",
+  "Title": "OpenTTD: Format string vulnerabilities",
+  "Synopsis": "\n    OpenTTD is vulnerable to format string vulnerabilities which may result in\n    remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "openttd",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-09-05",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "102631"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "games-simulation/openttd",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.4.0.1-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.4.0.1-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    OpenTTD is an open source clone of the simulation game \"Transport\n    Tycoon Deluxe\" by Microprose.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Alexey Dobriyan discovered several format string vulnerabilities in\n    OpenTTD.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker could exploit these vulnerabilities to crash the\n    OpenTTD server or client and possibly execute arbitrary code with the\n    rights of the user running OpenTTD.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There are no known workarounds at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All OpenTTD users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=games-simulation/openttd-0.4.0.1-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-2763",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2763"
+      },
+      {
+        "Text": "CVE-2005-2764",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2764"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-09-01T05:03:56Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-09-01T08:12:01Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-09-04T15:43:14Z"
+    }
+  ]
+}

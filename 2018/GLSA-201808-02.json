@@ -1,0 +1,98 @@
+{
+  "ID": "201808-02",
+  "Title": "LinuX Containers user space utilities: Arbitrary file read",
+  "Synopsis": "A vulnerability has been found in LXC which may allow for arbitrary\n    file access (read-only).\n  ",
+  "Product": {
+    "Text": "lxc",
+    "Type": "ebuild"
+  },
+  "Announced": "2018-08-22",
+  "Revised": {
+    "Text": "2018-10-17",
+    "Count": "3"
+  },
+  "Bug": [
+    "662780"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-emulation/lxc",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.1.1-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.1.1-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>LinuX Containers user space utilities.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>lxc-user-nic when asked to delete a network interface will\n      unconditionally open a user provided path. This code path may be used by\n      an unprivileged user to check for the existence of a path which they\n      wouldn’t otherwise be able to reach.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>A local unprivileged user could use this flaw to access arbitrary files,\n      including special device files.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All LXC users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-emulation/lxc-2.1.1-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2018-6556",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2018-6556"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "irishluck83",
+      "Tag": "requester",
+      "Timestamp": "2018-08-13T17:16:02Z"
+    },
+    {
+      "Text": "Zlogene",
+      "Tag": "submitter",
+      "Timestamp": "2018-10-17T23:09:04Z"
+    }
+  ]
+}

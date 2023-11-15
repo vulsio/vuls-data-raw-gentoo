@@ -1,0 +1,102 @@
+{
+  "ID": "200505-07",
+  "Title": "libTIFF: Buffer overflow",
+  "Synopsis": "\n    The libTIFF library is vulnerable to a buffer overflow, potentially\n    resulting in the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "tiff",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-05-10",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "91584"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/tiff",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.7.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.7.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    libTIFF provides support for reading and manipulating TIFF (Tag Image\n    File Format) images.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Tavis Ormandy of the Gentoo Linux Security Audit Team discovered a\n    stack based buffer overflow in the libTIFF library when reading a TIFF\n    image with a malformed BitsPerSample tag.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    Successful exploitation would require the victim to open a specially\n    crafted TIFF image, resulting in the execution of arbitrary code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All libTIFF users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/tiff-3.7.2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "LIBTIFF BUG#863",
+        "Link": "http://bugzilla.remotesensing.org/show_bug.cgi?id=843"
+      },
+      {
+        "Text": "CVE-2005-1544",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1544"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    taviso\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-05-09T18:55:28Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-05-10T20:03:29Z"
+    }
+  ]
+}

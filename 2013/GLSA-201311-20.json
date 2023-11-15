@@ -1,0 +1,98 @@
+{
+  "ID": "201311-20",
+  "Title": "Okular: Arbitrary code execution ",
+  "Synopsis": "A heap-based buffer overflow in Okular might allow a remote\n    attacker to execute arbitrary code or cause a Denial of Service condition.\n  ",
+  "Product": {
+    "Text": "okular",
+    "Type": "ebuild"
+  },
+  "Announced": "2013-11-28",
+  "Revised": {
+    "Text": "2013-11-28",
+    "Count": "1"
+  },
+  "Bug": [
+    "334469"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "kde-base/okular",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.4.5-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.4.5-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Okular is a universal document viewer based on KPDF for KDE 4.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Okular contains a heap-based buffer overflow  in the RLE decompression\n      functionality in the TranscribePalmImageToJPEG function in\n      generators/plucker/inplug/image.cpp.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted PBD\n      file using Okular, possibly resulting in execution of arbitrary code with\n      the privileges of the process, or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Okular users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=kde-base/okular-4.4.5-r2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2010-2575\n    ",
+        "Link": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-2575"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    underling\n  ",
+      "Tag": "requester",
+      "Timestamp": "2011-10-07T23:37:53Z"
+    },
+    {
+      "Text": "Zlogene",
+      "Tag": "submitter",
+      "Timestamp": "2013-11-28T08:19:02Z"
+    }
+  ]
+}

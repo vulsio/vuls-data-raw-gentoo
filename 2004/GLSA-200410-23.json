@@ -1,0 +1,107 @@
+{
+  "ID": "200410-23",
+  "Title": "Gaim: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities have been found in Gaim which could allow a remote\n    attacker to crash the application, or possibly execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "gaim",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-10-24",
+  "Revised": {
+    "Text": "2004-10-24",
+    "Count": "01"
+  },
+  "Bug": [
+    "68271"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-im/gaim",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Gaim is a full featured instant messaging client which handls a variety of\n    instant messaging protocols.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    A possible buffer overflow exists in the code processing MSN SLP messages\n    (CAN-2004-0891). memcpy() was used without validating the size of the\n    buffer, and an incorrect buffer was used as destination under certain\n    circumstances. Additionally, memory allocation problems were found in the\n    processing of MSN SLP messages and the receiving of files. These issues\n    could lead Gaim to try to allocate more memory than available, resulting in\n    the crash of the application.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker could crash Gaim and possibly execute arbitrary code by\n    exploiting the buffer overflow.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Gaim users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n\n    # emerge -pv \">=net-im/gaim-1.0.2\"\n    # emerge \">=net-im/gaim-1.0.2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-0891",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0891"
+      },
+      {
+        "Text": "Gaim Security Issues",
+        "Link": "https://gaim.sourceforge.net/security/"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-10-22T00:52:11Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-10-22T08:35:43Z"
+    },
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-10-23T13:06:09Z"
+    }
+  ]
+}

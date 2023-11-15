@@ -1,0 +1,107 @@
+{
+  "ID": "200503-13",
+  "Title": "mlterm: Integer overflow vulnerability",
+  "Synopsis": "\n    mlterm is vulnerable to an integer overflow, which could potentially allow\n    the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "mlterm",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-03-07",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "84174"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "x11-terms/mlterm",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.9.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.9.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    mlterm is a multi-lingual terminal emulator.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    mlterm is vulnerable to an integer overflow that can be triggered by\n    specifying a large image file as a background. This only effects users\n    that have compiled mlterm with the 'gtk' USE flag, which enables\n    gdk-pixbuf support.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker can create a specially-crafted image file which, when used\n    as a background by the victim, can lead to the execution of arbitrary\n    code with the privileges of the user running mlterm.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Re-compile mlterm without the 'gtk' USE flag.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All mlterm users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-terms/mlterm-2.9.2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "mlterm ChangeLog",
+        "Link": "https://sourceforge.net/project/shownotes.php?release_id=310416"
+      },
+      {
+        "Text": "CVE-2005-0686",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0686"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-03-05T16:23:09Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-03-06T10:05:20Z"
+    },
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-03-07T01:52:03Z"
+    }
+  ]
+}

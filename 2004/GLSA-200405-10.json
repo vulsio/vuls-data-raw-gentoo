@@ -1,0 +1,97 @@
+{
+  "ID": "200405-10",
+  "Title": "Icecast denial of service vulnerability",
+  "Synopsis": "\n    Icecast is vulnerable to a denial of service attack allowing remote users\n    to crash the application.\n  ",
+  "Product": {
+    "Text": "icecast",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-05-19",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "50935"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/icecast",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.0",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Icecast is a program that streams audio data to listeners over the\n    Internet.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    There is an out-of-bounds read error in the web interface of Icecast\n    when handling Basic Authorization requests. This vulnerability can\n    theorically be exploited by sending a specially crafted Authorization\n    header to the server.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    By exploiting this vulnerability, it is possible to crash the Icecast\n    server remotely, resulting in a denial of service attack.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time. All users are advised to\n    upgrade to the latest available version of Icecast.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All users of Icecast should upgrade to the latest stable version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv \">=net-misc/icecast-2.0.1\"\n    # emerge \">=net-misc/icecast-2.0.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Icecast 2.0.1 announcement",
+        "Link": "https://www.xiph.org/archives/icecast/7144.html"
+      },
+      {
+        "Text": "CVE-2004-2027",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-2027"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

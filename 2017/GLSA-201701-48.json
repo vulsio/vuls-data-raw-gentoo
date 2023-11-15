@@ -1,0 +1,103 @@
+{
+  "ID": "201701-48",
+  "Title": "Quagga: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in Quagga, the worst of\n    which could allow remote attackers to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "quagga",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-01-21",
+  "Revised": {
+    "Text": "2017-01-21",
+    "Count": "1"
+  },
+  "Bug": [
+    "581526",
+    "597410"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/quagga",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.1.0-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.0-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Quagga is a free routing daemon replacing Zebra supporting RIP, OSPF and\n      BGP.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in Quagga. Please review\n      the CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could send a specially crafted packet possibly\n      resulting in the execution of arbitrary code with the privileges of the\n      process or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Quagga users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/quagga-1.1.0-r2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2016-1245",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-1245"
+      },
+      {
+        "Text": "CVE-2016-4049",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-4049"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "pinkbyte",
+      "Tag": "requester",
+      "Timestamp": "2016-12-15T10:32:23Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2017-01-21T05:46:06Z"
+    }
+  ]
+}

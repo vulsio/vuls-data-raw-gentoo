@@ -1,0 +1,92 @@
+{
+  "ID": "200612-15",
+  "Title": "McAfee VirusScan: Insecure DT_RPATH",
+  "Synopsis": "\n    McAfee VirusScan for Linux is distributed with an insecure DT_RPATH,\n    potentially allowing a remote attacker to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "vlnx",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-12-14",
+  "Revised": {
+    "Text": "2006-12-14",
+    "Count": "01"
+  },
+  "Bug": [
+    "156989"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-antivirus/vlnx",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": null,
+        "Vulnerable": [
+          {
+            "Text": "4510e",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    McAfee VirusScan for Linux is a commercial antivirus solution for\n    Linux.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Jakub Moc of Gentoo Linux discovered that McAfee VirusScan was\n    distributed with an insecure DT_RPATH which included the current\n    working directory, rather than $ORIGIN which was probably intended.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    An attacker could entice a VirusScan user to scan an arbitrary file and\n    execute arbitrary code with the privileges of the VirusScan user by\n    tricking the dynamic loader into loading an untrusted ELF DSO. An\n    automated system, such as a mail scanner, may be subverted to execute\n    arbitrary code with the privileges of the process invoking VirusScan.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Do not scan files or execute VirusScan from an untrusted working\n    directory.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    As VirusScan verifies that it has not been modified before executing,\n    it is not possible to correct the DT_RPATH. Furthermore, this would\n    violate the license that VirusScan is distributed under. For this\n    reason, the package has been masked in Portage pending the resolution\n    of this issue.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --ask --verbose --unmerge \"app-antivirus/vlnx\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-6474",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6474"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    taviso\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-12-11T18:55:04Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-12-11T21:23:39Z"
+    }
+  ]
+}

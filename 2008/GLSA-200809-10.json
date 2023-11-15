@@ -1,0 +1,116 @@
+{
+  "ID": "200809-10",
+  "Title": "Mantis: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities have been reported in Mantis.\n  ",
+  "Product": {
+    "Text": "mantisbt",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-09-21",
+  "Revised": {
+    "Text": "2008-11-26",
+    "Count": "02"
+  },
+  "Bug": [
+    "222649",
+    "233336"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/mantisbt",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.1.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Mantis is a PHP/MySQL/Web based bugtracking system.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Antonio Parata and Francesco Ongaro reported a Cross-Site Request\n    Forgery vulnerability in manage_user_create.php (CVE-2008-2276), a\n    Cross-Site Scripting vulnerability in return_dynamic_filters.php\n    (CVE-2008-3331), and an insufficient input validation in\n    adm_config_set.php (CVE-2008-3332). A directory traversal vulnerability\n    in core/lang_api.php (CVE-2008-3333) has also been reported.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker could exploit these vulnerabilities to execute\n    arbitrary HTML and script code, create arbitrary users with\n    administrative privileges, execute arbitrary PHP commands, and include\n    arbitrary files.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Mantis users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/mantisbt-1.1.2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-2276",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2276"
+      },
+      {
+        "Text": "CVE-2008-3331",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3331"
+      },
+      {
+        "Text": "CVE-2008-3332",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3332"
+      },
+      {
+        "Text": "CVE-2008-3333",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3333"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-09-19T19:55:47Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-09-19T19:59:03Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-09-20T21:37:36Z"
+    }
+  ]
+}

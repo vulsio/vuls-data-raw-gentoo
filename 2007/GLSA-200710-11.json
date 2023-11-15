@@ -1,0 +1,112 @@
+{
+  "ID": "200710-11",
+  "Title": "X Font Server: Multiple Vulnerabilities",
+  "Synopsis": "\n    Three vulnerabilities have been discovered in the X Font Server possibly\n    allowing local attackers to gain elevated privileges.\n  ",
+  "Product": {
+    "Text": "xfs",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-10-12",
+  "Revised": {
+    "Text": "2007-10-12",
+    "Count": "01"
+  },
+  "Bug": [
+    "185660",
+    "194606"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "x11-apps/xfs",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The X.Org X11 X Font Server provides a standard mechanism for an X\n    server to communicate with a font renderer.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    iDefense reported that the xfs init script does not correctly handle a\n    race condition when setting permissions of a temporary file\n    (CVE-2007-3103). Sean Larsson discovered an integer overflow\n    vulnerability in the build_range() function possibly leading to a\n    heap-based buffer overflow when handling \"QueryXBitmaps\" and\n    \"QueryXExtents\" protocol requests (CVE-2007-4568). Sean Larsson also\n    discovered an error in the swap_char2b() function possibly leading to a\n    heap corruption when handling the same protocol requests\n    (CVE-2007-4990).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    The first issue would allow a local attacker to change permissions of\n    arbitrary files to be world-writable by performing a symlink attack.\n    The second and third issues would allow a local attacker to execute\n    arbitrary code with privileges of the user running the X Font Server,\n    usually xfs.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All X Font Server users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-apps/xfs-1.0.5\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-3103",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3103"
+      },
+      {
+        "Text": "CVE-2007-4568",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4568"
+      },
+      {
+        "Text": "CVE-2007-4990",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4990"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-10-11T20:30:03Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-10-11T21:39:17Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-10-11T21:39:34Z"
+    }
+  ]
+}

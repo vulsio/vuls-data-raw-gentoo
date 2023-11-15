@@ -1,0 +1,142 @@
+{
+  "ID": "200804-10",
+  "Title": "Tomcat: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities in Tomcat may lead to local file overwriting,\n    session hijacking or information disclosure.\n  ",
+  "Product": {
+    "Text": "tomcat",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-04-10",
+  "Revised": {
+    "Text": "2009-05-28",
+    "Count": "02"
+  },
+  "Bug": [
+    "196066",
+    "203169"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-servers/tomcat",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.5.26",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "6.0.16",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "5.5.27",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "6.0.16",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Tomcat is the Apache Jakarta Project's official implementation of Java\n    Servlets and Java Server Pages.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The following vulnerabilities were reported:\n    </p>\n    <ul>\n    <li>Delian Krustev discovered that the JULI logging component does not\n    properly enforce access restrictions, allowing web application to add\n    or overwrite files (CVE-2007-5342).</li>\n    <li>\n    When the native APR connector is used, Tomcat does not properly handle\n    an empty request to the SSL port, which allows remote attackers to\n    trigger handling of a duplicate copy of one of the recent requests\n    (CVE-2007-6286).</li>\n    <li>\n    If the processing or parameters is interrupted, i.e. by an exception,\n    then it is possible for the parameters to be processed as part of later\n    request (CVE-2008-0002).</li>\n    <li>\n    An absolute path traversal vulnerability exists due to the way that\n    WebDAV write requests are handled (CVE-2007-5461).</li>\n    <li>\n    Tomcat does not properly handle double quote (\") characters or %5C\n    (encoded backslash) sequences in a cookie value, which might cause\n    sensitive information such as session IDs to be leaked to remote\n    attackers and enable session hijacking attacks\n    (CVE-2007-5333).</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    These vulnerabilities can be exploited by:\n    </p>\n    <ul>\n    <li>\n    a malicious web application to add or overwrite files with the\n    permissions of the user running Tomcat.\n    </li>\n    <li>\n    a remote attacker to conduct session hijacking or disclose sensitive\n    data.\n    </li>\n    </ul>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Tomcat 5.5.x users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Tomcat 6.0.x users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-servers/tomcat-5.5.26\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-servers/tomcat-6.0.16\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-5333",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5333"
+      },
+      {
+        "Text": "CVE-2007-5342",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5342"
+      },
+      {
+        "Text": "CVE-2007-5461",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5461"
+      },
+      {
+        "Text": "CVE-2007-6286",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6286"
+      },
+      {
+        "Text": "CVE-2008-0002",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0002"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-03-21T02:25:49Z"
+    },
+    {
+      "Text": "\n    mfleming\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-03-21T18:05:04Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-04-04T15:09:23Z"
+    }
+  ]
+}

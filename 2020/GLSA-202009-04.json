@@ -1,0 +1,98 @@
+{
+  "ID": "202009-04",
+  "Title": "Qt GUI: Buffer overflow",
+  "Synopsis": "Qt GUI has a buffer overflow with unspecified impact.",
+  "Product": {
+    "Text": "qtgui",
+    "Type": "ebuild"
+  },
+  "Announced": "2020-09-13",
+  "Revised": {
+    "Text": "2020-09-13",
+    "Count": "1"
+  },
+  "Bug": [
+    "736924"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-qt/qtgui",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.14.2-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.14.2-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>The GUI module and platform plugins for the Qt5 framework.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was discovered that Qt GUI’s XBM parser did not properly handle X\n      BitMap files.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>Please review the referenced CVE identifiers for details.</p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Qt GUI users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-qt/qtgui-5.14.2-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2020-17507",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-17507"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2020-09-13T22:36:51Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2020-09-13T23:24:26Z"
+    }
+  ]
+}

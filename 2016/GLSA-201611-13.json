@@ -1,0 +1,98 @@
+{
+  "ID": "201611-13",
+  "Title": "MongoDB: Denial of service",
+  "Synopsis": "A vulnerability in MongoDB can lead to a Denial of Service\n    condition.\n  ",
+  "Product": {
+    "Text": "mongodb",
+    "Type": "ebuild"
+  },
+  "Announced": "2016-11-20",
+  "Revised": {
+    "Text": "2016-11-20",
+    "Count": "1"
+  },
+  "Bug": [
+    "542880"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-db/mongodb",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.4.13",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.4.13",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>MongoDB (from “humongous”) is a scalable, high-performance, open\n      source, schema-free, document-oriented database.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>MongoDB’s ‘mongod’ server fails to validate some cases of\n      malformed BSON.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could send a specially crafted BSON request possibly\n      resulting in a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All MongoDB users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-db/mongodb-2.4.13\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2015-1609",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-1609"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "K_F",
+      "Tag": "requester",
+      "Timestamp": "2015-05-11T20:38:27Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2016-11-20T22:09:15Z"
+    }
+  ]
+}

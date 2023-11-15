@@ -1,0 +1,111 @@
+{
+  "ID": "200903-20",
+  "Title": "WebSVN: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities in WebSVN allow for file overwrite and information\n    disclosure.\n  ",
+  "Product": {
+    "Text": "websvn",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-03-09",
+  "Revised": {
+    "Text": "2009-03-09",
+    "Count": "01"
+  },
+  "Bug": [
+    "243852"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/websvn",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.1.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.1.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    WebSVN is a web-based browsing tool for Subversion repositories written\n    in PHP.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <ul>\n    <li>\n    James Bercegay of GulfTech Security reported a Cross-site scripting\n    (XSS) vulnerability in the getParameterisedSelfUrl() function in\n    index.php (CVE-2008-5918) and a directory traversal vulnerability in\n    rss.php when magic_quotes_gpc is disabled (CVE-2008-5919).\n    </li>\n    <li>\n    Bas van Schaik reported that listing.php does not properly enforce\n    access restrictions when using an SVN authz file to authenticate users\n    (CVE-2009-0240).\n    </li>\n    </ul> <p>\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker can exploit these vulnerabilities to overwrite\n    arbitrary files, to read changelogs or diffs for restricted projects\n    and to hijack a user's session.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All WebSVN users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/websvn-2.1.0\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-5918",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5918"
+      },
+      {
+        "Text": "CVE-2008-5919",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5919"
+      },
+      {
+        "Text": "CVE-2009-0240",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0240"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-01-24T11:43:28Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-02-12T17:56:35Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-02-12T17:56:41Z"
+    }
+  ]
+}

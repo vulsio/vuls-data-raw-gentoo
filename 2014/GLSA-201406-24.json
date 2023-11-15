@@ -1,0 +1,103 @@
+{
+  "ID": "201406-24",
+  "Title": "Dnsmasq: Denial of Service ",
+  "Synopsis": "A vulnerability in Dnsmasq can lead to a Denial of Service\n    condition.\n  ",
+  "Product": {
+    "Text": "dnsmasq",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-06-25",
+  "Revised": {
+    "Text": "2014-06-25",
+    "Count": "1"
+  },
+  "Bug": [
+    "436894",
+    "453170"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-dns/dnsmasq",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.66",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.66",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Dnsmasq is a lightweight, easy to configure DNS forwarder and DHCP\n      server. \n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>When used with certain libvirt configurations Dnsmasq replies to queries\n      from prohibited interfaces. \n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attackers can cause a Denial of Service via spoofed TCP based\n      DNS queries. \n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Dnsmasq users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-dns/dnsmasq-2.66\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-3411",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3411"
+      },
+      {
+        "Text": "CVE-2013-0198",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0198"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "requester",
+      "Timestamp": "2014-06-19T03:08:23Z"
+    },
+    {
+      "Text": "K_F",
+      "Tag": "submitter",
+      "Timestamp": "2014-06-25T21:36:31Z"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "ID": "201612-31",
+  "Title": "exFAT: Multiple vulnerabilities",
+  "Synopsis": "Two vulnerabilities have been found in exFAT allowing remote\n    attackers to execute arbitrary code or cause Denial of Service.\n  ",
+  "Product": {
+    "Text": "",
+    "Type": "ebuild"
+  },
+  "Announced": "2016-12-12",
+  "Revised": {
+    "Text": "2016-12-12",
+    "Count": "1"
+  },
+  "Bug": [
+    "563936"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-fs/exfat-utils",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>A full-featured exFAT file system implementation for Unix-like systems.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Two vulnerabilities were found in exFAT. A malformed input can cause a\n      write heap overflow or cause an endless loop.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>Remote attackers could execute arbitrary code or cause Denial of\n      Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All exFAT users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-fs/exfat-utils-1.2.1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2015-8026",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-8026"
+      },
+      {
+        "Text": "\n      Heap overflow and endless loop in exfatfsck / exfat-utils\n    ",
+        "Link": "https://blog.fuzzing-project.org/25-Heap-overflow-and-endless-loop-in-exfatfsck-exfat-utils.html"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "requester",
+      "Timestamp": "2015-12-31T02:26:18Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2016-12-12T00:14:52Z"
+    }
+  ]
+}

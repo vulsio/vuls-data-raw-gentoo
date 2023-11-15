@@ -1,0 +1,120 @@
+{
+  "ID": "201006-11",
+  "Title": "BIND: Multiple vulnerabilities",
+  "Synopsis": "\n    Several cache poisoning vulnerabilities have been found in BIND.\n  ",
+  "Product": {
+    "Text": "BIND",
+    "Type": "ebuild"
+  },
+  "Announced": "2010-06-01",
+  "Revised": {
+    "Text": "2010-06-01",
+    "Count": "01"
+  },
+  "Bug": [
+    "301548",
+    "308035"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-dns/bind",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "9.4.3_p5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "9.4.3_p5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    ISC BIND is the Internet Systems Consortium implementation of the\n    Domain Name System (DNS) protocol.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Multiple cache poisoning vulnerabilities were discovered in BIND. For\n    further information please consult the CVE entries and the ISC Security\n    Bulletin referenced below.\n    </p>\n    <p>\n    Note: CVE-2010-0290 and CVE-2010-0382 exist because of an incomplete\n    fix and a regression for CVE-2009-4022.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could exploit this weakness to poison the cache of a\n    recursive resolver and thus spoof DNS traffic, which could e.g. lead to\n    the redirection of web or mail traffic to malicious sites.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All BIND users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dns/bind-9.4.3_p5\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "ISC Advisory",
+        "Link": "https://www.isc.org/advisories/CVE2009-4022"
+      },
+      {
+        "Text": "CVE-2009-4022",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4022"
+      },
+      {
+        "Text": "CVE-2010-0097",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0097"
+      },
+      {
+        "Text": "CVE-2010-0290",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0290"
+      },
+      {
+        "Text": "CVE-2010-0382",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0382"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    craig\n  ",
+      "Tag": "requester",
+      "Timestamp": "2010-03-29T22:15:31Z"
+    },
+    {
+      "Text": "\n    craig\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2010-04-09T17:11:37Z"
+    },
+    {
+      "Text": "\n    vorlon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2010-05-27T18:23:04Z"
+    }
+  ]
+}

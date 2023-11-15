@@ -1,0 +1,98 @@
+{
+  "ID": "202009-15",
+  "Title": "libuv: Buffer overflow",
+  "Synopsis": "A buffer overflow in libuv might allow remote attacker(s) to\n    execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "libuv",
+    "Type": "ebuild"
+  },
+  "Announced": "2020-09-29",
+  "Revised": {
+    "Text": "2020-09-29",
+    "Count": "1"
+  },
+  "Bug": [
+    "742890"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/libuv",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.39.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.39.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>libuv is a multi-platform support library with a focus on asynchronous\n      I/O.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>libuv used an incorrect buffer size for paths, causing a buffer\n      overflow.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could possibly execute arbitrary code with the\n      privileges of the process, or cause a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All libuv users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/libuv-1.39.0\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2020-8252",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-8252"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "sam_c",
+      "Tag": "requester",
+      "Timestamp": "2020-09-23T13:49:20Z"
+    },
+    {
+      "Text": "sam_c",
+      "Tag": "submitter",
+      "Timestamp": "2020-09-29T18:05:50Z"
+    }
+  ]
+}

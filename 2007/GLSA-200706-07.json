@@ -1,0 +1,115 @@
+{
+  "ID": "200706-07",
+  "Title": "PHProjekt: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities have been discovered in PHProjekt, allowing for\n    the execution of arbitrary PHP and SQL code, and cross-site scripting\n    attacks.\n  ",
+  "Product": {
+    "Text": "phprojekt",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-06-19",
+  "Revised": {
+    "Text": "2007-06-19",
+    "Count": "01"
+  },
+  "Bug": [
+    "170905"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/phprojekt",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.2.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.2.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    PHProjekt is a project management and coordination tool written in PHP.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Alexios Fakos from n.runs AG has discovered multiple vulnerabilities in\n    PHProjekt, including the execution of arbitrary SQL commands using\n    unknown vectors (CVE-2007-1575), the execution of arbitrary PHP code\n    using an unrestricted file upload (CVE-2007-1639), cross-site request\n    forgeries using different modules (CVE-2007-1638), and a cross-site\n    scripting attack using unkown vectors (CVE-2007-1576).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    An authenticated user could elevate their privileges by exploiting the\n    vulnerabilities described above. Note that the magic_quotes_gpc PHP\n    configuration setting must be set to \"off\" to exploit these\n    vulnerabilities.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All PHProjekt users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/phprojekt-5.2.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-1575",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1575"
+      },
+      {
+        "Text": "CVE-2007-1576",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1576"
+      },
+      {
+        "Text": "CVE-2007-1638",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1638"
+      },
+      {
+        "Text": "CVE-2007-1639",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1639"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-06-07T21:18:57Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-06-10T13:59:19Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-06-10T13:59:28Z"
+    }
+  ]
+}

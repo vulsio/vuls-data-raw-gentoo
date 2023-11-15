@@ -1,0 +1,103 @@
+{
+  "ID": "200703-16",
+  "Title": "Apache JK Tomcat Connector: Remote execution of arbitrary code",
+  "Synopsis": "\n    The Apache Tomcat Connector (mod_jk) contains a buffer overflow\n    vulnerability that could result in the remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "mod_jk",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-03-16",
+  "Revised": {
+    "Text": "2007-03-16",
+    "Count": "01"
+  },
+  "Bug": [
+    "169433"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apache/mod_jk",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.21-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.21-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Apache HTTP server is a very widely used web server. mod_jk\n    provides the JK module for connecting Tomcat and Apache using the ajp13\n    protocol.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    ZDI reported an unsafe memory copy in mod_jk that was discovered by an\n    anonymous researcher in the map_uri_to_worker function of\n    native/common/jk_uri_worker_map.c .\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker can send a long URL request to an Apache server using\n    Tomcat. That can trigger the vulnerability and lead to a stack-based\n    buffer overflow, which could result in the execution of arbitrary code\n    with the permissions of the Apache user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Apache Tomcat users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apache/mod_jk-1.2.21-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-0774",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0774"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-03-06T16:08:28Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-03-14T00:11:00Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-03-14T20:16:09Z"
+    }
+  ]
+}

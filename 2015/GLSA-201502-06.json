@@ -1,0 +1,98 @@
+{
+  "ID": "201502-06",
+  "Title": "nginx: Information disclosure",
+  "Synopsis": "An SSL session fixation vulnerability in nginx may allow remote\n    attackers to obtain sensitive information.\n  ",
+  "Product": {
+    "Text": "nginx",
+    "Type": "ebuild"
+  },
+  "Announced": "2015-02-07",
+  "Revised": {
+    "Text": "2015-02-07",
+    "Count": "1"
+  },
+  "Bug": [
+    "522994"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-servers/nginx",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.7.6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.7.6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>nginx is a robust, small, and high performance HTTP and reverse proxy\n      server.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>An SSL session fixation vulnerability has been found in nginx when\n      multiple servers use the same shared ssl_session_cache or\n      ssl_session_ticket_key.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker may be able to obtain sensitive information.</p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All nginx users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=www-servers/nginx-1.7.6\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-3616",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-3616"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "Zlogene",
+      "Tag": "requester",
+      "Timestamp": "2015-01-05T00:39:58Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2015-02-07T20:30:19Z"
+    }
+  ]
+}

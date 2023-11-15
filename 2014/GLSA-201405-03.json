@@ -1,0 +1,102 @@
+{
+  "ID": "201405-03",
+  "Title": "WeeChat: Multiple vulnerabilities",
+  "Synopsis": "Two vulnerabilities have been found in WeeChat, the worst of which\n    may allow execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "weechat",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-05-03",
+  "Revised": {
+    "Text": "2014-05-03",
+    "Count": "1"
+  },
+  "Bug": [
+    "442600"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-irc/weechat",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.3.9.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.3.9.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Wee Enhanced Environment for Chat (WeeChat) is a light and extensible\n      console IRC client.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Two vulnerabilities have been discovered in WeeChat:</p>\n    \n    <ul>\n      <li>The hook_process() function does not properly handle shell expansions\n        (CVE-2012-5534).\n      </li>\n      <li>WeeChat does not properly decode colors which could cause a\n        heap-based buffer overflow (CVE-2012-5854).\n      </li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted script\n      or send messages with specially crafted colors, possibly resulting in\n      execution of arbitrary code with the privileges of the process, or a\n      Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All WeeChat users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-irc/weechat-0.3.9.2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-5534",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5534"
+      },
+      {
+        "Text": "CVE-2012-5854",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5854"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2012-11-21T20:56:00Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2014-05-03T13:54:42Z"
+    }
+  ]
+}

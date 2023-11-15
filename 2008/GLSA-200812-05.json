@@ -1,0 +1,103 @@
+{
+  "ID": "200812-05",
+  "Title": "libsamplerate: User-assisted execution of arbitrary code",
+  "Synopsis": "\n    A buffer overflow vulnerability in libsamplerate might lead to the\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "libsamplerate",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-12-02",
+  "Revised": {
+    "Text": "2008-12-02",
+    "Count": "01"
+  },
+  "Bug": [
+    "237037"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/libsamplerate",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.1.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.1.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Secret Rabbit Code (aka libsamplerate) is a Sample Rate Converter for\n    audio.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Russell O'Connor reported a buffer overflow in src/src_sinc.c related\n    to low conversion ratios.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user or automated system to process a\n    specially crafted audio file possibly leading to the execution of\n    arbitrary code with the privileges of the user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All libsamplerate users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/libsamplerate-0.1.4\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-5008",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5008"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-11-07T13:51:38Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-11-27T16:25:38Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-11-27T16:25:44Z"
+    }
+  ]
+}

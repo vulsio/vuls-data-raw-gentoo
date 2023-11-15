@@ -1,0 +1,98 @@
+{
+  "ID": "201201-04",
+  "Title": "Logsurfer: Arbitrary code execution",
+  "Synopsis": "A double-free flaw in Logsurfer allows a remote attacker to execute\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "Logsurfer",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-01-20",
+  "Revised": {
+    "Text": "2012-01-20",
+    "Count": "1"
+  },
+  "Bug": [
+    "387397"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-admin/logsurfer+",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.8",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.8",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Logsurfer is a real time log monitoring and analysis tool.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Logsurfer log files may contain substrings used for executing external\n      commands. The prepare_exec() function in src/exec.c contains a\n      double-free vulnerability.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could inject specially-crafted strings into a log file\n      processed by Logsurfer, resulting in the execution of arbitrary code with\n      the permissions of the Logsurfer user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Logsurfer users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-admin/logsurfer+-1.8\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2011-3626\n    ",
+        "Link": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-3626"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2011-11-19T12:42:58Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-01-20T18:19:29Z"
+    }
+  ]
+}

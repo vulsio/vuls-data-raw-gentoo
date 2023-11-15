@@ -1,0 +1,114 @@
+{
+  "ID": "200408-20",
+  "Title": "Qt: Image loader overflows",
+  "Synopsis": "\n    There are several bugs in Qt's image-handling code which could lead to\n    crashes or arbitrary code execution.\n  ",
+  "Product": {
+    "Text": "Qt",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-08-22",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "60855"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "x11-libs/qt",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.3.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.3.2",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Qt is a cross-platform GUI toolkit used by KDE.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    There are several unspecified bugs in the QImage class which may cause\n    crashes or allow execution of arbitrary code as the user running the Qt\n    application. These bugs affect the PNG, XPM, BMP, GIF and JPEG image\n    types.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker may exploit these bugs by causing a user to open a\n    carefully-constructed image file in any one of these formats. This may\n    be accomplished through e-mail attachments (if the user uses KMail), or\n    by simply placing a malformed image on a website and then convicing the\n    user to load the site in a Qt-based browser (such as Konqueror).\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time. All users are encouraged to\n    upgrade to the latest available version of Qt.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Qt users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv \">=x11-libs/qt-3.3.3\"\n    # emerge \">=x11-libs/qt-3.3.3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Mandrake Advisory",
+        "Link": "http://www.mandrakesoft.com/security/advisories?name=MDKSA-2004:085"
+      },
+      {
+        "Text": "Qt 3.3.3 ChangeLog",
+        "Link": "http://www.trolltech.com/developer/changes/changes-3.3.3.html"
+      },
+      {
+        "Text": "CVE-2004-0691",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0691"
+      },
+      {
+        "Text": "CVE-2004-0692",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0692"
+      },
+      {
+        "Text": "CVE-2004-0693",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0693"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-08-20T22:45:25Z"
+    },
+    {
+      "Text": "\n    condordes\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-08-21T19:29:43Z"
+    }
+  ]
+}

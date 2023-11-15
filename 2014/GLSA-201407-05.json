@@ -1,0 +1,202 @@
+{
+  "ID": "201407-05",
+  "Title": "OpenSSL: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in OpenSSL, possibly\n    allowing remote attackers to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "openssl",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-07-27",
+  "Revised": {
+    "Text": "2015-06-06",
+    "Count": "2"
+  },
+  "Bug": [
+    "512506"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/openssl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.1h-r1",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.0.0m",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p1",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p2",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p3",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p4",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p5",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p6",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p7",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p8",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p9",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p10",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p11",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p12",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p13",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p14",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p15",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.1h-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>OpenSSL is an Open Source toolkit implementing the Secure Sockets Layer\n      (SSL v2/v3) and Transport Layer Security (TLS v1) as well as a general\n      purpose cryptography library.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in OpenSSL. Please review\n      the OpenSSL Security Advisory [05 Jun 2014] and the CVE identifiers\n      referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A remote attacker could send specially crafted DTLS fragments to an\n      OpenSSL DTLS client or server to possibly execute arbitrary code with the\n      privileges of the process using OpenSSL.\n    </p>\n    \n    <p>Furthermore, an attacker could force the use of weak keying material in\n      OpenSSL SSL/TLS clients and servers, inject data across sessions, or\n      cause a Denial of Service via various vectors.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All OpenSSL users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/openssl-1.0.1h-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2010-5298",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-5298"
+      },
+      {
+        "Text": "CVE-2014-0195",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0195"
+      },
+      {
+        "Text": "CVE-2014-0198",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0198"
+      },
+      {
+        "Text": "CVE-2014-0221",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0221"
+      },
+      {
+        "Text": "CVE-2014-0224",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0224"
+      },
+      {
+        "Text": "CVE-2014-3470",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-3470"
+      },
+      {
+        "Text": "OpenSSL\n      Security Advisory [05 Jun 2014]\n    ",
+        "Link": "https://www.openssl.org/news/secadv_20140605.txt"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2014-06-06T10:20:51Z"
+    },
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2015-06-06T23:12:08Z"
+    }
+  ]
+}

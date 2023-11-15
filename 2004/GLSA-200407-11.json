@@ -1,0 +1,97 @@
+{
+  "ID": "200407-11",
+  "Title": "wv: Buffer overflow vulnerability",
+  "Synopsis": "\n    A buffer overflow vulnerability exists in the wv library that can allow an\n    attacker to execute arbitrary code with the privileges of the user running\n    the vulnerable application.\n  ",
+  "Product": {
+    "Text": "app-text/wv",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-07-14",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "56595"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-text/wv",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.0-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.0-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The wv library allows access to MS Word files. It can parse Word files\n    and allow other applications, such as abiword, to import those files\n    into their native formats.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    A use of strcat without proper bounds checking leads to an exploitable\n    buffer overflow. The vulnerable code is executed when wv encounters an\n    unrecognized token, so a specially crafted file, loaded in wv, can\n    trigger the vulnerable code and execute it's own arbitrary code. This\n    exploit is only possible when the user loads the document into HTML\n    view mode.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    By inducing a user into running wv on a special file, an attacker can\n    execute arbitrary code with the permissions of the user running the\n    vulnerable program.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Users should not view untrusted documents with wvHtml or applications\n    using wv. When loading an untrusted document in an application using\n    the wv library, make sure HTML view is disabled.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All users should upgrade to the latest available version.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv \">=app-text/wv-1.0.0-r1\"\n    # emerge \">=app-text/wv-1.0.0-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "iDEFENSE Security Advisory",
+        "Link": "http://www.idefense.com/application/poi/display?id=115&type=vulnerabilities&flashstatus=true"
+      },
+      {
+        "Text": "CVE-2004-0645",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0645"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    dmargoli\n  ",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

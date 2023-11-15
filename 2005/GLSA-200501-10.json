@@ -1,0 +1,107 @@
+{
+  "ID": "200501-10",
+  "Title": "Vilistextum: Buffer overflow vulnerability",
+  "Synopsis": "\n    Vilistextum is vulnerable to a buffer overflow that allows an attacker to\n    execute arbitrary code through the use of a malicious webpage.\n  ",
+  "Product": {
+    "Text": "vilistextum",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-01-06",
+  "Revised": {
+    "Text": "2005-01-06",
+    "Count": "01"
+  },
+  "Bug": [
+    "74694"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-text/vilistextum",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.6.7",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.6.7",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Vilistextum is an HTML to text converter.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Ariel Berkman discovered that Vilistextum unsafely reads data into\n    an array without checking the length. This code vulnerability may lead\n    to a buffer overflow.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could craft a malicious webpage which, when\n    converted, would result in the execution of arbitrary code with the\n    rights of the user running Vilistextum.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Vilistextum users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/vilistextum-2.6.7\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Original Advisory",
+        "Link": "http://tigger.uic.edu/~jlongs2/holes/vilistextum.txt"
+      },
+      {
+        "Text": "CAN-2004-1299",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1299"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-01-03T15:34:01Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-01-04T11:50:53Z"
+    },
+    {
+      "Text": "\n    SeJo\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-01-06T13:22:37Z"
+    }
+  ]
+}

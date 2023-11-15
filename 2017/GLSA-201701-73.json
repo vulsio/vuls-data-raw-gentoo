@@ -1,0 +1,102 @@
+{
+  "ID": "201701-73",
+  "Title": "SQUASHFS: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been discovered in SQUASHFS, the\n    worst of which may allow execution of arbitrary code\n  ",
+  "Product": {
+    "Text": "squashfs",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-01-29",
+  "Revised": {
+    "Text": "2017-01-29",
+    "Count": "1"
+  },
+  "Bug": [
+    "552484"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-fs/squashfs-tools",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.3-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.3-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Squashfs is a compressed read-only filesystem for Linux. Squashfs is\n      intended for general read-only filesystem use, for archival use (i.e. in\n      cases where a .tar.gz file may be used), and in constrained block\n      device/memory systems (e.g. embedded systems) where low overhead is\n      needed.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in SQUASHFS. Please review\n      the CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>Remote attackers, by enticing a user to process a specially crafted\n      SQUASHFS image, could execute arbitrary code with the privileges of the\n      process.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All SQUASHFS users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-fs/squashfs-tools-4.3-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2015-4645",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-4645"
+      },
+      {
+        "Text": "CVE-2015-4646",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-4646"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "b-man",
+      "Tag": "requester",
+      "Timestamp": "2017-01-19T10:43:44Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2017-01-29T16:58:33Z"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "ID": "200403-05",
+  "Title": "UUDeview MIME Buffer Overflow",
+  "Synopsis": "\n    A specially-crafted MIME file (.mim, .uue, .uu, .b64, .bhx, .hqx, and .xxe\n    extensions) may cause UUDeview to crash or execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "UUDeview",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-03-26",
+  "Revised": {
+    "Text": "2004-03-26",
+    "Count": "01"
+  },
+  "Bug": [
+    "44859"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-text/uudeview",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.5.20",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.5.20",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    UUDeview is a program which is used to transmit binary files over the\n    Internet in a text-only format. It is commonly used for email and Usenet\n    attachments. It supports multiple encoding formats, including Base64,\n    BinHex and UUEncoding.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    By decoding a MIME archive with excessively long strings for various\n    parameters, it is possible to crash UUDeview, or cause it to execute\n    arbitrary code.\n    </p>\n    <p>\n    This vulnerability was originally reported by iDEFENSE as part of a WinZip\n    advisory [ Reference: 1 ].\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could create a specially-crafted MIME file and send it via\n    email. When recipient decodes the file, UUDeview may execute arbitrary code\n    which is embedded in the MIME file, thus granting the attacker access to\n    the recipient's account.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time. As a result, a software upgrade\n    is required and users should upgrade to uudeview 0.5.20.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All users should upgrade to uudeview 0.5.20:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    # emerge -pv \">=app-text/uudeview-0.5.20\"\n    # emerge \">=app-text/uudeview-0.5.20\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "iDEFENSE advisory",
+        "Link": "http://www.idefense.com/application/poi/display?id=76&type=vulnerabilities"
+      },
+      {
+        "Text": "SecurityFocus advisory",
+        "Link": "http://www.securityfocus.com/bid/9758"
+      }
+    ]
+  },
+  "Metadata": null
+}

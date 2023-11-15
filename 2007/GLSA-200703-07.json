@@ -1,0 +1,103 @@
+{
+  "ID": "200703-07",
+  "Title": "STLport: Possible remote execution of arbitrary code",
+  "Synopsis": "\n    Two buffer overflows have been discovered in STLport possibly leading to\n    the remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "STLport",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-03-06",
+  "Revised": {
+    "Text": "2007-03-06",
+    "Count": "01"
+  },
+  "Bug": [
+    "165837"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/STLport",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.0.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.0.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    STLport is a multi-platform C++ Standard Library implementation.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Two buffer overflows have been discovered, one in \"print floats\" and\n    one in the rope constructor.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    Both of the buffer overflows could result in the remote execution of\n    arbitrary code. Please note that the exploitability of the\n    vulnerabilities depends on how the library is used by other software\n    programs.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All STLport users should upgrade to the latest version.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/STLport-5.0.3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-0803",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0803"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-02-12T07:45:45Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-02-18T12:07:38Z"
+    },
+    {
+      "Text": "\n    aetius\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-02-18T22:45:11Z"
+    }
+  ]
+}

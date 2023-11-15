@@ -1,0 +1,120 @@
+{
+  "ID": "201801-11",
+  "Title": "PySAML2: Security bypass",
+  "Synopsis": "A vulnerability in PySAML2 might allow remote attackers to bypass\n    authentication.\n  ",
+  "Product": {
+    "Text": "PySAML2",
+    "Type": "ebuild"
+  },
+  "Announced": "2018-01-11",
+  "Revised": {
+    "Text": "2018-01-12",
+    "Count": "2"
+  },
+  "Bug": [
+    "644016"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-python/pysaml2",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.0.2-r3",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "4.5.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.0.2-r3",
+            "Range": "lt",
+            "Slot": ""
+          },
+          {
+            "Text": "4.5.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>PySAML2 is a pure python implementation of SAML2</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was found that the PySAML2 relies on an assert statement to check the\n      user’s password. A python optimizations might remove this assertion.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could bypass security restrictions and access any\n      application which is using PySAML2 for authentication.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>Disable python optimizations.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All PySAML2 4.0 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All PySAML2 4.5 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-python/pysaml2-4.0.2-r3\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-python/pysaml2-4.5.0\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2017-1000433\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-1000433"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2018-01-09T14:46:58Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2018-01-12T01:23:24Z"
+    }
+  ]
+}

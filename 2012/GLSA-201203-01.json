@@ -1,0 +1,98 @@
+{
+  "ID": "201203-01",
+  "Title": "spamdyke: Arbitrary code execution",
+  "Synopsis": "A buffer overflow in spamdyke might allow remote attackers to\n    execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "spamdyke",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-03-06",
+  "Revised": {
+    "Text": "2012-03-06",
+    "Count": "1"
+  },
+  "Bug": [
+    "399157"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "mail-filter/spamdyke",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.3.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.3.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>spamdyke is a drop-in connection-time spam filter for qmail.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Boundary errors related to the \"snprintf()\" and \"vsnprintf()\" functions\n      in spamdyke could cause a buffer overflow. \n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A remote attacker could possibly execute arbitrary code or cause a\n      Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All spamdyke users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=mail-filter/spamdyke-4.3.0\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-0802",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0802"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ago",
+      "Tag": "requester",
+      "Timestamp": "2012-01-17T23:00:49Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-03-06T01:01:06Z"
+    }
+  ]
+}

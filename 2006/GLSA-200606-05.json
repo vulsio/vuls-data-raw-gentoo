@@ -1,0 +1,113 @@
+{
+  "ID": "200606-05",
+  "Title": "Pound: HTTP request smuggling",
+  "Synopsis": "\n    Pound is vulnerable to HTTP request smuggling, which could be exploited to\n    bypass security restrictions or poison web caches.\n  ",
+  "Product": {
+    "Text": "pound",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-06-07",
+  "Revised": {
+    "Text": "2006-11-24",
+    "Count": "03"
+  },
+  "Bug": [
+    "118541"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-servers/pound",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.5",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.10",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.9.4",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Pound is a reverse proxy, load balancer and HTTPS front-end. It allows\n    to distribute the load on several web servers and offers a SSL wrapper\n    for web servers that do not support SSL directly.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Pound fails to handle HTTP requests with conflicting \"Content-Length\"\n    and \"Transfer-Encoding\" headers correctly.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    An attacker could exploit this vulnerability by sending HTTP requests\n    with specially crafted \"Content-Length\" and \"Transfer-Encoding\" headers\n    to bypass certain security restrictions or to poison the web proxy\n    cache.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Pound users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose www-servers/pound"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-3751",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3751"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-05-25T15:47:49Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-05-25T18:03:55Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-05-29T16:09:23Z"
+    }
+  ]
+}

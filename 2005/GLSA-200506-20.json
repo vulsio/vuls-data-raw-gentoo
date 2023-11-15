@@ -1,0 +1,150 @@
+{
+  "ID": "200506-20",
+  "Title": "Cacti: Several vulnerabilities",
+  "Synopsis": "\n    Cacti is vulnerable to several SQL injection, authentication bypass and\n    file inclusion vulnerabilities.\n  ",
+  "Product": {
+    "Text": "cacti",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-06-22",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "03"
+  },
+  "Bug": [
+    "96243",
+    "97475"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-analyzer/cacti",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.8.6f",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.8.6f",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Cacti is a complete web-based frontend to rrdtool.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Cacti fails to properly sanitize input which can lead to SQL injection,\n    authentication bypass as well as PHP file inclusion.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    An attacker could potentially exploit the file inclusion to execute\n    arbitrary code with the permissions of the web server. An attacker\n    could exploit these vulnerabilities to bypass authentication or inject\n    SQL queries to gain information from the database. Only systems with\n    register_globals set to \"On\" are affected by the file inclusion and\n    authentication bypass vulnerabilities. Gentoo Linux ships with\n    register_globals set to \"Off\" by default.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Cacti users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    Note: Users with the vhosts USE flag set should manually use\n    webapp-config to finalize the update.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/cacti-0.8.6f\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Cacti Release Notes - 0.8.6e",
+        "Link": "https://www.cacti.net/release_notes_0_8_6e.php"
+      },
+      {
+        "Text": "iDEFENSE SQL injection advisory",
+        "Link": "http://www.idefense.com/application/poi/display?id=267&type=vulnerabilities&flashstatus=false"
+      },
+      {
+        "Text": "iDEFENSE config_settings advisory",
+        "Link": "http://www.idefense.com/application/poi/display?id=266&type=vulnerabilities&flashstatus=false"
+      },
+      {
+        "Text": "iDEFENSE remote file inclusion advisory",
+        "Link": "http://www.idefense.com/application/poi/display?id=265&type=vulnerabilities&flashstatus=false"
+      },
+      {
+        "Text": "Cacti  Release Notes - 0.8.6f",
+        "Link": "https://www.cacti.net/release_notes_0_8_6f.php"
+      },
+      {
+        "Text": "Hardened - PHP Project Cacti Multiple SQL Injection Vulnerabilities",
+        "Link": "https://www.hardened-php.net/advisory-032005.php"
+      },
+      {
+        "Text": "Hardened - PHP Project Cacti Remote Command Execution Vulnerability",
+        "Link": "https://www.hardened-php.net/advisory-042005.php"
+      },
+      {
+        "Text": "Hardened - PHP Project Cacti Authentification/Addslashes Bypass Vulnerability",
+        "Link": "https://www.hardened-php.net/advisory-052005.php"
+      },
+      {
+        "Text": "CVE-2005-1524",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1524"
+      },
+      {
+        "Text": "CVE-2005-1525",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1525"
+      },
+      {
+        "Text": "CVE-2005-1526",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1526"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-06-21T20:41:03Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-06-22T08:16:34Z"
+    }
+  ]
+}

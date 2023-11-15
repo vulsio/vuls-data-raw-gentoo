@@ -1,0 +1,110 @@
+{
+  "ID": "201401-26",
+  "Title": "Zabbix: Shell command injection",
+  "Synopsis": "A vulnerability in Zabbix could allow remote attackers to execute\n    arbitrary shell code.\n  ",
+  "Product": {
+    "Text": "zabbix",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-01-23",
+  "Revised": {
+    "Text": "2014-06-02",
+    "Count": "2"
+  },
+  "Bug": [
+    "493250"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-analyzer/zabbix",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.9-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.9-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Zabbix is software for monitoring applications, networks, and servers.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>If a flexible user parameter is configured in Zabbix agent, including a\n      newline in the parameters will execute newline section as a separate\n      command even if UnsafeUserParameters are disabled.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A remote attacker could possibly execute arbitrary shell code with the\n      privileges of the process.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Zabbix 2.2 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All Zabbix 2.0 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-analyzer/zabbix-2.2.0-r4\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-analyzer/zabbix-2.0.9-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2013-6824",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-6824"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "Zlogene",
+      "Tag": "requester",
+      "Timestamp": "2013-12-17T19:46:48Z"
+    },
+    {
+      "Text": "\n    pinkbyte\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2014-06-02T13:59:58Z"
+    }
+  ]
+}

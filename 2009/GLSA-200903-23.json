@@ -1,0 +1,164 @@
+{
+  "ID": "200903-23",
+  "Title": "Adobe Flash Player: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities have been identified, the worst of which allow\n    arbitrary code execution on a user's system via a malicious Flash file.\n  ",
+  "Product": {
+    "Text": "adobe-flash",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-03-10",
+  "Revised": {
+    "Text": "2009-05-28",
+    "Count": "04"
+  },
+  "Bug": [
+    "239543",
+    "251496",
+    "260264"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-plugins/adobe-flash",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "10.0.22.87",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "10.0.22.87",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Adobe Flash Player is a renderer for the popular SWF file format,\n    which is commonly used to provide interactive websites, digital\n    experiences and mobile content.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Multiple vulnerabilities have been discovered in Adobe Flash Player:\n    </p>\n    <ul>\n    <li>The access scope of SystemsetClipboard() allows ActionScript\n    programs to execute the method without user interaction\n    (CVE-2008-3873).</li>\n    <li>The access scope of FileReference.browse() and\n    FileReference.download() allows ActionScript programs to execute the\n    methods without user interaction (CVE-2008-4401).</li>\n    <li>The Settings Manager controls can be disguised as normal graphical\n    elements. This so-called \"clickjacking\" vulnerability was disclosed by\n    Robert Hansen of SecTheory, Jeremiah Grossman of WhiteHat Security,\n    Eduardo Vela, Matthew Mastracci of DotSpots, and Liu Die Yu of\n    TopsecTianRongXin (CVE-2008-4503).</li>\n    <li>Adan Barth (UC Berkely) and Collin Jackson (Stanford University)\n    discovered a flaw occurring when interpreting HTTP response headers\n    (CVE-2008-4818).</li>\n    <li>Nathan McFeters and Rob Carter of Ernst and Young's Advanced\n    Security Center are credited for finding an unspecified vulnerability\n    facilitating DNS rebinding attacks (CVE-2008-4819).</li>\n    <li>When used in a Mozilla browser, Adobe Flash Player does not\n    properly interpret jar: URLs, according to a report by Gregory\n    Fleischer of pseudo-flaw.net (CVE-2008-4821).</li>\n    <li>Alex \"kuza55\" K. reported that Adobe Flash Player does not properly\n    interpret policy files (CVE-2008-4822).</li>\n    <li>The vendor credits Stefano Di Paola of Minded Security for\n    reporting that an ActionScript attribute is not interpreted properly\n    (CVE-2008-4823).</li>\n    <li>Riley Hassell and Josh Zelonis of iSEC Partners reported multiple\n    input validation errors (CVE-2008-4824).</li>\n    <li>The aforementioned researchers also reported that ActionScript 2\n    does not verify a member element's size when performing several known\n    and other unspecified actions, that DefineConstantPool accepts an\n    untrusted input value for a \"constant count\" and that character\n    elements are not validated when retrieved from a data structure,\n    possibly resulting in a null-pointer dereference (CVE-2008-5361,\n    CVE-2008-5362, CVE-2008-5363).</li>\n    <li>The vendor reported an unspecified arbitrary code execution\n    vulnerability (CVE-2008-5499).</li>\n    <li>Liu Die Yu of TopsecTianRongXin reported an unspecified flaw in the\n    Settings Manager related to \"clickjacking\" (CVE-2009-0114).</li>\n    <li>The vendor credits Roee Hay from IBM Rational Application Security\n    for reporting an input validation error when processing SWF files\n    (CVE-2009-0519).</li>\n    <li>Javier Vicente Vallejo reported via the iDefense VCP that Adobe\n    Flash does not remove object references properly, leading to a freed\n    memory dereference (CVE-2009-0520).</li>\n    <li>Josh Bressers of Red Hat and Tavis Ormandy of the Google Security\n    Team reported an untrusted search path vulnerability\n    (CVE-2009-0521).</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted SWF\n    file, possibly resulting in the execution of arbitrary code with the\n    privileges of the user or a Denial of Service (crash). Furthermore a\n    remote attacker could gain access to sensitive information, disclose\n    memory contents by enticing a user to open a specially crafted PDF file\n    inside a Flash application, modify the victim's clipboard or render it\n    temporarily unusable, persuade a user into uploading or downloading\n    files, bypass security restrictions with the assistance of the user to\n    gain access to camera and microphone, conduct Cross-Site Scripting and\n    HTTP Header Splitting attacks, bypass the \"non-root domain policy\" of\n    Flash, and gain escalated privileges.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Adobe Flash Player users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-plugins/adobe-flash-10.0.22.87\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-3873",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3873"
+      },
+      {
+        "Text": "CVE-2008-4401",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4401"
+      },
+      {
+        "Text": "CVE-2008-4503",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4503"
+      },
+      {
+        "Text": "CVE-2008-4818",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4818"
+      },
+      {
+        "Text": "CVE-2008-4819",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4819"
+      },
+      {
+        "Text": "CVE-2008-4821",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4821"
+      },
+      {
+        "Text": "CVE-2008-4822",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4822"
+      },
+      {
+        "Text": "CVE-2008-4823",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4823"
+      },
+      {
+        "Text": "CVE-2008-4824",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4824"
+      },
+      {
+        "Text": "CVE-2008-5361",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5361"
+      },
+      {
+        "Text": "CVE-2008-5362",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5362"
+      },
+      {
+        "Text": "CVE-2008-5363",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5363"
+      },
+      {
+        "Text": "CVE-2008-5499",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5499"
+      },
+      {
+        "Text": "CVE-2009-0114",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0114"
+      },
+      {
+        "Text": "CVE-2009-0519",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0519"
+      },
+      {
+        "Text": "CVE-2009-0520",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0520"
+      },
+      {
+        "Text": "CVE-2009-0521",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0521"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-03-09T11:37:22Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-03-09T12:37:48Z"
+    }
+  ]
+}

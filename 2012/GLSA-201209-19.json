@@ -1,0 +1,98 @@
+{
+  "ID": "201209-19",
+  "Title": "NUT: Arbitrary code execution",
+  "Synopsis": "A buffer overflow in NUT might allow remote attackers to execute\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "nut",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-09-27",
+  "Revised": {
+    "Text": "2012-09-27",
+    "Count": "1"
+  },
+  "Bug": [
+    "419377"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-power/nut",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.6.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.6.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>The Network UPS Tools (NUT) provide support for power devices.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>An error in the addchar() function in parseconf.c may cause a buffer\n      overflow.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A remote attacker could send a specially crafted string to upsd,\n      possibly resulting in execution of arbitrary code with the privileges of\n      the process or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All NUT users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-power/nut-2.6.3\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-2944",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-2944"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2012-09-20T13:16:15Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-09-27T19:53:02Z"
+    }
+  ]
+}

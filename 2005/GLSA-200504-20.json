@@ -1,0 +1,98 @@
+{
+  "ID": "200504-20",
+  "Title": "openMosixview: Insecure temporary file creation",
+  "Synopsis": "\n    openMosixview and the openMosixcollector daemon are vulnerable to symlink\n    attacks, potentially allowing a local user to overwrite arbitrary files.\n  ",
+  "Product": {
+    "Text": "openMosixview",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-04-21",
+  "Revised": {
+    "Text": "2005-04-21",
+    "Count": "01"
+  },
+  "Bug": [
+    "86686"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-cluster/openmosixview",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.5-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.5-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The openMosixview package contains several tools used to manage\n    openMosix clusters, including openMosixview (the main monitoring and\n    administration application) and openMosixcollector (a daemon collecting\n    cluster and node information).\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Gangstuck and Psirac from Rexotec discovered that openMosixview\n    insecurely creates several temporary files with predictable filenames.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary\n    files directory, pointing to a valid file somewhere on the filesystem.\n    When openMosixView or the openMosixcollector daemon runs, this would\n    result in the file being overwritten with the rights of the user\n    running the utility, which could be the root user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All openMosixview users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-cluster/openmosixview-1.5-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-0894",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0894"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-04-20T11:45:51Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-04-20T11:46:46Z"
+    }
+  ]
+}

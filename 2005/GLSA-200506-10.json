@@ -1,0 +1,103 @@
+{
+  "ID": "200506-10",
+  "Title": "LutelWall: Insecure temporary file creation",
+  "Synopsis": "\n    LutelWall is vulnerable to symlink attacks, potentially allowing a local\n    user to overwrite arbitrary files.\n  ",
+  "Product": {
+    "Text": "LutelWall",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-06-11",
+  "Revised": {
+    "Text": "2005-06-11",
+    "Count": "01"
+  },
+  "Bug": [
+    "95378"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-firewall/lutelwall",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.98",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.98",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    LutelWall is a high-level Linux firewall configuration tool.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Eric Romang has discovered that the new_version_check() function\n    in LutelWall insecurely creates a temporary file when updating to a new\n    version.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary file\n    directory, pointing to a valid file somewhere on the filesystem. When\n    the update script is executed (usually by the root user), this would\n    result in the file being overwritten with the rights of this user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All LutelWall users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-firewall/lutelwall-0.98\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-1879",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1879"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-06-10T12:14:36Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-06-10T13:37:17Z"
+    },
+    {
+      "Text": "\n    formula7\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-06-10T15:27:13Z"
+    }
+  ]
+}

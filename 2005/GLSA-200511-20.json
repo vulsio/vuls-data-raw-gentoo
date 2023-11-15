@@ -1,0 +1,107 @@
+{
+  "ID": "200511-20",
+  "Title": "Horde Application Framework: XSS vulnerability",
+  "Synopsis": "\n    The Horde Application Framework is vulnerable to a cross-site scripting\n    vulnerability which could lead to the compromise of the victim's browser\n    content.\n  ",
+  "Product": {
+    "Text": "horde",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-11-22",
+  "Revised": {
+    "Text": "2005-11-22",
+    "Count": "01"
+  },
+  "Bug": [
+    "112491"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/horde",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.2.9",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.2.9",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Horde Application Framework is a general-purpose web\n    application framework written in PHP, providing classes for handling\n    preferences, compression, browser detection, connection tracking, MIME,\n    and more.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The Horde Team reported a potential XSS vulnerability. Horde fails\n    to properly escape error messages which may lead to displaying\n    unsanitized error messages via Notification_Listener::getMessage()\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    By enticing a user to read a specially-crafted e-mail or using a\n    manipulated URL, an attacker can execute arbitrary scripts running in\n    the context of the victim's browser. This could lead to a compromise of\n    the user's browser content.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Horde Application Framework users should upgrade to the latest\n    version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/horde-2.2.9\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-3570",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3570"
+      },
+      {
+        "Text": "Horde Announcement",
+        "Link": "https://lists.horde.org/archives/announce/2005/000231.html"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-11-20T18:32:42Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-11-20T19:23:12Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-11-21T09:22:48Z"
+    }
+  ]
+}

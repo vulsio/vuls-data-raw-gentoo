@@ -1,0 +1,98 @@
+{
+  "ID": "201405-02",
+  "Title": "libSRTP: Denial of service",
+  "Synopsis": "A vulnerability in libSRTP can result in a Denial of Service\n    condition.\n  ",
+  "Product": {
+    "Text": "libsrtp",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-05-03",
+  "Revised": {
+    "Text": "2014-05-03",
+    "Count": "1"
+  },
+  "Bug": [
+    "472302"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-libs/libsrtp",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.4_p20121108-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.4_p20121108-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>libSRTP is an Open-source implementation of the Secure Real-time\n      Transport Protocol.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A flaw was found in how the crypto_policy_set_from_profile_for_rtp()\n      function applies cryptographic profiles to an srtp_policy in libSRTP.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could exploit this vulnerability to crash an\n      application linked against libSRTP, resulting in Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All libSRTP users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=net-libs/libsrtp-1.4.4_p20121108-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2013-2139",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2139"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "Zlogene",
+      "Tag": "requester",
+      "Timestamp": "2014-02-04T14:44:21Z"
+    },
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2014-05-03T13:23:32Z"
+    }
+  ]
+}

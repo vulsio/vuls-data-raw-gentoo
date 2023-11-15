@@ -1,0 +1,125 @@
+{
+  "ID": "201412-46",
+  "Title": "LittleCMS: Denial of service",
+  "Synopsis": "Multiple buffer overflow flaws and a parser error in LittleCMS\n    could cause Denial of Service.\n  ",
+  "Product": {
+    "Text": "lcms",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-12-26",
+  "Revised": {
+    "Text": "2014-12-26",
+    "Count": "1"
+  },
+  "Bug": [
+    "479874",
+    "507788"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/lcms",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.6-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.6-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>LittleCMS, or short lcms, is a color management system for working with\n      ICC profiles. It is used by many applications including GIMP and Firefox.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple stack-based buffer overflows and a profile parser error have\n      been found in LittleCMS.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user or automated system to open a\n      specially crafted file containing a malicious ICC profile, possibly\n      resulting in a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All LittleCMS users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "Packages which depend on this library may need to be recompiled. Tools\n      such as revdep-rebuild may assist in identifying these packages.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "NOTE: Gentoo has discontinued support for the LittleCMS 1.9 branch. ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/lcms-2.6-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2013-4276",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4276"
+      },
+      {
+        "Text": "CVE-2014-0459",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0459"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2014-11-10T21:58:45Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2014-12-26T19:04:58Z"
+    }
+  ]
+}

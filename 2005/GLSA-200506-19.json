@@ -1,0 +1,118 @@
+{
+  "ID": "200506-19",
+  "Title": "SquirrelMail: Several XSS vulnerabilities",
+  "Synopsis": "\n    Squirrelmail is vulnerable to several cross-site scripting vulnerabilities\n    which could lead to a compromise of webmail accounts.\n  ",
+  "Product": {
+    "Text": "SquirrelMail",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-06-21",
+  "Revised": {
+    "Text": "2005-06-21",
+    "Count": "01"
+  },
+  "Bug": [
+    "95937"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "mail-client/squirrelmail",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.4",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.4.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    SquirrelMail is a webmail package written in PHP. It supports IMAP\n    and SMTP protocols.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    SquirrelMail is vulnerable to several cross-site scripting issues,\n    most reported by Martijn Brinkers.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    By enticing a user to read a specially-crafted e-mail or using a\n    manipulated URL, an attacker can execute arbitrary scripts running in\n    the context of the victim's browser. This could lead to a compromise of\n    the user's webmail account, cookie theft, etc.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All SquirrelMail users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    Note: Users with the vhosts USE flag set should manually use\n    webapp-config to finalize the update.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-client/squirrelmail-1.4.4\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "SquirrelMail Advisory",
+        "Link": "https://www.squirrelmail.org/security/issue/2005-06-15"
+      },
+      {
+        "Text": "CAN-2005-1769",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1769"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-06-19T19:26:13Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-06-20T17:48:27Z"
+    }
+  ]
+}

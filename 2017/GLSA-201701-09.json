@@ -1,0 +1,98 @@
+{
+  "ID": "201701-09",
+  "Title": "Xdg-Utils: Command injection",
+  "Synopsis": "A command injection vulnerability in Xdg-Utils may allow for the\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "xdg-utils",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-01-01",
+  "Revised": {
+    "Text": "2017-01-01",
+    "Count": "1"
+  },
+  "Bug": [
+    "472888"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "x11-misc/xdg-utils",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.1.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Xdg-Utils is a set of tools allowing all applications to easily\n      integrate with the Free Desktop configuration.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>An eval injection vulnerability was discovered in Xdg-Utils.</p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A context-dependent attacker could execute arbitrary code via the URL\n      argument to xdg-open.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Xdg-Utils users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=x11-misc/xdg-utils-1.1.1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-9622",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-9622"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "b-man",
+      "Tag": "requester",
+      "Timestamp": "2017-01-01T12:56:54Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2017-01-01T16:34:46Z"
+    }
+  ]
+}

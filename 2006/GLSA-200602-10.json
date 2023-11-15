@@ -1,0 +1,102 @@
+{
+  "ID": "200602-10",
+  "Title": "GnuPG: Incorrect signature verification",
+  "Synopsis": "\n    Applications relying on GnuPG to authenticate digital signatures may\n    incorrectly believe a signature has been verified.\n  ",
+  "Product": {
+    "Text": "gnupg",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-02-18",
+  "Revised": {
+    "Text": "2006-02-18",
+    "Count": "01"
+  },
+  "Bug": [
+    "122721"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-crypt/gnupg",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.2.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.2.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    GnuPG (The GNU Privacy Guard) is a free replacement for PGP\n    (Pretty Good Privacy). As GnuPG does not rely on any patented\n    algorithms, it can be used without any restrictions. gpgv is the\n    OpenPGP signature verification tool provided by the GnuPG system.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Tavis Ormandy of the Gentoo Linux Security Auditing Team\n    discovered that automated systems relying on the return code of GnuPG\n    or gpgv to authenticate digital signatures may be misled by malformed\n    signatures. GnuPG documentation states that a return code of zero (0)\n    indicates success, however gpg and gpgv may also return zero if no\n    signature data was found in a detached signature file.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker may be able to bypass authentication in automated\n    systems relying on the return code of gpg or gpgv to authenticate\n    digital signatures.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All GnuPG users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-crypt/gnupg-1.4.2.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "GnuPG Security Announcement",
+        "Link": "http://lists.gnupg.org/pipermail/gnupg-announce/2006q1/000211.html"
+      },
+      {
+        "Text": "CVE-2006-0455",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0455"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    taviso\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-02-15T16:05:31Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-02-18T12:22:36Z"
+    }
+  ]
+}

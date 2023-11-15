@@ -1,0 +1,103 @@
+{
+  "ID": "201412-15",
+  "Title": "MCollective: Privilege escalation",
+  "Synopsis": "Two vulnerabilities have been found in MCollective, the worst of\n    which could lead to privilege escalation.\n  ",
+  "Product": {
+    "Text": "mcollective",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-12-13",
+  "Revised": {
+    "Text": "2014-12-13",
+    "Count": "1"
+  },
+  "Bug": [
+    "513292",
+    "517286"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-admin/mcollective",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.5.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.5.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>MCollective is a framework to build server orchestration or parallel job\n      execution systems.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Two vulnerabilities have been found in MCollective:</p>\n    \n    <ul>\n      <li>An untrusted search path vulnerability exists in MCollective\n        (CVE-2014-3248)\n      </li>\n      <li>MCollective does not properly validate server certificates\n        (CVE-2014-3251)\n      </li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A local attacker can execute arbitrary a Trojan horse shared library,\n      potentially resulting in arbitrary code execution and privilege\n      escalation. Furthermore, a local attacker may be able to establish\n      unauthorized MCollective connections.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All MCollective users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-admin/mcollective-2.5.3\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-3248",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-3248"
+      },
+      {
+        "Text": "CVE-2014-3251",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-3251"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "K_F",
+      "Tag": "requester",
+      "Timestamp": "2014-07-22T21:26:18Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2014-12-13T17:06:37Z"
+    }
+  ]
+}

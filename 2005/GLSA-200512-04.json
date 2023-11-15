@@ -1,0 +1,153 @@
+{
+  "ID": "200512-04",
+  "Title": "Openswan, IPsec-Tools: Vulnerabilities in ISAKMP Protocol implementation",
+  "Synopsis": "\n    Openswan and IPsec-Tools suffer from an implementation flaw which may allow\n    a Denial of Service attack.\n  ",
+  "Product": {
+    "Text": "openswan ipsec-tools",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-12-12",
+  "Revised": {
+    "Text": "2005-12-14",
+    "Count": "02"
+  },
+  "Bug": [
+    "112568",
+    "113201"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/openswan",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.4.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.4.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "net-firewall/ipsec-tools",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.6.3",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.6.2-r1",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.4-r2",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.6.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Openswan is an implementation of IPsec for Linux. IPsec-Tools is a port\n    of KAME's implementation of the IPsec utilities, including racoon, an\n    Internet Key Exchange daemon. Internet Key Exchange version 1 (IKEv1),\n    a derivate of ISAKMP, is an important part of IPsec. IPsec is widely\n    used to secure exchange of packets at the IP layer and mostly used to\n    implement Virtual Private Networks (VPNs).\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The Oulu University Secure Programming Group (OUSPG) discovered that\n    various ISAKMP implementations, including Openswan and racoon (included\n    in the IPsec-Tools package), behave in an anomalous way when they\n    receive and handle ISAKMP Phase 1 packets with invalid or abnormal\n    contents.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    A remote attacker could craft specific packets that would result in a\n    Denial of Service attack, if Openswan and racoon are used in specific,\n    weak configurations.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Openswan users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All IPsec-Tools users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/openswan-2.4.4\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose net-firewall/ipsec-tools"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-3671",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3671"
+      },
+      {
+        "Text": "CVE-2005-3732",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3732"
+      },
+      {
+        "Text": "Original Advisory",
+        "Link": "http://www.ee.oulu.fi/research/ouspg/protos/testing/c09/isakmp/"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-12-02T12:39:46Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-12-05T03:24:10Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-12-05T03:54:41Z"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "ID": "201202-09",
+  "Title": "libxml2: User-assisted execution of arbitrary code",
+  "Synopsis": "A boundary error in libxml2 could result in execution of arbitrary\n    code or Denial of Service.\n  ",
+  "Product": {
+    "Text": "libxml2",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-02-29",
+  "Revised": {
+    "Text": "2012-02-29",
+    "Count": "2"
+  },
+  "Bug": [
+    "398361"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/libxml2",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.7.8-r4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.7.8-r4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>libxml2 is the XML C parser and toolkit developed for the Gnome project.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>The \"xmlStringLenDecodeEntities()\" function in parser.c contains a\n      boundary error which could possibly cause a heap-based buffer overflow.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted XML\n      file in an application linked against libxml2, possibly resulting in the\n      remote execution of arbitrary code with the permissions of the user\n      running the application, or Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All libxml2 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "Packages which depend on this library may need to be recompiled. Tools\n      such as revdep-rebuild may assist in identifying some of these packages.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/libxml2-2.7.8-r4\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2011-3919",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3919"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ago",
+      "Tag": "requester",
+      "Timestamp": "2012-01-16T09:34:21Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-02-29T20:10:19Z"
+    }
+  ]
+}

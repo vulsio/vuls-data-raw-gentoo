@@ -1,0 +1,107 @@
+{
+  "ID": "200508-09",
+  "Title": "bluez-utils: Bluetooth device name validation vulnerability",
+  "Synopsis": "\n    Improper validation of Bluetooth device names can lead to arbitrary command\n    execution.\n  ",
+  "Product": {
+    "Text": "bluez-utils",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-08-17",
+  "Revised": {
+    "Text": "2005-08-17",
+    "Count": "01"
+  },
+  "Bug": [
+    "101557"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-wireless/bluez-utils",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.19",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.19",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    bluez-utils are the utilities for use with the BlueZ\n    implementation of the Bluetooth wireless standards for Linux.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The name of a Bluetooth device is improperly validated by the hcid\n    utility when a remote device attempts to pair itself with a computer.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    An attacker could create a malicious device name on a Bluetooth\n    device resulting in arbitrary commands being executed as root upon\n    attempting to pair the device with the computer.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There are no known workarounds at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All bluez-utils users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-wireless/bluez-utils-2.19\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-2547",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2547"
+      },
+      {
+        "Text": "bluez-utils ChangeLog",
+        "Link": "https://cvs.sourceforge.net/viewcvs.py/bluez/utils/ChangeLog?rev=1.28&view=markup"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-08-09T20:35:32Z"
+    },
+    {
+      "Text": "\n    r2d2\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-08-10T02:45:23Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-08-17T13:18:39Z"
+    }
+  ]
+}

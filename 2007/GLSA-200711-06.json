@@ -1,0 +1,128 @@
+{
+  "ID": "200711-06",
+  "Title": "Apache: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities have been discovered in Apache, possibly resulting\n    in a Denial of Service or the disclosure of sensitive information.\n  ",
+  "Product": {
+    "Text": "apache",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-11-07",
+  "Revised": {
+    "Text": "2007-11-07",
+    "Count": "01"
+  },
+  "Bug": [
+    "186219"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-servers/apache",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.59-r5",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "2.2.6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.2.6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Apache HTTP server is one of the most popular web servers on the\n    Internet.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Multiple cross-site scripting vulnerabilities have been discovered in\n    mod_status and mod_autoindex (CVE-2006-5752, CVE-2007-4465). An error\n    has been discovered in the recall_headers() function in mod_mem_cache\n    (CVE-2007-1862). The mod_cache module does not properly sanitize\n    requests before processing them (CVE-2007-1863). The Prefork module\n    does not properly check PID values before sending signals\n    (CVE-2007-3304). The mod_proxy module does not correctly check headers\n    before processing them (CVE-2007-3847).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could exploit one of these vulnerabilities to inject\n    arbitrary script or HTML content, obtain sensitive information or cause\n    a Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Apache users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-servers/apache-2.0.59-r5\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-5752",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5752"
+      },
+      {
+        "Text": "CVE-2007-1862",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1862"
+      },
+      {
+        "Text": "CVE-2007-1863",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1863"
+      },
+      {
+        "Text": "CVE-2007-3304",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3304"
+      },
+      {
+        "Text": "CVE-2007-3847",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3847"
+      },
+      {
+        "Text": "CVE-2007-4465",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4465"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-09-25T14:34:09Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-09-25T14:34:48Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-10-15T20:07:35Z"
+    }
+  ]
+}

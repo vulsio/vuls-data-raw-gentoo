@@ -1,0 +1,107 @@
+{
+  "ID": "200710-13",
+  "Title": "Ampache: Multiple vulnerabilities",
+  "Synopsis": "\n    An SQL injection vulnerability and a possible identity theft have been\n    discovered in Ampache.\n  ",
+  "Product": {
+    "Text": "ampache",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-10-13",
+  "Revised": {
+    "Text": "2007-10-13",
+    "Count": "01"
+  },
+  "Bug": [
+    "189607"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/ampache",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.3.3.5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.3.3.5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Ampache is a PHP-based tool for managing, updating and playing audio\n    files via a web interface.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    LT discovered that the \"match\" parameter in albums.php is not properly\n    sanitized before being processed. The Ampache development team also\n    reported an error when handling user sessions.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    A remote attacker could provide malicious input to the application,\n    possibly resulting in the execution of arbitrary SQL code. He could\n    also entice a user to open a specially crafted link to steal the user's\n    session.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Ampache users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/ampache-3.3.3.5\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-4437",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4437"
+      },
+      {
+        "Text": "CVE-2007-4438",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4438"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-09-17T21:08:28Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-09-17T21:08:38Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-10-02T19:57:29Z"
+    }
+  ]
+}

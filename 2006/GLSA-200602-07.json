@@ -1,0 +1,149 @@
+{
+  "ID": "200602-07",
+  "Title": "Sun JDK/JRE: Applet privilege escalation",
+  "Synopsis": "\n    Sun's Java Development Kit (JDK) and Java Runtime Environment (JRE) do not\n    adequately constrain applets from privilege escalation and arbitrary code\n    execution.\n  ",
+  "Product": {
+    "Text": "Sun JDK, applet",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-02-15",
+  "Revised": {
+    "Text": "2006-02-15",
+    "Count": "01"
+  },
+  "Bug": [
+    "122156"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-java/sun-jdk",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.2.10",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.2.10",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "dev-java/sun-jre-bin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.2.10",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.2.10",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Sun's JDK and JRE provide interpreters for Java Applets in a\n    sandboxed environment. These implementations provide the Java Web Start\n    technology that can be used for easy client-side deployment of Java\n    applications.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Applets executed using JRE or JDK can use \"reflection\" APIs\n    functions to elevate its privileges beyond the sandbox restrictions.\n    Adam Gowdiak discovered five vulnerabilities that use this method for\n    privilege escalation. Two more vulnerabilities were discovered by the\n    vendor. Peter Csepely discovered that Web Start Java applications also\n    can an escalate their privileges.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A malicious Java applet can bypass Java sandbox restrictions and\n    hence access local files, connect to arbitrary network locations and\n    execute arbitrary code on the user's machine. Java Web Start\n    applications are affected likewise.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Select another Java implementation using java-config.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Sun JDK users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Sun JRE users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-java/sun-jdk-1.4.2.10\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-java/sun-jre-bin-1.4.2.10\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Sun Security Alert ID 102170",
+        "Link": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-102170-1"
+      },
+      {
+        "Text": "Sun Security Alert ID 102171",
+        "Link": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-102171-1"
+      },
+      {
+        "Text": "CVE-2006-0614",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0614"
+      },
+      {
+        "Text": "CVE-2006-0615",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0615"
+      },
+      {
+        "Text": "CVE-2006-0616",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0616"
+      },
+      {
+        "Text": "CVE-2006-0617",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0617"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    dragonheart\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-02-09T20:48:45Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-02-12T13:04:50Z"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "ID": "201203-07",
+  "Title": "foomatic-filters: User-assisted execution of arbitrary code",
+  "Synopsis": "A vulnerability in foomatic-filters could result in the execution\n    of arbitrary code.\n  ",
+  "Product": {
+    "Text": "foomatic-filters",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-03-06",
+  "Revised": {
+    "Text": "2012-03-06",
+    "Count": "1"
+  },
+  "Bug": [
+    "379559"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-print/foomatic-filters",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.0.9",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.0.9",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>The foomatic-filters package contains wrapper scripts which are designed\n      to be used with Foomatic.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>The foomatic-rip filter improperly handles command-line arguments,\n      including those issued by FoomaticRIPCommandLine fields in PPD files.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted PPD\n      file, possibly resulting in execution of arbitrary code with the\n      privileges of the system user \"lp\".\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All foomatic-filters users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=net-print/foomatic-filters-4.0.9\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2011-2697",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2697"
+      },
+      {
+        "Text": "CVE-2011-2964",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2964"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2012-01-29T22:40:52Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-03-06T01:40:15Z"
+    }
+  ]
+}

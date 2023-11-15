@@ -1,0 +1,98 @@
+{
+  "ID": "201801-18",
+  "Title": "Newsbeuter: User-assisted execution of arbitrary code",
+  "Synopsis": "Insufficient input validation in Newsbeuter may allow remote\n    attackers to execute arbitrary shell commands.\n  ",
+  "Product": {
+    "Text": "newsbeuter",
+    "Type": "ebuild"
+  },
+  "Announced": "2018-01-17",
+  "Revised": {
+    "Text": "2018-01-17",
+    "Count": "1"
+  },
+  "Bug": [
+    "628796"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-news/newsbeuter",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.9-r3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.9-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Newsbeuter is a RSS/Atom feed reader for the text console.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Newsbeuter does not properly escape shell meta-characters in the title\n      and description of RSS feeds when bookmarking.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker, by enticing a user to open a feed with specially\n      crafted URLs, could possibly execute arbitrary shell commands with the\n      privileges of the user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Newsbeuter users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-news/newsbeuter-2.9-r3\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2017-12904",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2017-12904"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "chrisadr",
+      "Tag": "requester",
+      "Timestamp": "2017-09-12T02:38:59Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2018-01-17T13:45:37Z"
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "ID": "200805-17",
+  "Title": "Perl: Execution of arbitrary code",
+  "Synopsis": "\n    A double free vulnerability was discovered in Perl, possibly resulting in\n    the execution of arbitrary code and a Denial of Service.\n  ",
+  "Product": {
+    "Text": "perl libperl",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-05-20",
+  "Revised": {
+    "Text": "2008-05-20",
+    "Count": "01"
+  },
+  "Bug": [
+    "219203"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-lang/perl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.8.8-r5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.8.8-r5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "sys-devel/libperl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.8.8-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.8.8-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Perl is a stable, cross platform programming language.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Tavis Ormandy and Will Drewry of the Google Security Team have reported\n    a double free vulnerability when processing a crafted regular\n    expression containing UTF-8 characters.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could possibly exploit this vulnerability to execute\n    arbitrary code or cause a Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Perl users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All libperl users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/perl-5.8.8-r5\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-devel/libperl-5.8.8-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-1927",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1927"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-05-17T10:42:17Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-05-17T10:42:31Z"
+    },
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-05-17T13:52:28Z"
+    }
+  ]
+}

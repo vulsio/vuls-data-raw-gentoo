@@ -1,0 +1,103 @@
+{
+  "ID": "200503-18",
+  "Title": "Ringtone Tools: Buffer overflow vulnerability",
+  "Synopsis": "\n    The Ringtone Tools utilities contain a buffer overflow vulnerability,\n    potentially leading to the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "ringtonetools",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-03-15",
+  "Revised": {
+    "Text": "2005-03-15",
+    "Count": "01"
+  },
+  "Bug": [
+    "74700"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-mobilephone/ringtonetools",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.23",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.23",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Ringtone Tools is a program for creating ringtones and logos for\n    mobile phones.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Qiao Zhang has discovered a buffer overflow vulnerability in the\n    'parse_emelody' function in 'parse_emelody.c'.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a Ringtone Tools user to open a\n    specially crafted eMelody file, which would potentially lead to the\n    execution of arbitrary code with the rights of the user running the\n    application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Ringtone Tools users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-mobilephone/ringtonetools-2.23\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-1292",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1292"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-03-15T02:28:50Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-03-15T09:56:20Z"
+    },
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-03-15T14:11:25Z"
+    }
+  ]
+}

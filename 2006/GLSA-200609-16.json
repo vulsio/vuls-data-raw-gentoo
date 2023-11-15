@@ -1,0 +1,107 @@
+{
+  "ID": "200609-16",
+  "Title": "Tikiwiki: Arbitrary command execution",
+  "Synopsis": "\n    Tikiwiki contains a cross-site scripting (XSS) vulnerability as well as a\n    second vulnerability which may allow remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "tikiwiki",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-09-26",
+  "Revised": {
+    "Text": "2006-09-26",
+    "Count": "01"
+  },
+  "Bug": [
+    "145714"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/tikiwiki",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.9.5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.9.5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Tikiwiki is a web-based groupware and content management system,\n    developed with PHP, ADOdb and Smarty.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    A vulnerability in jhot.php allows for an unrestricted file upload to\n    the img/wiki/ directory. Additionally, an XSS exists in the highlight\n    parameter of tiki-searchindex.php.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    An attacker could execute arbitrary code with the rights of the user\n    running the web server by uploading a file and executing it via a\n    filepath parameter. The XSS could be exploited to inject and execute\n    malicious script code or to steal cookie-based authentication\n    credentials, potentially compromising the victim's browser.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Tikiwiki users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --oneshot --verbose --ask \">=www-apps/tikiwiki-1.9.5\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-4299",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4299"
+      },
+      {
+        "Text": "CVE-2006-4602",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4602"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-09-19T09:06:28Z"
+    },
+    {
+      "Text": "\n    hlieberman\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-09-19T13:40:09Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-09-25T18:24:26Z"
+    }
+  ]
+}

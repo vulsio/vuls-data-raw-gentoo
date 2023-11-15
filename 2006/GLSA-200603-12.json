@@ -1,0 +1,107 @@
+{
+  "ID": "200603-12",
+  "Title": "zoo: Buffer overflow",
+  "Synopsis": "\n    A buffer overflow in zoo may be exploited to execute arbitrary when\n    creating archives of specially crafted directories and files.\n  ",
+  "Product": {
+    "Text": "zoo",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-03-16",
+  "Revised": {
+    "Text": "2006-03-16",
+    "Count": "01"
+  },
+  "Bug": [
+    "125622"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-arch/zoo",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.10-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.10-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    zoo is a file archiving utility for maintaining collections of\n    files, written by Rahul Dhesi.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    zoo is vulnerable to a new buffer overflow due to insecure use of\n    the strcpy() function when trying to create an archive from certain\n    directories or filenames.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could exploit this issue by enticing a user to create\n    a zoo archive of specially crafted directories and filenames, possibly\n    leading to the execution of arbitrary code with the rights of the user\n    running zoo.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All zoo users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-arch/zoo-2.10-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "RedHat Bug #183426",
+        "Link": "https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=183426"
+      },
+      {
+        "Text": "CVE-2006-1269",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1269"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-03-11T11:35:08Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-03-12T16:19:21Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-03-12T17:50:06Z"
+    }
+  ]
+}

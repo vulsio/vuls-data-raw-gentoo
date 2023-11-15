@@ -1,0 +1,97 @@
+{
+  "ID": "200404-11",
+  "Title": "Multiple Vulnerabilities in pwlib",
+  "Synopsis": "\n    Multiple vulnerabilities have been found in pwlib that may lead to a remote\n    denial of service or buffer overflow attack. \n  ",
+  "Product": {
+    "Text": "dev-libs/pwlib",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-04-09",
+  "Revised": {
+    "Text": "2004-04-09",
+    "Count": "01"
+  },
+  "Bug": [
+    "45846"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/pwlib",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.5.2-r3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.5.2-r2",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    pwlib is a multi-platform library designed for OpenH323.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Multiple vulnerabilities have been found in the implimentation of protocol\n    H.323 contained in pwlib. Most of the vulnerabilies are in the parsing of\n    ASN.1 elements which would allow an attacker to use a maliciously crafted\n    ASN.1 element to cause unpredictable behavior in pwlib.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    An attacker may cause a denial of service condition or cause a buffer\n    overflow that would allow arbitrary code to be executed with root\n    privileges.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Blocking ports 1719 and 1720 may reduce the likelihood of an attack. All\n    users are advised to upgrade to the latest version of the affected package.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All pwlib users are advised to upgrade to version 1.5.2-r3 or later:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n\n    # emerge -pv \">=dev-libs/pwlib-1.5.2-r3\"\n    # emerge \">=dev-libs/pwlib-1.5.2-r3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-0097",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0097"
+      },
+      {
+        "Text": "NISCC Vulnerability Advisory 006489/H323",
+        "Link": "http://www.uniras.gov.uk/vuls/2004/006489/h323.htm"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    aescriva\n  ",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

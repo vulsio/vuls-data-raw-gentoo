@@ -1,0 +1,103 @@
+{
+  "ID": "200704-03",
+  "Title": "OpenAFS: Privilege escalation",
+  "Synopsis": "\n    OpenAFS is subject to a design flaw that could allow privilege escalation\n    on the client.\n  ",
+  "Product": {
+    "Text": "openafs",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-04-03",
+  "Revised": {
+    "Text": "2007-04-03",
+    "Count": "01"
+  },
+  "Bug": [
+    "171662"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-fs/openafs",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    OpenAFS is a distributed network filesystem.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Benjamin Bennett discovered that the OpenAFS client contains a design\n    flaw where cache managers do not use authenticated server connections\n    when performing actions not requested by a user.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    If setuid is enabled on the client cells, an attacker can supply a fake\n    FetchStatus reply that sets setuid and root ownership of a file being\n    executed. This could provide root access on the client. Remote attacks\n    may be possible if an attacker can entice a user to execute a known\n    file. Note that setuid is enabled by default in versions of OpenAFS\n    prior to 1.4.4.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Disable the setuid functionality on all client cells. This is now the\n    default configuration in OpenAFS.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All OpenAFS users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-fs/openafs-1.4.4\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-1507",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1507"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-03-25T06:35:01Z"
+    },
+    {
+      "Text": "\n    aetius\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-03-28T13:53:51Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-04-03T22:29:30Z"
+    }
+  ]
+}

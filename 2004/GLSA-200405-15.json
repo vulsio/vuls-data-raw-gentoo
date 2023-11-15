@@ -1,0 +1,97 @@
+{
+  "ID": "200405-15",
+  "Title": "cadaver heap-based buffer overflow",
+  "Synopsis": "\n    There is a heap-based buffer overflow vulnerability in the neon library\n    used in cadaver, possibly leading to execution of arbitrary code when\n    connected to a malicious server.\n  ",
+  "Product": {
+    "Text": "cadaver",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-05-20",
+  "Revised": {
+    "Text": "2004-05-20",
+    "Count": "01"
+  },
+  "Bug": [
+    "51461"
+  ],
+  "Access": "remote ",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/cadaver",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.22.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.22.1",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    cadaver is a command-line WebDAV client.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Stefan Esser discovered a vulnerability in the code of the neon library\n    (see GLSA 200405-13). This library is also included in cadaver.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    When connected to a malicious WebDAV server, this vulnerability could allow\n    remote execution of arbitrary code with the rights of the user running\n    cadaver.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time. All users are advised to upgrade\n    to the latest available version of cadaver.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All users of cadaver should upgrade to the latest stable version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n\n    # emerge -pv \">=net-misc/cadaver-0.22.2\"\n    # emerge \">=net-misc/cadaver-0.22.2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-0398",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0398"
+      },
+      {
+        "Text": "GLSA 200405-13",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200405-13.xml"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

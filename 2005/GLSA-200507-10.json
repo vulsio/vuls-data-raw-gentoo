@@ -1,0 +1,107 @@
+{
+  "ID": "200507-10",
+  "Title": "Ruby: Arbitrary command execution through XML-RPC",
+  "Synopsis": "\n    A vulnerability in XMLRPC.iPIMethods allows remote attackers to execute\n    arbitrary commands.\n  ",
+  "Product": {
+    "Text": "ruby",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-07-11",
+  "Revised": {
+    "Text": "2005-07-11",
+    "Count": "01"
+  },
+  "Bug": [
+    "96784"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-lang/ruby",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.8.2-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.8.2-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Ruby is an interpreted scripting language for quick and easy\n    object-oriented programming. XML-RPC is a remote procedure call\n    protocol encoded in XML.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Nobuhiro IMAI reported that an invalid default value in \"utils.rb\"\n    causes the security protections of the XML-RPC server to fail.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker could exploit this vulnerability to execute\n    arbitrary commands.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Ruby users should upgrade to the latest available version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/ruby-1.8.2-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-1992",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1992"
+      },
+      {
+        "Text": "Ruby Security Announcement",
+        "Link": "https://www.ruby-lang.org/en/20050701.html"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-07-09T18:51:00Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-07-09T19:20:33Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-07-11T12:47:35Z"
+    }
+  ]
+}

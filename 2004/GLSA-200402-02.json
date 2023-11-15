@@ -1,0 +1,99 @@
+{
+  "ID": "200402-02",
+  "Title": "XFree86 Font Information File Buffer Overflow",
+  "Synopsis": "\n    Exploitation of a buffer overflow in the XFree86 Project Inc.'s XFree86 X\n    Window System allows local attackers to gain root privileges.\n  ",
+  "Product": {
+    "Text": "200402-02",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-02-11",
+  "Revised": {
+    "Text": "2004-02-11",
+    "Count": "01"
+  },
+  "Bug": null,
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "x11-base/xfree",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.2.1-r3",
+            "Range": "eq",
+            "Slot": ""
+          },
+          {
+            "Text": "4.3.0-r4",
+            "Range": "eq",
+            "Slot": ""
+          },
+          {
+            "Text": "4.3.99.902-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.3.99.902-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    XFree86, provides a client/server interface between display\n    hardware and the desktop environment while also providing both the\n    windowing infrastructure and a standardized API. XFree86 is\n    platform independent, network-transparent and extensible.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Exploitation of a buffer overflow in The XFree86 Window System\n    discovered by iDefence allows local attackers to gain root\n    privileges.\n    </p>\n    <p>\n    The problem exists in the parsing of the 'font.alias' file. The X\n    server (running as root) fails to check the length of the user\n    provided input, so a malicious user may craft a malformed\n    'font.alias' file causing a buffer overflow upon parsing,\n    eventually leading to the execution of arbitrary code.\n    </p>\n    <p>\n    To reproduce the overflow on the command line one can run:\n    </p>\n    <code>\n    # cat &gt; fonts.dir &lt;&lt;EOF \n    1\n    word.bdf -misc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso8859-1\n    EOF\n    # perl -e 'print \"0\" x 1024 . \"A\" x 96 . \"\\n\"' &gt; fonts.alias\n    # X :0 -fp $PWD</code>\n    <p>\n    {Some output removed}... Server aborting... Segmentation fault (core dumped)\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    Successful exploitation can lead to a root compromise provided\n    that the attacker is able to execute commands in the X11\n    subsystem. This can be done either by having console access to the\n    target or through a remote exploit against any X client program\n    such as a web-browser, mail-reader or game.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    No immediate workaround is available; a software upgrade is required.\n    </p>\n    <p>\n    Gentoo has released XFree 4.2.1-r3, 4.3.0-r4 and 4.3.99.902-r1 and\n    encourages all users to upgrade their XFree86\n    installations. Vulnerable versions are no longer available in\n    Portage.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All users are recommended to upgrade their XFree86 installation:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    # emerge -pv x11-base/xfree\n    # emerge x11-base/xfree"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE: CAN-2004-0083",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0083"
+      },
+      {
+        "Text": "Vulnerability:\n    XFree86 Font Information File Buffer Overflow",
+        "Link": "http://www.idefense.com/application/poi/display?id=72&type=vulnerabilities"
+      }
+    ]
+  },
+  "Metadata": null
+}

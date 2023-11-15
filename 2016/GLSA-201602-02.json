@@ -1,0 +1,188 @@
+{
+  "ID": "201602-02",
+  "Title": "GNU C Library: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in the GNU C library, the\n    worst allowing for remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "glibc",
+    "Type": "ebuild"
+  },
+  "Announced": "2016-02-17",
+  "Revised": {
+    "Text": "2016-02-17",
+    "Count": "1"
+  },
+  "Bug": [
+    "516884",
+    "517082",
+    "521932",
+    "529982",
+    "532874",
+    "538090",
+    "538814",
+    "540070",
+    "541246",
+    "541542",
+    "547296",
+    "552692",
+    "574880"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-libs/glibc",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.21-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.21-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>The GNU C library is the standard C library used by Gentoo Linux\n      systems.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in the GNU C Library:</p>\n    \n    <ul>\n      <li>The Google Security Team and Red Hat discovered a stack-based buffer\n        overflow in the send_dg() and send_vc() functions due to a buffer\n        mismanagement when getaddrinfo() is called with AF_UNSPEC\n        (CVE-2015-7547).\n      </li>\n      <li>The strftime() function access invalid memory when passed\n        out-of-range data, resulting in a crash (CVE-2015-8776).\n      </li>\n      <li>An integer overflow was found in the __hcreate_r() function\n        (CVE-2015-8778).\n      </li>\n      <li>Multiple unbounded stack allocations were found in the catopen()\n        function (CVE-2015-8779).\n      </li>\n    </ul>\n    \n    <p>Please review the CVEs referenced below for additional vulnerabilities\n      that had already been fixed in previous versions of sys-libs/glibc, for\n      which we have not issued a GLSA before.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A remote attacker could exploit any application which performs host name\n      resolution using getaddrinfo() in order to execute arbitrary code or\n      crash the application. The other vulnerabilities can possibly be\n      exploited to cause a Denial of Service or leak information.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>A number of mitigating factors for CVE-2015-7547 have been identified.\n      Please review the upstream advisory and references below.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All GNU C Library users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "It is important to ensure that no running process uses the old glibc\n      anymore. The easiest way to achieve that is by rebooting the machine\n      after updating the sys-libs/glibc package.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "Note: Should you run into compilation failures while updating, please\n      see bug 574948.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-libs/glibc-2.21-r2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2013-7423",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-7423"
+      },
+      {
+        "Text": "CVE-2014-0475",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0475"
+      },
+      {
+        "Text": "CVE-2014-0475",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0475"
+      },
+      {
+        "Text": "CVE-2014-5119",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-5119"
+      },
+      {
+        "Text": "CVE-2014-6040",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-6040"
+      },
+      {
+        "Text": "CVE-2014-7817",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-7817"
+      },
+      {
+        "Text": "CVE-2014-8121",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-8121"
+      },
+      {
+        "Text": "CVE-2014-9402",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-9402"
+      },
+      {
+        "Text": "CVE-2015-1472",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-1472"
+      },
+      {
+        "Text": "CVE-2015-1781",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-1781"
+      },
+      {
+        "Text": "CVE-2015-7547",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-7547"
+      },
+      {
+        "Text": "CVE-2015-8776",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-8776"
+      },
+      {
+        "Text": "CVE-2015-8778",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-8778"
+      },
+      {
+        "Text": "CVE-2015-8779",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-8779"
+      },
+      {
+        "Text": "\n      Google Online Security Blog: \"CVE-2015-7547: glibc getaddrinfo\n      stack-based buffer overflow\"\n    ",
+        "Link": "https://googleonlinesecurity.blogspot.de/2016/02/cve-2015-7547-glibc-getaddrinfo-stack.html"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2016-02-16T18:27:02Z"
+    },
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2016-02-17T15:37:09Z"
+    }
+  ]
+}

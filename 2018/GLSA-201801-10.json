@@ -1,0 +1,129 @@
+{
+  "ID": "201801-10",
+  "Title": "LibXfont, LibXfont2: Arbitrary file access",
+  "Synopsis": "A vulnerability has been found in LibXfont and LibXfont2 which may\n    allow for arbitrary file access.\n  ",
+  "Product": {
+    "Text": "LibXfont, LibXfont2",
+    "Type": "ebuild"
+  },
+  "Announced": "2018-01-08",
+  "Revised": {
+    "Text": "2018-01-08",
+    "Count": "1"
+  },
+  "Bug": [
+    "639064"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "x11-libs/libXfont",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.5.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.5.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "x11-libs/libXfont2",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>X.Org Xfont library.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was discovered that libXfont incorrectly followed symlinks when\n      opening font files.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A local unprivileged user could use this flaw to cause the X server to\n      access arbitrary files, including special device files.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All LibXfont users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All LibXfont2 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=x11-libs/libXfont-1.5.4\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=x11-libs/libXfont2-2.0.3\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2017-16611\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-16611"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "jmbailey",
+      "Tag": "requester",
+      "Timestamp": "2018-01-05T05:31:41Z"
+    },
+    {
+      "Text": "jmbailey",
+      "Tag": "submitter",
+      "Timestamp": "2018-01-08T12:26:24Z"
+    }
+  ]
+}

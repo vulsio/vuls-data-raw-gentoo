@@ -1,0 +1,98 @@
+{
+  "ID": "201909-08",
+  "Title": "D-Bus: Authentication bypass",
+  "Synopsis": "An authentication bypass was discovered in D-Bus.",
+  "Product": {
+    "Text": "dbus",
+    "Type": "ebuild"
+  },
+  "Announced": "2019-09-08",
+  "Revised": {
+    "Text": "2019-09-08",
+    "Count": "1"
+  },
+  "Bug": [
+    "687900"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-apps/dbus",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.12.16",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.12.16",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>D-Bus is a message bus system which processes can use to talk to each\n      other.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was discovered that a local attacker could manipulate symbolic links\n      in their own home directory to bypass authentication and connect to a\n      DBusServer with elevated privileges.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A local attacker can bypass authentication mechanisms and elevate\n      privileges.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All D-Bus users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-apps/dbus-1.12.16\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2019-12749",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2019-12749"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "b-man",
+      "Tag": "requester",
+      "Timestamp": "2019-09-07T17:12:55Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2019-09-08T17:40:45Z"
+    }
+  ]
+}

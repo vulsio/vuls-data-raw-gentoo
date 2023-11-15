@@ -1,0 +1,103 @@
+{
+  "ID": "201206-35",
+  "Title": "nbd: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities were found in nbd, which could lead to\n    remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "nbd",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-06-25",
+  "Revised": {
+    "Text": "2012-06-25",
+    "Count": "1"
+  },
+  "Bug": [
+    "353097",
+    "372891"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-block/nbd",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.9.22",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.9.22",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>nbd is a userland client/server for kernel network block device.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in nbd. Please review the\n      CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>nbd allows remote attackers to cause a denial of service (NULL pointer\n      dereference and crash) or the execution of arbitrary code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All nbd users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-block/nbd-2.9.22\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2011-0530",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-0530"
+      },
+      {
+        "Text": "CVE-2011-1925",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-1925"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    underling\n  ",
+      "Tag": "requester",
+      "Timestamp": "2011-10-07T23:37:56Z"
+    },
+    {
+      "Text": "craig",
+      "Tag": "submitter",
+      "Timestamp": "2012-06-25T19:17:58Z"
+    }
+  ]
+}

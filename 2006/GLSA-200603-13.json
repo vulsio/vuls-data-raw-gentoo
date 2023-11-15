@@ -1,0 +1,103 @@
+{
+  "ID": "200603-13",
+  "Title": "PEAR-Auth: Potential authentication bypass",
+  "Synopsis": "\n    PEAR-Auth did not correctly verify data passed to the DB and LDAP\n    containers, thus allowing to inject false credentials to bypass the\n    authentication.\n  ",
+  "Product": {
+    "Text": "pear-auth",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-03-17",
+  "Revised": {
+    "Text": "2006-03-17",
+    "Count": "01"
+  },
+  "Bug": [
+    "123832"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-php/PEAR-Auth",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    PEAR-Auth is a PEAR package that provides methods to create a PHP\n    based authentication system.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Matt Van Gundy discovered that PEAR-Auth did not correctly\n    validate data passed to the DB and LDAP containers.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could possibly exploit this vulnerability to\n    bypass the authentication mechanism by injecting specially crafted\n    input to the underlying storage containers.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All PEAR-Auth users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-php/PEAR-Auth-1.2.4\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-0868",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0868"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-03-14T21:29:18Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-03-14T21:29:45Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-03-14T23:22:04Z"
+    }
+  ]
+}

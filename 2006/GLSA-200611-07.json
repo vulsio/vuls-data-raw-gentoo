@@ -1,0 +1,103 @@
+{
+  "ID": "200611-07",
+  "Title": "GraphicsMagick: PALM and DCM buffer overflows",
+  "Synopsis": "\n    GraphicsMagick improperly handles PALM and DCM images, potentially\n    resulting in the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "graphicsmagick",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-11-13",
+  "Revised": {
+    "Text": "2006-11-13",
+    "Count": "01"
+  },
+  "Bug": [
+    "152668"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-gfx/graphicsmagick",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.1.7-r3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.7-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    GraphicsMagick is a collection of tools and libraries which support\n    reading, writing, and manipulating images in many major formats.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    M. Joonas Pihlaja has reported that a boundary error exists within the\n    ReadDCMImage() function of coders/dcm.c, causing the improper handling\n    of DCM images. Pihlaja also reported that there are several boundary\n    errors in the ReadPALMImage() function of coders/palm.c, similarly\n    causing the improper handling of PALM images.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could entice a user to open a specially crafted DCM or PALM\n    image with GraphicsMagick, and possibly execute arbitrary code with the\n    privileges of the user running GraphicsMagick.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All GraphicsMagick users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/graphicsmagick-1.1.7-r3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-5456",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5456"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-11-06T14:10:18Z"
+    },
+    {
+      "Text": "\n    shellsage\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-11-06T23:27:19Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-11-07T12:33:19Z"
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "ID": "202003-64",
+  "Title": "libxls: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in libxls, the worst of\n    which could result in the arbitrary execution of code.\n  ",
+  "Product": {
+    "Text": "libxls",
+    "Type": "ebuild"
+  },
+  "Announced": "2020-03-30",
+  "Revised": {
+    "Text": "2020-03-30",
+    "Count": "1"
+  },
+  "Bug": [
+    "638336",
+    "674006"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/libxls",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.5.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.5.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>libxls is a C library for reading Excel files in the nasty old binary\n      OLE format, plus a command-line tool for converting XLS to CSV.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in libxls. Please review\n      the CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to process a specially crafted\n      Excel file using libxls, possibly resulting in execution of arbitrary\n      code with the privileges of the process or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All libxls users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/libxls-1.5.2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2017-12110",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2017-12110"
+      },
+      {
+        "Text": "CVE-2017-12111",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2017-12111"
+      },
+      {
+        "Text": "CVE-2017-2896",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2017-2896"
+      },
+      {
+        "Text": "CVE-2017-2897",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2017-2897"
+      },
+      {
+        "Text": "CVE-2017-2919",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2017-2919"
+      },
+      {
+        "Text": "CVE-2018-20450",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2018-20450"
+      },
+      {
+        "Text": "CVE-2018-20452",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2018-20452"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "BlueKnight",
+      "Tag": "requester",
+      "Timestamp": "2020-03-28T22:19:47Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2020-03-30T14:52:32Z"
+    }
+  ]
+}

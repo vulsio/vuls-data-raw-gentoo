@@ -1,0 +1,103 @@
+{
+  "ID": "200811-03",
+  "Title": "FAAD2: User-assisted execution of arbitrary code",
+  "Synopsis": "\n    A buffer overflow in FAAD2 might lead to user-assisted execution of\n    arbitrary code via an MP4 file.\n  ",
+  "Product": {
+    "Text": "faad2",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-11-09",
+  "Revised": {
+    "Text": "2008-11-09",
+    "Count": "01"
+  },
+  "Bug": [
+    "238445"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/faad2",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.6.1-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.6.1-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    FAAD2 is an open source MPEG-4 and MPEG-2 AAC decoder.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The ICST-ERCIS (Peking University) reported a heap-based buffer\n    overflow in the decodeMP4file() function in frontend/main.c.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted\n    MPEG-4 (MP4) file in an application using FAAD2, possibly leading to\n    the execution of arbitrary code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All FAAD2 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/faad2-2.6.1-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-4201",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4201"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-10-01T21:20:46Z"
+    },
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-10-21T20:30:57Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-10-30T23:45:59Z"
+    }
+  ]
+}

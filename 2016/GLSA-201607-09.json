@@ -1,0 +1,98 @@
+{
+  "ID": "201607-09",
+  "Title": "Commons-BeanUtils: Arbitrary code execution",
+  "Synopsis": "Apache Commons BeanUtils does not properly suppress the class\n    property, which could lead to the remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "commons-beanutils",
+    "Type": "ebuild"
+  },
+  "Announced": "2016-07-20",
+  "Revised": {
+    "Text": "2016-07-20",
+    "Count": "1"
+  },
+  "Bug": [
+    "534498"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-java/commons-beanutils",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.9.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.9.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Commons-beanutils provides easy-to-use wrappers around Reflection and\n      Introspection APIs\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Apache Commons BeanUtils does not suppress the class property, which\n      allows for the manipulation of the ClassLoader.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>Remote attackers could potentially execute arbitrary code with the\n      privileges of the process.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Commons BeanUtils users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=dev-java/commons-beanutils-1.9.2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-0114",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0114"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "Zlogene",
+      "Tag": "requester",
+      "Timestamp": "2015-09-05T19:30:11Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2016-07-20T08:50:29Z"
+    }
+  ]
+}

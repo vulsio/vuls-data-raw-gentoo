@@ -1,0 +1,102 @@
+{
+  "ID": "201710-12",
+  "Title": "Puppet Agent: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in Puppet Agent, the worst\n    of which could result in the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "puppetagent",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-10-13",
+  "Revised": {
+    "Text": "2017-10-13",
+    "Count": "1"
+  },
+  "Bug": [
+    "597684"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-admin/puppet-agent",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.7.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.7.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Puppet Agent contains Puppet’s main code and all of the dependencies\n      needed to run it, including Facter, Hiera, and bundled versions of Ruby\n      and OpenSSL.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in Puppet Agent. Please\n      review the references for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could possibly execute arbitrary code with the\n      privileges of the process or obtain sensitive information.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Puppet Agent users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-admin/puppet-agent-1.7.1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2016-5714\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-5714"
+      },
+      {
+        "Text": "Puppet\n      Security Advise Oct 2016\n    ",
+        "Link": "https://puppet.com/security/cve/pxp-agent-oct-2016"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "b-man",
+      "Tag": "requester",
+      "Timestamp": "2017-10-08T20:07:35Z"
+    },
+    {
+      "Text": "chrisadr",
+      "Tag": "submitter",
+      "Timestamp": "2017-10-13T23:32:46Z"
+    }
+  ]
+}

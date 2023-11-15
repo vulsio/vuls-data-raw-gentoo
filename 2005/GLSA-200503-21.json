@@ -1,0 +1,107 @@
+{
+  "ID": "200503-21",
+  "Title": "Grip: CDDB response overflow",
+  "Synopsis": "\n    Grip contains a buffer overflow that can be triggered by a large CDDB\n    response, potentially allowing the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "grip",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-03-17",
+  "Revised": {
+    "Text": "2005-03-17",
+    "Count": "01"
+  },
+  "Bug": [
+    "84704"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-sound/grip",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.3.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.3.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Grip is a GTK+ based audio CD player/ripper.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Joseph VanAndel has discovered a buffer overflow in Grip when\n    processing large CDDB results.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A malicious CDDB server could cause Grip to crash by returning\n    more then 16 matches, potentially allowing the execution of arbitrary\n    code with the privileges of the user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Disable automatic CDDB queries, but we highly encourage users to\n    upgrade to 3.3.0.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Grip users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-sound/grip-3.3.0\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-0706",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0706"
+      },
+      {
+        "Text": "Original Bug Report",
+        "Link": "https://sourceforge.net/tracker/?group_id=3714&atid=103714&func=detail&aid=834724"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-03-14T20:06:50Z"
+    },
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-03-15T23:47:13Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-03-17T10:03:26Z"
+    }
+  ]
+}

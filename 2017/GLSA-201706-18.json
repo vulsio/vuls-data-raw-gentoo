@@ -1,0 +1,108 @@
+{
+  "ID": "201706-18",
+  "Title": "mbed TLS: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in mbed TLS, the worst of\n    which could lead to the remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "mbedtls",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-06-20",
+  "Revised": {
+    "Text": "2017-06-20",
+    "Count": "1"
+  },
+  "Bug": [
+    "562608",
+    "571102",
+    "618824"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-libs/mbedtls",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.4.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.4.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>mbed TLS (previously PolarSSL) is an “easy to understand, use,\n      integrate and expand” implementation of the TLS and SSL protocols and\n      the respective cryptographic algorithms and support code required.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in mbed TLS. Please review\n      the CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A remote attacker could possibly execute arbitrary code with the\n      privileges of the process, or cause a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All mbed TLS users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-libs/mbedtls-2.4.2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2015-5291",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-5291"
+      },
+      {
+        "Text": "CVE-2015-7575",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-7575"
+      },
+      {
+        "Text": "CVE-2017-2784",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-2784"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "BlueKnight",
+      "Tag": "requester",
+      "Timestamp": "2017-04-17T22:12:43Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2017-06-20T17:42:02Z"
+    }
+  ]
+}

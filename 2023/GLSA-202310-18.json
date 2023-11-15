@@ -1,0 +1,102 @@
+{
+  "ID": "202310-18",
+  "Title": "Rack: Multiple Vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been discovered in Rack, the worst of which can lead to sequence injection in logging compontents.",
+  "Product": {
+    "Text": "rack",
+    "Type": "ebuild"
+  },
+  "Announced": "2023-10-30",
+  "Revised": {
+    "Text": "2023-10-30",
+    "Count": "1"
+  },
+  "Bug": [
+    "884795"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-ruby/rack",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.2.3.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.2.3.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n        <p>Rack is a modular Ruby web server interface.</p>\n    "
+  },
+  "Description": {
+    "Text": "\n        <p>Multiple vulnerabilities have been discovered in Rack. Please review the CVE identifiers referenced below for details.</p>\n    "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n        <p>A possible denial of service vulnerability was found in the multipart parsing component of Rack.\r\n\r\nA sequence injection vulnerability was found which could allow a possible shell escape in the Lint and CommonLogger components of Rack.</p>\n    "
+  },
+  "Workaround": {
+    "Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+  },
+  "Resolution": {
+    "Text": "\n        \n        \n        \n    ",
+    "P": [
+      {
+        "Text": "All Rack users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=dev-ruby/rack-2.2.3.1\"\n        "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2022-30122",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-30122"
+      },
+      {
+        "Text": "CVE-2022-30123",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-30123"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "graaff",
+      "Tag": "requester",
+      "Timestamp": "2023-10-30T09:36:59.521630Z"
+    },
+    {
+      "Text": "graaff",
+      "Tag": "submitter",
+      "Timestamp": "2023-10-30T09:36:59.526118Z"
+    }
+  ]
+}

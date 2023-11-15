@@ -1,0 +1,113 @@
+{
+  "ID": "201710-03",
+  "Title": "ICU: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in ICU, the worst of which\n    could allow remote code execution.\n  ",
+  "Product": {
+    "Text": "icu",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-10-08",
+  "Revised": {
+    "Text": "2017-10-08",
+    "Count": "1"
+  },
+  "Bug": [
+    "616468"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/icu",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "58.2-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "58.2-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>ICU is a mature, widely used set of C/C++ and Java libraries providing\n      Unicode and Globalization support for software applications.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in ICU. Please review the\n      referenced CVE identifiers for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could possibly execute arbitrary code with the\n      privileges of the process or cause a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All ICU users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "Packages which depend on this library may need to be recompiled. Tools\n      such as revdep-rebuild may assist in identifying some of these packages.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/icu-58.2-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2017-7867\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-7867"
+      },
+      {
+        "Text": "\n      CVE-2017-7868\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-7868"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "chrisadr",
+      "Tag": "requester",
+      "Timestamp": "2017-10-03T15:56:43Z"
+    },
+    {
+      "Text": "chrisadr",
+      "Tag": "submitter",
+      "Timestamp": "2017-10-08T13:30:01Z"
+    }
+  ]
+}

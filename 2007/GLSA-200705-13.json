@@ -1,0 +1,105 @@
+{
+  "ID": "200705-13",
+  "Title": "ImageMagick: Multiple buffer overflows",
+  "Synopsis": "\n    Multiple integer overflows have been discovered in ImageMagick allowing for\n    the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "imagemagick",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-05-10",
+  "Revised": {
+    "Text": "2007-06-07",
+    "Count": "02"
+  },
+  "Bug": [
+    "152672",
+    "159567",
+    "173186"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-gfx/imagemagick",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "6.3.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "6.3.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    ImageMagick is a collection of tools allowing various manipulations on\n    image files.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    iDefense Labs has discovered multiple integer overflows in ImageMagick\n    in the functions ReadDCMImage() and ReadXWDImage(), that are used to\n    process DCM and XWD files.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could entice a user to open specially crafted XWD or DCM\n    file, resulting in heap-based buffer overflows and possibly the\n    execution of arbitrary code with the privileges of the user running\n    ImageMagick. Note that this user may be httpd or any other account used\n    by applications relying on the ImageMagick tools to automatically\n    process images.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All ImageMagick users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/imagemagick-6.3.3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-1797",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1797"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-04-30T13:08:15Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-05-01T19:04:55Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-05-06T21:19:41Z"
+    }
+  ]
+}

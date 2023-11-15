@@ -1,0 +1,197 @@
+{
+  "ID": "200503-30",
+  "Title": "Mozilla Suite: Multiple vulnerabilities",
+  "Synopsis": "\n    The Mozilla Suite is vulnerable to multiple issues ranging from the remote\n    execution of arbitrary code to various issues allowing to trick the user\n    into trusting fake web sites or interacting with privileged content.\n  ",
+  "Product": {
+    "Text": "Mozilla",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-03-25",
+  "Revised": {
+    "Text": "2005-03-25",
+    "Count": "01"
+  },
+  "Bug": [
+    "84074"
+  ],
+  "Access": "remote and local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-client/mozilla",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.7.6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.7.6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "www-client/mozilla-bin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.7.6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.7.6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Mozilla Suite is a popular all-in-one web browser that\n    includes a mail and news reader.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The following vulnerabilities were found and fixed in the Mozilla\n    Suite:\n    </p>\n    <ul>\n    <li>Mark Dowd from ISS X-Force reported an exploitable\n    heap overrun in the GIF processing of obsolete Netscape extension 2\n    (CAN-2005-0399)</li>\n    <li>Michael Krax reported that plugins can be used\n    to load privileged content and trick the user to interact with it\n    (CAN-2005-0232, CAN-2005-0527)</li>\n    <li>Michael Krax also reported\n    potential spoofing or cross-site-scripting issues through overlapping\n    windows, image or scrollbar drag-and-drop, and by dropping javascript:\n    links on tabs (CAN-2005-0230, CAN-2005-0231, CAN-2005-0401,\n    CAN-2005-0591)</li>\n    <li>Daniel de Wildt and Gael Delalleau discovered a\n    memory overwrite in a string library (CAN-2005-0255)</li>\n    <li>Wind Li\n    discovered a possible heap overflow in UTF8 to Unicode conversion\n    (CAN-2005-0592)</li>\n    <li>Eric Johanson reported that Internationalized\n    Domain Name (IDN) features allow homograph attacks (CAN-2005-0233)</li>\n    <li>Mook, Doug Turner, Kohei Yoshino and M. Deaudelin reported various\n    ways of spoofing the SSL \"secure site\" indicator (CAN-2005-0593)</li>\n    <li>Georgi Guninski discovered that XSLT can include stylesheets from\n    arbitrary hosts (CAN-2005-0588)</li>\n    <li>Secunia discovered a way of\n    injecting content into a popup opened by another website\n    (CAN-2004-1156)</li>\n    <li>Phil Ringnalda reported a possible way to\n    spoof Install source with user:pass@host (CAN-2005-0590)</li>\n    <li>Jakob\n    Balle from Secunia discovered a possible way of spoofing the Download\n    dialog source (CAN-2005-0585)</li>\n    <li>Christian Schmidt reported a\n    potential spoofing issue in HTTP auth prompt tab (CAN-2005-0584)</li>\n    <li>Finally, Tavis Ormandy of the Gentoo Linux Security Audit Team\n    discovered that Mozilla insecurely creates temporary filenames in\n    /tmp/plugtmp (CAN-2005-0578)</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <ul>\n    <li>The GIF heap overflow could be triggered by a malicious GIF\n    image that would end up executing arbitrary code with the rights of the\n    user running Mozilla. The other overflow issues, while not thought to\n    be exploitable, would have the same impact</li>\n    <li>By setting up\n    malicious websites and convincing users to follow untrusted links or\n    obey very specific drag-and-drop or download instructions, attackers\n    may leverage the various spoofing issues to fake other websites to get\n    access to confidential information, push users to download malicious\n    files or make them interact with their browser preferences</li>\n    <li>The\n    temporary directory issue allows local attackers to overwrite arbitrary\n    files with the rights of another local user</li>\n    </ul>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Mozilla Suite users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Mozilla Suite binary users should upgrade to the latest\n    version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/mozilla-1.7.6\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/mozilla-bin-1.7.6\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-1156",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1156"
+      },
+      {
+        "Text": "CAN-2005-0230",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0230"
+      },
+      {
+        "Text": "CAN-2005-0231",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0231"
+      },
+      {
+        "Text": "CAN-2005-0232",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0232"
+      },
+      {
+        "Text": "CAN-2005-0233",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0233"
+      },
+      {
+        "Text": "CAN-2005-0255",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0255"
+      },
+      {
+        "Text": "CAN-2005-0399",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0399"
+      },
+      {
+        "Text": "CAN-2005-0401",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0401"
+      },
+      {
+        "Text": "CAN-2005-0527",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0527"
+      },
+      {
+        "Text": "CAN-2005-0578",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0578"
+      },
+      {
+        "Text": "CAN-2005-0584",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0584"
+      },
+      {
+        "Text": "CAN-2005-0585",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0585"
+      },
+      {
+        "Text": "CAN-2005-0588",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0588"
+      },
+      {
+        "Text": "CAN-2005-0590",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0590"
+      },
+      {
+        "Text": "CAN-2005-0591",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0591"
+      },
+      {
+        "Text": "CAN-2005-0592",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0592"
+      },
+      {
+        "Text": "CAN-2005-0593",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0593"
+      },
+      {
+        "Text": "Mozilla Security Advisories",
+        "Link": "https://www.mozilla.org/projects/security/known-vulnerabilities.html"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-03-22T09:19:22Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-03-25T12:49:52Z"
+    }
+  ]
+}

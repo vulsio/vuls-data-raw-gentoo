@@ -1,0 +1,98 @@
+{
+  "ID": "200707-01",
+  "Title": "Firebird: Buffer overflow",
+  "Synopsis": "\n    A vulnerability has been discovered in Firebird, allowing for the execution\n    of arbitrary code.\n  ",
+  "Product": {
+    "Text": "firebird",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-07-01",
+  "Revised": {
+    "Text": "2007-07-01",
+    "Count": "01"
+  },
+  "Bug": [
+    "181811"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-db/firebird",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Firebird is an open source relational database that runs on Linux,\n    Windows, and various UNIX systems.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Cody Pierce from TippingPoint DVLabs has discovered a buffer overflow\n    when processing \"connect\" requests with an overly large \"p_cnct_count\"\n    value.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    An unauthenticated remote attacker could send a specially crafted\n    request to a vulnerable server, possibly resulting in the execution of\n    arbitrary code with the privileges of the user running Firebird.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Firebird users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-db/firebird-2.0.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-3181",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3181"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-06-25T19:06:37Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-06-26T18:04:58Z"
+    }
+  ]
+}

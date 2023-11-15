@@ -1,0 +1,189 @@
+{
+  "ID": "200410-17",
+  "Title": "OpenOffice.org: Temporary files disclosure",
+  "Synopsis": "\n    OpenOffice.org uses insecure temporary files which could allow a malicious\n    local user to gain knowledge of sensitive information from other users'\n    documents.\n  ",
+  "Product": {
+    "Text": "openoffice",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-10-20",
+  "Revised": {
+    "Text": "2004-10-20",
+    "Count": "01"
+  },
+  "Bug": [
+    "63556"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-office/openoffice",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.1.2",
+            "Range": "lt",
+            "Slot": ""
+          },
+          {
+            "Text": "1.1.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.2",
+            "Range": "eq",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "app-office/openoffice-bin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.1.2",
+            "Range": "lt",
+            "Slot": ""
+          },
+          {
+            "Text": "1.1.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.2",
+            "Range": "eq",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "app-office/openoffice-ximian",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.1.60",
+            "Range": "lt",
+            "Slot": ""
+          },
+          {
+            "Text": "1.3.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.60",
+            "Range": "eq",
+            "Slot": ""
+          },
+          {
+            "Text": "1.1.61",
+            "Range": "eq",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    OpenOffice.org is an office productivity suite, including word processing,\n    spreadsheets, presentations, drawings, data charting, formula editing, and\n    file conversion facilities.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    On start-up, OpenOffice.org 1.1.2 creates a temporary directory with\n    insecure permissions. When a document is saved, a compressed copy of it can\n    be found in that directory.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    A malicious local user could obtain the temporary files and thus read\n    documents belonging to other users.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All affected OpenOffice.org users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All affected OpenOffice.org binary users should upgrade to the latest\n    version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All affected OpenOffice.org Ximian users should upgrade to the latest\n    version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n\n    # emerge -pv \">=app-office/openoffice-1.1.3\"\n    # emerge \">=app-office/openoffice-1.1.3\"",
+      "\n    # emerge sync\n\n    # emerge -pv \">=app-office/openoffice-bin-1.1.3\"\n    # emerge \">=app-office/openoffice-bin-1.1.3\"",
+      "\n    # emerge sync\n\n    # emerge -pv \">=app-office/openoffice-ximian-1.3.4\"\n    # emerge \">=app-office/openoffice-1.3.4\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-0752",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0752"
+      },
+      {
+        "Text": "OpenOffice.org Issue 33357",
+        "Link": "https://www.openoffice.org/issues/show_bug.cgi?id=33357"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-10-18T17:29:15Z"
+    },
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-10-19T09:04:12Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-10-19T12:14:40Z"
+    }
+  ]
+}

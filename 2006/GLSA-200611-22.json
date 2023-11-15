@@ -1,0 +1,103 @@
+{
+  "ID": "200611-22",
+  "Title": "Ingo H3: Folder name shell command injection",
+  "Synopsis": "\n    Ingo H3 is vulnerable to arbitrary shell command execution when handling\n    procmail rules.\n  ",
+  "Product": {
+    "Text": "horde-ingo",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-11-27",
+  "Revised": {
+    "Text": "2006-11-27",
+    "Count": "01"
+  },
+  "Bug": [
+    "153927"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/horde-ingo",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.1.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Ingo H3 is a generic frontend for editing Sieve, procmail, maildrop and\n    IMAP filter rules.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Ingo H3 fails to properly escape shell metacharacters in procmail\n    rules.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote authenticated attacker could craft a malicious rule which\n    could lead to the execution of arbitrary shell commands on the server.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Don't use procmail with Ingo H3.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Ingo H3 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/horde-ingo-1.1.2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-5449",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5449"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-11-21T06:42:39Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-11-24T19:04:29Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-11-24T19:46:46Z"
+    }
+  ]
+}

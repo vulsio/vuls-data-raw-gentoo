@@ -1,0 +1,121 @@
+{
+  "ID": "200501-39",
+  "Title": "SquirrelMail: Multiple vulnerabilities",
+  "Synopsis": "\n    SquirrelMail fails to properly sanitize user input, which could lead to\n    arbitrary code execution and compromise webmail accounts.\n  ",
+  "Product": {
+    "Text": "SquirrelMail",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-01-28",
+  "Revised": {
+    "Text": "2005-01-28",
+    "Count": "01"
+  },
+  "Bug": [
+    "78116"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "mail-client/squirrelmail",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.3a-r2",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    SquirrelMail is a webmail package written in PHP. It supports IMAP\n    and SMTP and can optionally be installed with SQL support.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    SquirrelMail fails to properly sanitize certain strings when\n    decoding specially-crafted strings, which can lead to PHP file\n    inclusion and XSS.\n    </p>\n    <ul>\n    <li>Insufficient checking of incoming URLs\n    in prefs.php (CAN-2005-0075) and in webmail.php (CAN-2005-0103).</li>\n    <li>Insufficient escaping of integers in webmail.php\n    (CAN-2005-0104).</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    By sending a specially-crafted URL, an attacker can execute\n    arbitrary code from the local system with the permissions of the web\n    server. Furthermore by enticing a user to load a specially-crafted URL,\n    it is possible to display arbitrary remote web pages in Squirrelmail's\n    frameset and execute arbitrary scripts running in the context of the\n    victim's browser. This could lead to a compromise of the user's webmail\n    account, cookie theft, etc.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    The arbitrary code execution is only possible with\n    \"register_globals\" set to \"On\". Gentoo ships PHP with\n    \"register_globals\" set to \"Off\" by default. There are no known\n    workarounds for the other issues at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All SquirrelMail users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    Note: Users with the vhosts USE flag set should manually use\n    webapp-config to finalize the update.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-client/squirrelmail-1.4.4\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "SquirrelMail Advisory",
+        "Link": "https://sourceforge.net/mailarchive/message.php?msg_id=10628451"
+      },
+      {
+        "Text": "CAN-2005-0075",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0075"
+      },
+      {
+        "Text": "CAN-2005-0103",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0103"
+      },
+      {
+        "Text": "CAN-2005-0104",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0104"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-01-25T17:32:40Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-01-28T10:51:51Z"
+    }
+  ]
+}

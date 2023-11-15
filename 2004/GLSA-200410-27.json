@@ -1,0 +1,107 @@
+{
+  "ID": "200410-27",
+  "Title": "mpg123: Buffer overflow vulnerabilities",
+  "Synopsis": "\n    Buffer overflow vulnerabilities have been found in mpg123 which could lead\n    to execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "mpg123",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-10-27",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "68343"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-sound/mpg123",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.59s-r5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.59s-r5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    mpg123 is a MPEG Audio Player.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Buffer overflow vulnerabilities in the getauthfromURL() and http_open()\n    functions have been reported by Carlos Barros. Additionally, the Gentoo\n    Linux Sound Team fixed additional boundary checks which were found to\n    be lacking.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    By enticing a user to open a malicious playlist or URL or making use of\n    a specially-crafted symlink, an attacker could possibly execute\n    arbitrary code with the rights of the user running mpg123.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All mpg123 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-sound/mpg123-0.59s-r5\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Security Advisory by Carlos Barros",
+        "Link": "http://www.barrossecurity.com/advisories/mpg123_getauthfromurl_bof_advisory.txt"
+      },
+      {
+        "Text": "CVE-2004-0982",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0982"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-10-22T21:04:17Z"
+    },
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-10-24T17:06:55Z"
+    },
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-10-26T11:02:34Z"
+    }
+  ]
+}

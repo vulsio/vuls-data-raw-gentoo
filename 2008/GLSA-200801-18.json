@@ -1,0 +1,103 @@
+{
+  "ID": "200801-18",
+  "Title": "Kazehakase: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities in Kazehakase could result in the execution of\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "kazehakase",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-01-30",
+  "Revised": {
+    "Text": "2008-01-30",
+    "Count": "01"
+  },
+  "Bug": [
+    "198983"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-client/kazehakase",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.5.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.5.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Kazehakase is a web browser based on the Gecko engine.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Kazehakase includes a copy of PCRE which is vulnerable to multiple\n    buffer overflows and memory corruptions vulnerabilities (GLSA\n    200711-30).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to open specially crafted input\n    (e.g bookmarks) with Kazehakase, which could possibly lead to the\n    execution of arbitrary code, a Denial of Service or the disclosure of\n    sensitive information.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Kazehakase users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/kazehakase-0.5.0\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "GLSA-200711-30",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200711-30.xml"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-01-06T23:02:26Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-01-29T19:33:56Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-01-29T19:34:04Z"
+    }
+  ]
+}

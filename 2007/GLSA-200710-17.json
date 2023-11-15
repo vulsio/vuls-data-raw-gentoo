@@ -1,0 +1,103 @@
+{
+  "ID": "200710-17",
+  "Title": "Balsa: Buffer overflow",
+  "Synopsis": "\n    Balsa is vulnerable to a buffer overflow allowing for the user-assisted\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "balsa",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-10-16",
+  "Revised": {
+    "Text": "2007-10-16",
+    "Count": "01"
+  },
+  "Bug": [
+    "193179"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "mail-client/balsa",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.3.20",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.3.20",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Balsa is a highly configurable email client for GNOME.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Evil Ninja Squirrel discovered a stack-based buffer overflow in the\n    ir_fetch_seq() function when receiving a long response to a FETCH\n    command (CVE-2007-5007).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to connect to a malicious or\n    compromised IMAP server, possibly leading to the execution of arbitrary\n    code with the rights of the user running Balsa.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Balsa users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-client/balsa-2.3.20\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-5007",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5007"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-09-26T14:01:38Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-09-26T14:01:46Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-10-08T00:14:17Z"
+    }
+  ]
+}

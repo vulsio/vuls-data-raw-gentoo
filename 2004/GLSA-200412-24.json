@@ -1,0 +1,134 @@
+{
+  "ID": "200412-24",
+  "Title": "Xpdf, GPdf: New integer overflows",
+  "Synopsis": "\n    New integer overflows were discovered in Xpdf, potentially resulting in the\n    execution of arbitrary code. GPdf includes Xpdf code and therefore is\n    vulnerable to the same issues.\n  ",
+  "Product": {
+    "Text": "Xpdf",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-12-28",
+  "Revised": {
+    "Text": "2004-12-28",
+    "Count": "01"
+  },
+  "Bug": [
+    "75191",
+    "75201"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-text/xpdf",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.00-r7",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.00-r6",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "app-text/gpdf",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.8.1-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.8.1",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Xpdf is an open source viewer for Portable Document Format (PDF)\n    files. GPdf is a Gnome-based PDF viewer that includes some Xpdf code.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    A new integer overflow issue was discovered in Xpdf's\n    Gfx::doImage() function.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could entice an user to open a specially-crafted PDF\n    file, potentially resulting in execution of arbitrary code with the\n    rights of the user running Xpdf or GPdf.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Xpdf users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All GPdf users should also upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/xpdf-3.00-r7\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/gpdf-2.8.1-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-1125",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1125"
+      },
+      {
+        "Text": "iDEFENSE Advisory",
+        "Link": "http://www.idefense.com/application/poi/display?id=172&type=vulnerabilities&flashstatus=true"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-12-28T09:21:20Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-12-28T09:21:29Z"
+    }
+  ]
+}

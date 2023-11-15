@@ -1,0 +1,107 @@
+{
+  "ID": "200512-09",
+  "Title": "cURL: Off-by-one errors in URL handling",
+  "Synopsis": "\n    cURL is vulnerable to local arbitrary code execution via buffer overflow\n    due to the insecure parsing of URLs.\n  ",
+  "Product": {
+    "Text": "cURL",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-12-16",
+  "Revised": {
+    "Text": "2005-12-16",
+    "Count": "01"
+  },
+  "Bug": [
+    "114710"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/curl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "7.15.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "7.15.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    cURL is a command line tool for transferring files with URL\n    syntax, supporting numerous protocols.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Stefan Esser from the Hardened-PHP Project has reported a\n    vulnerability in cURL that allows for a local buffer overflow when cURL\n    attempts to parse specially crafted URLs. The URL can be specially\n    crafted in one of two ways: the URL could be malformed in a way that\n    prevents a terminating null byte from being added to either a hostname\n    or path buffer; or the URL could contain a \"?\" separator in the\n    hostname portion, which causes a \"/\" to be prepended to the resulting\n    string.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    An attacker capable of getting cURL to parse a maliciously crafted\n    URL could cause a denial of service or execute arbitrary code with the\n    privileges of the user making the call to cURL. An attacker could also\n    escape open_basedir or safe_mode pseudo-restrictions when exploiting\n    this problem from within a PHP program when PHP is compiled with\n    libcurl.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All cURL users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/curl-7.15.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-4077",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-4077"
+      },
+      {
+        "Text": "Hardened-PHP Advisory",
+        "Link": "https://www.hardened-php.net/advisory_242005.109.html"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-12-14T13:39:33Z"
+    },
+    {
+      "Text": "\n    shellsage\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-12-14T17:20:45Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-12-15T11:37:18Z"
+    }
+  ]
+}

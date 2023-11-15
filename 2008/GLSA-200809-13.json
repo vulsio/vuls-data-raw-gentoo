@@ -1,0 +1,103 @@
+{
+  "ID": "200809-13",
+  "Title": "R: Insecure temporary file creation",
+  "Synopsis": "\n    R is vulnerable to symlink attacks due to an insecure usage of temporary\n    files.\n  ",
+  "Product": {
+    "Text": "R",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-09-22",
+  "Revised": {
+    "Text": "2008-09-22",
+    "Count": "01"
+  },
+  "Bug": [
+    "235822"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-lang/R",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.7.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.7.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    R is a GPL licensed implementation of S, a language and environment for\n    statistical computing and graphics.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Dmitry E. Oboukhov reported that the \"javareconf\" script uses temporary\n    files in an insecure manner.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could exploit this vulnerability to overwrite\n    arbitrary files with the privileges of the user running the\n    application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All R users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/R-2.7.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-3931",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3931"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-09-18T21:52:27Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-09-18T22:01:59Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-09-19T11:52:28Z"
+    }
+  ]
+}

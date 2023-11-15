@@ -1,0 +1,102 @@
+{
+  "ID": "200407-20",
+  "Title": "Subversion: Vulnerability in mod_authz_svn",
+  "Synopsis": "\n    Users with write access to parts of a Subversion repository may bypass read\n    restrictions in mod_authz_svn and read any part of the repository they\n    wish.\n  ",
+  "Product": {
+    "Text": "subversion",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-07-26",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "57747"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-util/subversion",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.4-r1",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Subversion is an advanced version control system, similar to CVS, which\n    supports additional functionality such as the ability to move, copy and\n    delete files and directories. A Subversion server may be run as an\n    Apache module, a standalone server (svnserve), or on-demand over ssh (a\n    la CVS' \":ext:\" protocol). The mod_authz_svn Apache module works with\n    Subversion in Apache to limit access to parts of Subversion\n    repositories based on policy set by the administrator.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Users with write access to part of a Subversion repository may bypass\n    read restrictions on any part of that repository. This can be done\n    using an \"svn copy\" command to copy the portion of a repository the\n    user wishes to read into an area where they have write access.\n    </p>\n    <p>\n    Since copies are versioned, any such copy attempts will be readily\n    apparent.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    This is a low-risk vulnerability. It affects only users of Subversion\n    who are running servers inside Apache and using mod_authz_svn.\n    Additionally, this vulnerability may be exploited only by users with\n    write access to some portion of a repository.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Keep sensitive content separated into different Subversion\n    repositories, or disable the Apache Subversion server and use svnserve\n    instead.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Subversion users should upgrade to the latest available version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv \">=dev-util/subversion-1.0.6\"\n    # emerve \">=dev-util/subversion-1.0.6\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "ChangeLog for Subversion 1.0.6",
+        "Link": "http://svn.collab.net/repos/svn/tags/1.0.6/CHANGES"
+      },
+      {
+        "Text": "CVE-2004-1438",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1438"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": ""
+    },
+    {
+      "Text": "\n    condordes\n  ",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

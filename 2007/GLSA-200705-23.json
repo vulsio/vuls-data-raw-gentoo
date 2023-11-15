@@ -1,0 +1,213 @@
+{
+  "ID": "200705-23",
+  "Title": "Sun JDK/JRE: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities have been identified in Sun Java Development Kit\n    (JDK) and Java Runtime Environment (JRE).\n  ",
+  "Product": {
+    "Text": "sun-jdk,sun-jre-bin",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-05-31",
+  "Revised": {
+    "Text": "2009-05-28",
+    "Count": "05"
+  },
+  "Bug": [
+    "176675",
+    "178851"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-java/sun-jdk",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.5.0.11",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.4.2.14",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.4.2.15",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.4.2.19",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.5.0.11",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "dev-java/sun-jre-bin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.6.0.01",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.5.0.16",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.5.0.15",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.5.0.12",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.5.0.11",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.4.2.18",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.4.2.17",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.4.2.15",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.4.2.14",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.4.2.19",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.5.0.17",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.5.0.18",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.6.0.01",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment\n    (JRE) provide the Sun Java platform.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    An unspecified vulnerability involving an \"incorrect use of system\n    classes\" was reported by the Fujitsu security team. Additionally, Chris\n    Evans from the Google Security Team reported an integer overflow\n    resulting in a buffer overflow in the ICC parser used with JPG or BMP\n    files, and an incorrect open() call to /dev/tty when processing certain\n    BMP files.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to run a specially crafted Java\n    class or applet that will trigger one of the vulnerabilities. This\n    could lead to the execution of arbitrary code outside of the Java\n    sandbox and of the Java security restrictions, or crash the Java\n    application or the browser.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Sun Java Development Kit users should upgrade to the latest\n    version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Sun Java Runtime Environment users should upgrade to the latest\n    version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \"dev-java/sun-jdk\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \"dev-java/sun-jre-bin\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-2435",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2435"
+      },
+      {
+        "Text": "CVE-2007-2788",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2788"
+      },
+      {
+        "Text": "CVE-2007-2789",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2789"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-05-21T03:51:23Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-05-27T22:03:03Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-05-31T08:44:39Z"
+    }
+  ]
+}

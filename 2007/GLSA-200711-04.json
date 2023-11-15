@@ -1,0 +1,118 @@
+{
+  "ID": "200711-04",
+  "Title": "Evolution: User-assisted remote execution of arbitrary code",
+  "Synopsis": "\n    The IMAP client of Evolution contains a vulnerability potentially leading\n    to the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "evolution-data-server",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-11-06",
+  "Revised": {
+    "Text": "2007-11-06",
+    "Count": "01"
+  },
+  "Bug": [
+    "190861"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "gnome-extra/evolution-data-server",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.10.3.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.10.3.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Evolution is the mail client of the GNOME desktop environment. Camel is\n    the Evolution Data Server module that handles mail functions.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The imap_rescan() function of the file camel-imap-folder.c does not\n    properly sanitize the \"SEQUENCE\" response sent by an IMAP server before\n    being used to index arrays.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A malicious or compromised IMAP server could trigger the vulnerability\n    and execute arbitrary code with the permissions of the user running\n    Evolution.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    Note that this GLSA addresses the same issue as GLSA 200707-03, but for\n    the 1.10 branch of Evolution Data Server.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Evolution users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=gnome-extra/evolution-data-server-1.10.3.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "GLSA 200707-03",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200707-03.xml"
+      },
+      {
+        "Text": "CVE-2007-3257",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3257"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-09-17T21:12:59Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-09-17T21:13:37Z"
+    },
+    {
+      "Text": "\n    aetius\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-10-07T19:29:33Z"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "ID": "200501-04",
+  "Title": "Shoutcast Server: Remote code execution",
+  "Synopsis": "\n    Shoutcast Server contains a possible buffer overflow that could lead to the\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "Shoutcast-server-bin",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-01-05",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "75482"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-sound/shoutcast-server-bin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.9.5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.9.4-r1",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Shoutcast Server is Nullsoft's streaming audio server. It runs on a\n    variety of platforms, including Linux, and is extremely popular with\n    Internet broadcasters.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Part of the Shoutcast Server Linux binary has been found to improperly\n    handle sprintf() parsing.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A malicious attacker could send a formatted URL request to the\n    Shoutcast Server. This formatted URL would cause either the server\n    process to crash, or the execution of arbitrary code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Shoutcast Server users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-sound/shoutcast-server-bin-1.9.5\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "BugTraq Announcement",
+        "Link": "http://www.securityfocus.com/archive/1/385350"
+      },
+      {
+        "Text": "CVE-2004-1373",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1373"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-12-29T14:31:08Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-01-04T19:23:19Z"
+    },
+    {
+      "Text": "\n    chriswhite\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-01-04T20:51:10Z"
+    }
+  ]
+}

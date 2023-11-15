@@ -1,0 +1,103 @@
+{
+  "ID": "200805-14",
+  "Title": "Common Data Format library: User-assisted execution of arbitrary code",
+  "Synopsis": "\n    A buffer overflow vulnerability has been discovered in the Common Data\n    Format library.\n  ",
+  "Product": {
+    "Text": "cdf",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-05-13",
+  "Revised": {
+    "Text": "2008-05-13",
+    "Count": "01"
+  },
+  "Bug": [
+    "220391"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sci-libs/cdf",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.2.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.2.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Common Data Format library is a scientific data management package\n    which allows programmers and application developers to manage and\n    manipulate scalar, vector, and multi-dimensional data arrays in a\n    platform independent fashion.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Alfredo Ortega (Core Security Technologies) reported a boundary error\n    within the Read32s_64() function when processing CDF files.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted CDF\n    file, possibly resulting in the remote execution of arbitrary code with\n    the privileges of the user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Common Data Format library users should upgrade to the latest\n    version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sci-libs/cdf-3.2.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-2080",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2080"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-05-11T18:49:47Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-05-12T10:41:41Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-05-12T10:41:52Z"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "ID": "200710-12",
+  "Title": "T1Lib: Buffer overflow",
+  "Synopsis": "\n    T1Lib is vulnerable to a buffer overflow allowing for the user-assisted\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "t1lib",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-10-12",
+  "Revised": {
+    "Text": "2007-10-12",
+    "Count": "01"
+  },
+  "Bug": [
+    "193437"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/t1lib",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.0.2-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.0.2-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    T1Lib is a library for rasterizing bitmaps from Adobe Type 1 fonts.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Hamid Ebadi discovered a boundary error in the\n    intT1_EnvGetCompletePath() function which can lead to a buffer overflow\n    when processing an overly long filename.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to open a font file with a\n    specially crafted filename, possibly leading to the execution of\n    arbitrary code with the privileges of the user running the application\n    using T1Lib.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All T1Lib users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/t1lib-5.0.2-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-4033",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4033"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-09-26T12:38:38Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-09-26T12:39:08Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-10-08T00:05:38Z"
+    }
+  ]
+}

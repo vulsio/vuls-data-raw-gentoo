@@ -1,0 +1,115 @@
+{
+  "ID": "200605-15",
+  "Title": "Quagga Routing Suite: Multiple vulnerabilities",
+  "Synopsis": "\n    Quagga's RIP daemon allows the injection of routes and the disclosure of\n    routing information. The BGP daemon is vulnerable to a Denial of Service.\n  ",
+  "Product": {
+    "Text": "quagga",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-05-21",
+  "Revised": {
+    "Text": "2006-05-21",
+    "Count": "01"
+  },
+  "Bug": [
+    "132353"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/quagga",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.98.6-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.98.6-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Quagga Routing Suite implements three major routing protocols:\n    RIP (v1/v2/v3), OSPF (v2/v3) and BGP4.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Konstantin V. Gavrilenko discovered two flaws in the Routing\n    Information Protocol (RIP) daemon that allow the processing of RIP v1\n    packets (carrying no authentication) even when the daemon is configured\n    to use MD5 authentication or, in another case, even if RIP v1 is\n    completely disabled. Additionally, Fredrik Widell reported that the\n    Border Gateway Protocol (BGP) daemon contains a flaw that makes it lock\n    up and use all available CPU when a specific command is issued from the\n    telnet interface.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    By sending RIP v1 response packets, an unauthenticated attacker\n    can alter the routing table of a router running Quagga's RIP daemon and\n    disclose routing information. Additionally, it is possible to lock up\n    the BGP daemon from the telnet interface.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Quagga users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/quagga-0.98.6-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-2223",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2223"
+      },
+      {
+        "Text": "CVE-2006-2224",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2224"
+      },
+      {
+        "Text": "CVE-2006-2276",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2276"
+      },
+      {
+        "Text": "Official release information",
+        "Link": "http://www.quagga.net/news2.php?y=2006&m=5&d=8#id1147115280"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-05-15T05:35:52Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-05-15T16:38:23Z"
+    },
+    {
+      "Text": "\n    frilled\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-05-16T05:49:19Z"
+    }
+  ]
+}

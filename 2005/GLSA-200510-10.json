@@ -1,0 +1,107 @@
+{
+  "ID": "200510-10",
+  "Title": "uw-imap: Remote buffer overflow",
+  "Synopsis": "\n    uw-imap is vulnerable to remote overflow of a buffer in the IMAP server\n    leading to execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "uw-imap",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-10-11",
+  "Revised": {
+    "Text": "2005-10-11",
+    "Count": "01"
+  },
+  "Bug": [
+    "108206"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-mail/uw-imap",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2004g",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2004g",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    uw-imap is the University of Washington's IMAP and POP server\n    daemons.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Improper bounds checking of user supplied data while parsing IMAP\n    mailbox names can lead to overflowing the stack buffer.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    Successful exploitation requires an authenticated IMAP user to\n    request a malformed mailbox name. This can lead to execution of\n    arbitrary code with the permissions of the IMAP server.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There are no known workarounds at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All uw-imap users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-mail/uw-imap-2004g\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-2933",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2933"
+      },
+      {
+        "Text": "iDEFENSE Security Advisory",
+        "Link": "http://www.idefense.com/application/poi/display?id=313&type=vulnerabilities&flashstatus=false"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-10-07T11:49:05Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-10-07T15:06:14Z"
+    },
+    {
+      "Text": "\n    r2d2\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-10-08T06:13:24Z"
+    }
+  ]
+}

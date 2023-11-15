@@ -1,0 +1,103 @@
+{
+  "ID": "200812-14",
+  "Title": "aview: Insecure temporary file usage",
+  "Synopsis": "\n    An insecure temporary file usage has been reported in aview, leading to\n    symlink attacks.\n  ",
+  "Product": {
+    "Text": "aview",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-12-14",
+  "Revised": {
+    "Text": "2008-12-14",
+    "Count": "01"
+  },
+  "Bug": [
+    "235808"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-gfx/aview",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.3.0_rc1-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.3.0_rc1-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    aview is an ASCII image viewer and animation player.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Dmitry E. Oboukhov reported that aview uses the \"/tmp/aview$$.pgm\" file\n    in an insecure manner when processing files.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could perform symlink attacks to overwrite arbitrary\n    files on the system with the privileges of the user running the\n    application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All aview users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/aview-1.3.0_rc1-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-4935",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4935"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-09-22T12:39:57Z"
+    },
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-10-21T20:48:01Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-12-11T20:00:09Z"
+    }
+  ]
+}

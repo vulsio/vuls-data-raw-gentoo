@@ -1,0 +1,107 @@
+{
+  "ID": "200510-16",
+  "Title": "phpMyAdmin: Local file inclusion vulnerability",
+  "Synopsis": "\n    phpMyAdmin contains a local file inclusion vulnerability that may lead to\n    the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "phpmyadmin",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-10-17",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "108939"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-db/phpmyadmin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.6.4_p2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.6.4_p2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    phpMyAdmin is a tool written in PHP intended to handle the\n    administration of MySQL over the web.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Maksymilian Arciemowicz reported that in\n    libraries/grab_globals.lib.php, the $__redirect parameter was not\n    correctly validated. Systems running PHP in safe mode are not affected.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker may exploit this vulnerability by sending malicious\n    requests, causing the execution of arbitrary code with the rights of\n    the user running the web server.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Run PHP in safe mode.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All phpMyAdmin users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-db/phpmyadmin-2.6.4_p2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "PMASA-2005-4",
+        "Link": "https://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2005-4"
+      },
+      {
+        "Text": "CVE-2005-3299",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3299"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-10-15T08:08:40Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-10-16T19:41:39Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-10-17T03:54:58Z"
+    }
+  ]
+}

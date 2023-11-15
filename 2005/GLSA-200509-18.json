@@ -1,0 +1,110 @@
+{
+  "ID": "200509-18",
+  "Title": "Qt: Buffer overflow in the included zlib library",
+  "Synopsis": "\n    Qt is vulnerable to a buffer overflow which could potentially lead to the\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "qt",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-09-26",
+  "Revised": {
+    "Text": "2005-09-26",
+    "Count": "02"
+  },
+  "Bug": [
+    "105695"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "x11-libs/qt",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.3.4-r8",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.3.4-r8",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Qt is a cross-platform GUI toolkit used by KDE.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Qt links to a bundled vulnerable version of zlib when emerged with the\n    zlib USE-flag disabled. This may lead to a buffer overflow.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    By creating a specially crafted compressed data stream, attackers can\n    overwrite data structures for applications that use Qt, resulting in a\n    Denial of Service or potentially arbitrary code execution.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Emerge Qt with the zlib USE-flag enabled.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Qt users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-libs/qt-3.3.4-r8\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "GLSA 200507-05",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200507-05.xml"
+      },
+      {
+        "Text": "GLSA 200507-19",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200507-19.xml"
+      },
+      {
+        "Text": "CAN-2005-1849",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1849"
+      },
+      {
+        "Text": "CAN-2005-2096",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2096"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-09-22T16:49:17Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-09-23T12:32:05Z"
+    }
+  ]
+}

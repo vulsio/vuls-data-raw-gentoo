@@ -1,0 +1,112 @@
+{
+  "ID": "200608-23",
+  "Title": "Heartbeat: Denial of service",
+  "Synopsis": "\n    Heartbeat is vulnerable to a Denial of Service which can be triggered by a\n    remote attacker without authentication.\n  ",
+  "Product": {
+    "Text": "heartbeat",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-08-24",
+  "Revised": {
+    "Text": "2006-09-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "141894"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-cluster/heartbeat",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.7",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.2.5",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.7",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Heartbeat is a component of the High-Availability Linux project. It is\n    used to perform death-of-node detection, communications and cluster\n    management.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Yan Rong Ge discovered that the peel_netstring() function in\n    cl_netstring.c does not validate the \"length\" parameter of user input,\n    which can lead to an out-of-bounds memory access when processing\n    certain Heartbeat messages (CVE-2006-3121). Furthermore an unspecified\n    local DoS issue was fixed (CVE-2006-3815).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    By sending a malicious UDP Heartbeat message, even before\n    authentication, a remote attacker can crash the master control process\n    of the cluster.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Heartbeat users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose sys-cluster/heartbeat"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-3121",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3121"
+      },
+      {
+        "Text": "CVE-2006-3815",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3815"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-08-19T16:22:39Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-08-21T14:22:38Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-08-23T14:19:23Z"
+    }
+  ]
+}

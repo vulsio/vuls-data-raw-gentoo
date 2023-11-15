@@ -1,0 +1,143 @@
+{
+  "ID": "201401-19",
+  "Title": "GMime: Arbitrary code execution",
+  "Synopsis": "A buffer overflow error in GMime might allow remote attackers to\n    execute arbitrary code or cause a Denial of Service condition.\n  ",
+  "Product": {
+    "Text": "gmime",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-01-21",
+  "Revised": {
+    "Text": "2014-01-21",
+    "Count": "1"
+  },
+  "Bug": [
+    "308051"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/gmime",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.4.15",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "2.4.17",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "2.2.26",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.4.15",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>GMime is a C/C++ library which may be used for the creation and parsing\n      of messages using the Multipurpose Internet Mail Extension (MIME).\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>GMime contains a buffer overflow flaw in the GMIME_UUENCODE_LEN macro in\n      gmime/gmime-encodings.h.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A context-dependent attacker could possibly execute arbitrary code or\n      cause a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "GMime 2.4.x users on the PPC64 architecture should upgrade to the latest\n      version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "GMime 2.4.x users on other architectures should upgrade to the latest\n      version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "GMime 2.2.x users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "Packages which depend on this library may need to be recompiled. Tools\n      such as revdep-rebuild may assist in identifying some of these packages.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/gmime-2.4.17\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/gmime-2.4.15\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/gmime-2.2.26\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2010-0409\n    ",
+        "Link": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-0409"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    underling\n  ",
+      "Tag": "requester",
+      "Timestamp": "2011-10-07T23:37:54Z"
+    },
+    {
+      "Text": "Zlogene",
+      "Tag": "submitter",
+      "Timestamp": "2014-01-21T19:00:40Z"
+    }
+  ]
+}

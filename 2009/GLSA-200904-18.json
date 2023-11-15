@@ -1,0 +1,107 @@
+{
+  "ID": "200904-18",
+  "Title": "udev: Multiple vulnerabilities",
+  "Synopsis": "\n    Two errors in udev allow for a local root compromise and a Denial of\n    Service.\n  ",
+  "Product": {
+    "Text": "udev",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-04-18",
+  "Revised": {
+    "Text": "2009-04-18",
+    "Count": "01"
+  },
+  "Bug": [
+    "266290"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-fs/udev",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "124-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "124-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    udev is the device manager used in the Linux 2.6 kernel series.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Sebastian Krahmer of SUSE discovered the following two vulnerabilities:\n    </p>\n    <ul>\n    <li>udev does not verify the origin of NETLINK messages\n    properly (CVE-2009-1185).</li>\n    <li>A buffer overflow exists in the\n    util_path_encode() function in lib/libudev-util.c (CVE-2009-1186).</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A local attacker could gain root privileges by sending specially\n    crafted NETLINK messages to udev or cause a Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All udev users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-fs/udev-124-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-1185",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1185"
+      },
+      {
+        "Text": "CVE-2009-1186",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1186"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-04-16T09:13:51Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-04-16T09:38:24Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-04-18T18:32:47Z"
+    }
+  ]
+}

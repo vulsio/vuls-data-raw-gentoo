@@ -1,0 +1,102 @@
+{
+  "ID": "200510-19",
+  "Title": "cURL: NTLM username stack overflow",
+  "Synopsis": "\n    cURL is vulnerable to a buffer overflow which could lead to the execution\n    of arbitrary code.\n  ",
+  "Product": {
+    "Text": "cURL",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-10-22",
+  "Revised": {
+    "Text": "2005-10-22",
+    "Count": "01"
+  },
+  "Bug": [
+    "109097"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/curl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "7.15.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "7.15.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    cURL is a command line tool and library for transferring files via\n    many different protocols. It supports NTLM authentication to retrieve\n    files from Windows-based systems.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    iDEFENSE reported that insufficient bounds checking on a memcpy()\n    of the supplied NTLM username can result in a stack overflow.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could setup a malicious server and entice an\n    user to connect to it using a cURL client, potentially leading to the\n    execution of arbitrary code with the permissions of the user running\n    cURL.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Disable NTLM authentication by not using the --anyauth or --ntlm\n    options when using cURL (the command line version). Workarounds for\n    programs that use the cURL library depend on the configuration options\n    presented by those programs.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All cURL users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/curl-7.15.0\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-3185",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3185"
+      },
+      {
+        "Text": "iDefense Security Advisory 10.13.05",
+        "Link": "http://www.idefense.com/application/poi/display?id=322&type=vulnerabilities"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-10-21T09:04:01Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-10-21T09:04:50Z"
+    }
+  ]
+}

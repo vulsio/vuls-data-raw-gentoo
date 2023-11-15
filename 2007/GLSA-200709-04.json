@@ -1,0 +1,103 @@
+{
+  "ID": "200709-04",
+  "Title": "po4a: Insecure temporary file creation",
+  "Synopsis": "\n    A vulnerability has been discovered in po4a, allowing for a symlink attack.\n  ",
+  "Product": {
+    "Text": "po4a",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-09-13",
+  "Revised": {
+    "Text": "2007-09-13",
+    "Count": "01"
+  },
+  "Bug": [
+    "189440"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-text/po4a",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.32-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.32-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    po4a is a set of tools for helping with the translation of\n    documentation.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The po4a development team reported a race condition in the gettextize()\n    function when creating the file \"/tmp/gettextization.failed.po\".\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could perform a symlink attack, possibly overwriting\n    files with the permissions of the user running po4a.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All po4a users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/po4a-0.32-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-4462",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4462"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-08-28T20:28:00Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-08-28T20:28:12Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-09-08T16:20:41Z"
+    }
+  ]
+}

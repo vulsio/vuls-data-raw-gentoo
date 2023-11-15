@@ -1,0 +1,103 @@
+{
+  "ID": "201101-04",
+  "Title": "aria2: Directory traversal",
+  "Synopsis": "\n    A directory traversal vulnerability has been found in aria2.\n  ",
+  "Product": {
+    "Text": "aria2",
+    "Type": "ebuild"
+  },
+  "Announced": "2011-01-15",
+  "Revised": {
+    "Text": "2011-01-15",
+    "Count": "01"
+  },
+  "Bug": [
+    "320975"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/aria2",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.9.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.9.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    aria2 is a download utility with resuming and segmented downloading\n    with HTTP/HTTPS/FTP/BitTorrent support.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    A directory traversal vulnerability was discovered in aria2.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to download from a specially\n    crafted metalink file, resulting in the creation of arbitrary files.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All aria2 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/aria2-1.9.3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2010-1512",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-1512"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    craig\n  ",
+      "Tag": "requester",
+      "Timestamp": "2010-05-23T20:17:09Z"
+    },
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2010-05-27T13:19:55Z"
+    },
+    {
+      "Text": "\n    vorlon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2010-05-30T18:46:48Z"
+    }
+  ]
+}

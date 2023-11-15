@@ -1,0 +1,98 @@
+{
+  "ID": "201803-02",
+  "Title": "util-linux: User-assisted execution of arbitrary code",
+  "Synopsis": "A vulnerability was discovered in util-linux, which could\n    potentially lead to the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "util-linux",
+    "Type": "ebuild"
+  },
+  "Announced": "2018-03-07",
+  "Revised": {
+    "Text": "2018-03-07",
+    "Count": "1"
+  },
+  "Bug": [
+    "649812"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-apps/util-linux",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.30.2-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.30.2-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>util-linux is a suite of Linux programs including mount and umount,\n      programs used to mount and unmount filesystems.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was discovered that the umount bash-completion as provided by\n      util-linux does not escap mount point paths.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>An attacker controlling a volume label could entice a user with\n      privileges to mount/umount filesystems to use umount command with auto\n      completion, possibly resulting in execution of arbitrary code with root\n      privileges.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>Disable Bash-completion or remove\n      “/usr/share/bash-completion/completions/umount”.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All util-linux users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-apps/util-linux-2.30.2-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2018-7738",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2018-7738"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2018-03-07T14:57:31Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2018-03-07T19:03:17Z"
+    }
+  ]
+}

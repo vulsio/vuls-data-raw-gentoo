@@ -1,0 +1,108 @@
+{
+  "ID": "201310-07",
+  "Title": "OpenJPEG: User-assisted execution of arbitrary code",
+  "Synopsis": "Multiple vulnerabilities in OpenJPEG could result in execution of\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "openjpeg",
+    "Type": "ebuild"
+  },
+  "Announced": "2013-10-10",
+  "Revised": {
+    "Text": "2013-10-10",
+    "Count": "1"
+  },
+  "Bug": [
+    "412895",
+    "425772",
+    "433766"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/openjpeg",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.5.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.5.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>OpenJPEG is an open-source JPEG 2000 library.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>OpenJPEG contains an invalid free error and multiple buffer overflow\n      flaws. Please review the CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted JPEG\n      file, possibly resulting in execution of arbitrary code or a Denial of\n      Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All OpenJPEG users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/openjpeg-1.5.1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-5030",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-5030"
+      },
+      {
+        "Text": "CVE-2012-3358",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3358"
+      },
+      {
+        "Text": "CVE-2012-3535",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3535"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2013-09-29T15:22:41Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2013-10-10T11:18:57Z"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "ID": "200608-13",
+  "Title": "ClamAV: Heap buffer overflow",
+  "Synopsis": "\n    ClamAV is vulnerable to a heap-based buffer overflow resulting in a Denial\n    of Service and potentially remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "clamav",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-08-08",
+  "Revised": {
+    "Text": "2006-08-08",
+    "Count": "02"
+  },
+  "Bug": [
+    "143093"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-antivirus/clamav",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.88.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.88.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    ClamAV is a GPL virus scanner.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Damian Put has discovered a boundary error in the pefromupx() function\n    used by the UPX extraction module, which unpacks PE Windows executable\n    files. Both the \"clamscan\" command-line utility and the \"clamd\" daemon\n    are affected.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    By sending a malicious attachment to a mail server running ClamAV, a\n    remote attacker can cause a Denial of Service and potentially the\n    execution of arbitrary code with the permissions of the user running\n    ClamAV.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All ClamAV users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-antivirus/clamav-0.88.4\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "ClamAV security advisory",
+        "Link": "https://www.clamav.net/security/0.88.4.html"
+      },
+      {
+        "Text": "CVE-2006-4018",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4018"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-08-08T07:45:00Z"
+    },
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-08-08T09:57:22Z"
+    }
+  ]
+}

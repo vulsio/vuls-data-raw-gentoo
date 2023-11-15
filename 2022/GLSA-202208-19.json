@@ -1,0 +1,102 @@
+{
+  "ID": "202208-19",
+  "Title": "aiohttp: Open redirect vulnerability",
+  "Synopsis": "An open redirect vulnerability has been discovered in aiohttp.",
+  "Product": {
+    "Text": "aiohttp",
+    "Type": "ebuild"
+  },
+  "Announced": "2022-08-10",
+  "Revised": {
+    "Text": "2022-08-10",
+    "Count": "1"
+  },
+  "Bug": [
+    "772932"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-python/aiohttp",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.7.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.7.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n        <p>aiohttp is an asynchronous HTTP client/server framework for asyncio and Python.</p>\n    "
+  },
+  "Description": {
+    "Text": "\n        <p>A bug in aiohttp.web_middlewares.normalize_path_middleware creates an open redirect vulnerability.</p>\n    "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n        <p>An attacker use this vulnerability to craft a link that, while appearing to be a link to an aiohttp-based website, redirects users to an arbitrary attacker-controlled URL.</p>\n    "
+  },
+  "Workaround": {
+    "Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+  },
+  "Resolution": {
+    "Text": "\n        \n        \n        \n    ",
+    "P": [
+      {
+        "Text": "All aiohttp users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=dev-python/aiohttp-3.7.4\"\n        "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2021-21330",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-21330"
+      },
+      {
+        "Text": "GHSA-v6wp-4m6f-gcjg",
+        "Link": ""
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ajak",
+      "Tag": "requester",
+      "Timestamp": "2022-08-10T22:31:38.516415Z"
+    },
+    {
+      "Text": "ajak",
+      "Tag": "submitter",
+      "Timestamp": "2022-08-10T22:31:38.521134Z"
+    }
+  ]
+}

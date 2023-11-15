@@ -1,0 +1,98 @@
+{
+  "ID": "201311-16",
+  "Title": "fcron: Information disclosure",
+  "Synopsis": "A vulnerability has been found in fcron, allowing local attackers\n    to conduct symlink attacks. \n  ",
+  "Product": {
+    "Text": "fcron",
+    "Type": "ebuild"
+  },
+  "Announced": "2013-11-25",
+  "Revised": {
+    "Text": "2013-11-25",
+    "Count": "1"
+  },
+  "Bug": [
+    "308075"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-process/fcron",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.0.5-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.0.5-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>fcron is a periodic command scheduler for Unix-based systems</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>The fcrontab function contains a race condition relating to symlinks.</p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>A local attacker could perform symlink attacks to read arbitrary files\n      with the privileges of the user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All fcron users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-process/fcron-3.0.5-r2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2010-0792",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-0792"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2011-10-07T23:37:12Z"
+    },
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2013-11-25T17:22:51Z"
+    }
+  ]
+}

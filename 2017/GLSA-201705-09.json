@@ -1,0 +1,181 @@
+{
+  "ID": "201705-09",
+  "Title": "Apache Tomcat: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in Apache Tomcat, the\n    worst of which could lead to privilege escalation.\n  ",
+  "Product": {
+    "Text": "tomcat",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-05-18",
+  "Revised": {
+    "Text": "2017-05-18",
+    "Count": "1"
+  },
+  "Bug": [
+    "575796",
+    "586966",
+    "595978",
+    "615868"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-servers/tomcat",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "8.0.36",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "7.0.70",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "8.0.36",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Apache Tomcat is a Servlet-3.0/JSP-2.2 Container.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in Tomcat. Please review\n      the CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A remote attacker may be able to cause a Denial of Service condition,\n      obtain sensitive information, bypass protection mechanisms and\n      authentication restrictions.\n    </p>\n    \n    <p>A local attacker, who is a tomcat’s system user or belongs to\n      tomcat’s group, could potentially escalate privileges.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Apache Tomcat users have to manually check their Tomcat runscripts\n      to make sure that they don’t use an old, vulnerable runscript. In\n      addition:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All Apache Tomcat 7 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All Apache Tomcat 8 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=www-servers/tomcat-7.0.70:7\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=www-servers/tomcat-8.0.36:8\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2015-5174",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-5174"
+      },
+      {
+        "Text": "CVE-2015-5345",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-5345"
+      },
+      {
+        "Text": "CVE-2015-5346",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-5346"
+      },
+      {
+        "Text": "CVE-2015-5351",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-5351"
+      },
+      {
+        "Text": "CVE-2016-0706",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-0706"
+      },
+      {
+        "Text": "CVE-2016-0714",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-0714"
+      },
+      {
+        "Text": "CVE-2016-0763",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-0763"
+      },
+      {
+        "Text": "CVE-2016-1240",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-1240"
+      },
+      {
+        "Text": "CVE-2016-3092",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-3092"
+      },
+      {
+        "Text": "CVE-2016-8745",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-8745"
+      },
+      {
+        "Text": "CVE-2017-5647",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-5647"
+      },
+      {
+        "Text": "CVE-2017-5648",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-5648"
+      },
+      {
+        "Text": "CVE-2017-5650",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-5650"
+      },
+      {
+        "Text": "CVE-2017-5651",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-5651"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "BlueKnight",
+      "Tag": "requester",
+      "Timestamp": "2017-04-19T05:58:37Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2017-05-18T01:49:59Z"
+    }
+  ]
+}

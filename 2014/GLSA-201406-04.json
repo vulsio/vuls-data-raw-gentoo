@@ -1,0 +1,98 @@
+{
+  "ID": "201406-04",
+  "Title": "SystemTap: Denial of service",
+  "Synopsis": "A vulnerability in SystemTap could allow a local attacker to create\n    a Denial of Service condition.\n  ",
+  "Product": {
+    "Text": "systemtap",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-06-05",
+  "Revised": {
+    "Text": "2014-06-05",
+    "Count": "1"
+  },
+  "Bug": [
+    "405345"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-util/systemtap",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>SystemTap is a kernel profiling and instrumentation tool.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>SystemTap does not properly handle DWARF expressions when unwinding the\n      stack.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A local attacker with SystemTap permissions could trigger a kernel\n      panic, causing a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>Disabling unprivileged mode is a temporary workaround for this\n      vulnerability.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All SystemTap users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-util/systemtap-2.0\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-0875",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0875"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "requester",
+      "Timestamp": "2014-05-30T22:59:45Z"
+    },
+    {
+      "Text": "\n    creffett\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2014-06-05T00:18:26Z"
+    }
+  ]
+}

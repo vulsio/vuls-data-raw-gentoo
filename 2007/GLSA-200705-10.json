@@ -1,0 +1,143 @@
+{
+  "ID": "200705-10",
+  "Title": "LibXfont, TightVNC: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities have been reported in libXfont and TightVNC,\n    allowing for the execution of arbitrary code with root privileges.\n  ",
+  "Product": {
+    "Text": "tightvnc, libxfont",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-05-08",
+  "Revised": {
+    "Text": "2007-05-08",
+    "Count": "01"
+  },
+  "Bug": [
+    "172575",
+    "174200"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/tightvnc",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.9-r4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.9-r4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "x11-libs/libXfont",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.7-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.7-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    LibXfont is the X.Org font library. TightVNC is a VNC client/server for\n    X displays.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The libXfont code is prone to several integer overflows, in functions\n    ProcXCMiscGetXIDList(), bdfReadCharacters() and FontFileInitTable().\n    TightVNC contains a local copy of this code and is also affected.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A local attacker could use a specially crafted BDF Font to gain root\n    privileges on the vulnerable host.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All libXfont users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All TightVNC users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-libs/libXfont-1.2.7-r1\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/tightvnc-1.2.9-r4\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-1003",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1003"
+      },
+      {
+        "Text": "CVE-2007-1351",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1351"
+      },
+      {
+        "Text": "CVE-2007-1352",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1352"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-04-17T09:12:59Z"
+    },
+    {
+      "Text": "\n    vorlon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-04-23T12:11:04Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-04-26T19:02:32Z"
+    }
+  ]
+}

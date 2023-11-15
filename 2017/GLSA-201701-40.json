@@ -1,0 +1,98 @@
+{
+  "ID": "201701-40",
+  "Title": "xdelta: User-assisted execution of arbitrary code",
+  "Synopsis": "A buffer overflow in xdelta might allow remote attackers to execute\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "xdelta",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-01-17",
+  "Revised": {
+    "Text": "2017-01-17",
+    "Count": "01"
+  },
+  "Bug": [
+    "574408"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-util/xdelta",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.0.10",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.0.10",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Xdelta is a C library and command-line tool for delta compression using\n      VCDIFF/RFC 3284 streams.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A buffer overflow can be triggered within xdelta when ran against a\n      malicious input file.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could coerce the victim to run xdelta against a\n      malicious input file. This may be leveraged by an attacker to crash\n      xdelta and gain control of program execution.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All xdelta users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-util/xdelta-3.0.10\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2014-9765\n    ",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-9765"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2016-11-25T00:33:49Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2017-01-17T03:41:05Z"
+    }
+  ]
+}

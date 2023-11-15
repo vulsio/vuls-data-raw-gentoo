@@ -1,0 +1,98 @@
+{
+  "ID": "201405-18",
+  "Title": "OpenConnect: User-assisted execution of arbitrary code",
+  "Synopsis": "A buffer overflow in OpenConnect could result in execution of\n    arbitrary code or Denial of Service.\n  ",
+  "Product": {
+    "Text": "openconnect",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-05-18",
+  "Revised": {
+    "Text": "2014-05-18",
+    "Count": "1"
+  },
+  "Bug": [
+    "457068"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/openconnect",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.08",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.08",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>OpenConnect is a free client for Cisco AnyConnect SSL VPN software.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A stack-based buffer overflow error has been discovered in OpenConnect.</p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to connect to a malicious VPN\n      server, possibly resulting in  execution of arbitrary code with the\n      privileges of the process, or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All OpenConnect users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/openconnect-4.08\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-6128",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-6128"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2013-04-08T22:03:55Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2014-05-18T11:36:30Z"
+    }
+  ]
+}

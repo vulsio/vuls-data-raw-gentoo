@@ -1,0 +1,103 @@
+{
+  "ID": "200805-02",
+  "Title": "phpMyAdmin: Information disclosure",
+  "Synopsis": "\n    A vulnerability in phpMyAdmin may lead to information disclosure.\n  ",
+  "Product": {
+    "Text": "phpmyadmin",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-05-05",
+  "Revised": {
+    "Text": "2008-05-05",
+    "Count": "01"
+  },
+  "Bug": [
+    "219005"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-db/phpmyadmin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.11.5.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.11.5.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    phpMyAdmin is a tool written in PHP intended to handle the\n    administration of MySQL databases from a web-browser.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Cezary Tomczak reported that an undefined UploadDir variable exposes an\n    information disclosure vulnerability when running on shared hosts.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    A remote attacker with CREATE TABLE permissions can exploit this\n    vulnerability via a specially crafted HTTP POST request in order to\n    read arbitrary files.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All phpMyAdmin users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-db/phpmyadmin-2.11.5.2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-1924",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1924"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    vorlon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-04-29T13:00:15Z"
+    },
+    {
+      "Text": "\n    vorlon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-04-29T13:00:26Z"
+    },
+    {
+      "Text": "\n    mfleming\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-04-29T18:38:43Z"
+    }
+  ]
+}

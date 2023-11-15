@@ -1,0 +1,103 @@
+{
+  "ID": "200908-08",
+  "Title": "ISC DHCP: dhcpd Denial of service",
+  "Synopsis": "\n    dhcpd as included in the ISC DHCP implementation does not properly handle\n    special conditions, leading to a Denial of Service.\n  ",
+  "Product": {
+    "Text": "dhcp",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-08-18",
+  "Revised": {
+    "Text": "2009-08-18",
+    "Count": "01"
+  },
+  "Bug": [
+    "275231"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/dhcp",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.1.2_p1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.1.2_p1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    ISC DHCP is the reference implementation of the Dynamic Host\n    Configuration Protocol as specified in RFC 2131.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Christoph Biedl discovered that dhcpd does not properly handle certain\n    DHCP requests when configured both using \"dhcp-client-identifier\" and\n    \"hardware ethernet\".\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker might send a specially crafted request to dhcpd,\n    possibly resulting in a Denial of Service (daemon crash).\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All ISC DHCP users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/dhcp-3.1.2_p1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-1892",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1892"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-07-28T17:01:31Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-08-04T19:40:02Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-08-05T13:32:31Z"
+    }
+  ]
+}

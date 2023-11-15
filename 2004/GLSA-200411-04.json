@@ -1,0 +1,107 @@
+{
+  "ID": "200411-04",
+  "Title": "Speedtouch USB driver: Privilege escalation vulnerability",
+  "Synopsis": "\n    A vulnerability in the Speedtouch USB driver can be exploited to allow\n    local users to execute arbitrary code with escalated privileges.\n  ",
+  "Product": {
+    "Text": "speedtouch",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-11-02",
+  "Revised": {
+    "Text": "2004-11-02",
+    "Count": "01"
+  },
+  "Bug": [
+    "68436"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-dialup/speedtouch",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.3.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.3.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The speedtouch package contains a driver for the ADSL SpeedTouch USB modem.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The Speedtouch USB driver contains multiple format string vulnerabilities\n    in modem_run, pppoa2 and pppoa3. This flaw is due to an improperly made\n    syslog() system call.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A malicious local user could exploit this vulnerability by causing a buffer\n    overflow, and potentially allowing the execution of arbitrary code with\n    escalated privileges.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Speedtouch USB driver users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dialup/speedtouch-1.3.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-0834",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0834"
+      },
+      {
+        "Text": "Speedtouch Project News Announcements",
+        "Link": "https://speedtouch.sourceforge.net/index.php?/news.en.html"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-10-29T08:13:35Z"
+    },
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-10-29T13:15:40Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-11-02T13:27:33Z"
+    }
+  ]
+}

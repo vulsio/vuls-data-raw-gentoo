@@ -1,0 +1,113 @@
+{
+  "ID": "201206-18",
+  "Title": "GnuTLS: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in GnuTLS, allowing a\n    remote attacker to perform man-in-the-middle or Denial of Service attacks.\n  ",
+  "Product": {
+    "Text": "GnuTLS",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-06-23",
+  "Revised": {
+    "Text": "2012-06-23",
+    "Count": "1"
+  },
+  "Bug": [
+    "281224",
+    "292025",
+    "389947",
+    "409287"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-libs/gnutls",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.12.18",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.12.18",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>GnuTLS is an Open Source implementation of the TLS 1.2 and SSL 3.0\n      protocols.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been found in GnuTLS:</p>\n    \n    <ul>\n      <li>An error in libgnutls does not properly sanitize \"\\0\" characters from\n        certificate fields (CVE-2009-2730).\n      </li>\n      <li>An error in the TLS and SSL protocols mistreats renegotiation\n        handshakes (CVE-2009-3555).\n      </li>\n      <li>A boundary error in the \"gnutls_session_get_data()\" function in\n        gnutls_session.c could cause a buffer overflow (CVE-2011-4128).\n      </li>\n      <li>An error in the \"_gnutls_ciphertext2compressed()\" function in\n        gnutls_cipher.c could cause memory corruption (CVE-2012-1573).\n      </li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could perform man-in-the-middle attacks to spoof\n      arbitrary SSL servers or cause a Denial of Service condition in\n      applications linked against GnuTLS.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All GnuTLS users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-libs/gnutls-2.12.18\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-2730",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-2730"
+      },
+      {
+        "Text": "CVE-2009-3555",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-3555"
+      },
+      {
+        "Text": "CVE-2011-4128",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-4128"
+      },
+      {
+        "Text": "CVE-2012-1573",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1573"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2012-04-17T00:40:28Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-06-23T14:21:06Z"
+    }
+  ]
+}

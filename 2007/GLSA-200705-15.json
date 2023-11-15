@@ -1,0 +1,106 @@
+{
+  "ID": "200705-15",
+  "Title": "Samba: Multiple vulnerabilities",
+  "Synopsis": "\n    Samba contains multiple vulnerabilities potentially resulting in the\n    execution of arbitrary code with root privileges.\n  ",
+  "Product": {
+    "Text": "samba",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-05-15",
+  "Revised": {
+    "Text": "2007-05-15",
+    "Count": "01"
+  },
+  "Bug": [
+    "177029"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-fs/samba",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.0.24-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.0.24-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Samba is a suite of SMB and CIFS client/server programs for UNIX.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Samba contains a logical error in the smbd daemon when translating\n    local SID to user names (CVE-2007-2444). Furthermore, Samba contains\n    several bugs when parsing NDR encoded RPC parameters (CVE-2007-2446).\n    Lastly, Samba fails to properly sanitize remote procedure input\n    provided via Microsoft Remote Procedure Calls (CVE-2007-2447).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker could exploit these vulnerabilities to gain root\n    privileges via various vectors.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Samba users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-fs/samba-3.0.24-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-2444",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2444"
+      },
+      {
+        "Text": "CVE-2007-2446",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2446"
+      },
+      {
+        "Text": "CVE-2007-2447",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2447"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-05-14T17:44:45Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-05-15T12:42:21Z"
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "ID": "200711-07",
+  "Title": "Python: User-assisted execution of arbitrary code",
+  "Synopsis": "\n    Multiple integer overflow vulnerabilities have been discovered in Python,\n    possibly resulting in the execution of arbitrary code or a Denial of\n    Service.\n  ",
+  "Product": {
+    "Text": "python",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-11-07",
+  "Revised": {
+    "Text": "2007-11-07",
+    "Count": "01"
+  },
+  "Bug": [
+    "192876"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-lang/python",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.3.6-r3",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "2.4.4-r6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.4.4-r6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Python is an interpreted, interactive, object-oriented programming\n    language.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Slythers Bro discovered multiple integer overflows in the imageop\n    module, one of them in the tovideo() method, in various locations in\n    files imageop.c, rbgimgmodule.c, and also in other files.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to process specially crafted\n    images with an application using the Python imageop module, resulting\n    in the execution of arbitrary code with the privileges of the user\n    running the application, or a Denial of Service. Note that this\n    vulnerability may or may not be exploitable, depending on the\n    application using the module.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Python 2.3.x users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Python 2.4.x users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/python-2.3.6-r3\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/python-2.4.4-r6\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-4965",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4965"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-10-27T13:38:30Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-11-01T20:41:20Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-11-01T20:41:27Z"
+    }
+  ]
+}

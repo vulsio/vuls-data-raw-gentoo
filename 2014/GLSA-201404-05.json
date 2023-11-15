@@ -1,0 +1,130 @@
+{
+  "ID": "201404-05",
+  "Title": "OpenAFS: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in OpenAFS, worst of which\n    can allow attackers to execute arbitrary code\n  ",
+  "Product": {
+    "Text": "openafs",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-04-07",
+  "Revised": {
+    "Text": "2014-04-07",
+    "Count": "1"
+  },
+  "Bug": [
+    "265538",
+    "355533",
+    "460494",
+    "478282",
+    "478296"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-fs/openafs",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.6.5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.6.5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>OpenAFS is an client-server program suite for federated file sharing and\n      replicated content distribution.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in OpenAFS. Please review\n      the CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>An attacker could potentially execute arbitrary code with the\n      permissions of the user running the AFS server, cause a Denial of Service\n      condition, or gain access to sensitive information. Additionally, an\n      attacker could compromise a cell’s private key, allowing them to\n      impersonate any user in the cell.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All OpenAFS users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-fs/openafs-1.6.5\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-1250",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-1250"
+      },
+      {
+        "Text": "CVE-2009-1251",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-1251"
+      },
+      {
+        "Text": "CVE-2011-0430",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-0430"
+      },
+      {
+        "Text": "CVE-2011-0431",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-0431"
+      },
+      {
+        "Text": "CVE-2013-1794",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1794"
+      },
+      {
+        "Text": "CVE-2013-1795",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1795"
+      },
+      {
+        "Text": "CVE-2013-4134",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4134"
+      },
+      {
+        "Text": "CVE-2013-4135",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4135"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    underling\n  ",
+      "Tag": "requester",
+      "Timestamp": "2011-10-07T23:37:40Z"
+    },
+    {
+      "Text": "\n    pinkbyte\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2014-04-07T21:22:36Z"
+    }
+  ]
+}

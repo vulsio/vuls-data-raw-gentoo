@@ -1,0 +1,126 @@
+{
+  "ID": "200404-20",
+  "Title": "Multiple vulnerabilities in xine",
+  "Synopsis": "\n    Several vulnerabilities have been found in xine-ui and xine-lib,\n    potentially allowing an attacker to overwrite files with the rights of the\n    user.\n  ",
+  "Product": {
+    "Text": "xine",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-04-27",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "45448",
+    "48107",
+    "48108"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-video/xine-ui",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.9.23-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.9.23-r1",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "media-libs/xine-lib",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1_rc3-r3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1_rc3-r2",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    xine is a multimedia player allowing to play back CDs, DVDs, and VCDs\n    and decoding multimedia files like AVI, MOV, WMV, and MP3 from local\n    disk drives, and displays multimedia streamed over the Internet. It is\n    available in Gentoo as a reusable library (xine-lib) with a standard\n    user interface (xine-ui).\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Several vulnerabilities were found in xine-ui and xine-lib. By opening\n    a malicious MRL in any xine-lib based media player, an attacker can\n    write arbitrary content to an arbitrary file, only restricted by the\n    permissions of the user running the application. By opening a malicious\n    playlist in the xine-ui media player, an attacker can write arbitrary\n    content to an arbitrary file, only restricted by the permissions of the\n    user running xine-ui. Finally, a temporary file is created in an\n    insecure manner by the xine-check and xine-bugreport scripts,\n    potentially allowing a local attacker to use a symlink attack.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    These three vulnerabilities may alow an attacker to corrupt system\n    files, thus potentially leading to a Denial of Service. It is also\n    theoretically possible, though very unlikely, to use these\n    vulnerabilities to elevate the privileges of the attacker.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time. All users are advised to\n    upgrade to the latest available versions of xine-ui and xine-lib.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All users of xine-ui or another xine-based player should upgrade to the\n    latest stable versions:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv \">=media-video/xine-ui-0.9.23-r2\"\n    # emerge \">=media-video/xine-ui-0.9.23-r2\"\n    \n    # emerge -pv \">=media-libs/xine-lib-1_rc3-r3\"\n    # emerge \">=media-libs/xine-lib-1_rc3-r3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Xine Security Advisories",
+        "Link": "http://xinehq.de/index.php/security"
+      },
+      {
+        "Text": "xine-bugreport and xine-check vulnerability",
+        "Link": "http://nettwerked.mg2.org/advisories/xinebug"
+      },
+      {
+        "Text": "CVE-2004-0372",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0372"
+      },
+      {
+        "Text": "CVE-2004-1951",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1951"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

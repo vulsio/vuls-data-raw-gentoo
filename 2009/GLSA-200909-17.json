@@ -1,0 +1,103 @@
+{
+  "ID": "200909-17",
+  "Title": "ZNC: Directory traversal",
+  "Synopsis": "\n    A directory traversal was found in ZNC, allowing for overwriting of\n    arbitrary files.\n  ",
+  "Product": {
+    "Text": "znc",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-09-13",
+  "Revised": {
+    "Text": "2009-09-13",
+    "Count": "01"
+  },
+  "Bug": [
+    "278684"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-irc/znc",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.074",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.074",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    ZNC is an advanced IRC bouncer.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The vendor reported a directory traversal vulnerability when processing\n    DCC SEND requests.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote, authenticated user could send a specially crafted DCC SEND\n    request to overwrite arbitrary files with the privileges of the user\n    running ZNC, and possibly cause the execution of arbitrary code e.g. by\n    uploading a malicious ZNC module.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All ZNC users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-irc/znc-0.074\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-2658",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2658"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-08-14T18:19:47Z"
+    },
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-08-14T18:28:31Z"
+    },
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-08-31T08:50:23Z"
+    }
+  ]
+}

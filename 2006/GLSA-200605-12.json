@@ -1,0 +1,165 @@
+{
+  "ID": "200605-12",
+  "Title": "Quake 3 engine based games: Buffer Overflow",
+  "Synopsis": "\n    The Quake 3 engine has a vulnerability that could be exploited to execute\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "quake",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-05-10",
+  "Revised": {
+    "Text": "2006-05-10",
+    "Count": "01"
+  },
+  "Bug": [
+    "132377"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "games-fps/quake3-bin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.32c",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.32c",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "games-fps/rtcw",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.41b",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.41b",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "games-fps/enemy-territory",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.60b",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.60b",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Quake 3 is a multiplayer first person shooter.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    landser discovered a vulnerability within the \"remapShader\"\n    command. Due to a boundary handling error in \"remapShader\", there is a\n    possibility of a buffer overflow.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could set up a malicious game server and entice users\n    to connect to it, potentially resulting in the execution of arbitrary\n    code with the rights of the game user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Do not connect to untrusted game servers.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Quake 3 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All RTCW users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Enemy Territory users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=games-fps/quake3-bin-1.32c\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=games-fps/rtcw-1.41b\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=games-fps/enemy-territory-2.60b\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-2236",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2236"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-05-09T16:37:35Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-05-09T16:37:43Z"
+    },
+    {
+      "Text": "\n    fox2mike\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-05-09T17:21:13Z"
+    }
+  ]
+}

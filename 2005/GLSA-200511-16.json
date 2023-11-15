@@ -1,0 +1,111 @@
+{
+  "ID": "200511-16",
+  "Title": "GNUMP3d: Directory traversal and insecure temporary file creation",
+  "Synopsis": "\n    Two vulnerabilities have been identified in GNUMP3d allowing for limited\n    directory traversal and insecure temporary file creation.\n  ",
+  "Product": {
+    "Text": "GNUMP3d",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-11-21",
+  "Revised": {
+    "Text": "2007-08-21",
+    "Count": "02"
+  },
+  "Bug": [
+    "111990"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-sound/gnump3d",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.9_pre7",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.9_pre7",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    GNUMP3d is a streaming server for MP3s, OGG vorbis files, movies and\n    other media formats.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Ludwig Nussel from SUSE Linux has identified two vulnerabilities in\n    GNUMP3d. GNUMP3d fails to properly check for the existence of\n    /tmp/index.lok before writing to the file, allowing for local\n    unauthorized access to files owned by the user running GNUMP3d. GNUMP3d\n    also fails to properly validate the \"theme\" GET variable from CGI\n    input, allowing for unauthorized file inclusion.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could overwrite files owned by the user running GNUMP3d by\n    symlinking /tmp/index.lok to the file targeted for overwrite. An\n    attacker could also include arbitrary files by traversing up the\n    directory tree (at most two times, i.e. \"../..\") with the \"theme\" GET\n    variable.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All GNUMP3d users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-sound/gnump3d-2.9_pre7\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-3349",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3349"
+      },
+      {
+        "Text": "CVE-2005-3355",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3355"
+      },
+      {
+        "Text": "GNUMP3d Changelog",
+        "Link": "https://www.gnu.org/software/gnump3d/ChangeLog"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-11-18T12:35:13Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-11-18T12:35:57Z"
+    },
+    {
+      "Text": "\n    shellsage\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-11-18T22:47:09Z"
+    }
+  ]
+}

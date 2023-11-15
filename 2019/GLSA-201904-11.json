@@ -1,0 +1,124 @@
+{
+  "ID": "201904-11",
+  "Title": "Portage: Man-in-the-middle",
+  "Synopsis": "A vulnerability in emerge-delta-webrsync and Portage could result\n    in a man-in-the-middle attack.\n  ",
+  "Product": {
+    "Text": "portage",
+    "Type": "ebuild"
+  },
+  "Announced": "2019-04-08",
+  "Revised": {
+    "Text": "2019-04-08",
+    "Count": "1"
+  },
+  "Bug": [
+    "646212"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-portage/emerge-delta-webrsync",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.7.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.7.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "sys-apps/portage",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.3.22",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.3.22",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Portage is the package management and distribution system for Gentoo.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A vulnerability was discovered in emerge-delta-webrsync and Portage that\n      did not properly validate the revocation status of GPG keys.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could conduct a man-in-the-middle attack.  Please\n      review the referenced bug for specific details.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All emerge-delta-webrsync users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All Portage users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=app-portage/emerge-delta-webrsync-3.7.4\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-apps/portage-2.3.22\"\n    "
+    ]
+  },
+  "References": {
+    "URI": null
+  },
+  "Metadata": [
+    {
+      "Text": "BlueKnight",
+      "Tag": "requester",
+      "Timestamp": "2019-03-24T23:20:15Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2019-04-08T15:21:14Z"
+    }
+  ]
+}

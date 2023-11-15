@@ -1,0 +1,87 @@
+{
+  "ID": "200311-08",
+  "Title": "Libnids: remote code execution vulnerability",
+  "Synopsis": "\n    Libnids contains a bug which could allow remote code execution.\n  ",
+  "Product": {
+    "Text": "Libnids",
+    "Type": "ebuild"
+  },
+  "Announced": "2003-11-22",
+  "Revised": {
+    "Text": "2003-11-22",
+    "Count": "01"
+  },
+  "Bug": [
+    "32724"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-libs/libnids",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.18",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.17",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Libnids is a component of a network intrusion detection system.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    There is a bug in the part of libnids code responsible for TCP reassembly.\n    The flaw probably allows remote code execution.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could possibly execute arbitrary code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    It is recommended that all Gentoo Linux users who are running\n    net-libs/libnids update their systems as follows:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    # emerge -pv '>=net-libs/libnids-1.18'\n    # emerge '>=net-libs/libnids-1.18'\n    # emerge clean"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2003-0850",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2003-0850"
+      }
+    ]
+  },
+  "Metadata": null
+}

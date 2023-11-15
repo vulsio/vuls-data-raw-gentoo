@@ -1,0 +1,103 @@
+{
+  "ID": "200809-05",
+  "Title": "Courier Authentication Library: SQL injection vulnerability",
+  "Synopsis": "\n    An SQL injection vulnerability has been discovered in the Courier\n    Authentication Library.\n  ",
+  "Product": {
+    "Text": "courier-authlib",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-09-05",
+  "Revised": {
+    "Text": "2008-09-05",
+    "Count": "01"
+  },
+  "Bug": [
+    "225407"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-libs/courier-authlib",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.60.6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.60.6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Courier Authentication Library is a generic authentication API that\n    encapsulates the process of validating account passwords.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    It has been discovered that some input (e.g. the username) passed to\n    the library are not properly sanitised before being used in SQL\n    queries.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could provide specially crafted input to the library,\n    possibly resulting in the remote execution of arbitrary SQL commands.\n    NOTE: Exploitation of this vulnerability requires that a MySQL database\n    is used for authentication and that a Non-Latin character set is\n    selected.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Courier Authentication Library users should upgrade to the latest\n    version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-libs/courier-authlib-0.60.6\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-2667",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2667"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-08-11T18:54:58Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-08-11T18:56:59Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-08-28T21:07:13Z"
+    }
+  ]
+}

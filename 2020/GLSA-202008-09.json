@@ -1,0 +1,102 @@
+{
+  "ID": "202008-09",
+  "Title": "Shadow: Privilege escalation",
+  "Synopsis": "Multiple Shadow utilities were installed with setuid permissions,\n    allowing possible root privilege escalation.\n  ",
+  "Product": {
+    "Text": "shadow",
+    "Type": "ebuild"
+  },
+  "Announced": "2020-08-25",
+  "Revised": {
+    "Text": "2020-08-25",
+    "Count": "1"
+  },
+  "Bug": [
+    "702252"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-apps/shadow",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.8-r3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.8-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Shadow is a set of tools to deal with user accounts.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>When Shadow was installed with the PAM use flag, setuid binaries\n      provided by Shadow were not properly restricted.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A local attacker could escalate privileges to root.</p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Shadow users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-apps/shadow-4.8-r3\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2019-19882",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2019-19882"
+      },
+      {
+        "Text": "Upstream\n      mitigation\n    ",
+        "Link": "https://github.com/shadow-maint/shadow/pull/199"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "sam_c",
+      "Tag": "requester",
+      "Timestamp": "2020-08-24T00:55:20Z"
+    },
+    {
+      "Text": "sam_c",
+      "Tag": "submitter",
+      "Timestamp": "2020-08-25T12:51:43Z"
+    }
+  ]
+}

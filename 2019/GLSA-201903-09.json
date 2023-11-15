@@ -1,0 +1,98 @@
+{
+  "ID": "201903-09",
+  "Title": "GNU C Library: Arbitrary descriptor allocation",
+  "Synopsis": "A vulnerability in the GNU C Library could result in a Denial of\n    Service condition.\n  ",
+  "Product": {
+    "Text": "glibc",
+    "Type": "ebuild"
+  },
+  "Announced": "2019-03-14",
+  "Revised": {
+    "Text": "2019-03-14",
+    "Count": "1"
+  },
+  "Bug": [
+    "617938"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-libs/glibc",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.26.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.26.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>The GNU C library is the standard C library used by Gentoo Linux\n      systems.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A vulnerability was discovered in the GNU C Library functions xdr_bytes\n      and xdr_string.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker, by sending a crafted UDP packet, could cause a Denial\n      of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All GNU C Library users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-libs/glibc-2.26.0\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2018-19591",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2018-19591"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "Zlogene",
+      "Tag": "requester",
+      "Timestamp": "2018-12-30T15:32:10Z"
+    },
+    {
+      "Text": "Zlogene",
+      "Tag": "submitter",
+      "Timestamp": "2019-03-14T01:31:55Z"
+    }
+  ]
+}

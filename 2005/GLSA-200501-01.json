@@ -1,0 +1,107 @@
+{
+  "ID": "200501-01",
+  "Title": "LinPopUp: Buffer overflow in message reply",
+  "Synopsis": "\n    LinPopUp contains a buffer overflow potentially allowing execution of\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "Linpopup",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-01-04",
+  "Revised": {
+    "Text": "2005-01-04",
+    "Count": "01"
+  },
+  "Bug": [
+    "74705"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-im/linpopup",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.4-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.4-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    LinPopUp is a graphical application that acts as a frontend to\n    Samba client messaging functions, allowing a Linux desktop to\n    communicate with a Microsoft Windows computer that runs Winpopup.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Stephen Dranger discovered that LinPopUp contains a buffer\n    overflow in string.c, triggered when replying to a remote user message.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could craft a malicious message that, when\n    replied using LinPopUp, would exploit the buffer overflow. This would\n    result in the execution of arbitrary code with the privileges of the\n    user running LinPopUp.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All LinPopUp users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-im/linpopup-2.0.4-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-1282",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1282"
+      },
+      {
+        "Text": "Stephen Dranger Advisory",
+        "Link": "http://tigger.uic.edu/~jlongs2/holes/linpopup.txt"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-12-31T10:20:27Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-01-01T22:08:20Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-01-01T22:15:30Z"
+    }
+  ]
+}

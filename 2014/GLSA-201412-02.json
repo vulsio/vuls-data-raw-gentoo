@@ -1,0 +1,98 @@
+{
+  "ID": "201412-02",
+  "Title": "nfs-utils: Information disclosure",
+  "Synopsis": "A vulnerability in nfs-utils might allow remote attackers to gain\n    access to restricted information.\n  ",
+  "Product": {
+    "Text": "nfs-utils",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-12-08",
+  "Revised": {
+    "Text": "2014-12-08",
+    "Count": "1"
+  },
+  "Bug": [
+    "464636"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-fs/nfs-utils",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.8",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.8",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>nfs-utils contains the client and daemon implementations for the NFS\n      protocol.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>rpc.gssd in nfs-utils is vulnerable to DNS spoofing due to it depending\n      on PTR resolution for GSSAPI authentication, allowing for data to be\n      submitted to a malicious server without the knowledge of the user.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker may be able to obtain sensitive information. </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All nfs-utils users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-fs/nfs-utils-1.2.8\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2013-1923",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1923"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "requester",
+      "Timestamp": "2014-06-27T21:18:15Z"
+    },
+    {
+      "Text": "K_F",
+      "Tag": "submitter",
+      "Timestamp": "2014-12-08T22:50:14Z"
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "ID": "201603-12",
+  "Title": "FlightGear, SimGear: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in FlightGear and SimGear\n    allowing remote attackers to cause Denial of Service and possibly execute\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "flightgear, simgear",
+    "Type": "ebuild"
+  },
+  "Announced": "2016-03-12",
+  "Revised": {
+    "Text": "2016-03-12",
+    "Count": "1"
+  },
+  "Bug": [
+    "426502",
+    "468106"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "games-simulation/flightgear",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.4.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.4.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "games-simulation/simgear",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.4.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.4.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>FlightGear is an open-source flight simulator.  It supports a variety of\n      popular platforms (Windows, Mac, Linux, etc.) and is developed by skilled\n      volunteers from around the world.  Source code for the entire project is\n      available and licensed under the GNU General Public License.\n    </p>\n    \n    <p>SimGear is a set of open-source libraries designed to be used as\n      building blocks for quickly assembling 3d simulations, games, and\n      visualization applications.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple format string vulnerabilities in FlightGear and SimGear allow\n      user-assisted remote attackers to cause a denial of service and possibly\n      execute arbitrary code via format string specifiers in certain data chunk\n      values in an aircraft xml model.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>Remote attackers could possibly execute arbitrary code or cause Denial\n      of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Flightgear users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All Simgear users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=games-simulation/flightgear-3.4.0\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=games-simulation/simgear-3.4.0\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-2090",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-2090"
+      },
+      {
+        "Text": "CVE-2012-2091",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-2091"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    pinkbyte\n  ",
+      "Tag": "requester",
+      "Timestamp": "2015-05-16T06:03:32Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2016-03-12T23:11:04Z"
+    }
+  ]
+}

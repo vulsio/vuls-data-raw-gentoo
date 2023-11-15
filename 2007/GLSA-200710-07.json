@@ -1,0 +1,103 @@
+{
+  "ID": "200710-07",
+  "Title": "Tk: Buffer overflow",
+  "Synopsis": "\n    A buffer overflow vulnerability has been discovered in Tk.\n  ",
+  "Product": {
+    "Text": "tk",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-10-07",
+  "Revised": {
+    "Text": "2007-10-07",
+    "Count": "01"
+  },
+  "Bug": [
+    "192539"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-lang/tk",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "8.4.15-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "8.4.15-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Tk is a toolkit for creating graphical user interfaces.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Reinhard Max discovered a boundary error in Tk when processing an\n    interlaced GIF with two frames where the second is smaller than the\n    first one.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted GIF\n    image with a Tk-based software, possibly resulting in the execution of\n    arbitrary code with the privileges of the user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Tk users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/tk-8.4.15-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-4851",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4851"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-09-25T09:49:33Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-09-25T09:49:45Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-10-02T20:07:14Z"
+    }
+  ]
+}

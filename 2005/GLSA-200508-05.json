@@ -1,0 +1,103 @@
+{
+  "ID": "200508-05",
+  "Title": "Heartbeat: Insecure temporary file creation",
+  "Synopsis": "\n    Heartbeat is vulnerable to symlink attacks, potentially allowing a local\n    user to overwrite arbitrary files.\n  ",
+  "Product": {
+    "Text": "Heartbeat",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-08-07",
+  "Revised": {
+    "Text": "2005-08-07",
+    "Count": "01"
+  },
+  "Bug": [
+    "97175"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-cluster/heartbeat",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.3-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.3-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Heartbeat is a component of the High-Availability Linux project.\n    It it used to perform death-of-node detection, communications and\n    cluster management.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Eric Romang has discovered that Heartbeat insecurely creates\n    temporary files with predictable filenames.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary file\n    directory, pointing to a valid file somewhere on the filesystem. When a\n    vulnerable script is executed, this could lead to the file being\n    overwritten with the rights of the user running the affected\n    application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Heartbeat users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-cluster/heartbeat-1.2.3-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-2231",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2231"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-08-05T07:37:14Z"
+    },
+    {
+      "Text": "\n    formula7\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-08-05T14:33:59Z"
+    },
+    {
+      "Text": "\n    formula7\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-08-05T14:54:26Z"
+    }
+  ]
+}

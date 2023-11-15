@@ -1,0 +1,300 @@
+{
+  "ID": "201709-22",
+  "Title": "Oracle JDK/JRE, IcedTea: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in Oracle's JRE and JDK\n    software suites, and IcedTea, the worst of which may allow execution of\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "oracle-jdk-bin,oracle-jre-bin,icedtea-bin",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-09-24",
+  "Revised": {
+    "Text": "2017-09-25",
+    "Count": "2"
+  },
+  "Bug": [
+    "625602",
+    "626088",
+    "627682"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-java/oracle-jdk-bin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.8.0.141",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.8.0.141",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "dev-java/oracle-jre-bin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.8.0.141",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.8.0.141",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "dev-java/icedtea-bin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "7.2.6.11",
+            "Range": "ge",
+            "Slot": "7"
+          },
+          {
+            "Text": "3.5.0",
+            "Range": "ge",
+            "Slot": "8"
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "7.2.6.11",
+            "Range": "lt",
+            "Slot": "7"
+          },
+          {
+            "Text": "3.5.0",
+            "Range": "lt",
+            "Slot": "8"
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Java Platform, Standard Edition (Java SE) lets you develop and deploy\n      Java applications on desktops and servers, as well as in today’s\n      demanding embedded environments. Java offers the rich user interface,\n      performance, versatility, portability, and security that today’s\n      applications require.\n    </p>\n    \n    <p>IcedTea’s aim is to provide OpenJDK in a form suitable for easy\n      configuration, compilation and distribution with the primary goal of\n      allowing inclusion in GNU/Linux distributions.\n    </p>\n    \n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in Oracle’s JRE, JDK and\n      IcedTea. Please review the referenced CVE identifiers for details.\n    </p>\n    \n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could possibly execute arbitrary code with the\n      privileges of the process, cause a Denial of Service condition, or gain\n      access to information.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Oracle JDK binary users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All Oracle JRE binary users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All IcedTea binary 7.x users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All IcedTea binary 3.x users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=dev-java/oracle-jdk-bin-1.8.0.141\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=dev-java/oracle-jre-bin-1.8.0.141\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-java/icedtea-bin-7.2.6.11\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-java/icedtea-bin-3.5.0\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2017-10053\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-10053"
+      },
+      {
+        "Text": "\n      CVE-2017-10067\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-10067"
+      },
+      {
+        "Text": "\n      CVE-2017-10074\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-10074"
+      },
+      {
+        "Text": "\n      CVE-2017-10078\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-10078"
+      },
+      {
+        "Text": "\n      CVE-2017-10081\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-10081"
+      },
+      {
+        "Text": "\n      CVE-2017-10086\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-10086"
+      },
+      {
+        "Text": "\n      CVE-2017-10087\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-10087"
+      },
+      {
+        "Text": "\n      CVE-2017-10089\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-10089"
+      },
+      {
+        "Text": "\n      CVE-2017-10090\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-10090"
+      },
+      {
+        "Text": "\n      CVE-2017-10096\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-10096"
+      },
+      {
+        "Text": "\n      CVE-2017-10101\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-10101"
+      },
+      {
+        "Text": "\n      CVE-2017-10102\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-10102"
+      },
+      {
+        "Text": "\n      CVE-2017-10105\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-10105"
+      },
+      {
+        "Text": "\n      CVE-2017-10107\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-10107"
+      },
+      {
+        "Text": "\n      CVE-2017-10108\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-10108"
+      },
+      {
+        "Text": "\n      CVE-2017-10109\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-10109"
+      },
+      {
+        "Text": "\n      CVE-2017-10110\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-10110"
+      },
+      {
+        "Text": "\n      CVE-2017-10111\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-10111"
+      },
+      {
+        "Text": "\n      CVE-2017-10114\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-10114"
+      },
+      {
+        "Text": "\n      CVE-2017-10115\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-10115"
+      },
+      {
+        "Text": "\n      CVE-2017-10116\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-10116"
+      },
+      {
+        "Text": "\n      CVE-2017-10117\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-10117"
+      },
+      {
+        "Text": "\n      CVE-2017-10118\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-10118"
+      },
+      {
+        "Text": "\n      CVE-2017-10121\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-10121"
+      },
+      {
+        "Text": "\n      CVE-2017-10125\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-10125"
+      },
+      {
+        "Text": "\n      CVE-2017-10135\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-10135"
+      },
+      {
+        "Text": "\n      CVE-2017-10176\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-10176"
+      },
+      {
+        "Text": "\n      CVE-2017-10193\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-10193"
+      },
+      {
+        "Text": "\n      CVE-2017-10198\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-10198"
+      },
+      {
+        "Text": "\n      CVE-2017-10243\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-10243"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "chrisadr",
+      "Tag": "requester",
+      "Timestamp": "2017-09-17T20:31:23Z"
+    },
+    {
+      "Text": "chrisadr",
+      "Tag": "submitter",
+      "Timestamp": "2017-09-25T08:54:45Z"
+    }
+  ]
+}

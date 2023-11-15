@@ -1,0 +1,98 @@
+{
+  "ID": "201702-32",
+  "Title": "Ruby Archive::Tar::Minitar: Directory traversal",
+  "Synopsis": "Ruby Archive::Tar::Minitar is vulnerable to a directory traversal\n    attack.\n  ",
+  "Product": {
+    "Text": "archive-tar-minitar",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-02-22",
+  "Revised": {
+    "Text": "2017-02-22",
+    "Count": "1"
+  },
+  "Bug": [
+    "607110"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-ruby/archive-tar-minitar",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.6.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.6.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Archive::Tar::Minitar is a pure-Ruby library and command-line utility\n      that provides the ability to deal with POSIX tar(1) archive files.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Michal Marek discovered that Ruby Archive::Tar::Minitar is vulnerable to\n      a directory traversal vulnerability.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user or an automated system to process\n      a specially crafted archive using Ruby Archive::Tar::Minitar possibly\n      allowing the writing of arbitrary files with the privileges of the\n      process.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Ruby Archive::Tar::Minitar users should upgrade to the latest\n      version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=dev-ruby/archive-tar-minitar-0.6.1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2016-10173\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-10173"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2017-02-21T18:53:16Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2017-02-22T11:12:42Z"
+    }
+  ]
+}

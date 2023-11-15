@@ -1,0 +1,103 @@
+{
+  "ID": "201206-33",
+  "Title": "Postfix: Multiple vulnerabilities ",
+  "Synopsis": "A vulnerability has been found in Postfix, the worst of which\n    possibly allowing remote code execution.\n  ",
+  "Product": {
+    "Text": "Postfix",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-06-25",
+  "Revised": {
+    "Text": "2012-06-25",
+    "Count": "1"
+  },
+  "Bug": [
+    "358085",
+    "366605"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "mail-mta/postfix",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.7.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.7.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Postfix is Wietse Venema’s mailer that attempts to be fast, easy to\n      administer, and secure, as an alternative to the widely-used Sendmail\n      program.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A vulnerability have been discovered in Postfix. Please review the CVE\n      identifier referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>An attacker could perform a man-in-the-middle attack and inject SMTP\n      commands during the plaintext to TLS session switch or might execute\n      arbitrary code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Postfix users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=mail-mta/postfix-2.7.4\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2011-0411",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-0411"
+      },
+      {
+        "Text": "CVE-2011-1720",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-1720"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "craig",
+      "Tag": "requester",
+      "Timestamp": "2011-10-07T23:37:03Z"
+    },
+    {
+      "Text": "craig",
+      "Tag": "submitter",
+      "Timestamp": "2012-06-25T18:51:42Z"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "ID": "200805-11",
+  "Title": "Chicken: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities in Chicken could result in the execution of\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "chicken",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-05-12",
+  "Revised": {
+    "Text": "2008-05-12",
+    "Count": "01"
+  },
+  "Bug": [
+    "198979"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-scheme/chicken",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.1.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.1.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Chicken is a Scheme interpreter and native Scheme to C compiler.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Chicken includes a copy of PCRE which is vulnerable to multiple buffer\n    overflows and memory corruption vulnerabilities (GLSA 200711-30).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could entice a user to process specially crafted regular\n    expressions with Chicken, which could possibly lead to the execution of\n    arbitrary code, a Denial of Service or the disclosure of sensitive\n    information.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Chicken users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-scheme/chicken-3.1.0\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "GLSA 200711-30",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200711-30.xml"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-05-12T11:47:42Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-05-12T11:47:52Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-05-12T12:10:35Z"
+    }
+  ]
+}

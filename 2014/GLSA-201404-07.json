@@ -1,0 +1,209 @@
+{
+  "ID": "201404-07",
+  "Title": "OpenSSL: Information Disclosure",
+  "Synopsis": "Multiple Information Disclosure vulnerabilities in OpenSSL allow\n    remote attackers to obtain sensitive information via various vectors.\n  ",
+  "Product": {
+    "Text": "openssl",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-04-08",
+  "Revised": {
+    "Text": "2015-06-06",
+    "Count": "4"
+  },
+  "Bug": [
+    "505278",
+    "507074"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/openssl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.1g",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8y",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p1",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p2",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p3",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p4",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p5",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p6",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p7",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p8",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p9",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p10",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p11",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p12",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p13",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p14",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p15",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.1g",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>OpenSSL is an Open Source toolkit implementing the Secure Sockets Layer\n      (SSL v2/v3) and Transport Layer Security (TLS v1) as well as a general\n      purpose cryptography library.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been found in OpenSSL:</p>\n    \n    <ul>\n      <li>OpenSSL incorrectly handles memory in the TLS heartbeat extension,\n        leading to information disclosure of 64kb per request, possibly\n        including private keys (“Heartbleed bug”, OpenSSL 1.0.1 only,\n        CVE-2014-0160).\n      </li>\n      <li>The Montgomery ladder implementation of OpenSSL improperly handles\n        swap operations (CVE-2014-0076).\n      </li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could exploit these issues to disclose information,\n      including private keys or other sensitive information, or perform\n      side-channel attacks to obtain ECDSA nonces.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>Disabling the tls-heartbeat USE flag (enabled by default) provides a\n      workaround for the CVE-2014-0160 issue.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All OpenSSL users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "Note: All services using OpenSSL to provide TLS connections have to be\n      restarted for the update to take effect. Utilities like\n      app-admin/lib_users can aid in identifying programs using OpenSSL.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "As private keys may have been compromised using the Heartbleed attack,\n      it is recommended to regenerate them.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/openssl-1.0.1g\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-0076",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0076"
+      },
+      {
+        "Text": "CVE-2014-0160",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0160"
+      },
+      {
+        "Text": "Heartbleed bug website",
+        "Link": "http://heartbleed.com/"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "a3li",
+      "Tag": "requester",
+      "Timestamp": "2014-04-08T09:37:45Z"
+    },
+    {
+      "Text": "a3li",
+      "Tag": "submitter",
+      "Timestamp": "2015-06-06T23:11:05Z"
+    }
+  ]
+}

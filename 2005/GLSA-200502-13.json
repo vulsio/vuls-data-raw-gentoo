@@ -1,0 +1,122 @@
+{
+  "ID": "200502-13",
+  "Title": "Perl: Vulnerabilities in perl-suid wrapper",
+  "Synopsis": "\n    Vulnerabilities leading to file overwriting and code execution with\n    elevated privileges have been discovered in the perl-suid wrapper.\n  ",
+  "Product": {
+    "Text": "Perl",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-02-11",
+  "Revised": {
+    "Text": "2005-02-11",
+    "Count": "01"
+  },
+  "Bug": [
+    "80460"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-lang/perl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.8.6-r3",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "5.8.5-r4",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "5.8.4-r3",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "5.8.2-r3",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.8.6-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Perl is a stable, cross-platform programming language created by\n    Larry Wall. The perl-suid wrapper allows the use of setuid perl\n    scripts, i.e. user-callable Perl scripts which have elevated\n    privileges. This function is enabled only if you have the perlsuid USE\n    flag set.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    perl-suid scripts honor the PERLIO_DEBUG environment variable and\n    write to that file with elevated privileges (CAN-2005-0155).\n    Furthermore, calling a perl-suid script with a very long path while\n    PERLIO_DEBUG is set could trigger a buffer overflow (CAN-2005-0156).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A local attacker could set the PERLIO_DEBUG environment variable\n    and call existing perl-suid scripts, resulting in file overwriting and\n    potentially the execution of arbitrary code with root privileges.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    You are not vulnerable if you do not have the perlsuid USE flag\n    set or do not use perl-suid scripts.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Perl users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose dev-lang/perl"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-0155",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0155"
+      },
+      {
+        "Text": "CAN-2005-0156",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0156"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-02-04T14:45:58Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-02-11T15:34:36Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-02-11T16:11:49Z"
+    }
+  ]
+}

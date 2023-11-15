@@ -1,0 +1,106 @@
+{
+  "ID": "200611-10",
+  "Title": "WordPress: Multiple vulnerabilities",
+  "Synopsis": "\n    Flaws in WordPress allow a Denial of Service, the disclosure of user\n    metadata and the overwriting of restricted files.\n  ",
+  "Product": {
+    "Text": "wordpress",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-11-17",
+  "Revised": {
+    "Text": "2006-11-17",
+    "Count": "01"
+  },
+  "Bug": [
+    "153303"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/wordpress",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    WordPress is a PHP and MySQL based multiuser blogging system.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    \"random\" discovered that users can enter serialized objects as strings\n    in their profiles that will be harmful when unserialized. \"adapter\"\n    found out that user-edit.php fails to effectively deny non-permitted\n    users access to other user's metadata. Additionally, a directory\n    traversal vulnerability in the wp-db-backup module was discovered.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    By entering specially crafted strings in his profile, an attacker can\n    crash PHP or even the web server running WordPress. Additionally, by\n    crafting a simple URL, an attacker can read metadata of any other user,\n    regardless of their own permissions. A user with the permission to use\n    the database backup plugin can possibly overwrite files he otherwise\n    has no access to.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All WordPress users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/wordpress-2.0.5\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-5705",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5705"
+      },
+      {
+        "Text": "WordPress Ticket 3142",
+        "Link": "https://trac.wordpress.org/ticket/3142"
+      },
+      {
+        "Text": "WordPress Ticket 2591",
+        "Link": "https://trac.wordpress.org/ticket/2591"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    frilled\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-11-08T12:56:04Z"
+    },
+    {
+      "Text": "\n    frilled\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-11-09T06:33:42Z"
+    }
+  ]
+}

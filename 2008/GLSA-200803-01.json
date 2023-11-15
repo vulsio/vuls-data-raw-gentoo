@@ -1,0 +1,127 @@
+{
+  "ID": "200803-01",
+  "Title": "Adobe Acrobat Reader: Multiple vulnerabilities",
+  "Synopsis": "\n    Adobe Acrobat Reader is vulnerable to remote code execution, Denial of\n    Service, and cross-site request forgery attacks.\n  ",
+  "Product": {
+    "Text": "acroread",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-03-02",
+  "Revised": {
+    "Text": "2008-03-05",
+    "Count": "05"
+  },
+  "Bug": [
+    "170177"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-text/acroread",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "8.1.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "8.1.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Adobe Acrobat Reader is a PDF reader released by Adobe.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Multiple vulnerabilities have been discovered in Adobe Acrobat Reader,\n    including:\n    </p>\n    <ul><li>A file disclosure when using file:// in PDF documents\n    (CVE-2007-1199)</li>\n    <li>Multiple buffer overflows in unspecified Javascript methods\n    (CVE-2007-5659)</li>\n    <li>An unspecified vulnerability in the Escript.api plugin\n    (CVE-2007-5663)</li>\n    <li>An untrusted search path (CVE-2007-5666)</li>\n    <li>Incorrect handling of printers (CVE-2008-0667)</li>\n    <li>An integer overflow when passing incorrect arguments to\n    \"printSepsWithParams\" (CVE-2008-0726)</li>\n    </ul>\n    <p>\n    Other unspecified vulnerabilities have also been reported\n    (CVE-2008-0655).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted\n    document, possibly resulting in the remote execution of arbitrary code\n    with the privileges of the user running the application. A remote\n    attacker could also perform cross-site request forgery attacks, or\n    cause a Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Adobe Acrobat Reader users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/acroread-8.1.2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-1199",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1199"
+      },
+      {
+        "Text": "CVE-2007-5659",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5659"
+      },
+      {
+        "Text": "CVE-2007-5663",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5663"
+      },
+      {
+        "Text": "CVE-2007-5666",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5666"
+      },
+      {
+        "Text": "CVE-2008-0655",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0655"
+      },
+      {
+        "Text": "CVE-2008-0667",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0667"
+      },
+      {
+        "Text": "CVE-2008-0726",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0726"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-02-12T00:03:23Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-02-27T22:32:54Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-02-27T22:33:01Z"
+    }
+  ]
+}

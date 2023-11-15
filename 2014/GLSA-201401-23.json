@@ -1,0 +1,110 @@
+{
+  "ID": "201401-23",
+  "Title": "sudo: Privilege escalation",
+  "Synopsis": "Multiple vulnerabilities have been found in sudo which could result\n    in privilege escalation.\n  ",
+  "Product": {
+    "Text": "sudo",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-01-21",
+  "Revised": {
+    "Text": "2014-01-21",
+    "Count": "1"
+  },
+  "Bug": [
+    "459722"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-admin/sudo",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.8.6_p7",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.8.6_p7",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>sudo allows a system administrator to give users the ability to run\n      commands as other users. Access to commands may also be granted on a\n      range to hosts.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been found in sudo:</p>\n    \n    <ul>\n      <li>sudo does not correctly validate the controlling terminal on a system\n        without /proc or when the tty_tickets option is enabled.\n      </li>\n      <li>sudo does not properly handle the clock when it is set to the epoch.</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A local attacker with sudo privileges could connect to the stdin,\n      stdout, and stderr of the terminal of a user who has authenticated with\n      sudo, allowing the attacker to hijack the authorization of the other\n      user. Additionally, a local or physically proximate attacker could set\n      the system clock to the epoch, bypassing time restrictions on sudo\n      authentication.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All sudo users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-admin/sudo-1.8.6_p7\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2013-1775",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1775"
+      },
+      {
+        "Text": "CVE-2013-1776",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1776"
+      },
+      {
+        "Text": "CVE-2013-2776",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2776"
+      },
+      {
+        "Text": "CVE-2013-2777",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2777"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2014-01-03T14:24:36Z"
+    },
+    {
+      "Text": "\n    creffett\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2014-01-21T20:25:34Z"
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "ID": "201312-10",
+  "Title": "libsmi: Arbitrary code execution ",
+  "Synopsis": "A buffer overflow in libsmi might allow a context-dependent\n    attacker to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "libsmi",
+    "Type": "ebuild"
+  },
+  "Announced": "2013-12-14",
+  "Revised": {
+    "Text": "2013-12-14",
+    "Count": "1"
+  },
+  "Bug": [
+    "342127"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-libs/libsmi",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.4.8-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.4.8-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>libsmi is a library that allows management applications to access SMI\n      MIB module definitions.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>libsmi contains a buffer overflow vulnerability in the smiGetNode()\n      function in lib/smi.c.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A context-dependent attacker could possibly execute arbitrary code by\n      way of a specially crafted Object Identifier (OID).\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All libsmi users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "Packages which depend on this library may need to be recompiled. Tools\n      such as revdep-rebuild may assist in identifying these packages.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "NOTE: This is a legacy GLSA. Updates for all affected architectures are\n      available since October 30, 2010. It is likely that your system is\n      already no longer affected by this issue.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-libs/libsmi-0.4.8-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2010-2891",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-2891"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    underling\n  ",
+      "Tag": "requester",
+      "Timestamp": "2011-10-07T23:37:09Z"
+    },
+    {
+      "Text": "Zlogene",
+      "Tag": "submitter",
+      "Timestamp": "2013-12-14T22:33:15Z"
+    }
+  ]
+}

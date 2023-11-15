@@ -1,0 +1,131 @@
+{
+  "ID": "201009-01",
+  "Title": "wxGTK: User-assisted execution of arbitrary code",
+  "Synopsis": "\n    An integer overflow vulnerability in wxGTK might enable remote attackers to\n    cause the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "wxGTK",
+    "Type": "ebuild"
+  },
+  "Announced": "2010-09-02",
+  "Revised": {
+    "Text": "2010-09-02",
+    "Count": "01"
+  },
+  "Bug": [
+    "277722"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "x11-libs/wxGTK",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.6.4.0-r5",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "2.8.10.1-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.8.10.1-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    wxGTK is the GTK+ version of wxWidgets, a cross-platform C++ GUI\n    toolkit.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    wxGTK is prone to an integer overflow error in the wxImage::Create()\n    function in src/common/image.cpp, possibly leading to a heap-based\n    buffer overflow.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker might entice a user to open a specially crafted JPEG\n    file using a program that uses wxGTK, possibly resulting in the remote\n    execution of arbitrary code with the privileges of the user running the\n    application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All wxGTK 2.6 users should upgrade to an updated version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All wxGTK 2.8 users should upgrade to an updated version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    NOTE: This is a legacy GLSA. Updates for all affected architectures are\n    available since August 9, 2009. It is likely that your system is\n    already no longer affected by this issue.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-libs/wxGTK-2.6.4.0-r5\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-libs/wxGTK-2.8.10.1-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-2369",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2369"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    craig\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-10-04T23:41:42Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2010-06-01T12:09:45Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2010-06-01T14:53:47Z"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "ID": "200605-03",
+  "Title": "ClamAV: Buffer overflow in Freshclam",
+  "Synopsis": "\n    Freshclam is vulnerable to a buffer overflow that could lead to execution\n    of arbitrary code.\n  ",
+  "Product": {
+    "Text": "clamav",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-05-02",
+  "Revised": {
+    "Text": "2006-05-02",
+    "Count": "01"
+  },
+  "Bug": [
+    "131791"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-antivirus/clamav",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.88.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.88.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    ClamAV is a GPL virus scanner. Freshclam is a utility to download\n    virus signature updates.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Ulf Harnhammar and an anonymous German researcher discovered that\n    Freshclam fails to check the size of the header data returned by a\n    webserver.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    By enticing a user to connect to a malicious webserver an attacker\n    could cause the execution of arbitrary code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All ClamAV users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-antivirus/clamav-0.88.2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-1989",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1989"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-05-02T04:03:38Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-05-02T04:54:25Z"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "ID": "200606-04",
+  "Title": "Tor: Several vulnerabilities",
+  "Synopsis": "\n    Tor is vulnerable to a possible buffer overflow, a Denial of Service,\n    information disclosure and information leak.\n  ",
+  "Product": {
+    "Text": "tor",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-06-07",
+  "Revised": {
+    "Text": "2006-09-05",
+    "Count": "02"
+  },
+  "Bug": [
+    "134329"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/tor",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.1.1.20",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.1.0.18",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.1.1.20",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Tor is an implementation of second generation Onion Routing, a\n    connection-oriented anonymizing communication service.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Some integer overflows exist when adding elements to the smartlists.\n    Non-printable characters received from the network are not properly\n    sanitised before being logged. There are additional unspecified bugs in\n    the directory server and in the internal circuits.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    The possible buffer overflow may allow a remote attacker to execute\n    arbitrary code on the server by sending large inputs. The other\n    vulnerabilities can lead to a Denial of Service, a lack of logged\n    information, or some information disclosure.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Tor users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose net-misc/tor"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-0414",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0414"
+      },
+      {
+        "Text": "Tor ChangeLog",
+        "Link": "https://tor.eff.org/cvs/tor/ChangeLog"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-06-01T07:05:28Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-06-01T17:37:03Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-06-05T17:15:10Z"
+    }
+  ]
+}

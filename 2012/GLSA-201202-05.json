@@ -1,0 +1,98 @@
+{
+  "ID": "201202-05",
+  "Title": "Heimdal: Arbitrary code execution",
+  "Synopsis": "A boundary error in Heimdal could result in execution of arbitrary\n    code.\n  ",
+  "Product": {
+    "Text": "heimdal",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-02-22",
+  "Revised": {
+    "Text": "2012-02-22",
+    "Count": "1"
+  },
+  "Bug": [
+    "396105"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-crypt/heimdal",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.5.1-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.5.1-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Heimdal is a free implementation of Kerberos 5.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A boundary error in the \"encrypt_keyid()\" function in\n      appl/telnet/libtelnet/encrypt.c of the telnet daemon and client could\n      cause a buffer overflow. \n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>An unauthenticated remote attacker may be able to execute arbitrary code\n      with the privileges of the user running the telnet daemon or client, or\n      cause Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Heimdal users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-crypt/heimdal-1.5.1-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2011-4862",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-4862"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ago",
+      "Tag": "requester",
+      "Timestamp": "2012-01-17T19:55:41Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-02-22T19:56:26Z"
+    }
+  ]
+}

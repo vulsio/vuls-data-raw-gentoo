@@ -1,0 +1,148 @@
+{
+  "ID": "201207-10",
+  "Title": "CUPS: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in CUPS, some of which may\n    allow execution of arbitrary code or local privilege escalation.\n  ",
+  "Product": {
+    "Text": "cups",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-07-09",
+  "Revised": {
+    "Text": "2012-07-09",
+    "Count": "1"
+  },
+  "Bug": [
+    "295256",
+    "308045",
+    "325551",
+    "380771"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-print/cups",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.8-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.8-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>CUPS, the Common Unix Printing System, is a full-featured print server.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in CUPS. Please review the\n      CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A remote attacker may be able to execute arbitrary code using specially\n      crafted streams, IPP requests or files, or cause a Denial of Service\n      (daemon crash or hang). A local attacker may be able to gain escalated\n      privileges or overwrite arbitrary files. Furthermore, a remote attacker\n      may be able to obtain sensitive information from the CUPS process or\n      hijack a CUPS administrator authentication request.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All CUPS users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "NOTE: This is a legacy GLSA. Updates for all affected architectures are\n      available since September 03, 2011. It is likely that your system is\n      already no longer affected by this issue.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-print/cups-1.4.8-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2009-3553\n    ",
+        "Link": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2009-3553"
+      },
+      {
+        "Text": "\n      CVE-2010-0302\n    ",
+        "Link": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-0302"
+      },
+      {
+        "Text": "\n      CVE-2010-0393\n    ",
+        "Link": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-0393"
+      },
+      {
+        "Text": "\n      CVE-2010-0540\n    ",
+        "Link": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-0540"
+      },
+      {
+        "Text": "\n      CVE-2010-0542\n    ",
+        "Link": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-0542"
+      },
+      {
+        "Text": "\n      CVE-2010-1748\n    ",
+        "Link": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-1748"
+      },
+      {
+        "Text": "\n      CVE-2010-2431\n    ",
+        "Link": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-2431"
+      },
+      {
+        "Text": "\n      CVE-2010-2432\n    ",
+        "Link": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-2432"
+      },
+      {
+        "Text": "\n      CVE-2010-2941\n    ",
+        "Link": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-2941"
+      },
+      {
+        "Text": "\n      CVE-2011-3170\n    ",
+        "Link": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-3170"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    underling\n  ",
+      "Tag": "requester",
+      "Timestamp": "2011-10-07T23:37:16Z"
+    },
+    {
+      "Text": "craig",
+      "Tag": "submitter",
+      "Timestamp": "2012-07-09T23:33:59Z"
+    }
+  ]
+}

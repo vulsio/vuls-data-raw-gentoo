@@ -1,0 +1,98 @@
+{
+  "ID": "202305-07",
+  "Title": "slixmpp: Insufficient Certificate Validation",
+  "Synopsis": "A vulnerability has been discovered in slixmpp which can result in successful man-in-the-middle attacks.",
+  "Product": {
+    "Text": "slixmpp",
+    "Type": "ebuild"
+  },
+  "Announced": "2023-05-03",
+  "Revised": {
+    "Text": "2023-05-03",
+    "Count": "1"
+  },
+  "Bug": [
+    "881181"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-python/slixmpp",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.8.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.8.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n        <p>slixmpp is a Python 3 library for XMPP.</p>\n    "
+  },
+  "Description": {
+    "Text": "\n        <p>slixmpp does not validate hostnames in certificates used by connected servers.</p>\n    "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n        <p>An attacker could perform a man-in-the-middle attack on users&#39; connections to servers with slixmpp.</p>\n    "
+  },
+  "Workaround": {
+    "Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+  },
+  "Resolution": {
+    "Text": "\n        \n        \n        \n    ",
+    "P": [
+      {
+        "Text": "All slixmpp users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n          # emerge --sync\n          # emerge --ask --upgrade --verbose \">=dev-python/slixmpp-1.8.3\"\n        "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2022-45197",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-45197"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ajak",
+      "Tag": "requester",
+      "Timestamp": "2023-05-03T09:47:07.895475Z"
+    },
+    {
+      "Text": "sam",
+      "Tag": "submitter",
+      "Timestamp": "2023-05-03T09:47:07.900775Z"
+    }
+  ]
+}

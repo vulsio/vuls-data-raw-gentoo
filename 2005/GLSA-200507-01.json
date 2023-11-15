@@ -1,0 +1,139 @@
+{
+  "ID": "200507-01",
+  "Title": "PEAR XML-RPC, phpxmlrpc: PHP script injection vulnerability",
+  "Synopsis": "\n    The PEAR XML-RPC and phpxmlrpc libraries allow remote attackers to execute\n    arbitrary PHP script commands.\n  ",
+  "Product": {
+    "Text": "pear-xml_rpc phpxmlrpc",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-07-03",
+  "Revised": {
+    "Text": "2005-07-03",
+    "Count": "01"
+  },
+  "Bug": [
+    "97399",
+    "97629"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-php/PEAR-XML_RPC",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.3.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.3.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "dev-php/phpxmlrpc",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.1.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The PEAR XML-RPC and phpxmlrpc libraries are both PHP\n    implementations of the XML-RPC protocol.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    James Bercegay of GulfTech Security Research discovered that the\n    PEAR XML-RPC and phpxmlrpc libraries fail to sanatize input sent using\n    the \"POST\" method.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker could exploit this vulnerability to execute\n    arbitrary PHP script code by sending a specially crafted XML document\n    to web applications making use of these libraries.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There are no known workarounds at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All PEAR-XML_RPC users should upgrade to the latest available\n    version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All phpxmlrpc users should upgrade to the latest available\n    version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-php/PEAR-XML_RPC-1.3.1\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-php/phpxmlrpc-1.1.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-1921",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1921"
+      },
+      {
+        "Text": "GulfTech Advisory",
+        "Link": "http://www.gulftech.org/?node=research&article_id=00088-07022005"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-07-01T16:53:39Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-07-02T09:41:01Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-07-02T09:55:08Z"
+    }
+  ]
+}

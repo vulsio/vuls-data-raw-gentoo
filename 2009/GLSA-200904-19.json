@@ -1,0 +1,116 @@
+{
+  "ID": "200904-19",
+  "Title": "LittleCMS: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple errors in LittleCMS allow for attacks including the remote\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "littlecms",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-04-19",
+  "Revised": {
+    "Text": "2009-04-19",
+    "Count": "01"
+  },
+  "Bug": [
+    "260269",
+    "264604"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/lcms",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.18-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.18-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    LittleCMS, or short lcms, is a color management system for working with\n    ICC profiles. It is used by many applications including GIMP and\n    Firefox.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    RedHat reported a null-pointer dereference flaw while processing\n    monochrome ICC profiles (CVE-2009-0793).\n    </p>\n    <p>\n    Chris Evans of Google discovered the following vulnerabilities:\n    </p>\n    <ul>\n    <li>LittleCMS contains severe memory leaks (CVE-2009-0581).</li>\n    <li>LittleCMS is prone to multiple integer overflows, leading to a\n    heap-based buffer overflow (CVE-2009-0723).</li>\n    <li>The\n    ReadSetOfCurves() function is vulnerable to stack-based buffer\n    overflows when called from code paths without a bounds check on channel\n    counts (CVE-2009-0733).</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user or automated system to open a\n    specially crafted file containing a malicious ICC profile, possibly\n    resulting in the execution of arbitrary code with the privileges of the\n    user running the application or memory exhaustion, leading to a Denial\n    of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All LittleCMS users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/lcms-1.18-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-0581",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0581"
+      },
+      {
+        "Text": "CVE-2009-0723",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0723"
+      },
+      {
+        "Text": "CVE-2009-0733",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0733"
+      },
+      {
+        "Text": "CVE-2009-0793",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0793"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-04-12T15:32:46Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-04-18T22:41:26Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-04-19T12:36:20Z"
+    }
+  ]
+}

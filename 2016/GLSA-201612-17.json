@@ -1,0 +1,98 @@
+{
+  "ID": "201612-17",
+  "Title": "PECL HTTP: Remote execution of arbitrary code",
+  "Synopsis": "A buffer overflow in PECL HTTP might allow remote attackers to\n    execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "pecl_http",
+    "Type": "ebuild"
+  },
+  "Announced": "2016-12-07",
+  "Revised": {
+    "Text": "2016-12-07",
+    "Count": "1"
+  },
+  "Bug": [
+    "587466"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-php/pecl-http",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.5.6",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.5.6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>This HTTP extension aims to provide a convenient and powerful\n      set of functionality for one of PHPs major applications.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A buffer overflow can be triggered in the URL parsing functions of the\n      PECL HTTP extension. This allows overflowing\n      a buffer with data originating from an arbitrary HTTP request.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker, through a specially crafted URI, could possibly\n      execute arbitrary code with the privileges of the process.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All PECL HTTP users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-php/pecl-http-2.5.6\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2016-5873",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-5873"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "b-man",
+      "Tag": "requester",
+      "Timestamp": "2016-11-25T03:43:01Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2016-12-07T10:29:47Z"
+    }
+  ]
+}

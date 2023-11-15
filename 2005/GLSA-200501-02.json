@@ -1,0 +1,116 @@
+{
+  "ID": "200501-02",
+  "Title": "a2ps: Multiple vulnerabilities",
+  "Synopsis": "\n    The fixps and psmandup scripts in the a2ps package are vulnerable to\n    symlink attacks, potentially allowing a local user to overwrite arbitrary\n    files. A vulnerability in a2ps filename handling could also result in\n    arbitrary command execution.\n  ",
+  "Product": {
+    "Text": "a2ps",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-01-04",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "03"
+  },
+  "Bug": [
+    "75784",
+    "61500"
+  ],
+  "Access": "local and remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-text/a2ps",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.13c-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.13c-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    a2ps is an Any to Postscript filter that can convert to Postscript from\n    many filetypes. fixps is a script that fixes errors in Postscript\n    files. psmandup produces a Postscript file for printing in manual\n    duplex mode.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Javier Fernandez-Sanguino Pena discovered that the a2ps package\n    contains two scripts that create insecure temporary files (fixps and\n    psmandup). Furthermore, we fixed in a previous revision a vulnerability\n    in a2ps filename handling (CAN-2004-1170).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary files\n    directory, pointing to a valid file somewhere on the filesystem. When\n    fixps or psmandup is executed, this would result in the file being\n    overwritten with the rights of the user running the utility. By\n    enticing a user or script to run a2ps on a malicious filename, an\n    attacker could execute arbitrary commands on the system with the rights\n    of that user or script.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All a2ps users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/a2ps-4.13c-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Secunia SA13641",
+        "Link": "https://secunia.com/advisories/13641/"
+      },
+      {
+        "Text": "CAN-2004-1170",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1170"
+      },
+      {
+        "Text": "CVE-2004-1377",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1377"
+      },
+      {
+        "Text": "Full-Disclosure Advisory",
+        "Link": "http://lists.netsys.com/pipermail/full-disclosure/2004-August/025678.html"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-01-04T09:44:14Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-01-04T09:44:22Z"
+    },
+    {
+      "Text": "\n    SeJo\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-01-04T11:06:21Z"
+    }
+  ]
+}

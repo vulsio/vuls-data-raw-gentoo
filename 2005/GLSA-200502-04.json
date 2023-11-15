@@ -1,0 +1,113 @@
+{
+  "ID": "200502-04",
+  "Title": "Squid: Multiple vulnerabilities",
+  "Synopsis": "\n    Squid contains vulnerabilities in the code handling WCCP, HTTP and LDAP\n    which could lead to Denial of Service, access control bypass, web cache and\n    log poisoning.\n  ",
+  "Product": {
+    "Text": "squid",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-02-02",
+  "Revised": {
+    "Text": "2005-02-02",
+    "Count": "02"
+  },
+  "Bug": [
+    "79495",
+    "78776",
+    "80201",
+    "80341"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-proxy/squid",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.5.7-r5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.5.7-r5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Squid is a full-featured Web proxy cache designed to run on Unix\n    systems. It supports proxying and caching of HTTP, FTP, and other\n    protocols, as well as SSL support, cache hierarchies, transparent\n    caching, access control lists and many other features.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Squid contains several vulnerabilities:\n    </p>\n    <ul>\n    <li>Buffer overflow when handling WCCP recvfrom()\n    (CAN-2005-0211).</li>\n    <li>Loose checking of HTTP headers (CAN-2005-0173 and\n    CAN-2005-0174).</li>\n    <li>Incorrect handling of LDAP login names with spaces\n    (CAN-2005-0175).</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could exploit:\n    </p>\n    <ul>\n    <li>the WCCP buffer overflow to cause Denial of Service.</li>\n    <li>the HTTP header parsing vulnerabilities to inject arbitrary\n    response data, potentially leading to content spoofing, web cache\n    poisoning and other cross-site scripting or HTTP response splitting\n    attacks.</li>\n    <li>the LDAP issue to login with several variations of the same login\n    name, leading to log poisoning.</li>\n    </ul>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Squid users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-proxy/squid-2.5.7-r5\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-0173",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0173"
+      },
+      {
+        "Text": "CAN-2005-0174",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0174"
+      },
+      {
+        "Text": "CAN-2005-0175",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0175"
+      },
+      {
+        "Text": "CAN-2005-0211",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0211"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-01-30T20:28:30Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-02-02T12:30:09Z"
+    }
+  ]
+}

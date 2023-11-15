@@ -1,0 +1,98 @@
+{
+  "ID": "201908-07",
+  "Title": "KDE KConfig: User-assisted execution of arbitrary code",
+  "Synopsis": "A vulnerablity has been found in KDE KConfig that could allow a\n    remote attacker to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "kconfig",
+    "Type": "ebuild"
+  },
+  "Announced": "2019-08-15",
+  "Revised": {
+    "Text": "2019-08-15",
+    "Count": "1"
+  },
+  "Bug": [
+    "691858"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "kde-frameworks/kconfig",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.60.0-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.60.0-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Provides an advanced configuration system.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A vulnerability was discovered in KDE KConfig’s handling of .desktop\n      and .directory files.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>An attacker could entice a user to execute a specially crafted .desktop\n      or .directory file possibly resulting in execution of arbitrary code with\n      the privileges of the process.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All KConfig users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=kde-frameworks/kconfig-5.60.0-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2019-14744",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2019-14744"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "b-man",
+      "Tag": "requester",
+      "Timestamp": "2019-08-09T20:56:22Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2019-08-15T15:41:03Z"
+    }
+  ]
+}

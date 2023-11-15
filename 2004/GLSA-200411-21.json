@@ -1,0 +1,120 @@
+{
+  "ID": "200411-21",
+  "Title": "Samba: Multiple vulnerabilities",
+  "Synopsis": "\n    Samba is vulnerable to a buffer overflow that could lead to execution of\n    arbitrary code (CAN-2004-0882). Another flaw in Samba may allow a remote\n    attacker to cause a Denial of Service by excessive consumption of CPU\n    cycles (CAN-2004-0930).\n  ",
+  "Product": {
+    "Text": "samba",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-11-11",
+  "Revised": {
+    "Text": "2004-11-15",
+    "Count": "02"
+  },
+  "Bug": [
+    "70429"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-fs/samba",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.0.8",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "3.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.0.8",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Samba is a freely available SMB/CIFS implementation which allows\n    seamless interoperability of file and print services to other SMB/CIFS\n    clients.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Samba fails to do proper bounds checking when handling\n    TRANSACT2_QFILEPATHINFO replies. Additionally an input validation flaw\n    exists in ms_fnmatch.c when matching filenames that contain wildcards.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker may be able to execute arbitrary code with the permissions\n    of the user running Samba. A remote attacker may also be able to cause\n    an abnormal consumption of CPU resources, resulting in slower\n    performance of the server or even a Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Samba users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-fs/samba-3.0.8\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Samba Security Announcement",
+        "Link": "https://www.samba.org/samba/security/CAN-2004-0930.html"
+      },
+      {
+        "Text": "CAN-2004-0930",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0930"
+      },
+      {
+        "Text": "CAN-2004-0882",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0882"
+      },
+      {
+        "Text": "E-Matters Advisory 13/2004",
+        "Link": "http://security.e-matters.de/advisories/132004.html"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-11-10T10:26:07Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-11-10T20:53:51Z"
+    },
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-11-11T10:18:49Z"
+    }
+  ]
+}

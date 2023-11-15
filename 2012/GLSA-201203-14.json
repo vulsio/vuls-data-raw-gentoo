@@ -1,0 +1,114 @@
+{
+  "ID": "201203-14",
+  "Title": "Audacious Plugins: User-assisted execution of arbitrary code",
+  "Synopsis": "Multiple vulnerabilities in Audacious Plugins could result in\n    execution of arbitrary code or Denial of Service.\n  ",
+  "Product": {
+    "Text": "audacious-plugins",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-03-16",
+  "Revised": {
+    "Text": "2012-03-16",
+    "Count": "1"
+  },
+  "Bug": [
+    "383991"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-plugins/audacious-plugins",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Plugins for the Audacious music player.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been found in Audacious Plugins:</p>\n    \n    <ul>\n      <li>The \"CSoundFile::ReadWav()\" function in load_wav.cpp contains an\n        integer overflow which could cause a heap-based buffer overflow\n        (CVE-2011-2911). \n      </li>\n      <li>The \"CSoundFile::ReadS3M()\" function in load_s3m.cpp contains\n        multiple boundary errors which could cause a stack-based buffer\n        overflow (CVE-2011-2912).\n      </li>\n      <li>The \"CSoundFile::ReadAMS()\" function in load_ams.cpp contains an\n        off-by-one error which could cause memory corruption (CVE-2011-2913).\n      </li>\n      <li>The \"CSoundFile::ReadDSM()\" function in load_dms.cpp contains an\n        off-by-one error which could cause memory corruption (CVE-2011-2914).\n      </li>\n      <li>The \"CSoundFile::ReadAMS2()\" function in load_ams.cpp contains an\n        off-by-one error which could cause memory corruption (CVE-2011-2915).\n      </li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted media\n      file, possibly resulting in execution of arbitrary code, or a Denial of\n      Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Audacious Plugins users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=media-plugins/audacious-plugins-3.1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2011-2911",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2911"
+      },
+      {
+        "Text": "CVE-2011-2912",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2912"
+      },
+      {
+        "Text": "CVE-2011-2913",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2913"
+      },
+      {
+        "Text": "CVE-2011-2914",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2914"
+      },
+      {
+        "Text": "CVE-2011-2915",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2915"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2012-03-11T14:43:54Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-03-16T10:57:34Z"
+    }
+  ]
+}

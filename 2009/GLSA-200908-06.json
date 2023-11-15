@@ -1,0 +1,103 @@
+{
+  "ID": "200908-06",
+  "Title": "CDF: User-assisted execution of arbitrary code",
+  "Synopsis": "\n    Multiple heap-based buffer overflows in CDF might result in the execution\n    of arbitrary code.\n  ",
+  "Product": {
+    "Text": "cdf",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-08-18",
+  "Revised": {
+    "Text": "2009-08-18",
+    "Count": "01"
+  },
+  "Bug": [
+    "278679"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sci-libs/cdf",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.3.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.3.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    CDF is a library for the Common Data Format which is a self-describing\n    data format for the storage and manipulation of scalar and\n    multidimensional data. It is developed by the NASA.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Leon Juranic reported multiple heap-based buffer overflows for instance\n    in the ReadAEDRList64(), SearchForRecord_r_64(), LastRecord64(), and\n    CDFsel64() functions.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted CDF\n    file, possibly resulting in the execution of arbitrary code with the\n    privileges of the user running the application, or a Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All CDF users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sci-libs/cdf-3.3.0\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-2850",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2850"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-08-09T15:21:56Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-08-14T16:20:48Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-08-18T21:24:15Z"
+    }
+  ]
+}

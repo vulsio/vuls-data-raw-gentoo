@@ -1,0 +1,200 @@
+{
+  "ID": "200511-08",
+  "Title": "PHP: Multiple vulnerabilities",
+  "Synopsis": "\n    PHP suffers from multiple issues, resulting in security functions bypass,\n    local Denial of service, cross-site scripting or PHP variables overwrite.\n  ",
+  "Product": {
+    "Text": "PHP",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-11-13",
+  "Revised": {
+    "Text": "2005-11-13",
+    "Count": "01"
+  },
+  "Bug": [
+    "107602",
+    "111032"
+  ],
+  "Access": "remote and local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-php/php",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.3.11-r4",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "4.4.0-r4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.4.0-r4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "dev-php/mod_php",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.3.11-r4",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "4.4.0-r8",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.4.0-r8",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "dev-php/php-cgi",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.3.11-r5",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "4.4.0-r5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.4.0-r5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    PHP is a general-purpose scripting language widely used to develop\n    web-based applications. It can run inside a web server using the\n    mod_php module or the CGI version and also stand-alone in a CLI.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Multiple vulnerabilities have been found and fixed in PHP:\n    </p>\n    <ul>\n    <li>a possible $GLOBALS variable overwrite problem through file\n    upload handling, extract() and import_request_variables()\n    (CVE-2005-3390)</li>\n    <li>a local Denial of Service through the use of\n    the session.save_path option (CVE-2005-3319)</li>\n    <li>an issue with\n    trailing slashes in allowed basedirs (CVE-2005-3054)</li>\n    <li>an issue\n    with calling virtual() on Apache 2, allowing to bypass safe_mode and\n    open_basedir restrictions (CVE-2005-3392)</li>\n    <li>a problem when a\n    request was terminated due to memory_limit constraints during certain\n    parse_str() calls (CVE-2005-3389)</li>\n    <li>The curl and gd modules\n    allowed to bypass the safe mode open_basedir restrictions\n    (CVE-2005-3391)</li>\n    <li>a cross-site scripting (XSS) vulnerability in\n    phpinfo() (CVE-2005-3388)</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    Attackers could leverage these issues to exploit applications that\n    are assumed to be secure through the use of proper register_globals,\n    safe_mode or open_basedir parameters. Remote attackers could also\n    conduct cross-site scripting attacks if a page calling phpinfo() was\n    available. Finally, a local attacker could cause a local Denial of\n    Service using malicious session.save_path options.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround that would solve all issues at this\n    time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All PHP users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All mod_php users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All php-cgi users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose dev-php/php",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose dev-php/mod_php",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose dev-php/php-cgi"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-3054",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3054"
+      },
+      {
+        "Text": "CVE-2005-3319",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3319"
+      },
+      {
+        "Text": "CVE-2005-3388",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3388"
+      },
+      {
+        "Text": "CVE-2005-3389",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3389"
+      },
+      {
+        "Text": "CVE-2005-3390",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3390"
+      },
+      {
+        "Text": "CVE-2005-3391",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3391"
+      },
+      {
+        "Text": "CVE-2005-3392",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3392"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-11-07T14:11:50Z"
+    },
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-11-13T14:44:31Z"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "ID": "200804-03",
+  "Title": "OpenSSH: Privilege escalation",
+  "Synopsis": "\n    Two flaws have been discovered in OpenSSH which could allow local attackers\n    to escalate their privileges.\n  ",
+  "Product": {
+    "Text": "openssh",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-04-05",
+  "Revised": {
+    "Text": "2008-04-05",
+    "Count": "01"
+  },
+  "Bug": [
+    "214985",
+    "215702"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/openssh",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.7_p1-r6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.7_p1-r6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    OpenSSH is a complete SSH protocol implementation that includes an SFTP\n    client and server support.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Two issues have been discovered in OpenSSH:\n    </p>\n    <ul>\n    <li>Timo Juhani\n    Lindfors discovered that OpenSSH sets the DISPLAY variable in SSH\n    sessions using X11 forwarding even when it cannot bind the X11 server\n    to a local port in all address families (CVE-2008-1483).</li>\n    <li>OpenSSH will execute the contents of the \".ssh/rc\" file even when\n    the \"ForceCommand\" directive is enabled in the global sshd_config\n    (CVE-2008-1657).</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could exploit the first vulnerability to hijack\n    forwarded X11 sessions of other users and possibly execute code with\n    their privileges, disclose sensitive data or cause a Denial of Service,\n    by binding a local X11 server to a port using only one address family.\n    The second vulnerability might allow local attackers to bypass intended\n    security restrictions and execute commands other than those specified\n    by \"ForceCommand\" if they are able to write to their home directory.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All OpenSSH users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/openssh-4.7_p1-r6\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-1483",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1483"
+      },
+      {
+        "Text": "CVE-2008-1657",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1657"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-03-31T15:53:04Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-04-03T21:55:34Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-04-03T22:39:55Z"
+    }
+  ]
+}

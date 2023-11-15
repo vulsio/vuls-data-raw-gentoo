@@ -1,0 +1,105 @@
+{
+  "ID": "200405-06",
+  "Title": "libpng denial of service vulnerability",
+  "Synopsis": "\n    A bug in the libpng library can be abused to crash programs making use of\n    that library to decode PNG images.\n  ",
+  "Product": {
+    "Text": "libpng",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-05-14",
+  "Revised": {
+    "Text": "2004-05-14",
+    "Count": "01"
+  },
+  "Bug": [
+    "49887"
+  ],
+  "Access": "remote ",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/libpng",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.5-r5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.5-r4",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    libpng is a standard library used to process PNG (Portable Network\n    Graphics) images.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    libpng provides two functions (png_chunk_error and png_chunk_warning) for\n    default error and warning messages handling. These functions do not perform\n    proper bounds checking on the provided message, which is limited to 64\n    bytes. Programs linked against this library may crash when handling a\n    malicious PNG image.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    This vulnerability could be used to crash various programs using the libpng\n    library, potentially resulting in a denial of service attack on vulnerable\n    daemon processes.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time. All users are advised to upgrade\n    to the latest available version of libpng.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All users of libpng should upgrade to the latest stable version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    You should also run revdep-rebuild to rebuild any packages that depend on\n    older versions of libpng :\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n\n    # emerge -pv \">=media-libs/libpng-1.2.5-r5\"\n    # emerge \">=media-libs/libpng-1.2.5-r5\"",
+      "\n    # revdep-rebuild"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-0421",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0421"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

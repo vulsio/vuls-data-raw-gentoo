@@ -1,0 +1,107 @@
+{
+  "ID": "200502-22",
+  "Title": "wpa_supplicant: Buffer overflow vulnerability",
+  "Synopsis": "\n    wpa_supplicant contains a buffer overflow that could lead to a Denial of\n    Service.\n  ",
+  "Product": {
+    "Text": "wpa_supplicant",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-02-16",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "81993"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-wireless/wpa_supplicant",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.2.7",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.2.7",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    wpa_supplicant is a WPA Supplicant with support for WPA and WPA2 (IEEE\n    802.11i / RSN).\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    wpa_supplicant contains a possible buffer overflow due to the lacking\n    validation of received EAPOL-Key frames.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could cause the crash of wpa_supplicant using a specially\n    crafted packet.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All wpa_supplicant users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-wireless/wpa_supplicant-0.2.7\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "wpa_supplicant Announcement",
+        "Link": "http://lists.shmoo.com/pipermail/hostap/2005-February/009465.html"
+      },
+      {
+        "Text": "CVE-2005-0470",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0470"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-02-14T18:34:56Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-02-14T20:11:49Z"
+    },
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-02-14T21:06:18Z"
+    }
+  ]
+}

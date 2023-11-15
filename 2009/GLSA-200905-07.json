@@ -1,0 +1,114 @@
+{
+  "ID": "200905-07",
+  "Title": "Pidgin: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities in Pidgin might allow for the remote execution of\n    arbitrary code or a Denial of Service.\n  ",
+  "Product": {
+    "Text": "pidgin",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-05-25",
+  "Revised": {
+    "Text": "2009-05-25",
+    "Count": "01"
+  },
+  "Bug": [
+    "270811"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-im/pidgin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.5.6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.5.6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Pidgin (formerly Gaim) is an instant messaging client for a variety of\n    instant messaging protocols.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Multiple vulnerabilities have been discovered in Pidgin:\n    </p>\n    <ul>\n    <li>Veracode reported a boundary error in the \"XMPP SOCKS5 bytestream\n    server\" when initiating an outgoing file transfer (CVE-2009-1373).</li>\n    <li>Ka-Hing Cheung reported a heap corruption flaw in the QQ protocol\n    handler (CVE-2009-1374).</li>\n    <li>A memory corruption flaw in\n    \"PurpleCircBuffer\" was disclosed by Josef Andrysek\n    (CVE-2009-1375).</li>\n    <li>The previous fix for CVE-2008-2927 contains a\n    cast from uint64 to size_t, possibly leading to an integer overflow\n    (CVE-2009-1376, GLSA 200901-13).</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could send specially crafted messages or files using\n    the MSN, XMPP or QQ protocols, possibly resulting in the execution of\n    arbitrary code with the privileges of the user running the application,\n    or a Denial of Service. NOTE: Successful exploitation might require the\n    victim's interaction.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Pidgin users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-im/pidgin-2.5.6\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-1373",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1373"
+      },
+      {
+        "Text": "CVE-2009-1374",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1374"
+      },
+      {
+        "Text": "CVE-2009-1375",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1375"
+      },
+      {
+        "Text": "CVE-2009-1376",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1376"
+      },
+      {
+        "Text": "GLSA 200901-13",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200901-13.xml"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-05-25T17:46:41Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-05-25T17:46:49Z"
+    }
+  ]
+}

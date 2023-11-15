@@ -1,0 +1,103 @@
+{
+  "ID": "200604-11",
+  "Title": "Crossfire server: Denial of Service and potential arbitrary code execution",
+  "Synopsis": "\n    The Crossfire game server is vulnerable to a Denial of Service and\n    potentially to the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "Crossfire",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-04-22",
+  "Revised": {
+    "Text": "2006-04-22",
+    "Count": "01"
+  },
+  "Bug": [
+    "126169"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "games-server/crossfire-server",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.9.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.9.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Crossfire is a cooperative multiplayer graphical adventure and\n    role-playing game. The Crossfire game server allows various compatible\n    clients to connect to participate in a cooperative game.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Luigi Auriemma discovered a vulnerability in the Crossfire game\n    server, in the handling of the \"oldsocketmode\" option when processing\n    overly large requests.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    An attacker can set up a malicious Crossfire client that would\n    send a large request in \"oldsocketmode\", resulting in a Denial of\n    Service on the Crossfire server and potentially in the execution of\n    arbitrary code on the server with the rights of the game server.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Crossfire server users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=games-server/crossfire-server-1.9.0\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-1010",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1010"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-04-21T16:56:02Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-04-21T16:56:22Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-04-22T08:20:53Z"
+    }
+  ]
+}

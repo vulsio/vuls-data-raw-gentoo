@@ -1,0 +1,121 @@
+{
+  "ID": "200610-15",
+  "Title": "Asterisk: Multiple vulnerabilities",
+  "Synopsis": "\n    Asterisk is vulnerable to the remote execution of arbitrary code or a\n    Denial of Service.\n  ",
+  "Product": {
+    "Text": "asterisk",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-10-30",
+  "Revised": {
+    "Text": "2007-01-30",
+    "Count": "02"
+  },
+  "Bug": [
+    "144941",
+    "151881"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/asterisk",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.13",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.0.12",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.13",
+            "Range": "lt",
+            "Slot": ""
+          },
+          {
+            "Text": "1.0.12",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Asterisk is an open source implementation of a telephone private branch\n    exchange (PBX).\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Asterisk contains buffer overflows in channels/chan_mgcp.c from the\n    MGCP driver and in channels/chan_skinny.c from the Skinny channel\n    driver for Cisco SCCP phones. It also dangerously handles\n    client-controlled variables to determine filenames in the Record()\n    function. Finally, the SIP channel driver in channels/chan_sip.c could\n    use more resources than necessary under unspecified circumstances.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker could execute arbitrary code by sending a crafted\n    audit endpoint (AUEP) response, by sending an overly large Skinny\n    packet even before authentication, or by making use of format strings\n    specifiers through the client-controlled variables. An attacker could\n    also cause a Denial of Service by resource consumption through the SIP\n    channel driver.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround for the format strings vulnerability at\n    this time. You can comment the lines in /etc/asterisk/mgcp.conf,\n    /etc/asterisk/skinny.conf and /etc/asterisk/sip.conf to deactivate the\n    three vulnerable channel drivers. Please note that the MGCP channel\n    driver is disabled by default.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Asterisk users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/asterisk-1.2.13\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-4345",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4345"
+      },
+      {
+        "Text": "CVE-2006-4346",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4346"
+      },
+      {
+        "Text": "CVE-2006-5444",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5444"
+      },
+      {
+        "Text": "CVE-2006-5445",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5445"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-10-18T20:57:57Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-10-21T20:37:32Z"
+    }
+  ]
+}

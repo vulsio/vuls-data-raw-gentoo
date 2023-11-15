@@ -1,0 +1,103 @@
+{
+  "ID": "200712-05",
+  "Title": "PEAR::MDB2: Information disclosure",
+  "Synopsis": "\n    A vulnerability when handling database input in PEAR::MDB2 allows remote\n    attackers to obtain sensitive information.\n  ",
+  "Product": {
+    "Text": "PEAR-MDB2",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-12-09",
+  "Revised": {
+    "Text": "2007-12-09",
+    "Count": "01"
+  },
+  "Bug": [
+    "198446"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-php/PEAR-MDB2",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.5.0_alpha1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.5.0_alpha1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    PEAR::MDB2 is a database abstraction layer for PHP aimed to provide a\n    common API for all supported relational database management systems. A\n    LOB (\"large object\") is a database field holding binary data.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    priyadi discovered that the request to store a URL string as a LOB is\n    treated as a request to retrieve and store the contents of the URL.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    If an application using PEAR::MDB2 allows input of LOB values via a web\n    form, remote attackers could use the application as an indirect proxy\n    or obtain sensitive information, including \"file://\" URLs local to the\n    web server.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    As a workaround, manually filter input before storing it as a LOB in\n    PEAR::MDB2.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All PEAR::MDB2 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-php/PEAR-MDB2-2.5.0_alpha1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-5934",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5934"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-12-02T12:32:27Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-12-05T01:58:28Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-12-05T01:59:26Z"
+    }
+  ]
+}

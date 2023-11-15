@@ -1,0 +1,103 @@
+{
+  "ID": "200801-21",
+  "Title": "Xdg-Utils: Arbitrary command execution",
+  "Synopsis": "\n    A vulnerability has been discovered in Xdg-Utils, allowing for the remote\n    execution of arbitrary commands.\n  ",
+  "Product": {
+    "Text": "xdg-utils",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-01-30",
+  "Revised": {
+    "Text": "2008-01-30",
+    "Count": "01"
+  },
+  "Bug": [
+    "207331"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "x11-misc/xdg-utils",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.2-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.2-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Xdg-Utils is a set of tools allowing all applications to easily\n    integrate with the Free Desktop configuration.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Miroslav Lichvar discovered that the \"xdg-open\" and \"xdg-email\" shell\n    scripts do not properly sanitize their input before processing it.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted link\n    with a vulnerable application using Xdg-Utils (e.g. an email client),\n    resulting in the execution of arbitrary code with the privileges of the\n    user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Xdg-Utils users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-misc/xdg-utils-1.0.2-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-0386",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0386"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-01-26T12:15:55Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-01-28T20:04:22Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-01-28T20:04:30Z"
+    }
+  ]
+}

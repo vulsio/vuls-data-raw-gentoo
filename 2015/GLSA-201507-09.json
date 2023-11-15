@@ -1,0 +1,98 @@
+{
+  "ID": "201507-09",
+  "Title": "PyPAM: Arbitrary code execution",
+  "Synopsis": "A double free vulnerability in PyPAM could result in execution of\n    arbitrary code or Denial of Service.\n  ",
+  "Product": {
+    "Text": "pypam",
+    "Type": "ebuild"
+  },
+  "Announced": "2015-07-09",
+  "Revised": {
+    "Text": "2015-07-09",
+    "Count": "1"
+  },
+  "Bug": [
+    "407603"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-python/pypam",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.5.0-r3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.5.0-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>PyPAM is a PAM binding for Python.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>PyPAM does not handle passwords correctly if there is NULL byte in the\n      string.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could possibly execute arbitrary code or cause a\n      Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All PyPAM users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-python/pypam-0.5.0-r3\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-1502",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1502"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "requester",
+      "Timestamp": "2015-06-21T03:25:05Z"
+    },
+    {
+      "Text": "Zlogene",
+      "Tag": "submitter",
+      "Timestamp": "2015-07-09T18:51:16Z"
+    }
+  ]
+}

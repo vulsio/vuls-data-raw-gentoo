@@ -1,0 +1,115 @@
+{
+  "ID": "200710-19",
+  "Title": "The Sleuth Kit: Integer underflow",
+  "Synopsis": "\n    An integer underflow vulnerability has been reported in The Sleuth Kit\n    allowing for the user-assisted execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "sleuthkit",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-10-18",
+  "Revised": {
+    "Text": "2007-10-18",
+    "Count": "01"
+  },
+  "Bug": [
+    "181977"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-forensics/sleuthkit",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.9",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.9",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Sleuth Kit is a collection of file system and media management\n    forensic analysis tools.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Jean-Sebastien Guay-Leroux reported an integer underflow in the\n    file_printf() function of the \"file\" utility which is bundled with The\n    Sleuth Kit (CVE-2007-1536, GLSA 200703-26). Note that Gentoo is not\n    affected by the improper fix for this vulnerability (identified as\n    CVE-2007-2799, see GLSA 200705-25) since version 4.20 of \"file\" was\n    never shipped with The Sleuth Kit ebuilds.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to run The Sleuth Kit on a file\n    system containing a specially crafted file that would trigger a\n    heap-based buffer overflow possibly leading to the execution of\n    arbitrary code with the rights of the user running The Sleuth Kit.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All The Sleuth Kit users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-forensics/sleuthkit-2.0.9\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-1536",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1536"
+      },
+      {
+        "Text": "CVE-2007-2799",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2799"
+      },
+      {
+        "Text": "GLSA 200703-26",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200703-26.xml"
+      },
+      {
+        "Text": "GLSA 200705-25",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200705-25.xml"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-09-29T13:59:12Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-09-29T13:59:20Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-10-07T23:47:34Z"
+    }
+  ]
+}

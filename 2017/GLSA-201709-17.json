@@ -1,0 +1,98 @@
+{
+  "ID": "201709-17",
+  "Title": "CVS: Command injection",
+  "Synopsis": "A command injection vulnerability in CVS may allow remote attackers\n    to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "cvs",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-09-24",
+  "Revised": {
+    "Text": "2017-09-24",
+    "Count": "1"
+  },
+  "Bug": [
+    "627498"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-vcs/cvs",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.12.12-r12",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.12.12-r12",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>CVS (Concurrent Versions System) is an open-source network-transparent\n      version control system. It contains both a client utility and a server.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was discovered that when CVS is configured to use SSH for remote\n      repositories it allows remote attackers to execute arbitrary code through\n      a repository URL with a specially crafted hostname.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker, by enticing a user to clone a specially crafted\n      repository, could possibly execute arbitrary code with the privileges of\n      the process.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All CVS users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-vcs/cvs-1.12.12-r12\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2017-12836\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-12836"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "chrisadr",
+      "Tag": "requester",
+      "Timestamp": "2017-09-17T20:16:04Z"
+    },
+    {
+      "Text": "chrisadr",
+      "Tag": "submitter",
+      "Timestamp": "2017-09-24T15:44:04Z"
+    }
+  ]
+}

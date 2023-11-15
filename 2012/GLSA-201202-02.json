@@ -1,0 +1,132 @@
+{
+  "ID": "201202-02",
+  "Title": "Quagga: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities were found in Quagga, the worst of which\n    leading to remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "Quagga",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-02-21",
+  "Revised": {
+    "Text": "2012-02-21",
+    "Count": "2"
+  },
+  "Bug": [
+    "334303",
+    "359903",
+    "384651"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/quagga",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.99.20 ",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.99.20 ",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Quagga is a free routing daemon replacing Zebra supporting RIP, OSPF and\n      BGP.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in Quagga. Please review\n      the CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A BGP peer could send a Route-Refresh message with specially-crafted ORF\n      record, which can cause Quagga's bgpd to crash or possibly execute\n      arbitrary code with the privileges of the user running Quagga's bgpd; a\n      BGP update AS path request with unknown AS type, or malformed\n      AS-Pathlimit or Extended-Community attributes could lead to Denial of\n      Service (daemon crash), an error in bgpd when handling AS_PATH attributes\n      within UPDATE messages can\n      be exploited to cause a heap-based buffer overflow resulting in a crash\n      of the\n      daemon and disruption of IPv4 routing, two errors in ospf6d and ospfd can\n      each be exploited to crash the daemon and disrupt IP routing.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Quagga users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/quagga-0.99.20\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2010-1674",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-1674"
+      },
+      {
+        "Text": "CVE-2010-1675",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-1675"
+      },
+      {
+        "Text": "CVE-2010-2948",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-2948"
+      },
+      {
+        "Text": "CVE-2010-2949",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-2949"
+      },
+      {
+        "Text": "CVE-2011-3323",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3323"
+      },
+      {
+        "Text": "CVE-2011-3324",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3324"
+      },
+      {
+        "Text": "CVE-2011-3325",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3325"
+      },
+      {
+        "Text": "CVE-2011-3326",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3326"
+      },
+      {
+        "Text": "CVE-2011-3327",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3327"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    underling\n  ",
+      "Tag": "requester",
+      "Timestamp": "2011-10-07T23:38:14Z"
+    },
+    {
+      "Text": "a3li",
+      "Tag": "submitter",
+      "Timestamp": "2012-02-21T19:14:56Z"
+    }
+  ]
+}

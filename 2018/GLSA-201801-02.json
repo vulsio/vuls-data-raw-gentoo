@@ -1,0 +1,103 @@
+{
+  "ID": "201801-02",
+  "Title": "OptiPNG: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in OptiPNG, the worst of\n    which may allow execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "optipng",
+    "Type": "ebuild"
+  },
+  "Announced": "2018-01-07",
+  "Revised": {
+    "Text": "2018-01-07",
+    "Count": "1"
+  },
+  "Bug": [
+    "637936",
+    "639690"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-gfx/optipng",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.7.6-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.7.6-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>OptiPNG is a PNG optimizer that re-compresses image files to a smaller\n      size, without losing any information.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in OptiPNG. Please review\n      the referenced CVE identifiers for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to process a specially crafted\n      image file, possibly resulting in execution of arbitrary code with the\n      privileges of the process or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All OptiPNG users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-gfx/optipng-0.7.6-r2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2017-1000229\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-1000229"
+      },
+      {
+        "Text": "\n      CVE-2017-16938\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-16938"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "jmbailey",
+      "Tag": "requester",
+      "Timestamp": "2017-12-03T01:46:44Z"
+    },
+    {
+      "Text": "jmbailey",
+      "Tag": "submitter",
+      "Timestamp": "2018-01-07T23:16:40Z"
+    }
+  ]
+}

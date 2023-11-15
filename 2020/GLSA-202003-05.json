@@ -1,0 +1,98 @@
+{
+  "ID": "202003-05",
+  "Title": "e2fsprogs: Arbitrary code execution",
+  "Synopsis": "A vulnerability in e2fsprogs might allow an attacker to execute\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "e2fsprogs",
+    "Type": "ebuild"
+  },
+  "Announced": "2020-03-13",
+  "Revised": {
+    "Text": "2020-03-13",
+    "Count": "1"
+  },
+  "Bug": [
+    "695522"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-fs/e2fsprogs",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.45.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.45.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>e2fsprogs is a set of utilities for maintaining the ext2, ext3 and ext4\n      file systems.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was discovered that e2fsprogs incorrectly handled certain ext4\n      partitions.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to process a specially crafted\n      corrupted file system using e2fsck, possibly resulting in execution of\n      arbitrary code with the privileges of the process or a Denial of Service\n      condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All e2fsprogs users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-fs/e2fsprogs-1.45.4\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2019-5094",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2019-5094"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2019-10-29T10:09:38Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2020-03-13T01:50:25Z"
+    }
+  ]
+}

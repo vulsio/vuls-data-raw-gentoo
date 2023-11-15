@@ -1,0 +1,107 @@
+{
+  "ID": "200604-05",
+  "Title": "Doomsday: Format string vulnerability",
+  "Synopsis": "\n    Format string vulnerabilities in Doomsday may lead to the execution of\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "doomsday",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-04-06",
+  "Revised": {
+    "Text": "2006-06-15",
+    "Count": "02"
+  },
+  "Bug": [
+    "128690"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "games-fps/doomsday",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.9.0_beta4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.9.0_beta4",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Doomsday is a modern gaming engine for popular ID games like Doom,\n    Heretic and Hexen.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Luigi Auriemma discovered that Doomsday incorrectly implements\n    formatted printing.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker could exploit these vulnerabilities to execute\n    arbitrary code with the rights of the user running the Doomsday server\n    or client by sending specially crafted strings.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Doomsday users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=games-fps/doomsday-1.9.0_beta4\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-1618",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1618"
+      },
+      {
+        "Text": "Original advisory by Luigi Auriemma",
+        "Link": "http://aluigi.altervista.org/adv/doomsdayfs-adv.txt"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-04-04T04:57:40Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-04-04T10:51:26Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-04-04T12:10:41Z"
+    }
+  ]
+}

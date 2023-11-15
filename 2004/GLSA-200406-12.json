@@ -1,0 +1,105 @@
+{
+  "ID": "200406-12",
+  "Title": "Webmin: Multiple vulnerabilities",
+  "Synopsis": "\n    Webmin contains two security vulnerabilities which could lead to a Denial\n    of Service attack and information disclosure.\n  ",
+  "Product": {
+    "Text": "webmin",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-06-16",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "53375"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-admin/webmin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.150",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.140-r1",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Webmin is a web-based administration tool for Unix. It supports a wide\n    range of applications including Apache, DNS, file sharing and others.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Webmin contains two security vulnerabilities. One allows any user to\n    view the configuration of any module and the other could allow an\n    attacker to lock out a valid user by sending an invalid username and\n    password.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An authenticated user could use these vulnerabilities to view the\n    configuration of any module thus potentially obtaining important\n    knowledge about configuration settings. Furthermore an attacker could\n    lock out legitimate users by sending invalid login information.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Webmin users should upgrade to the latest stable version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv \">=app-admin/app-admin/webmin-1.150\"\n    # emerge \">=app-admin/app-admin/webmin-1.150\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Bugtraq Announcement",
+        "Link": "http://www.securityfocus.com/bid/10474"
+      },
+      {
+        "Text": "Webmin Changelog",
+        "Link": "http://www.webmin.com/changes-1.150.html"
+      },
+      {
+        "Text": "CVE-2004-0582",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0582"
+      },
+      {
+        "Text": "CVE-2004-0583",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0583"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

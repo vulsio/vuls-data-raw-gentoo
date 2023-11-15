@@ -1,0 +1,116 @@
+{
+  "ID": "200901-13",
+  "Title": "Pidgin: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities have been discovered in Pidgin, allowing for\n    remote arbitrary code execution, Denial of Service and service spoofing.\n  ",
+  "Product": {
+    "Text": "pidgin",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-01-20",
+  "Revised": {
+    "Text": "2009-01-20",
+    "Count": "01"
+  },
+  "Bug": [
+    "230045",
+    "234135"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-im/pidgin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.5.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.5.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Pidgin (formerly Gaim) is an instant messaging client for a variety of\n    instant messaging protocols. It is based on the libpurple instant\n    messaging library.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Multiple vulnerabilities have been discovered in Pidgin and the\n    libpurple library:\n    </p>\n    <ul><li>\n    A participant to the TippingPoint ZDI reported multiple integer\n    overflows in the msn_slplink_process_msg() function in the MSN protocol\n    implementation (CVE-2008-2927).\n    </li>\n    <li>\n    Juan Pablo Lopez Yacubian is credited for reporting a use-after-free\n    flaw in msn_slplink_process_msg() in the MSN protocol implementation\n    (CVE-2008-2955).\n    </li>\n    <li>\n    The included UPnP server does not limit the size of data to be\n    downloaded for UPnP service discovery, according to a report by Andrew\n    Hunt and Christian Grothoff (CVE-2008-2957).\n    </li>\n    <li>\n    Josh Triplett discovered that the NSS plugin for libpurple does not\n    properly verify SSL certificates (CVE-2008-3532).\n    </li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could send specially crafted messages or files using\n    the MSN protocol which could result in the execution of arbitrary code\n    or crash Pidgin. NOTE: Successful exploitation might require the\n    victim's interaction. Furthermore, an attacker could conduct\n    man-in-the-middle attacks to obtain sensitive information using bad\n    certificates and cause memory and disk resources to exhaust.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Pidgin users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-im/pidgin-2.5.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-2927",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2927"
+      },
+      {
+        "Text": "CVE-2008-2955",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2955"
+      },
+      {
+        "Text": "CVE-2008-2957",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2957"
+      },
+      {
+        "Text": "CVE-2008-3532",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3532"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-07-06T18:20:14Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-11-29T14:01:14Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-12-02T14:32:53Z"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "ID": "200805-15",
+  "Title": "libid3tag: Denial of service",
+  "Synopsis": "\n    A Denial of Service vulnerability was found in libid3tag.\n  ",
+  "Product": {
+    "Text": "libid3tag",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-05-14",
+  "Revised": {
+    "Text": "2008-05-14",
+    "Count": "01"
+  },
+  "Bug": [
+    "210564"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/libid3tag",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.15.1b-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.15.1b-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    libid3tag is an ID3 tag manipulation library.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Kentaro Oda reported an infinite loop in the file field.c when parsing\n    an MP3 file with an ID3_FIELD_TYPE_STRINGLIST field that ends in '\\0'.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted MP3\n    file, possibly resulting in a Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All libid3tag users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/libid3tag-0.15.1b-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-2109",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2109"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-05-13T20:49:10Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-05-13T20:57:48Z"
+    },
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-05-13T21:27:22Z"
+    }
+  ]
+}

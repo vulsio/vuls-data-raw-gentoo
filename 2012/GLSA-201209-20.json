@@ -1,0 +1,98 @@
+{
+  "ID": "201209-20",
+  "Title": "mod_rpaf: Denial of service",
+  "Synopsis": "A vulnerability in mod_rpaf may result in Denial of Service.",
+  "Product": {
+    "Text": "mod_rpaf",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-09-27",
+  "Revised": {
+    "Text": "2012-09-27",
+    "Count": "1"
+  },
+  "Bug": [
+    "432406"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apache/mod_rpaf",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>mod_rpaf is a reverse proxy add forward module for backend Apache\n      servers.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>An error has been found in the way mod_rpaf handles X-Forwarded-For\n      headers. Please review the CVE identifier referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could send a specially crafted HTTP header, possibly\n      resulting in a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All mod_rpaf users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=www-apache/mod_rpaf-0.6\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-3526",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3526"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2012-09-19T10:41:24Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-09-27T19:53:08Z"
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "ID": "200711-08",
+  "Title": "libpng: Multiple Denials of Service",
+  "Synopsis": "\n    Several vulnerabilities in libpng may allow a remote attacker to crash\n    applications that handle untrusted images.\n  ",
+  "Product": {
+    "Text": "libpng",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-11-07",
+  "Revised": {
+    "Text": "2007-11-07",
+    "Count": "01"
+  },
+  "Bug": [
+    "195261"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/libpng",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.21-r3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.21-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    libpng is a free ANSI C library used to process and manipulate PNG\n    images.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    An off-by-one error when handling ICC profile chunks in the\n    png_set_iCCP() function was discovered (CVE-2007-5266). George Cook and\n    Jeff Phillips reported several errors in pngrtran.c, the use of logical\n    instead of a bitwise functions and incorrect comparisons\n    (CVE-2007-5268). Tavis Ormandy reported out-of-bounds read errors in\n    several PNG chunk handling functions (CVE-2007-5269).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could craft an image that when processed or viewed by\n    an application using libpng would cause the application to terminate\n    abnormally.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All libpng users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/libpng-1.2.21-r3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-5266",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5266"
+      },
+      {
+        "Text": "CVE-2007-5268",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5268"
+      },
+      {
+        "Text": "CVE-2007-5269",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5269"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-10-20T09:57:33Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-10-20T09:57:41Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-10-26T00:26:03Z"
+    }
+  ]
+}

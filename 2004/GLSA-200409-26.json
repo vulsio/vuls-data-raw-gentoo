@@ -1,0 +1,248 @@
+{
+  "ID": "200409-26",
+  "Title": "Mozilla, Firefox, Thunderbird, Epiphany: New releases fix vulnerabilities",
+  "Synopsis": "\n    New releases of Mozilla, Epiphany, Mozilla Thunderbird, and Mozilla Firefox\n    fix several vulnerabilities, including the remote execution of arbitrary\n    code.\n  ",
+  "Product": {
+    "Text": "Mozilla",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-09-20",
+  "Revised": {
+    "Text": "2007-12-30",
+    "Count": "03"
+  },
+  "Bug": [
+    "63996"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-client/mozilla",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.7.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.7.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "www-client/mozilla-firefox",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0_pre",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0_pre",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "mail-client/mozilla-thunderbird",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.8",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.8",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "www-client/mozilla-bin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.7.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.7.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "www-client/mozilla-firefox-bin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0_pre",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0_pre",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "mail-client/mozilla-thunderbird-bin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.8",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.8",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "www-client/epiphany",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.9-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.9-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Mozilla is a popular web browser that includes a mail and newsreader.\n    Epiphany is a web browser that uses Gecko, the Mozilla rendering\n    engine. Mozilla Firefox and Mozilla Thunderbird are respectively the\n    next-generation browser and mail client from the Mozilla project.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Mozilla-based products are vulnerable to multiple security issues.\n    Firstly routines handling the display of BMP images and VCards contain\n    an integer overflow and a stack buffer overrun. Specific pages with\n    long links, when sent using the \"Send Page\" function, and links with\n    non-ASCII hostnames could both cause heap buffer overruns.\n    </p>\n    <p>\n    Several issues were found and fixed in JavaScript rights handling:\n    untrusted script code could read and write to the clipboard, signed\n    scripts could build confusing grant privileges dialog boxes, and when\n    dragged onto trusted frames or windows, JavaScript links could access\n    information and rights of the target frame or window. Finally,\n    Mozilla-based mail clients (Mozilla and Mozilla Thunderbird) are\n    vulnerable to a heap overflow caused by invalid POP3 mail server\n    responses.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker might be able to run arbitrary code with the rights of the\n    user running the software by enticing the user to perform one of the\n    following actions: view a specially-crafted BMP image or VCard, use the\n    \"Send Page\" function on a malicious page, follow links with malicious\n    hostnames, drag multiple JavaScript links in a row to another window,\n    or connect to an untrusted POP3 mail server. An attacker could also use\n    a malicious page with JavaScript to disclose clipboard contents or\n    abuse previously-given privileges to request XPI installation\n    privileges through a confusing dialog.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround covering all vulnerabilities.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All users should upgrade to the latest stable version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv your-version\n    # emerge your-version"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Mozilla Security Advisory",
+        "Link": "https://www.mozilla.org/projects/security/known-vulnerabilities.html#mozilla1.7.3"
+      },
+      {
+        "Text": "US-CERT Security Alert TA04-261A",
+        "Link": "https://www.us-cert.gov/cas/techalerts/TA04-261A.html"
+      },
+      {
+        "Text": "CVE-2004-0902",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0902"
+      },
+      {
+        "Text": "CVE-2004-0903",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0903"
+      },
+      {
+        "Text": "CVE-2004-0904",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0904"
+      },
+      {
+        "Text": "CVE-2004-0905",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0905"
+      },
+      {
+        "Text": "CVE-2004-0906",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0906"
+      },
+      {
+        "Text": "CVE-2004-0907",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0907"
+      },
+      {
+        "Text": "CVE-2004-0908",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0908"
+      },
+      {
+        "Text": "CVE-2004-0909",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0909"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-09-19T12:09:02Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-09-20T15:58:46Z"
+    }
+  ]
+}

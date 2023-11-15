@@ -1,0 +1,164 @@
+{
+  "ID": "200907-06",
+  "Title": "Adobe Reader: User-assisted execution of arbitrary code",
+  "Synopsis": "\n    Adobe Reader is vulnerable to remote code execution via crafted PDF files.\n  ",
+  "Product": {
+    "Text": "acroread",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-07-12",
+  "Revised": {
+    "Text": "2009-07-12",
+    "Count": "01"
+  },
+  "Bug": [
+    "267846",
+    "273908"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-text/acroread",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "8.1.6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "8.1.6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Adobe Reader is a PDF reader released by Adobe.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Multiple vulnerabilities have been reported in Adobe Reader:\n    </p>\n    <ul>\n    <li>Alin Rad Pop of Secunia Research reported a heap-based buffer\n    overflow in the JBIG2 filter (CVE-2009-0198).\n    </li>\n    <li>Mark Dowd of the IBM Internet Security Systems X-Force and\n    Nicolas Joly of VUPEN Security reported multiple heap-based buffer\n    overflows in the JBIG2 filter (CVE-2009-0509, CVE-2009-0510,\n    CVE-2009-0511, CVE-2009-0512, CVE-2009-0888, CVE-2009-0889)\n    </li>\n    <li>Arr1val reported that multiple methods in the JavaScript API\n    might lead to memory corruption when called with crafted arguments\n    (CVE-2009-1492, CVE-2009-1493).\n    </li>\n    <li>\n    An anonymous researcher reported a stack-based buffer overflow related\n    to U3D model files with a crafted extension block (CVE-2009-1855).\n    </li>\n    <li>\n    Jun Mao and Ryan Smith of iDefense Labs reported an integer overflow\n    related to the FlateDecode filter, which triggers a heap-based buffer\n    overflow (CVE-2009-1856).\n    </li>\n    <li>\n    Haifei Li of Fortinet's FortiGuard Global Security Research Team\n    reported a memory corruption vulnerability related to TrueType fonts\n    (CVE-2009-1857).\n    </li>\n    <li>\n    The Apple Product Security Team reported a memory corruption\n    vulnerability in the JBIG2 filter (CVE-2009-1858).\n    </li>\n    <li>\n    Matthew Watchinski of Sourcefire VRT reported an unspecified memory\n    corruption (CVE-2009-1859).\n    </li>\n    <li>\n    Will Dormann of CERT reported multiple heap-based buffer overflows when\n    processing JPX (aka JPEG2000) stream that trigger heap memory\n    corruption (CVE-2009-1861).\n    </li>\n    <li>\n    Multiple unspecified vulnerabilities have been discovered\n    (CVE-2009-2028).\n    </li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted\n    document, possibly resulting in the execution of arbitrary code with\n    the privileges of the user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Adobe Reader users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/acroread-8.1.6\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-0198",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0198"
+      },
+      {
+        "Text": "CVE-2009-0509",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0509"
+      },
+      {
+        "Text": "CVE-2009-0510",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0510"
+      },
+      {
+        "Text": "CVE-2009-0511",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0511"
+      },
+      {
+        "Text": "CVE-2009-0512",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0512"
+      },
+      {
+        "Text": "CVE-2009-0888",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0888"
+      },
+      {
+        "Text": "CVE-2009-0889",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0889"
+      },
+      {
+        "Text": "CVE-2009-1492",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1492"
+      },
+      {
+        "Text": "CVE-2009-1493",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1493"
+      },
+      {
+        "Text": "CVE-2009-1855",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1855"
+      },
+      {
+        "Text": "CVE-2009-1856",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1856"
+      },
+      {
+        "Text": "CVE-2009-1857",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1857"
+      },
+      {
+        "Text": "CVE-2009-1858",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1858"
+      },
+      {
+        "Text": "CVE-2009-1859",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1859"
+      },
+      {
+        "Text": "CVE-2009-1861",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1861"
+      },
+      {
+        "Text": "CVE-2009-2028",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2028"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-06-21T19:11:36Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-07-09T17:45:58Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-07-09T17:47:39Z"
+    }
+  ]
+}

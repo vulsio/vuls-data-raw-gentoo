@@ -1,0 +1,111 @@
+{
+  "ID": "200503-37",
+  "Title": "LimeWire: Disclosure of sensitive information",
+  "Synopsis": "\n    Two vulnerabilities in LimeWire can be exploited to disclose sensitive\n    information.\n  ",
+  "Product": {
+    "Text": "LimeWire",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-03-31",
+  "Revised": {
+    "Text": "2005-03-31",
+    "Count": "01"
+  },
+  "Bug": [
+    "85380"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-p2p/limewire",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.8.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.8.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    LimeWire is a Java peer-to-peer client compatible with the\n    Gnutella file-sharing protocol.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Two input validation errors were found in the handling of Gnutella\n    GET requests (CAN-2005-0788) and magnet requests (CAN-2005-0789).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    A remote attacker can craft a specific Gnutella GET request or use\n    directory traversal on magnet requests to read arbitrary files on the\n    system with the rights of the user running LimeWire.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All LimeWire users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-p2p/limewire-4.8.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-0788",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0788"
+      },
+      {
+        "Text": "CAN-2005-0789",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0789"
+      },
+      {
+        "Text": "Secunia Advisory SA14555",
+        "Link": "https://secunia.com/advisories/14555/"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-03-30T14:57:35Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-03-30T14:58:13Z"
+    },
+    {
+      "Text": "\n    formula7\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-03-30T16:12:57Z"
+    }
+  ]
+}

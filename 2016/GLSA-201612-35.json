@@ -1,0 +1,98 @@
+{
+  "ID": "201612-35",
+  "Title": "XStream: Remote execution of arbitrary code",
+  "Synopsis": "A vulnerability in XStream may allow remote attackers to execute\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "xstream",
+    "Type": "ebuild"
+  },
+  "Announced": "2016-12-13",
+  "Revised": {
+    "Text": "2016-12-13",
+    "Count": "2"
+  },
+  "Bug": [
+    "497652"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-java/xstream",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.8-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.8-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>XStream is a simple library to serialize objects to XML and back again.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was found that XStream would deserialize arbitrary user-supplied XML\n      content, thus representing objects of any type.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could pass a specially crafted XML document to\n      XStream, possibly resulting in the execution of arbitrary code with the\n      privileges of the process or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All XStream users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-java/xstream-1.4.8-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2013-7285",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-7285"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2016-11-29T21:29:45Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2016-12-13T06:59:12Z"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "ID": "201405-19",
+  "Title": "MCrypt: User-assisted execution of arbitrary code",
+  "Synopsis": "Multiple vulnerabilities have been found in MCrypt, allowing\n    attackers to execute arbitrary code or cause Denial of Service.\n  ",
+  "Product": {
+    "Text": "mcrypt",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-05-18",
+  "Revised": {
+    "Text": "2014-05-18",
+    "Count": "1"
+  },
+  "Bug": [
+    "434112",
+    "440778"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-crypt/mcrypt",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.6.8-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.6.8-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>MCrypt is a replacement of the old unix crypt(1) utility.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in MCrypt:</p>\n    \n    <ul>\n      <li>A boundary error in MCrypt could cause a stack-based buffer overflow\n        (CVE-2012-4409).\n      </li>\n      <li>MCrypt contains multiple format string errors (CVE-2012-4426).</li>\n      <li>MCrypt does not properly handle long file names, which could cause a\n        stack-based buffer overflow (CVE-2012-4527). \n      </li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted file\n      using MCrypt, possibly resulting in execution of arbitrary code with the\n      privileges of the process or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All MCrypt users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-crypt/mcrypt-2.6.8-r2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-4409",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-4409"
+      },
+      {
+        "Text": "CVE-2012-4426",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-4426"
+      },
+      {
+        "Text": "CVE-2012-4527",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-4527"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2013-01-01T21:30:40Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2014-05-18T11:39:31Z"
+    }
+  ]
+}

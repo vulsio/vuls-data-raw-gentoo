@@ -1,0 +1,118 @@
+{
+  "ID": "200501-21",
+  "Title": "HylaFAX: hfaxd unauthorized login vulnerability",
+  "Synopsis": "\n    HylaFAX is subject to a vulnerability in its username matching code,\n    potentially allowing remote users to bypass access control lists.\n  ",
+  "Product": {
+    "Text": "HylaFAX",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-01-11",
+  "Revised": {
+    "Text": "2005-01-11",
+    "Count": "01"
+  },
+  "Bug": [
+    "75941"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/hylafax",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.2.0-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.2.0-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    HylaFAX is a software package for sending and receiving facsimile\n    messages.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The code used by hfaxd to match a given username and hostname with\n    an entry in the hosts.hfaxd file is insufficiently protected against\n    malicious entries.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    If the HylaFAX installation uses a weak hosts.hfaxd file, a remote\n    attacker could authenticate using a malicious username or hostname and\n    bypass the intended access restrictions.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    As a workaround, administrators may consider adding passwords to\n    all entries in the hosts.hfaxd file.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All HylaFAX users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    Note: Due to heightened security, weak entries in the\n    hosts.hfaxd file may no longer work. Please see the HylaFAX\n    documentation for details of accepted syntax in the hosts.hfaxd file.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/hylafax-4.2.0-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-1182",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1182"
+      },
+      {
+        "Text": "HylaFAX Announcement",
+        "Link": "http://marc.theaimsgroup.com/?l=hylafax&m=110545119911558&w=2"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-01-10T09:56:02Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-01-10T13:48:18Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-01-11T16:16:35Z"
+    }
+  ]
+}

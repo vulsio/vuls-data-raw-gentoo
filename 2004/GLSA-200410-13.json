@@ -1,0 +1,107 @@
+{
+  "ID": "200410-13",
+  "Title": "BNC: Input validation flaw",
+  "Synopsis": "\n    BNC contains an input validation flaw which might allow a remote attacker\n    to issue arbitrary IRC related commands.\n  ",
+  "Product": {
+    "Text": "bnc",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-10-15",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "66912"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-irc/bnc",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.8.9",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.8.9",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    BNC is an IRC proxying server\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    A flaw exists in the input parsing of BNC where part of the\n    sbuf_getmsg() function handles the backspace character incorrectly.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote user could issue commands using fake authentication\n    credentials and possibly gain access to scripts running on the client\n    side.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All BNC users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv \">=net-irc/bnc-2.8.9\"\n    # emerge \">=net-irc/bnc-2.8.9\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "BNC Changes",
+        "Link": "http://www.gotbnc.com/changes.html#2.8.9"
+      },
+      {
+        "Text": "CVE-2004-1482",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1482"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-10-12T11:44:17Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-10-12T11:44:35Z"
+    },
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-10-13T08:51:33Z"
+    }
+  ]
+}

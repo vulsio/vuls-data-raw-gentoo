@@ -1,0 +1,112 @@
+{
+  "ID": "200609-14",
+  "Title": "ImageMagick: Multiple Vulnerabilities",
+  "Synopsis": "\n    Multiple buffer overflows have been discovered in ImageMagick, which could\n    potentially result in the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "Imagemagick",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-09-26",
+  "Revised": {
+    "Text": "2006-09-26",
+    "Count": "01"
+  },
+  "Bug": [
+    "144091",
+    "143533"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-gfx/imagemagick",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "6.2.9.5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "6.2.9.5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    ImageMagick is a free software suite to manipulate, convert, and create\n    many image formats.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Tavis Ormandy of the Google Security Team discovered a stack and heap\n    buffer overflow in the GIMP XCF Image decoder and multiple heap and\n    integer overflows in the SUN bitmap decoder. Damian Put discovered a\n    heap overflow in the SGI image decoder.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker may be able to create a specially crafted image that, when\n    processed with ImageMagick, executes arbitrary code with the privileges\n    of the executing user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All ImageMagick users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/imagemagick-6.2.9.5\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-3743",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3743"
+      },
+      {
+        "Text": "CVE-2006-3744",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3744"
+      },
+      {
+        "Text": "CVE-2006-4144",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4144"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-09-19T07:52:00Z"
+    },
+    {
+      "Text": "\n    taviso\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-09-22T10:27:30Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-09-25T18:09:30Z"
+    }
+  ]
+}

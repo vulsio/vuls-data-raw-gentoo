@@ -1,0 +1,115 @@
+{
+  "ID": "200507-28",
+  "Title": "AMD64 x86 emulation base libraries: Buffer overflow",
+  "Synopsis": "\n    The x86 emulation base libraries for AMD64 contain a vulnerable version of\n    zlib which could potentially lead to execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "emul-linux-x86-baselibs",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-07-30",
+  "Revised": {
+    "Text": "2005-08-02",
+    "Count": "02"
+  },
+  "Bug": [
+    "100686"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-emulation/emul-linux-x86-baselibs",
+        "Auto": "yes",
+        "Arch": "amd64",
+        "Unaffected": [
+          {
+            "Text": "2.1.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.1.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The x86 emulation base libraries for AMD64 emulate the x86 (32-bit)\n    architecture on the AMD64 (64-bit) architecture.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Earlier versions of emul-linux-x86-baselibs contain a vulnerable\n    version of zlib, which may lead to a buffer overflow.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    By creating a specially crafted compressed data stream, attackers can\n    overwrite data structures for applications that use the x86 emulation\n    base libraries for AMD64, resulting in a Denial of Service and\n    potentially arbitrary code execution.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All AMD64 x86 emulation base libraries users should upgrade to the\n    latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose app-emulation/emul-linux-x86-baselibs"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "GLSA 200507-05",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200507-05.xml"
+      },
+      {
+        "Text": "GLSA 200507-19",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200507-19.xml"
+      },
+      {
+        "Text": "CAN-2005-1849",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1849"
+      },
+      {
+        "Text": "CAN-2005-2096",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2096"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-07-30T08:48:26Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-07-30T08:50:21Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-07-30T09:53:12Z"
+    }
+  ]
+}

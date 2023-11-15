@@ -1,0 +1,107 @@
+{
+  "ID": "200507-18",
+  "Title": "MediaWiki: Cross-site scripting vulnerability",
+  "Synopsis": "\n    MediaWiki is vulnerable to a cross-site scripting attack that could allow\n    arbitrary JavaScript code execution.\n  ",
+  "Product": {
+    "Text": "mediawiki",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-07-20",
+  "Revised": {
+    "Text": "2005-08-11",
+    "Count": "03"
+  },
+  "Bug": [
+    "99132"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/mediawiki",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    MediaWiki is a collaborative editing software, used by big projects\n    like Wikipedia.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    MediaWiki fails to escape a parameter in the page move template\n    correctly.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    By enticing a user to visit a specially crafted URL, a remote attacker\n    could exploit this vulnerability to inject malicious JavaScript code\n    that will be executed in a user's browser session in the context of the\n    vulnerable site.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All MediaWiki users should upgrade to the latest available version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/mediawiki-1.4.7\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-2396",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2396"
+      },
+      {
+        "Text": "MediaWiki Release Notes",
+        "Link": "https://sourceforge.net/project/shownotes.php?release_id=342530"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-07-18T07:34:17Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-07-18T07:34:40Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-07-18T07:59:14Z"
+    }
+  ]
+}

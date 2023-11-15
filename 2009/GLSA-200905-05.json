@@ -1,0 +1,108 @@
+{
+  "ID": "200905-05",
+  "Title": "FreeType: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple integer overflows in FreeType might allow for the remote execution\n    of arbitrary code or a Denial of Service.\n  ",
+  "Product": {
+    "Text": "freetype",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-05-24",
+  "Revised": {
+    "Text": "2009-05-25",
+    "Count": "02"
+  },
+  "Bug": [
+    "263032"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/freetype",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.3.9-r1",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "2.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.3.9-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    FreeType is a high-quality and portable font engine.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Tavis Ormandy reported multiple integer overflows in the\n    cff_charset_compute_cids() function in cff/cffload.c, sfnt/tccmap.c and\n    the ft_smooth_render_generic() function in smooth/ftsmooth.c, possibly\n    leading to heap or stack-based buffer overflows.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user or automated system to open a\n    specially crafted font file, possibly resulting in the execution of\n    arbitrary code with the privileges of the user running the application,\n    or a Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All FreeType users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/freetype-2.3.9-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-0946",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0946"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-05-06T18:49:58Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-05-07T11:07:09Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-05-24T13:55:28Z"
+    }
+  ]
+}

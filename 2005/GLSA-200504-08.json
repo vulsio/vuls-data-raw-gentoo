@@ -1,0 +1,107 @@
+{
+  "ID": "200504-08",
+  "Title": "phpMyAdmin: Cross-site scripting vulnerability",
+  "Synopsis": "\n    phpMyAdmin is vulnerable to a cross-site scripting attack.\n  ",
+  "Product": {
+    "Text": "phpMyAdmin",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-04-11",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "87952"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-db/phpmyadmin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.6.2_rc1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.6.2_rc1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    phpMyAdmin is a tool written in PHP intended to handle the\n    administration of MySQL databases from a web-browser.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Oriol Torrent Santiago has discovered that phpMyAdmin fails to validate\n    input to the \"convcharset\" variable, rendering it vulnerable to\n    cross-site scripting attacks.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    By sending a specially-crafted request, an attacker can inject and\n    execute malicious script code, potentially compromising the victim's\n    browser.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All phpMyAdmin users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-db/phpmyadmin-2.6.2_rc1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "PMASA-2005-3",
+        "Link": "https://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2005-3"
+      },
+      {
+        "Text": "CVE-2005-0992",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0992"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-04-10T23:16:29Z"
+    },
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-04-11T00:34:48Z"
+    },
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-04-11T00:35:39Z"
+    }
+  ]
+}

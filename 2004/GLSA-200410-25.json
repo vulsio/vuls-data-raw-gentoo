@@ -1,0 +1,98 @@
+{
+  "ID": "200410-25",
+  "Title": "Netatalk: Insecure tempfile handling in etc2ps.sh",
+  "Synopsis": "\n    The etc2ps.sh script, included in the Netatalk package, is vulnerable to\n    symlink attacks, potentially allowing a local user to overwrite arbitrary\n    files with the rights of the user running the utility.\n  ",
+  "Product": {
+    "Text": "Netatalk",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-10-25",
+  "Revised": {
+    "Text": "2004-10-25",
+    "Count": "01"
+  },
+  "Bug": [
+    "66370"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-fs/netatalk",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.6.4-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.6.4-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Netatalk is a kernel level implementation of the AppleTalk Protocol Suite,\n    which allows Unix hosts to act as file, print, and time servers for Apple\n    computers. It includes several script utilities, including etc2ps.sh.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The etc2ps.sh script creates temporary files in world-writeable directories\n    with predictable names.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary files\n    directory, pointing to a valid file somewhere on the filesystem. When\n    etc2ps.sh is executed, this would result in the file being overwritten with\n    the rights of the user running the utility, which could be the root user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Netatalk users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n\n    # emerge -pv \">=net-fs/netatalk-1.6.4-r1\"\n    # emerge \">=net-fs/netatalk-1.6.4-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-0974",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0974"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-10-10T22:02:01Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-10-25T13:03:51Z"
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "ID": "200610-06",
+  "Title": "Mozilla Network Security Service (NSS): RSA signature forgery",
+  "Synopsis": "\n    NSS fails to properly validate PKCS #1 v1.5 signatures.\n  ",
+  "Product": {
+    "Text": "nss",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-10-17",
+  "Revised": {
+    "Text": "2006-10-17",
+    "Count": "01"
+  },
+  "Bug": [
+    "148283"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/nss",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.11.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.11.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Mozilla Network Security Service is a library implementing security\n    features like SSL v.2/v.3, TLS, PKCS #5, PKCS #7, PKCS #11, PKCS #12,\n    S/MIME and X.509 certificates.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Daniel Bleichenbacher discovered that it might be possible to forge\n    signatures signed by RSA keys with the exponent of 3. This affects a\n    number of RSA signature implementations, including Mozilla's NSS.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    Since several Certificate Authorities (CAs) are using an exponent of 3\n    it might be possible for an attacker to create a key with a false CA\n    signature. This impacts any software using the NSS library, like the\n    Mozilla products Firefox, Thunderbird and Seamonkey.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All NSS users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    Note: As usual after updating a library, you should run\n    'revdep-rebuild' (from the app-portage/gentoolkit package) to ensure\n    that all applications linked to it are properly rebuilt.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/nss-3.11.3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-4339",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4339"
+      },
+      {
+        "Text": "CVE-2006-4340",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4340"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    frilled\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-09-25T12:57:17Z"
+    },
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-10-03T18:27:05Z"
+    },
+    {
+      "Text": "\n    frilled\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-10-08T19:45:16Z"
+    }
+  ]
+}

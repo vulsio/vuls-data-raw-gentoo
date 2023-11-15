@@ -1,0 +1,103 @@
+{
+  "ID": "200708-16",
+  "Title": "Qt: Multiple format string vulnerabilities",
+  "Synopsis": "\n    Format string vulnerabilities in Qt 3 may lead to the remote execution of\n    arbitrary code in some Qt applications.\n  ",
+  "Product": {
+    "Text": "qt",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-08-22",
+  "Revised": {
+    "Text": "2007-08-22",
+    "Count": "01"
+  },
+  "Bug": [
+    "185446"
+  ],
+  "Access": "remote, local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "x11-libs/qt",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.3.8-r3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.3.8-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Qt is a cross-platform GUI framework, which is used e.g. by KDE.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Tim Brown of Portcullis Computer Security Ltd and Dirk Mueller of KDE\n    reported multiple format string errors in qWarning() calls in files\n    qtextedit.cpp, qdatatable.cpp, qsqldatabase.cpp, qsqlindex.cpp,\n    qsqlrecord.cpp, qglobal.cpp, and qsvgdevice.cpp.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could trigger one of the vulnerabilities by causing a Qt\n    application to parse specially crafted text, which may lead to the\n    execution of arbitrary code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Qt 3 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \"=x11-libs/qt-3*\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-3388",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3388"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-08-15T17:25:28Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-08-15T17:25:45Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-08-19T22:38:33Z"
+    }
+  ]
+}

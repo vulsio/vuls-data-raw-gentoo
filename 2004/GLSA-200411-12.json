@@ -1,0 +1,107 @@
+{
+  "ID": "200411-12",
+  "Title": "zgv: Multiple buffer overflows",
+  "Synopsis": "\n    zgv contains multiple buffer overflows that can potentially lead to the\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "zgv",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-11-07",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "69150"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-gfx/zgv",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.8",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.8",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    zgv is a console image viewer based on svgalib.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Multiple arithmetic overflows have been detected in the image\n    processing code of zgv.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could entice a user to open a specially-crafted image file,\n    potentially resulting in execution of arbitrary code with the rights of\n    the user running zgv.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All zgv users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/zgv-5.8\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "BugTraq Advisory",
+        "Link": "http://www.securityfocus.com/archive/1/379472"
+      },
+      {
+        "Text": "CVE-2004-1095",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1095"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-11-06T19:26:29Z"
+    },
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-11-06T20:47:51Z"
+    },
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-11-06T21:08:18Z"
+    }
+  ]
+}

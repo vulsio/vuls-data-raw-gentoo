@@ -1,0 +1,321 @@
+{
+  "ID": "201006-18",
+  "Title": "Oracle JRE/JDK: Multiple vulnerabilities",
+  "Synopsis": "\n    The Oracle JDK and JRE are vulnerable to multiple unspecified\n    vulnerabilities.\n  ",
+  "Product": {
+    "Text": "sun-jre-bin sun-jdk emul-linux-x86-java",
+    "Type": "ebuild"
+  },
+  "Announced": "2010-06-04",
+  "Revised": {
+    "Text": "2010-06-04",
+    "Count": "01"
+  },
+  "Bug": [
+    "306579",
+    "314531"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-java/sun-jre-bin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.6.0.20",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.6.0.20",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "dev-java/sun-jdk",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.6.0.20",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.6.0.20",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "app-emulation/emul-linux-x86-java",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.6.0.20",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.6.0.20",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Oracle Java Development Kit (JDK) (formerly known as Sun JDK) and\n    the Oracle Java Runtime Environment (JRE) (formerly known as Sun JRE)\n    provide the Oracle Java platform (formerly known as Sun Java Platform).\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Multiple vulnerabilities have been reported in the Oracle Java\n    implementation. Please review the CVE identifiers referenced below and\n    the associated Oracle Critical Patch Update Advisory for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could exploit these vulnerabilities to cause\n    unspecified impact, possibly including remote execution of arbitrary\n    code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Oracle JRE 1.6.x users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Oracle JDK 1.6.x users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All users of the precompiled 32bit Oracle JRE 1.6.x should upgrade to\n    the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Oracle JRE 1.5.x, Oracle JDK 1.5.x, and precompiled 32bit Oracle\n    JRE 1.5.x users are strongly advised to unmerge Java 1.5:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    Gentoo is ceasing support for the 1.5 generation of the Oracle Java\n    Platform in accordance with upstream. All 1.5 JRE versions are masked\n    and will be removed shortly. All 1.5 JDK versions are marked as\n    \"build-only\" and will be masked for removal shortly. Users are advised\n    to change their default user and system Java implementation to an\n    unaffected version. For example:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    For more information, please consult the Gentoo Linux Java\n    documentation.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-java/sun-jre-bin-1.6.0.20\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-java/sun-jdk-1.6.0.20\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-emulation/emul-linux-x86-java-1.6.0.20\"",
+      "\n    # emerge --unmerge =app-emulation/emul-linux-x86-java-1.5*\n    # emerge --unmerge =dev-java/sun-jre-bin-1.5*\n    # emerge --unmerge =dev-java/sun-jdk-1.5*",
+      "\n    # java-config --set-system-vm sun-jdk-1.6"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-3555",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3555"
+      },
+      {
+        "Text": "CVE-2010-0082",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0082"
+      },
+      {
+        "Text": "CVE-2010-0084",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0084"
+      },
+      {
+        "Text": "CVE-2010-0085",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0085"
+      },
+      {
+        "Text": "CVE-2010-0087",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0087"
+      },
+      {
+        "Text": "CVE-2010-0088",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0088"
+      },
+      {
+        "Text": "CVE-2010-0089",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0089"
+      },
+      {
+        "Text": "CVE-2010-0090",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0090"
+      },
+      {
+        "Text": "CVE-2010-0091",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0091"
+      },
+      {
+        "Text": "CVE-2010-0092",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0092"
+      },
+      {
+        "Text": "CVE-2010-0093",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0093"
+      },
+      {
+        "Text": "CVE-2010-0094",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0094"
+      },
+      {
+        "Text": "CVE-2010-0095",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0095"
+      },
+      {
+        "Text": "CVE-2010-0837",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0837"
+      },
+      {
+        "Text": "CVE-2010-0838",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0838"
+      },
+      {
+        "Text": "CVE-2010-0839",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0839"
+      },
+      {
+        "Text": "CVE-2010-0840",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0840"
+      },
+      {
+        "Text": "CVE-2010-0841",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0841"
+      },
+      {
+        "Text": "CVE-2010-0842",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0842"
+      },
+      {
+        "Text": "CVE-2010-0843",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0843"
+      },
+      {
+        "Text": "CVE-2010-0844",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0844"
+      },
+      {
+        "Text": "CVE-2010-0845",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0845"
+      },
+      {
+        "Text": "CVE-2010-0846",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0846"
+      },
+      {
+        "Text": "CVE-2010-0847",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0847"
+      },
+      {
+        "Text": "CVE-2010-0848",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0848"
+      },
+      {
+        "Text": "CVE-2010-0849",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0849"
+      },
+      {
+        "Text": "CVE-2010-0850",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0850"
+      },
+      {
+        "Text": "CVE-2010-0886",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0886"
+      },
+      {
+        "Text": "CVE-2010-0887",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0887"
+      },
+      {
+        "Text": "Gentoo Linux Java documentation",
+        "Link": "https://wiki.gentoo.org/wiki/Java"
+      },
+      {
+        "Text": "Oracle Java SE and Java for Business Critical Patch Update Advisory - March 2010",
+        "Link": "https://www.oracle.com/technology/deploy/security/critical-patch-updates/javacpumar2010.html"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "requester",
+      "Timestamp": "2010-04-02T09:43:04Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2010-04-02T09:59:07Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2010-06-04T05:06:52Z"
+    }
+  ]
+}

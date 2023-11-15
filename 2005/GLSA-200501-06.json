@@ -1,0 +1,106 @@
+{
+  "ID": "200501-06",
+  "Title": "tiff: New overflows in image decoding",
+  "Synopsis": "\n    An integer overflow has been found in the TIFF library image decoding\n    routines and the tiffdump utility, potentially allowing arbitrary code\n    execution.\n  ",
+  "Product": {
+    "Text": "tiff",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-01-05",
+  "Revised": {
+    "Text": "2005-01-05",
+    "Count": "01"
+  },
+  "Bug": [
+    "75213"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/tiff",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.7.1-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.7.1-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The TIFF library contains encoding and decoding routines for the\n    Tag Image File Format. It is called by numerous programs, including\n    GNOME and KDE applications, to interpret TIFF images.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    infamous41md found a potential integer overflow in the directory\n    entry count routines of the TIFF library (CAN-2004-1308). Dmitry V.\n    Levin found another similar issue in the tiffdump utility\n    (CAN-2004-1183).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to view a carefully crafted\n    TIFF image file, which would potentially lead to execution of arbitrary\n    code with the rights of the user viewing the image. This affects any\n    program that makes use of the TIFF library, including many web browsers\n    or mail readers.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All TIFF library users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/tiff-3.7.1-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-1183",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1183"
+      },
+      {
+        "Text": "CAN-2004-1308",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1308"
+      },
+      {
+        "Text": "iDEFENSE Advisory",
+        "Link": "http://www.idefense.com/application/poi/display?id=174&type=vulnerabilities"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-01-03T10:21:55Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-01-04T14:07:42Z"
+    }
+  ]
+}

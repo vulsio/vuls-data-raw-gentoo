@@ -1,0 +1,107 @@
+{
+  "ID": "200504-22",
+  "Title": "KDE kimgio: PCX handling buffer overflow",
+  "Synopsis": "\n    KDE fails to properly validate input when handling PCX images, potentially\n    resulting in the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "KDE",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-04-22",
+  "Revised": {
+    "Text": "2005-04-22",
+    "Count": "01"
+  },
+  "Bug": [
+    "88862"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "kde-base/kdelibs",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.2.3-r9",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "3.3.2-r8",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.3.2-r8",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    KDE is a feature-rich graphical desktop environment for Linux and\n    Unix-like Operating Systems. kimgio is the KDE image handler provided\n    by kdelibs.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    kimgio fails to properly validate input when handling PCX files.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    By enticing a user to load a specially-crafted PCX image in a KDE\n    application, an attacker could execute arbitrary code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All kdelibs users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose kde-base/kdelibs"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-1046",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1046"
+      },
+      {
+        "Text": "KDE Security Advisory: kimgio input validation errors",
+        "Link": "https://www.kde.org/info/security/advisory-20050421-1.txt"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-04-22T06:44:43Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-04-22T11:51:44Z"
+    }
+  ]
+}

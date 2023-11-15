@@ -1,0 +1,98 @@
+{
+  "ID": "201707-09",
+  "Title": "GNOME applet for NetworkManager: Arbitrary file read/write",
+  "Synopsis": "A vulnerability has been found in GNOME applet for NetworkManager\n    allowing local attackers to access the local filesystem.\n  ",
+  "Product": {
+    "Text": "nm-applet",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-07-08",
+  "Revised": {
+    "Text": "2017-08-06",
+    "Count": "2"
+  },
+  "Bug": [
+    "613768"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "gnome-extra/nm-applet",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.6-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.6-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>GNOME applet for NetworkManager is a GTK+ 3 front-end which works under\n      Xorg environments with a systray.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Frederic Bardy and Quentin Biguenet discovered that GNOME applet for\n      NetworkManager incorrectly checked permissions when connecting to certain\n      wireless networks.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A local attacker could bypass security restrictions at the login screen\n      to access local files.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All GNOME applet for NetworkManager users should upgrade to the latest\n      version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=gnome-extra/nm-applet-1.4.6-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2017-6590",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-6590"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "BlueKnight",
+      "Tag": "requester",
+      "Timestamp": "2017-04-02T12:44:50Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2017-08-06T11:10:08Z"
+    }
+  ]
+}

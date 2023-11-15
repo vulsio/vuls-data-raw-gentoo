@@ -1,0 +1,98 @@
+{
+  "ID": "201803-13",
+  "Title": "PLIB: User-assisted execution of arbitrary code",
+  "Synopsis": "A vulnerability in PLIB may allow remote attackers to execute\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "plib",
+    "Type": "ebuild"
+  },
+  "Announced": "2018-03-26",
+  "Revised": {
+    "Text": "2018-03-26",
+    "Count": "1"
+  },
+  "Bug": [
+    "440762"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/plib",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.8.5-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.8.5-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>PLIB includes sound effects, music, a complete 3D engine, font\n      rendering, a simple Windowing library, a game scripting language, a GUI,\n      networking, 3D math library and a collection of handy utility functions.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A stack-based buffer overflow within the error function of\n      ssg/ssgParser.cxx was discovered in PLIB.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker, by enticing a user to open a specially crafted 3d\n      model file, could possibly execute arbitrary code with the privileges of\n      the process.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All PLIB users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/plib-1.8.5-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-4552",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2012-4552"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "b-man",
+      "Tag": "requester",
+      "Timestamp": "2018-03-25T20:13:40Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2018-03-26T16:27:43Z"
+    }
+  ]
+}

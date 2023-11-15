@@ -1,0 +1,92 @@
+{
+  "ID": "201709-13",
+  "Title": "SquirrelMail: Remote Code Execution",
+  "Synopsis": "A vulnerability in SquirrelMail might allow remote attackers to\n    execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "squirrelmail",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-09-17",
+  "Revised": {
+    "Text": "2017-09-17",
+    "Count": "1"
+  },
+  "Bug": [
+    "616700"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "mail-client/squirrelmail",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": null,
+        "Vulnerable": [
+          {
+            "Text": "1.4.23_pre20140426",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>SquirrelMail is a webmail package written in PHP. It supports IMAP and\n      SMTP and can optionally be installed with SQL support.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was discovered that the sendmail.cf file is mishandled in a popen\n      call.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker, by enticing a user to open an e-mail attachment,\n      could execute arbitrary shell commands.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "Gentoo has discontinued support for SquirrelMail and recommends that\n      users unmerge the package:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --unmerge \"mail-client/squirrelmail\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2017-7692",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-7692"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "b-man",
+      "Tag": "requester",
+      "Timestamp": "2017-09-08T23:47:24Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2017-09-17T20:28:22Z"
+    }
+  ]
+}

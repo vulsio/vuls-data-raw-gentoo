@@ -1,0 +1,164 @@
+{
+  "ID": "201910-01",
+  "Title": "PHP: Arbitrary code execution",
+  "Synopsis": "A vulnerability in PHP might allow an attacker to execute arbitrary\n    code.\n  ",
+  "Product": {
+    "Text": "php",
+    "Type": "ebuild"
+  },
+  "Announced": "2019-10-25",
+  "Revised": {
+    "Text": "2019-11-19",
+    "Count": "2"
+  },
+  "Bug": [
+    "698452"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-lang/php",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "7.1.33",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "7.2.24",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "7.3.11",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "5.6.40-r7",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "7.1.33",
+            "Range": "lt",
+            "Slot": ""
+          },
+          {
+            "Text": "7.2.24",
+            "Range": "lt",
+            "Slot": ""
+          },
+          {
+            "Text": "7.3.11",
+            "Range": "lt",
+            "Slot": ""
+          },
+          {
+            "Text": "5.6.40-r7",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>PHP is an open source general-purpose scripting language that is\n      especially suited for web development.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A underflow in env_path_info in PHP-FPM under certain configurations can\n      be exploited to gain remote code execution.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A remote attacker, by sending special crafted HTTP requests, could\n      possibly execute arbitrary code with the privileges of the process, or\n      cause a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>If patching is not feasible, the suggested workaround is to include\n      checks to verify whether or not a file exists before passing to PHP.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All PHP 5.6 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All PHP 7.1 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All PHP 7.2 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All PHP 7.3 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-lang/php-5.6.40-r7\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-lang/php-7.1.33\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-lang/php-7.2.24\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-lang/php-7.3.11\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2019-11043",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2019-11043"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2019-10-24T23:39:18Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2019-11-19T10:48:24Z"
+    }
+  ]
+}

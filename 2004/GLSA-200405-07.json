@@ -1,0 +1,93 @@
+{
+  "ID": "200405-07",
+  "Title": "Exim verify=header_syntax buffer overflow",
+  "Synopsis": "\n    When the verify=header_syntax option is set, there is a buffer overflow in\n    Exim that allows remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "Exim",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-05-14",
+  "Revised": {
+    "Text": "2004-05-14",
+    "Count": "01"
+  },
+  "Bug": [
+    "50217"
+  ],
+  "Access": "remote ",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "mail-mta/exim",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.33-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.33",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Exim is an highly configurable message transfer agent (MTA) developed at\n    the University of Cambridge.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    When the option \"verify = header_syntax\" is used in an ACL in the\n    configuration file, Exim is vulnerable to a buffer overflow attack that can\n    be triggered remotely by sending malicious headers in an email message.\n    Note that this option is not enabled in Exim's default configuration file.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    This vulnerability can be exploited to trigger a denial of service attack\n    and potentially execute arbitrary code with the rights of the user used by\n    the Exim daemon (by default this is the \"mail\" user in Gentoo Linux).\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Make sure the verify=header_syntax option is not used in your exim.conf\n    file.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All users of Exim should upgrade to the latest stable version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n\n    # emerge -pv \">=mail-mta/exim-4.33-r1\"\n    # emerge \">=mail-mta/exim-4.33-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-0400",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0400"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

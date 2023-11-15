@@ -1,0 +1,98 @@
+{
+  "ID": "202004-06",
+  "Title": "GnuTLS: DTLS protocol regression",
+  "Synopsis": "A regression in GnuTLS breaks the security guarantees of the DTLS\n    protocol.\n  ",
+  "Product": {
+    "Text": "gnutls",
+    "Type": "ebuild"
+  },
+  "Announced": "2020-04-02",
+  "Revised": {
+    "Text": "2020-04-02",
+    "Count": "1"
+  },
+  "Bug": [
+    "715602"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-libs/gnutls",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.6.13",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.6.13",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>GnuTLS is an Open Source implementation of the TLS and SSL protocols.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was discovered that DTLS client did not contribute any randomness to\n      the DTLS negotiation.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>Please review the referenced advisory for details.</p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All GnuTLS users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-libs/gnutls-3.6.13\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      GNUTLS-SA-2020-03-31\n    ",
+        "Link": "https://www.gnutls.org/security-new.html#GNUTLS-SA-2020-03-31"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2020-04-02T22:03:22Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2020-04-02T23:01:11Z"
+    }
+  ]
+}

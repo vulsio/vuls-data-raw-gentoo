@@ -1,0 +1,107 @@
+{
+  "ID": "200409-35",
+  "Title": "Subversion: Metadata information leak",
+  "Synopsis": "\n    An information leak in mod_authz_svn could allow sensitive metadata of\n    protected areas to be leaked to unauthorized users.\n  ",
+  "Product": {
+    "Text": "Subversion",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-09-29",
+  "Revised": {
+    "Text": "2004-09-29",
+    "Count": "01"
+  },
+  "Bug": [
+    "65085"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-util/subversion",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.8",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.8",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Subversion is a versioning system designed to be a replacement for CVS.\n    mod_authz_svn is an Apache module to do path-based authentication for\n    Subversion repositories.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    There is a bug in mod_authz_svn that causes it to reveal logged metadata\n    regarding commits to protected areas.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    Protected files themselves will not be revealed, but an attacker could use\n    the metadata to reveal the existence of protected areas, such as paths,\n    file versions, and the commit logs from those areas.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Rather than using mod_authz_svn, move protected areas into seperate\n    repositories and use native Apache authentication to make these\n    repositories unreadable.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Subversion users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n\n    # emerge -pv \">=dev-util/subversion-1.0.8\"\n    # emerge \">=dev-util/subversion-1.0.8\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-0749",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0749"
+      },
+      {
+        "Text": "Subversion Advisory",
+        "Link": "http://subversion.tigris.org/security/CAN-2004-0749-advisory.txt"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-09-27T08:34:50Z"
+    },
+    {
+      "Text": "\n    dmargoli\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-09-27T23:33:38Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-09-29T19:12:44Z"
+    }
+  ]
+}

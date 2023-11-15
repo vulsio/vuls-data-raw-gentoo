@@ -1,0 +1,103 @@
+{
+  "ID": "200801-03",
+  "Title": "Claws Mail: Insecure temporary file creation",
+  "Synopsis": "\n    Claws Mail uses temporary files in an insecure manner, allowing for a\n    symlink attack.\n  ",
+  "Product": {
+    "Text": "claws-mail",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-01-09",
+  "Revised": {
+    "Text": "2008-01-09",
+    "Count": "01"
+  },
+  "Bug": [
+    "201244"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "mail-client/claws-mail",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.0.2-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.0.2-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Claws Mail is a GTK based e-mail client.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Nico Golde from Debian reported that the sylprint.pl script that is\n    part of the Claws Mail tools creates temporary files in an insecure\n    manner.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could exploit this vulnerability to conduct symlink\n    attacks to overwrite files with the privileges of the user running\n    Claws Mail.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Claws Mail users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-client/claws-mail-3.0.2-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-6208",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6208"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-01-06T23:01:06Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-01-08T23:07:07Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-01-08T23:07:18Z"
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "ID": "200408-08",
+  "Title": "Cfengine: RSA Authentication Heap Corruption",
+  "Synopsis": "\n    Cfengine is vulnerable to a remote root exploit from clients in\n    AllowConnectionsFrom.\n  ",
+  "Product": {
+    "Text": "Cfengine",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-08-10",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "05"
+  },
+  "Bug": [
+    "59895"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/cfengine",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.1.8",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "2.0.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.1.7",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Cfengine is an agent/software robot and a high level policy language\n    for building expert systems to administrate and configure large\n    computer networks.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Two vulnerabilities have been found in cfservd. One is a buffer\n    overflow in the AuthenticationDialogue function and the other is a\n    failure to check the proper return value of the ReceiveTransaction\n    function.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    An attacker could use the buffer overflow to execute arbitrary code\n    with the permissions of the user running cfservd, which is usually the\n    root user. However, before such an attack could be mounted, the\n    IP-based ACL would have to be bypassed. With the second vulnerability,\n    an attacker could cause a denial of service attack.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time. All users are encouraged to\n    upgrade to the latest available version of Cfengine. (It should be\n    noted that disabling cfservd will work around this particular problem.\n    However, in many cases, doing so will cripple your Cfengine setup.\n    Upgrading is strongly recommended.)\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Cfengine users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv \">=net-misc/cfengine-2.1.8\"\n    # emerge \">=net-misc/cfengine-2.1.8\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Corelabs Advisory",
+        "Link": "https://www.coresecurity.com/common/showdoc.php?idx=387&idxseccion=10"
+      },
+      {
+        "Text": "CVE-2004-1701",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1701"
+      },
+      {
+        "Text": "CVE-2004-1702",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1702"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-08-09T21:29:04Z"
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "ID": "200404-17",
+  "Title": "ipsec-tools and iputils contain a remote DoS vulnerability",
+  "Synopsis": "\n    racoon, which is included in the ipsec-tools and iputils packages in\n    Portage, does not check the length of ISAKMP headers. Attackers may be able\n    to craft an ISAKMP header of sufficient length to consume all available\n    system resoources, causing a Denial of Service.\n  ",
+  "Product": {
+    "Text": "ipsec-utils",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-04-24",
+  "Revised": {
+    "Text": "2004-04-24",
+    "Count": "01"
+  },
+  "Bug": [
+    "48847"
+  ],
+  "Access": "remote ",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-firewall/ipsec-tools",
+        "Auto": "yes",
+        "Arch": "amd64",
+        "Unaffected": [
+          {
+            "Text": "0.3.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.3.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "net-misc/iputils",
+        "Auto": "yes",
+        "Arch": "ppc amd64 ppc64 s390",
+        "Unaffected": [
+          {
+            "Text": "021109-r3",
+            "Range": "eq",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "021109-r1",
+            "Range": "eq",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    From <uri link=\"http://ipsec-tools.sourceforge.net/\">http://ipsec-tools.sourceforge.n\n    et/</uri>\n    </p>\n    <p>\n    \"IPsec-Tools is a port of KAME's IPsec utilities to the Linux-2.6 IPsec\n    implementation.\"\n    </p>\n    <p>\n    iputils is a collection of network monitoring tools, including racoon, ping\n    and ping6.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    When racoon receives an ISAKMP header, it allocates memory based on the\n    length of the header field. Thus, an attacker may be able to cause a Denial\n    of Services by creating a header that is large enough to consume all\n    available system resources.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    This vulnerability may allow an attacker to remotely cause a Denial of\n    Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    A workaround is not currently known for this issue. All users are advised\n    to upgrade to the latest version of the affected package.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    ipsec-tools users should upgrade to version 0.2.5 or later:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    iputils users should upgrade to version 021109-r3 or later:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n\n    # emerge -pv \">=net-firewall/ipsec-tools-0.3.1\"\n    # emerge \">=net-firewall/ipsec-tools-0.3.1\"",
+      "\n    # emerge sync\n\n    # emerge -pv \">=net-misc/iputils-021109-r3\"\n    # emerge \">=net-misc/iputils-021109-r3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0403"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    klieber\n  ",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "ID": "200502-10",
+  "Title": "pdftohtml: Vulnerabilities in included Xpdf",
+  "Synopsis": "\n    pdftohtml includes vulnerable Xpdf code to handle PDF files, making it\n    vulnerable to execution of arbitrary code upon converting a malicious PDF\n    file.\n  ",
+  "Product": {
+    "Text": "pdftohtml",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-02-09",
+  "Revised": {
+    "Text": "2005-02-09",
+    "Count": "01"
+  },
+  "Bug": [
+    "78629"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-text/pdftohtml",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.36-r3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.36-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    pdftohtml is a utility to convert PDF files to HTML or XML\n    formats. It makes use of Xpdf code to decode PDF files.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Xpdf is vulnerable to a buffer overflow, as described in GLSA\n    200501-28.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could entice a user to convert a specially-crafted PDF\n    file, potentially resulting in the execution of arbitrary code with the\n    rights of the user running pdftohtml.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All pdftohtml users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/pdftohtml-0.36-r3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "GLSA 200501-28",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200501-28.xml"
+      },
+      {
+        "Text": "CAN-2005-0064",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0064"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-02-05T20:35:14Z"
+    },
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-02-09T15:54:21Z"
+    }
+  ]
+}

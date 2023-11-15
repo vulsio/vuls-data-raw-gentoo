@@ -1,0 +1,102 @@
+{
+  "ID": "201701-19",
+  "Title": "NTFS-3G: Privilege escalation",
+  "Synopsis": "A vulnerability in NTFS-3G allows local users to gain root\n    privileges.\n  ",
+  "Product": {
+    "Text": "ntfs3g",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-01-11",
+  "Revised": {
+    "Text": "2017-01-11",
+    "Count": "1"
+  },
+  "Bug": [
+    "550970"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-fs/ntfs3g",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2016.2.22",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2016.2.22",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>NTFS-3G is a stable, full-featured, read-write NTFS driver for various\n      operating systems.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>NTFS-3G is affected by the same vulnerability as reported in “GLSA\n      201603-04” when the bundled fuse-lite implementation is used.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A local user could gain root privileges.</p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time. However, on Gentoo when the\n      “external-fuse” USE flag is set or the “suid” USE flag is not set\n      then NTFS-3G is not affected. Both of these cases are the default\n      configuration.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All NTFS-3G users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-fs/ntfs3g-2016.2.22\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2015-3202",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-3202"
+      },
+      {
+        "Text": "GLSA 201603-04",
+        "Link": "https://security.gentoo.org/glsa/201603-04"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "requester",
+      "Timestamp": "2016-09-07T01:46:01Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2017-01-11T12:04:09Z"
+    }
+  ]
+}

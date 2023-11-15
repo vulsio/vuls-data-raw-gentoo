@@ -1,0 +1,98 @@
+{
+  "ID": "201404-02",
+  "Title": "libproxy: User-assisted execution of arbitrary code",
+  "Synopsis": "A buffer overflow in libproxy might allow remote attackers to\n    execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "libproxy",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-04-07",
+  "Revised": {
+    "Text": "2014-04-07",
+    "Count": "1"
+  },
+  "Bug": [
+    "438146"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-libs/libproxy",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.4.10",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.4.10",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>libproxy is a library for automatic proxy configuration management.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A boundary error when processing the proxy.pac file could cause a\n      stack-based buffer overflow.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A man-in-the-middle attacker could provide a specially crafted proxy.pac\n      file on a remote server, possibly resulting in execution of arbitrary\n      code with the privileges of the process or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All libproxy users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-libs/libproxy-0.4.10\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-4504",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-4504"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2012-11-26T01:36:57Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2014-04-07T18:48:48Z"
+    }
+  ]
+}

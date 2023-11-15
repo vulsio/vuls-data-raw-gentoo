@@ -1,0 +1,139 @@
+{
+  "ID": "200607-06",
+  "Title": "libpng: Buffer overflow",
+  "Synopsis": "\n    A buffer overflow has been found in the libpng library that could lead to\n    the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "libpng",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-07-19",
+  "Revised": {
+    "Text": "2006-07-19",
+    "Count": "01"
+  },
+  "Bug": [
+    "138433",
+    "138672"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/libpng",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.12",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.12",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "app-emulation/emul-linux-x86-baselibs",
+        "Auto": "yes",
+        "Arch": "amd64",
+        "Unaffected": [
+          {
+            "Text": "2.5.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.5.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    libpng is an open, extensible image format library, with lossless\n    compression.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    In pngrutil.c, the function png_decompress_chunk() allocates\n    insufficient space for an error message, potentially overwriting stack\n    data, leading to a buffer overflow.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    By enticing a user to load a maliciously crafted PNG image, an attacker\n    could execute arbitrary code with the rights of the user, or crash the\n    application using the libpng library, such as the\n    emul-linux-x86-baselibs.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All libpng users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All AMD64 emul-linux-x86-baselibs users should also upgrade to the\n    latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/libpng-1.2.12\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-emulation/emul-linux-x86-baselibs-2.5.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "libpng Changelog",
+        "Link": "https://heanet.dl.sourceforge.net/sourceforge/libpng/libpng-1.2.12-README.txt"
+      },
+      {
+        "Text": "CVE-2006-3334",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3334"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-07-04T14:10:20Z"
+    },
+    {
+      "Text": "\n    daxomatic\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-07-04T18:53:23Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-07-17T16:54:49Z"
+    }
+  ]
+}

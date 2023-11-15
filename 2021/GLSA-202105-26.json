@@ -1,0 +1,98 @@
+{
+  "ID": "202105-26",
+  "Title": "SpamAssassin: Arbitrary command execution",
+  "Synopsis": "A vulnerability in SpamAssassin might allow remote attackers to\n    execute arbitrary commands.\n  ",
+  "Product": {
+    "Text": "SpamAssassin",
+    "Type": "ebuild"
+  },
+  "Announced": "2021-05-26",
+  "Revised": {
+    "Text": "2021-05-26",
+    "Count": "1"
+  },
+  "Bug": [
+    "778002"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "mail-filter/spamassassin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.4.5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.4.5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>SpamAssassin is an extensible email filter used to identify junk email.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was discovered that SpamAssassin incorrectly handled certain CF\n      files.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user or automated system to process a\n      specially crafted CF file using SpamAssassin, possibly resulting in\n      execution of arbitrary commands with the privileges of the process or a\n      Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All SpamAssassin users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=mail-filter/spamassassin-3.4.5\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2020-1946",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-1946"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2021-05-24T01:30:56Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2021-05-26T09:30:23Z"
+    }
+  ]
+}

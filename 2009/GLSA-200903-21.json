@@ -1,0 +1,103 @@
+{
+  "ID": "200903-21",
+  "Title": "cURL: Arbitrary file access",
+  "Synopsis": "\n    A vulnerability in cURL may allow for arbitrary file access.\n  ",
+  "Product": {
+    "Text": "curl",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-03-09",
+  "Revised": {
+    "Text": "2009-03-09",
+    "Count": "01"
+  },
+  "Bug": [
+    "260361"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/curl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "7.19.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "7.19.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    cURL is a command line tool for transferring files with URL syntax,\n    supporting numerous protocols.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    David Kierznowski reported that the redirect implementation accepts\n    arbitrary Location values when CURLOPT_FOLLOWLOCATION is enabled.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could possibly exploit this vulnerability to make\n    remote HTTP servers trigger arbitrary requests to intranet servers and\n    read or overwrite arbitrary files via a redirect to a file: URL, or, if\n    the libssh2 USE flag is enabled, execute arbitrary commands via a\n    redirect to an scp: URL.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All cURL users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/curl-7.19.4\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-0037",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0037"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-03-05T20:06:34Z"
+    },
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-03-05T23:20:10Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-03-06T22:09:58Z"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "ID": "200711-01",
+  "Title": "gFTP: Multiple vulnerabilities",
+  "Synopsis": "\n    Two buffer overflow vulnerabilities have been discovered in fsplib code\n    used in gFTP.\n  ",
+  "Product": {
+    "Text": "gftp",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-11-01",
+  "Revised": {
+    "Text": "2007-11-01",
+    "Count": "01"
+  },
+  "Bug": [
+    "188252"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-ftp/gftp",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.18-r6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.18-r6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    gFTP is an FTP client for the GNOME desktop environment.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Kalle Olavi Niemitalo discovered two boundary errors in fsplib code\n    included in gFTP when processing overly long directory or file names.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could trigger these vulnerabilities by enticing a\n    user to download a file with a specially crafted directory or file\n    name, possibly resulting in the execution of arbitrary code\n    (CVE-2007-3962) or a Denial of Service (CVE-2007-3961).\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All gFTP users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-ftp/gftp-2.0.18-r6\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-3961",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3961"
+      },
+      {
+        "Text": "CVE-2007-3962",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3962"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-09-26T07:30:16Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-09-26T07:30:24Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-10-10T19:23:34Z"
+    }
+  ]
+}

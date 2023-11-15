@@ -1,0 +1,112 @@
+{
+  "ID": "201706-19",
+  "Title": "GNU C Library: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in the GNU C Library, the\n    worst of which may allow execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "glibc",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-06-20",
+  "Revised": {
+    "Text": "2017-06-20",
+    "Count": "2"
+  },
+  "Bug": [
+    "608698",
+    "608706",
+    "622220"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-libs/glibc",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.23-r4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.23-r4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>The GNU C library is the standard C library used by Gentoo Linux\n      systems.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in the GNU C Library.\n      Please review the CVE identifiers and Qualys’ security advisory\n      referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>An attacker could possibly execute arbitrary code with the privileges of\n      the process, escalate privileges or cause a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All GNU C Library users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-libs/glibc-2.23-r4\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2015-5180",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-5180"
+      },
+      {
+        "Text": "CVE-2016-6323",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-6323"
+      },
+      {
+        "Text": "\n      CVE-2017-1000366\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-1000366"
+      },
+      {
+        "Text": "\n      Qualys Security Advisory - The Stack Clash\n    ",
+        "Link": "https://www.qualys.com/2017/06/19/stack-clash/stack-clash.txt"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2017-06-20T17:01:37Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2017-06-20T17:49:43Z"
+    }
+  ]
+}

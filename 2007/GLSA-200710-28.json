@@ -1,0 +1,103 @@
+{
+  "ID": "200710-28",
+  "Title": "Qt: Buffer overflow",
+  "Synopsis": "\n    An off-by-one vulnerability has been discovered in Qt, possibly resulting\n    in the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "qt",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-10-25",
+  "Revised": {
+    "Text": "2007-10-25",
+    "Count": "01"
+  },
+  "Bug": [
+    "192472"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "x11-libs/qt",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.3.8-r4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.3.8-r4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Qt is a cross-platform GUI framework, which is used e.g. by KDE.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Dirk Mueller from the KDE development team discovered a boundary error\n    in file qutfcodec.cpp when processing Unicode strings.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could send a specially crafted Unicode string to a\n    vulnerable Qt application, possibly resulting in the remote execution\n    of arbitrary code with the privileges of the user running the\n    application. Note that the boundary error is present but reported to be\n    not exploitable in 4.x series.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Qt 3.x users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-libs/qt-3.3.8-r4\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-4137",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4137"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-09-15T12:11:04Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-09-29T13:54:49Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-09-29T13:54:56Z"
+    }
+  ]
+}

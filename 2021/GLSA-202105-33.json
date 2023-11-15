@@ -1,0 +1,103 @@
+{
+  "ID": "202105-33",
+  "Title": "containerd: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in containerd, the worst\n    of which could result in privilege escalation.\n  ",
+  "Product": {
+    "Text": "containerd",
+    "Type": "ebuild"
+  },
+  "Announced": "2021-05-26",
+  "Revised": {
+    "Text": "2021-05-26",
+    "Count": "1"
+  },
+  "Bug": [
+    "758137",
+    "775329"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-emulation/containerd",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Containerd is a daemon with an API and a command line client, to manage\n      containers on one machine. It uses runC to run containers according to\n      the OCI specification.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in containerd. Please\n      review the CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A local attacker, able to run a malicious container in the same network\n      namespace as the shim, could possibly escalate privileges. Furthermore,\n      an attacker could disclose sensitive information.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All containerd users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-emulation/containerd-1.4.4\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2020-15257",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-15257"
+      },
+      {
+        "Text": "CVE-2021-21334",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-21334"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2021-05-25T19:40:34Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2021-05-26T10:13:09Z"
+    }
+  ]
+}

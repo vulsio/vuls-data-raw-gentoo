@@ -1,0 +1,111 @@
+{
+  "ID": "200511-18",
+  "Title": "phpSysInfo: Multiple vulnerabilities",
+  "Synopsis": "\n    phpSysInfo is vulnerable to multiple issues, including a local file\n    inclusion leading to information disclosure and the potential execution of\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "phpsysinfo",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-11-22",
+  "Revised": {
+    "Text": "2005-11-22",
+    "Count": "01"
+  },
+  "Bug": [
+    "112482"
+  ],
+  "Access": "local and remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/phpsysinfo",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.4.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.4.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    phpSysInfo displays various system stats via PHP scripts.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Christopher Kunz from the Hardened-PHP Project discovered\n    that phpSysInfo is vulnerable to local file inclusion, cross-site\n    scripting and a HTTP Response Splitting attacks.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker may exploit the file inclusion vulnerability by\n    sending malicious requests, causing the execution of arbitrary code\n    with the rights of the user running the web server. A remote attacker\n    could exploit the vulnerability to disclose local file content.\n    Furthermore, the cross-site scripting issues gives a remote attacker\n    the ability to inject and execute malicious script code in the user's\n    browser context or to steal cookie-based authentication credentials.\n    The HTTP response splitting issue give an attacker the ability to\n    perform site hijacking and cache poisoning.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All phpSysInfo users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/phpsysinfo-2.4.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Original advisory",
+        "Link": "https://www.hardened-php.net/advisory_222005.81.html"
+      },
+      {
+        "Text": "CVE-2005-3347",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3347"
+      },
+      {
+        "Text": "CVE-2005-3348",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3348"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-11-21T11:13:22Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-11-21T13:32:38Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-11-21T18:14:24Z"
+    }
+  ]
+}

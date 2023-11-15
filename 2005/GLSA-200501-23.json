@@ -1,0 +1,111 @@
+{
+  "ID": "200501-23",
+  "Title": "Exim: Two buffer overflows",
+  "Synopsis": "\n    Buffer overflow vulnerabilities, which could lead to arbitrary code\n    execution, have been found in the handling of IPv6 addresses as well as in\n    the SPA authentication mechanism in Exim.\n  ",
+  "Product": {
+    "Text": "exim",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-01-12",
+  "Revised": {
+    "Text": "2005-01-12",
+    "Count": "01"
+  },
+  "Bug": [
+    "76893"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "mail-mta/exim",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.43-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.43-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Exim is an highly configurable message transfer agent (MTA)\n    developed at the University of Cambridge.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Buffer overflows have been found in the host_aton() function\n    (CAN-2005-0021) as well as in the spa_base64_to_bits() function\n    (CAN-2005-0022), which is part of the SPA authentication code.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A local attacker could trigger the buffer overflow in host_aton()\n    by supplying an illegal IPv6 address with more than 8 components, using\n    a command line option. The second vulnerability could be remotely\n    exploited during SPA authentication, if it is enabled on the server.\n    Both buffer overflows can potentially lead to the execution of\n    arbitrary code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Exim users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-mta/exim-4.43-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Exim Announcement",
+        "Link": "https://www.exim.org/mail-archives/exim-announce/2005/msg00000.html"
+      },
+      {
+        "Text": "CAN-2005-0021",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0021"
+      },
+      {
+        "Text": "CAN-2005-0022",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0022"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-01-10T09:24:16Z"
+    },
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-01-10T10:01:20Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-01-12T21:52:22Z"
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "ID": "200608-21",
+  "Title": "Heimdal: Multiple local privilege escalation vulnerabilities",
+  "Synopsis": "\n    Certain Heimdal components, ftpd and rcp, are vulnerable to a local\n    privilege escalation.\n  ",
+  "Product": {
+    "Text": "Heimdal",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-08-23",
+  "Revised": {
+    "Text": "2006-08-23",
+    "Count": "01"
+  },
+  "Bug": [
+    "143371"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-crypt/heimdal",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.7.2-r3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.7.2-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Heimdal is a free implementation of Kerberos 5.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The ftpd and rcp applications provided by Heimdal fail to check the\n    return value of calls to seteuid().\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A local attacker could exploit this vulnerability to execute arbitrary\n    code with elevated privileges.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Heimdal users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-crypt/heimdal-0.7.2-r3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Official advisory",
+        "Link": "https://www.pdc.kth.se/heimdal/advisory/2006-08-08/"
+      },
+      {
+        "Text": "CVE-2006-3083",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3083"
+      },
+      {
+        "Text": "CVE-2006-3084",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3084"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-08-12T15:34:55Z"
+    },
+    {
+      "Text": "\n    daxomatic\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-08-13T22:34:21Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-08-14T15:19:23Z"
+    }
+  ]
+}

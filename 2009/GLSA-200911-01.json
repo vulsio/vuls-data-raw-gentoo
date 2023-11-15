@@ -1,0 +1,169 @@
+{
+  "ID": "200911-01",
+  "Title": "Horde: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities in the Horde Application Framework can allow for\n    arbitrary files to be overwritten and cross-site scripting attacks.\n  ",
+  "Product": {
+    "Text": "horde horde-webmail horde-groupware",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-11-06",
+  "Revised": {
+    "Text": "2009-11-06",
+    "Count": "01"
+  },
+  "Bug": [
+    "285052"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/horde",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.3.5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.3.5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "www-apps/horde-webmail",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "www-apps/horde-groupware",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Horde is a web application framework written in PHP.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Multiple vulnerabilities have been discovered in Horde:\n    </p>\n    <ul>\n    <li>Stefan Esser of Sektion1 reported an error within the form library\n    when handling image form fields (CVE-2009-3236).</li>\n    <li>Martin\n    Geisler and David Wharton reported that an error exists in the MIME\n    viewer library when viewing unknown text parts and the preferences\n    system in services/prefs.php when handling number preferences\n    (CVE-2009-3237).</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote authenticated attacker could exploit these vulnerabilities to\n    overwrite arbitrary files on the server, provided that the user has\n    write permissions. A remote authenticated attacker could conduct\n    Cross-Site Scripting attacks.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Horde users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Horde webmail users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Horde groupware users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/horde-3.3.5\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/horde-webmail-1.2.4\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/horde-groupware-1.2.4\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-3236",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3236"
+      },
+      {
+        "Text": "CVE-2009-3237",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3237"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-10-20T19:14:03Z"
+    },
+    {
+      "Text": "\n    chainsaw\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-10-28T17:35:14Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-11-06T12:02:09Z"
+    }
+  ]
+}

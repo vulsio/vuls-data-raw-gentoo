@@ -1,0 +1,98 @@
+{
+  "ID": "201604-02",
+  "Title": "Xalan-Java: Arbitrary code execution",
+  "Synopsis": "Insufficient constraints in Apache's Xalan-Java might allow remote\n    attackers to execute arbitrary code and load arbitrary classes.\n  ",
+  "Product": {
+    "Text": "xalan-java",
+    "Type": "ebuild"
+  },
+  "Announced": "2016-04-02",
+  "Revised": {
+    "Text": "2016-04-02",
+    "Count": "1"
+  },
+  "Bug": [
+    "505602"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-java/xalan",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.7.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.7.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Xalan-Java is an XSLT processor for transforming XML documents into\n      HTML, text, or other XML document types.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>The TransformerFactory in Apache Xalan-Java does not properly restrict\n      access to certain properties when FEATURE_SECURE_PROCESSING is enabled.\n      This can also be exploited via a Java property that is bound to the XSLT\n      1.0 system-property function.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could inject specially crafted XSLT properties\n      resulting in the execution of arbitrary code with the privileges of the\n      process.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known work around at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Xalan-Java users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-java/xalan-2.7.2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-0107",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0107"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "b-man",
+      "Tag": "requester",
+      "Timestamp": "2016-03-04T11:55:40Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2016-04-02T19:42:25Z"
+    }
+  ]
+}

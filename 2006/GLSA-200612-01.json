@@ -1,0 +1,98 @@
+{
+  "ID": "200612-01",
+  "Title": "wv library: Multiple integer overflows",
+  "Synopsis": "\n    The wv library is vulnerable to multiple integer overflows which could lead\n    to the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "wv library",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-12-07",
+  "Revised": {
+    "Text": "2006-12-07",
+    "Count": "01"
+  },
+  "Bug": [
+    "153800"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-text/wv",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.3-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.3-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    wv is a library for conversion of MS Word DOC and RTF files.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The wv library fails to do proper arithmetic checks in multiple places,\n    possibly leading to integer overflows.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could craft a malicious file that, when handled with the wv\n    library, could lead to the execution of arbitrary code with the\n    permissions of the user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All wv library users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/wv-1.2.3-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-4513",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4513"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-11-24T19:24:02Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-11-24T19:46:34Z"
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "ID": "200503-28",
+  "Title": "Sun Java: Web Start argument injection vulnerability",
+  "Synopsis": "\n    Java Web Start JNLP files can be abused to evade sandbox restriction and\n    execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "Java",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-03-24",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "85804"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-java/sun-jdk",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.2.07",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.4.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.2.07",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "dev-java/sun-jre-bin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.2.07",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.4.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.2.07",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Sun provides implementations of Java Development Kits (JDK) and Java\n    Runtime Environments (JRE). These implementations provide the Java Web\n    Start technology that can be used for easy client-side deployment of\n    Java applications.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Jouko Pynnonen discovered that Java Web Start contains a vulnerability\n    in the way it handles property tags in JNLP files.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    By enticing a user to open a malicious JNLP file, a remote attacker\n    could pass command line arguments to the Java Virtual machine, which\n    can be used to bypass the Java \"sandbox\" and to execute arbitrary code\n    with the permissions of the user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Sun JDK users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Sun JRE users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-java/sun-jdk-1.4.2.07\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-java/sun-jre-bin-1.4.2.07\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Jouko Pynnonen advisory",
+        "Link": "http://jouko.iki.fi/adv/ws.html"
+      },
+      {
+        "Text": "Sun Microsystems Alert Notification",
+        "Link": "http://sunsolve.sun.com/search/document.do?assetkey=1-26-57740-1"
+      },
+      {
+        "Text": "CVE-2005-0836",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0836"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-03-20T21:40:30Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-03-20T21:41:41Z"
+    },
+    {
+      "Text": "\n    formula7\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-03-23T15:33:09Z"
+    }
+  ]
+}

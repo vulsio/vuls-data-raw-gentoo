@@ -1,0 +1,98 @@
+{
+  "ID": "201701-69",
+  "Title": "Ark: Unintended execution of scripts and executable files",
+  "Synopsis": "A vulnerability in Ark might allow remote attackers to execute\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "ark",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-01-29",
+  "Revised": {
+    "Text": "2017-01-29",
+    "Count": "1"
+  },
+  "Bug": [
+    "604846"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "kde-apps/ark",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "16.08.3-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "16.08.3-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Ark is a graphical file compression/decompression utility with support\n      for multiple formats.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A vulnerability was discovered in how Ark handles executable files while\n      browsing a compressed archive.  A user could unintentionally execute a\n      malicious script which has the executable bit set inside of the archive. \n      This is due to Ark not displaying what files are executable and running\n      the associated applications for the file type upon execution.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker, by coercing a user to browse a malicious archive file\n      within Ark and execute certain files, could execute arbitrary code with\n      the privileges of the user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Ark users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=kde-apps/ark-16.08.3-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2017-5330",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-5330"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2017-01-20T15:24:35Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2017-01-29T16:19:07Z"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "ID": "202307-01",
+  "Title": "OpenSSH: Remote Code Execution",
+  "Synopsis": "Multiple vulnerbilities have been discovered in OpenSSH, the worst of which could result in remote code execution.",
+  "Product": {
+    "Text": "openssh",
+    "Type": "ebuild"
+  },
+  "Announced": "2023-07-20",
+  "Revised": {
+    "Text": "2023-07-20",
+    "Count": "1"
+  },
+  "Bug": [
+    "892936",
+    "905299",
+    "910553"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/openssh",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "9.3_p2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "9.3_p2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n        <p>OpenSSH is a free application suite consisting of server and clients that replace tools like telnet, rlogin, rcp and ftp with more secure versions offering additional functionality.</p>\n    "
+  },
+  "Description": {
+    "Text": "\n        <p>Multiple vulnerabilities have been discovered in OpenSSH. Please review the CVE identifiers referenced below for details.</p>\n    "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n        <p>Please review the CVE identifiers referenced below for details.</p>\n    "
+  },
+  "Workaround": {
+    "Text": "\n        <p>CVE-2023-38408 can be worked around by avoiding connecting to untrusted servers with an SSH agent.</p>\n    "
+  },
+  "Resolution": {
+    "Text": "\n        \n        \n        \n    ",
+    "P": [
+      {
+        "Text": "All OpenSSH users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=net-misc/openssh-9.3_p2\"\n        "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2023-25136",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2023-25136"
+      },
+      {
+        "Text": "CVE-2023-28531",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2023-28531"
+      },
+      {
+        "Text": "CVE-2023-38408",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2023-38408"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "sam",
+      "Tag": "requester",
+      "Timestamp": "2023-07-20T02:17:18.328897Z"
+    },
+    {
+      "Text": "sam",
+      "Tag": "submitter",
+      "Timestamp": "2023-07-20T02:17:18.348364Z"
+    }
+  ]
+}

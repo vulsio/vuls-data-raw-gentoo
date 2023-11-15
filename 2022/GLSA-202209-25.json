@@ -1,0 +1,98 @@
+{
+  "ID": "202209-25",
+  "Title": "Zutty: Arbitrary Code Execution",
+  "Synopsis": "A vulnerability has been discovered in Zutty which could allow for arbitrary code execution.",
+  "Product": {
+    "Text": "zutty",
+    "Type": "ebuild"
+  },
+  "Announced": "2022-09-29",
+  "Revised": {
+    "Text": "2022-09-29",
+    "Count": "1"
+  },
+  "Bug": [
+    "868495"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "x11-terms/zutty",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.13",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.13",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n        <p>Zutty is an X terminal emulator rendering through OpenGL ES Compute Shaders.</p>\n    "
+  },
+  "Description": {
+    "Text": "\n        <p>Zutty does not correctly handle invalid DECRQSS commands, which can be exploited to run arbitrary commands in the terminal.</p>\n    "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n        <p>Untrusted text written to the Zutty terminal can achieve arbitrary code execution.</p>\n    "
+  },
+  "Workaround": {
+    "Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+  },
+  "Resolution": {
+    "Text": "\n        \n        \n        \n    ",
+    "P": [
+      {
+        "Text": "All Zutty users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=x11-terms/zutty-0.13\"\n        "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2022-41138",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-41138"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ajak",
+      "Tag": "requester",
+      "Timestamp": "2022-09-29T14:24:54.456443Z"
+    },
+    {
+      "Text": "ajak",
+      "Tag": "submitter",
+      "Timestamp": "2022-09-29T14:24:54.462355Z"
+    }
+  ]
+}

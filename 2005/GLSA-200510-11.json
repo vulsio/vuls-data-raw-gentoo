@@ -1,0 +1,117 @@
+{
+  "ID": "200510-11",
+  "Title": "OpenSSL: SSL 2.0 protocol rollback",
+  "Synopsis": "\n    When using a specific option, OpenSSL can be forced to fallback to the less\n    secure SSL 2.0 protocol.\n  ",
+  "Product": {
+    "Text": "OpenSSL",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-10-12",
+  "Revised": {
+    "Text": "2005-11-07",
+    "Count": "02"
+  },
+  "Bug": [
+    "108852"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/openssl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.9.7h",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.7g-r1",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.7e-r2",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.9.7h",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    OpenSSL is a toolkit implementing the Secure Sockets Layer, Transport\n    Layer Security protocols and a general-purpose cryptography library.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Applications setting the SSL_OP_MSIE_SSLV2_RSA_PADDING option (or the\n    SSL_OP_ALL option, that implies it) can be forced by a third-party to\n    fallback to the less secure SSL 2.0 protocol, even if both parties\n    support the more secure SSL 3.0 or TLS 1.0 protocols.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    A man-in-the-middle attacker can weaken the encryption used to\n    communicate between two parties, potentially revealing sensitive\n    information.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    If possible, disable the use of SSL 2.0 in all OpenSSL-enabled\n    applications.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All OpenSSL users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose dev-libs/openssl"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-2969",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2969"
+      },
+      {
+        "Text": "OpenSSL security advisory",
+        "Link": "https://www.openssl.org/news/secadv_20051011.txt "
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-10-11T07:50:27Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-10-11T08:03:33Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-10-12T07:47:42Z"
+    }
+  ]
+}

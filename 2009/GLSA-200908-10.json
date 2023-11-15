@@ -1,0 +1,103 @@
+{
+  "ID": "200908-10",
+  "Title": "Dillo: User-assisted execution of arbitrary code",
+  "Synopsis": "\n    An integer overflow in the PNG handling of Dillo might result in the remote\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "dillo",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-08-18",
+  "Revised": {
+    "Text": "2009-08-18",
+    "Count": "01"
+  },
+  "Bug": [
+    "276432"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-client/dillo",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.1.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.1.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Dillo is a graphical web browser known for its speed and small\n    footprint.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Tilei Wang reported an integer overflow in the Png_datainfo_callback()\n    function, possibly leading to a heap-based buffer overflow.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to open an HTML document\n    containing a specially crafted, large PNG image, possibly resulting in\n    the execution of arbitrary code with the privileges of the user running\n    the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Dillo users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/dillo-2.1.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-2294",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2294"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-07-28T16:58:47Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-08-04T19:13:24Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-08-05T13:32:35Z"
+    }
+  ]
+}

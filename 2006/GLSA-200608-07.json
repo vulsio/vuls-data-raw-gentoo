@@ -1,0 +1,122 @@
+{
+  "ID": "200608-07",
+  "Title": "libTIFF: Multiple vulnerabilities",
+  "Synopsis": "\n    libTIFF contains several vulnerabilities that could result in arbitrary\n    code execution.\n  ",
+  "Product": {
+    "Text": "tiff",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-08-04",
+  "Revised": {
+    "Text": "2006-08-04",
+    "Count": "01"
+  },
+  "Bug": [
+    "142383"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/tiff",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.8.2-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.8.2-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    libTIFF provides support for reading and manipulating TIFF images.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Tavis Ormandy of the Google Security Team discovered several heap and\n    stack buffer overflows and other flaws in libTIFF. The affected parts\n    include the TIFFFetchShortPair(), TIFFScanLineSize() and\n    EstimateStripByteCounts() functions, and the PixarLog and NeXT RLE\n    decoders.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted TIFF\n    file, resulting in the possible execution of arbitrary code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All libTIFF users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/tiff-3.8.2-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-3459",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3459"
+      },
+      {
+        "Text": "CVE-2006-3460",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3460"
+      },
+      {
+        "Text": "CVE-2006-3461",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3461"
+      },
+      {
+        "Text": "CVE-2006-3462",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3462"
+      },
+      {
+        "Text": "CVE-2006-3463",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3463"
+      },
+      {
+        "Text": "CVE-2006-3464",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3464"
+      },
+      {
+        "Text": "CVE-2006-3465",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3465"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-08-03T11:25:07Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-08-04T09:34:08Z"
+    }
+  ]
+}

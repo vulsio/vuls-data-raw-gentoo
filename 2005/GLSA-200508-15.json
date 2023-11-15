@@ -1,0 +1,112 @@
+{
+  "ID": "200508-15",
+  "Title": "Apache 2.0: Denial of Service vulnerability",
+  "Synopsis": "\n    A bug in Apache may allow a remote attacker to perform a Denial of Service\n    attack.\n  ",
+  "Product": {
+    "Text": "apache",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-08-25",
+  "Revised": {
+    "Text": "2007-12-30",
+    "Count": "03"
+  },
+  "Bug": [
+    "102991"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-servers/apache",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.54-r9",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "2.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.54-r9",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Apache HTTP Server Project is a featureful, freely-available HTTP\n    (Web) server.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Filip Sneppe discovered that Apache improperly handles byterange\n    requests to CGI scripts.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker may access vulnerable scripts in a malicious way,\n    exhausting all RAM and swap space on the server, resulting in a Denial\n    of Service of the Apache server.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All apache users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-servers/apache-2.0.54-r9\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "ASF Bugzilla Bug 29962",
+        "Link": "https://issues.apache.org/bugzilla/show_bug.cgi?id=29962"
+      },
+      {
+        "Text": "CVE-2005-2728",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2728"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-08-22T07:26:08Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-08-22T07:47:26Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-08-24T00:58:46Z"
+    }
+  ]
+}

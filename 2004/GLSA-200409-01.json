@@ -1,0 +1,97 @@
+{
+  "ID": "200409-01",
+  "Title": "vpopmail: Multiple vulnerabilities",
+  "Synopsis": "\n    vpopmail contains several bugs making it vulnerable to several SQL\n    injection exploits as well as one buffer overflow and one format string\n    exploit when using Sybase. This could lead to the execution of arbitrary\n    code.\n  ",
+  "Product": {
+    "Text": "vpopmail",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-09-01",
+  "Revised": {
+    "Text": "2004-09-01",
+    "Count": "01"
+  },
+  "Bug": [
+    "60844"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-mail/vpopmail",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.4.6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.4.6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    vpopmail handles virtual mail domains for qmail and Postfix.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    vpopmail is vulnerable to several unspecified SQL injection exploits.\n    Furthermore when using Sybase as the backend database vpopmail is\n    vulnerable to a buffer overflow and format string exploit.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    These vulnerabilities could allow an attacker to execute code with the\n    permissions of the user running vpopmail.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time. All users are encouraged to\n    upgrade to the latest available version of vpopmail.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All vpopmail users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n\n    # emerge -pv \">=net-mail/vpopmail-5.4.6\"\n    # emerge \">=net-mail/vpopmail-5.4.6\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "vpopmail Announcement",
+        "Link": "https://sourceforge.net/forum/forum.php?forum_id=400873"
+      },
+      {
+        "Text": "Bugtraq Announcement",
+        "Link": "http://www.securityfocus.com/archive/1/371913/2004-08-15/2004-08-21/0"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-08-26T17:42:34Z"
+    }
+  ]
+}

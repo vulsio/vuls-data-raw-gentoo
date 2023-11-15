@@ -1,0 +1,98 @@
+{
+  "ID": "201709-05",
+  "Title": "chkrootkit: Local privilege escalation",
+  "Synopsis": "A vulnerability in chkrootkit may allow local users to gain root\n    privileges.\n  ",
+  "Product": {
+    "Text": "chkrootkit",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-09-17",
+  "Revised": {
+    "Text": "2017-09-17",
+    "Count": "1"
+  },
+  "Bug": [
+    "512356"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-forensics/chkrootkit",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.50",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.50",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>chkrootkit is a tool to locally check for signs of a rootkit.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>When /tmp is mounted without the noexec option chkrootkit will execute\n      files in /tmp with root privileges.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A local attacker could possibly execute arbitrary code with root\n      privileges.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>Users should mount /tmp with noexec option.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All chkrootkit users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-forensics/chkrootkit-0.50\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2014-0476\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0476"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "BlueKnight",
+      "Tag": "requester",
+      "Timestamp": "2017-09-10T06:30:28Z"
+    },
+    {
+      "Text": "chrisadr",
+      "Tag": "submitter",
+      "Timestamp": "2017-09-17T15:44:38Z"
+    }
+  ]
+}

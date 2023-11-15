@@ -1,0 +1,98 @@
+{
+  "ID": "201310-11",
+  "Title": "Perl Parallel-ForkManager Module: Insecure temporary file usage",
+  "Synopsis": "An insecure temporary file usage has been reported in the Perl\n    Parallel-ForkManager module, possibly allowing symlink attacks.\n  ",
+  "Product": {
+    "Text": "Parallel-ForkManager",
+    "Type": "ebuild"
+  },
+  "Announced": "2013-10-17",
+  "Revised": {
+    "Text": "2013-10-17",
+    "Count": "1"
+  },
+  "Bug": [
+    "389839"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-perl/Parallel-ForkManager",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.20.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.20.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Parallel-ForkManager is a simple parallel processing fork manager for\n      Perl.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>The Perl Parallel-ForkManager module does not handle temporary files\n      securely.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A local attacker could perform symlink attacks to overwrite arbitrary\n      files with the privileges of the user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Parallel-ForkManager users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=dev-perl/Parallel-ForkManager-1.20.0\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2011-4115",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-4115"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    underling\n  ",
+      "Tag": "requester",
+      "Timestamp": "2013-01-02T18:47:58Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2013-10-17T08:42:08Z"
+    }
+  ]
+}

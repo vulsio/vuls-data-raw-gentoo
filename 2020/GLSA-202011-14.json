@@ -1,0 +1,149 @@
+{
+  "ID": "202011-14",
+  "Title": "MariaDB: Remote code execution",
+  "Synopsis": "A vulnerability has been discovered in MariaDB which could result\n    in the arbitrary execution of code.\n  ",
+  "Product": {
+    "Text": "mariadb",
+    "Type": "ebuild"
+  },
+  "Announced": "2020-11-11",
+  "Revised": {
+    "Text": "2020-11-11",
+    "Count": "1"
+  },
+  "Bug": [
+    "747166"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-db/mariadb",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "10.5.6",
+            "Range": "ge",
+            "Slot": "10.5"
+          },
+          {
+            "Text": "10.4.13-r3",
+            "Range": "ge",
+            "Slot": "10.4"
+          },
+          {
+            "Text": "10.3.23-r3",
+            "Range": "ge",
+            "Slot": "10.3"
+          },
+          {
+            "Text": "10.2.22-r3",
+            "Range": "ge",
+            "Slot": "10.2"
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "10.5.6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>MariaDB is an enhanced, drop-in replacement for MySQL.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was discovered that MariaDB did not properly validate the content of\n      a packet received from a server.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A remote attacker could send a specially crafted packet to WSREP\n      service, possibly resulting in execution of arbitrary code with the\n      privileges of the process or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All MariaDB 10.5.x users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All MariaDB 10.4.x users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All MariaDB 10.3.x users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All MariaDB 10.2.x users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-db/mariadb-10.5.6:10.5\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-db/mariadb-10.4.13-r3:10.4\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-db/mariadb-10.3.23-r3:10.3\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-db/mariadb-10.2.22-r3:10.2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2020-15180",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-15180"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2020-11-08T21:17:21Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2020-11-11T03:38:51Z"
+    }
+  ]
+}

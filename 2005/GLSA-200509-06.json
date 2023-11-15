@@ -1,0 +1,106 @@
+{
+  "ID": "200509-06",
+  "Title": "Squid: Denial of Service vulnerabilities",
+  "Synopsis": "\n    Squid contains several bugs when handling certain malformed requests\n    resulting in a Denial of Service.\n  ",
+  "Product": {
+    "Text": "Squid",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-09-07",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "03"
+  },
+  "Bug": [
+    "104603"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-proxy/squid",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.5.10-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.5.10-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Squid is a full-featured Web proxy cache designed to run on Unix-like\n    systems. It supports proxying and caching of HTTP, FTP, and other\n    protocols, as well as SSL support, cache hierarchies, transparent\n    caching, access control lists and many more features.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Certain malformed requests result in a segmentation fault in the\n    sslConnectTimeout function, handling of other certain requests trigger\n    assertion failures.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    By performing malformed requests an attacker could cause Squid to crash\n    by triggering an assertion failure or invalid memory reference.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Squid users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-proxy/squid-2.5.10-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Squid Patches",
+        "Link": "http://www.squid-cache.org/Versions/v2/2.5/bugs/"
+      },
+      {
+        "Text": "CVE-2005-2794",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2794"
+      },
+      {
+        "Text": "CVE-2005-2796",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2796"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-09-05T08:24:13Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-09-05T08:39:15Z"
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "ID": "200507-08",
+  "Title": "phpGroupWare, eGroupWare: PHP script injection vulnerability",
+  "Synopsis": "\n    phpGroupWare and eGroupWare include an XML-RPC implementation which allows\n    remote attackers to execute arbitrary PHP script commands.\n  ",
+  "Product": {
+    "Text": "phpgroupware egroupware",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-07-10",
+  "Revised": {
+    "Text": "2005-07-10",
+    "Count": "01"
+  },
+  "Bug": [
+    "97460",
+    "97651"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/phpgroupware",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.9.16.006",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.9.16.006",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "www-apps/egroupware",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.0.008",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.0.008",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    phpGroupWare and eGroupWare are web based collaboration software\n    suites.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The XML-RPC implementations of phpGroupWare and eGroupWare fail to\n    sanitize input sent to the XML-RPC server using the \"POST\" method.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker could exploit the XML-RPC vulnerability to\n    execute arbitrary PHP script code by sending specially crafted XML data\n    to the XML-RPC servers of phpGroupWare or eGroupWare.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There are no known workarounds at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All phpGroupWare users should upgrade to the latest available\n    version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All eGroupWare users should upgrade to the latest available\n    version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-app/phpgroupware-0.9.16.006\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-app/egroupware-1.0.0.008\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-1921",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1921"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-07-06T12:50:50Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-07-06T15:06:09Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-07-10T19:07:48Z"
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "ID": "200711-24",
+  "Title": "Mozilla Thunderbird: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities have been reported in Mozilla Thunderbird, which\n    may allow user-assisted arbitrary remote code execution.\n  ",
+  "Product": {
+    "Text": "mozilla-thunderbird mozilla-thunderbird-bin",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-11-18",
+  "Revised": {
+    "Text": "2007-11-18",
+    "Count": "01"
+  },
+  "Bug": [
+    "196481"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "mail-client/mozilla-thunderbird",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.0.9",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.0.9",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "mail-client/mozilla-thunderbird-bin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.0.9",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.0.9",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Mozilla Thunderbird is a popular open-source email client from the\n    Mozilla project.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Multiple vulnerabilities have been reported in Mozilla Thunderbird's\n    HTML browser engine (CVE-2007-5339) and JavaScript engine\n    (CVE-2007-5340) that can be exploited to cause a memory corruption.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to read a specially crafted email\n    that could trigger one of the vulnerabilities, possibly leading to the\n    execution of arbitrary code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time for all of these issues, but\n    some of them can be avoided by disabling JavaScript.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Mozilla Thunderbird users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Mozilla Thunderbird binary users should upgrade to the latest\n    version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-client/mozilla-thunderbird-2.0.0.9\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-client/mozilla-thunderbird-bin-2.0.0.9\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-5339",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5339"
+      },
+      {
+        "Text": "CVE-2007-5340",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5340"
+      },
+      {
+        "Text": "GLSA 200711-14",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200711-14.xml"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-11-18T13:53:08Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-11-18T19:54:39Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-11-18T19:58:25Z"
+    }
+  ]
+}

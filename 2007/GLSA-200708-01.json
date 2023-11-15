@@ -1,0 +1,111 @@
+{
+  "ID": "200708-01",
+  "Title": "Macromedia Flash Player: Remote arbitrary code execution",
+  "Synopsis": "\n    Multiple vulnerabilities have been discovered in Macromedia Flash Player,\n    allowing for the remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "adobe-flash",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-08-08",
+  "Revised": {
+    "Text": "2009-05-28",
+    "Count": "02"
+  },
+  "Bug": [
+    "185141"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-plugins/adobe-flash",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "9.0.48.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "9.0.48.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Macromedia Flash Player is a renderer for the popular SWF file type\n    which is commonly used to provide interactive websites, digital\n    experiences and mobile content.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Mark Hills discovered some errors when interacting with a browser for\n    keystrokes handling (CVE-2007-2022). Stefano Di Paola and Giorgio Fedon\n    from Minded Security discovered a boundary error when processing FLV\n    files (CVE-2007-3456). An input validation error when processing HTTP\n    referrers has also been reported (CVE-2007-3457).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted file,\n    possibly leading to the execution of arbitrary code with the privileges\n    of the user running the Macromedia Flash Player, or sensitive data\n    access.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Macromedia Flash Player users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-plugins/adobe-flash-9.0.48.0\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-2022",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2022"
+      },
+      {
+        "Text": "CVE-2007-3456",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3456"
+      },
+      {
+        "Text": "CVE-2007-3457",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3457"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-07-15T10:35:19Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-07-24T09:40:21Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-07-24T09:40:28Z"
+    }
+  ]
+}

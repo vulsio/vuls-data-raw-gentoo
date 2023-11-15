@@ -1,0 +1,107 @@
+{
+  "ID": "200905-03",
+  "Title": "IPSec Tools: Denial of service",
+  "Synopsis": "\n    Multiple errors in the IPSec Tools racoon daemon might allow remote\n    attackers to cause a Denial of Service.\n  ",
+  "Product": {
+    "Text": "ipsec-tools",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-05-24",
+  "Revised": {
+    "Text": "2009-05-24",
+    "Count": "01"
+  },
+  "Bug": [
+    "267135"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-firewall/ipsec-tools",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.7.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.7.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The IPSec Tools are a port of KAME's IPsec utilities to the Linux-2.6\n    IPsec implementation. They include racoon, an Internet Key Exchange\n    daemon for automatically keying IPsec connections.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The following vulnerabilities have been found in the racoon daemon as\n    shipped with IPSec Tools:\n    </p>\n    <ul>\n    <li>Neil Kettle reported that\n    racoon/isakmp_frag.c is prone to a null-pointer dereference\n    (CVE-2009-1574).</li>\n    <li>Multiple memory leaks exist in (1) the\n    eay_check_x509sign() function in racoon/crypto_openssl.c and (2)\n    racoon/nattraversal.c (CVE-2009-1632).</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could send specially crafted fragmented ISAKMP\n    packets without a payload or exploit vectors related to X.509\n    certificate authentication and NAT traversal, possibly resulting in a\n    crash of the racoon daemon.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All IPSec Tools users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-firewall/ipsec-tools-0.7.2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-1574",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1574"
+      },
+      {
+        "Text": "CVE-2009-1632",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1632"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    craig\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-05-06T21:47:03Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-05-07T10:56:09Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-05-23T07:52:41Z"
+    }
+  ]
+}

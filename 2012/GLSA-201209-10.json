@@ -1,0 +1,98 @@
+{
+  "ID": "201209-10",
+  "Title": "Calligra: User-assisted execution of arbitrary code",
+  "Synopsis": "A buffer overflow vulnerability in Calligra could result in the\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "calligra",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-09-25",
+  "Revised": {
+    "Text": "2012-09-25",
+    "Count": "1"
+  },
+  "Bug": [
+    "428890"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-office/calligra",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.4.3-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.4.3-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Calligra is an office suite by KDE.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>An error in the read() function in styles.cpp could cause a heap-based\n      buffer overflow.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted ODF\n      file, possibly resulting in execution of arbitrary code with the\n      privileges of the process or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Calligra users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-office/calligra-2.4.3-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-3456",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3456"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2012-08-09T20:25:04Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-09-25T10:54:01Z"
+    }
+  ]
+}

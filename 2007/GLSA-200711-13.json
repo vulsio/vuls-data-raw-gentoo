@@ -1,0 +1,103 @@
+{
+  "ID": "200711-13",
+  "Title": "3proxy: Denial of service",
+  "Synopsis": "\n    A vulnerability has been discovered in 3proxy, possibly resulting in a\n    Denial of Service.\n  ",
+  "Product": {
+    "Text": "3proxy",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-11-08",
+  "Revised": {
+    "Text": "2007-11-08",
+    "Count": "01"
+  },
+  "Bug": [
+    "196772"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-proxy/3proxy",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.5.3j",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.5.3j",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    3proxy is a really tiny cross-platform proxy servers set, including\n    HTTP, HTTPS, FTP, SOCKS and POP3 support.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    3proxy contains a double free vulnerability in the ftpprchild()\n    function, which frees param-&gt;hostname and calls the parsehostname()\n    function, which in turn attempts to free param-&gt;hostname again.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could send a specially crafted request to the proxy,\n    possibly resulting in a Denial of Service. Under typical configuration,\n    the scope of this vulnerability is limited to the local network.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All 3proxy users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-proxy/3proxy-0.5.3j\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-5622",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5622"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-11-02T23:15:07Z"
+    },
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-11-03T12:02:00Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-11-04T14:26:02Z"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "ID": "201310-01",
+  "Title": "Perl Module-Signature module: Arbitrary code execution",
+  "Synopsis": "The Module-Signature module for Perl has insufficient path checks,\n    allowing a remote attacker to execute arbitrary Perl code.\n  ",
+  "Product": {
+    "Text": "Module-Signature",
+    "Type": "ebuild"
+  },
+  "Announced": "2013-10-04",
+  "Revised": {
+    "Text": "2013-10-04",
+    "Count": "1"
+  },
+  "Bug": [
+    "472428"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-perl/Module-Signature",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.720.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.720.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>The Perl Module::Signature module adds signing capabilities to CPAN\n      modules.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>The ‘cpansign verify’ command will automatically download keys and\n      use them to check the signature of CPAN packages via the SIGNATURE file.\n      If an attacker were to replace this (SHA1) with a special unknown cipher\n      (e.g. ‘Special’) and were to include in the distribution a\n      ‘Digest/Special.pm’, the code in this Perl module would be executed\n      when ‘cpansign -verify’ is run.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could possibly execute arbitrary code with the\n      privileges of the process.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All users of the Module-Signature Perl module should upgrade to the\n      latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=dev-perl/Module-Signature-0.720.0\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2013-2145",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2145"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    pinkbyte\n  ",
+      "Tag": "requester",
+      "Timestamp": "2013-08-21T11:15:28Z"
+    },
+    {
+      "Text": "\n    pinkbyte\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2013-10-04T06:56:47Z"
+    }
+  ]
+}

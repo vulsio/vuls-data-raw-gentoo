@@ -1,0 +1,102 @@
+{
+  "ID": "200501-30",
+  "Title": "CUPS: Stack overflow in included Xpdf code",
+  "Synopsis": "\n    CUPS includes Xpdf code and therefore is vulnerable to the recent stack\n    overflow issue, potentially resulting in the remote execution of arbitrary\n    code.\n  ",
+  "Product": {
+    "Text": "CUPS",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-01-22",
+  "Revised": {
+    "Text": "2005-01-22",
+    "Count": "01"
+  },
+  "Bug": [
+    "78249"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-print/cups",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.1.23-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.23-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Common UNIX Printing System (CUPS) is a cross-platform print\n    spooler. It makes use of Xpdf code to handle PDF files.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The Decrypt::makeFileKey2 function in Xpdf's Decrypt.cc\n    insufficiently checks boundaries when processing /Encrypt /Length tags\n    in PDF files (GLSA 200501-28).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    This issue could be exploited by a remote attacker to execute\n    arbitrary code by sending a malicious print job to a CUPS spooler.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All CUPS users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-print/cups-1.1.23-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-0064",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0064"
+      },
+      {
+        "Text": "GLSA 200501-28",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200501-28.xml"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-01-21T20:52:56Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-01-21T20:53:07Z"
+    }
+  ]
+}

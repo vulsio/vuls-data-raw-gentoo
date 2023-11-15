@@ -1,0 +1,107 @@
+{
+  "ID": "200712-15",
+  "Title": "libexif: Multiple vulnerabilities",
+  "Synopsis": "\n    Two vulnerabilities in libexif possibly allow for the execution of\n    arbitrary code or a Denial of Service.\n  ",
+  "Product": {
+    "Text": "libexif",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-12-29",
+  "Revised": {
+    "Text": "2007-12-29",
+    "Count": "01"
+  },
+  "Bug": [
+    "202350"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/libexif",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.6.16-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.6.16-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    libexif is a library for parsing, editing and saving Exif metadata from\n    images. Exif, the Exchangeable image file format, specifies the\n    addition of metadata tags to JPEG, TIFF and RIFF files.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Meder Kydyraliev (Google Security) discovered an integer overflow\n    vulnerability in the exif_data_load_data_thumbnail() function leading\n    to a memory corruption (CVE-2007-6352) and an infinite recursion in the\n    exif_loader_write() function (CVE-2007-6351).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could entice the user of an application making use of\n    libexif to load an image file with specially crafted Exif tags,\n    possibly resulting in the execution of arbitrary code with the\n    privileges of the user running the application or a Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All libexif users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/libexif-0.6.16-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-6351",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6351"
+      },
+      {
+        "Text": "CVE-2007-6352",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6352"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-12-21T23:07:24Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-12-23T19:26:36Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-12-23T19:28:21Z"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "ID": "200611-14",
+  "Title": "TORQUE: Insecure temporary file creation",
+  "Synopsis": "\n    TORQUE creates temporary files in an insecure manner which could lead to\n    the execution of arbitrary code with elevated privileges.\n  ",
+  "Product": {
+    "Text": "torque",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-11-20",
+  "Revised": {
+    "Text": "2006-11-24",
+    "Count": "03"
+  },
+  "Bug": [
+    "152104"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-cluster/torque",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.1.6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.1.6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    TORQUE is a resource manager providing control over batch jobs and\n    distributed compute nodes.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    TORQUE creates temporary files with predictable names. Please note that\n    the TORQUE package shipped in Gentoo Portage is not vulnerable in the\n    default configuration. Only systems with more permissive access rights\n    to the spool directory are vulnerable.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A local attacker could create links in the temporary file directory,\n    pointing to a valid file somewhere on the filesystem. This could lead\n    to the execution of arbitrary code with elevated privileges.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Ensure that untrusted users don't have write access to the spool\n    directory.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All TORQUE users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-cluster/torque-2.1.6\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-5677",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5677"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    vorlon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-11-15T20:45:04Z"
+    },
+    {
+      "Text": "\n    vorlon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-11-16T11:48:29Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-11-20T08:31:55Z"
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "ID": "200501-25",
+  "Title": "Squid: Multiple vulnerabilities",
+  "Synopsis": "\n    Squid contains vulnerabilities in the the code handling NTLM (NT Lan\n    Manager), Gopher to HTML, ACLs and WCCP (Web Cache Communication Protocol)\n    which could lead to ACL bypass, denial of service and arbitrary code\n    execution.\n  ",
+  "Product": {
+    "Text": "squid",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-01-16",
+  "Revised": {
+    "Text": "2005-02-07",
+    "Count": "03"
+  },
+  "Bug": [
+    "77934",
+    "77521"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-proxy/squid",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.5.7-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.5.7-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Squid is a full-featured Web proxy cache designed to run on Unix\n    systems. It supports proxying and caching of HTTP, FTP, and other URLs,\n    as well as SSL support, cache hierarchies, transparent caching, access\n    control lists and many other features.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Squid contains a vulnerability in the gopherToHTML function\n    (CAN-2005-0094) and incorrectly checks the 'number of caches' field\n    when parsing WCCP_I_SEE_YOU messages (CAN-2005-0095). Furthermore the\n    NTLM code contains two errors. One is a memory leak in the\n    fakeauth_auth helper (CAN-2005-0096) and the other is a NULL pointer\n    dereferencing error (CAN-2005-0097). Finally Squid also contains an\n    error in the ACL parsing code (CAN-2005-0194).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    With the WCCP issue an attacker could cause denial of service by\n    sending a specially crafted UDP packet. With the Gopher issue an\n    attacker might be able to execute arbitrary code by enticing a user to\n    connect to a malicious Gopher server. The NTLM issues could lead to\n    denial of service by memory consumption or by crashing Squid. The ACL\n    issue could lead to ACL bypass.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Squid users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-proxy/squid-2.5.7-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Secunia Advisory SA13825",
+        "Link": "https://secunia.com/advisories/13825/"
+      },
+      {
+        "Text": "Secunia Advisory SA13789",
+        "Link": "https://secunia.com/advisories/13789/"
+      },
+      {
+        "Text": "CAN-2005-0094",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0094"
+      },
+      {
+        "Text": "CAN-2005-0095",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0095"
+      },
+      {
+        "Text": "CAN-2005-0096",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0096"
+      },
+      {
+        "Text": "CAN-2005-0097",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0097"
+      },
+      {
+        "Text": "CAN-2005-0194",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0194"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-01-14T17:51:35Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-01-14T17:55:02Z"
+    }
+  ]
+}

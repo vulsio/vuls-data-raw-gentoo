@@ -1,0 +1,120 @@
+{
+  "ID": "200804-28",
+  "Title": "JRockit: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities have been identified in BEA JRockit.\n  ",
+  "Product": {
+    "Text": "jrockit-jdk-bin",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-04-24",
+  "Revised": {
+    "Text": "2008-04-24",
+    "Count": "01"
+  },
+  "Bug": [
+    "218226"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-java/jrockit-jdk-bin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.2.16",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.5.0.14",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.5.0.14",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    JRockit is BEA WebLogic's J2SE Development Kit.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Because of sharing the same codebase, JRockit is affected by the\n    vulnerabilities mentioned in GLSA 200804-20.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to run a specially crafted applet\n    on a website or start an application in Java Web Start to execute\n    arbitrary code outside of the Java sandbox and of the Java security\n    restrictions with the privileges of the user running Java. The attacker\n    could also obtain sensitive information, create, modify, rename and\n    read local files, execute local applications, establish connections in\n    the local network, bypass the same origin policy, and cause a Denial of\n    Service via multiple vectors.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All JRockit 1.4 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All JRockit 1.5 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-java/jrockit-jdk-bin-1.4.2.16\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-java/jrockit-jdk-bin-1.5.0.14\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "GLSA 200804-20",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200804-20.xml"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-04-23T16:40:01Z"
+    },
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-04-23T17:27:24Z"
+    },
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-04-23T17:27:42Z"
+    }
+  ]
+}

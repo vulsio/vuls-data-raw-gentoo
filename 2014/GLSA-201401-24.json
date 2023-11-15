@@ -1,0 +1,98 @@
+{
+  "ID": "201401-24",
+  "Title": "INN: Man-in-the-middle attack",
+  "Synopsis": "A vulnerability in INN's STARTTLS implementation could allow a\n    remote attacker to conduct a man-in-the-middle attack.\n  ",
+  "Product": {
+    "Text": "inn",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-01-21",
+  "Revised": {
+    "Text": "2014-01-21",
+    "Count": "1"
+  },
+  "Bug": [
+    "432002"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-nntp/inn",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.5.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.5.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>INN is a news server which can interface with Usenet.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>INN’s I/O buffering is not correctly restricted.</p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>A remote attacker could inject commands into encrypted NNTP sessions.</p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All INN users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-nntp/inn-2.5.3\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-3523",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3523"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "craig",
+      "Tag": "requester",
+      "Timestamp": "2012-12-16T21:56:39Z"
+    },
+    {
+      "Text": "\n    creffett\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2014-01-21T20:26:02Z"
+    }
+  ]
+}

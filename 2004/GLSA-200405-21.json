@@ -1,0 +1,101 @@
+{
+  "ID": "200405-21",
+  "Title": "Midnight Commander: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple security issues have been discovered in Midnight Commander\n    including several buffer overflows and string format vulnerabilities.\n  ",
+  "Product": {
+    "Text": "MC",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-05-26",
+  "Revised": {
+    "Text": "2004-05-26",
+    "Count": "01"
+  },
+  "Bug": [
+    "49990"
+  ],
+  "Access": "local ",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-misc/mc",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.6.0-r7",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.6.0-r6",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Midnight Commander is a visual console file manager.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Numerous security issues have been discovered in Midnight Commander,\n    including several buffer overflow vulnerabilities, multiple vulnerabilities\n    in the handling of temporary file and directory creation, and multiple\n    format string vulnerabilities.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    The buffer overflows and format string vulnerabilities may allow attackers\n    to cause a denial of service or execute arbitrary code with permissions of\n    the user running MC. The insecure creation of temporary files and\n    directories could lead to a privilege escalation, including root\n    privileges, for a local attacker.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time. All users are advised to upgrade\n    to version 4.6.0-r7 or higher of Midnight Commander.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Midnight Commander users should upgrade to the latest stable version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n\n    # emerge -pv \">=app-misc/mc-4.6.0-r7\n    # emerge \">=app-misc/mc-4.6.0-r7\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-0226",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0226"
+      },
+      {
+        "Text": "CAN-2004-0231",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0231"
+      },
+      {
+        "Text": "CAN-2004-0232",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0232"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

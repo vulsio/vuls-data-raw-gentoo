@@ -1,0 +1,105 @@
+{
+  "ID": "200802-02",
+  "Title": "Doomsday: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities in Doomsday might allow remote execution of\n    arbitrary code or a Denial of Service.\n  ",
+  "Product": {
+    "Text": "doomsday",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-02-06",
+  "Revised": {
+    "Text": "2008-02-10",
+    "Count": "02"
+  },
+  "Bug": [
+    "190835"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "games-fps/doomsday",
+        "Auto": "no",
+        "Arch": "*",
+        "Unaffected": null,
+        "Vulnerable": [
+          {
+            "Text": "1.9.0_beta52",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Doomsday Engine (deng) is a modern gaming engine for popular ID\n    games like Doom, Heretic and Hexen.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Luigi Auriemma discovered multiple buffer overflows in the\n    D_NetPlayerEvent() function, the Msg_Write() function and the\n    NetSv_ReadCommands() function. He also discovered errors when handling\n    chat messages that are not NULL-terminated (CVE-2007-4642) or contain a\n    short data length, triggering an integer underflow (CVE-2007-4643).\n    Furthermore a format string vulnerability was discovered in the\n    Cl_GetPackets() function when processing PSV_CONSOLE_TEXT messages\n    (CVE-2007-4644).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker could exploit these vulnerabilities to execute\n    arbitrary code with the rights of the user running the Doomsday server\n    or cause a Denial of Service by sending specially crafted messages to\n    the server.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    While some of these issues could be resolved in\n    \"games-fps/doomsday-1.9.0-beta5.2\", the format string vulnerability\n    (CVE-2007-4644) remains unfixed. We recommend that users unmerge\n    Doomsday:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --unmerge games-fps/doomsday"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-4642",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4642"
+      },
+      {
+        "Text": "CVE-2007-4643",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4643"
+      },
+      {
+        "Text": "CVE-2007-4644",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4644"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-12-06T00:50:29Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-12-12T01:08:23Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-01-20T00:41:43Z"
+    }
+  ]
+}

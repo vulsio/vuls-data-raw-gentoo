@@ -1,0 +1,113 @@
+{
+  "ID": "201510-02",
+  "Title": "QEMU: Arbitrary code execution",
+  "Synopsis": "A heap-based buffer overflow in QEMU could result in execution of\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "qemu",
+    "Type": "ebuild"
+  },
+  "Announced": "2015-10-31",
+  "Revised": {
+    "Text": "2015-10-31",
+    "Count": "1"
+  },
+  "Bug": [
+    "551752",
+    "555680",
+    "556050",
+    "556052"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-emulation/qemu",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.3.0-r4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.3.0-r4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>QEMU is a generic and open source machine emulator and virtualizer.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Heap-based buffer overflow has been found in QEMU’s PCNET controller.</p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could execute arbitrary code via a specially crafted\n      packets.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All QEMU users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-emulation/qemu-2.3.0-r4\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2015-3209",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-3209"
+      },
+      {
+        "Text": "CVE-2015-3214",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-3214"
+      },
+      {
+        "Text": "CVE-2015-5154",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-5154"
+      },
+      {
+        "Text": "CVE-2015-5158",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-5158"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "requester",
+      "Timestamp": "2015-07-16T12:11:27Z"
+    },
+    {
+      "Text": "Zlogene",
+      "Tag": "submitter",
+      "Timestamp": "2015-10-31T15:00:35Z"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "ID": "201401-29",
+  "Title": "VIPS: Privilege Escalation",
+  "Synopsis": "A vulnerability in VIPS could result in privilege escalation.",
+  "Product": {
+    "Text": "vips",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-01-26",
+  "Revised": {
+    "Text": "2014-01-26",
+    "Count": "1"
+  },
+  "Bug": [
+    "344561"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/vips",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "7.22.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "7.22.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>VIPS is a free image processing system.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>VIPS places a zero-length directory name in the LD_LIBRARY_PATH, which\n      might result in the current working directory (.) to be included when\n      searching for dynamically linked libraries.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A local attacker could gain escalated privileges via a specially crafted\n      shared library.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All VIPS users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "NOTE: This is a legacy GLSA. Updates for all affected architectures are\n      available since November 23, 2010. It is likely that your system is\n      already no longer affected by this issue.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/vips-7.22.4\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2010-3364\n    ",
+        "Link": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-3364"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    underling\n  ",
+      "Tag": "requester",
+      "Timestamp": "2011-10-07T23:38:13Z"
+    },
+    {
+      "Text": "Zlogene",
+      "Tag": "submitter",
+      "Timestamp": "2014-01-26T19:04:41Z"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "ID": "201512-05",
+  "Title": "gdk-pixbuf: Multiple Vulnerabilities",
+  "Synopsis": "Multiple buffer overflow vulnerabilities in gdk-pixbuf may allow\n    remote attackers to execute arbitrary code or cause Denial of Service.\n  ",
+  "Product": {
+    "Text": "gdk-pixbuf",
+    "Type": "ebuild"
+  },
+  "Announced": "2015-12-21",
+  "Revised": {
+    "Text": "2015-12-21",
+    "Count": "1"
+  },
+  "Bug": [
+    "556314",
+    "562878",
+    "562880"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "x11-libs/gdk-pixbuf",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.32.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.32.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>gdk-pixbuf is an image loading library for GTK+.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Three heap-based buffer overflow vulnerabilities have been discovered in\n      gdk-pixbuf. Please review the CVE identifiers referenced below for\n      details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted image\n      file with an application linked against gdk-pixbuf, possibly resulting in\n      execution of arbitrary code with the privileges of the process or a\n      Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All gdk-pixbuf users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "Packages which depend on this library may need to be recompiled. Tools\n      such as revdep-rebuild may assist in identifying these packages.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=x11-libs/gdk-pixbuf-2.32.1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2015-4491",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-4491"
+      },
+      {
+        "Text": "CVE-2015-7673",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-7673"
+      },
+      {
+        "Text": "CVE-2015-7674",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-7674"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "requester",
+      "Timestamp": "2015-10-13T00:53:43Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2015-12-21T14:06:18Z"
+    }
+  ]
+}

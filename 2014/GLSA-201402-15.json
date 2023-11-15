@@ -1,0 +1,115 @@
+{
+  "ID": "201402-15",
+  "Title": "Roundcube: Arbitrary code execution",
+  "Synopsis": "A vulnerability in Roundcube could result in arbitrary code\n    execution, SQL injection, or reading of arbitrary files.\n  ",
+  "Product": {
+    "Text": "roundcube",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-02-11",
+  "Revised": {
+    "Text": "2014-02-11",
+    "Count": "1"
+  },
+  "Bug": [
+    "488954"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "mail-client/roundcube",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.9.5",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.8.7",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.9.5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Roundcube is a browser-based multilingual IMAP client with an\n      application-like user interface.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A vulnerability in steps/utils/save_pref.inc allows remote attackers to\n      use the _session parameter to change configuration settings.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A remote attacker could possibly execute arbitrary code with the\n      privileges of the process, inject SQL code, or read arbitrary files.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Roundcube 0.9 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All Roundcube 0.8 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=mail-client/roundcube-0.9.5\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=mail-client/roundcube-0.8.7\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2013-6172",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-6172"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    pinkbyte\n  ",
+      "Tag": "requester",
+      "Timestamp": "2013-11-28T07:52:58Z"
+    },
+    {
+      "Text": "\n    pinkbyte\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2014-02-11T09:18:22Z"
+    }
+  ]
+}

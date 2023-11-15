@@ -1,0 +1,116 @@
+{
+  "ID": "200901-02",
+  "Title": "JHead: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities in JHead might lead to the execution of arbitrary\n    code or data loss.\n  ",
+  "Product": {
+    "Text": "jhead",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-01-11",
+  "Revised": {
+    "Text": "2009-01-11",
+    "Count": "01"
+  },
+  "Bug": [
+    "242702",
+    "243238"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-gfx/jhead",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.84-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.84-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    JHead is an exif jpeg header manipulation tool.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Marc Merlin and John Dong reported multiple vulnerabilities in JHead:\n    </p>\n    <ul>\n    <li>\n    A buffer overflow in the DoCommand() function when processing the cmd\n    argument and related to potential string overflows (CVE-2008-4575).\n    </li>\n    <li>\n    An insecure creation of a temporary file (CVE-2008-4639).\n    </li>\n    <li>\n    A error when unlinking a file (CVE-2008-4640).\n    </li>\n    <li>\n    Insufficient escaping of shell metacharacters (CVE-2008-4641).\n    </li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could possibly execute arbitrary code by enticing a\n    user or automated system to open a file with a long filename or via\n    unspecified vectors. It is also possible to trick a user into deleting\n    or overwriting files.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All JHead users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/jhead-2.84-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-4575",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4575"
+      },
+      {
+        "Text": "CVE-2008-4639",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4639"
+      },
+      {
+        "Text": "CVE-2008-4640",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4640"
+      },
+      {
+        "Text": "CVE-2008-4641",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4641"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-11-26T18:47:59Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-11-26T21:08:46Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-12-10T17:01:39Z"
+    }
+  ]
+}

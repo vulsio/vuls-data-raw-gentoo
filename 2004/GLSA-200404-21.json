@@ -1,0 +1,132 @@
+{
+  "ID": "200404-21",
+  "Title": "Multiple Vulnerabilities in Samba",
+  "Synopsis": "\n    There is a bug in smbfs which may allow local users to gain root via a\n    setuid file on a mounted Samba share. Also, there is a tmpfile symlink\n    vulnerability in the smbprint script distributed with Samba.\n  ",
+  "Product": {
+    "Text": "samba",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-04-29",
+  "Revised": {
+    "Text": "2004-04-29",
+    "Count": "01"
+  },
+  "Bug": [
+    "41800",
+    "45965"
+  ],
+  "Access": "local ",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-fs/samba",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.0.2a-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.0.2a",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Samba is a package which allows UNIX systems to act as file servers for\n    Windows computers. It also allows UNIX systems to mount shares exported by\n    a Samba/CIFS/Windows server. smbmount is a program in the Samba package\n    which allows normal users on a UNIX system to mount remote shares. smbprint\n    is an example script included in the Samba package which can be used to\n    facilitate network printing.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Two vulnerabilities have been discovered in Samba. The first vulnerability\n    allows a local user who has access to the smbmount command to gain root. An\n    attacker could place a setuid-root binary on a Samba share/server he or she\n    controls, and then use the smbmount command to mount the share on the\n    target UNIX box. The remote Samba server must support UNIX extensions for\n    this to work. This has been fixed in version 3.0.2a.\n    </p>\n    <p>\n    The second vulnerability is in the smbprint script. By creating a symlink\n    from /tmp/smbprint.log, an attacker could cause the smbprint script to\n    write to an arbitrary file on the system. This has been fixed in version\n    3.0.2a-r2.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    Local users with access to the smbmount command may gain root access. Also,\n    arbitrary files may be overwritten using the smbprint script.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    To workaround the setuid bug, remove the setuid bits from the\n    /usr/bin/smbmnt, /usr/bin/smbumount and /usr/bin/mount.cifs binaries.\n    However, please note that this workaround will prevent ordinary users from\n    mounting remote SMB and CIFS shares.\n    </p>\n    <p>\n    To work around the smbprint vulnerability, set \"debug=no\" in the smbprint\n    configuration.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All users should update to the latest version of the Samba package.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    The following commands will perform the upgrade:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    Those who are using Samba's password database also need to run the\n    following command:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    Those using LDAP for Samba passwords also need to check the sambaPwdLastSet\n    attribute on each account, and ensure it is not 0.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n\n    # emerge -pv \">=net-fs/samba-3.0.2a-r2\"\n    # emerge \">=net-fs/samba-3.0.2a-r2\"",
+      "\n    # pdbedit --force-initialized-passwords"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "BugTraq Thread: Samba 3.x + kernel 2.6.x local root vulnerability",
+        "Link": "http://www.securityfocus.com/archive/1/353222/2004-04-09/2004-04-15/1"
+      },
+      {
+        "Text": "BugTraq: smbprint Vulnerability",
+        "Link": "http://seclists.org/lists/bugtraq/2004/Mar/0189.html"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    condordes\n  ",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

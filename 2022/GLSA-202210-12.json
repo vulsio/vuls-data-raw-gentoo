@@ -1,0 +1,102 @@
+{
+  "ID": "202210-12",
+  "Title": "Lighttpd: Denial of Service",
+  "Synopsis": "A vulnerability has been discovered in lighttpd which could result in denial of service.",
+  "Product": {
+    "Text": "lighttpd",
+    "Type": "ebuild"
+  },
+  "Announced": "2022-10-31",
+  "Revised": {
+    "Text": "2022-10-31",
+    "Count": "1"
+  },
+  "Bug": [
+    "869890"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-servers/lighttpd",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.67",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.67",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n        <p>Lighttpd is a lightweight high-performance web server.</p>\n    "
+  },
+  "Description": {
+    "Text": "\n        <p>Lighttpd&#39;s mod_wstunnel does not initialize a handler function pointer if an invalid HTTP request (websocket handshake) is received.</p>\n    "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n        <p>An attacker can trigger a denial of service via making Lighttpd try to call an uninitialized function pointer.</p>\n    "
+  },
+  "Workaround": {
+    "Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+  },
+  "Resolution": {
+    "Text": "\n        \n        \n        \n    ",
+    "P": [
+      {
+        "Text": "All lighttpd users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=www-servers/lighttpd-1.4.67\"\n        "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2022-37797",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-37797"
+      },
+      {
+        "Text": "CVE-2022-41556",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-41556"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ajak",
+      "Tag": "requester",
+      "Timestamp": "2022-10-31T01:09:14.713606Z"
+    },
+    {
+      "Text": "ajak",
+      "Tag": "submitter",
+      "Timestamp": "2022-10-31T01:09:14.718507Z"
+    }
+  ]
+}

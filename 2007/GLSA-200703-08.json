@@ -1,0 +1,184 @@
+{
+  "ID": "200703-08",
+  "Title": "SeaMonkey: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities have been reported in SeaMonkey, some of which may\n    allow user-assisted arbitrary remote code execution.\n  ",
+  "Product": {
+    "Text": "seamonkey",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-03-09",
+  "Revised": {
+    "Text": "2007-03-09",
+    "Count": "01"
+  },
+  "Bug": [
+    "165555"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-client/seamonkey",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.1.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "www-client/seamonkey-bin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.1.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The SeaMonkey project is a community effort to deliver\n    production-quality releases of code derived from the application\n    formerly known as the 'Mozilla Application Suite'.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Tom Ferris reported a heap-based buffer overflow involving wide SVG\n    stroke widths that affects SeaMonkey. Various researchers reported some\n    errors in the JavaScript engine potentially leading to memory\n    corruption. SeaMonkey also contains minor vulnerabilities involving\n    cache collision and unsafe pop-up restrictions, filtering or CSS\n    rendering under certain conditions. All those vulnerabilities are the\n    same as in GLSA 200703-04 affecting Mozilla Firefox.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could entice a user to view a specially crafted web page or\n    to read a specially crafted email that will trigger one of the\n    vulnerabilities, possibly leading to the execution of arbitrary code.\n    It is also possible for an attacker to spoof the address bar, steal\n    information through cache collision, bypass the local file protection\n    mechanism with pop-ups, or perform cross-site scripting attacks,\n    leading to the exposure of sensitive information, such as user\n    credentials.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time for all of these issues, but\n    most of them can be avoided by disabling JavaScript. Note that the\n    execution of JavaScript is disabled by default in the SeaMonkey email\n    client, and enabling it is strongly discouraged.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    Users upgrading to the following release of SeaMonkey should note that\n    the corresponding Mozilla Firefox upgrade has been found to lose the\n    saved passwords file in some cases. The saved passwords are encrypted\n    and stored in the 'signons.txt' file of ~/.mozilla/ and we advise our\n    users to save that file before performing the upgrade.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All SeaMonkey users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All SeaMonkey binary users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/seamonkey-1.1.1\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/seamonkey-bin-1.1.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-6077",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6077"
+      },
+      {
+        "Text": "CVE-2007-0775",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0775"
+      },
+      {
+        "Text": "CVE-2007-0776",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0776"
+      },
+      {
+        "Text": "CVE-2007-0777",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0777"
+      },
+      {
+        "Text": "CVE-2007-0778",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0778"
+      },
+      {
+        "Text": "CVE-2007-0779",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0779"
+      },
+      {
+        "Text": "CVE-2007-0780",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0780"
+      },
+      {
+        "Text": "CVE-2007-0800",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0800"
+      },
+      {
+        "Text": "CVE-2007-0801",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0801"
+      },
+      {
+        "Text": "CVE-2007-0981",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0981"
+      },
+      {
+        "Text": "CVE-2007-0995",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0995"
+      },
+      {
+        "Text": "Mozilla Password Loss Bug",
+        "Link": "https://bugzilla.mozilla.org/show_bug.cgi?id=360493#c366"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-03-04T00:05:48Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-03-09T22:48:00Z"
+    }
+  ]
+}

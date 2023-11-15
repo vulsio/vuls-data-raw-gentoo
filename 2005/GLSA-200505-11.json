@@ -1,0 +1,206 @@
+{
+  "ID": "200505-11",
+  "Title": "Mozilla Suite, Mozilla Firefox: Remote compromise",
+  "Synopsis": "\n    Several vulnerabilities in the Mozilla Suite and Firefox allow an attacker\n    to conduct cross-site scripting attacks or to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "mozilla",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-05-15",
+  "Revised": {
+    "Text": "2005-05-15",
+    "Count": "01"
+  },
+  "Bug": [
+    "91859",
+    "92393",
+    "92394"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-client/mozilla-firefox",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "www-client/mozilla-firefox-bin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "www-client/mozilla",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.7.8",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.7.8",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "www-client/mozilla-bin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.7.8",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.7.8",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Mozilla Suite is a popular all-in-one web browser that\n    includes a mail and news reader. Mozilla Firefox is the next-generation\n    browser from the Mozilla project.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The Mozilla Suite and Firefox do not properly protect \"IFRAME\"\n    JavaScript URLs from being executed in context of another URL in the\n    history list (CAN-2005-1476). The Mozilla Suite and Firefox also fail\n    to verify the \"IconURL\" parameter of the \"InstallTrigger.install()\"\n    function (CAN-2005-1477). Michael Krax and Georgi Guninski discovered\n    that it is possible to bypass JavaScript-injection security checks by\n    wrapping the javascript: URL within the view-source: or jar:\n    pseudo-protocols (MFSA2005-43).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A malicious remote attacker could use the \"IFRAME\" issue to\n    execute arbitrary JavaScript code within the context of another\n    website, allowing to steal cookies or other sensitive data. By\n    supplying a javascript: URL as the \"IconURL\" parameter of the\n    \"InstallTrigger.Install()\" function, a remote attacker could also\n    execute arbitrary JavaScript code. Combining both vulnerabilities with\n    a website which is allowed to install software or wrapping javascript:\n    URLs within the view-source: or jar: pseudo-protocols could possibly\n    lead to the execution of arbitrary code with user privileges.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Affected systems can be protected by disabling JavaScript.\n    However, we encourage Mozilla Suite or Mozilla Firefox users to upgrade\n    to the latest available version.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Mozilla Firefox users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Mozilla Firefox binary users should upgrade to the latest\n    version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Mozilla Suite users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Mozilla Suite binary users should upgrade to the latest\n    version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/mozilla-firefox-1.0.4\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/mozilla-firefox-bin-1.0.4\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/mozilla-1.7.8\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/mozilla-bin-1.7.8\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-1476",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1476"
+      },
+      {
+        "Text": "CAN-2005-1477",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1477"
+      },
+      {
+        "Text": "Mozilla Foundation Security Advisory 2005-43",
+        "Link": "https://www.mozilla.org/security/announce/mfsa2005-43.html"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-05-12T04:49:53Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-05-12T08:27:49Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-05-15T08:10:06Z"
+    }
+  ]
+}

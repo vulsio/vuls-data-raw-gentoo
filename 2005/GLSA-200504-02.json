@@ -1,0 +1,129 @@
+{
+  "ID": "200504-02",
+  "Title": "Sylpheed, Sylpheed-claws: Buffer overflow on message display",
+  "Synopsis": "\n    Sylpheed and Sylpheed-claws contain a vulnerability that can be triggered\n    when displaying messages with specially crafted attachments.\n  ",
+  "Product": {
+    "Text": "sylpheed",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-04-02",
+  "Revised": {
+    "Text": "2005-04-02",
+    "Count": "01"
+  },
+  "Bug": [
+    "86541"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "mail-client/sylpheed",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "mail-client/sylpheed-claws",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Sylpheed is a lightweight email client and newsreader.\n    Sylpheed-claws is a 'bleeding edge' version of Sylpheed.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Sylpheed and Sylpheed-claws fail to properly handle messages\n    containing attachments with MIME-encoded filenames.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker can send a malicious email message which, when\n    displayed, would cause the program to crash, potentially allowing the\n    execution of arbitrary code with the privileges of the user running the\n    software.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Sylpheed users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Sylpheed-claws users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-client/sylpheed-1.0.4\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-client/sylpheed-claws-1.0.4\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Sylpheed ChangeLog",
+        "Link": "http://sylpheed.good-day.net/#changes"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-03-31T08:06:56Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-03-31T08:07:15Z"
+    }
+  ]
+}

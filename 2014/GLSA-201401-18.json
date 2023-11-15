@@ -1,0 +1,109 @@
+{
+  "ID": "201401-18",
+  "Title": "OpenSC: Arbitrary code execution",
+  "Synopsis": "Multiple stack-based buffer overflows have been found in OpenSC,\n    allowing attackers to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "opensc",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-01-21",
+  "Revised": {
+    "Text": "2014-01-21",
+    "Count": "1"
+  },
+  "Bug": [
+    "349567"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/opensc",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.11.13-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.11.13-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>OpenSC is a tools and libraries for smart cards.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple stack-based buffer overflow errors have been discovered in\n      OpenSC.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A physically proximate attacker could possibly execute arbitrary code\n      using a specially crafted smart card.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All OpenSC users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "Packages which depend on this library may need to be recompiled. Tools\n      such as revdep-rebuild may assist in identifying some of these packages.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/opensc-0.11.13-r2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2010-4523",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-4523"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    underling\n  ",
+      "Tag": "requester",
+      "Timestamp": "2011-10-07T23:37:47Z"
+    },
+    {
+      "Text": "Zlogene",
+      "Tag": "submitter",
+      "Timestamp": "2014-01-21T18:48:55Z"
+    }
+  ]
+}

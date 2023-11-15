@@ -1,0 +1,98 @@
+{
+  "ID": "200703-12",
+  "Title": "SILC Server: Denial of service",
+  "Synopsis": "\n    SILC Server is affected by a Denial of Service vulnerability.\n  ",
+  "Product": {
+    "Text": "silc-server",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-03-14",
+  "Revised": {
+    "Text": "2007-03-14",
+    "Count": "01"
+  },
+  "Bug": [
+    "169599"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-im/silc-server",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.2-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.2-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    SILC Server is a server for the Secure Internet Live Conferencing\n    (SILC) protocol.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Frank Benkstein discovered a possible NULL pointer dereference in\n    apps/silcd/command.c if a new channel is created without specifying a\n    valid hmac or cipher algorithm name.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could cause the server to crash, resulting in a\n    Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All SILC Server users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-im/silc-server-1.0.2-r1\""
+    ]
+  },
+  "References": {
+    "URI": null
+  },
+  "Metadata": [
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-03-07T14:35:02Z"
+    },
+    {
+      "Text": "\n    vorlon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-03-07T14:57:46Z"
+    },
+    {
+      "Text": "\n    vorlon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-03-07T15:20:03Z"
+    }
+  ]
+}

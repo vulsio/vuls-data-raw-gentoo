@@ -1,0 +1,107 @@
+{
+  "ID": "200512-15",
+  "Title": "rssh: Privilege escalation",
+  "Synopsis": "\n    Local users could gain root privileges by chrooting into arbitrary\n    directories.\n  ",
+  "Product": {
+    "Text": "rssh",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-12-27",
+  "Revised": {
+    "Text": "2005-12-27",
+    "Count": "01"
+  },
+  "Bug": [
+    "115082"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-shells/rssh",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.3.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.3.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    rssh is a restricted shell, allowing only a few commands like scp\n    or sftp. It is often used as a complement to OpenSSH to provide limited\n    access to users.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Max Vozeler discovered that the rssh_chroot_helper command allows\n    local users to chroot into arbitrary directories.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A local attacker could exploit this vulnerability to gain root\n    privileges by chrooting into arbitrary directories.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All rssh users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-shells/rssh-2.3.0\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-3345",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3345"
+      },
+      {
+        "Text": "rssh security announcement",
+        "Link": "http://www.pizzashack.org/rssh/security.shtml"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-12-23T10:25:35Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-12-25T13:06:13Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-12-26T13:28:20Z"
+    }
+  ]
+}

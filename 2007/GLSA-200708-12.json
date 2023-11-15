@@ -1,0 +1,119 @@
+{
+  "ID": "200708-12",
+  "Title": "Wireshark: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities have been discovered in Wireshark, allowing for\n    the remote execution of arbitrary code and a Denial of Service.\n  ",
+  "Product": {
+    "Text": "wireshark",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-08-16",
+  "Revised": {
+    "Text": "2007-08-16",
+    "Count": "01"
+  },
+  "Bug": [
+    "183520"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-analyzer/wireshark",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.99.6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.99.6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Wireshark is a network protocol analyzer with a graphical front-end.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Wireshark doesn't properly handle chunked encoding in HTTP responses\n    (CVE-2007-3389), iSeries capture files (CVE-2007-3390), certain types\n    of DCP ETSI packets (CVE-2007-3391), and SSL or MMS packets\n    (CVE-2007-3392). An off-by-one error has been discovered in the\n    DHCP/BOOTP dissector when handling DHCP-over-DOCSIS packets\n    (CVE-2007-3393).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could send specially crafted packets on a network\n    being monitored with Wireshark, possibly resulting in the execution of\n    arbitrary code with the privileges of the user running Wireshark which\n    might be the root user, or a Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    In order to prevent root compromise, take network captures with tcpdump\n    and analyze them running Wireshark as a least privileged user.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Wireshark users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/wireshark-0.99.6\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-3389",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3389"
+      },
+      {
+        "Text": "CVE-2007-3390",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3390"
+      },
+      {
+        "Text": "CVE-2007-3391",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3391"
+      },
+      {
+        "Text": "CVE-2007-3392",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3392"
+      },
+      {
+        "Text": "CVE-2007-3393",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3393"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    aetius\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-07-24T10:55:17Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-07-25T05:32:32Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-08-12T20:22:11Z"
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "ID": "200601-06",
+  "Title": "xine-lib, FFmpeg: Heap-based buffer overflow",
+  "Synopsis": "\n    xine-lib and FFmpeg are vulnerable to a buffer overflow that may be\n    exploited by attackers to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "xine-lib ffmpeg",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-01-10",
+  "Revised": {
+    "Text": "2006-01-10",
+    "Count": "01"
+  },
+  "Bug": [
+    "115849",
+    "116181"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/xine-lib",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.1.1-r3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.1-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "media-video/ffmpeg",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.4.9_p20051216",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.4.9_p20051216",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    xine is a GPL high-performance, portable and reusable multimedia\n    playback engine. xine-lib is xine's core engine. FFmpeg is a very fast\n    video and audio converter and is used in xine-lib.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Simon Kilvington has reported a vulnerability in FFmpeg\n    libavcodec. The flaw is due to a buffer overflow error in the\n    \"avcodec_default_get_buffer()\" function. This function doesn't properly\n    handle specially crafted PNG files as a result of a heap overflow.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to run an FFmpeg based\n    application on a maliciously crafted PNG file, resulting in the\n    execution of arbitrary code with the permissions of the user running\n    the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All xine-lib users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All FFmpeg users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/xine-lib-1.1.1-r3\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-video/ffmpeg-0.4.9_p20051216\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-4048",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-4048"
+      },
+      {
+        "Text": "Original advisory",
+        "Link": "https://article.gmane.org/gmane.comp.video.ffmpeg.devel/26558"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-01-03T10:30:55Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-01-06T00:22:43Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-01-09T22:59:16Z"
+    }
+  ]
+}

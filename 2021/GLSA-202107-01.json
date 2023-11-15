@@ -1,0 +1,98 @@
+{
+  "ID": "202107-01",
+  "Title": "corosync: Denial of service",
+  "Synopsis": "A vulnerability in corosync could lead to a Denial of Service\n    condition.\n  ",
+  "Product": {
+    "Text": "corosync",
+    "Type": "ebuild"
+  },
+  "Announced": "2021-07-03",
+  "Revised": {
+    "Text": "2021-07-03",
+    "Count": "1"
+  },
+  "Bug": [
+    "658354"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-cluster/corosync",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.0.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.0.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>The Corosync Cluster Engine is a Group Communication System with\n      additional features for implementing high availability within\n      applications.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was discovered that corosync allowed an unauthenticated user to cause\n      a Denial of Service by application crash.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>A remote attacker could send a malicious crafted packet, possibly\n      resulting in a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All corosync users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-cluster/corosync-3.0.4\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2018-1084",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2018-1084"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2021-05-26T21:04:45Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2021-07-03T01:25:30Z"
+    }
+  ]
+}

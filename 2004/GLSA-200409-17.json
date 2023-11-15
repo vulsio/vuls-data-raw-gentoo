@@ -1,0 +1,111 @@
+{
+  "ID": "200409-17",
+  "Title": "SUS: Local root vulnerability",
+  "Synopsis": "\n    SUS contains a string format bug that could lead to local privilege\n    escalation.\n  ",
+  "Product": {
+    "Text": "SUS",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-09-14",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "63927"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-admin/sus",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.2-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.2-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    SUS is a utility that allows regular users to be able to execute\n    certain commands as root.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Leon Juranic found a bug in the logging functionality of SUS that can\n    lead to local privilege escalation. A format string vulnerability\n    exists in the log() function due to an incorrect call to the syslog()\n    function.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    An attacker with local user privileges can potentially exploit this\n    vulnerability to gain root access.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All SUS users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv \">=app-admin/sus-2.0.2-r1\"\n    # emerge \">=app-admin/sus-2.0.2-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "SUS ChangeLog",
+        "Link": "http://pdg.uow.edu.au/sus/CHANGES"
+      },
+      {
+        "Text": "BugTraq Advisory",
+        "Link": "http://www.securityfocus.com/archive/1/375109/2004-09-11/2004-09-17/0"
+      },
+      {
+        "Text": "CVE-2004-1469",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1469"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-09-13T21:20:06Z"
+    },
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-09-14T00:10:33Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-09-14T10:08:46Z"
+    }
+  ]
+}

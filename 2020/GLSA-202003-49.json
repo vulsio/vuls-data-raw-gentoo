@@ -1,0 +1,98 @@
+{
+  "ID": "202003-49",
+  "Title": "BlueZ: Security bypass",
+  "Synopsis": "A vulnerability in BlueZ might allow remote attackers to bypass\n    security restrictions.\n  ",
+  "Product": {
+    "Text": "bluez",
+    "Type": "ebuild"
+  },
+  "Announced": "2020-03-25",
+  "Revised": {
+    "Text": "2020-03-25",
+    "Count": "1"
+  },
+  "Bug": [
+    "712292"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-wireless/bluez",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.54",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.54",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Set of tools to manage Bluetooth devices for Linux.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was discovered that the HID and HOGP profiles implementations in\n      BlueZ did not specifically require bonding between the device and the\n      host.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A remote attacker with adjacent access could impersonate an existing HID\n      device, cause a Denial of Service condition or escalate privileges.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All BlueZ users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-wireless/bluez-5.54\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2020-0556",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-0556"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2020-03-25T15:19:08Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2020-03-25T15:33:12Z"
+    }
+  ]
+}

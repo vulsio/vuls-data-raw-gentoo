@@ -1,0 +1,112 @@
+{
+  "ID": "200506-04",
+  "Title": "Wordpress: Multiple vulnerabilities",
+  "Synopsis": "\n    Wordpress contains SQL injection and XSS vulnerabilities.\n  ",
+  "Product": {
+    "Text": "Wordpress",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-06-06",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "88926",
+    "94512"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/wordpress",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.5.1.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.5.1.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    WordPress is a PHP and MySQL based content management and publishing\n    system.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Due to a lack of input validation, WordPress is vulnerable to SQL\n    injection and XSS attacks.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could use the SQL injection vulnerabilities to gain\n    information from the database. Furthermore the cross-site scripting\n    issues give an attacker the ability to inject and execute malicious\n    script code or to steal cookie-based authentication credentials,\n    potentially compromising the victim's browser.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Wordpress users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/wordpress-1.5.1.2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-1102",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1102"
+      },
+      {
+        "Text": "CVE-2005-1687",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1687"
+      },
+      {
+        "Text": "CVE-2005-1810",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1810"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-06-01T07:49:47Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-06-01T07:49:57Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-06-06T05:09:09Z"
+    }
+  ]
+}

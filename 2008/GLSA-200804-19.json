@@ -1,0 +1,103 @@
+{
+  "ID": "200804-19",
+  "Title": "PHP Toolkit: Data disclosure and Denial of service",
+  "Synopsis": "\n    PHP Toolkit does not quote parameters, allowing for PHP source code\n    disclosure on Apache, and a Denial of Service.\n  ",
+  "Product": {
+    "Text": "php-toolkit",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-04-17",
+  "Revised": {
+    "Text": "2008-04-17",
+    "Count": "01"
+  },
+  "Bug": [
+    "209535"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-admin/php-toolkit",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    PHP Toolkit is a utility to manage parallel installations of PHP within\n    Gentoo. It is executed by the PHP ebuilds at setup.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Toni Arnold, David Sveningsson, Michal Bartoszkiewicz, and Joseph\n    reported that php-select does not quote parameters passed to the \"tr\"\n    command, which could convert the \"-D PHP5\" argument in the\n    \"APACHE2_OPTS\" setting in the file /etc/conf.d/apache2 to lower case.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could entice a system administrator to run \"<i>emerge\n    php</i>\" or call \"<i>php-select -t apache2 php5</i>\" directly in a\n    directory containing a lower case single-character named file, which\n    would prevent Apache from loading mod_php and thereby disclose PHP\n    source code and cause a Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Do not run \"emerge\" or \"php-select\" from a working directory which\n    contains a lower case single-character named file.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All PHP Toolkit users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-admin/php-toolkit-1.0.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-1734",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1734"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-04-07T23:54:47Z"
+    },
+    {
+      "Text": "\n    vorlon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-04-10T13:22:11Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-04-11T19:26:49Z"
+    }
+  ]
+}

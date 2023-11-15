@@ -1,0 +1,103 @@
+{
+  "ID": "200607-10",
+  "Title": "Samba: Denial of Service vulnerability",
+  "Synopsis": "\n    A large number of share connection requests could cause a Denial of Service\n    within Samba.\n  ",
+  "Product": {
+    "Text": "samba",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-07-25",
+  "Revised": {
+    "Text": "2006-07-25",
+    "Count": "01"
+  },
+  "Bug": [
+    "139369"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-fs/samba",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.0.22-r3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.0.22-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Samba is a freely available SMB/CIFS implementation which allows\n    seamless interoperability of file and print services to other SMB/CIFS\n    clients.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    During an internal audit the Samba team discovered that a flaw in the\n    way Samba stores share connection requests could lead to a Denial of\n    Service.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    By sending a large amount of share connection requests to a vulnerable\n    Samba server, an attacker could cause a Denial of Service due to memory\n    consumption.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Samba users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-fs/samba-3.0.22-r3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-3403",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3403"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-07-23T19:09:42Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-07-23T19:57:17Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-07-23T19:57:30Z"
+    }
+  ]
+}

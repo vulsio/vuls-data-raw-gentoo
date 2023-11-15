@@ -1,0 +1,112 @@
+{
+  "ID": "201605-05",
+  "Title": "Linux-PAM: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in Linux-PAM, allowing\n    remote attackers to bypass the auth process and cause Denial of Service.\n  ",
+  "Product": {
+    "Text": "pam",
+    "Type": "ebuild"
+  },
+  "Announced": "2016-05-31",
+  "Revised": {
+    "Text": "2016-05-31",
+    "Count": "1"
+  },
+  "Bug": [
+    "493432",
+    "505604",
+    "553302"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-libs/pam",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Linux-PAM (Pluggable Authentication Modules) is an architecture allowing\n      the separation of the development of privilege granting software from the\n      development of secure and appropriate authentication schemes.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in Linux-PAM.  Please\n      review the CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>Remote attackers could cause Denial of Service, conduct brute force\n      attacks, and conduct username enumeration.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Linux-PAM users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-libs/pam-1.2.1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2013-7041",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-7041"
+      },
+      {
+        "Text": "CVE-2014-2583",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-2583"
+      },
+      {
+        "Text": "CVE-2015-3238",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-3238"
+      },
+      {
+        "Text": "CVE-2015-3238",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-3238"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "requester",
+      "Timestamp": "2015-08-10T14:28:31Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2016-05-31T04:26:13Z"
+    }
+  ]
+}

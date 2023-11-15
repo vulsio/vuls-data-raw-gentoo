@@ -1,0 +1,97 @@
+{
+  "ID": "200403-11",
+  "Title": "Squid ACL [url_regex] bypass vulnerability",
+  "Synopsis": "\n    Squid versions 2.0 through to 2.5.STABLE4 could allow a remote attacker to\n    bypass Access Control Lists by sending a specially-crafted URL request\n    containing '%00': in such circumstances; the url_regex ACL may not properly\n    detect the malicious URL, allowing the attacker to effectively bypass the\n    ACL.\n  ",
+  "Product": {
+    "Text": "Squid",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-03-30",
+  "Revised": {
+    "Text": "2004-09-02",
+    "Count": "02"
+  },
+  "Bug": [
+    "45273"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-proxy/squid",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.5.5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.5.5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Squid is a fully-featured Web Proxy Cache designed to run on Unix systems\n    that supports proxying and caching of HTTP, FTP, and other URLs, as well as\n    SSL support, cache hierarchies, transparent caching, access control lists\n    and many other features.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    A bug in Squid allows users to bypass certain access controls by passing a\n    URL containing \"%00\" which exploits the Squid decoding function.\n    This may insert a NUL character into decoded URLs, which may allow users to\n    bypass url_regex access control lists that are enforced upon them.\n    </p>\n    <p>\n    In such a scenario, Squid will insert a NUL character after\n    the\"%00\" and it will make a comparison between the URL to the end\n    of the NUL character rather than the contents after it: the comparison does\n    not result in a match, and the user's request is not denied.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    Restricted users may be able to bypass url_regex access control lists that\n    are enforced upon them which may cause unwanted network traffic as well as\n    a route for other possible exploits. Users of Squid 2.5STABLE4 and below\n    who require the url_regex features are recommended to upgrade to 2.5STABLE5\n    to maintain the security of their infrastructure.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    A workaround is not currently known for this issue. All users are advised\n    to upgrade to the latest version of Squid.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    Squid can be updated as follows:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n\n    # emerge -pv \">=net-proxy/squid-2.5.5\"\n    # emerge \">=net-proxy/squid-2.5.5\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-0189",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0189"
+      },
+      {
+        "Text": "Squid 2.5.STABLE5 Release Announcement",
+        "Link": "http://www.squid-cache.org/Advisories/SQUID-2004_1.txt"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-09-02T21:11:59Z"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "ID": "201808-03",
+  "Title": "NetworkManager VPNC plugin: Privilege escalation",
+  "Synopsis": "A vulnerability in NetworkManager VPNC plugin allows local users to\n    escalate privileges.\n  ",
+  "Product": {
+    "Text": "networkmanager-vpnc",
+    "Type": "ebuild"
+  },
+  "Announced": "2018-08-22",
+  "Revised": {
+    "Text": "2018-08-22",
+    "Count": "1"
+  },
+  "Bug": [
+    "661712"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/networkmanager-vpnc",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>NetworkManager is an universal network configuration daemon for laptops,\n      desktops, servers and virtualization hosts.\n    </p>\n    \n    <p>The VPNC plugin provides easy access Cisco Concentrator based VPN’s\n      utilizing NetworkManager.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>When initiating a VPNC connection, NetworkManager spawns a new vpnc\n      process and passes the configuration via STDIN. By injecting a special\n      character into a configuration parameter, an attacker can coerce\n      NetworkManager to set the Password helper option to an attacker\n      controlled executable file.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A local attacker is able to escalate privileges via a specially crafted\n      configuration file.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All NetworkManager VPNC plugin users should upgrade to the latest\n      version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=net-misc/networkmanager-vpnc-1.2.6\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2018-10900",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2018-10900"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "irishluck83",
+      "Tag": "requester",
+      "Timestamp": "2018-07-30T00:25:20Z"
+    },
+    {
+      "Text": "irishluck83",
+      "Tag": "submitter",
+      "Timestamp": "2018-08-22T21:14:54Z"
+    }
+  ]
+}

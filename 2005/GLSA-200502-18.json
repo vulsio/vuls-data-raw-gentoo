@@ -1,0 +1,108 @@
+{
+  "ID": "200502-18",
+  "Title": "VMware Workstation: Untrusted library search path",
+  "Synopsis": "\n    VMware may load shared libraries from an untrusted, world-writable\n    directory, resulting in the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "VMware",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-02-14",
+  "Revised": {
+    "Text": "2006-05-25",
+    "Count": "03"
+  },
+  "Bug": [
+    "81344"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-emulation/vmware-workstation",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.5.2.8848-r5",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "3.2.1.2242-r4",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.5.2.8848-r5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    VMware Workstation is a powerful virtual machine for developers and\n    system administrators.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Tavis Ormandy of the Gentoo Linux Security Audit Team has discovered\n    that VMware Workstation searches for gdk-pixbuf loadable modules in an\n    untrusted, world-writable directory.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could create a malicious shared object that would be\n    loaded by VMware, resulting in the execution of arbitrary code with the\n    privileges of the user running VMware.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    The system administrator may create the file /tmp/rrdharan to prevent\n    malicious users from creating a directory at that location:\n    </p>\n    <code>\n    # touch /tmp/rrdharan</code>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All VMware Workstation users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-emulation/vmware-workstation-3.2.1.2242-r4\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-0444",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0444"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-02-12T12:53:09Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-02-12T12:53:31Z"
+    },
+    {
+      "Text": "\n    taviso\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-02-13T19:36:17Z"
+    }
+  ]
+}

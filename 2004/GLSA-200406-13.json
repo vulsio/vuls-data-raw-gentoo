@@ -1,0 +1,93 @@
+{
+  "ID": "200406-13",
+  "Title": "Squid: NTLM authentication helper buffer overflow",
+  "Synopsis": "\n    Squid contains a bug where it fails to properly check bounds of the 'pass'\n    variable.\n  ",
+  "Product": {
+    "Text": "squid",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-06-17",
+  "Revised": {
+    "Text": "2004-09-02",
+    "Count": "02"
+  },
+  "Bug": [
+    "53367"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-proxy/squid",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.5.5-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.5.5-r1",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Squid contains a bug in the function ntlm_check_auth(). It fails to do\n    proper bounds checking on the values copyied to the 'pass' variable.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Squid is a full-featured Web Proxy Cache designed to run on Unix systems.\n    It supports proxying and caching of HTTP, FTP, and other URLs, as well as\n    SSL support, cache hierarchies, transparent caching, access control lists\n    and many other features.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    If Squid is configured to use NTLM authentication, an attacker could\n    exploit this vulnerability by sending a very long password. This could lead\n    to arbitrary code execution with the permissions of the user running Squid.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time. All users are encouraged to\n    upgrade to the latest available version.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Squid users should upgrade to the latest stable version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n\n    # emerge -pv \">=net-proxy/squid-2.5.5-r2\"\n    # emerge \">=net-proxy/squid-2.5.5-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-0541",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0541"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

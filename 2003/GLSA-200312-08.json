@@ -1,0 +1,82 @@
+{
+  "ID": "200312-08",
+  "Title": "CVS: possible root compromise when using CVS pserver",
+  "Synopsis": "\n    A possible root compromise exists for CVS pservers.\n  ",
+  "Product": {
+    "Text": "cvs",
+    "Type": "ebuild"
+  },
+  "Announced": "2003-12-28",
+  "Revised": {
+    "Text": "2003-12-28",
+    "Count": "01"
+  },
+  "Bug": [
+    "36142"
+  ],
+  "Access": "unknown",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-util/cvs",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.11.11",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.11.10",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    CVS, which stands for Concurrent Versions System, is a client/server\n    application which tracks changes to sets of files.  It allows multiple users\n    to work concurrently on files, and then merge their changes back into the\n    main tree (which can be on a remote system).  It also allows branching, or\n    maintaining separate versions for files.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Quote from ccvs.cvshome.org/servlets/NewsItemView?newsID=88:\n    \"Stable CVS 1.11.11 has been released. Stable releases contain only bug\n    fixes from previous versions of CVS. This release adds code to the CVS\n    server to prevent it from continuing as root after a user login, as an extra\n    failsafe against a compromise of the CVSROOT/passwd file. Previously, any\n    user with the ability to write the CVSROOT/passwd file could execute\n    arbitrary code as the root user on systems with CVS pserver access enabled.\n    We recommend this upgrade for all CVS servers!\"\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote user could execute arbitrary code with the permissions of the root\n    user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Gentoo Linux machines with cvs installed should be updated to use\n    cvs-1.11.11 or higher.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    # emerge -pv '>=dev-util/cvs-1.11.11'\n    # emerge '>=dev-util/cvs-1.11.11'\n    # emerge clean"
+    ]
+  },
+  "References": {
+    "URI": null
+  },
+  "Metadata": null
+}

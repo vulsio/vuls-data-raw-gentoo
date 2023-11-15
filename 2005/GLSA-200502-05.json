@@ -1,0 +1,103 @@
+{
+  "ID": "200502-05",
+  "Title": "Newspost: Buffer overflow vulnerability",
+  "Synopsis": "\n    A buffer overflow can be exploited to crash Newspost remotely and\n    potentially execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "newspost",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-02-03",
+  "Revised": {
+    "Text": "2005-02-21",
+    "Count": "02"
+  },
+  "Bug": [
+    "78530"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-nntp/newspost",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0-r1",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "2.1.1-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.1.1-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Newspost is a Usenet News binary autoposter.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Niels Heinen has discovered a buffer overflow in the socket_getline()\n    function of Newspost, which can be triggered by providing long strings\n    that do not end with a newline character.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could setup a malicious NNTP server and entice a\n    Newspost user to post to it, leading to the crash of the Newspost\n    process and potentially the execution of arbitrary code with the rights\n    of the Newspost user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Newspost users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-nntp/newspost-2.0-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-0101",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0101"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-02-02T15:47:51Z"
+    },
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-02-02T17:29:13Z"
+    }
+  ]
+}

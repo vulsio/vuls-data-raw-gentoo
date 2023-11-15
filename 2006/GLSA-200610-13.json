@@ -1,0 +1,103 @@
+{
+  "ID": "200610-13",
+  "Title": "Cheese Tracker: Buffer Overflow",
+  "Synopsis": "\n    Cheese Tracker contains a buffer overflow allowing the remote execution of\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "cheesetracker",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-10-26",
+  "Revised": {
+    "Text": "2006-10-26",
+    "Count": "01"
+  },
+  "Bug": [
+    "142391"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-sound/cheesetracker",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.9.9-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.9.9-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Cheese Tracker is a Qt-based portable Impulse Tracker clone, a music\n    tracker for the CT, IT, XM and S3M file formats.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Luigi Auriemma reported that the XM loader of Cheese Tracker contains a\n    buffer overflow vulnerability in the\n    loader_XM::load_intrument_internal() function from\n    loaders/loader_xm.cpp.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could execute arbitrary code with the rights of the user\n    running Cheese Tracker by enticing a user to load a crafted file with\n    large amount of extra data.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Cheese Tracker users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-sound/cheesetracker-0.9.9-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-3814",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3814"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-10-20T07:43:58Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-10-24T14:33:27Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-10-24T15:18:21Z"
+    }
+  ]
+}

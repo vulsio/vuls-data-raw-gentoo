@@ -1,0 +1,107 @@
+{
+  "ID": "200502-11",
+  "Title": "Mailman: Directory traversal vulnerability",
+  "Synopsis": "\n    Mailman fails to properly sanitize input, leading to information\n    disclosure.\n  ",
+  "Product": {
+    "Text": "mailman",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-02-10",
+  "Revised": {
+    "Text": "2005-02-10",
+    "Count": "01"
+  },
+  "Bug": [
+    "81109"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-mail/mailman",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.1.5-r4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.1.5-r4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Mailman is a Python-based mailing list server with an extensive\n    web interface.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Mailman contains an error in private.py which fails to properly\n    sanitize input paths.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could exploit this flaw to obtain arbitrary files on\n    the web server.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Mailman users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-mail/mailman-2.1.5-r4\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Full Disclosure Announcement",
+        "Link": "http://lists.netsys.com/pipermail/full-disclosure/2005-February/031562.html"
+      },
+      {
+        "Text": "CAN-2005-0202",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0202"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-02-09T21:12:44Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-02-09T21:59:02Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-02-10T16:41:33Z"
+    }
+  ]
+}

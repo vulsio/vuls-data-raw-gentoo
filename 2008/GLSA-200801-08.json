@@ -1,0 +1,103 @@
+{
+  "ID": "200801-08",
+  "Title": "libcdio: User-assisted execution of arbitrary code",
+  "Synopsis": "\n    A buffer overflow vulnerability has been discovered in libcdio.\n  ",
+  "Product": {
+    "Text": "libcdio",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-01-20",
+  "Revised": {
+    "Text": "2008-01-20",
+    "Count": "01"
+  },
+  "Bug": [
+    "203777"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/libcdio",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.78.2-r4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.78.2-r4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    libcdio is a library for accessing CD-ROM and CD images.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Devon Miller reported a boundary error in the \"print_iso9660_recurse()\"\n    function in files cd-info.c and iso-info.c when processing long\n    filenames within Joliet images.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted ISO\n    image in the cd-info and iso-info applications, resulting in the\n    execution of arbitrary code with the privileges of the user running the\n    application. Applications linking against shared libraries of libcdio\n    are not affected.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All libcdio users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/libcdio-0.78.2-r4\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-6613",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6613"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-01-01T22:05:45Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-01-08T21:42:57Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-01-15T17:44:04Z"
+    }
+  ]
+}

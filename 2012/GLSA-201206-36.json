@@ -1,0 +1,111 @@
+{
+  "ID": "201206-36",
+  "Title": "logrotate: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities were found in logrotate, which could lead\n    to arbitrary system command execution.\n  ",
+  "Product": {
+    "Text": "logrotate",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-06-25",
+  "Revised": {
+    "Text": "2012-06-25",
+    "Count": "1"
+  },
+  "Bug": [
+    "356811",
+    "372973"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-admin/logrotate",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.8.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.8.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>logrotate rotates, compresses, and mails system logs.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in logrotate. Please\n      review the CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A local attacker could use this flaw to truncate arbitrary system file,\n      to change file owner or mode on arbitrary system files, to conduct\n      symlink attacks and send arbitrary system files, to execute arbitrary\n      system commands, to cause abort in subsequent logrotate runs, to disclose\n      sensitive information, to execute arbitrary code or cause a Denial of\n      Service condition.\n    </p>\n    \n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All logrotate users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-admin/logrotate-3.8.0\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2011-1098",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-1098"
+      },
+      {
+        "Text": "CVE-2011-1154",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-1154"
+      },
+      {
+        "Text": "CVE-2011-1155",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-1155"
+      },
+      {
+        "Text": "CVE-2011-1549",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-1549"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    underling\n  ",
+      "Tag": "requester",
+      "Timestamp": "2011-10-07T23:37:29Z"
+    },
+    {
+      "Text": "craig",
+      "Tag": "submitter",
+      "Timestamp": "2012-06-25T19:17:59Z"
+    }
+  ]
+}

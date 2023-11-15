@@ -1,0 +1,98 @@
+{
+  "ID": "200703-01",
+  "Title": "Snort: Remote execution of arbitrary code",
+  "Synopsis": "\n    The Snort DCE/RPC preprocessor contains a buffer overflow that could result\n    in the remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "snort",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-02-23",
+  "Revised": {
+    "Text": "2007-03-02",
+    "Count": "02"
+  },
+  "Bug": [
+    "167730"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-analyzer/snort",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.6.1.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.6.1.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Snort is a widely deployed intrusion detection program.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The Snort DCE/RPC preprocessor does not properly reassemble certain\n    types of fragmented SMB and DCE/RPC packets.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker could send specially crafted fragmented SMB or\n    DCE/RPC packets, without the need to finish the TCP handshake, that\n    would trigger a stack-based buffer overflow while being reassembled.\n    This could lead to the execution of arbitrary code with the permissions\n    of the user running the Snort preprocessor.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Disable the DCE/RPC processor by commenting the 'preprocessor dcerpc'\n    section in /etc/snort/snort.conf .\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Snort users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/snort-2.6.1.3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-5276",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5276"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-02-23T17:25:01Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-02-27T18:06:20Z"
+    }
+  ]
+}

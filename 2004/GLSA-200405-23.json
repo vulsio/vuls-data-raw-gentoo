@@ -1,0 +1,97 @@
+{
+  "ID": "200405-23",
+  "Title": "Heimdal: Kerberos 4 buffer overflow in kadmin",
+  "Synopsis": "\n    A possible buffer overflow in the Kerberos 4 component of Heimdal has been\n    discovered.\n  ",
+  "Product": {
+    "Text": "Heimdal",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-05-27",
+  "Revised": {
+    "Text": "2004-05-27",
+    "Count": "01"
+  },
+  "Bug": [
+    "50208"
+  ],
+  "Access": "remote ",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-crypt/heimdal",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.6.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.6.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Heimdal is a free implementation of Kerberos.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    A buffer overflow was discovered in kadmind, a server for administrative\n    access to the Kerberos database.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    By sending a specially formatted message to kadmind, a remote attacker may\n    be able to crash kadmind causing a denial of service, or execute arbitrary\n    code with the permissions of the kadmind process.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    For a temporary workaround, providing you do not require Kerberos 4\n    support, you may turn off Kerberos 4 kadmin by running kadmind with the\n    --no-kerberos4 option.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Heimdal users should upgrade to the latest stable version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n\n    # emerge -pv \">=app-crypt/heimdal-0.6.2\"\n    # emerge \">=app-crypt/heimdal-0.6.2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Heimdal 0.6.2 Release Notice",
+        "Link": "https://www.pdc.kth.se/heimdal/advisory/2004-05-06/"
+      },
+      {
+        "Text": "CAN-2004-0434",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0434"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

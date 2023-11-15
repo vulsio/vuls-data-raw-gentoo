@@ -1,0 +1,107 @@
+{
+  "ID": "200508-03",
+  "Title": "nbSMTP: Format string vulnerability",
+  "Synopsis": "\n    nbSMTP is vulnerable to a format string vulnerability which may result in\n    remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "nbsmtp",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-08-02",
+  "Revised": {
+    "Text": "2005-08-11",
+    "Count": "02"
+  },
+  "Bug": [
+    "100274"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "mail-mta/nbsmtp",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.00",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.00",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    nbSMTP is an SMTP client suitable to run in chroot jails, in embedded\n    systems, laptops and workstations.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Niels Heinen discovered a format string vulnerability.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker can setup a malicious SMTP server and exploit this\n    vulnerability to execute arbitrary code with the permissions of the\n    user running nbSMTP.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All nbSMTP users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-mta/nbsmtp-1.0\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-2409",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2409"
+      },
+      {
+        "Text": "nbSMTP official site",
+        "Link": "https://nbsmtp.ferdyx.org/"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-07-29T15:56:07Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-07-29T23:01:19Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-08-02T12:46:50Z"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "ID": "201701-14",
+  "Title": "LZO: Multiple vulnerabilities",
+  "Synopsis": "An integer overflow in LZO might allow remote attackers to execute\n    arbitrary code or cause a Denial of Service condition.\n  ",
+  "Product": {
+    "Text": "lzo",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-01-02",
+  "Revised": {
+    "Text": "2017-01-02",
+    "Count": "1"
+  },
+  "Bug": [
+    "515238"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/lzo",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.08",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.08",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>LZO is an extremely fast compression and decompression library</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>LZO is vulnerable to an integer overflow condition in the\n      “lzo1x_decompress_safe” function which could result in a possible\n      buffer overrun when processing maliciously crafted compressed input data.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could send specially crafted compressed input data\n      possibly resulting in a Denial of Service condition or arbitrary code\n      execution.\n    </p>\n    \n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All LZO users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/lzo-2.08\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-4607",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-4607"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "requester",
+      "Timestamp": "2014-07-10T05:18:15Z"
+    },
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2017-01-02T15:16:02Z"
+    }
+  ]
+}

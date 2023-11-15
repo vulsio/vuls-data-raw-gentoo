@@ -1,0 +1,154 @@
+{
+  "ID": "201402-21",
+  "Title": "libTIFF: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in libTIFF, allowing\n    remote attackers to execute arbitrary code or cause Denial of Service.\n  ",
+  "Product": {
+    "Text": "tiff",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-02-21",
+  "Revised": {
+    "Text": "2014-02-21",
+    "Count": "1"
+  },
+  "Bug": [
+    "440154",
+    "440944",
+    "468334",
+    "480466",
+    "486590"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/tiff",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.0.3-r6",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "3.9.7-r1",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.0.3-r6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>libTIFF provides support for reading and manipulating TIFF (Tagged Image\n      File Format) images.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in libTIFF. Please review\n      the CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted TIFF\n      file with an application making use of libTIFF, possibly resulting in\n      execution of arbitrary code with the privileges of the user running the\n      application or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All libTIFF 4.* users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All libTIFF 3.* users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "Packages which depend on this library may need to be recompiled. Tools\n      such as revdep-rebuild may assist in identifying these packages.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/tiff-4.0.3-r6\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/tiff-3.9.7-r1:3\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-4447",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-4447"
+      },
+      {
+        "Text": "CVE-2012-4564",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-4564"
+      },
+      {
+        "Text": "CVE-2013-1960",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1960"
+      },
+      {
+        "Text": "CVE-2013-1961",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1961"
+      },
+      {
+        "Text": "CVE-2013-4231",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4231"
+      },
+      {
+        "Text": "CVE-2013-4232",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4232"
+      },
+      {
+        "Text": "CVE-2013-4244",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4244"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    pinkbyte\n  ",
+      "Tag": "requester",
+      "Timestamp": "2013-09-02T10:35:33Z"
+    },
+    {
+      "Text": "\n    pinkbyte\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2014-02-21T15:18:04Z"
+    }
+  ]
+}

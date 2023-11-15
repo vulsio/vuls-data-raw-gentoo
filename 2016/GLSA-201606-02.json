@@ -1,0 +1,134 @@
+{
+  "ID": "201606-02",
+  "Title": "Puppet Server and Agent: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in Puppet Server and\n    Agent, the worst of which could lead to arbitrary code execution.\n  ",
+  "Product": {
+    "Text": "",
+    "Type": "ebuild"
+  },
+  "Announced": "2016-06-05",
+  "Revised": {
+    "Text": "2016-06-05",
+    "Count": "3"
+  },
+  "Bug": [
+    "577450",
+    "581372"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-admin/puppet-agent",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "app-admin/puppetserver",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.3.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.3.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Puppet Agent contains Puppet’s main code and all of the dependencies\n      needed to run it, including Facter, Hiera, and bundled versions of Ruby\n      and OpenSSL.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in Puppet Server and\n      Agent.  Please review the CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>Remote attackers, impersonating a trusted broker, could potentially\n      execute arbitrary code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Puppet Agent users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All Puppet Server users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-admin/puppet-agent-1.4.2\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-admin/puppetserver-2.3.2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2016-2785",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-2785"
+      },
+      {
+        "Text": "CVE-2016-2786",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-2786"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "b-man",
+      "Tag": "requester",
+      "Timestamp": "2016-03-15T09:09:16Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2016-06-05T20:14:52Z"
+    }
+  ]
+}

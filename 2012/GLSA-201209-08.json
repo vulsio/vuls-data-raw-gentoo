@@ -1,0 +1,102 @@
+{
+  "ID": "201209-08",
+  "Title": "SquidClamav: Denial of service",
+  "Synopsis": "A vulnerability in SquidClamav may result in Denial of Service.",
+  "Product": {
+    "Text": "squidclamav",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-09-24",
+  "Revised": {
+    "Text": "2012-09-24",
+    "Count": "1"
+  },
+  "Bug": [
+    "428778"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-proxy/squidclamav",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "6.8",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "6.8",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>SquidClamav is a HTTP anti-virus for Squid based on ClamAV and ICAP.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>SquidClamav does not properly escape URLs before passing them to the\n      system command call.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could send a specially crafted URL to SquidClamav,\n      possibly resulting in a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All SquidClamav users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-proxy/squidclamav-6.8\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-3501",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3501"
+      },
+      {
+        "Text": "SquidClamav News",
+        "Link": "https://squidclamav.darold.net/news.html"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2012-08-14T16:12:43Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-09-24T23:23:20Z"
+    }
+  ]
+}

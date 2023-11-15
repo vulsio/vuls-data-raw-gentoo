@@ -1,0 +1,103 @@
+{
+  "ID": "200608-06",
+  "Title": "Courier MTA: Denial of Service vulnerability",
+  "Synopsis": "\n    Courier MTA has fixed a DoS issue related to usernames containing a \"=\"\n    character.\n  ",
+  "Product": {
+    "Text": "Courier",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-08-04",
+  "Revised": {
+    "Text": "2006-08-04",
+    "Count": "01"
+  },
+  "Bug": [
+    "135005"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "mail-mta/courier",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.53.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.53.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Courier MTA is an integrated mail and groupware server based on open\n    protocols.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Courier MTA has fixed a security issue relating to usernames containing\n    the \"=\" character, causing high CPU utilization.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could exploit this vulnerability by sending a specially\n    crafted email to a mail gateway running a vulnerable version of Courier\n    MTA.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Courier MTA users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-mta/courier-0.53.2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-2659",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2659"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-08-02T13:22:29Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-08-02T13:22:37Z"
+    },
+    {
+      "Text": "\n    dizzutch\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-08-02T13:39:08Z"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "ID": "200806-08",
+  "Title": "OpenSSL: Denial of service",
+  "Synopsis": "\n    Two vulnerabilities might allow for a Denial of Service of daemons using\n    OpenSSL.\n  ",
+  "Product": {
+    "Text": "openssl",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-06-23",
+  "Revised": {
+    "Text": "2008-06-23",
+    "Count": "01"
+  },
+  "Bug": [
+    "223429"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/openssl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.9.8g-r2",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8f",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.9.8g-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    OpenSSL is an Open Source toolkit implementing the Secure Sockets Layer\n    (SSL v2/v3) and Transport Layer Security (TLS v1) as well as a general\n    purpose cryptography library.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Ossi Herrala and Jukka Taimisto of Codenomicon discovered two\n    vulnerabilities:\n    </p>\n    <ul>\n    <li>\n    A double free() call in the TLS server name extension (CVE-2008-0891).\n    </li>\n    <li>\n    The OpenSSL client code does not properly handle servers that omit the\n    Server Key Exchange message in the TLS handshake (CVE-2008-1672).\n    </li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could connect to a vulnerable server, or entice a\n    daemon to connect to a malicious server, causing a Denial of Service of\n    the daemon in both cases.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All OpenSSL users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/openssl-0.9.8g-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-0891",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0891"
+      },
+      {
+        "Text": "CVE-2008-1672",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1672"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-06-16T22:48:49Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-06-16T23:22:26Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-06-16T23:22:36Z"
+    }
+  ]
+}

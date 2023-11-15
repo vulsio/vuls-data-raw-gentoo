@@ -1,0 +1,131 @@
+{
+  "ID": "200505-12",
+  "Title": "PostgreSQL: Multiple vulnerabilities",
+  "Synopsis": "\n    PostgreSQL is vulnerable to Denial of Service attacks and possibly allows\n    unprivileged users to gain administrator rights.\n  ",
+  "Product": {
+    "Text": "postgresql",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-05-15",
+  "Revised": {
+    "Text": "2007-06-26",
+    "Count": "04"
+  },
+  "Bug": [
+    "91231"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-db/postgresql",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "7.3*",
+            "Range": "eq",
+            "Slot": ""
+          },
+          {
+            "Text": "7.4*",
+            "Range": "eq",
+            "Slot": ""
+          },
+          {
+            "Text": "8.0.1-r3",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "8.0.2-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "7.3.10",
+            "Range": "lt",
+            "Slot": ""
+          },
+          {
+            "Text": "7.4.7-r2",
+            "Range": "lt",
+            "Slot": ""
+          },
+          {
+            "Text": "8.0.2-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    PostgreSQL is a SQL compliant, open source object-relational database\n    management system.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    PostgreSQL gives public EXECUTE access to a number of character\n    conversion routines, but doesn't validate the given arguments\n    (CAN-2005-1409). It has also been reported that the contrib/tsearch2\n    module of PostgreSQL misdeclares the return value of some functions as\n    \"internal\" (CAN-2005-1410).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could call the character conversion routines with specially\n    setup arguments to crash the backend process of PostgreSQL or to\n    potentially gain administrator rights. A malicious user could also call\n    the misdeclared functions of the contrib/tsearch2 module, resulting in\n    a Denial of Service or other, yet uninvestigated, impacts.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All PostgreSQL users should update to the latest available version and\n    follow the guide at \n    ",
+        "URI": {
+          "Text": "http://www.postgresql.o\n    rg/about/news.315",
+          "Link": "http://www.postgresql.org/about/news.315"
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose dev-db/postgresql"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-1409",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=2005-1409"
+      },
+      {
+        "Text": "CAN-2005-1410",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=2005-1410"
+      },
+      {
+        "Text": "PostgreSQL Announcement",
+        "Link": "https://www.postgresql.org/about/news.315"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-05-11T15:07:25Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-05-15T09:19:16Z"
+    }
+  ]
+}

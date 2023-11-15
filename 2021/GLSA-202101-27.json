@@ -1,0 +1,93 @@
+{
+  "ID": "202101-27",
+  "Title": "FreeRADIUS: Root privilege escalation",
+  "Synopsis": "Multiple vulnerabilities were discovered in Gentoo's systemd unit\n    for FreeRADIUS which could lead to root privilege escalation.\n  ",
+  "Product": {
+    "Text": "freeradius",
+    "Type": "ebuild"
+  },
+  "Announced": "2021-01-26",
+  "Revised": {
+    "Text": "2021-01-26",
+    "Count": "1"
+  },
+  "Bug": [
+    "630910"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-dialup/freeradius",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.0.20-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.0.20-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>FreeRADIUS is a modular, high performance free RADIUS suite.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was discovered that Gentoo’s FreeRADIUS systemd unit set\n      permissions on an unsafe directory on start.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A local attacker could escalate privileges.</p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All FreeRADIUS users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-dialup/freeradius-3.0.20-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": null
+  },
+  "Metadata": [
+    {
+      "Text": "sam_c",
+      "Tag": "requester",
+      "Timestamp": "2021-01-25T21:55:08Z"
+    },
+    {
+      "Text": "sam_c",
+      "Tag": "submitter",
+      "Timestamp": "2021-01-26T00:13:46Z"
+    }
+  ]
+}

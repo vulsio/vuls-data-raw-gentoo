@@ -1,0 +1,103 @@
+{
+  "ID": "200408-15",
+  "Title": "Tomcat: Insecure installation",
+  "Synopsis": "\n    Improper file ownership may allow a member of the tomcat group to execute\n    scripts as root.\n  ",
+  "Product": {
+    "Text": "tomcat",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-08-15",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "04"
+  },
+  "Bug": [
+    "59232"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-servers/tomcat",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.0.27-r3",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "4.1.30-r4",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "3.3.2-r2",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.0.27-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Tomcat is the Apache Jakarta Project's official implementation of Java\n    Servlets and Java Server Pages.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The Gentoo ebuild for Tomcat sets the ownership of the Tomcat init\n    scripts as tomcat:tomcat, but those scripts are executed with root\n    privileges when the system is started. This may allow a member of the\n    tomcat group to run arbitrary code with root privileges when the Tomcat\n    init scripts are run.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    This could lead to a local privilege escalation or root compromise by\n    authenticated users.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Users may change the ownership of /etc/init.d/tomcat* and\n    /etc/conf.d/tomcat* to be root:root:\n    </p>\n    <code>\n    # chown -R root:root /etc/init.d/tomcat*\n    # chown -R root:root /etc/conf.d/tomcat*</code>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Tomcat users can upgrade to the latest stable version, or simply\n    apply the workaround:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    # emerge -pv \">=www-servers/tomcat-5.0.27-r3\"\n    # emerge \">=www-servers/tomcat-5.0.27-r3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2004-1452",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1452"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    dmargoli\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-08-08T20:54:24Z"
+    }
+  ]
+}

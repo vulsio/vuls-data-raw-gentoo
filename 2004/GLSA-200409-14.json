@@ -1,0 +1,89 @@
+{
+  "ID": "200409-14",
+  "Title": "Samba: Remote printing non-vulnerability",
+  "Synopsis": "\n    Samba has a bug with out of sequence print change notification requests,\n    but it cannot be used to perform a remote denial of service attack.\n  ",
+  "Product": {
+    "Text": "samba",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-09-09",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "03"
+  },
+  "Bug": [
+    "62476"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": null,
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Samba is a freely available SMB/CIFS implementation which allows\n    seamless interoperability of file and print services to other SMB/CIFS\n    clients.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Due to a bug in the printer_notify_info() function, authorized users\n    could potentially crash their smbd process by sending improperly\n    handled print change notification requests in an invalid order. Windows\n    XP SP2 clients can trigger this behavior by sending a\n    FindNextPrintChangeNotify() request before previously sending a\n    FindFirstPrintChangeNotify() request.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    We incorrectly thought that this bug could be exploited to deny service\n    to all Samba users. It is not the case, this bug has no security impact\n    whatsoever. Many thanks to Jerry Carter from the Samba team for\n    correcting our mistake.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no need for a workaround.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n  ",
+    "P": [
+      {
+        "Text": "\n    Samba users can keep their current versions.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": null
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Samba Release Notes",
+        "Link": "https://samba.org/samba/history/samba-3.0.6.html"
+      },
+      {
+        "Text": "Samba Bug #1520",
+        "Link": "https://bugzilla.samba.org/show_bug.cgi?id=1520"
+      },
+      {
+        "Text": "CVE-2004-0829",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0829"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-09-03T20:09:15Z"
+    },
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-09-04T18:44:38Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-09-09T04:56:22Z"
+    }
+  ]
+}

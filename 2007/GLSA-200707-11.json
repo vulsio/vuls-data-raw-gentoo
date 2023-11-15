@@ -1,0 +1,111 @@
+{
+  "ID": "200707-11",
+  "Title": "MIT Kerberos 5: Arbitrary remote code execution",
+  "Synopsis": "\n    Multiple vulnerabilities in MIT Kerberos 5 could potentially result in\n    remote code execution with root privileges by unauthenticated users.\n  ",
+  "Product": {
+    "Text": "mit-krb5",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-07-25",
+  "Revised": {
+    "Text": "2007-07-25",
+    "Count": "01"
+  },
+  "Bug": [
+    "183338"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-crypt/mit-krb5",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.5.2-r3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.5.2-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    MIT Kerberos 5 is a suite of applications that implement the Kerberos\n    network protocol.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    kadmind is affected by multiple vulnerabilities in the RPC library\n    shipped with MIT Kerberos 5. It fails to properly handle zero-length\n    RPC credentials (CVE-2007-2442) and the RPC library can write past the\n    end of the stack buffer (CVE-2007-2443). Furthermore kadmind fails to\n    do proper bounds checking (CVE-2007-2798).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote unauthenticated attacker could exploit these vulnerabilities\n    to execute arbitrary code with root privileges.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All MIT Kerberos 5 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-crypt/mit-krb5-1.5.2-r3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-2442",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2442"
+      },
+      {
+        "Text": "CVE-2007-2443",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2443"
+      },
+      {
+        "Text": "CVE-2007-2798",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2798"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-07-15T07:39:18Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-07-16T20:11:47Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-07-17T17:56:29Z"
+    }
+  ]
+}

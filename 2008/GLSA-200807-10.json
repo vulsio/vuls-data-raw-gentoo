@@ -1,0 +1,101 @@
+{
+  "ID": "200807-10",
+  "Title": "Bacula: Information disclosure",
+  "Synopsis": "\n    A vulnerability in Bacula may allow local attackers to obtain sensitive\n    information.\n  ",
+  "Product": {
+    "Text": "bacula",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-07-21",
+  "Revised": {
+    "Text": "2008-07-21",
+    "Count": "01"
+  },
+  "Bug": [
+    "196834"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-backup/bacula",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.4.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.4.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Bacula is a network based backup suite.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Matthijs Kooijman reported that the \"make_catalog_backup\" script uses\n    the MySQL password as a command line argument when invoking other\n    programs.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could list the processes on the local machine when the\n    script is running to obtain the MySQL password. Note: The password\n    could also be disclosed via network sniffing attacks when the script\n    fails, in which case it would be sent via cleartext e-mail.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n  ",
+    "P": [
+      {
+        "Text": "\n    A warning about this issue has been added in version 2.4.1, but the\n    issue is still unfixed. We advise not to use the make_catalog_backup\n    script, but to put all MySQL parameters into a dedicated file readable\n    only by the user running Bacula.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": null
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-5626",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5626"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-07-15T10:41:52Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-07-15T11:29:18Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-07-15T11:29:25Z"
+    }
+  ]
+}

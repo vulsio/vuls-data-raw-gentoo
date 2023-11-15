@@ -1,0 +1,113 @@
+{
+  "ID": "200611-25",
+  "Title": "OpenLDAP: Denial of Service vulnerability",
+  "Synopsis": "\n    A flaw in OpenLDAP allows remote unauthenticated attackers to cause a\n    Denial of Service.\n  ",
+  "Product": {
+    "Text": "openldap",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-11-28",
+  "Revised": {
+    "Text": "2006-11-28",
+    "Count": "01"
+  },
+  "Bug": [
+    "154349"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-nds/openldap",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.3.27-r3",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "2.2.28-r5",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "2.1.30-r8",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.3.27-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    OpenLDAP is a suite of LDAP-related applications and development tools.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Evgeny Legerov has discovered that the truncation of an incoming\n    authcid longer than 255 characters and ending with a space as the 255th\n    character will lead to an improperly computed name length. This will\n    trigger an assert in the libldap code.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    By sending a BIND request with a specially crafted authcid parameter to\n    an OpenLDAP service, a remote attacker can cause the service to crash.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All OpenLDAP users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \"net-nds/openldap\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-5779",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5779"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-11-27T13:22:56Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-11-27T16:35:57Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-11-27T16:37:27Z"
+    }
+  ]
+}

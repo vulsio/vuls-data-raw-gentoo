@@ -1,0 +1,102 @@
+{
+  "ID": "200509-01",
+  "Title": "MPlayer: Heap overflow in ad_pcm.c",
+  "Synopsis": "\n    A heap overflow in MPlayer might lead to the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "MPlayer",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-09-01",
+  "Revised": {
+    "Text": "2005-09-01",
+    "Count": "01"
+  },
+  "Bug": [
+    "103555"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-video/mplayer",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0_pre7-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0_pre7-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    MPlayer is a media player capable of handling multiple multimedia\n    file formats.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Sven Tantau discovered a heap overflow in the code handling the\n    strf chunk of PCM audio streams.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could craft a malicious video or audio file which,\n    when opened using MPlayer, would end up executing arbitrary code on the\n    victim's computer with the permissions of the user running MPlayer.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    You can mitigate the issue by adding \"ac=-pcm,\" to your MPlayer\n    configuration file (note that this will prevent you from playing\n    uncompressed audio).\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All MPlayer users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-video/mplayer-1.0_pre7-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-2718",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2718"
+      },
+      {
+        "Text": "Original Advisory",
+        "Link": "http://www.sven-tantau.de/public_files/mplayer/mplayer_20050824.txt"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-08-28T16:55:40Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-09-01T08:08:19Z"
+    }
+  ]
+}

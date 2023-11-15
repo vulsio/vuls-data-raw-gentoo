@@ -1,0 +1,112 @@
+{
+  "ID": "200711-17",
+  "Title": "Ruby on Rails: Multiple vulnerabilities",
+  "Synopsis": "\n    Several vulnerabilities were found in Ruby on Rails allowing for file\n    disclosure and theft of user credentials.\n  ",
+  "Product": {
+    "Text": "rails",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-11-14",
+  "Revised": {
+    "Text": "2007-11-14",
+    "Count": "01"
+  },
+  "Bug": [
+    "195315",
+    "182223"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-ruby/rails",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Ruby on Rails is a free web framework used to develop database-driven\n    web applications.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    candlerb found that ActiveResource, when processing responses using the\n    Hash.from_xml() function, does not properly sanitize filenames\n    (CVE-2007-5380). The session management functionality allowed the\n    \"session_id\" to be set in the URL (CVE-2007-5380). BCC discovered that\n    the to_json() function does not properly sanitize input before\n    returning it to the user (CVE-2007-3227).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    Unauthenticated remote attackers could exploit these vulnerabilities to\n    determine the existence of files or to read the contents of arbitrary\n    XML files; conduct session fixation attacks and gain unauthorized\n    access; and to execute arbitrary HTML and script code in a user's\n    browser session in context of an affected site by enticing a user to\n    browse a specially crafted URL.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Ruby on Rails users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-ruby/rails-1.2.5\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-3227",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3227"
+      },
+      {
+        "Text": "CVE-2007-5379",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5379"
+      },
+      {
+        "Text": "CVE-2007-5380",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5380"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-11-07T08:24:34Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-11-07T20:49:09Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-11-09T19:31:01Z"
+    }
+  ]
+}

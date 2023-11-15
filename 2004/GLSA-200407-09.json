@@ -1,0 +1,101 @@
+{
+  "ID": "200407-09",
+  "Title": "MoinMoin: Group ACL bypass",
+  "Synopsis": "\n    MoinMoin contains a bug allowing a user to bypass group ACLs (Access\n    Control Lists).\n  ",
+  "Product": {
+    "Text": "MoinMoin",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-07-11",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "53126"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/moinmoin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.1",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    MoinMoin is a Python clone of WikiWiki, based on PikiPiki.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    MoinMoin contains a bug in the code handling administrative group ACLs.\n    A user created with the same name as an administrative group gains the\n    privileges of the administrative group.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    If an administrative group called AdminGroup existed an attacker could\n    create a user called AdminGroup and gain the privileges of the group\n    AdminGroup. This could lead to unauthorized users gaining\n    administrative access.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    For every administrative group with special privileges create a user\n    with the same name as the group.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All users should upgrade to the latest available version of MoinMoin,\n    as follows:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv \">=www-apps/moinmoin-1.2.2\"\n    # emerge \">=www-apps/moinmoin-1.2.2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "MoinMoin Announcement",
+        "Link": "https://sourceforge.net/tracker/index.php?func=detail&aid=948103&group_id=8482&atid=108482"
+      },
+      {
+        "Text": "OSVDB Entry",
+        "Link": "http://www.osvdb.org/6704"
+      },
+      {
+        "Text": "CVE-2004-0708",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0708"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

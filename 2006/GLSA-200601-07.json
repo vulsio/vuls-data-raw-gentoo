@@ -1,0 +1,103 @@
+{
+  "ID": "200601-07",
+  "Title": "ClamAV: Remote execution of arbitrary code",
+  "Synopsis": "\n    ClamAV is vulnerable to a buffer overflow which may lead to remote\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "clamav",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-01-13",
+  "Revised": {
+    "Text": "2006-01-13",
+    "Count": "01"
+  },
+  "Bug": [
+    "118459"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-antivirus/clamav",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.88",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.88",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    ClamAV is a GPL virus scanner.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Zero Day Initiative (ZDI) reported a heap buffer overflow\n    vulnerability. The vulnerability is due to an incorrect boundary check\n    of the user-supplied data prior to copying it to an insufficiently\n    sized memory buffer. The flaw occurs when the application attempts to\n    handle compressed UPX files.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    For example by sending a maliciously crafted UPX file into a mail\n    server that is integrated with ClamAV, a remote attacker's supplied\n    code could be executed with escalated privileges.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All ClamAV users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-antivirus/clamav-0.88\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-0162",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0162"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-01-09T23:12:07Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-01-11T01:55:27Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-01-12T21:27:50Z"
+    }
+  ]
+}

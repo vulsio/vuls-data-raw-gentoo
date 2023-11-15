@@ -1,0 +1,103 @@
+{
+  "ID": "200709-03",
+  "Title": "Streamripper: Buffer overflow",
+  "Synopsis": "\n    A buffer overflow vulnerability has been discovered in Streamripper,\n    allowing for user-assisted execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "streamripper",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-09-13",
+  "Revised": {
+    "Text": "2007-09-13",
+    "Count": "01"
+  },
+  "Bug": [
+    "188698"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-sound/streamripper",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.62.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.62.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Streamripper is a tool for extracting and recording mp3 files from a\n    Shoutcast stream.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Chris Rohlf discovered several boundary errors in the\n    httplib_parse_sc_header() function when processing HTTP headers.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to connect to a malicious\n    streaming server, resulting in the execution of arbitrary code with the\n    privileges of the user running Streamripper.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Streamripper users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-sound/streamripper-1.62.2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-4337",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4337"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-08-24T09:30:52Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-08-24T09:31:49Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-09-08T15:35:27Z"
+    }
+  ]
+}

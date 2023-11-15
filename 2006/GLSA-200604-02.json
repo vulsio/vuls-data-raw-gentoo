@@ -1,0 +1,112 @@
+{
+  "ID": "200604-02",
+  "Title": "Horde Application Framework: Remote code execution",
+  "Synopsis": "\n    The help viewer of the Horde Framework allows attackers to execute\n    arbitrary remote code.\n  ",
+  "Product": {
+    "Text": "horde",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-04-04",
+  "Revised": {
+    "Text": "2006-04-04",
+    "Count": "01"
+  },
+  "Bug": [
+    "127889",
+    "126435"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/horde",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.1.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.1.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Horde Application Framework is a general-purpose web\n    application framework written in PHP, providing classes for handling\n    preferences, compression, browser detection, connection tracking, MIME\n    and more.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Jan Schneider of the Horde team discovered a vulnerability in the\n    help viewer of the Horde Application Framework that could allow remote\n    code execution (CVE-2006-1491). Paul Craig reported that\n    \"services/go.php\" fails to validate the passed URL parameter correctly\n    (CVE-2006-1260).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    An attacker could exploit the vulnerability in the help viewer to\n    execute arbitrary code with the privileges of the web server user. By\n    embedding a NULL character in the URL parameter, an attacker could\n    exploit the input validation issue in go.php to read arbitrary files.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There are no known workarounds at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Horde Application Framework users should upgrade to the latest\n    version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/horde-3.1.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-1260",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1260"
+      },
+      {
+        "Text": "CVE-2006-1491",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1491"
+      },
+      {
+        "Text": "Horde Announcement",
+        "Link": "https://lists.horde.org/archives/announce/2006/000271.html"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-03-31T23:07:49Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-04-03T09:02:34Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-04-04T18:34:51Z"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "ID": "202007-30",
+  "Title": "spice: Arbitrary code execution",
+  "Synopsis": "A buffer overread has been discovered in spice possibly allowing\n    remote execution of code.\n  ",
+  "Product": {
+    "Text": "spice",
+    "Type": "ebuild"
+  },
+  "Announced": "2020-07-27",
+  "Revised": {
+    "Text": "2020-07-27",
+    "Count": "1"
+  },
+  "Bug": [
+    "717776"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-emulation/spice",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.14.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.14.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Provides a complete open source solution for remote access to virtual\n      machines in a seamless way so you can play videos, record audio, share\n      USB devices, and share folders without complications.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A flaw in spice’s memory handling code has been discovered, allowing\n      an out of bounds read.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker may be able to send malicious packets causing remote\n      code execution.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All spice users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-emulation/spice-0.14.2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2019-3813",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2019-3813"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "sam_c",
+      "Tag": "requester",
+      "Timestamp": "2020-06-13T16:22:04Z"
+    },
+    {
+      "Text": "sam_c",
+      "Tag": "submitter",
+      "Timestamp": "2020-07-27T00:23:35Z"
+    }
+  ]
+}

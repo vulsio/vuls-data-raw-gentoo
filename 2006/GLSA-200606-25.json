@@ -1,0 +1,107 @@
+{
+  "ID": "200606-25",
+  "Title": "Hashcash: Possible heap overflow",
+  "Synopsis": "\n    A heap overflow vulnerability in the Hashcash utility could allow an\n    attacker to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "hashcash",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-06-26",
+  "Revised": {
+    "Text": "2006-07-29",
+    "Count": "02"
+  },
+  "Bug": [
+    "134960"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/hashcash",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.21",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.21",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Hashcash is a utility for generating Hashcash tokens, a proof-of-work\n    system to reduce the impact of spam.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Andreas Seltenreich has reported a possible heap overflow in the\n    array_push() function in hashcash.c, as a result of an incorrect amount\n    of allocated memory for the \"ARRAY\" structure.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    By sending malicious entries to the Hashcash utility, an attacker may\n    be able to cause an overflow, potentially resulting in the execution of\n    arbitrary code with the privileges of the user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Hashcash users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/hashcash-1.21\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Hashcash ChangeLog",
+        "Link": "http://www.hashcash.org/source/CHANGELOG"
+      },
+      {
+        "Text": "CVE-2006-3251",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3251"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-06-18T12:26:10Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-06-18T12:57:56Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-06-23T18:48:20Z"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "ID": "200801-22",
+  "Title": "PeerCast: Buffer overflow",
+  "Synopsis": "\n    A buffer overflow vulnerability has been discovered in PeerCast.\n  ",
+  "Product": {
+    "Text": "peercast",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-01-30",
+  "Revised": {
+    "Text": "2008-01-30",
+    "Count": "02"
+  },
+  "Bug": [
+    "202747"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-sound/peercast",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.1218",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.1218",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    PeerCast is a client and server for P2P-radio network\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Luigi Auriemma reported a heap-based buffer overflow within the\n    \"handshakeHTTP()\" function when processing HTTP requests.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker could send a specially crafted request to the\n    vulnerable server, possibly resulting in the remote execution of\n    arbitrary code with the privileges of the user running the PeerCast\n    server, usually \"nobody\".\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All PeerCast users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-sound/peercast-0.1218\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-6454",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6454"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-01-11T08:22:19Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-01-29T19:51:49Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-01-29T23:04:06Z"
+    }
+  ]
+}

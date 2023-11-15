@@ -1,0 +1,134 @@
+{
+  "ID": "200909-03",
+  "Title": "Apache Portable Runtime, APR Utility Library: Execution of arbitrary code",
+  "Synopsis": "\n    Multiple integer overflows in the Apache Portable Runtime and its Utility\n    Library might allow for the remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "apr apr-util",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-09-09",
+  "Revised": {
+    "Text": "2009-09-09",
+    "Count": "01"
+  },
+  "Bug": [
+    "280514"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/apr",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.3.8",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.3.8",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "dev-libs/apr-util",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.3.9",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.3.9",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Apache Portable Runtime (aka APR) provides a set of APIs for\n    creating platform-independent applications. The Apache Portable Runtime\n    Utility Library (aka APR-Util) provides an interface to functionality\n    such as XML parsing, string matching and databases connections.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Matt Lewis reported multiple Integer overflows in the apr_rmm_malloc(),\n    apr_rmm_calloc(), and apr_rmm_realloc() functions in misc/apr_rmm.c of\n    APR-Util and in memory/unix/apr_pools.c of APR, both occurring when\n    aligning memory blocks.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to connect to a malicious server\n    with software that uses the APR or act as a malicious client to a\n    server that uses the APR (such as Subversion or Apache servers),\n    possibly resulting in the execution of arbitrary code with the\n    privileges of the user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Apache Portable Runtime users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All APR Utility Library users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/apr-1.3.8\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/apr-util-1.3.9\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-2412",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2412"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-08-06T13:32:21Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-08-06T13:46:29Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-08-24T20:40:13Z"
+    }
+  ]
+}

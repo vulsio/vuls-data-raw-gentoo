@@ -1,0 +1,113 @@
+{
+  "ID": "200807-15",
+  "Title": "Pan: User-assisted execution of arbitrary code",
+  "Synopsis": "\n    A buffer overflow vulnerability in Pan may allow remote attacker to execute\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "pan",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-07-31",
+  "Revised": {
+    "Text": "2008-07-31",
+    "Count": "01"
+  },
+  "Bug": [
+    "224051"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-nntp/pan",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.132-r3",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.14.2.91-r2",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.14.2",
+            "Range": "eq",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.132-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Pan is a newsreader for the GNOME desktop.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Pavel Polischouk reported a boundary error in the PartsBatch class when\n    processing .nzb files.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted .nzb\n    file, possibly resulting in the remote execution of arbitrary code with\n    the privileges of the user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Pan users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-nntp/pan-0.132-r3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-2363",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2363"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-07-01T08:32:55Z"
+    },
+    {
+      "Text": "\n    vorlon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-07-04T13:13:53Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-07-22T11:35:24Z"
+    }
+  ]
+}

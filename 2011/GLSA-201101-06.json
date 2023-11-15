@@ -1,0 +1,103 @@
+{
+  "ID": "201101-06",
+  "Title": "IO::Socket::SSL: Certificate validation error",
+  "Synopsis": "\n    An error in the hostname matching of IO::Socket::SSL might enable remote\n    attackers to conduct man-in-the-middle attacks.\n  ",
+  "Product": {
+    "Text": "IO::Socket::SSL",
+    "Type": "ebuild"
+  },
+  "Announced": "2011-01-16",
+  "Revised": {
+    "Text": "2011-01-16",
+    "Count": "01"
+  },
+  "Bug": [
+    "276360"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-perl/IO-Socket-SSL",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.26",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.26",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    IO::Socket::SSL is a Perl class implementing an object oriented\n    interface to SSL sockets.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The vendor reported that IO::Socket::SSL does not properly handle\n    Common Name (CN) fields.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker might employ a specially crafted certificate to\n    conduct man-in-the-middle attacks on SSL connections made using\n    IO::Socket::SSL.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All IO::Socket::SSL users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-perl/IO-Socket-SSL-1.26\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-3024",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3024"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    craig\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-07-10T18:07:06Z"
+    },
+    {
+      "Text": "\n    craig\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2010-04-11T12:25:53Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2010-09-22T19:52:04Z"
+    }
+  ]
+}

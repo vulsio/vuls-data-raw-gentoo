@@ -1,0 +1,102 @@
+{
+  "ID": "201606-07",
+  "Title": "dhcpcd: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in dhcpcd allowing remote\n    attackers to possibly execute arbitrary code or cause a Denial of Service.\n  ",
+  "Product": {
+    "Text": "",
+    "Type": "ebuild"
+  },
+  "Announced": "2016-06-18",
+  "Revised": {
+    "Text": "2016-06-18",
+    "Count": "2"
+  },
+  "Bug": [
+    "571152"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/dhcpcd",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "6.10.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "6.10.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>A fully featured, yet light weight RFC2131 compliant DHCP client</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A heap overflow can be triggered via malformed DHCP responses in the\n      print_option (via dhcp_envoption1) due to incorrect option length values.\n       These vulnerabilities could also allow remote attackers to trigger an\n      invalid read/crash via malformed DHCP responses.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>Remote attackers could possibly execute arbitrary code with the\n      privileges of the process or cause Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All dhcpcd users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/dhcpcd-6.10.0”\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2016-1503",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-1503"
+      },
+      {
+        "Text": "CVE-2016-1504",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-1504"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "K_F",
+      "Tag": "requester",
+      "Timestamp": "2016-02-08T20:32:46Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2016-06-18T19:11:50Z"
+    }
+  ]
+}

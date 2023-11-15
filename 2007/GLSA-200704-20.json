@@ -1,0 +1,119 @@
+{
+  "ID": "200704-20",
+  "Title": "NAS: Multiple vulnerabilities",
+  "Synopsis": "\n    The Network Audio System is vulnerable to a buffer overflow that could\n    result in the execution of arbitrary code with root privileges.\n  ",
+  "Product": {
+    "Text": "NAS",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-04-23",
+  "Revised": {
+    "Text": "2007-04-23",
+    "Count": "01"
+  },
+  "Bug": [
+    "171428"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/nas",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.8b",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.8b",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    NAS is a network transparent, client/server audio transport system.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Luigi Auriemma has discovered multiple vulnerabilities in NAS, some of\n    which include a buffer overflow in the function accept_att_local(), an\n    integer overflow in the function ProcAuWriteElement(), and a null\n    pointer error in the function ReadRequestFromClient().\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    An attacker having access to the NAS daemon could send an overly long\n    slave name to the server, leading to the execution of arbitrary code\n    with root privileges. A remote attacker could also send a specially\n    crafted packet containing an invalid client ID, which would crash the\n    server and result in a Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All NAS users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/nas-1.8b\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-1543",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1543"
+      },
+      {
+        "Text": "CVE-2007-1544",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1544"
+      },
+      {
+        "Text": "CVE-2007-1545",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1545"
+      },
+      {
+        "Text": "CVE-2007-1546",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1546"
+      },
+      {
+        "Text": "CVE-2007-1547",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1547"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-04-02T13:48:29Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-04-02T15:19:59Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-04-12T14:16:06Z"
+    }
+  ]
+}

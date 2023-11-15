@@ -1,0 +1,107 @@
+{
+  "ID": "200503-36",
+  "Title": "netkit-telnetd: Buffer overflow",
+  "Synopsis": "\n    The netkit-telnetd telnet client is vulnerable to a buffer overflow, which\n    could allow a malicious telnet server operator to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "netkit-telnetd",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-03-31",
+  "Revised": {
+    "Text": "2005-03-31",
+    "Count": "01"
+  },
+  "Bug": [
+    "87211"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/netkit-telnetd",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.17-r6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.17-r6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    netkit-telnetd provides standard Linux telnet client and server.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    A buffer overflow has been identified in the slc_add_reply()\n    function of netkit-telnetd client, where a large number of SLC commands\n    can overflow a fixed size buffer.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    Successful explotation would require a vulnerable user to connect\n    to an attacker-controlled host using telnet, potentially executing\n    arbitrary code with the permissions of the telnet user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All netkit-telnetd users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/netkit-telnetd-0.17-r6\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-0469",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0469"
+      },
+      {
+        "Text": "iDEFENSE Advisory 03-28-05",
+        "Link": "http://www.idefense.com/application/poi/display?id=220&type=vulnerabilities"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-03-30T08:13:45Z"
+    },
+    {
+      "Text": "\n    formula7\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-03-30T13:44:36Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-03-30T19:43:01Z"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "ID": "200902-02",
+  "Title": "OpenSSL: Certificate validation error",
+  "Synopsis": "\n    An error in the OpenSSL certificate chain validation might allow for\n    spoofing attacks.\n  ",
+  "Product": {
+    "Text": "openssl",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-02-12",
+  "Revised": {
+    "Text": "2009-02-12",
+    "Count": "01"
+  },
+  "Bug": [
+    "251346"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/openssl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.9.8j",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.9.8j",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    OpenSSL is an Open Source toolkit implementing the Secure Sockets Layer\n    (SSL v2/v3) and Transport Layer Security (TLS v1) as well as a general\n    purpose cryptography library.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The Google Security Team reported that several functions incorrectly\n    check the result after calling the EVP_VerifyFinal() function, allowing\n    a malformed signature to be treated as a good signature rather than as\n    an error. This issue affects the signature checks on DSA and ECDSA keys\n    used with SSL/TLS.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could exploit this vulnerability and spoof arbitrary\n    names to conduct Man-In-The-Middle attacks and intercept sensitive\n    information.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All OpenSSL users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/openssl-0.9.8j\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-5077",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5077"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-01-13T17:07:15Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-01-13T17:07:33Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-01-13T17:14:56Z"
+    }
+  ]
+}

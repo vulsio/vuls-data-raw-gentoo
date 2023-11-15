@@ -1,0 +1,110 @@
+{
+  "ID": "200612-11",
+  "Title": "AMD64 x86 emulation base libraries: OpenSSL multiple vulnerabilities",
+  "Synopsis": "\n    OpenSSL contains multiple vulnerabilities including the possible execution\n    of remote arbitrary code.\n  ",
+  "Product": {
+    "Text": "emul-linux-x86-baselibs",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-12-11",
+  "Revised": {
+    "Text": "2006-12-11",
+    "Count": "01"
+  },
+  "Bug": [
+    "152640"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-emulation/emul-linux-x86-baselibs",
+        "Auto": "yes",
+        "Arch": "amd64",
+        "Unaffected": [
+          {
+            "Text": "2.5.5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.5.5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    OpenSSL is a toolkit implementing the Secure Sockets Layer, Transport\n    Layer Security protocols and a general-purpose cryptography library.\n    The x86 emulation base libraries for AMD64 contain a vulnerable version\n    of OpenSSL.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Tavis Ormandy and Will Drewry, both of the Google Security Team,\n    discovered that the SSL_get_shared_ciphers() function contains a buffer\n    overflow vulnerability, and that the SSLv2 client code contains a flaw\n    leading to a crash. Additionally, Dr. Stephen N. Henson found that the\n    ASN.1 handler contains two Denial of Service vulnerabilities: while\n    parsing an invalid ASN.1 structure and while handling certain types of\n    public key.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    An attacker could trigger the buffer overflow by sending a malicious\n    suite of ciphers to an application using the vulnerable function, and\n    thus execute arbitrary code with the rights of the user running the\n    application. An attacker could also consume CPU and/or memory by\n    exploiting the Denial of Service vulnerabilities. Finally, a malicious\n    server could crash a SSLv2 client through the SSLv2 vulnerability.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All AMD64 x86 emulation base libraries users should upgrade to the\n    latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-emulation/emul-linux-x86-baselibs-2.5.5\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-2937",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2937"
+      },
+      {
+        "Text": "CVE-2006-2940",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2940"
+      },
+      {
+        "Text": "CVE-2006-3738",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3738"
+      },
+      {
+        "Text": "CVE-2006-4343",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4343"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-10-24T10:04:50Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-12-11T23:29:14Z"
+    }
+  ]
+}

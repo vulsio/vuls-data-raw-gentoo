@@ -1,0 +1,98 @@
+{
+  "ID": "202310-20",
+  "Title": "rxvt-unicode: Arbitrary Code Execution",
+  "Synopsis": "A vulnerability has been discovered in rxvt-unicode where data written to the terminal can lead to code execution.",
+  "Product": {
+    "Text": "rxvt-unicode",
+    "Type": "ebuild"
+  },
+  "Announced": "2023-10-30",
+  "Revised": {
+    "Text": "2023-10-30",
+    "Count": "1"
+  },
+  "Bug": [
+    "884787"
+  ],
+  "Access": "local and remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "x11-terms/rxvt-unicode",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "9.30",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "9.30",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n        <p>rxvt-unicode is a clone of the well known terminal emulator rxvt.</p>\n    "
+  },
+  "Description": {
+    "Text": "\n        <p>A vulnerability has been discovered in rxvt-unicode. Please review the CVE identifiers referenced below for details.</p>\n    "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n        <p>in the Perl background extension, when an attacker can\r\ncontrol the data written to the user&#39;s terminal and certain options are set.\r\n\r\nThe &#34;background&#34; extension is automatically loaded if certain X resources are set such as &#39;transparent&#39; (see the full list at the top of src/perl/background[1]). So it is possible to be using this extension without realising it.</p>\n    "
+  },
+  "Workaround": {
+    "Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+  },
+  "Resolution": {
+    "Text": "\n        \n        \n        \n    ",
+    "P": [
+      {
+        "Text": "All rxvt-unicode users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=x11-terms/rxvt-unicode-9.30\"\n        "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2022-4170",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-4170"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "graaff",
+      "Tag": "requester",
+      "Timestamp": "2023-10-30T10:19:42.802538Z"
+    },
+    {
+      "Text": "graaff",
+      "Tag": "submitter",
+      "Timestamp": "2023-10-30T10:19:42.804901Z"
+    }
+  ]
+}

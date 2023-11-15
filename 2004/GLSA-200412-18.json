@@ -1,0 +1,107 @@
+{
+  "ID": "200412-18",
+  "Title": "abcm2ps: Buffer overflow vulnerability",
+  "Synopsis": "\n    abcm2ps is vulnerable to a buffer overflow that could lead to remote\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "abcm2ps",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-12-19",
+  "Revised": {
+    "Text": "2004-12-19",
+    "Count": "02"
+  },
+  "Bug": [
+    "74702"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-sound/abcm2ps",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.7.21",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.7.21",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    abcm2ps is a utility used to convert ABC music sheet files into\n    PostScript format.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Limin Wang has located a buffer overflow inside the put_words()\n    function in the abcm2ps code.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could convince the victim to download a\n    specially-crafted ABC file. Upon execution, this file would trigger the\n    buffer overflow and lead to the execution of arbitrary code with the\n    permissions of the user running abcm2ps.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All abcm2ps users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-sound/abcm2ps-3.7.21\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "abcm2ps ChangeLog",
+        "Link": "http://moinejf.free.fr/abcm2ps-3.txt"
+      },
+      {
+        "Text": "Secunia Advisory",
+        "Link": "https://secunia.com/advisories/13523/"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-12-19T01:45:11Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-12-19T14:05:57Z"
+    },
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-12-19T16:00:19Z"
+    }
+  ]
+}

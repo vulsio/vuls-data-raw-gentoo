@@ -1,0 +1,146 @@
+{
+  "ID": "200409-15",
+  "Title": "Webmin, Usermin: Multiple vulnerabilities in Usermin",
+  "Synopsis": "\n    A vulnerability in the webmail function of Usermin could be used by an\n    attacker to execute shell code via a specially-crafted e-mail. A bug in the\n    installation script of Webmin and Usermin also allows a local user to\n    execute a symlink attack at installation time.\n  ",
+  "Product": {
+    "Text": "Usermin",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-09-12",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "63167"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-admin/usermin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.090",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.090",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "app-admin/webmin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.160",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.160",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Webmin and Usermin are web-based system administration consoles. Webmin\n    allows an administrator to easily configure servers and other features.\n    Usermin allows users to configure their own accounts, execute commands,\n    and read e-mail. The Usermin functionality, including webmail, is also\n    included in Webmin.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    There is an input validation bug in the webmail feature of Usermin.\n    </p>\n    <p>\n    Additionally, the Webmin and Usermin installation scripts write to\n    /tmp/.webmin without properly checking if it exists first.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    The first vulnerability allows a remote attacker to inject arbitrary\n    shell code in a specially-crafted e-mail. This could lead to remote\n    code execution with the privileges of the user running Webmin or\n    Usermin.\n    </p>\n    <p>\n    The second could allow local users who know Webmin or Usermin is going\n    to be installed to have arbitrary files be overwritten by creating a\n    symlink by the name /tmp/.webmin that points to some target file, e.g.\n    /etc/passwd.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Usermin users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Webmin users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv \">=app-admin/usermin-1.090\"\n    # emerge \">=app-admin/usermin-1.090\"",
+      "\n    # emerge sync\n    \n    # emerge -pv \">=app-admin/webmin-1.160\"\n    # emerge \">=app-admin/webmin-1.160\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Secunia Advisory SA12488",
+        "Link": "https://secunia.com/advisories/12488/"
+      },
+      {
+        "Text": "Usermin Changelog",
+        "Link": "http://www.webmin.com/uchanges.html"
+      },
+      {
+        "Text": "CVE-2004-0559",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0559"
+      },
+      {
+        "Text": "CVE-2004-1468",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1468"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-09-10T12:32:20Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-09-11T10:07:56Z"
+    },
+    {
+      "Text": "\n    dmargoli\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-09-11T16:34:02Z"
+    }
+  ]
+}

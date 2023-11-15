@@ -1,0 +1,137 @@
+{
+  "ID": "200909-18",
+  "Title": "nginx: Remote execution of arbitrary code",
+  "Synopsis": "\n    A buffer underflow vulnerability in the request URI processing of nginx\n    might enable remote attackers to execute arbitrary code or cause a Denial\n    of Service.\n  ",
+  "Product": {
+    "Text": "nginx",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-09-18",
+  "Revised": {
+    "Text": "2009-09-18",
+    "Count": "01"
+  },
+  "Bug": [
+    "285162"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-servers/nginx",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.5.38",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.6.39",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.7.62",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.7.62",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    nginx is a robust, small and high performance HTTP and reverse proxy\n    server.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Chris Ries reported a heap-based buffer underflow in the\n    ngx_http_parse_complex_uri() function in http/ngx_http_parse.c when\n    parsing the request URI.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker might send a specially crafted request URI to a nginx\n    server, possibly resulting in the remote execution of arbitrary code\n    with the privileges of the user running the server, or a Denial of\n    Service. NOTE: By default, nginx runs as the \"nginx\" user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All nginx 0.5.x users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All nginx 0.6.x users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All nginx 0.7.x users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-servers/nginx-0.5.38\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-servers/nginx-0.6.39\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-servers/nginx-0.7.62\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-2629",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2629"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-09-14T19:21:09Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-09-14T19:51:52Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-09-18T19:40:49Z"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "ID": "200605-04",
+  "Title": "phpWebSite: Local file inclusion",
+  "Synopsis": "\n    Remote attackers can include local files which may lead to the execution of\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "phpwebsite",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-05-02",
+  "Revised": {
+    "Text": "2006-05-02",
+    "Count": "01"
+  },
+  "Bug": [
+    "130295"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/phpwebsite",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.10.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.10.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    phpWebSite provides a complete web site content management system.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    rgod has reported that the \"hub_dir\" parameter in \"index.php\"\n    isn't properly verified. When \"magic_quotes_gpc\" is disabled, this can\n    be exploited to include arbitrary files from local ressources.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    If \"magic_quotes_gpc\" is disabled, which is not the default on\n    Gentoo Linux, a remote attacker could exploit this issue to include and\n    execute PHP scripts from local ressources with the rights of the user\n    running the web server, or to disclose sensitive information and\n    potentially compromise a vulnerable system.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All phpWebSite users should upgrade to the latest available\n    version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/phpwebsite-0.10.2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-1819",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1819"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-05-01T10:33:24Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-05-01T10:58:55Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-05-01T11:02:34Z"
+    }
+  ]
+}

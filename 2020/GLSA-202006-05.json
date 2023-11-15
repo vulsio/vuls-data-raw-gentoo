@@ -1,0 +1,102 @@
+{
+  "ID": "202006-05",
+  "Title": "Nokogiri: Command injection",
+  "Synopsis": "Nokogiri has a vulnerability allowing arbitrary execution of code\n    if a certain function is used.\n  ",
+  "Product": {
+    "Text": "Nokogiri",
+    "Type": "ebuild"
+  },
+  "Announced": "2020-06-13",
+  "Revised": {
+    "Text": "2020-06-13",
+    "Count": "1"
+  },
+  "Bug": [
+    "691974"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-ruby/nokogiri",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.10.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.10.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Nokogiri is an HTML, XML, SAX, and Reader parser.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A command injection vulnerability in Nokogiri allows commands to be\n      executed in a subprocess by Ruby’s Kernel.open method. Processes are\n      vulnerable only if the undocumented method\n      Nokogiri::CSS::Tokenizer#load_file is being passed untrusted user input.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could possibly execute arbitrary code with the\n      privileges of the process.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>Avoid calling the undocumented method Nokogiri::CSS::Tokenizer#load_file\n      with untrusted user input.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Nokogiri users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-ruby/nokogiri-1.10.4\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2019-5477",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2019-5477"
+      },
+      {
+        "Text": "Upstream\n      bug\n    ",
+        "Link": "https://github.com/sparklemotion/nokogiri/issues/1915"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "BlueKnight",
+      "Tag": "requester",
+      "Timestamp": "2020-05-22T01:52:12Z"
+    },
+    {
+      "Text": "sam_c",
+      "Tag": "submitter",
+      "Timestamp": "2020-06-13T01:06:32Z"
+    }
+  ]
+}

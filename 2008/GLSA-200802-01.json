@@ -1,0 +1,106 @@
+{
+  "ID": "200802-01",
+  "Title": "SDL_image: Two buffer overflow vulnerabilities",
+  "Synopsis": "\n    Two boundary errors have been identified in SDL_image allowing for the\n    remote execution of arbitrary code or the crash of the application using\n    the library.\n  ",
+  "Product": {
+    "Text": "sdl-image",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-02-06",
+  "Revised": {
+    "Text": "2008-02-06",
+    "Count": "01"
+  },
+  "Bug": [
+    "207933"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/sdl-image",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.6-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.6-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    SDL_image is an image file library that loads images as SDL surfaces,\n    and supports various formats like BMP, GIF, JPEG, LBM, PCX, PNG, PNM,\n    TGA, TIFF, XCF, XPM, and XV.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The LWZReadByte() function in file IMG_gif.c and the IMG_LoadLBM_RW()\n    function in file IMG_lbm.c each contain a boundary error that can be\n    triggered to cause a static buffer overflow and a heap-based buffer\n    overflow. The first boundary error comes from some old vulnerable GD\n    PHP code (CVE-2006-4484).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker can make an application using the SDL_image library\n    to process a specially crafted GIF file or IFF ILBM file that will\n    trigger a buffer overflow, resulting in the execution of arbitrary code\n    with the permissions of the application or the application crash.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All SDL_image users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/sdl-image-1.2.6-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "SA28640",
+        "Link": "https://secunia.com/advisories/28640/"
+      },
+      {
+        "Text": "CVE-2007-6697",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6697"
+      },
+      {
+        "Text": "CVE-2008-0544",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0544"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-01-29T09:35:04Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-01-29T09:36:22Z"
+    }
+  ]
+}

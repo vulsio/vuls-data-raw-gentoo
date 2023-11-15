@@ -1,0 +1,102 @@
+{
+  "ID": "200908-02",
+  "Title": "BIND: Denial of service",
+  "Synopsis": "\n    Dynamic Update packets can cause a Denial of Service in the BIND daemon.\n  ",
+  "Product": {
+    "Text": "bind",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-08-01",
+  "Revised": {
+    "Text": "2009-08-01",
+    "Count": "01"
+  },
+  "Bug": [
+    "279508"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-dns/bind",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "9.4.3_p3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "9.4.3_p3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    ISC BIND is the Internet Systems Consortium implementation of the\n    Domain Name System (DNS) protocol.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Matthias Urlichs reported that the dns_db_findrdataset() function fails\n    when the prerequisite section of the dynamic update message contains a\n    record of type \"ANY\" and where at least one RRset for this FQDN exists\n    on the server.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote unauthenticated attacker could send a specially crafted\n    dynamic update message to the BIND daemon (named), leading to a Denial\n    of Service (daemon crash). This vulnerability affects all primary\n    (master) servers -- it is not limited to those that are configured to\n    allow dynamic updates.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Configure a firewall that performs Deep Packet Inspection to prevent\n    nsupdate messages from reaching named. Alternatively, expose only\n    secondary (slave) servers to untrusted networks.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All BIND users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dns/bind-9.4.3_p3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-0696",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0696"
+      },
+      {
+        "Text": "ISC advisory",
+        "Link": "https://www.isc.org/node/474"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-07-28T21:43:47Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-08-01T20:00:21Z"
+    }
+  ]
+}

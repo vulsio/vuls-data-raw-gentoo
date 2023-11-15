@@ -1,0 +1,103 @@
+{
+  "ID": "200507-16",
+  "Title": "dhcpcd: Denial of Service vulnerability",
+  "Synopsis": "\n    A vulnerability in dhcpcd may cause the dhcpcd daemon to crash.\n  ",
+  "Product": {
+    "Text": "dhcpcd",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-07-15",
+  "Revised": {
+    "Text": "2005-07-15",
+    "Count": "01"
+  },
+  "Bug": [
+    "98394"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/dhcpcd",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.3.22_p4-r11",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.3.22_p4-r11",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    dhcpcd is a standards compliant DHCP client daemon. It requests an\n    IP address and other information from the DHCP server, automatically\n    configures the network interface, and tries to renew the lease time.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    infamous42md discovered that dhcpcd can be tricked to read past\n    the end of the supplied DHCP buffer. As a result, this might lead to a\n    crash of the daemon.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    With a malicious DHCP server an attacker could cause a Denial of\n    Service by crashing the DHCP client.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All dhcpcd users should upgrade to the latest available version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/dhcpcd-1.3.22_p4-r11\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-1848",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1848"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-07-11T14:38:55Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-07-11T17:42:40Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-07-12T08:00:32Z"
+    }
+  ]
+}

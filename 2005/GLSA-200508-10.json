@@ -1,0 +1,111 @@
+{
+  "ID": "200508-10",
+  "Title": "Kismet: Multiple vulnerabilities",
+  "Synopsis": "\n    Kismet is vulnerable to multiple issues potentially resulting in the\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "Kismet",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-08-19",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "102702"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-wireless/kismet",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2005.08.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2005.08.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Kismet is an 802.11 Layer 2 wireless network detector, sniffer, and\n    intrusion detection system.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Kismet is vulnerable to a heap overflow when handling pcap captures and\n    to an integer underflow in the CDP protocol dissector.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    With a specially crafted packet an attacker could cause Kismet to\n    execute arbitrary code with the rights of the user running the program.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Kismet users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-wireless/kismet-2005.08.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Kismet Release Notes",
+        "Link": "https://www.kismetwireless.net/blog/?entry=/kismet/entry-1124158146.txt"
+      },
+      {
+        "Text": "CVE-2005-2626",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2626"
+      },
+      {
+        "Text": "CVE-2005-2627",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2627"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-08-17T05:08:47Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-08-18T05:16:35Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-08-18T07:53:07Z"
+    }
+  ]
+}

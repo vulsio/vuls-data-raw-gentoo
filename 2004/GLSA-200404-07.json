@@ -1,0 +1,93 @@
+{
+  "ID": "200404-07",
+  "Title": "ClamAV RAR Archive Remote Denial Of Service Vulnerability",
+  "Synopsis": "\n    ClamAV is vulnerable to a denial of service attack when processing certain\n    RAR archives.\n  ",
+  "Product": {
+    "Text": "clamav",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-04-07",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "45357"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-antivirus/clamav",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.68.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.68",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    From <uri link=\"http://www.clamav.net/\">http://www.clamav.net/</uri> :\n    </p>\n    <p>\n    \"Clam AntiVirus is a GPL anti-virus toolkit for UNIX. The main purpose\n    of this software is the integration with mail servers (attachment\n    scanning). The package provides a flexible and scalable multi-threaded\n    daemon, a command line scanner, and a tool for automatic updating via\n    Internet. The programs are based on a shared library distributed with\n    the Clam AntiVirus package, which you can use with your own software.\n    Most importantly, the virus database is kept up to date.\"\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Certain types of RAR archives, including those created by variants of\n    the W32.Beagle.A@mm worm, may cause clamav to crash when it attempts to\n    process them.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    This vulnerability causes a Denial of Service in the clamav process.\n    Depending on\tconfiguration, this may cause dependent services such as\n    mail to fail as well.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    A workaround is not currently known for this issue. All users are\n    advised to upgrade to the latest version of the affected package.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    ClamAV users should upgrade to version 0.68.1 or later:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv \">=app-antivirus/clamav-0.68.1\"\n    # emerge \">=app-antivirus/clamav-0.68.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2004-1909",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1909"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    klieber\n  ",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

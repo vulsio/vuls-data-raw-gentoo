@@ -1,0 +1,111 @@
+{
+  "ID": "200411-35",
+  "Title": "phpWebSite: HTTP response splitting vulnerability",
+  "Synopsis": "\n    phpWebSite is vulnerable to possible HTTP response splitting attacks.\n  ",
+  "Product": {
+    "Text": "phpwebsite",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-11-26",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "03"
+  },
+  "Bug": [
+    "71502"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/phpwebsite",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.9.3_p4-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.9.3_p4-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    phpWebSite is a web site content management system.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Due to lack of proper input validation, phpWebSite has been found to be\n    vulnerable to HTTP response splitting attacks.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    A malicious user could inject arbitrary response data, leading to\n    content spoofing, web cache poisoning and other cross-site scripting or\n    HTTP response splitting attacks. This could result in compromising the\n    victim's data or browser.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All phpWebSite users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/phpwebsite-0.9.3_p4-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "BugTraq Posting",
+        "Link": "http://www.securityfocus.com/archive/1/380894"
+      },
+      {
+        "Text": "phpWebSite Announcement",
+        "Link": "http://phpwebsite.appstate.edu/index.php?module=announce&ANN_user_op=view&ANN_id=863"
+      },
+      {
+        "Text": "CVE-2004-1516",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1516"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-11-24T19:21:49Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-11-25T09:49:35Z"
+    },
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-11-26T09:12:53Z"
+    }
+  ]
+}

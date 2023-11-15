@@ -1,0 +1,103 @@
+{
+  "ID": "200506-07",
+  "Title": "Ettercap: Format string vulnerability",
+  "Synopsis": "\n    A format string vulnerability in Ettercap could allow a remote attacker to\n    execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "ettercap",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-06-11",
+  "Revised": {
+    "Text": "2005-06-11",
+    "Count": "01"
+  },
+  "Bug": [
+    "94474"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-analyzer/ettercap",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.7.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.7.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Ettercap is a suite of tools for content filtering, sniffing and\n    man in the middle attacks on a LAN.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The curses_msg function of Ettercap's Ncurses-based user interface\n    insecurely implements formatted printing.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker could craft a malicious network flow that would\n    result in executing arbitrary code with the rights of the user running\n    the Ettercap tool, which is often root.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Ettercap users should upgrade to the latest available version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/ettercap-0.7.3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-1796",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1796"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-06-08T08:05:23Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-06-08T16:01:35Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-06-11T08:22:41Z"
+    }
+  ]
+}

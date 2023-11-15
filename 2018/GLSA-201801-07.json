@@ -1,0 +1,142 @@
+{
+  "ID": "201801-07",
+  "Title": "GNU Emacs: Command injection",
+  "Synopsis": "A vulnerability has been found in Emacs which may allow for\n    arbitrary command execution.\n  ",
+  "Product": {
+    "Text": "Emacs",
+    "Type": "ebuild"
+  },
+  "Announced": "2018-01-07",
+  "Revised": {
+    "Text": "2018-01-08",
+    "Count": "2"
+  },
+  "Bug": [
+    "630680"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-editors/emacs",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "23.4-r16",
+            "Range": "ge",
+            "Slot": "23"
+          },
+          {
+            "Text": "24.5-r4",
+            "Range": "ge",
+            "Slot": "24"
+          },
+          {
+            "Text": "25.2-r1",
+            "Range": "ge",
+            "Slot": "25"
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "23.4-r16",
+            "Range": "lt",
+            "Slot": "23"
+          },
+          {
+            "Text": "24.5-r4",
+            "Range": "lt",
+            "Slot": "24"
+          },
+          {
+            "Text": "25.2-r1",
+            "Range": "lt",
+            "Slot": "25"
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>GNU Emacs is a highly extensible and customizable text editor.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A command injection flaw within the Emacs “enriched mode” handling\n      has been discovered.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker, by enticing a user to open a specially crafted file,\n      could execute arbitrary commands with the privileges of process.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All GNU Emacs 23.x users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All GNU Emacs 24.x users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All GNU Emacs 25.x users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-editors/emacs-23.4-r16:23\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-editors/emacs-24.5-r4:24\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-editors/emacs-25.2-r1:25\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2017-14482\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-14482"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "jmbailey",
+      "Tag": "requester",
+      "Timestamp": "2018-01-05T05:59:49Z"
+    },
+    {
+      "Text": "jmbailey",
+      "Tag": "submitter",
+      "Timestamp": "2018-01-08T13:17:01Z"
+    }
+  ]
+}

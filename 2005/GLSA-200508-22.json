@@ -1,0 +1,107 @@
+{
+  "ID": "200508-22",
+  "Title": "pam_ldap: Authentication bypass vulnerability",
+  "Synopsis": "\n    pam_ldap contains a vulnerability that may allow a remote attacker to gain\n    system access.\n  ",
+  "Product": {
+    "Text": "pam_ldap",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-08-31",
+  "Revised": {
+    "Text": "2005-08-31",
+    "Count": "01"
+  },
+  "Bug": [
+    "103659"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-auth/pam_ldap",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "180",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "180",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    pam_ldap is a Pluggable Authentication Module which allows\n    authentication against LDAP directories.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    When a pam_ldap client attempts to authenticate against an LDAP\n    server that omits the optional error value from the\n    PasswordPolicyResponseValue, the authentication attempt will always\n    succeed.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker may exploit this vulnerability to bypass the\n    LDAP authentication mechanism, gaining access to the system possibly\n    with elevated privileges.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All pam_ldap users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-auth/pam_ldap-180\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-2641",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2641"
+      },
+      {
+        "Text": "US-CERT VU#778916",
+        "Link": "https://www.kb.cert.org/vuls/id/778916"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-08-29T14:50:51Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-08-29T14:51:34Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-08-29T20:08:30Z"
+    }
+  ]
+}

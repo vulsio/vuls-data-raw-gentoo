@@ -1,0 +1,129 @@
+{
+  "ID": "201706-07",
+  "Title": "Libtirpc and RPCBind: Denial of Service ",
+  "Synopsis": "A vulnerability has been found in Libtirpc and RPCBind which may\n    allow a remote attacker to cause a Denial of Service condition.\n  ",
+  "Product": {
+    "Text": "RPCBind,Libtirpc",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-06-06",
+  "Revised": {
+    "Text": "2017-06-06",
+    "Count": "2"
+  },
+  "Bug": [
+    "617472"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-nds/rpcbind",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.2.4-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.2.4-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "net-libs/libtirpc",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.1-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.1-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>The RPCBind utility is a server that converts RPC program numbers into\n      universal addresses.\n    </p>\n    \n    <p>Libtirpc is a port of Suns Transport-Independent RPC library to Linux.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was found that due to the way RPCBind uses libtirpc (libntirpc), a\n      memory leak can occur when parsing specially crafted XDR messages.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could send thousands of messages to RPCBind, possibly\n      resulting in a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All RPCBind users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All Libtirpc users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-nds/rpcbind-0.2.4-r1\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-libs/libtirpc-1.0.1-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2017-8779",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-8779"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "BlueKnight",
+      "Tag": "requester",
+      "Timestamp": "2017-05-21T07:26:12Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2017-06-06T11:58:19Z"
+    }
+  ]
+}

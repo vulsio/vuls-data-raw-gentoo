@@ -1,0 +1,103 @@
+{
+  "ID": "200904-04",
+  "Title": "WeeChat: Denial of service",
+  "Synopsis": "\n    A processing error in WeeChat might lead to a Denial of Service.\n  ",
+  "Product": {
+    "Text": "weechat",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-04-04",
+  "Revised": {
+    "Text": "2009-04-04",
+    "Count": "01"
+  },
+  "Bug": [
+    "262997"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-irc/weechat",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.2.6.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.2.6.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Wee Enhanced Environment for Chat (WeeChat) is a light and extensible\n    console IRC client.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Sebastien Helleu reported an array out-of-bounds error in the colored\n    message handling.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could send a specially crafted PRIVMSG command,\n    possibly leading to a Denial of Service (application crash).\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All WeeChat users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-irc/weechat-0.2.6.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-0661",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0661"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-04-04T15:10:01Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-04-04T15:21:46Z"
+    },
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-04-04T17:18:54Z"
+    }
+  ]
+}

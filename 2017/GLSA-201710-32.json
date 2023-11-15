@@ -1,0 +1,128 @@
+{
+  "ID": "201710-32",
+  "Title": "Apache: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in Apache, the worst of\n    which may result in the loss of secrets.\n  ",
+  "Product": {
+    "Text": "Apache",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-10-29",
+  "Revised": {
+    "Text": "2017-10-29",
+    "Count": "1"
+  },
+  "Bug": [
+    "622240",
+    "624868",
+    "631308"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-servers/apache",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.4.27-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.4.27-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>The Apache HTTP server is one of the most popular web servers on the\n      Internet.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in Apache. Please review\n      the referenced CVE identifiers for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>The Optionsbleed vulnerability can leak arbitrary memory from the server\n      process that may contain secrets.  Additionally attackers may cause a\n      Denial of Service condition, bypass authentication, or cause information\n      loss.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Apache users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=www-servers/apache-2.4.27-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2017-3167\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-3167"
+      },
+      {
+        "Text": "\n      CVE-2017-3169\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-3169"
+      },
+      {
+        "Text": "\n      CVE-2017-7659\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-7659"
+      },
+      {
+        "Text": "\n      CVE-2017-7668\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-7668"
+      },
+      {
+        "Text": "\n      CVE-2017-7679\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-7679"
+      },
+      {
+        "Text": "\n      CVE-2017-9788\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-9788"
+      },
+      {
+        "Text": "\n      CVE-2017-9789\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-9789"
+      },
+      {
+        "Text": "\n      CVE-2017-9798\n    ",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-9798"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "jmbailey",
+      "Tag": "requester",
+      "Timestamp": "2017-10-23T01:26:58Z"
+    },
+    {
+      "Text": "jmbailey",
+      "Tag": "submitter",
+      "Timestamp": "2017-10-29T23:04:17Z"
+    }
+  ]
+}

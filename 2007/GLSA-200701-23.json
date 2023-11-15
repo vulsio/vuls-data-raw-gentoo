@@ -1,0 +1,103 @@
+{
+  "ID": "200701-23",
+  "Title": "Cacti: Command execution and SQL injection",
+  "Synopsis": "\n    Cacti has three vulnerabilities that could allow shell command execution or\n    SQL injection.\n  ",
+  "Product": {
+    "Text": "cacti",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-01-26",
+  "Revised": {
+    "Text": "2007-01-26",
+    "Count": "01"
+  },
+  "Bug": [
+    "159278"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-analyzer/cacti",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.8.6i-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.8.6i-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Cacti is a web-based network graphing and reporting tool.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    rgod discovered that the Cacti cmd.php and copy_cacti_user.php scripts\n    do not properly control access to the command shell, and are remotely\n    accessible by unauthenticated users. This allows SQL injection via\n    cmd.php and copy_cacti_user.php URLs. Further, the results from the\n    injected SQL query are not properly sanitized before being passed to a\n    command shell. The vulnerabilities require that the\n    \"register_argc_argv\" option is enabled, which is the Gentoo default.\n    Also, a number of similar problems in other scripts were reported.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    These vulnerabilties can result in the execution of arbitrary shell\n    commands or information disclosure via crafted SQL queries.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Cacti users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/cacti-0.8.6i-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-6799",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6799"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-01-12T22:58:24Z"
+    },
+    {
+      "Text": "\n    aetius\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-01-16T02:39:11Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-01-17T22:17:59Z"
+    }
+  ]
+}

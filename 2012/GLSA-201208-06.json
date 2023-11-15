@@ -1,0 +1,98 @@
+{
+  "ID": "201208-06",
+  "Title": "libgdata: Man-in-the-Middle attack",
+  "Synopsis": "A vulnerability in libgdata could allow remote attackers to perform\n    man-in-the-middle attacks.\n  ",
+  "Product": {
+    "Text": "libgdata",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-08-14",
+  "Revised": {
+    "Text": "2012-08-14",
+    "Count": "1"
+  },
+  "Bug": [
+    "408245"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/libgdata",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.8.1-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.8.1-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>libgdata is a GLib-based library for accessing online service APIs using\n      the GData protocol.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>An error in the \"_gdata_service_build_session()\" function of\n      gdata-service.c prevents libgdata from properly validating certificates.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could perform man-in-the-middle attacks to spoof\n      arbitrary SSL servers via a crafted certificate.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All libgdata users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/libgdata-0.8.1-r2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-1177",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1177"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2012-04-17T00:40:07Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-08-14T20:31:17Z"
+    }
+  ]
+}

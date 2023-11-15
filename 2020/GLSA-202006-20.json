@@ -1,0 +1,93 @@
+{
+  "ID": "202006-20",
+  "Title": "Asterisk: Root privilege escalation",
+  "Synopsis": "A vulnerability was discovered in Asterisk which may allow local\n    attackers to gain root privileges. \n  ",
+  "Product": {
+    "Text": "asterisk",
+    "Type": "ebuild"
+  },
+  "Announced": "2020-06-15",
+  "Revised": {
+    "Text": "2020-06-15",
+    "Count": "1"
+  },
+  "Bug": [
+    "602722"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/asterisk",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "13.32.0-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "13.32.0-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>A Modular Open Source PBX System.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was discovered that Gentoo’s Asterisk ebuild does not properly set\n      permissions on its data directories. This only affects OpenRC systems, as\n      the flaw was exploitable via the init script.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A local attacker could escalate privileges.</p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>Users should ensure the proper permissions are set as discussed in the\n      referenced bugs. Do not run /etc/init.d/asterisk checkperms.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Asterisk users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/asterisk-13.32.0-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": null
+  },
+  "Metadata": [
+    {
+      "Text": "sam_c",
+      "Tag": "requester",
+      "Timestamp": "2020-05-15T11:13:35Z"
+    },
+    {
+      "Text": "sam_c",
+      "Tag": "submitter",
+      "Timestamp": "2020-06-15T15:53:36Z"
+    }
+  ]
+}

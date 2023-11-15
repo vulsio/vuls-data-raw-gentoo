@@ -1,0 +1,143 @@
+{
+  "ID": "200410-21",
+  "Title": "Apache 2, mod_ssl: Bypass of SSLCipherSuite directive",
+  "Synopsis": "\n    In certain configurations, it can be possible to bypass restrictions set by\n    the \"SSLCipherSuite\" directive of mod_ssl.\n  ",
+  "Product": {
+    "Text": "apache",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-10-21",
+  "Revised": {
+    "Text": "2007-12-30",
+    "Count": "02"
+  },
+  "Bug": [
+    "66807"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-servers/apache",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.52",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "2.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.52",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "net-www/mod_ssl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.8.20",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.8.20",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Apache HTTP server is one of the most popular web servers on the\n    internet. mod_ssl provides SSL v2/v3 and TLS v1 support for Apache 1.3 and\n    is also included in Apache 2.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    A flaw has been found in mod_ssl where the \"SSLCipherSuite\" directive could\n    be bypassed in certain configurations if it is used in a directory or\n    location context to restrict the set of allowed cipher suites.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    A remote attacker could gain access to a location using any cipher suite\n    allowed by the server/virtual host configuration, disregarding the\n    restrictions by \"SSLCipherSuite\" for that location.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Apache 2 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All mod_ssl users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n\n    # emerge -pv \">=www-servers/apache-2.0.52\"\n    # emerge \">=www-servers/apache-2.0.52\"",
+      "\n    # emerge sync\n\n    # emerge -pv \">=net-www/mod_ssl-2.8.20\"\n    # emerge \">=net-www/mod_ssl-2.8.20\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-0885",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0885"
+      },
+      {
+        "Text": "Apache HTTPD Bug 31505",
+        "Link": "https://issues.apache.org/bugzilla/show_bug.cgi?id=31505"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-10-08T21:14:18Z"
+    },
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-10-13T20:52:28Z"
+    },
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-10-21T04:34:44Z"
+    }
+  ]
+}

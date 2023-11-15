@@ -1,0 +1,127 @@
+{
+  "ID": "201312-12",
+  "Title": "MIT Kerberos 5: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been discovered in MIT Kerberos 5,\n    allowing execution of arbitrary code or Denial of Service.\n  ",
+  "Product": {
+    "Text": "mit-krb5",
+    "Type": "ebuild"
+  },
+  "Announced": "2013-12-16",
+  "Revised": {
+    "Text": "2013-12-16",
+    "Count": "1"
+  },
+  "Bug": [
+    "429324",
+    "466268",
+    "469752",
+    "490668",
+    "494062",
+    "494064"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-crypt/mit-krb5",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.11.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.11.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>MIT Kerberos 5 is a suite of applications that implement the Kerberos\n      network protocol.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in the Key Distribution\n      Center in MIT Kerberos 5. Please review the CVE identifiers referenced\n      below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could send a specially crafted request, possibly\n      resulting in execution of arbitrary code with the privileges of the\n      process or a Denial of Service condition. Additionally, a remote attacker\n      could impersonate a kadmind server and send a specially crafted packet to\n      the password change port, which can result in a ping-pong condition and a\n      Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All MIT Kerberos 5 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-crypt/mit-krb5-1.11.4\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2002-2443",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2002-2443"
+      },
+      {
+        "Text": "CVE-2012-1014",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1014"
+      },
+      {
+        "Text": "CVE-2012-1015",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1015"
+      },
+      {
+        "Text": "CVE-2013-1416",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1416"
+      },
+      {
+        "Text": "CVE-2013-1417",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1417"
+      },
+      {
+        "Text": "CVE-2013-1418",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1418"
+      },
+      {
+        "Text": "CVE-2013-6800",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-6800"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2012-09-22T15:10:58Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2013-12-16T17:33:09Z"
+    }
+  ]
+}

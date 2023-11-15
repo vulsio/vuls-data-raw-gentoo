@@ -1,0 +1,107 @@
+{
+  "ID": "200708-10",
+  "Title": "MySQL: Denial of Service and information leakage",
+  "Synopsis": "\n    A Denial of Service vulnerability and a table structure information leakage\n    vulnerability were found in MySQL.\n  ",
+  "Product": {
+    "Text": "mysql",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-08-16",
+  "Revised": {
+    "Text": "2007-08-16",
+    "Count": "01"
+  },
+  "Bug": [
+    "185333"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-db/mysql",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.0.44",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.0.44",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    MySQL is a popular multi-threaded, multi-user SQL server.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Dormando reported a vulnerability within the handling of password\n    packets in the connection protocol (CVE-2007-3780). Andrei Elkin also\n    found that the \"CREATE TABLE LIKE\" command didn't require SELECT\n    privileges on the source table (CVE-2007-3781).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote unauthenticated attacker could use the first vulnerability to\n    make the server crash. The second vulnerability can be used by\n    authenticated users to obtain information on tables they are not\n    normally able to access.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All MySQL users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-db/mysql-5.0.44\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-3780",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3780"
+      },
+      {
+        "Text": "CVE-2007-3781",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3781"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-07-29T22:18:26Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-08-12T20:12:02Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-08-12T20:13:00Z"
+    }
+  ]
+}

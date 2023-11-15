@@ -1,0 +1,103 @@
+{
+  "ID": "200909-12",
+  "Title": "HTMLDOC: User-assisted execution of arbitrary code",
+  "Synopsis": "\n    Multiple insecure calls to the sscanf() function in HTMLDOC might result in\n    the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "htmldoc",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-09-12",
+  "Revised": {
+    "Text": "2009-09-12",
+    "Count": "01"
+  },
+  "Bug": [
+    "278186"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-text/htmldoc",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.8.27-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.8.27-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    HTMLDOC is a HTML indexer and HTML to PS and PDF converter.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    ANTHRAX666 reported an insecure call to the sscanf() function in the\n    set_page_size() function in htmldoc/util.cxx. Nico Golde of the Debian\n    Security Team found two more insecure calls in the write_type1()\n    function in htmldoc/ps-pdf.cxx and the htmlLoadFontWidths() function in\n    htmldoc/htmllib.cxx.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to process a specially crafted\n    HTML file using htmldoc, possibly resulting in the execution of\n    arbitrary code with the privileges of the user running the application.\n    NOTE: Additional vectors via specially crafted AFM font metric files do\n    not cross trust boundaries, as the files can only be modified by\n    privileged users.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All HTMLDOC users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/htmldoc-1.8.27-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-3050",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3050"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-08-26T18:35:26Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-08-26T18:45:17Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-09-06T09:53:24Z"
+    }
+  ]
+}

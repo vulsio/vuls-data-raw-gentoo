@@ -1,0 +1,102 @@
+{
+  "ID": "202003-14",
+  "Title": "atftp: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in atftp, the worst of\n    which could result in the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "atftp",
+    "Type": "ebuild"
+  },
+  "Announced": "2020-03-14",
+  "Revised": {
+    "Text": "2020-03-14",
+    "Count": "1"
+  },
+  "Bug": [
+    "711630"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-ftp/atftp",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.7.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.7.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>atftp is a client/server implementation of the TFTP protocol that\n      implements RFCs 1350, 2090, 2347, 2348, and 2349.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in atftp. Please review\n      the CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A remote attacker could send a specially crafted packet to an atftp\n      instance, possibly resulting in the execution of arbitrary code with the\n      privileges of the process or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All atftp users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-ftp/atftp-0.7.2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2019-11365",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2019-11365"
+      },
+      {
+        "Text": "CVE-2019-11366",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2019-11366"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2020-03-08T00:17:16Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2020-03-14T16:48:02Z"
+    }
+  ]
+}

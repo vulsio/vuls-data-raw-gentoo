@@ -1,0 +1,118 @@
+{
+  "ID": "200601-13",
+  "Title": "Gallery: Cross-site scripting vulnerability",
+  "Synopsis": "\n    Gallery is possibly vulnerable to a cross-site scripting attack that could\n    allow arbitrary JavaScript code execution.\n  ",
+  "Product": {
+    "Text": "gallery",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-01-26",
+  "Revised": {
+    "Text": "2006-01-26",
+    "Count": "01"
+  },
+  "Bug": [
+    "119590"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/gallery",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.5.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.5.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Gallery is a web application written in PHP which is used to\n    organize and publish photo albums. It allows multiple users to build\n    and maintain their own albums. It also supports the mirroring of images\n    on other servers.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Peter Schumacher discovered that Gallery fails to sanitize the\n    fullname set by users, possibly leading to a cross-site scripting\n    vulnerability.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    By setting a specially crafted fullname, an attacker can inject\n    and execute script code in the victim's browser window and potentially\n    compromise the user's gallery.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Gallery users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    Note: Users with the vhosts USE flag set should manually use\n    webapp-config to finalize the update.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/gallery-1.5.2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Gallery Announcement",
+        "Link": "http://gallery.menalto.com/page/gallery_1_5_2_release"
+      },
+      {
+        "Text": "CVE-2006-0330",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0330"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-01-22T19:16:38Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-01-22T19:17:06Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-01-22T19:28:37Z"
+    }
+  ]
+}

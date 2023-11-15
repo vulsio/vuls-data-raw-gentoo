@@ -1,0 +1,101 @@
+{
+  "ID": "200406-08",
+  "Title": "Squirrelmail: Another XSS vulnerability",
+  "Synopsis": "\n    Squirrelmail fails to properly sanitize user input, which could lead to a\n    compromise of webmail accounts.\n  ",
+  "Product": {
+    "Text": "Squirrelmail",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-06-15",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "52434"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "mail-client/squirrelmail",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.3_rc1-r1",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    SquirrelMail is a webmail package written in PHP. It supports IMAP and\n    SMTP, and can optionally be installed with SQL support.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    A new cross-site scripting (XSS) vulnerability in\n    Squirrelmail-1.4.3_rc1 has been discovered. In functions/mime.php\n    Squirrelmail fails to properly sanitize user input.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    By enticing a user to read a specially crafted e-mail, an attacker can\n    execute arbitrary scripts running in the context of the victim's\n    browser. This could lead to a compromise of the user's webmail account,\n    cookie theft, etc.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All SquirrelMail users should upgrade to the latest stable version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv \">=mail-client/squirrelmail-1.4.3\"\n    # emerge \">=mail-client/squirrelmail-1.4.3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "RS-Labs Advisory",
+        "Link": "http://www.rs-labs.com/adv/RS-Labs-Advisory-2004-1.txt"
+      },
+      {
+        "Text": "CERT description of XSS",
+        "Link": "https://www.cert.org/advisories/CA-2000-02.html"
+      },
+      {
+        "Text": "CVE-2004-0520",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0520"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "ID": "201709-24",
+  "Title": "RAR, UnRAR: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in RAR and UnRAR, the\n    worst of which may allow attackers to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "rar,unrar",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-09-25",
+  "Revised": {
+    "Text": "2017-09-25",
+    "Count": "1"
+  },
+  "Bug": [
+    "622342",
+    "628182",
+    "628184"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-arch/rar",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.5.0_p20170811",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.5.0_p20170811",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "app-arch/unrar",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.5.7",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.5.7",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>RAR and UnRAR provide command line interfaces for compressing and\n      decompressing RAR files.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in RAR and UnRAR. Please\n      review the referenced CVE identifiers for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker, by enticing a user to open a specially crafted RAR,\n      could possibly execute arbitrary code with the privileges of the process\n      or cause a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All RAR users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All UnRAR users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-arch/rar-5.5.0_p20170811\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-arch/unrar-5.5.7\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-6706",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-6706"
+      },
+      {
+        "Text": "\n      CVE-2017-12940\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-12940"
+      },
+      {
+        "Text": "\n      CVE-2017-12941\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-12941"
+      },
+      {
+        "Text": "\n      CVE-2017-12942\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-12942"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "BlueKnight",
+      "Tag": "requester",
+      "Timestamp": "2017-09-03T22:15:08Z"
+    },
+    {
+      "Text": "chrisadr",
+      "Tag": "submitter",
+      "Timestamp": "2017-09-25T21:49:49Z"
+    }
+  ]
+}

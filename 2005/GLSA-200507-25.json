@@ -1,0 +1,107 @@
+{
+  "ID": "200507-25",
+  "Title": "Clam AntiVirus: Integer overflows",
+  "Synopsis": "\n    Clam AntiVirus is vulnerable to integer overflows when handling several\n    file formats, potentially resulting in the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "clamav",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-07-26",
+  "Revised": {
+    "Text": "2005-08-11",
+    "Count": "02"
+  },
+  "Bug": [
+    "100178"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-antivirus/clamav",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.86.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.86.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Clam AntiVirus is a GPL anti-virus toolkit, designed for integration\n    with mail servers to perform attachment scanning. Clam AntiVirus also\n    provides a command line scanner and a tool for fetching updates of the\n    virus database.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Neel Mehta and Alex Wheeler discovered that Clam AntiVirus is\n    vulnerable to integer overflows when handling the TNEF, CHM and FSG\n    file formats.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    By sending a specially-crafted file an attacker could execute arbitrary\n    code with the permissions of the user running Clam AntiVirus.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Clam AntiVirus users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-antivirus/clamav-0.86.2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-2450",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2450"
+      },
+      {
+        "Text": "Clam AntiVirus: Release Notes",
+        "Link": "https://sourceforge.net/project/shownotes.php?release_id=344514"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-07-25T17:48:24Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-07-25T19:44:22Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-07-26T20:33:43Z"
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "ID": "200902-06",
+  "Title": "GNU Emacs, XEmacs: Multiple vulnerabilities",
+  "Synopsis": "\n    Two vulnerabilities were found in GNU Emacs, possibly leading to\n    user-assisted execution of arbitrary code. One also affects edit-utils in\n    XEmacs.\n  ",
+  "Product": {
+    "Text": "emacs edit-utils",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-02-23",
+  "Revised": {
+    "Text": "2009-02-23",
+    "Count": "01"
+  },
+  "Bug": [
+    "221197",
+    "236498"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-editors/emacs",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "22.2-r3",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "21.4-r17",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "19",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "22.2-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "app-xemacs/edit-utils",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.39",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.39",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    GNU Emacs and XEmacs are highly extensible and customizable text\n    editors. edit-utils are miscellaneous extensions to XEmacs.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Morten Welinder reports about GNU Emacs and edit-utils in XEmacs: By\n    shipping a .flc accompanying a source file (.c for example) and setting\n    font-lock-support-mode to fast-lock-mode in the source file through\n    local variables, any Lisp code in the .flc file is executed without\n    warning (CVE-2008-2142).\n    </p>\n    <p>\n    Romain Francoise reported a security risk in a feature of GNU Emacs\n    related to interacting with Python. The vulnerability arises because\n    Python, by default, prepends the current directory to the module search\n    path, allowing for arbitrary code execution when launched from a\n    specially crafted directory (CVE-2008-3949).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    Remote attackers could entice a user to open a specially crafted file\n    in GNU Emacs, possibly leading to the execution of arbitrary Emacs Lisp\n    code or arbitrary Python code with the privileges of the user running\n    GNU Emacs or XEmacs.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All GNU Emacs users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All edit-utils users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-editors/emacs-22.2-r3\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-xemacs/edit-utils-2.39\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-2142",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2142"
+      },
+      {
+        "Text": "CVE-2008-3949",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3949"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-07-06T22:12:00Z"
+    },
+    {
+      "Text": "\n    vorlon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-07-12T19:44:28Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-02-09T22:47:35Z"
+    }
+  ]
+}

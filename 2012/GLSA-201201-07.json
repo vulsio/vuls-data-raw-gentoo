@@ -1,0 +1,140 @@
+{
+  "ID": "201201-07",
+  "Title": "NX Server Free Edition, NX Node: Privilege escalation",
+  "Synopsis": "An unspecified vulnerability in NX Server Free Edition and NX Node\n    could allow local attackers to gain root privileges.\n  ",
+  "Product": {
+    "Text": "NX Server NX Node",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-01-23",
+  "Revised": {
+    "Text": "2012-01-23",
+    "Count": "1"
+  },
+  "Bug": [
+    "378345"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/nxserver-freeedition",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.5.0.5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.5.0.5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "net-misc/nxnode",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.5.0.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.5.0.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>NX Server Free Edition is a remote display technology by No Machine. NX\n      Node provides the shared components for NX Server.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>NX Server Free Edition and NX Node use nxconfigure.sh, a setuid script\n      containing an unspecified vulnerability. \n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A local attacker could gain escalated privileges.</p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All NX Server Free Edition users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All NX Node users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "NOTE: This is a legacy GLSA. Updates for all affected architectures are\n      available since August 23, 2011. It is likely that your system is already\n      no longer affected by this issue.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=net-misc/nxserver-freeedition-3.5.0.5\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/nxnode-3.5.0.4\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2011-3977\n    ",
+        "Link": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-3977"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    underling\n  ",
+      "Tag": "requester",
+      "Timestamp": "2011-10-07T23:38:19Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-01-23T11:55:50Z"
+    }
+  ]
+}

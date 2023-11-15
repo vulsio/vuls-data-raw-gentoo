@@ -1,0 +1,124 @@
+{
+  "ID": "200803-13",
+  "Title": "VLC: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities were found in VLC, allowing for the execution of\n    arbitrary code and Denial of Service.\n  ",
+  "Product": {
+    "Text": "vlc",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-03-07",
+  "Revised": {
+    "Text": "2008-03-07",
+    "Count": "01"
+  },
+  "Bug": [
+    "203345",
+    "211575",
+    "205299"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-video/vlc",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.8.6e",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.8.6e",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    VLC is a cross-platform media player and streaming server.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Multiple vulnerabilities were found in VLC:\n    </p>\n    <ul>\n    <li>Michal Luczaj\n    and Luigi Auriemma reported that VLC contains boundary errors when\n    handling subtitles in the ParseMicroDvd(), ParseSSA(), and\n    ParseVplayer() functions in the modules/demux/subtitle.c file, allowing\n    for a stack-based buffer overflow (CVE-2007-6681).</li>\n    <li>The web\n    interface listening on port 8080/tcp contains a format string error in\n    the httpd_FileCallBack() function in the network/httpd.c file\n    (CVE-2007-6682).</li>\n    <li>The browser plugin possibly contains an\n    argument injection vulnerability (CVE-2007-6683).</li>\n    <li>The RSTP\n    module triggers a NULL pointer dereference when processing a request\n    without a \"Transport\" parameter (CVE-2007-6684).</li>\n    <li>Luigi\n    Auriemma and Remi Denis-Courmont found a boundary error in the\n    modules/access/rtsp/real_sdpplin.c file when processing SDP data for\n    RTSP sessions (CVE-2008-0295) and a vulnerability in the\n    libaccess_realrtsp plugin (CVE-2008-0296), possibly resulting in a\n    heap-based buffer overflow.</li>\n    <li>Felipe Manzano and Anibal Sacco\n    (Core Security Technologies) discovered an arbitrary memory overwrite\n    vulnerability in VLC's MPEG-4 file format parser (CVE-2008-0984).</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker could send a long subtitle in a file that a user is\n    enticed to open, a specially crafted MP4 input file, long SDP data, or\n    a specially crafted HTTP request with a \"Connection\" header value\n    containing format specifiers, possibly resulting in the remote\n    execution of arbitrary code. Also, a Denial of Service could be caused\n    and arbitrary files could be overwritten via the \"demuxdump-file\"\n    option in a filename in a playlist or via an EXTVLCOPT statement in an\n    MP3 file.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All VLC users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-video/vlc-0.8.6e\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-6681",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6681"
+      },
+      {
+        "Text": "CVE-2007-6682",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6682"
+      },
+      {
+        "Text": "CVE-2007-6683",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6683"
+      },
+      {
+        "Text": "CVE-2007-6684",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6684"
+      },
+      {
+        "Text": "CVE-2008-0295",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0295"
+      },
+      {
+        "Text": "CVE-2008-0296",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0296"
+      },
+      {
+        "Text": "CVE-2008-0984",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0984"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-03-05T21:55:08Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-03-07T18:42:04Z"
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "ID": "202208-33",
+  "Title": "Gnome Shell, gettext, libcroco: Multiple Vulnerabilities",
+  "Synopsis": "A vulnerability has been found in libcroco which could result in denial of service.",
+  "Product": {
+    "Text": "gettext,gnome-shell,libcroco",
+    "Type": "ebuild"
+  },
+  "Announced": "2022-08-21",
+  "Revised": {
+    "Text": "2022-08-21",
+    "Count": "1"
+  },
+  "Bug": [
+    "722752",
+    "755848",
+    "769998"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/libcroco",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.6.13",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.6.13",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "gnome-base/gnome-shell",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.36.7",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.36.7",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "sys-devel/gettext",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.21",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.21",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n        <p>GNOME Shell provides core user interface functions for the GNOME desktop, like switching to windows and launching applications.\r\n\r\ngettext contains the GNU locale utilities.\r\n\r\nlibcroco is a standalone CSS2 parsing and manipulation library.</p>\n    "
+  },
+  "Description": {
+    "Text": "\n        <p>The cr_parser_parse_any_core function in libcroco&#39;s cr-parser.c does not limit recursion, leading to a denial of service via a stack overflow when trying to parse crafted CSS.\r\n\r\nGnome Shell and gettext bundle libcroco in their own sources and thus are potentially vulnerable as well.</p>\n    "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n        <p>An attacker with control over the input to the library can cause a denial of service.</p>\n    "
+  },
+  "Workaround": {
+    "Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+  },
+  "Resolution": {
+    "Text": "\n        \n        \n        \n        \n        \n        \n        \n        \n        \n        \n        \n    ",
+    "P": [
+      {
+        "Text": "All gettext users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All Gnome Shell users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All libcroco users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=sys-devel/gettext-0.21\"\n        ",
+      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=gnome-base/gnome-shell-3.36.7\"\n        ",
+      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=dev-libs/libcroco-0.6.13\"\n        "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2020-12825",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-12825"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ajak",
+      "Tag": "requester",
+      "Timestamp": "2022-08-21T01:34:48.802416Z"
+    },
+    {
+      "Text": "ajak",
+      "Tag": "submitter",
+      "Timestamp": "2022-08-21T01:34:48.808281Z"
+    }
+  ]
+}

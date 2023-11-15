@@ -1,0 +1,108 @@
+{
+  "ID": "200809-06",
+  "Title": "VLC: Multiple vulnerabilities",
+  "Synopsis": "\n    Two vulnerabilities in VLC may lead to the remote execution of arbitrary\n    code.\n  ",
+  "Product": {
+    "Text": "vlc",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-09-07",
+  "Revised": {
+    "Text": "2008-09-07",
+    "Count": "01"
+  },
+  "Bug": [
+    "235238",
+    "235589"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-video/vlc",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.8.6i-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.8.6i-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    VLC is a cross-platform media player and streaming server.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    g_ reported the following vulnerabilities:\n    </p>\n    <ul><li>An integer\n    overflow leading to a heap-based buffer overflow in the Open() function\n    in modules/demux/tta.c (CVE-2008-3732).</li>\n    <li>A signedness error\n    leading to a stack-based buffer overflow in the mms_ReceiveCommand()\n    function in modules/access/mms/mmstu.c (CVE-2008-3794).</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted file,\n    possibly resulting in the remote execution of arbitrary code with the\n    privileges of the user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All VLC users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-video/vlc-0.8.6i-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-3732",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3732"
+      },
+      {
+        "Text": "CVE-2008-3794",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3794"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-08-25T18:33:15Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-08-25T18:33:23Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-08-28T20:55:29Z"
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "ID": "200405-11",
+  "Title": "KDE URI Handler Vulnerabilities",
+  "Synopsis": "\n    Vulnerabilities in KDE URI handlers makes your system vulnerable to various\n    attacks.\n  ",
+  "Product": {
+    "Text": "kdelibs",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-05-19",
+  "Revised": {
+    "Text": "2004-05-19",
+    "Count": "01"
+  },
+  "Bug": [
+    "51276"
+  ],
+  "Access": "remote ",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "kde-base/kdelibs",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.2.2-r1",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "3.1.5-r1",
+            "Range": "eq",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.2.2",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The K Desktop Environment (KDE) is a powerful Free Software graphical\n    desktop environment. KDE makes use of URI handlers to trigger various\n    programs when specific URLs are received.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The telnet, rlogin, ssh and mailto URI handlers in KDE do not check for '-'\n    at the beginning of the hostname passed. By crafting a malicious URI and\n    entice an user to click on it, it is possible to pass an option to the\n    programs started by the handlers (typically telnet, kmail...).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    If the attacker controls the options passed to the URI handling programs,\n    it becomes possible for example to overwrite arbitrary files (possibly\n    leading to denial of service), to open kmail on an attacker-controlled\n    remote display or with an alternate configuration file (possibly leading to\n    control of the user account).\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time. All users are advised to upgrade\n    to a corrected version of kdelibs.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    Users of KDE 3.1 should upgrade to the corrected version of kdelibs:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    Users of KDE 3.2 should upgrade to the latest available version of kdelibs:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n\n    # emerge -pv \"=kde-base/kdelibs-3.1.5-r1\"\n    # emerge \"=kde-base/kdelibs-3.1.5-r1\"",
+      "\n    # emerge sync\n\n    # emerge -pv \">=kde-base/kdelibs-3.2.2-r1\"\n    # emerge \">=kde-base/kdelibs-3.2.2-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-0411",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0411"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

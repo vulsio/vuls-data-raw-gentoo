@@ -1,0 +1,111 @@
+{
+  "ID": "200409-31",
+  "Title": "jabberd 1.x: Denial of Service vulnerability",
+  "Synopsis": "\n    The jabberd server was found to be vulnerable to a remote Denial of Service\n    attack.\n  ",
+  "Product": {
+    "Text": "jabberd",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-09-23",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "64741"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-im/jabberd",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.3-r4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.3-r3",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Jabber is a set of streaming XML protocols enabling message, presence,\n    and other structured information exchange between two hosts. jabberd is\n    the original implementation of the Jabber protocol server.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Jose Antonio Calvo found a defect in routines handling XML parsing of\n    incoming data. jabberd 1.x may crash upon reception of invalid data on\n    any socket connection on which XML is parsed.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker may send a specific sequence of bytes to an open\n    socket to crash the jabberd server, resulting in a Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All jabberd users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv \">=net-im/jabberd-1.4.3-r4\"\n    # emerge \">=net-im/jabberd-1.4.3-r4\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Vulnerability disclosure",
+        "Link": "https://www.jabber.org/pipermail/jabberd/2004-September/002004.html"
+      },
+      {
+        "Text": "Jabber announcement",
+        "Link": "https://www.jabber.org/pipermail/jadmin/2004-September/018046.html"
+      },
+      {
+        "Text": "CVE-2004-1378",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1378"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-09-21T11:27:04Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-09-21T15:51:07Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-09-22T17:38:09Z"
+    }
+  ]
+}

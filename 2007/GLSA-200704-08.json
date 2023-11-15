@@ -1,0 +1,103 @@
+{
+  "ID": "200704-08",
+  "Title": "DokuWiki: Cross-site scripting vulnerability",
+  "Synopsis": "\n    DokuWiki is vulnerable to a cross-site scripting attack.\n  ",
+  "Product": {
+    "Text": "dokuwiki",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-04-12",
+  "Revised": {
+    "Text": "2007-04-12",
+    "Count": "01"
+  },
+  "Bug": [
+    "163781"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/dokuwiki",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "20061106",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "20061106",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    DokuWiki is a simple to use wiki aimed at creating documentation.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    DokuWiki does not sanitize user input to the GET variable 'media' in\n    the fetch.php file.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    An attacker could entice a user to click a specially crafted link and\n    inject CRLF characters into the variable. This would allow the creation\n    of new lines or fields in the returned HTTP Response header, which\n    would permit the attacker to execute arbitrary scripts in the context\n    of the user's browser.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Replace the following line in lib/exe/fetch.php:\n    </p>\n    <code>$MEDIA = getID('media',false); // no cleaning - maybe external</code>\n    <p>\n    with\n    </p>\n    <code>$MEDIA = preg_replace('/[\\x00-\\x1F]+/s','',getID('media',false));</code>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All DokuWiki users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/dokuwiki-20061106\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-6965",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6965"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-04-02T22:16:33Z"
+    },
+    {
+      "Text": "\n    aetius\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-04-03T13:45:23Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-04-03T22:29:45Z"
+    }
+  ]
+}

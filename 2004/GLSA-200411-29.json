@@ -1,0 +1,107 @@
+{
+  "ID": "200411-29",
+  "Title": "unarj: Long filenames buffer overflow and a path traversal vulnerability",
+  "Synopsis": "\n    unarj contains a buffer overflow and a directory traversal vulnerability.\n    This could lead to overwriting of arbitrary files or the execution of\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "unarj",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-11-19",
+  "Revised": {
+    "Text": "2004-11-19",
+    "Count": "01"
+  },
+  "Bug": [
+    "70966"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-arch/unarj",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.63a-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.63a-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    unarj is an ARJ archive decompressor.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    unarj has a bounds checking vulnerability within the handling of\n    long filenames in archives. It also fails to properly sanitize paths\n    when extracting an archive (if the \"x\" option is used to preserve\n    paths).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could trigger a buffer overflow or a path traversal by\n    enticing a user to open an archive containing specially-crafted path\n    names, potentially resulting in the overwrite of files or execution of\n    arbitrary code with the permissions of the user running unarj.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All unarj users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-arch/unarj-2.63a-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-0947",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0947"
+      },
+      {
+        "Text": "CAN-2004-1027",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1027"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-11-18T16:42:36Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-11-18T16:42:55Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-11-19T09:32:28Z"
+    }
+  ]
+}

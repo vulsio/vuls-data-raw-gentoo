@@ -1,0 +1,112 @@
+{
+  "ID": "200509-14",
+  "Title": "Zebedee: Denial of Service vulnerability",
+  "Synopsis": "\n    A bug in Zebedee allows a remote attacker to perform a Denial of Service\n    attack.\n  ",
+  "Product": {
+    "Text": "zebedee",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-09-20",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "105115"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/zebedee",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.4.1-r1",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "2.5.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.5.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Zebedee is an application that establishes an encrypted, compressed\n    tunnel for TCP/IP or UDP data transfer between two systems.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    \"Shiraishi.M\" reported that Zebedee crashes when \"0\" is received as the\n    port number in the protocol option header.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    By performing malformed requests a remote attacker could cause Zebedee\n    to crash.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Zebedee users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose net-misc/zebedee"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "BugTraq ID 14796",
+        "Link": "http://www.securityfocus.com/bid/14796"
+      },
+      {
+        "Text": "CVE-2005-2904",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2904"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-09-14T10:16:59Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-09-16T08:11:57Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-09-17T12:52:52Z"
+    }
+  ]
+}

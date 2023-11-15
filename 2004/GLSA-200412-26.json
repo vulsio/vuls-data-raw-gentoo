@@ -1,0 +1,103 @@
+{
+  "ID": "200412-26",
+  "Title": "ViewCVS: Information leak and XSS vulnerabilities",
+  "Synopsis": "\n    ViewCVS is vulnerable to an information leak and to cross-site scripting\n    (XSS) issues.\n  ",
+  "Product": {
+    "Text": "ViewCVS",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-12-28",
+  "Revised": {
+    "Text": "2004-12-28",
+    "Count": "01"
+  },
+  "Bug": [
+    "72461",
+    "73772"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/viewcvs",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.9.2_p20041207-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.9.2_p20041207",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    ViewCVS is a browser interface for viewing CVS and Subversion\n    version control repositories through a web browser.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The tar export functions in ViewCVS bypass the 'hide_cvsroot' and\n    'forbidden' settings and therefore expose information that should be\n    kept secret (CAN-2004-0915). Furthermore, some error messages in\n    ViewCVS do not filter user-provided information, making it vulnerable\n    to a cross-site scripting attack (CAN-2004-1062).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    By using the tar export functions, a remote attacker could access\n    information that is configured as restricted. Through the use of a\n    malicious request, an attacker could also inject and execute malicious\n    script code, potentially compromising another user's browser.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All ViewCVS users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/viewcvs-0.9.2_p20041207-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-0915",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0915"
+      },
+      {
+        "Text": "CAN-2004-1062",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1062"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-12-21T15:31:38Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-12-28T14:23:36Z"
+    }
+  ]
+}

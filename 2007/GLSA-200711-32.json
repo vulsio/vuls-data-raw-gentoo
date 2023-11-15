@@ -1,0 +1,103 @@
+{
+  "ID": "200711-32",
+  "Title": "Feynmf: Insecure temporary file creation",
+  "Synopsis": "\n    A vulnerability has been discovered in Feynmf allowing local users to\n    overwrite arbitrary files via a symlink attack.\n  ",
+  "Product": {
+    "Text": "feynmf",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-11-20",
+  "Revised": {
+    "Text": "2007-11-20",
+    "Count": "01"
+  },
+  "Bug": [
+    "198231"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-tex/feynmf",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.08-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.08-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Feynmf is a combined LaTeX and Metafont package for easy drawing of\n    professional quality Feynman (and maybe other) diagrams.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Kevin B. McCarty discovered that the feynmf.pl script creates a\n    temporary \"properly list\" file at the location \"$TMPDIR/feynmf$PID.pl\",\n    where $PID is the process ID.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could create symbolic links in the directory where the\n    temporary files are written, pointing to a valid file somewhere on the\n    filesystem that is writable by the user running Feynmf. When Feynmf\n    writes the temporary file, the target valid file would then be\n    overwritten with the contents of the Feynmf temporary file.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Feynmf users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-tex/feynmf-1.08-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-5940",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5940"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-11-19T21:43:28Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-11-19T21:44:51Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-11-20T00:07:40Z"
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "ID": "201206-20",
+  "Title": "gdk-pixbuf: Denial of service",
+  "Synopsis": "Multiple vulnerabilities in gdk-pixbuf may create a Denial of\n    Service condition.\n  ",
+  "Product": {
+    "Text": "gdk-pixbuf",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-06-23",
+  "Revised": {
+    "Text": "2012-06-23",
+    "Count": "1"
+  },
+  "Bug": [
+    "373999",
+    "412033"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "x11-libs/gdk-pixbuf",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.24.1-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.24.1-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>gdk-pixbuf is an image loading library for GTK+.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Two vulnerabilities have been found in gdk-pixbuf:</p>\n    \n    <ul>\n      <li>The \"gdk_pixbuf__gif_image_load()\" function in io-gif.c fails to\n        properly handle certain return values from subroutines (CVE-2011-2485).\n      </li>\n      <li>The \"read_bitmap_file_data()\" function in io-xbm.c contains an\n        integer overflow error (CVE-2012-2370).\n      </li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted image\n      in an application linked against gdk-pixbuf, possibly resulting in Denial\n      of Service. \n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All gdk-pixbuf users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "Packages which depend on this library may need to be recompiled. Tools\n      such as revdep-rebuild may assist in identifying some of these packages.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=x11-libs/gdk-pixbuf-2.24.1-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2011-2485",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2485"
+      },
+      {
+        "Text": "CVE-2012-2370",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-2370"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    underling\n  ",
+      "Tag": "requester",
+      "Timestamp": "2011-10-07T23:37:08Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-06-23T20:11:46Z"
+    }
+  ]
+}

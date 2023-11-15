@@ -1,0 +1,103 @@
+{
+  "ID": "200807-09",
+  "Title": "Mercurial: Directory traversal",
+  "Synopsis": "\n    A directory traversal vulnerability in Mercurial allows for the renaming of\n    arbitrary files.\n  ",
+  "Product": {
+    "Text": "mercurial",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-07-15",
+  "Revised": {
+    "Text": "2008-07-15",
+    "Count": "01"
+  },
+  "Bug": [
+    "230193"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-util/mercurial",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.1-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.1-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Mercurial is a distributed Source Control Management system.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Jakub Wilk discovered a directory traversal vulnerabilty in the\n    applydiff() function in the mercurial/patch.py file.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to import a specially crafted\n    patch, possibly resulting in the renaming of arbitrary files, even\n    outside the repository.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Mercurial users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-util/mercurial-1.0.1-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-2942",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2942"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-07-15T10:37:24Z"
+    },
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-07-15T11:41:04Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-07-15T11:48:10Z"
+    }
+  ]
+}

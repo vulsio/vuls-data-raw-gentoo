@@ -1,0 +1,103 @@
+{
+  "ID": "200905-08",
+  "Title": "NTP: Remote execution of arbitrary code",
+  "Synopsis": "\n    Multiple errors in the NTP client and server programs might allow for the\n    remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "ntp",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-05-26",
+  "Revised": {
+    "Text": "2009-05-26",
+    "Count": "01"
+  },
+  "Bug": [
+    "263033",
+    "268962"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/ntp",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.2.4_p7",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.2.4_p7",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    NTP contains the client and daemon implementations for the Network Time\n    Protocol.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Multiple vulnerabilities have been found in the programs included in\n    the NTP package:\n    </p>\n    <ul>\n    <li>Apple Product Security reported a\n    boundary error in the cookedprint() function in ntpq/ntpq.c, possibly\n    leading to a stack-based buffer overflow (CVE-2009-0159).</li>\n    <li>Chris Ries of CMU reported a boundary error within the\n    crypto_recv() function in ntpd/ntp_crypto.c, possibly leading to a\n    stack-based buffer overflow (CVE-2009-1252).</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker might send a specially crafted package to a machine\n    running ntpd, possibly resulting in the remote execution of arbitrary\n    code with the privileges of the user running the daemon, or a Denial of\n    Service. NOTE: Successful exploitation requires the \"autokey\" feature\n    to be enabled. This feature is only available if NTP was built with the\n    'ssl' USE flag.\n    </p>\n    <p>\n    Furthermore, a remote attacker could entice a user into connecting to a\n    malicious server using ntpq, possibly resulting in the remote execution\n    of arbitrary code with the privileges of the user running the\n    application, or a Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    You can protect against CVE-2009-1252 by disabling the 'ssl' USE flag\n    and recompiling NTP.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All NTP users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/ntp-4.2.4_p7\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-0159",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0159"
+      },
+      {
+        "Text": "CVE-2009-1252",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1252"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-05-25T17:26:27Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-05-25T17:27:05Z"
+    }
+  ]
+}

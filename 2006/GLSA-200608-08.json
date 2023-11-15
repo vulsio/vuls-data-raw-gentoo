@@ -1,0 +1,103 @@
+{
+  "ID": "200608-08",
+  "Title": "GnuPG: Integer overflow vulnerability",
+  "Synopsis": "\n    GnuPG is vulnerable to an integer overflow that could lead to the execution\n    of arbitrary code.\n  ",
+  "Product": {
+    "Text": "gnupg",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-08-05",
+  "Revised": {
+    "Text": "2006-08-08",
+    "Count": "02"
+  },
+  "Bug": [
+    "142248"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-crypt/gnupg",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The GNU Privacy Guard, GnuPG, is a free replacement for the PGP suite\n    of cryptographic software.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Evgeny Legerov discovered a vulnerability in GnuPG that when certain\n    packets are handled an integer overflow may occur.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    By sending a specially crafted email to a user running an affected\n    version of GnuPG, a remote attacker could possibly execute arbitrary\n    code with the permissions of the user running GnuPG.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All GnuPG users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \"=app-crypt/gnupg-1.4*\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-3746",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3746"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-08-02T13:24:55Z"
+    },
+    {
+      "Text": "\n    dizzutch\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-08-02T13:48:08Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-08-05T11:09:20Z"
+    }
+  ]
+}

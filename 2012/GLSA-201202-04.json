@@ -1,0 +1,102 @@
+{
+  "ID": "201202-04",
+  "Title": "PowerDNS: Denial of service",
+  "Synopsis": "A vulnerability in PowerDNS could allow a remote attacker to create\n    a Denial of Service condition.\n  ",
+  "Product": {
+    "Text": "pdns",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-02-22",
+  "Revised": {
+    "Text": "2012-02-22",
+    "Count": "1"
+  },
+  "Bug": [
+    "398403"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-dns/pdns",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.0.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.0.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>The PowerDNS nameserver is an authoritative-only nameserver which uses a\n      flexible backend architecture.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A vulnerability has been found in PowerDNS which could cause a packet\n      loop of DNS responses. \n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could send specially crafted DNS response packets,\n      possibly resulting in a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>PowerDNS users can set \"cache-ttl=0\" in /etc/powerdns/pdns.conf and then\n      restart the PowerDNS daemon:\n    </p>\n    \n    <code>\n      # /etc/init.d/pdns restart\n    </code>\n    \n    <p>Please review the PowerDNS Security Advisory below for more workaround\n      details.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All PowerDNS users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-dns/pdns-3.0.1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-0206",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0206"
+      },
+      {
+        "Text": "PowerDNS\n      Security Advisory 2012-01\n    ",
+        "Link": "https://doc.powerdns.com/powerdns-advisory-2012-01.html"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2012-01-27T14:47:52Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-02-22T19:50:34Z"
+    }
+  ]
+}

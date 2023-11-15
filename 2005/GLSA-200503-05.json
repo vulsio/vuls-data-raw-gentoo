@@ -1,0 +1,142 @@
+{
+  "ID": "200503-05",
+  "Title": "xli, xloadimage: Multiple vulnerabilities",
+  "Synopsis": "\n    xli and xloadimage are vulnerable to multiple issues, potentially leading\n    to the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "xli",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-03-02",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "79762"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-gfx/xloadimage",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.1-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.1-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "media-gfx/xli",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.17.0-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.17.0-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    xli and xloadimage are X11 utilities for displaying and manipulating a\n    wide range of image formats.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Tavis Ormandy of the Gentoo Linux Security Audit Team has reported that\n    xli and xloadimage contain a flaw in the handling of compressed images,\n    where shell meta-characters are not adequately escaped. Rob Holland of\n    the Gentoo Linux Security Audit Team has reported that an xloadimage\n    vulnerability in the handling of Faces Project images discovered by\n    zen-parse in 2001 remained unpatched in xli. Additionally, it has been\n    reported that insufficient validation of image properties in xli could\n    potentially result in buffer management errors.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    Successful exploitation would permit a remote attacker to execute\n    arbitrary shell commands, or arbitrary code with the privileges of the\n    xloadimage or xli user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All xli users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All xloadimage users should also upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/xli-1.17.0-r1\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/xloadimage-4.1-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2001-0775",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2001-0775"
+      },
+      {
+        "Text": "CVE-2005-0638",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0638"
+      },
+      {
+        "Text": "CVE-2005-0639",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0639"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-02-28T21:34:13Z"
+    },
+    {
+      "Text": "\n    taviso\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-02-28T22:05:32Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-03-02T16:53:18Z"
+    }
+  ]
+}

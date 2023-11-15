@@ -1,0 +1,106 @@
+{
+  "ID": "202005-11",
+  "Title": "VLC: Buffer overflow",
+  "Synopsis": "A buffer overflow in VLC might allow local or remote attacker(s) to\n    execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "vlc",
+    "Type": "ebuild"
+  },
+  "Announced": "2020-05-14",
+  "Revised": {
+    "Text": "2020-05-14",
+    "Count": "1"
+  },
+  "Bug": [
+    "721940"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-video/vlc",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.0.10",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.0.10",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>VLC is a cross-platform media player and streaming server.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A buffer overflow in DecodeBlock in sdl_image.c was discovered.</p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote user could craft a specifically crafted image file that could\n      execute arbitrary code or cause denial of service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>The user should refrain from opening files from untrusted third parties\n      or accessing untrusted remote sites (or disable the VLC browser plugins),\n      until they upgrade.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All VLC users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-video/vlc-3.0.10\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2019-19721",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2019-19721"
+      },
+      {
+        "Text": "\n      Upstream patch\n    ",
+        "Link": "https://git.videolan.org/?p=vlc/vlc-3.0.git;a=commit;h=72afe7ebd8305bf4f5360293b8621cde52ec506b"
+      },
+      {
+        "Text": "\n      VideoLAN-SB-VLC-309\n    ",
+        "Link": "https://www.videolan.org/security/sb-vlc309.html"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "sam_c",
+      "Tag": "requester",
+      "Timestamp": "2020-05-12T16:12:42Z"
+    },
+    {
+      "Text": "sam_c",
+      "Tag": "submitter",
+      "Timestamp": "2020-05-14T22:24:24Z"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "ID": "200608-22",
+  "Title": "fbida: Arbitrary command execution",
+  "Synopsis": "\n    The fbgs script provided by fbida allows the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "fbida",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-08-23",
+  "Revised": {
+    "Text": "2006-08-23",
+    "Count": "01"
+  },
+  "Bug": [
+    "141684"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-gfx/fbida",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.03-r4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.03-r4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    fbida is a collection of image viewers and editors for the framebuffer\n    console and X11. fbgs is a PostScript and PDF viewer for the linux\n    framebuffer console.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Toth Andras has discovered a typographic mistake in the \"fbgs\" script,\n    shipped with fbida if the \"fbcon\" and \"pdf\" USE flags are both enabled.\n    This script runs \"gs\" without the -dSAFER option, thus allowing a\n    PostScript file to execute, delete or create any kind of file on the\n    system.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker can entice a vulnerable user to view a malicious\n    PostScript or PDF file with fbgs, which may result with the execution\n    of arbitrary code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All fbida users with the \"fbcon\" and \"pdf\" USE flags both enabled\n    should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/fbida-2.03-r4\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-3119",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3119"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-08-19T16:25:22Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-08-21T14:00:00Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-08-23T14:19:22Z"
+    }
+  ]
+}

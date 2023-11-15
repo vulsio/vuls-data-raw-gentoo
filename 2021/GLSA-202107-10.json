@@ -1,0 +1,98 @@
+{
+  "ID": "202107-10",
+  "Title": "TCG TPM2 Software Stack: Information disclosure",
+  "Synopsis": "A bug in TCG TPM2 Software Stack may result in information\n    disclosure to a local attacker.\n  ",
+  "Product": {
+    "Text": "tpm2-tss",
+    "Type": "ebuild"
+  },
+  "Announced": "2021-07-07",
+  "Revised": {
+    "Text": "2021-07-07",
+    "Count": "1"
+  },
+  "Bug": [
+    "746563"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-crypt/tpm2-tss",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.4.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.4.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>TCG TPM2 Software Stack is a library to interface with trusted platform\n      modules.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>TCG TPM2 Software Stack did not appropriately apply FAPI policies to\n      protect data encrypted with the trusted platform module.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>Data encrypted using TCG TPM2 Software Stack (tpm2-tss) may not be\n      protected from an attacker.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All tpm2-tss users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-crypt/tpm2-tss-2.4.3\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2020-24455",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-24455"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2021-05-24T14:04:16Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2021-07-07T07:58:39Z"
+    }
+  ]
+}

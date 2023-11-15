@@ -1,0 +1,110 @@
+{
+  "ID": "201702-04",
+  "Title": "GnuTLS: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in GnuTLS, the worst of\n    which may allow execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "gnutls",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-02-10",
+  "Revised": {
+    "Text": "2017-02-10",
+    "Count": "1"
+  },
+  "Bug": [
+    "605238"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-libs/gnutls",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.3.26",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.3.26",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>GnuTLS is an Open Source implementation of the TLS and SSL protocols.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple heap and stack overflows and double free vulnerabilities have\n      been discovered in GnuTLS by the OSS-Fuzz project. Please review the CVE\n      identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user or automated system to process a\n      specially crafted certificate using an application linked against GnuTLS.\n      This could possibly result in the execution of arbitrary code with the\n      privileges of the process or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All GnuTLS users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-libs/gnutls-3.3.26\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2017-5334",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-5334"
+      },
+      {
+        "Text": "CVE-2017-5335",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-5335"
+      },
+      {
+        "Text": "CVE-2017-5336",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-5336"
+      },
+      {
+        "Text": "CVE-2017-5337",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-5337"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2017-01-30T01:21:19Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2017-02-10T23:04:35Z"
+    }
+  ]
+}

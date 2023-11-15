@@ -1,0 +1,109 @@
+{
+  "ID": "201709-07",
+  "Title": "Kpathsea: User-assisted execution of arbitrary code",
+  "Synopsis": "A vulnerability in Kpathsea allows remote attackers to execute\n    arbitrary commands by manipulating the -tex option from mpost program.\n  ",
+  "Product": {
+    "Text": "kpathsea",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-09-17",
+  "Revised": {
+    "Text": "2017-09-17",
+    "Count": "1"
+  },
+  "Bug": [
+    "612328"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/kpathsea",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "6.2.2_p20160523",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "6.2.2_p20160523",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Kpathsea is a library to do path searching. It is used by TeX Live and\n      others TeX related software.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was discovered that the mpost program from the shell_escape_commands\n      list is capable of executing arbitrary external programs during the\n      conversion of .tex files. The responsible function is runpopen()\n      (texmfmp.c).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker, by enticing a user to open a specially crafted .tex\n      file, could possibly execute arbitrary code with the privileges of the\n      process.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Kpathsea users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "Packages which depend on this library may need to be recompiled. Tools\n      such as revdep-rebuild may assist in identifying some of these packages.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=dev-libs/kpathsea-6.2.2_p20160523\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2016-10243\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-10243"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2017-06-17T20:59:54Z"
+    },
+    {
+      "Text": "chrisadr",
+      "Tag": "submitter",
+      "Timestamp": "2017-09-17T15:47:02Z"
+    }
+  ]
+}

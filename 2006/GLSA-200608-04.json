@@ -1,0 +1,174 @@
+{
+  "ID": "200608-04",
+  "Title": "Mozilla Thunderbird: Multiple vulnerabilities",
+  "Synopsis": "\n    The Mozilla Foundation has reported numerous security vulnerabilities\n    related to Mozilla Thunderbird.\n  ",
+  "Product": {
+    "Text": "Thunderbird",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-08-03",
+  "Revised": {
+    "Text": "2006-08-03",
+    "Count": "01"
+  },
+  "Bug": [
+    "141842"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "mail-client/mozilla-thunderbird",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.5.0.5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.5.0.5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "mail-client/mozilla-thunderbird-bin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.5.0.5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.5.0.5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Mozilla Thunderbird mail client is a redesign of the Mozilla Mail\n    component. The goal is to produce a cross-platform stand-alone mail\n    application using XUL (XML User Interface Language).\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The following vulnerabilities have been reported:\n    </p>\n    <ul>\n    <li>Benjamin Smedberg discovered that chrome URLss could be made to\n    reference remote files.</li>\n    <li>Developers in the Mozilla community\n    looked for and fixed several crash bugs to improve the stability of\n    Mozilla clients.</li>\n    <li>\"shutdown\" reports that cross-site scripting\n    (XSS) attacks could be performed using the construct\n    XPCNativeWrapper(window).Function(...), which created a function that\n    appeared to belong to the window in question even after it had been\n    navigated to the target site.</li>\n    <li>\"shutdown\" reports that scripts\n    granting the UniversalBrowserRead privilege can leverage that into the\n    equivalent of the far more powerful UniversalXPConnect since they are\n    allowed to \"read\" into a privileged context.</li>\n    <li>\"moz_bug_r_a4\"\n    discovered that Named JavaScript functions have a parent object created\n    using the standard Object() constructor (ECMA-specified behavior) and\n    that this constructor can be redefined by script (also ECMA-specified\n    behavior).</li>\n    <li>Igor Bukanov and shutdown found additional places\n    where an untimely garbage collection could delete a temporary object\n    that was in active use.</li>\n    <li>Georgi Guninski found potential\n    integer overflow issues with long strings in the toSource() methods of\n    the Object, Array and String objects as well as string function\n    arguments.</li>\n    <li>H. D. Moore reported a testcase that was able to\n    trigger a race condition where JavaScript garbage collection deleted a\n    temporary variable still being used in the creation of a new Function\n    object.</li>\n    <li>A malicious page can hijack native DOM methods on a\n    document object in another domain, which will run the attacker's script\n    when called by the victim page.</li>\n    <li>Secunia Research has\n    discovered a vulnerability which is caused due to an memory corruption\n    error within the handling of simultaneously happening XPCOM events.\n    This leads to use of a deleted timer object.</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A user can be enticed to open specially crafted URLs, visit webpages\n    containing malicious JavaScript or execute a specially crafted script.\n    These events could lead to the execution of arbitrary code, or the\n    installation of malware on the user's computer.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Mozilla Thunderbird users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Mozilla Thunderbird binary users should upgrade to the latest\n    version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-client/mozilla-thunderbird-1.5.0.5\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-client/mozilla-thunderbird-bin-1.5.0.5\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-3113",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3113"
+      },
+      {
+        "Text": "CVE-2006-3802",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3802"
+      },
+      {
+        "Text": "CVE-2006-3803",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3803"
+      },
+      {
+        "Text": "CVE-2006-3804",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3804"
+      },
+      {
+        "Text": "CVE-2006-3805",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3805"
+      },
+      {
+        "Text": "CVE-2006-3806",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3806"
+      },
+      {
+        "Text": "CVE-2006-3807",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3807"
+      },
+      {
+        "Text": "CVE-2006-3809",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3809"
+      },
+      {
+        "Text": "CVE-2006-3810",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3810"
+      },
+      {
+        "Text": "CVE-2006-3811",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3811"
+      },
+      {
+        "Text": "CVE-2006-3812",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3812"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-07-28T14:37:07Z"
+    },
+    {
+      "Text": "\n    dizzutch\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-07-28T18:08:55Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-08-03T16:54:43Z"
+    }
+  ]
+}

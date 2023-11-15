@@ -1,0 +1,103 @@
+{
+  "ID": "200801-01",
+  "Title": "unp: Arbitrary command execution",
+  "Synopsis": "\n    unp allows execution of arbitrary code via malicious file names.\n  ",
+  "Product": {
+    "Text": "remote",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-01-09",
+  "Revised": {
+    "Text": "2008-01-09",
+    "Count": "01"
+  },
+  "Bug": [
+    "203106"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-arch/unp",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.14",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.14",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    unp is a script for unpacking various file formats.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Erich Schubert from Debian discovered that unp does not escape file\n    names properly before passing them to calls of the shell.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user or automated system to unpack a\n    compressed archive with a specially crafted file name, leading to the\n    execution of shell commands from within the filename. That code will be\n    executed with the privileges of the user running unp.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All unp users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-arch/unp-1.0.14\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-6610",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6610"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-12-28T00:23:45Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-12-28T11:27:28Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-12-28T22:57:04Z"
+    }
+  ]
+}

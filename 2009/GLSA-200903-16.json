@@ -1,0 +1,103 @@
+{
+  "ID": "200903-16",
+  "Title": "Epiphany: Untrusted search path",
+  "Synopsis": "\n    An untrusted search path vulnerability in Epiphany might result in the\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "epiphany",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-03-09",
+  "Revised": {
+    "Text": "2009-03-09",
+    "Count": "01"
+  },
+  "Bug": [
+    "257000"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-client/epiphany",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.22.3-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.22.3-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Epiphany is a GNOME webbrowser based on the Mozilla rendering engine\n    Gecko.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    James Vega reported an untrusted search path vulnerability in the\n    Python interface.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could entice a user to run Epiphany from a directory\n    containing a specially crafted python module, resulting in the\n    execution of arbitrary code with the privileges of the user running\n    Epiphany.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Do not run \"epiphany\" from untrusted working directories.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Epiphany users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/epiphany-2.22.3-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-5985",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5985"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-03-07T16:40:03Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-03-07T18:06:14Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-03-07T18:06:33Z"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "ID": "200504-09",
+  "Title": "Axel: Vulnerability in HTTP redirection handling",
+  "Synopsis": "\n    A buffer overflow vulnerability has been found in Axel which could lead to\n    the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "Axel",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-04-12",
+  "Revised": {
+    "Text": "2005-04-12",
+    "Count": "01"
+  },
+  "Bug": [
+    "88264"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/axel",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0b",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0b",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Axel is a console-based FTP/HTTP download accelerator.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    A possible buffer overflow has been reported in the HTTP\n    redirection handling code in conn.c.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could exploit this vulnerability by setting up a\n    malicious site and enticing a user to connect to it. This could\n    possibly lead to the execution of arbitrary code with the permissions\n    of the user running Axel.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Axel users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/axel-1.0b\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-0390",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0390"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-04-11T18:36:13Z"
+    },
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-04-11T19:29:05Z"
+    },
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-04-12T11:48:11Z"
+    }
+  ]
+}

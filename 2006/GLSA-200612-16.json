@@ -1,0 +1,103 @@
+{
+  "ID": "200612-16",
+  "Title": "Links: Arbitrary Samba command execution",
+  "Synopsis": "\n    Links does not properly validate \"smb://\" URLs, making it vulnerable to the\n    execution of arbitrary Samba commands.\n  ",
+  "Product": {
+    "Text": "links",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-12-14",
+  "Revised": {
+    "Text": "2006-12-14",
+    "Count": "01"
+  },
+  "Bug": [
+    "157028"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-client/links",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.1_pre26",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.1_pre26",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Links is a web browser running in both graphics and text modes.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Teemu Salmela discovered that Links does not properly validate \"smb://\"\n    URLs when it runs smbclient commands.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to browse to a specially crafted\n    \"smb://\" URL and execute arbitrary Samba commands, which would allow\n    the overwriting of arbitrary local files or the upload or the download\n    of arbitrary files. This vulnerability can be exploited only if\n    \"smbclient\" is installed on the victim's computer, which is provided by\n    the \"samba\" Gentoo package.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Links users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/links-2.1_pre26\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-5925",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5925"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    vorlon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-12-10T21:05:34Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-12-12T00:14:43Z"
+    },
+    {
+      "Text": "\n    vorlon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-12-13T14:10:35Z"
+    }
+  ]
+}

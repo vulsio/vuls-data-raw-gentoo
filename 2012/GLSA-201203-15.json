@@ -1,0 +1,102 @@
+{
+  "ID": "201203-15",
+  "Title": "gif2png: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in gif2png, the worst of\n    which might allow execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "gif2png",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-03-16",
+  "Revised": {
+    "Text": "2012-03-16",
+    "Count": "1"
+  },
+  "Bug": [
+    "351698"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-gfx/gif2png",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.5.8",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.5.8",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>gif2png converts images from GIF format to PNG format.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Two vulnerabilities have been found in gif2png:</p>\n    \n    <ul>\n      <li>A boundary error in gif2png.c could cause a buffer overflow\n        (CVE-2010-4694).\n      </li>\n      <li>The patch for CVE-2009-5018 causes gif2png to truncate GIF pathnames\n        (CVE-2010-4695).\n      </li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted GIF\n      file, possibly resulting in execution of arbitrary code, a Denial of\n      Service condition, or the creation of PNG files in unintended\n      directories.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All gif2png users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-gfx/gif2png-2.5.8\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2010-4694",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-4694"
+      },
+      {
+        "Text": "CVE-2010-4695",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-4695"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2012-03-09T22:46:15Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-03-16T10:58:44Z"
+    }
+  ]
+}

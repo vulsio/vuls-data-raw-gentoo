@@ -1,0 +1,98 @@
+{
+  "ID": "201805-04",
+  "Title": "rsync: Arbitrary command execution",
+  "Synopsis": "A vulnerability in rsync might allow remote attackers to execute\n    arbitrary commands.\n  ",
+  "Product": {
+    "Text": "rsync",
+    "Type": "ebuild"
+  },
+  "Announced": "2018-05-08",
+  "Revised": {
+    "Text": "2018-05-08",
+    "Count": "1"
+  },
+  "Bug": [
+    "646818"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/rsync",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.1.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.1.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>File transfer program to keep remote files into sync.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A vulnerability was discovered in rsync’s parse_arguments function in\n      options.c.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>Remote attackers could possibly execute arbitrary commands with the\n      privilege of the process.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All rsync users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/rsync-3.1.3\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2018-5764",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2018-5764"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "Zlogene",
+      "Tag": "requester",
+      "Timestamp": "2018-05-03T08:10:23Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2018-05-08T15:27:34Z"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "ID": "202105-03",
+  "Title": "GPT fdisk: Integer underflow",
+  "Synopsis": "An integer underflow in sgdisk from GPT fdisk package might allow\n    local attacker(s) to escalate privileges.\n  ",
+  "Product": {
+    "Text": "gptfdisk",
+    "Type": "ebuild"
+  },
+  "Announced": "2021-05-26",
+  "Revised": {
+    "Text": "2021-05-26",
+    "Count": "1"
+  },
+  "Bug": [
+    "768762"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-apps/gptfdisk",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>GPT fdisk (consisting of the gdisk, cgdisk, sgdisk, and fixparts\n      programs) is a set of text-mode partitioning tools for Linux, FreeBSD,\n      Mac OS X, and Windows.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was discovered that ReadLogicalParts() function in basicmbr.cc was\n      missing a bounds check.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A local attacker could entice a user to insert a malicious formatted\n      block device (USB stick or SD card for example), that, when processed\n      with sgdisk, possibly resulting in local escalation of privileges or a\n      Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All GPT fdisk users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-apps/gptfdisk-1.0.6\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2021-0308",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-0308"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2021-05-25T22:34:12Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2021-05-26T07:45:07Z"
+    }
+  ]
+}

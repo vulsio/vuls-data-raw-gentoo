@@ -1,0 +1,142 @@
+{
+  "ID": "200603-25",
+  "Title": "OpenOffice.org: Heap overflow in included libcurl",
+  "Synopsis": "\n    OpenOffice.org contains a vulnerable version of libcurl that may cause a\n    heap overflow when parsing URLs.\n  ",
+  "Product": {
+    "Text": "openoffice openoffice-bin",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-03-27",
+  "Revised": {
+    "Text": "2006-03-27",
+    "Count": "01"
+  },
+  "Bug": [
+    "126433"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-office/openoffice-bin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "app-office/openoffice",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.1-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.1-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    OpenOffice.org is an office productivity suite, including word\n    processing, spreadsheet, presentation, data charting, formula editing\n    and file conversion facilities. libcurl, which is included in\n    OpenOffice.org, is a free and easy-to-use client-side library for\n    transferring files with URL syntaxes, supporting numerous protocols.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    OpenOffice.org includes libcurl code. This libcurl code is\n    vulnerable to a heap overflow when it tries to parse a URL that exceeds\n    a 256-byte limit (GLSA 200512-09).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could entice a user to call a specially crafted URL\n    with OpenOffice.org, potentially resulting in the execution of\n    arbitrary code with the rights of the user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All OpenOffice.org binary users should upgrade to the latest\n    version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All OpenOffice.org users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-office/openoffice-bin-2.0.2\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-office/openoffice-2.0.1-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-4077",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-4077"
+      },
+      {
+        "Text": "Hardened-PHP Advisory 24/2005",
+        "Link": "https://www.hardened-php.net/advisory_242005.109.html"
+      },
+      {
+        "Text": "GLSA 200512-09",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200512-09.xml"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-03-17T09:53:36Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-03-17T18:15:26Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-03-18T01:42:41Z"
+    }
+  ]
+}

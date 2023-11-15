@@ -1,0 +1,115 @@
+{
+  "ID": "200803-16",
+  "Title": "MPlayer: Multiple buffer overflows",
+  "Synopsis": "\n    Multiple vulnerabilities have been discovered in MPlayer, possibly allowing\n    for the remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "mplayer",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-03-10",
+  "Revised": {
+    "Text": "2008-03-10",
+    "Count": "01"
+  },
+  "Bug": [
+    "208566"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-video/mplayer",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0_rc2_p25993",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0_rc2_p25993",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    MPlayer is a media player incuding support for a wide range of audio\n    and video formats.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The following errors have been discovered in MPlayer:\n    </p>\n    <ul>\n    <li>Felipe Manzano and Anibal Sacco (Core Security Technologies)\n    reported an array indexing error in the file libmpdemux/demux_mov.c\n    when parsing MOV file headers (CVE-2008-0485).</li>\n    <li>Damian Frizza\n    and Alfredo Ortega (Core Security Technologies) reported a boundary\n    error in the file libmpdemux/demux_audio.c when parsing FLAC comments\n    (CVE-2008-0486).</li>\n    <li>Adam Bozanich (Mu Security) reported boundary\n    errors in the cddb_parse_matches_list() and cddb_query_parse()\n    functions in the file stream_cddb.c when parsing CDDB album titles\n    (CVE-2008-0629) and in the url_scape_string() function in the file\n    stream/url.c when parsing URLS (CVE-2008-0630).</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted file,\n    possibly resulting in the execution of arbitrary code with the\n    privileges of the user running MPlayer.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All MPlayer users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-video/mplayer-1.0_rc2_p25993\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-0485",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0485"
+      },
+      {
+        "Text": "CVE-2008-0486",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0486"
+      },
+      {
+        "Text": "CVE-2008-0629",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0629"
+      },
+      {
+        "Text": "CVE-2008-0630",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0630"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-02-19T20:10:11Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-02-19T20:13:04Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-03-07T23:38:09Z"
+    }
+  ]
+}

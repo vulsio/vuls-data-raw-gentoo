@@ -1,0 +1,103 @@
+{
+  "ID": "201311-03",
+  "Title": "Quassel: Multiple Vulnerabilities",
+  "Synopsis": "Two vulnerabilities in Quassel may result in Denial of Service or\n    SQL injection.\n  ",
+  "Product": {
+    "Text": "quassel",
+    "Type": "ebuild"
+  },
+  "Announced": "2013-11-07",
+  "Revised": {
+    "Text": "2013-11-07",
+    "Count": "1"
+  },
+  "Bug": [
+    "338879",
+    "487632"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-irc/quassel",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.9.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.9.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Quassel is a Qt4/KDE4 IRC client suppporting a remote daemon for 24/7\n      connectivity.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Two vulnerabilities have been found in Quassel:</p>\n    \n    <ul>\n      <li>Quassel does not properly handle multiple CTCP requests\n        (CVE-2010-3443).\n      </li>\n      <li>Quassel, when used with certain versions of Qt and PostgreSQL, does\n        not sanitize user input (CVE-2013-4422).\n      </li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could send multiple CTCP requests in single private\n      message, possibly resulting in a Denial of Service condition. Futhermore,\n      a remote attacker may be able to execute arbitrary SQL statements.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Quassel users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-irc/quassel-0.9.1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2010-3443",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-3443"
+      },
+      {
+        "Text": "CVE-2013-4422",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4422"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2011-10-07T23:37:21Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2013-11-07T01:26:59Z"
+    }
+  ]
+}

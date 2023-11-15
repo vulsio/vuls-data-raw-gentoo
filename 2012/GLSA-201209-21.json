@@ -1,0 +1,102 @@
+{
+  "ID": "201209-21",
+  "Title": "fastjar: Directory traversal",
+  "Synopsis": "Two directory traversal vulnerabilities have been found in fastjar,\n    allowing remote attackers to create or overwrite arbitrary files.\n  ",
+  "Product": {
+    "Text": "fastjar",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-09-28",
+  "Revised": {
+    "Text": "2012-09-28",
+    "Count": "1"
+  },
+  "Bug": [
+    "325557"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-arch/fastjar",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.98-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.98-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>fastjar is a Java archiver written in C.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Two directory traversal vulnerabilities have been discovered in fastjar.\n      Please review the CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted JAR\n      file, possibly resulting in the creation or truncation of arbitrary\n      files.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All fastjar users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-arch/fastjar-0.98-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2010-0831",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-0831"
+      },
+      {
+        "Text": "CVE-2010-2322",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-2322"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "craig",
+      "Tag": "requester",
+      "Timestamp": "2011-10-07T23:37:29Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-09-28T00:34:46Z"
+    }
+  ]
+}

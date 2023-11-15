@@ -1,0 +1,98 @@
+{
+  "ID": "201612-08",
+  "Title": "LinuxCIFS utils: Buffer overflow",
+  "Synopsis": "A vulnerability in LinuxCIFS utils' \"cifscreds\" PAM module might\n    allow remote attackers to have an unspecified impact via unknown vectors.\n  ",
+  "Product": {
+    "Text": "cifs-utils",
+    "Type": "ebuild"
+  },
+  "Announced": "2016-12-04",
+  "Revised": {
+    "Text": "2016-12-04",
+    "Count": "1"
+  },
+  "Bug": [
+    "552634"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-fs/cifs-utils",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "6.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "6.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>The LinuxCIFS utils are a collection of tools for managing Linux CIFS\n      Client Filesystems.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A stack-based buffer overflow was discovered in cifskey.c or cifscreds.c\n      in LinuxCIFS, as used in “pam_cifscreds.”\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could exploit this vulnerability to cause an\n      unspecified impact.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>Don’t use LinuxCIFS utils’ “cifscreds” PAM module. In Gentoo,\n      LinuxCIFS utils’ PAM support is disabled by default unless the\n      “pam” USE flag is enabled.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All LinuxCIFS utils users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-fs/cifs-utils-6.4\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-2830",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-2830"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "requester",
+      "Timestamp": "2016-02-25T07:13:41Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2016-12-04T11:02:29Z"
+    }
+  ]
+}

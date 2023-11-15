@@ -1,0 +1,98 @@
+{
+  "ID": "201202-03",
+  "Title": "MaraDNS: Denial of service",
+  "Synopsis": "A hash collision vulnerability in MaraDNS allows remote attackers\n    to cause a Denial of Service condition.\n  ",
+  "Product": {
+    "Text": "maradns",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-02-22",
+  "Revised": {
+    "Text": "2012-02-22",
+    "Count": "1"
+  },
+  "Bug": [
+    "397431"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-dns/maradns",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.09",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.09",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>MaraDNS is a proxy DNS server with permanent caching.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>MaraDNS does not properly randomize hash functions to protect against\n      hash collision attacks.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could send many specially crafted DNS recursive\n      queries, possibly resulting in a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All MaraDNS users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-dns/maradns-1.4.09\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-0024",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0024"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2012-02-20T21:36:13Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-02-22T19:45:52Z"
+    }
+  ]
+}

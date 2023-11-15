@@ -1,0 +1,98 @@
+{
+  "ID": "201612-37",
+  "Title": "Pixman: Buffer overflow",
+  "Synopsis": "A buffer overflow in Pixman might allow remote attackers to execute\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "pixman",
+    "Type": "ebuild"
+  },
+  "Announced": "2016-12-13",
+  "Revised": {
+    "Text": "2016-12-13",
+    "Count": "2"
+  },
+  "Bug": [
+    "561526"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "x11-libs/pixman",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.32.8",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.32.8",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Pixman is a pixel manipulation library.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>In pixman-general, careless computations done with the ‘dest_buffer’\n      pointer may overflow, failing the buffer upper limit check.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could possibly cause a Denial of Service condition, or\n      execute arbitrary code with the privileges of the process.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Pixman users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=x11-libs/pixman-0.32.8\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      Pixman 0.32.8 Release Notes\n    ",
+        "Link": "https://lists.x.org/archives/xorg-announce/2015-September/002637.html"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "requester",
+      "Timestamp": "2016-02-25T08:11:30Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2016-12-13T06:59:37Z"
+    }
+  ]
+}

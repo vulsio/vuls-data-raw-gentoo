@@ -1,0 +1,181 @@
+{
+  "ID": "201601-05",
+  "Title": "OpenSSL: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in OpenSSL, allowing\n    remote attackers to disclose sensitive information and complete weak\n    handshakes.\n  ",
+  "Product": {
+    "Text": "openssl",
+    "Type": "ebuild"
+  },
+  "Announced": "2016-01-29",
+  "Revised": {
+    "Text": "2016-02-26",
+    "Count": "3"
+  },
+  "Bug": [
+    "572854"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/openssl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.2f",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.0.1r",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.0.1s",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.0.1t",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p8",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p9",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p10",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p11",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p12",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p13",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p14",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p15",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.2f",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>OpenSSL is an Open Source toolkit implementing the Secure Sockets Layer\n      (SSL v2/v3) and Transport Layer Security (TLS v1) as well as a general\n      purpose cryptography library.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in OpenSSL. Please review\n      the upstream advisory and CVE identifiers referenced below for details.\n      Note that the list includes CVE identifiers for an older OpenSSL Security\n      Advisory (3 Dec 2015) for which we have not issued a GLSA before.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could disclose a server’s private DH exponent, or\n      complete SSLv2 handshakes using ciphers that have been disabled on the\n      server.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All OpenSSL users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/openssl-1.0.2f\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2015-1794",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-1794"
+      },
+      {
+        "Text": "CVE-2015-3193",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-3193"
+      },
+      {
+        "Text": "CVE-2015-3194",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-3194"
+      },
+      {
+        "Text": "CVE-2015-3195",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-3195"
+      },
+      {
+        "Text": "CVE-2015-3196",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-3196"
+      },
+      {
+        "Text": "CVE-2015-3197",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-3197"
+      },
+      {
+        "Text": "CVE-2016-0701",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-0701"
+      },
+      {
+        "Text": "OpenSSL Security\n      Advisory [28th Jan 2016]\n    ",
+        "Link": "https://openssl.org/news/secadv/20160128.txt"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2016-01-29T23:06:05Z"
+    },
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2016-02-26T15:29:47Z"
+    }
+  ]
+}

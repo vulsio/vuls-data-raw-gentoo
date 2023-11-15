@@ -1,0 +1,107 @@
+{
+  "ID": "200612-14",
+  "Title": "Trac: Cross-site request forgery",
+  "Synopsis": "\n    Trac allows remote attackers to execute unauthorized actions as other\n    users.\n  ",
+  "Product": {
+    "Text": "trac",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-12-12",
+  "Revised": {
+    "Text": "2006-12-12",
+    "Count": "01"
+  },
+  "Bug": [
+    "154574"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/trac",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.10.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.10.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Trac is a wiki and issue tracking system for software development\n    projects.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Trac allows users to perform certain tasks via HTTP requests without\n    performing correct validation on those requests.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    An attacker could entice an authenticated user to browse to a specially\n    crafted URL, allowing the attacker to execute actions in the Trac\n    instance as if they were the user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Trac users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/trac-0.10.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-5848",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5848"
+      },
+      {
+        "Text": "CVE-2006-5878",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5878"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-12-06T06:01:31Z"
+    },
+    {
+      "Text": "\n    vorlon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-12-07T10:06:43Z"
+    },
+    {
+      "Text": "\n    shellsage\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-12-11T18:17:55Z"
+    }
+  ]
+}

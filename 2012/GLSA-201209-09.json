@@ -1,0 +1,98 @@
+{
+  "ID": "201209-09",
+  "Title": "Atheme IRC Services: Denial of service",
+  "Synopsis": "A vulnerability has been found in Atheme which may lead to Denial\n    of Service or a bypass of security restrictions.\n  ",
+  "Product": {
+    "Text": "atheme",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-09-25",
+  "Revised": {
+    "Text": "2012-09-25",
+    "Count": "1"
+  },
+  "Bug": [
+    "409103"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-irc/atheme-services",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "6.0.10",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "6.0.10",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Atheme is a portable and secure set of open-source and modular IRC\n      services. CertFP is certificate fingerprinting used to authenticate users\n      to nicknames.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>The “myuser_delete()” function in account.c does not properly remove\n      CertFP entries when deleting user accounts.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote authenticated attacker may be able to cause a Denial of Service\n      condition or gain access to an Atheme IRC Services user account.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Atheme users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-irc/atheme-services-6.0.10\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-1576",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1576"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2012-08-14T16:09:52Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-09-25T10:53:52Z"
+    }
+  ]
+}

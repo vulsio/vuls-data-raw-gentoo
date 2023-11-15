@@ -1,0 +1,103 @@
+{
+  "ID": "201402-25",
+  "Title": "OpenSSL: Denial of service",
+  "Synopsis": "A vulnerability in OpenSSL's handling of TLS handshakes could\n    result in a Denial of Service condition.\n  ",
+  "Product": {
+    "Text": "openssl",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-02-21",
+  "Revised": {
+    "Text": "2014-02-21",
+    "Count": "1"
+  },
+  "Bug": [
+    "497838"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/openssl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.1f",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.0.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.1f",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>OpenSSL is an Open Source toolkit implementing the Secure Sockets Layer\n      (SSL v2/v3) and Transport Layer Security (TLS v1) as well as a general\n      purpose cryptography library.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A flaw in the ssl3_take_mac function can result in a NULL pointer\n      dereference.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could send a specially crafted TLS handshake,\n      resulting in a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All OpenSSL 1.0.1 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/openssl-1.0.1f\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2013-4353",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4353"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "requester",
+      "Timestamp": "2014-01-28T06:18:59Z"
+    },
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2014-02-21T15:36:48Z"
+    }
+  ]
+}

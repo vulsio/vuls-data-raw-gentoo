@@ -1,0 +1,107 @@
+{
+  "ID": "200503-35",
+  "Title": "Smarty: Template vulnerability",
+  "Synopsis": "\n    Smarty's \"Template security\" feature can be bypassed, potentially allowing\n    a remote attacker to execute arbitrary PHP code.\n  ",
+  "Product": {
+    "Text": "smarty",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-03-30",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "03"
+  },
+  "Bug": [
+    "86488"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-php/smarty",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.6.9",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.6.9",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Smarty is a template engine for PHP. The \"template security\" feature of\n    Smarty is designed to help reduce the risk of a system compromise when\n    you have untrusted parties editing templates.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    A vulnerability has been discovered within the regex_replace modifier\n    of the Smarty templates when allowing access to untrusted users.\n    Furthermore, it was possible to call functions from {if} statements and\n    {math} functions.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    These issues may allow a remote attacker to bypass the \"template\n    security\" feature of Smarty, and execute arbitrary PHP code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Do not grant template access to untrusted users.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Smarty users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-php/smarty-2.6.9\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Smarty ChangeLog",
+        "Link": "https://smarty.php.net/misc/NEWS"
+      },
+      {
+        "Text": "CVE-2005-0913",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0913"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-03-24T17:18:18Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-03-28T13:11:35Z"
+    },
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-03-28T13:23:33Z"
+    }
+  ]
+}

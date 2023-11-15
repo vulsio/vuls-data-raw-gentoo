@@ -1,0 +1,114 @@
+{
+  "ID": "200807-08",
+  "Title": "BIND: Cache poisoning",
+  "Synopsis": "\n    A weakness in the DNS protocol has been reported, which could lead to cache\n    poisoning on recursive resolvers.\n  ",
+  "Product": {
+    "Text": "bind",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-07-11",
+  "Revised": {
+    "Text": "2008-07-11",
+    "Count": "01"
+  },
+  "Bug": [
+    "231201"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-dns/bind",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "9.4.2_p1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "9.4.2_p1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    ISC BIND is the Internet Systems Consortium implementation of the\n    Domain Name System (DNS) protocol.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Dan Kaminsky of IOActive has reported a weakness in the DNS protocol\n    related to insufficient randomness of DNS transaction IDs and query\n    source ports.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    An attacker could exploit this weakness to poison the cache of a\n    recursive resolver and thus spoof DNS traffic, which could e.g. lead to\n    the redirection of web or mail traffic to malicious sites.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All BIND users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    Note: In order to utilize the query port randomization to mitigate the\n    weakness, you need to make sure that your network setup allows the DNS\n    server to use random source ports for query and that you have not set a\n    fixed query port via the \"query-source port\" directive in the BIND\n    configuration.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dns/bind-9.4.2_p1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-1447",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1447"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    vorlon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-07-09T08:55:27Z"
+    },
+    {
+      "Text": "\n    vorlon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-07-09T14:42:45Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-07-11T17:35:39Z"
+    }
+  ]
+}

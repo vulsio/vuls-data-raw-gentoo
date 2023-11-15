@@ -1,0 +1,123 @@
+{
+  "ID": "202101-11",
+  "Title": "Zabbix: Root privilege escalation",
+  "Synopsis": "Multiple vulnerabilities were discovered in Gentoo's ebuild for\n    Zabbix which could lead to root privilege escalation.\n  ",
+  "Product": {
+    "Text": "zabbix",
+    "Type": "ebuild"
+  },
+  "Announced": "2021-01-21",
+  "Revised": {
+    "Text": "2021-01-21",
+    "Count": "1"
+  },
+  "Bug": [
+    "629882",
+    "629884"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-analyzer/zabbix",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.0.30",
+            "Range": "ge",
+            "Slot": "0/3.0"
+          },
+          {
+            "Text": "4.0.18",
+            "Range": "ge",
+            "Slot": "0/4.0"
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.4.6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Zabbix is software for monitoring applications, networks, and servers.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was discovered that Gentoo’s Zabbix ebuild did not properly set\n      permissions or placed the pid file in an unsafe directory.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A local attacker could escalate privileges.</p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Zabbix 3.0.x users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All Zabbix  4.0.x users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All other Zabbix users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=net-analyzer/zabbix-3.0.30:0/3.0\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=net-analyzer/zabbix-4.0.18:0/4.0\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-analyzer/zabbix-4.4.6\"\n    "
+    ]
+  },
+  "References": {
+    "URI": null
+  },
+  "Metadata": [
+    {
+      "Text": "BlueKnight",
+      "Tag": "requester",
+      "Timestamp": "2020-04-16T06:25:12Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2021-01-21T19:18:35Z"
+    }
+  ]
+}

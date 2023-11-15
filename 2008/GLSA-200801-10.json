@@ -1,0 +1,111 @@
+{
+  "ID": "200801-10",
+  "Title": "TikiWiki: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities have been discovered in TikiWiki, some of them\n    having unknown impact.\n  ",
+  "Product": {
+    "Text": "tikiwiki",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-01-23",
+  "Revised": {
+    "Text": "2008-01-23",
+    "Count": "01"
+  },
+  "Bug": [
+    "203265"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/tikiwiki",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.9.9",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.9.9",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    TikiWiki is an open source content management system written in PHP.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <ul><li>Jesus Olmos Gonzalez from isecauditors reported insufficient\n    sanitization of the \"movies\" parameter in file tiki-listmovies.php\n    (CVE-2007-6528).</li>\n    <li>Mesut Timur from H-Labs discovered that the\n    input passed to the \"area_name\" parameter in file\n    tiki-special_chars.php is not properly sanitised before being returned\n    to the user (CVE-2007-6526).</li>\n    <li>redflo reported multiple\n    unspecified vulnerabilities in files tiki-edit_css.php,\n    tiki-list_games.php, and tiki-g-admin_shared_source.php\n    (CVE-2007-6529).</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    A remote attacker can craft the \"movies\" parameter to run a directory\n    traversal attack through a \"..\" sequence and read the first 1000 bytes\n    of any arbitrary file, or conduct a cross-site scripting (XSS) attack\n    through the \"area_name\" parameter. This attack can be exploited to\n    execute arbitrary HTML and script code in a user's browser session,\n    allowing for the theft of browser session data or cookies in the\n    context of the affected web site. The impacts of the unspecified\n    vulnerabilities are still unknown.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All TikiWiki users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/tikiwiki-1.9.9\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-6526",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6526"
+      },
+      {
+        "Text": "CVE-2007-6528",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6528"
+      },
+      {
+        "Text": "CVE-2007-6529",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6529"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-01-20T18:58:53Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-01-20T21:50:20Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-01-20T22:40:20Z"
+    }
+  ]
+}

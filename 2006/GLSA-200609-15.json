@@ -1,0 +1,103 @@
+{
+  "ID": "200609-15",
+  "Title": "GnuTLS: RSA Signature Forgery",
+  "Synopsis": "\n    GnuTLS fails to handle excess data which could allow an attacker to forge a\n    PKCS #1 v1.5 signature.\n  ",
+  "Product": {
+    "Text": "gnutls",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-09-26",
+  "Revised": {
+    "Text": "2006-09-26",
+    "Count": "01"
+  },
+  "Bug": [
+    "147682"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-libs/gnutls",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    GnuTLS is an implementation of SSL 3.0 and TLS 1.0.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    verify.c fails to properly handle excess data in\n    digestAlgorithm.parameters field while generating a hash when using an\n    RSA key with exponent 3. RSA keys that use exponent 3 are commonplace.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    Remote attackers could forge PKCS #1 v1.5 signatures that are signed\n    with an RSA key, preventing GnuTLS from correctly verifying X.509 and\n    other certificates that use PKCS.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All GnuTLS users should update both packages:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --update --ask --verbose \">=net-libs/gnutls-1.4.4\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-4790",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4790"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-09-23T06:35:02Z"
+    },
+    {
+      "Text": "\n    hlieberman\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-09-25T13:07:32Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-09-25T18:24:37Z"
+    }
+  ]
+}

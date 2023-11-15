@@ -1,0 +1,98 @@
+{
+  "ID": "202107-34",
+  "Title": "FluidSynth: Remote code execution",
+  "Synopsis": "A vulnerability was found in FluidSynth that could result in remote\n    code execution.\n  ",
+  "Product": {
+    "Text": "fluidsynth",
+    "Type": "ebuild"
+  },
+  "Announced": "2021-07-15",
+  "Revised": {
+    "Text": "2021-07-15",
+    "Count": "1"
+  },
+  "Bug": [
+    "782700"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-sound/fluidsynth",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.2.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.2.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>FluidSynth is a real-time synthesizer based on the Soundfont 2\n      specifications.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>FluidSynth contains a use-after-free in sfloader/fluid_sffile.c which\n      occurs when parsing Soundfile 2 files.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted\n      Soundfont 2 file using FluidSynth, possibly resulting in execution of\n      arbitrary code with the privileges of the process or a Denial of Service\n      condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All FluidSynth users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-sound/fluidsynth-2.2.0\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2021-28421",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-28421"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ajak",
+      "Tag": "requester",
+      "Timestamp": "2021-07-14T23:27:29Z"
+    },
+    {
+      "Text": "ajak",
+      "Tag": "submitter",
+      "Timestamp": "2021-07-15T05:12:31Z"
+    }
+  ]
+}

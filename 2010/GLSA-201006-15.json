@@ -1,0 +1,114 @@
+{
+  "ID": "201006-15",
+  "Title": "XEmacs: User-assisted execution of arbitrary code",
+  "Synopsis": "\n    Multiple integer overflow errors in XEmacs might allow remote,\n    user-assisted attackers to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "xemacs",
+    "Type": "ebuild"
+  },
+  "Announced": "2010-06-03",
+  "Revised": {
+    "Text": "2010-06-03",
+    "Count": "01"
+  },
+  "Bug": [
+    "275397"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-editors/xemacs",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "21.4.22-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "21.4.22-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    XEmacs is a highly extensible and customizable text editor.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Tielei Wang reported multiple integer overflow vulnerabilities in the\n    tiff_instantiate(), png_instantiate() and jpeg_instantiate() functions\n    in glyphs-eimage.c, all possibly leading to heap-based buffer\n    overflows.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted TIFF,\n    JPEG or PNG file using XEmacs, possibly resulting in the remote\n    execution of arbitrary code with the privileges of the user running the\n    application, or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All XEmacs users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    NOTE: This is a legacy GLSA. Updates for all affected architectures are\n    available since July 26, 2009. It is likely that your system is already\n    no longer affected by this issue.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-editors/xemacs-21.4.22-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-2688",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2688"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-07-30T20:43:44Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2010-05-31T06:40:54Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2010-05-31T06:41:02Z"
+    }
+  ]
+}

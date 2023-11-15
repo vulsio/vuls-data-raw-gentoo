@@ -1,0 +1,103 @@
+{
+  "ID": "201207-09",
+  "Title": "mod_fcgid: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in mod_fcgid, allowing\n    execution of arbitrary code or Denial of Service.\n  ",
+  "Product": {
+    "Text": "mod_fcgid",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-07-09",
+  "Revised": {
+    "Text": "2012-07-09",
+    "Count": "1"
+  },
+  "Bug": [
+    "344685",
+    "409373"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apache/mod_fcgid",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.3.7",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.3.7",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>mod_fcgid is a binary-compatible alternative to mod_fastcgi with better\n      process management.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been found in mod_fcgid:</p>\n    \n    <ul>\n      <li>An error in the \"fcgid_header_bucket_read()\" function in\n        fcgid_bucket.c could cause a stack-based buffer overflow\n        (CVE-2010-3872).\n      </li>\n      <li>An error in the \"is_spawn_allowed() function in fcgid_spawn_ctl.c\n        prevents Apache from recognizing the FcgidMaxProcessesPerClass\n        directive for a virtual host (CVE-2012-1181).\n      </li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A local attacker could possibly execute arbitrary code with the\n      privileges of the process or cause a Denial of Service condition.\n      Furthermore, a remote attacker could send specially crafted HTTP\n      requests, possibly resulting in a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All mod_fcgid users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=www-apache/mod_fcgid-2.3.7\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2010-3872",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-3872"
+      },
+      {
+        "Text": "CVE-2012-1181",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1181"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    underling\n  ",
+      "Tag": "requester",
+      "Timestamp": "2011-10-07T23:38:12Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-07-09T23:33:49Z"
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "ID": "201410-01",
+  "Title": "Bash: Multiple vulnerabilities",
+  "Synopsis": "Multiple parsing flaws in Bash could allow remote attackers to\n    inject code or cause a Denial of Service condition.\n  ",
+  "Product": {
+    "Text": "bash",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-10-04",
+  "Revised": {
+    "Text": "2014-10-04",
+    "Count": "1"
+  },
+  "Bug": [
+    "523742",
+    "524256"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-shells/bash",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.1_p22",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "3.2_p56",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "4.0_p43",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "4.1_p16",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "4.2_p52",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.2_p52",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Bash is the standard GNU Bourne Again SHell.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Florian Weimer, Todd Sabin, Michal Zalewski et al. discovered further\n      parsing flaws in Bash. The unaffected Gentoo packages listed in this GLSA\n      contain the official patches to fix the issues tracked as CVE-2014-6277,\n      CVE-2014-7186, and CVE-2014-7187. Furthermore, the official patch known\n      as “function prefix patch” is included which prevents the\n      exploitation of CVE-2014-6278.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A remote attacker could exploit these vulnerabilities to execute\n      arbitrary commands or cause a Denial of Service condition via various\n      vectors.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Bash 3.1 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All Bash 3.2 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All Bash 4.0 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All Bash 4.1 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All Bash 4.2 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-shells/bash-3.1_p22:3.1\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-shells/bash-3.2_p56:3.2\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-shells/bash-4.0_p43:4.0\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-shells/bash-4.1_p16:4.1\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-shells/bash-4.2_p52\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-6277",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-6277"
+      },
+      {
+        "Text": "CVE-2014-6278",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-6278"
+      },
+      {
+        "Text": "CVE-2014-7186",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-7186"
+      },
+      {
+        "Text": "CVE-2014-7187",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-7187"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2014-10-04T17:29:28Z"
+    },
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2014-10-04T22:13:43Z"
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "ID": "200512-01",
+  "Title": "Perl: Format string errors can lead to code execution",
+  "Synopsis": "\n    A fix is available for Perl to mitigate the effects of format string\n    programming errors, that could otherwise be exploited to execute arbitrary\n    code.\n  ",
+  "Product": {
+    "Text": "Perl",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-12-07",
+  "Revised": {
+    "Text": "2005-12-07",
+    "Count": "01"
+  },
+  "Bug": [
+    "114113"
+  ],
+  "Access": "remote and local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-lang/perl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.8.7-r3",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "5.8.6-r8",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.8.7-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Perl is a stable, cross-platform programming language created by\n    Larry Wall. It contains printf functions that allows construction of\n    strings from format specifiers and parameters, like the C printf\n    functions. A well-known class of vulnerabilities, called format string\n    errors, result of the improper use of the printf functions in C. Perl\n    in itself is vulnerable to a limited form of format string errors\n    through its own sprintf function, especially through wrapper functions\n    that call sprintf (for example the syslog function) and by taking\n    advantage of Perl powerful string expansion features rather than using\n    format string specifiers.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Jack Louis discovered a new way to exploit format string errors in\n    Perl that could lead to the execution of arbitrary code. This is\n    perfomed by causing an integer wrap overflow in the efix variable\n    inside the function Perl_sv_vcatpvfn. The proposed fix closes that\n    specific exploitation vector to mitigate the risk of format string\n    programming errors in Perl. This fix does not remove the need to fix\n    such errors in Perl code.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    Perl applications making improper use of printf functions (or\n    derived functions) using untrusted data may be vulnerable to the\n    already-known forms of Perl format string exploits and also to the\n    execution of arbitrary code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Fix all misbehaving Perl applications so that they make proper use\n    of the printf and derived Perl functions.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Perl users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose dev-lang/perl"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-3962",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3962"
+      },
+      {
+        "Text": "Dyad Security Advisory",
+        "Link": "https://www.dyadsecurity.com/perl-0002.html"
+      },
+      {
+        "Text": "Research on format string errors in Perl",
+        "Link": "http://www.securityfocus.com/archive/1/418460/30/30"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-12-01T12:36:20Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-12-01T16:05:52Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-12-07T10:06:40Z"
+    }
+  ]
+}

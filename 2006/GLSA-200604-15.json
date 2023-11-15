@@ -1,0 +1,103 @@
+{
+  "ID": "200604-15",
+  "Title": "xine-ui: Format string vulnerabilities",
+  "Synopsis": "\n    Format string vulnerabilities in xine-ui may lead to the execution of\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "xine-ui",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-04-26",
+  "Revised": {
+    "Text": "2006-04-26",
+    "Count": "01"
+  },
+  "Bug": [
+    "130801"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-video/xine-ui",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.99.4-r5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.99.4-r5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    xine-ui is a skin-based user interface for xine. xine is a free\n    multimedia player. It plays CDs, DVDs, and VCDs, and can also decode\n    other common multimedia formats.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Ludwig Nussel discovered that xine-ui incorrectly implements\n    formatted printing.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    By constructing a malicious playlist file, a remote attacker could\n    exploit these vulnerabilities to execute arbitrary code with the rights\n    of the user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All xine-ui users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-video/xine-ui-0.99.4-r5\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-1905",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1905"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-04-22T18:05:30Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-04-23T00:24:14Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-04-25T05:57:00Z"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "ID": "202007-31",
+  "Title": "Icinga: Root privilege escalation",
+  "Synopsis": "Icinga installs files with insecure permissions allowing root\n    privilege escalation.\n  ",
+  "Product": {
+    "Text": "icinga",
+    "Type": "ebuild"
+  },
+  "Announced": "2020-07-27",
+  "Revised": {
+    "Text": "2020-07-27",
+    "Count": "1"
+  },
+  "Bug": [
+    "638186"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-analyzer/icinga",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": null,
+        "Vulnerable": [
+          {
+            "Text": "1.14.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Icinga is an open source computer system and network monitoring\n      application. It was originally created as a fork of the Nagios system\n      monitoring application in 2009.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was discovered that Icinga’s installed files have insecure\n      permissions, possibly allowing root privilege escalation.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A local attacker could escalate privileges to root.</p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "Gentoo has discontinued support for Icinga. We recommend that users\n      unmerge Icinga:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "NOTE: The Gentoo developer(s) maintaining Icinga have discontinued\n      support at this time. It may be possible that a new Gentoo developer will\n      update Icinga at a later date. The natural replacement is Icinga 2\n      (net-analyzer/icinga2).\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --unmerge \"net-analyzer/icinga\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2017-16882",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2017-16882"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "sam_c",
+      "Tag": "requester",
+      "Timestamp": "2020-06-20T02:07:54Z"
+    },
+    {
+      "Text": "sam_c",
+      "Tag": "submitter",
+      "Timestamp": "2020-07-27T00:26:20Z"
+    }
+  ]
+}

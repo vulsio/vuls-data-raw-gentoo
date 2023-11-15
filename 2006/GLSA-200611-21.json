@@ -1,0 +1,98 @@
+{
+  "ID": "200611-21",
+  "Title": "Kile: Incorrect backup file permission",
+  "Synopsis": "\n    Kile uses default permissions for backup files, potentially leading to\n    information disclosure.\n  ",
+  "Product": {
+    "Text": "kile",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-11-27",
+  "Revised": {
+    "Text": "2006-11-27",
+    "Count": "01"
+  },
+  "Bug": [
+    "155613"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-editors/kile",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.9.2-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.9.2-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Kile is a TeX/LaTeX editor for KDE.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Kile fails to set the same permissions on backup files as on the\n    original file. This is similar to CVE-2005-1920.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    A kile user may inadvertently grant access to sensitive information.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Kile users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-editors/kile-1.9.2-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-1920",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1920"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-11-24T10:25:19Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-11-27T07:49:07Z"
+    }
+  ]
+}

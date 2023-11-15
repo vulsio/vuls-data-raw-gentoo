@@ -1,0 +1,107 @@
+{
+  "ID": "200409-11",
+  "Title": "star: Suid root vulnerability",
+  "Synopsis": "\n    star contains a suid root vulnerability which could potentially grant\n    unauthorized root access to an attacker.\n  ",
+  "Product": {
+    "Text": "star",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-09-07",
+  "Revised": {
+    "Text": "2006-05-30",
+    "Count": "03"
+  },
+  "Bug": [
+    "61797"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-arch/star",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.5_alpha46",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.5_alpha46",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    star is an enhanced tape archiver, much like tar, that is recognized\n    for it's speed as well as it's enhanced mt/rmt support.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    A suid root vulnerability exists in versions of star that are\n    configured to use ssh for remote tape access.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    Attackers with local user level access could potentially gain root\n    level access.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All star users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv \">=app-arch/star-1.5_alpha46\"\n    # emerge \">=app-arch/star-1.5_alpha46\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Star Mailing List Announcement",
+        "Link": "https://lists.berlios.de/pipermail/star-users/2004-August/000239.html"
+      },
+      {
+        "Text": "CVE-2004-0850",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0850"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-09-03T20:05:50Z"
+    },
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-09-04T19:37:00Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-09-07T20:59:47Z"
+    }
+  ]
+}

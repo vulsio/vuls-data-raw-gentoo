@@ -1,0 +1,98 @@
+{
+  "ID": "202208-18",
+  "Title": "Motion: Denial of service",
+  "Synopsis": "A vulnerability in Motion allows a remote attacker to cause denial of service.",
+  "Product": {
+    "Text": "motion",
+    "Type": "ebuild"
+  },
+  "Announced": "2022-08-10",
+  "Revised": {
+    "Text": "2022-08-10",
+    "Count": "1"
+  },
+  "Bug": [
+    "760714"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-video/motion",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.3.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.3.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n        <p>Motion is a program that monitors the video signal from one or more cameras and is able to detect motions.</p>\n    "
+  },
+  "Description": {
+    "Text": "\n        <p>The Motion HTTP server does not correctly perform URL decoding. If the HTTP server receives a request for a URL containing an incomplete percent-encoded character, a flaw in parsing results in an infinite loop trying to parse the rest of the character, which eventually results in a denial of service condition when reading out-of-bounds.</p>\n    "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n        <p>A remote attacker can trigger a denial of service condition in Motion.</p>\n    "
+  },
+  "Workaround": {
+    "Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+  },
+  "Resolution": {
+    "Text": "\n        \n        \n        \n    ",
+    "P": [
+      {
+        "Text": "All Motion users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=media-video/motion-4.3.2\"\n        "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2020-26566",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-26566"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ajak",
+      "Tag": "requester",
+      "Timestamp": "2022-08-10T22:31:25.890188Z"
+    },
+    {
+      "Text": "ajak",
+      "Tag": "submitter",
+      "Timestamp": "2022-08-10T22:31:25.895137Z"
+    }
+  ]
+}

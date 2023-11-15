@@ -1,0 +1,98 @@
+{
+  "ID": "202007-21",
+  "Title": "Libreswan: Denial of service",
+  "Synopsis": "A vulnerability in Libreswan could lead to a Denial of Service\n    condition.\n  ",
+  "Product": {
+    "Text": "libreswan",
+    "Type": "ebuild"
+  },
+  "Announced": "2020-07-27",
+  "Revised": {
+    "Text": "2020-07-27",
+    "Count": "1"
+  },
+  "Bug": [
+    "722696"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-vpn/libreswan",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.32",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.32",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Libreswan is a free software implementation of the most widely supported\n      and standarized VPN protocol based on (“IPsec”) and the Internet Key\n      Exchange (“IKE”).\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>As a result of a bug in handling certain bogus encrypted IKEv1, while\n      building a log message that the packet has been dropped, a NULL pointer\n      dereference causes Libreswan to crash and restart when it attempts to log\n      the state name involved.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>An attacker could cause a possible Denial of Service condition.</p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Libreswan users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-vpn/libreswan-3.32\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2020-1763",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-1763"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "sam_c",
+      "Tag": "requester",
+      "Timestamp": "2020-07-26T15:11:54Z"
+    },
+    {
+      "Text": "sam_c",
+      "Tag": "submitter",
+      "Timestamp": "2020-07-27T00:05:28Z"
+    }
+  ]
+}

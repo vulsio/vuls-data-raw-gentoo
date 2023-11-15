@@ -1,0 +1,98 @@
+{
+  "ID": "201606-13",
+  "Title": "sudo: Unauthorized privilege escalation in sudoedit",
+  "Synopsis": "sudo is vulnerable to an escalation of privileges via a symlink\n    attack.\n  ",
+  "Product": {
+    "Text": "",
+    "Type": "ebuild"
+  },
+  "Announced": "2016-06-26",
+  "Revised": {
+    "Text": "2017-04-17",
+    "Count": "2"
+  },
+  "Bug": [
+    "564774"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-admin/sudo",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.8.15-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.8.15-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>sudo (su “do”) allows a system administrator to delegate authority\n      to give certain users (or groups of users) the ability to run some (or\n      all) commands as root or another user while providing an audit trail of\n      the commands and their arguments.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>sudoedit in sudo is vulnerable to the escalation of privileges by local\n      users via a symlink attack.  This can be exploited by a file whose full\n      path is defined using multiple wildcards in “/etc/sudoers”, as\n      demonstrated by “/home/*/*/file.txt”.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>Local users are able to gain unauthorized privileges on the system.</p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known work around at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All sudo users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-admin/sudo-1.8.15-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2015-5602\n    ",
+        "Link": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-5602"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "BlueKnight",
+      "Tag": "requester",
+      "Timestamp": "2015-12-23T23:28:50Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2017-04-17T18:04:03Z"
+    }
+  ]
+}

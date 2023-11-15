@@ -1,0 +1,116 @@
+{
+  "ID": "201206-05",
+  "Title": "Asterisk: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities in Asterisk might allow remote attackers\n    to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "Asterisk",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-06-21",
+  "Revised": {
+    "Text": "2012-06-21",
+    "Count": "1"
+  },
+  "Bug": [
+    "413353",
+    "418189",
+    "418191"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/asterisk",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.8.12.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.8.12.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Asterisk is an open source telephony engine and toolkit.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been found in Asterisk:</p>\n    \n    <ul>\n      <li>An error in manager.c allows shell access through the MixMonitor\n        application, GetVar, or Status (CVE-2012-2414).\n      </li>\n      <li>An error in chan_skinny.c could cause a heap-based buffer overflow\n        (CVE-2012-2415).\n      </li>\n      <li>An error in chan_sip.c prevents Asterisk from checking if a channel\n        exists before connected line updates (CVE-2012-2416).\n      </li>\n      <li>An error in chan_iax2.c may cause an invalid pointer to be called\n        (CVE-2012-2947).\n      </li>\n      <li>chan_skinny.c contains a NULL pointer dereference (CVE-2012-2948).</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could execute arbitrary code with the privileges of\n      the process or cause a Denial of Service condition. \n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Asterisk users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/asterisk-1.8.12.1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-2414",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-2414"
+      },
+      {
+        "Text": "CVE-2012-2415",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-2415"
+      },
+      {
+        "Text": "CVE-2012-2416",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-2416"
+      },
+      {
+        "Text": "CVE-2012-2947",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-2947"
+      },
+      {
+        "Text": "CVE-2012-2948",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-2948"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2012-04-24T21:44:51Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-06-21T00:28:33Z"
+    }
+  ]
+}

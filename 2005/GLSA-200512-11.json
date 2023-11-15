@@ -1,0 +1,112 @@
+{
+  "ID": "200512-11",
+  "Title": "CenterICQ: Multiple vulnerabilities",
+  "Synopsis": "\n    CenterICQ is vulnerable to a Denial of Service issue, and also potentially\n    to the execution of arbitrary code through an included vulnerable ktools\n    library.\n  ",
+  "Product": {
+    "Text": "CenterICQ",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-12-20",
+  "Revised": {
+    "Text": "2005-12-20",
+    "Count": "01"
+  },
+  "Bug": [
+    "100519",
+    "114038"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-im/centericq",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.21.0-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.21.0-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    CenterICQ is a text-based instant messaging interface that\n    supports multiple protocols. It includes the ktools library, which\n    provides text-mode user interface controls.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Gentoo developer Wernfried Haas discovered that when the \"Enable\n    peer-to-peer communications\" option is enabled, CenterICQ opens a port\n    that insufficiently validates whatever is sent to it. Furthermore,\n    Zone-H Research reported a buffer overflow in the ktools library.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could cause a crash of CenterICQ by sending\n    packets to the peer-to-peer communications port, and potentially cause\n    the execution of arbitrary code by enticing a CenterICQ user to edit\n    overly long contact details.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All CenterICQ users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-im/centericq-4.21.0-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-3694",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3694"
+      },
+      {
+        "Text": "CVE-2005-3863",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3863"
+      },
+      {
+        "Text": "Zone-H Research ZRCSA 200503",
+        "Link": "http://www.zone-h.org/en/advisories/read/id=8480/"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-12-16T12:39:29Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-12-17T10:48:20Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-12-18T11:38:58Z"
+    }
+  ]
+}

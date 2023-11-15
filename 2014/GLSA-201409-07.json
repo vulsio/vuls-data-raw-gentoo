@@ -1,0 +1,102 @@
+{
+  "ID": "201409-07",
+  "Title": "c-icap: Denial of service",
+  "Synopsis": "A vulnerability in c-icap could result in Denial of Service. ",
+  "Product": {
+    "Text": "c-icap,DoS",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-09-19",
+  "Revised": {
+    "Text": "2014-09-19",
+    "Count": "1"
+  },
+  "Bug": [
+    "455324"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-proxy/c-icap",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.2.6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.2.6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>c-icap is an implementation of an ICAP server. It can be used with HTTP\n      proxies that support the ICAP protocol to implement content adaptation\n      and filtering services. \n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>c-icap contains a flaw in the parse_request() function of request.c that\n      may allow a remote denial of service. The issue is triggered when the\n      buffer fails to contain a ‘ ‘ or ‘?’ symbol, which will cause the\n      end pointer to increase and surpass allocated memory. With a specially\n      crafted request (e.g. via the OPTIONS method), a remote attacker can\n      cause a loss of availability for the program.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker may cause a Denial of Service condition.</p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All c-icap users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-proxy/c-icap-0.2.6\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2013-7401",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-7401"
+      },
+      {
+        "Text": "CVE-2013-7402",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-7402"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2014-08-04T19:33:11Z"
+    },
+    {
+      "Text": "K_F",
+      "Tag": "submitter",
+      "Timestamp": "2014-09-19T18:54:16Z"
+    }
+  ]
+}

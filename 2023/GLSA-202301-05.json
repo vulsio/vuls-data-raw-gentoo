@@ -1,0 +1,98 @@
+{
+  "ID": "202301-05",
+  "Title": "Apache Commons Text: Arbitrary Code Execution",
+  "Synopsis": "A vulnerability has been discovered in Apache Commons Text which could result in arbitrary code execution.",
+  "Product": {
+    "Text": "commons-text",
+    "Type": "ebuild"
+  },
+  "Announced": "2023-01-11",
+  "Revised": {
+    "Text": "2023-01-11",
+    "Count": "1"
+  },
+  "Bug": [
+    "877577"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-java/commons-text",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.10.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.10.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n        <p>Apache Commons Text is a library focused on algorithms working on strings.</p>\n    "
+  },
+  "Description": {
+    "Text": "\n        <p>Apache Commons Text performs variable interpolation, allowing properties to be dynamically evaluated and expanded. The standard format for interpolation is &#34;${prefix:name}&#34;, where &#34;prefix&#34; is used to locate an instance of org.apache.commons.text.lookup.StringLookup that performs the interpolation. The set of default Lookup instances included interpolators that could result in arbitrary code execution or contact with remote servers. These lookups are: - &#34;script&#34; - execute expressions using the JVM script execution engine (javax.script) - &#34;dns&#34; - resolve dns records - &#34;url&#34; - load values from urls, including from remote servers Applications using the interpolation defaults in the affected versions may be vulnerable to remote code execution or unintentional contact with remote servers if untrusted configuration values are used.</p>\n    "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n        <p>Crafted input to Apache Commons Text could trigger remote code execution.</p>\n    "
+  },
+  "Workaround": {
+    "Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+  },
+  "Resolution": {
+    "Text": "\n        \n        \n        \n    ",
+    "P": [
+      {
+        "Text": "All Apache Commons Text users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=dev-java/commons-text-1.10.0\"\n        "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2022-42889",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-42889"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ajak",
+      "Tag": "requester",
+      "Timestamp": "2023-01-11T05:18:10.785619Z"
+    },
+    {
+      "Text": "ajak",
+      "Tag": "submitter",
+      "Timestamp": "2023-01-11T05:18:10.790088Z"
+    }
+  ]
+}

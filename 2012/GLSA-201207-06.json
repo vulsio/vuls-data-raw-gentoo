@@ -1,0 +1,98 @@
+{
+  "ID": "201207-06",
+  "Title": "JRuby: Denial of service",
+  "Synopsis": "A hash collision vulnerability in JRuby allows remote attackers to\n    cause a Denial of Service condition.\n  ",
+  "Product": {
+    "Text": "jruby",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-07-09",
+  "Revised": {
+    "Text": "2012-07-09",
+    "Count": "1"
+  },
+  "Bug": [
+    "396305"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-java/jruby",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.6.5.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.6.5.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>JRuby is a Java-based Ruby interpreter implementation.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>JRuby does not properly randomize hash functions to protect against hash\n      collision attacks.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could send a specially crafted input, possibly\n      resulting in a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All JRuby users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-java/jruby-1.6.5.1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2011-4838",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-4838"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2012-06-11T19:25:16Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-07-09T22:35:40Z"
+    }
+  ]
+}

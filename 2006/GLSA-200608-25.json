@@ -1,0 +1,407 @@
+{
+  "ID": "200608-25",
+  "Title": "X.org and some X.org libraries: Local privilege escalations",
+  "Synopsis": "\n    X.org, libX11, xdm, xf86dga, xinit, xload, xtrans, and xterm are vulnerable\n    to local privilege escalations because of unchecked setuid() calls.\n  ",
+  "Product": {
+    "Text": "xorg-x11,xorg-server,xtrans,xload,xinit,xterm,xf86dga,xdm,libX11",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-08-28",
+  "Revised": {
+    "Text": "2006-12-13",
+    "Count": "02"
+  },
+  "Bug": [
+    "135974"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "x11-apps/xdm",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.4-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.4-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "x11-apps/xinit",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.2-r6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.2-r6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "x11-apps/xload",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.1-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.1-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "x11-apps/xf86dga",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.1-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.1-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "x11-base/xorg-x11",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "6.8.2-r8",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "6.9.0-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "6.9.0-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "x11-base/xorg-server",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.2-r6",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.1.0-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.0-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "x11-libs/libx11",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.1-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.1-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "x11-libs/xtrans",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.0-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.0-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "x11-terms/xterm",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "215",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "215",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "app-emulation/emul-linux-x86-xlibs",
+        "Auto": "yes",
+        "Arch": "amd64",
+        "Unaffected": [
+          {
+            "Text": "7.0-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "7.0-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    X.org is an implementation of the X Window System.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Several X.org libraries and X.org itself contain system calls to\n    set*uid() functions, without checking their result.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    Local users could deliberately exceed their assigned resource limits\n    and elevate their privileges after an unsuccessful set*uid() system\n    call. This requires resource limits to be enabled on the machine.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All X.Org xdm users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All X.Org xinit users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All X.Org xload users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All X.Org xf86dga users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All X.Org users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All X.Org X servers users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All X.Org X11 library users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All X.Org xtrans library users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All xterm users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All users of the X11R6 libraries for emulation of 32bit x86 on amd64\n    should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    Please note that the fixed packages have been available for most\n    architectures since June 30th but the GLSA release was held up waiting\n    for the remaining architectures.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-apps/xdm-1.0.4-r1\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-apps/xinit-1.0.2-r6\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-apps/xload-1.0.1-r1\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-apps/xf86dga-1.0.1-r1\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-base/xorg-x11-6.9.0-r2\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-base/xorg-server-1.1.0-r1\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-libs/libx11-1.0.1-r1\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-libs/xtrans-1.0.1-r1\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-terms/xterm-215\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-emulation/emul-linux-x86-xlibs-7.0-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "X.Org security advisory",
+        "Link": "https://lists.freedesktop.org/archives/xorg/2006-June/016146.html"
+      },
+      {
+        "Text": "CVE-2006-4447",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4447"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-08-16T08:09:58Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-08-21T15:45:11Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-08-23T20:02:52Z"
+    }
+  ]
+}

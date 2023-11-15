@@ -1,0 +1,109 @@
+{
+  "ID": "201401-16",
+  "Title": "CCID: Arbitrary code execution",
+  "Synopsis": "A vulnerability in CCID could result in execution of arbitrary\n    code.\n  ",
+  "Product": {
+    "Text": "ccid",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-01-21",
+  "Revised": {
+    "Text": "2014-01-21",
+    "Count": "1"
+  },
+  "Bug": [
+    "349559"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-crypt/ccid",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.1-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.1-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>CCID is a generic USB Chip/Smart Card Interface Devices driver.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>CCID contains an integer overflow vulnerability in ccid_serial.c.</p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A physically proximate attacker could execute arbitrary code via a smart\n      card with a specially crafted\n      serial number.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All CCID users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "NOTE: This is a legacy GLSA. Updates for all affected architectures are\n      available since January 21, 2011. It is likely that your system is\n      already no longer affected by this issue.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-crypt/ccid-1.4.1-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2010-4530",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-4530"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    underling\n  ",
+      "Tag": "requester",
+      "Timestamp": "2011-10-07T23:38:18Z"
+    },
+    {
+      "Text": "Zlogene",
+      "Tag": "submitter",
+      "Timestamp": "2014-01-21T17:22:43Z"
+    }
+  ]
+}

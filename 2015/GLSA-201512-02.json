@@ -1,0 +1,98 @@
+{
+  "ID": "201512-02",
+  "Title": "IPython: User-assisted execution of arbitrary code",
+  "Synopsis": "A vulnerability in IPython could result in execution of arbitrary\n    JavaScript.\n  ",
+  "Product": {
+    "Text": "ipython",
+    "Type": "ebuild"
+  },
+  "Announced": "2015-12-17",
+  "Revised": {
+    "Text": "2015-12-17",
+    "Count": "1"
+  },
+  "Bug": [
+    "560708"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-python/ipython",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.2.1-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.2.1-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>IPython is an advanced interactive shell for Python.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>IPython does not properly check the MIME type of a file.</p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted text\n      file using IPython, possibly resulting in execution of arbitrary\n      JavaScript with the privileges of the process.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All IPython users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-python/ipython-3.2.1-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2015-7337",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-7337"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "requester",
+      "Timestamp": "2015-09-24T01:14:10Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2015-12-17T16:41:41Z"
+    }
+  ]
+}

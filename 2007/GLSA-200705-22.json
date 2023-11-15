@@ -1,0 +1,108 @@
+{
+  "ID": "200705-22",
+  "Title": "FreeType: Buffer overflow",
+  "Synopsis": "\n    A vulnerability has been discovered in FreeType allowing for the execution\n    of arbitrary code.\n  ",
+  "Product": {
+    "Text": "freetype",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-05-30",
+  "Revised": {
+    "Text": "2007-05-30",
+    "Count": "01"
+  },
+  "Bug": [
+    "179161"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/freetype",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.3.4-r2",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "2.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.3.4-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    FreeType is a True Type Font rendering library.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Victor Stinner discovered a heap-based buffer overflow in the function\n    Get_VMetrics() in src/truetype/ttgload.c when processing TTF files with\n    a negative n_points attribute.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted TTF\n    file, possibly resulting in the execution of arbitrary code with the\n    privileges of the user running FreeType.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All FreeType users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/freetype-2.3.4-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-2754",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2754"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-05-22T15:08:56Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-05-22T15:38:03Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-05-27T16:46:08Z"
+    }
+  ]
+}

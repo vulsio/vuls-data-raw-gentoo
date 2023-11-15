@@ -1,0 +1,139 @@
+{
+  "ID": "200711-30",
+  "Title": "PCRE: Multiple vulnerabilities",
+  "Synopsis": "\n    PCRE is vulnerable to multiple buffer overflow and memory corruption\n    vulnerabilities, possibly leading to the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "libpcre",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-11-20",
+  "Revised": {
+    "Text": "2007-11-20",
+    "Count": "01"
+  },
+  "Bug": [
+    "198198"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/libpcre",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "7.3-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "7.3-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    PCRE is a library providing functions for Perl-compatible regular\n    expressions.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Tavis Ormandy (Google Security) discovered multiple vulnerabilities in\n    PCRE. He reported an error when processing \"\\Q\\E\" sequences with\n    unmatched \"\\E\" codes that can lead to the compiled bytecode being\n    corrupted (CVE-2007-1659). PCRE does not properly calculate sizes for\n    unspecified \"multiple forms of character class\", which triggers a\n    buffer overflow (CVE-2007-1660). Further improper calculations of\n    memory boundaries were reported when matching certain input bytes\n    against regex patterns in non UTF-8 mode (CVE-2007-1661) and when\n    searching for unmatched brackets or parentheses (CVE-2007-1662).\n    Multiple integer overflows when processing escape sequences may lead to\n    invalid memory read operations or potentially cause heap-based buffer\n    overflows (CVE-2007-4766). PCRE does not properly handle \"\\P\" and\n    \"\\P{x}\" sequences which can lead to heap-based buffer overflows or\n    trigger the execution of infinite loops (CVE-2007-4767), PCRE is also\n    prone to an error when optimizing character classes containing a\n    singleton UTF-8 sequence which might lead to a heap-based buffer\n    overflow (CVE-2007-4768).\n    </p>\n    <p>\n    Chris Evans also reported multiple integer overflow vulnerabilities in\n    PCRE when processing a large number of named subpatterns (\"name_count\")\n    or long subpattern names (\"max_name_size\") (CVE-2006-7227), and via\n    large \"min\", \"max\", or \"duplength\" values (CVE-2006-7228) both possibly\n    leading to buffer overflows. Another vulnerability was reported when\n    compiling patterns where the \"-x\" or \"-i\" UTF-8 options change within\n    the pattern, which might lead to improper memory calculations\n    (CVE-2006-7230).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could exploit these vulnerabilities by sending specially\n    crafted regular expressions to applications making use of the PCRE\n    library, which could possibly lead to the execution of arbitrary code,\n    a Denial of Service or the disclosure of sensitive information.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All PCRE users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/libpcre-7.3-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-7227",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-7227"
+      },
+      {
+        "Text": "CVE-2006-7228",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-7228"
+      },
+      {
+        "Text": "CVE-2006-7230",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-7230"
+      },
+      {
+        "Text": "CVE-2007-1659",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1659"
+      },
+      {
+        "Text": "CVE-2007-1660",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1660"
+      },
+      {
+        "Text": "CVE-2007-1661",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1661"
+      },
+      {
+        "Text": "CVE-2007-1662",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1662"
+      },
+      {
+        "Text": "CVE-2007-4766",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4766"
+      },
+      {
+        "Text": "CVE-2007-4767",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4767"
+      },
+      {
+        "Text": "CVE-2007-4768",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4768"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-11-09T10:23:13Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-11-20T00:43:59Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-11-20T00:44:04Z"
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "ID": "200905-04",
+  "Title": "GnuTLS: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities in GnuTLS might result in a Denial of Service,\n    spoofing or the generation of invalid keys.\n  ",
+  "Product": {
+    "Text": "gnutls",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-05-24",
+  "Revised": {
+    "Text": "2009-05-24",
+    "Count": "01"
+  },
+  "Bug": [
+    "267774"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-libs/gnutls",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.6.6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.6.6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    GnuTLS is an Open Source implementation of the TLS 1.0 and SSL 3.0\n    protocols.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The following vulnerabilities were found in GnuTLS:\n    </p>\n    <ul>\n    <li>Miroslav Kratochvil reported that lib/pk-libgcrypt.c does not\n    properly handle corrupt DSA signatures, possibly leading to a\n    double-free vulnerability (CVE-2009-1415).</li>\n    <li>Simon Josefsson\n    reported that GnuTLS generates RSA keys stored in DSA structures when\n    creating a DSA key (CVE-2009-1416).</li>\n    <li>Romain Francoise reported\n    that the _gnutls_x509_verify_certificate() function in\n    lib/x509/verify.c does not perform time checks, resulting in the\n    \"gnutls-cli\" program accepting X.509 certificates with validity times\n    in the past or future (CVE-2009-1417).</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user or automated system to process a\n    specially crafted DSA certificate, possibly resulting in a Denial of\n    Service condition. NOTE: This issue might have other unspecified impact\n    including the execution of arbitrary code. Furthermore, a remote\n    attacker could spoof signatures on certificates and the \"gnutls-cli\"\n    application can be tricked into accepting an invalid certificate.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All GnuTLS users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-libs/gnutls-2.6.6\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-1415",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1415"
+      },
+      {
+        "Text": "CVE-2009-1416",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1416"
+      },
+      {
+        "Text": "CVE-2009-1417",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1417"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-05-06T18:48:21Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-05-07T11:40:21Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-05-24T11:17:39Z"
+    }
+  ]
+}

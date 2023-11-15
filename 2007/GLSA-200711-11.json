@@ -1,0 +1,108 @@
+{
+  "ID": "200711-11",
+  "Title": "Nagios Plugins: Two buffer overflows",
+  "Synopsis": "\n    Two buffer overflow vulnerabilities in the Nagios Plugins might allow for\n    remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "nagios-plugins",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-11-08",
+  "Revised": {
+    "Text": "2007-11-08",
+    "Count": "01"
+  },
+  "Bug": [
+    "196308",
+    "194178"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-analyzer/nagios-plugins",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.10-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.10-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Nagios Plugins are an official set of plugins for Nagios, an open\n    source host, service and network monitoring program.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    fabiodds reported a boundary checking error in the \"check_snmp\" plugin\n    when processing SNMP \"GET\" replies that could lead to a stack-based\n    buffer overflow (CVE-2007-5623). Nobuhiro Ban reported a boundary\n    checking error in the redir() function of the \"check_http\" plugin when\n    processing HTTP \"Location:\" header information which might lead to a\n    buffer overflow (CVE-2007-5198).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker could exploit these vulnerabilities to execute\n    arbitrary code with the privileges of the user running Nagios or cause\n    a Denial of Service by (1) sending a specially crafted SNMP \"GET\" reply\n    to the Nagios daemon or (2) sending an overly long string in the\n    \"Location:\" header of an HTTP reply. Note that to exploit (2), the\n    malicious or compromised web server has to be configured in Nagios and\n    the \"-f\" (follow) option has to be enabled.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All users of the Nagios Plugins should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/nagios-plugins-1.4.10-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-5198",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5198"
+      },
+      {
+        "Text": "CVE-2007-5623",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5623"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-11-03T12:12:46Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-11-05T00:16:27Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-11-07T19:12:11Z"
+    }
+  ]
+}

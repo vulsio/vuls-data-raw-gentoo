@@ -1,0 +1,98 @@
+{
+  "ID": "201812-03",
+  "Title": "Nagios: Privilege escalation",
+  "Synopsis": "A vulnerability in Nagios allows local users to escalate\n    privileges.\n  ",
+  "Product": {
+    "Text": "nagios",
+    "Type": "ebuild"
+  },
+  "Announced": "2018-12-02",
+  "Revised": {
+    "Text": "2018-12-02",
+    "Count": "1"
+  },
+  "Bug": [
+    "629380"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-analyzer/nagios-core",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.3.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.3.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Nagios is an open source host, service and network monitoring program.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A vulnerability in Nagios was discovered due to the improper handling of\n      configuration files which can be owned by a non-root user.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A local attacker can escalate privileges to root by leveraging access to\n      a non-root owned configuration file.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Nagios users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-analyzer/nagios-core-4.3.4\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2017-14312",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2017-14312"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "b-man",
+      "Tag": "requester",
+      "Timestamp": "2018-11-24T23:02:56Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2018-12-02T15:48:26Z"
+    }
+  ]
+}

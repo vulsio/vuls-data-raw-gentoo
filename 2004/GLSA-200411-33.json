@@ -1,0 +1,112 @@
+{
+  "ID": "200411-33",
+  "Title": "TWiki: Arbitrary command execution",
+  "Synopsis": "\n    A bug in the TWiki search function allows an attacker to execute arbitrary\n    commands with the permissions of the user running TWiki.\n  ",
+  "Product": {
+    "Text": "www-apps/twiki",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-11-24",
+  "Revised": {
+    "Text": "2006-09-08",
+    "Count": "02"
+  },
+  "Bug": [
+    "71035"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/twiki",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "20040902 ",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "20000000",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "20040902 ",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    TWiki is a Web-based groupware tool based around the concept of wiki\n    pages that can be edited by anybody with a Web browser.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The TWiki search function, which uses a shell command executed via the\n    Perl backtick operator, does not properly escape shell metacharacters\n    in the user-provided search string.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    An attacker can insert malicious commands into a search request,\n    allowing the execution of arbitrary commands with the privileges of the\n    user running TWiki (usually the Web server user).\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All TWiki users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/twiki-20040902\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "TWiki Security Alert",
+        "Link": "http://twiki.org/cgi-bin/view/Codev/SecurityAlertExecuteCommandsWithSearch"
+      },
+      {
+        "Text": "CAN-2004-1037",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1037"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-11-22T17:14:35Z"
+    },
+    {
+      "Text": "\n    dmargoli\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-11-22T23:25:58Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-11-24T08:52:40Z"
+    }
+  ]
+}

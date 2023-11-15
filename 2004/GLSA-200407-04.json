@@ -1,0 +1,97 @@
+{
+  "ID": "200407-04",
+  "Title": "Pure-FTPd: Potential DoS when maximum connections is reached",
+  "Synopsis": "\n    Pure-FTPd contains a bug potentially allowing a Denial of Service attack\n    when the maximum number of connections is reached.\n  ",
+  "Product": {
+    "Text": "Pure-FTPd",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-07-04",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "54590"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-ftp/pure-ftpd",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.18-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.18",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Pure-FTPd is a fast, production-quality and standards-compliant FTP\n    server.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Pure-FTPd contains a bug in the accept_client function handling the\n    setup of new connections.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    When the maximum number of connections is reached an attacker could\n    exploit this vulnerability to perform a Denial of Service attack.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time. All users are encouraged to\n    upgrade to the latest available version.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Pure-FTPd users should upgrade to the latest stable version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv \">=net-ftp/pure-ftpd-1.0.18-r1\"\n    # emerge \">=net-ftp/pure-ftpd-1.0.18-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Pure-FTPd website",
+        "Link": "http://www.pureftpd.org"
+      },
+      {
+        "Text": "CVE-2004-0656",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0656"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

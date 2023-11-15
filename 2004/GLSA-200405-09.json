@@ -1,0 +1,98 @@
+{
+  "ID": "200405-09",
+  "Title": "ProFTPD Access Control List bypass vulnerability",
+  "Synopsis": "\n    Version 1.2.9 of ProFTPD introduced a vulnerability that causes CIDR-based\n    Access Control Lists (ACLs) to be treated as \"AllowAll\", thereby\n    allowing remote users full access to files available to the FTP daemon.\n  ",
+  "Product": {
+    "Text": "proftpd",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-05-19",
+  "Revised": {
+    "Text": "2004-05-19",
+    "Count": "01"
+  },
+  "Bug": [
+    "49496"
+  ],
+  "Access": "remote ",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-ftp/proftpd",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.9-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.9-r1",
+            "Range": "eq",
+            "Slot": ""
+          },
+          {
+            "Text": "1.2.9",
+            "Range": "eq",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    ProFTPD is an FTP daemon.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    ProFTPD 1.2.9 introduced a vulnerability that allows CIDR-based ACLs (such\n    as 10.0.0.1/24) to be bypassed. The CIDR ACLs are disregarded, with the net\n    effect being similar to an \"AllowAll\" directive.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    This vulnerability may allow unauthorized files, including critical system\n    files to be downloaded and/or modified, thereby allowing a potential remote\n    compromise of the server.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Users may work around the problem by avoiding use of CIDR-based ACLs.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    ProFTPD users are encouraged to upgrade to the latest version of the\n    package:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n\n    # emerge -pv \">=net-ftp/proftpd-1.2.9-r2\"\n    # emerge \">=net-ftp/proftpd-1.2.9-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-0432",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0432"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    klieber\n  ",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

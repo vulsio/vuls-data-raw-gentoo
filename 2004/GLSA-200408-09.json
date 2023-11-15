@@ -1,0 +1,97 @@
+{
+  "ID": "200408-09",
+  "Title": "Roundup: Filesystem access vulnerability",
+  "Synopsis": "\n    Roundup will make files owned by the user that it's running as accessable\n    to a remote attacker.\n  ",
+  "Product": {
+    "Text": "Roundup",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-08-11",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "03"
+  },
+  "Bug": [
+    "53494"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/roundup",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.7.6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.6.4",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Roundup is a simple to use issue-tracking system with command-line,\n    web, and e-mail interfaces.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Improper handling of a specially crafted URL allows access to the\n    server's filesystem, which could contain sensitive information.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    An attacker could view files owned by the user running Roundup. This\n    will never be root however, as Roundup will not run as root.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time. All users are encouraged to\n    upgrade to the latest available version of Roundup.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Roundup users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv \">=www-apps/roundup-0.7.6\"\n    # emerge \">=www-apps/roundup-0.7.6\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Secunia Advisory SA11801",
+        "Link": "https://secunia.com/advisories/11801/"
+      },
+      {
+        "Text": "CVE-2004-1444",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1444"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    chriswhite\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-08-09T18:49:24Z"
+    }
+  ]
+}

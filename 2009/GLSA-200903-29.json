@@ -1,0 +1,134 @@
+{
+  "ID": "200903-29",
+  "Title": "BlueZ: Arbitrary code execution",
+  "Synopsis": "\n    Insufficient input validation in BlueZ may lead to arbitrary code execution\n    or a Denial of Service.\n  ",
+  "Product": {
+    "Text": "bluez-utils bluez-libs",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-03-16",
+  "Revised": {
+    "Text": "2009-03-16",
+    "Count": "01"
+  },
+  "Bug": [
+    "230591"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-wireless/bluez-utils",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.36",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.36",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "net-wireless/bluez-libs",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.36",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.36",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    BlueZ is a set of Bluetooth tools and system daemons for Linux.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    It has been reported that the Bluetooth packet parser does not validate\n    string length fields in SDP packets.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A physically proximate attacker using a Bluetooth device with an\n    already established trust relationship could send specially crafted\n    requests, possibly leading to arbitrary code execution or a crash.\n    Exploitation may also be triggered by a local attacker registering a\n    service record via a UNIX socket or D-Bus interface.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All bluez-utils users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All bluez-libs users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-wireless/bluez-utils-3.36\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-wireless/bluez-libs-3.36\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-2374",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2374"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-03-11T19:03:24Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-03-11T19:04:53Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-03-13T12:49:09Z"
+    }
+  ]
+}

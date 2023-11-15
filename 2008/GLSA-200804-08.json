@@ -1,0 +1,108 @@
+{
+  "ID": "200804-08",
+  "Title": "lighttpd: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities in lighttpd may lead to information disclosure or\n    a Denial of Service.\n  ",
+  "Product": {
+    "Text": "lighttpd",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-04-10",
+  "Revised": {
+    "Text": "2008-04-10",
+    "Count": "01"
+  },
+  "Bug": [
+    "212930",
+    "214892"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-servers/lighttpd",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.19-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.19-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    lighttpd is a lightweight high-performance web server.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Julien Cayzax discovered that an insecure default setting exists in\n    mod_userdir in lighttpd. When userdir.path is not set the default value\n    used is $HOME. It should be noted that the \"nobody\" user's $HOME is \"/\"\n    (CVE-2008-1270). An error also exists in the SSL connection code which\n    can be triggered when a user prematurely terminates his connection\n    (CVE-2008-1531).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could exploit the first vulnerability to read\n    arbitrary files. The second vulnerability can be exploited by a remote\n    attacker to cause a Denial of Service by terminating a victim's SSL\n    connection.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    As a workaround for CVE-2008-1270 you can set userdir.path to a\n    sensible value, e.g. <i>\"public_html\"</i>.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All lighttpd users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-servers/lighttpd-1.4.19-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-1270",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1270"
+      },
+      {
+        "Text": "CVE-2008-1531",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1531"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-03-29T20:15:35Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-04-03T22:44:24Z"
+    },
+    {
+      "Text": "\n    mfleming\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-04-06T21:43:05Z"
+    }
+  ]
+}

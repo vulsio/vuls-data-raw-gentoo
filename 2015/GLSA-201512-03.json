@@ -1,0 +1,118 @@
+{
+  "ID": "201512-03",
+  "Title": "GRUB: Authentication bypass",
+  "Synopsis": "GRUB's authentication prompt can be bypassed by entering a sequence\n    of backspace characters.\n  ",
+  "Product": {
+    "Text": "grub",
+    "Type": "ebuild"
+  },
+  "Announced": "2015-12-19",
+  "Revised": {
+    "Text": "2015-12-19",
+    "Count": "1"
+  },
+  "Bug": [
+    "568326"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-boot/grub",
+        "Auto": "no",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.02_beta2-r8",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.97",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.02_beta2-r8",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>GNU GRUB is a multiboot boot loader used by most Linux systems.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>An integer underflow in GRUB’s username/password authentication code\n      has been discovered.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>An attacker with access to the system console may bypass the username\n      prompt by entering a sequence of backspace characters, allowing them e.g.\n      to get full access to GRUB’s console or to load a customized kernel.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All GRUB 2.x users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "After upgrading, make sure to run the grub2-install command with options\n      appropriate for your system. See the GRUB2 Quick Start guide in the\n      references below for examples. Your system will be vulnerable until this\n      action is performed.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-boot/grub-2.02_beta2-r8\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2015-8370",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-8370"
+      },
+      {
+        "Text": "GRUB2 Quick\n      Start guide\n    ",
+        "Link": "https://wiki.gentoo.org/wiki/GRUB2_Quick_Start"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2015-12-19T13:09:44Z"
+    },
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2015-12-19T14:20:07Z"
+    }
+  ]
+}

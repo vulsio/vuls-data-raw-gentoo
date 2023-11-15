@@ -1,0 +1,110 @@
+{
+  "ID": "201412-34",
+  "Title": "NTP: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in NTP, the worst of which\n    could result in remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "ntp",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-12-24",
+  "Revised": {
+    "Text": "2014-12-24",
+    "Count": "2"
+  },
+  "Bug": [
+    "533076"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/ntp",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.2.8",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.2.8",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>NTP is a protocol designed to synchronize the clocks of computers over a\n      network. The net-misc/ntp package contains the official reference\n      implementation by the NTP Project.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in NTP. Please review the\n      CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A remote unauthenticated attacker may be able to execute arbitrary code\n      with the privileges of the process, cause a Denial of Service condition,\n      and obtain sensitive information that could assist in other attacks.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All NTP users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/ntp-4.2.8\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-9293",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-9293"
+      },
+      {
+        "Text": "CVE-2014-9294",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-9294"
+      },
+      {
+        "Text": "CVE-2014-9295",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-9295"
+      },
+      {
+        "Text": "CVE-2014-9296",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-9296"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2014-12-23T23:07:31Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2014-12-24T19:20:24Z"
+    }
+  ]
+}

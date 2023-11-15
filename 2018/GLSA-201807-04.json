@@ -1,0 +1,98 @@
+{
+  "ID": "201807-04",
+  "Title": "cURL: Heap-based buffer overflow",
+  "Synopsis": "A heap-based buffer overflow in cURL might allow remote attackers\n    to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "curl",
+    "Type": "ebuild"
+  },
+  "Announced": "2018-07-29",
+  "Revised": {
+    "Text": "2018-07-29",
+    "Count": "1"
+  },
+  "Bug": [
+    "660894"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/curl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "7.61.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "7.61.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>A command line tool and library for transferring data with URLs.</p>\n    \n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A heap-based buffer overflow was discovered in cURL’s\n      Curl_smtp_escape_eob() function.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>An attacker could cause a Denial of Service condition or execute\n      arbitrary code via SMTP connections.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All cURL users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/curl-7.61.0\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2018-0500",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2018-0500"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "irishluck83",
+      "Tag": "requester",
+      "Timestamp": "2018-07-21T22:56:00Z"
+    },
+    {
+      "Text": "irishluck83",
+      "Tag": "submitter",
+      "Timestamp": "2018-07-29T22:11:16Z"
+    }
+  ]
+}

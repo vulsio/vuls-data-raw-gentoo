@@ -1,0 +1,103 @@
+{
+  "ID": "200707-14",
+  "Title": "tcpdump: Integer overflow",
+  "Synopsis": "\n    A vulnerability has been discovered in tcpdump, allowing for the execution\n    of arbitrary code, possibly with root privileges.\n  ",
+  "Product": {
+    "Text": "tcpdump",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-07-28",
+  "Revised": {
+    "Text": "2007-07-28",
+    "Count": "01"
+  },
+  "Bug": [
+    "184815"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-analyzer/tcpdump",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.9.5-r3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.9.5-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    tcpdump is a tool for capturing and inspecting network traffic.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    mu-b from Digital Labs discovered that the return value of a snprintf()\n    call is not properly checked before being used. This could lead to an\n    integer overflow.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker could send specially crafted BGP packets on a network\n    being monitored with tcpdump, possibly resulting in the execution of\n    arbitrary code with the privileges of the user running tcpdump, which\n    is usually root.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All tcpdump users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/tcpdump-3.9.5-r3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-3798",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3798"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-07-14T22:01:53Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-07-17T18:00:19Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-07-17T18:48:59Z"
+    }
+  ]
+}

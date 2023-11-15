@@ -1,0 +1,103 @@
+{
+  "ID": "200604-16",
+  "Title": "xine-lib: Buffer overflow vulnerability",
+  "Synopsis": "\n    xine-lib contains a buffer overflow vulnerability which may lead to the\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "xine-lib",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-04-26",
+  "Revised": {
+    "Text": "2006-04-26",
+    "Count": "01"
+  },
+  "Bug": [
+    "128838"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/xine-lib",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.1.2_pre20060328-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.2_pre20060328-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    xine-lib is the xine core engine. xine is a free multimedia\n    player. It plays CDs, DVDs, and VCDs, and can also decode other common\n    multimedia formats.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Federico L. Bossi Bonin discovered that when handling MPEG streams\n    xine-lib fails to make a proper boundary check of the input data\n    supplied by the user before copying it to an insufficiently sized\n    memory buffer.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to play a specially-crafted\n    MPEG file, resulting in the execution of arbitrary code with the\n    permissions of the user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All xine-lib users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/xine-lib-1.1.2_pre20060328-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-1664",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1664"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-04-21T20:35:23Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-04-23T00:46:13Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-04-24T16:31:50Z"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "ID": "200702-05",
+  "Title": "Fail2ban: Denial of service",
+  "Synopsis": "\n    A flaw in Fail2ban may allow remote attackers to deny access to arbitrary\n    hosts.\n  ",
+  "Product": {
+    "Text": "fail2ban",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-02-16",
+  "Revised": {
+    "Text": "2007-02-16",
+    "Count": "01"
+  },
+  "Bug": [
+    "157166"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-analyzer/fail2ban",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.6.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.6.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Fail2ban monitors log files for failed authentication attempts and can\n    block hosts responsible for repeated attacks.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    A flaw in the method used to parse log entries allows remote,\n    unauthenticated attackers to forge authentication attempts from other\n    hosts.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker can add arbitrary hosts to the block list, denying\n    legitimate users access to a resource.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Fail2ban users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/fail2ban-0.6.2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-6302",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6302"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-02-12T22:35:11Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-02-12T22:42:08Z"
+    },
+    {
+      "Text": "\n    taviso\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-02-12T22:56:35Z"
+    }
+  ]
+}

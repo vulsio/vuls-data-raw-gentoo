@@ -1,0 +1,107 @@
+{
+  "ID": "200508-21",
+  "Title": "phpWebSite: Arbitrary command execution through XML-RPC and SQL injection",
+  "Synopsis": "\n    phpWebSite is vulnerable to multiple issues which result in the execution\n    of arbitrary code and SQL injection.\n  ",
+  "Product": {
+    "Text": "phpwebsite",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-08-31",
+  "Revised": {
+    "Text": "2005-08-31",
+    "Count": "01"
+  },
+  "Bug": [
+    "102785"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/phpwebsite",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.10.2_rc2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.10.2_rc2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    phpWebSite is a web site content management system.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    phpWebSite uses an XML-RPC library that improperly handles XML-RPC\n    requests and responses with malformed nested tags. Furthermore,\n    \"matrix_killer\" reported that phpWebSite is vulnerable to an SQL\n    injection attack.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A malicious remote user could exploit this vulnerability to inject\n    arbitrary PHP script code into eval() statements by sending a specially\n    crafted XML document, and also inject SQL commands to access the\n    underlying database directly.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All phpWebSite users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/phpwebsite-0.10.2_rc2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-2498",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2498"
+      },
+      {
+        "Text": "Original Advisory",
+        "Link": "http://archives.neohapsis.com/archives/fulldisclosure/2005-08/0497.html"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-08-25T18:35:22Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-08-29T11:14:08Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-08-31T02:40:59Z"
+    }
+  ]
+}

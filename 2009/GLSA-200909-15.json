@@ -1,0 +1,111 @@
+{
+  "ID": "200909-15",
+  "Title": "Lynx: Arbitrary command execution",
+  "Synopsis": "\n    An incomplete fix for an issue related to the Lynx URL handler might allow\n    for the remote execution of arbitrary commands.\n  ",
+  "Product": {
+    "Text": "lynx",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-09-12",
+  "Revised": {
+    "Text": "2009-09-12",
+    "Count": "01"
+  },
+  "Bug": [
+    "243058"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-client/lynx",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.8.6-r4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.8.6-r4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Lynx is a fully-featured WWW client for users running\n    cursor-addressable, character-cell display devices such as vt100\n    terminals and terminal emulators.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Clint Ruoho reported that the fix for CVE-2005-2929 (GLSA 200511-09)\n    only disabled the lynxcgi:// handler when not using the advanced mode.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker can entice a user to access a malicious HTTP server,\n    causing Lynx to execute arbitrary commands. NOTE: The advanced mode is\n    not enabled by default. Successful exploitation requires the\n    \"lynxcgi://\" protocol to be registered with lynx on the victim's\n    system.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Lynx users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/lynx-2.8.6-r4\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-2929",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2929"
+      },
+      {
+        "Text": "CVE-2008-4690",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4690"
+      },
+      {
+        "Text": "GLSA 200511-09",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200511-09.xml"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-08-07T11:47:31Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-08-28T08:16:43Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-08-31T03:37:19Z"
+    }
+  ]
+}

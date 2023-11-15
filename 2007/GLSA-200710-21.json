@@ -1,0 +1,103 @@
+{
+  "ID": "200710-21",
+  "Title": "TikiWiki: Arbitrary command execution",
+  "Synopsis": "\n    Tikiwiki contains a command injection vulnerability which may allow remote\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "tikiwiki",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-10-20",
+  "Revised": {
+    "Text": "2007-10-20",
+    "Count": "01"
+  },
+  "Bug": [
+    "195503"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/tikiwiki",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.9.8.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.9.8.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    TikiWiki is an open source content management system written in PHP.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    ShAnKaR reported that input passed to the \"f\" array parameter in\n    tiki-graph_formula.php is not properly verified before being used to\n    execute PHP functions.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    An attacker could execute arbitrary code with the rights of the user\n    running the web server by passing a specially crafted parameter string\n    to the tiki-graph_formula.php file.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All TikiWiki users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/tikiwiki-1.9.8.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-5423",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5423"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-10-13T13:08:51Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-10-17T22:20:02Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-10-18T18:49:04Z"
+    }
+  ]
+}

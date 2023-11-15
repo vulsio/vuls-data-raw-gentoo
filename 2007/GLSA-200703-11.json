@@ -1,0 +1,103 @@
+{
+  "ID": "200703-11",
+  "Title": "Amarok: User-assisted remote execution of arbitrary code",
+  "Synopsis": "\n    The Magnatune component shipped with Amarok is vulnerable to the injection\n    of arbitrary shell code from a malicious Magnatune server.\n  ",
+  "Product": {
+    "Text": "amarok",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-03-13",
+  "Revised": {
+    "Text": "2007-03-13",
+    "Count": "01"
+  },
+  "Bug": [
+    "166901"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-sound/amarok",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.5-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.5-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Amarok is an advanced music player.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The Magnatune downloader doesn't quote the \"m_currentAlbumFileName\"\n    parameter while calling the \"unzip\" shell command.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A compromised or malicious Magnatune server can remotely execute\n    arbitrary shell code with the rights of the user running Amarok on a\n    client that have previously registered for buying music.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Do not use the Magnatune component of Amarok.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Amarok users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-sound/amarok-1.4.5-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "SA24159",
+        "Link": "https://secunia.com/advisories/24159"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-02-23T17:45:23Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-02-27T13:56:19Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-02-27T14:11:31Z"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "ID": "201801-06",
+  "Title": "Back In Time: Command injection",
+  "Synopsis": "A command injection vulnerability in 'Back in Time' may allow for\n    the execution of arbitrary shell commands.\n  ",
+  "Product": {
+    "Text": "backintime",
+    "Type": "ebuild"
+  },
+  "Announced": "2018-01-07",
+  "Revised": {
+    "Text": "2018-01-07",
+    "Count": "1"
+  },
+  "Bug": [
+    "636974"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-backup/backintime",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.1.24",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.24",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>A simple backup tool for Linux, inspired by “flyback project”.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>‘Back in Time’ did improper escaping/quoting of file paths used as\n      arguments to the ‘notify-send’ command leading to some parts of file\n      paths being executed as shell commands within an os.system call.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A context-dependent attacker could execute arbitrary shell commands via\n      a specially crafted file.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All ‘Back In Time’ users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-backup/backintime-1.1.24\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2017-16667\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-16667"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "jmbailey",
+      "Tag": "requester",
+      "Timestamp": "2018-01-05T05:36:24Z"
+    },
+    {
+      "Text": "jmbailey",
+      "Tag": "submitter",
+      "Timestamp": "2018-01-07T23:41:27Z"
+    }
+  ]
+}

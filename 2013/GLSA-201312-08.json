@@ -1,0 +1,98 @@
+{
+  "ID": "201312-08",
+  "Title": "WebP: User-assisted execution of arbitrary code",
+  "Synopsis": "An integer overflow vulnerability in WebP could lead to arbitrary\n    code execution or Denial of Service.\n  ",
+  "Product": {
+    "Text": "libwebp",
+    "Type": "ebuild"
+  },
+  "Announced": "2013-12-10",
+  "Revised": {
+    "Text": "2013-12-10",
+    "Count": "1"
+  },
+  "Bug": [
+    "442152"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/libwebp",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.2.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.2.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>WebP is a lossy image compression format.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>An integer overflow flaw has been found in WebP.</p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted image\n      in an application linked against WebP, possibly resulting in execution of\n      arbitrary code with the privileges of the process or a Denial of Service\n      condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All WebP users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/libwebp-0.2.1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-5127",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5127"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2012-11-26T01:29:46Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2013-12-10T07:54:19Z"
+    }
+  ]
+}

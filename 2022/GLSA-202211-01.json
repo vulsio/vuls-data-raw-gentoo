@@ -1,0 +1,102 @@
+{
+  "ID": "202211-01",
+  "Title": "OpenSSL: Multiple Vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been discovered in OpenSSL, the worst of which could result in remote code execution.",
+  "Product": {
+    "Text": "openssl",
+    "Type": "ebuild"
+  },
+  "Announced": "2022-11-01",
+  "Revised": {
+    "Text": "2022-11-01",
+    "Count": "1"
+  },
+  "Bug": [
+    "878269"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/openssl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.0.7",
+            "Range": "ge",
+            "Slot": "0/3"
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.0.7",
+            "Range": "lt",
+            "Slot": "0/3"
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n        <p>OpenSSL is an Open Source toolkit implementing the Secure Sockets Layer (SSL v2/v3) and Transport Layer Security (TLS v1) as well as a general purpose cryptography library.</p>\n    "
+  },
+  "Description": {
+    "Text": "\n        <p>Multiple buffer overflows exist in OpenSSL&#39;s handling of TLS certificates for client authentication.</p>\n    "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n        <p>It is believed that, while unlikely, code execution is possible in certain system configurations.</p>\n    "
+  },
+  "Workaround": {
+    "Text": "\n        <p>Users operating TLS servers may consider disabling TLS client authentication, if it is being used, until fixes are applied.</p>\n    "
+  },
+  "Resolution": {
+    "Text": "\n        \n        \n        \n    ",
+    "P": [
+      {
+        "Text": "All OpenSSL 3 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=dev-libs/openssl-3.0.7\"\n        "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2022-3602",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-3602"
+      },
+      {
+        "Text": "CVE-2022-3786",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-3786"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ajak",
+      "Tag": "requester",
+      "Timestamp": "2022-11-01T21:56:08.734256Z"
+    },
+    {
+      "Text": "ajak",
+      "Tag": "submitter",
+      "Timestamp": "2022-11-01T21:56:08.739212Z"
+    }
+  ]
+}

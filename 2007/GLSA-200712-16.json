@@ -1,0 +1,103 @@
+{
+  "ID": "200712-16",
+  "Title": "Exiv2: Integer overflow",
+  "Synopsis": "\n    An integer overflow vulnerability in Exiv2 possibly allows for the\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "exiv2",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-12-29",
+  "Revised": {
+    "Text": "2007-12-29",
+    "Count": "01"
+  },
+  "Bug": [
+    "202351"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-gfx/exiv2",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.13-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.13-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Exiv2 is a C++ library and set of tools for parsing, editing and saving\n    Exif and IPTC metadata from images. Exif, the Exchangeable image file\n    format, specifies the addition of metadata tags to JPEG, TIFF and RIFF\n    files.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Meder Kydyraliev (Google Security) discovered an integer overflow\n    vulnerability in the JpegThumbnail::setDataArea() method leading to a\n    heap-based buffer overflow.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could entice the user of an application making use of Exiv2\n    or an application included in Exiv2 to load an image file with\n    specially crafted Exif tags, possibly resulting in the execution of\n    arbitrary code with the privileges of the user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Exiv2 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/exiv2-0.13-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-6353",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6353"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-12-21T23:04:55Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-12-23T19:26:11Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-12-23T19:28:25Z"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "ID": "200704-04",
+  "Title": "OpenPBS: Multiple vulnerabilities",
+  "Synopsis": "\n    OpenPBS contains unspecified vulnerabilities which may allow for the remote\n    execution of arbitrary code or a Denial of Service.\n  ",
+  "Product": {
+    "Text": "openpbs",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-04-03",
+  "Revised": {
+    "Text": "2007-04-03",
+    "Count": "01"
+  },
+  "Bug": [
+    "153495"
+  ],
+  "Access": "remote, local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-cluster/openpbs",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": null,
+        "Vulnerable": [
+          {
+            "Text": "2.3.16-r4",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    OpenPBS is the original version of the Portable Batch System. It is a\n    flexible batch queueing system developed for NASA in the early to\n    mid-1990s.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    SUSE reported vulnerabilities due to unspecified errors in OpenPBS.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    By unspecified attack vectors an attacker might be able execute\n    arbitrary code with the privileges of the user running openpbs, which\n    might be the root user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    OpenPBS has been masked in the Portage tree for replacement by Torque.\n    All OpenPBS users should unmerge OpenPBS and switch to Torque.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    \n    # emerge --ask --unmerge sys-cluster/openpbs\n    # emerge --sync\n    # emerge --ask --verbose sys-cluster/torque"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-5616",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5616"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-03-26T23:17:18Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-03-27T16:50:56Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-03-29T21:14:48Z"
+    }
+  ]
+}

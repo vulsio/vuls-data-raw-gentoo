@@ -1,0 +1,98 @@
+{
+  "ID": "200709-08",
+  "Title": "id3lib: Insecure temporary file creation",
+  "Synopsis": "\n    A vulnerability has been discovered in id3lib allowing local users to\n    overwrite arbitrary files via a symlink attack.\n  ",
+  "Product": {
+    "Text": "id3lib",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-09-15",
+  "Revised": {
+    "Text": "2007-09-15",
+    "Count": "01"
+  },
+  "Bug": [
+    "189610"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/id3lib",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.8.3-r6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.8.3-r6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    id3lib is an open-source, cross-platform software development library\n    for reading, writing, and manipulating ID3v1 and ID3v2 tags.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Nikolaus Schulz discovered that the function RenderV2ToFile() in file\n    src/tag_file.cpp creates temporary files in an insecure manner.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could exploit this vulnerability via a symlink attack\n    to overwrite arbitrary files.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All id3lib users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/id3lib-3.8.3-r6\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-4460",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4460"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    mfleming\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-09-13T20:50:09Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-09-14T08:35:20Z"
+    }
+  ]
+}

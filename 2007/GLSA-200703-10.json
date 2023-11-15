@@ -1,0 +1,102 @@
+{
+  "ID": "200703-10",
+  "Title": "KHTML: Cross-site scripting (XSS) vulnerability",
+  "Synopsis": "\n    The KHTML component shipped with the KDE libraries is prone to a cross-site\n    scripting (XSS) vulnerability.\n  ",
+  "Product": {
+    "Text": "kdelibs",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-03-10",
+  "Revised": {
+    "Text": "2007-03-10",
+    "Count": "01"
+  },
+  "Bug": [
+    "165606"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "kde-base/kdelibs",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.5.5-r8",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.5.5-r8",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    KDE is a feature-rich graphical desktop environment for Linux and\n    Unix-like Operating Systems. KHTML is the HTML interpreter used in\n    Konqueror and other parts of KDE.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The KHTML code allows for the execution of JavaScript code located\n    inside the \"Title\" HTML element, a related issue to the Safari error\n    found by Jose Avila.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    When viewing a HTML page that renders unsanitized attacker-supplied\n    input in the page title, Konqueror and other parts of KDE will execute\n    arbitrary JavaScript code contained in the page title, allowing for the\n    theft of browser session data or cookies.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All KDElibs users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=kde-base/kdelibs-3.5.5-r8\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-0537",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0537"
+      },
+      {
+        "Text": "CVE-2007-0478",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0478"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-02-27T16:04:07Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-02-27T16:19:36Z"
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "ID": "200508-07",
+  "Title": "AWStats: Arbitrary code execution using malicious Referrer information",
+  "Synopsis": "\n    AWStats fails to validate certain log input, which could lead to the\n    execution of arbitrary Perl code during the generation of the statistics.\n  ",
+  "Product": {
+    "Text": "awstats",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-08-16",
+  "Revised": {
+    "Text": "2009-05-28",
+    "Count": "02"
+  },
+  "Bug": [
+    "102145"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-misc/awstats",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "6.5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "6.5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    AWStats is an advanced log file analyzer and statistics generator.\n    In HTTP reports it parses Referrer information in order to display the\n    most common Referrer values that caused users to visit the website.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    When using a URLPlugin, AWStats fails to sanitize Referrer URL\n    data before using them in a Perl eval() routine.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker can include arbitrary Referrer information in a\n    HTTP request to a web server, therefore injecting tainted data in the\n    log files. When AWStats is run on this log file, this can result in the\n    execution of arbitrary Perl code with the rights of the user running\n    AWStats.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Disable all URLPlugins in the AWStats configuration.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All AWStats users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    Note: Users with the vhosts USE flag set should manually use\n    webapp-config to finalize the update.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-misc/awstats-6.5\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-1527",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1527"
+      },
+      {
+        "Text": "iDEFENSE Advisory",
+        "Link": "http://www.idefense.com/application/poi/display?id=290&type=vulnerabilities"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-08-12T17:33:30Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-08-13T08:56:51Z"
+    }
+  ]
+}

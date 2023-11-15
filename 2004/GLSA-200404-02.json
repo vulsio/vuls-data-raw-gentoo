@@ -1,0 +1,93 @@
+{
+  "ID": "200404-02",
+  "Title": "KDE Personal Information Management Suite Remote Buffer Overflow Vulnerability",
+  "Synopsis": "\n    KDE-PIM may be vulnerable to a remote buffer overflow attack that may allow\n    unauthorized access to an affected system. \n  ",
+  "Product": {
+    "Text": "kde-base/kde",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-04-06",
+  "Revised": {
+    "Text": "2004-04-06",
+    "Count": "01"
+  },
+  "Bug": [
+    "38256"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "kde-base/kde",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.1.5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.1.4",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    KDE-PIM is an application suite designed to manage mail, addresses,\n    appointments, and contacts.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    A buffer overflow may occur in KDE-PIM's VCF file reader when a maliciously\n    crafted VCF file is opened by a user on a vulnerable system.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker may unauthorized access to a user's personal data or\n    execute commands with the user's privileges.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    A workaround is not currently known for this issue. All users are advised\n    to upgrade to the latest version of the affected package.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    KDE users should upgrade to version 3.1.5 or later:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv \">=kde-base/kde-3.1.5\"\n    # emerge \">=kde-base/kde-3.1.5\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2003-0988",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2003-0988"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "aescriva",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

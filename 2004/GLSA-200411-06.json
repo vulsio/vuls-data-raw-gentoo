@@ -1,0 +1,107 @@
+{
+  "ID": "200411-06",
+  "Title": "MIME-tools: Virus detection evasion",
+  "Synopsis": "\n    MIME-tools doesn't handle empty MIME boundaries correctly. This may prevent\n    some virus-scanning programs which use MIME-tools from detecting certain\n    viruses.\n  ",
+  "Product": {
+    "Text": "MIME-tools",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-11-02",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "69181"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-perl/MIME-tools",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.415",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.415",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    MIME-tools is a Perl module containing functions to handle MIME\n    attachments.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    MIME-tools doesn't correctly parse attachment boundaries with an empty\n    name (boundary=\"\").\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    An attacker could send a carefully crafted email and evade detection on\n    some email virus-scanning programs using MIME-tools for attachment\n    decoding.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All MIME-tools users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-perl/MIME-tools-5.415\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "MIMEDefang announcement",
+        "Link": "https://lists.roaringpenguin.com/pipermail/mimedefang/2004-October/024959.html"
+      },
+      {
+        "Text": "CVE-2004-1098",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1098"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-11-02T13:33:38Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-11-02T13:34:00Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-11-02T17:50:24Z"
+    }
+  ]
+}

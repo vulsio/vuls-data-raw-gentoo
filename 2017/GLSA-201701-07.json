@@ -1,0 +1,98 @@
+{
+  "ID": "201701-07",
+  "Title": "Open vSwitch: Remote execution of arbitrary code",
+  "Synopsis": "A buffer overflow in Open vSwitch might allow remote attackers to\n    execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "openvswitch",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-01-01",
+  "Revised": {
+    "Text": "2017-01-01",
+    "Count": "2"
+  },
+  "Bug": [
+    "577568"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/openvswitch",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.5.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.5.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Open vSwitch is a production quality multilayer virtual switch.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A buffer overflow was discovered in lib/flow.c in ovs-vswitchd.</p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker, using a specially crafted MPLS packet, could execute\n      arbitrary code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Open vSwitch users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/openvswitch-2.5.0\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2016-2074\n    ",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2074"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "b-man",
+      "Tag": "requester",
+      "Timestamp": "2017-01-01T12:31:09Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2017-01-01T16:00:54Z"
+    }
+  ]
+}

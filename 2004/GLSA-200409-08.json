@@ -1,0 +1,108 @@
+{
+  "ID": "200409-08",
+  "Title": "Ruby: CGI::Session creates files insecurely",
+  "Synopsis": "\n    When used for CGI scripting, Ruby creates session files in /tmp with the\n    permissions of the default umask. Depending on that umask, local users may\n    be able to read sensitive data stored in session files.\n  ",
+  "Product": {
+    "Text": "dev-lang/ruby",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-09-03",
+  "Revised": {
+    "Text": "2004-09-03",
+    "Count": "01"
+  },
+  "Bug": [
+    "60525"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-lang/ruby",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.6.8-r11",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.8.0-r7",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.8.2_pre2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.8.2_pre2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Ruby is an Object Oriented, interpreted scripting language used for many\n    system scripting tasks. It can also be used for CGI web applications.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The CGI::Session::FileStore implementation (and presumably\n    CGI::Session::PStore), which allow data associated with a particular\n    Session instance to be written to a file, writes to a file in /tmp with no\n    regard for secure permissions. As a result, the file is left with whatever\n    the default umask permissions are, which commonly would allow other local\n    users to read the data from that session file.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    Depending on the default umask, any data stored using these methods could\n    be read by other users on the system.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    By changing the default umask on the system to not permit read access to\n    other users (e.g. 0700), one can prevent these files from being readable by\n    other users.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Ruby users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n\n    # emerge -pv \">=dev-lang/ruby-your_version\"\n    # emerge \">=dev-lang/ruby-your_version\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-0755",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0755"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-08-28T23:01:05Z"
+    },
+    {
+      "Text": "\n    dmargoli\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-09-01T04:27:07Z"
+    }
+  ]
+}

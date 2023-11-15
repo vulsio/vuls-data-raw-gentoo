@@ -1,0 +1,108 @@
+{
+  "ID": "200804-22",
+  "Title": "PowerDNS Recursor: DNS Cache Poisoning",
+  "Synopsis": "\n    Use of insufficient randomness in PowerDNS Recursor might lead to DNS cache\n    poisoning.\n  ",
+  "Product": {
+    "Text": "pdns-recursor",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-04-18",
+  "Revised": {
+    "Text": "2008-08-21",
+    "Count": "03"
+  },
+  "Bug": [
+    "215567",
+    "231335"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-dns/pdns-recursor",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.1.6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.1.6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The PowerDNS Recursor is an advanced recursing nameserver.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Amit Klein of Trusteer reported that insufficient randomness is used to\n    calculate the TRXID values and the UDP source port numbers\n    (CVE-2008-1637). Thomas Biege of SUSE pointed out that a prior fix to\n    resolve this issue was incomplete, as it did not always enable the\n    stronger random number generator for source port selection\n    (CVE-2008-3217).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could send malicious answers to insert arbitrary DNS\n    data into the cache. These attacks would in turn help an attacker to\n    perform man-in-the-middle and site impersonation attacks.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All PowerDNS Recursor users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dns/pdns-recursor-3.1.6\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-1637",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1637"
+      },
+      {
+        "Text": "CVE-2008-3217",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3217"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-04-17T20:12:08Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-04-18T01:27:35Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-04-18T01:27:43Z"
+    }
+  ]
+}

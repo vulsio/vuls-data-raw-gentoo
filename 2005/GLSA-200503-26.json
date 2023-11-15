@@ -1,0 +1,138 @@
+{
+  "ID": "200503-26",
+  "Title": "Sylpheed, Sylpheed-claws: Message reply overflow",
+  "Synopsis": "\n    Sylpheed and Sylpheed-claws contain a vulnerability that can be triggered\n    when replying to specially crafted messages.\n  ",
+  "Product": {
+    "Text": "sylpheed sylpheed-claws",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-03-20",
+  "Revised": {
+    "Text": "2005-03-20",
+    "Count": "01"
+  },
+  "Bug": [
+    "84056"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "mail-client/sylpheed",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "mail-client/sylpheed-claws",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Sylpheed is a lightweight email client and newsreader.\n    Sylpheed-claws is a 'bleeding edge' version of Sylpheed.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Sylpheed and Sylpheed-claws fail to properly handle non-ASCII\n    characters in email headers when composing reply messages.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker can send an email containing a malicious non-ASCII\n    header which, when replied to, would cause the program to crash,\n    potentially allowing the execution of arbitrary code with the\n    privileges of the user running the software.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Sylpheed users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Sylpheed-claws users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-client/sylpheed-1.0.3\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-client/sylpheed-claws-1.0.3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Sylpheed ChangeLog",
+        "Link": "http://sylpheed.good-day.net/#changes"
+      },
+      {
+        "Text": "CAN-2005-0667",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0667"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-03-14T20:05:52Z"
+    },
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-03-15T14:35:33Z"
+    },
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-03-20T22:41:22Z"
+    }
+  ]
+}

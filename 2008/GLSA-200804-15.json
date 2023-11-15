@@ -1,0 +1,103 @@
+{
+  "ID": "200804-15",
+  "Title": "libpng: Execution of arbitrary code",
+  "Synopsis": "\n    A vulnerability in libpng may allow for execution of arbitrary code in\n    certain applications that handle untrusted images.\n  ",
+  "Product": {
+    "Text": "libpng",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-04-15",
+  "Revised": {
+    "Text": "2008-04-15",
+    "Count": "01"
+  },
+  "Bug": [
+    "217047"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/libpng",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.26-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.26-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    libpng is a free ANSI C library used to process and manipulate PNG\n    images.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Tavis Ormandy of the Google Security Team discovered that libpng does\n    not handle zero-length unknown chunks in PNG files correctly, which\n    might lead to memory corruption in applications that call\n    png_set_read_user_chunk_fn() or png_set_keep_unknown_chunks().\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker could entice a user or automated system to process a\n    specially crafted PNG image in an application using libpng and possibly\n    execute arbitrary code with the privileges of the user running the\n    application. Note that processing of unknown chunks is disabled by\n    default in most PNG applications, but some such as ImageMagick are\n    affected.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All libpng users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/libpng-1.2.26-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-1382",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1382"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-04-14T01:44:56Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-04-14T01:49:03Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-04-14T08:39:38Z"
+    }
+  ]
+}

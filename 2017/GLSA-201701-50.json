@@ -1,0 +1,98 @@
+{
+  "ID": "201701-50",
+  "Title": "PPP: Buffer overflow",
+  "Synopsis": "A buffer overflow in PPP might allow remote attackers to cause a\n    Denial of Service condition.\n  ",
+  "Product": {
+    "Text": "ppp",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-01-23",
+  "Revised": {
+    "Text": "2017-01-23",
+    "Count": "1"
+  },
+  "Bug": [
+    "546554"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-dialup/ppp",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.4.7-r3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.4.7-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>PPP is a Unix implementation of the Point-to-Point Protocol</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A buffer overflow was discovered in the rc_mksid function in\n      plugins/radius/util.c in PPP when the PID for pppd is greater than 65535.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could cause a Denial of Service condition.</p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All PPP users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-dialup/ppp-2.4.7-r3\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2015-3310",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-3310"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "b-man",
+      "Tag": "requester",
+      "Timestamp": "2017-01-18T22:55:39Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2017-01-23T03:15:31Z"
+    }
+  ]
+}

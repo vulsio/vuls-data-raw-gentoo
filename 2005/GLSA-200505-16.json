@@ -1,0 +1,135 @@
+{
+  "ID": "200505-16",
+  "Title": "ImageMagick, GraphicsMagick: Denial of Service vulnerability",
+  "Synopsis": "\n    ImageMagick and GraphicsMagick utilities can be abused to perform a Denial\n    of Service attack.\n  ",
+  "Product": {
+    "Text": "ImageMagick",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-05-21",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "90423",
+    "90595"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-gfx/imagemagick",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "6.2.2.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "6.2.2.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "media-gfx/graphicsmagick",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.1.6-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.6-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Both ImageMagick and GraphicsMagick are collection of tools to read,\n    write and manipulate images in many formats.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Tavis Ormandy of the Gentoo Linux Security Audit Team discovered a\n    Denial of Service vulnerability in the XWD decoder of ImageMagick and\n    GraphicsMagick when setting a color mask to zero.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could submit a specially crafted image to a user or\n    an automated system making use of an affected utility, resulting in a\n    Denial of Service by consumption of CPU time.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All ImageMagick users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All GraphicsMagick users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/imagemagick-6.2.2.3\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/graphicsmagick-1.1.6-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-1739",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1739"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-05-04T05:18:30Z"
+    },
+    {
+      "Text": "\n    formula7\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-05-05T19:34:27Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-05-21T14:59:55Z"
+    }
+  ]
+}

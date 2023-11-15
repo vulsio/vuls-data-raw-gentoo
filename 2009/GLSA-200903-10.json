@@ -1,0 +1,103 @@
+{
+  "ID": "200903-10",
+  "Title": "Irrlicht: User-assisted execution of arbitrary code",
+  "Synopsis": "\n    A buffer overflow might lead to the execution of arbitrary code or a Denial\n    of Service.\n  ",
+  "Product": {
+    "Text": "irrlicht",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-03-07",
+  "Revised": {
+    "Text": "2009-03-07",
+    "Count": "01"
+  },
+  "Bug": [
+    "252203"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-games/irrlicht",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Irrlicht Engine is an open source cross-platform high performance\n    realtime 3D engine written in C++.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    An unspecified component of the B3D loader is vulnerable to a buffer\n    overflow due to missing boundary checks.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted .irr\n    file, possibly resulting in the execution of arbitrary code with the\n    privileges of the user running the application, or a Denial of Service\n    (crash).\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All irrlicht users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-games/irrlicht-1.5\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-5876",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5876"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-02-12T19:12:26Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-03-04T23:33:30Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-03-06T22:13:18Z"
+    }
+  ]
+}

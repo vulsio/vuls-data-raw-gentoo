@@ -1,0 +1,98 @@
+{
+  "ID": "201612-05",
+  "Title": "Pygments: Arbitrary code execution",
+  "Synopsis": "Pygments is vulnerable to remote code execution if an attacker is\n    allowed to specify the font name. \n  ",
+  "Product": {
+    "Text": "pygments",
+    "Type": "ebuild"
+  },
+  "Announced": "2016-12-04",
+  "Revised": {
+    "Text": "2016-12-04",
+    "Count": "1"
+  },
+  "Bug": [
+    "564478"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-python/pygments",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.2-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.2-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Pygments is a generic syntax highlighter suitable for use in code\n      hosting, forums, wikis or other applications that need to prettify source\n      code.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A vulnerability in FontManager’s _get_nix_font_path function allows\n      shell metacharacters to be passed in a font name.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could possibly execute arbitrary code with the\n      privileges of the process.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Pygments users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-python/pygments-2.0.2-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2015-8557\n    ",
+        "Link": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-8557"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "requester",
+      "Timestamp": "2015-12-08T00:25:56Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2016-12-04T06:50:34Z"
+    }
+  ]
+}

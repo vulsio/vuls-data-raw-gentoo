@@ -1,0 +1,105 @@
+{
+  "ID": "200408-14",
+  "Title": "acroread: UUDecode filename buffer overflow",
+  "Synopsis": "\n    acroread contains two errors in the handling of UUEncoded filenames that\n    may lead to execution of arbitrary code or programs.\n  ",
+  "Product": {
+    "Text": "acroread",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-08-15",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "03"
+  },
+  "Bug": [
+    "60205"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-text/acroread",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.09",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.08",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    acroread is Adobe's Acrobat PDF reader for Linux.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    acroread contains two errors in the handling of UUEncoded filenames.\n    First, it fails to check the length of a filename before copying it\n    into a fixed size buffer and, secondly, it fails to check for the\n    backtick shell metacharacter in the filename before executing a command\n    with a shell.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    By enticing a user to open a PDF with a specially crafted filename, an\n    attacker could execute arbitrary code or programs with the permissions\n    of the user running acroread.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time. All users are encouraged to\n    upgrade to the latest available version of acroread.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All acroread users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv \">=app-text/acroread-5.09\"\n    # emerge \">=app-text/acroread-5.09\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "iDEFENSE Advisory 124",
+        "Link": "http://idefense.com/application/poi/display?id=124&type=vulnerabilities"
+      },
+      {
+        "Text": "iDEFENSE Advisory 125",
+        "Link": "http://idefense.com/application/poi/display?id=125&type=vulnerabilities"
+      },
+      {
+        "Text": "CVE-2004-0630",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0630"
+      },
+      {
+        "Text": "CVE-2004-0631",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0631"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-08-14T07:56:36Z"
+    }
+  ]
+}

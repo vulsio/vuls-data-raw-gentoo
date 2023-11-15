@@ -1,0 +1,214 @@
+{
+  "ID": "200402-06",
+  "Title": "Updated kernel packages fix the AMD64 ptrace vulnerability",
+  "Synopsis": "\n    A vulnerability has been discovered by in the ptrace emulation code for\n    AMD64 platforms when eflags are processed, allowing a local user to obtain\n    elevated priveleges. \n  ",
+  "Product": {
+    "Text": "Kernel",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-02-17",
+  "Revised": {
+    "Text": "2004-02-17",
+    "Count": "01"
+  },
+  "Bug": null,
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-kernel/ck-sources",
+        "Auto": "yes",
+        "Arch": "amd64",
+        "Unaffected": [
+          {
+            "Text": "2.6.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.6.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "sys-kernel/development-sources",
+        "Auto": "yes",
+        "Arch": "amd64",
+        "Unaffected": [
+          {
+            "Text": "2.6.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.6.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "sys-kernel/gentoo-dev-sources",
+        "Auto": "yes",
+        "Arch": "amd64",
+        "Unaffected": [
+          {
+            "Text": "2.6.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.6.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "sys-kernel/gentoo-sources",
+        "Auto": "yes",
+        "Arch": "amd64",
+        "Unaffected": [
+          {
+            "Text": "2.4.22-r6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.4.22-r6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "sys-kernel/gentoo-test-sources",
+        "Auto": "yes",
+        "Arch": "amd64",
+        "Unaffected": [
+          {
+            "Text": "2.6.2-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.6.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "sys-kernel/gs-sources",
+        "Auto": "yes",
+        "Arch": "amd64",
+        "Unaffected": [
+          {
+            "Text": "2.4.25_pre7-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.4.25_pre7-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "sys-kernel/vanilla-prepatch-sources",
+        "Auto": "yes",
+        "Arch": "amd64",
+        "Unaffected": [
+          {
+            "Text": "2.4.25_rc3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.4.25_rc3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "sys-kernel/vanilla-sources",
+        "Auto": "yes",
+        "Arch": "amd64",
+        "Unaffected": [
+          {
+            "Text": "2.4.24-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.4.24-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": ""
+  },
+  "Description": {
+    "Text": "\n    <p>\n    A vulnerability has been discovered by Andi Kleen in the ptrace emulation\n    code for AMD64 platforms when eflags are processed, allowing a local user\n    to obtain elevated priveleges.  The Common Vulnerabilities and Exposures\n    project, http://cve.mitre.org, has assigned CAN-2004-0001 to this issue.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    Only users of the AMD64 platform are affected: in this scenario, a user may\n    be able to obtain elevated priveleges, including root access. However, no\n    public exploit is known for the vulnerability at this time.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no temporary workaround - a kernel upgrade is required. A list of\n    unaffected kernels is provided along with this announcement.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    Users are encouraged to upgrade to the latest available sources for\n    their system:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    # emerge -pv your-favourite-sources\n    # emerge your-favourite-sources\n    # # Follow usual procedure for compiling and installing a kernel.\n    # # If you use genkernel, run genkernel as you would do normally.\n    ",
+      "\n    # # IF YOUR KERNEL IS MARKED as \"remerge required!\" THEN\n    # # YOU SHOULD UPDATE YOUR KERNEL EVEN IF PORTAGE\n    # # REPORTS THAT THE SAME VERSION IS INSTALLED.\n    "
+    ]
+  },
+  "References": {
+    "URI": null
+  },
+  "Metadata": null
+}

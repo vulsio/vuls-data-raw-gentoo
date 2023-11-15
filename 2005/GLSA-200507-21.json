@@ -1,0 +1,102 @@
+{
+  "ID": "200507-21",
+  "Title": "fetchmail: Buffer Overflow",
+  "Synopsis": "\n    fetchmail is susceptible to a buffer overflow resulting in a Denial of\n    Service or arbitrary code execution.\n  ",
+  "Product": {
+    "Text": "fetchmail",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-07-25",
+  "Revised": {
+    "Text": "2005-07-25",
+    "Count": "01"
+  },
+  "Bug": [
+    "99865"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-mail/fetchmail",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "6.2.5.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "6.2.5.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    fetchmail is a utility that retrieves and forwards mail from\n    remote systems using IMAP, POP, and other protocols.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    fetchmail does not properly validate UIDs coming from a POP3 mail\n    server. The UID is placed in a fixed length buffer on the stack, which\n    can be overflown.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    Very long UIDs returned from a malicious or compromised POP3\n    server can cause fetchmail to crash, resulting in a Denial of Service,\n    or allow arbitrary code to be placed on the stack.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There are no known workarounds at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All fetchmail users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-mail/fetchmail-6.2.5.2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Fetchmail Security Advisory",
+        "Link": "http://fetchmail.berlios.de/fetchmail-SA-2005-01.txt"
+      },
+      {
+        "Text": "CAN-2005-2335",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2335"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    r2d2\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-07-22T05:37:13Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-07-24T07:43:36Z"
+    }
+  ]
+}

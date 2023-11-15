@@ -1,0 +1,103 @@
+{
+  "ID": "200806-05",
+  "Title": "cbrPager: User-assisted execution of arbitrary code",
+  "Synopsis": "\n    Insecure filename usage in cbrPager may allow for the remote execution of\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "cbrpager",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-06-16",
+  "Revised": {
+    "Text": "2008-06-16",
+    "Count": "01"
+  },
+  "Bug": [
+    "223657"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-misc/cbrpager",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.9.17",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.9.17",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    cbrPager is a comic book pager.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Mamoru Tasaka discovered that filenames of the image archives are not\n    properly sanitized before being passed to decompression utilities like\n    unrar and unzip, which use the system() libc library call.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to open an archive with a\n    specially crafted filename, resulting in arbitrary code execution with\n    the privileges of the user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All cbrPager users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-misc/cbrpager-0.9.17\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-2575",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2575"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-05-28T17:48:23Z"
+    },
+    {
+      "Text": "\n    vorlon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-06-03T15:18:59Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-06-14T21:12:52Z"
+    }
+  ]
+}

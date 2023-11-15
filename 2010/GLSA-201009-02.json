@@ -1,0 +1,103 @@
+{
+  "ID": "201009-02",
+  "Title": "Maildrop: privilege escalation",
+  "Synopsis": "\n    Insecure permission handling in maildrop might allow local attackers to\n    elevate their privileges.\n  ",
+  "Product": {
+    "Text": "maildrop",
+    "Type": "ebuild"
+  },
+  "Announced": "2010-09-06",
+  "Revised": {
+    "Text": "2010-09-06",
+    "Count": "01"
+  },
+  "Bug": [
+    "308043"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "mail-filter/maildrop",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.4.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.4.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    maildrop is the mail filter/mail delivery agent that is used by the\n    Courier Mail Server.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Christoph Anton Mitterer reported that maildrop does not properly drop\n    its privileges when run as root.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A local attacker could create a specially crafted .mailfilter file,\n    possibly leading to the execution of arbitrary commands with the \"root\"\n    group privileges. NOTE: Successful exploitation requires that maildrop\n    is run as root with the -d option.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All maildrop users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-filter/maildrop-2.4.2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2010-0301",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0301"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "requester",
+      "Timestamp": "2010-08-29T09:32:26Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2010-09-03T21:46:47Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2010-09-03T21:46:57Z"
+    }
+  ]
+}

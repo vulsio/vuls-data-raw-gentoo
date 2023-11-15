@@ -1,0 +1,102 @@
+{
+  "ID": "200411-32",
+  "Title": "phpBB: Remote command execution",
+  "Synopsis": "\n    phpBB contains a vulnerability which allows a remote attacker to execute\n    arbitrary commands with the rights of the web server user.\n  ",
+  "Product": {
+    "Text": "phpBB",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-11-24",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "71681"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/phpbb",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.11",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.10",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    phpBB is an Open Source bulletin board package.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    phpBB contains a vulnerability in the highlighting code and several\n    vulnerabilities in the username handling code.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    An attacker can exploit the highlighting vulnerability to access the\n    PHP exec() function without restriction, allowing them to run arbitrary\n    commands with the rights of the web server user (for example the apache\n    user). Furthermore, the username handling vulnerability might be abused\n    to execute SQL statements on the phpBB database.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is a one-line patch which will remediate the remote execution\n    vulnerability.\n    </p>\n    <p>\n    Locate the following block of code in viewtopic.php:\n    </p>\n    <code>\n    //\n    // Was a highlight request part of the URI?\n    //\n    $highlight_match = $highlight = '';\n    if (isset($HTTP_GET_VARS['highlight']))\n    {\n       // Split words and phrases\n       $words = explode(' ', trim(htmlspecialchars(urldecode($HTTP_GET_VARS['highlight']))));\n    \n       for($i = 0; $i &lt; sizeof($words); $i++)\n       {</code>\n    <p>\n    Replace with the following:\n    </p>\n    <code>\n    //\n    // Was a highlight request part of the URI?\n    //\n    $highlight_match = $highlight = '';\n    if (isset($HTTP_GET_VARS['highlight']))\n    {\n       // Split words and phrases\n       $words = explode(' ', trim(htmlspecialchars($HTTP_GET_VARS['highlight'])));\n    \n       for($i = 0; $i &lt; sizeof($words); $i++)\n       {</code>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All phpBB users should upgrade to the latest version to fix all known\n    vulnerabilities:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/phpbb-2.0.11\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "phpBB.com Announcement",
+        "Link": "https://www.phpbb.com/phpBB/viewtopic.php?t=240513"
+      },
+      {
+        "Text": "CVE-2004-1315",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1315"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    klieber\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-11-18T17:31:41Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-11-24T08:51:46Z"
+    }
+  ]
+}

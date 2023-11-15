@@ -1,0 +1,98 @@
+{
+  "ID": "201507-11",
+  "Title": "Perl: Denial of service",
+  "Synopsis": "A vulnerability in Perl allows a remote attacker to cause Denial of\n    Service.\n  ",
+  "Product": {
+    "Text": "perl",
+    "Type": "ebuild"
+  },
+  "Announced": "2015-07-10",
+  "Revised": {
+    "Text": "2015-07-10",
+    "Count": "1"
+  },
+  "Bug": [
+    "216671"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-lang/perl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.20.1-r4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.20.1-r4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Perl is a highly capable, feature-rich programming language.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>S_regmatch() function lacks proper checks before passing arguments to\n      atoi()\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could send a specially crafted input, possibly\n      resulting in a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Perl users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-lang/perl-5.20.1-r4\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2013-7422",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-7422"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "Zlogene",
+      "Tag": "requester",
+      "Timestamp": "2015-03-29T15:10:08Z"
+    },
+    {
+      "Text": "Zlogene",
+      "Tag": "submitter",
+      "Timestamp": "2015-07-10T08:19:35Z"
+    }
+  ]
+}

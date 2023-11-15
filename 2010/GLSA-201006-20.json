@@ -1,0 +1,133 @@
+{
+  "ID": "201006-20",
+  "Title": "Asterisk: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities in Asterisk might allow remote attackers to cause\n    a Denial of Service condition, or conduct other attacks.\n  ",
+  "Product": {
+    "Text": "asterisk",
+    "Type": "ebuild"
+  },
+  "Announced": "2010-06-04",
+  "Revised": {
+    "Text": "2010-06-04",
+    "Count": "01"
+  },
+  "Bug": [
+    "281107",
+    "283624",
+    "284892",
+    "295270"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/asterisk",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.37",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.37",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Asterisk is an open source telephony engine and toolkit.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Multiple vulnerabilities have been reported in Asterisk:\n    </p>\n    <ul>\n    <li>Nick Baggott reported that Asterisk does not properly process\n    overly long ASCII strings in various packets (CVE-2009-2726).</li>\n    <li>Noam Rathaus and Blake Cornell reported a flaw in the IAX2 protocol\n    implementation (CVE-2009-2346).</li>\n    <li>amorsen reported an input\n    processing error in the RTP protocol implementation\n    (CVE-2009-4055).</li>\n    <li>Patrik Karlsson reported an information\n    disclosure flaw related to the REGISTER message (CVE-2009-3727).</li>\n    <li>A vulnerability was found in the bundled Prototype JavaScript\n    library, related to AJAX calls (CVE-2008-7220).</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could exploit these vulnerabilities by sending a\n    specially crafted package, possibly causing a Denial of Service\n    condition, or resulting in information disclosure.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Asterisk users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    NOTE: This is a legacy GLSA. Updates for all affected architectures are\n    available since January 5, 2010. It is likely that your system is\n    already no longer affected by this issue.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/asterisk-1.2.37\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-2726",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2726"
+      },
+      {
+        "Text": "CVE-2009-2346",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2346"
+      },
+      {
+        "Text": "CVE-2009-4055",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4055"
+      },
+      {
+        "Text": "CVE-2009-3727",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3727"
+      },
+      {
+        "Text": "CVE-2008-7220",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-7220"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    craig\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-11-06T13:21:43Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2010-05-31T15:08:16Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2010-05-31T15:08:22Z"
+    }
+  ]
+}

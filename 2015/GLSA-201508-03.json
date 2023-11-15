@@ -1,0 +1,98 @@
+{
+  "ID": "201508-03",
+  "Title": "Icecast: Denial of service",
+  "Synopsis": "A bug in the Icecast code handling source client URL authentication\n    causes a Denial of Service condition.\n  ",
+  "Product": {
+    "Text": "icecast",
+    "Type": "ebuild"
+  },
+  "Announced": "2015-08-15",
+  "Revised": {
+    "Text": "2015-08-15",
+    "Count": "1"
+  },
+  "Bug": [
+    "545968"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/icecast",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.4.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.4.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Icecast is an open source alternative to shoutcast that supports mp3,\n      ogg (vorbis/theora) and aac streaming.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>When stream_auth handler is defined for URL authentication and a request\n      is sent without login credentials, a Denial of Service condition can\n      occur. \n    </p>\n    \n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could possibly cause a Denial of Service condition.</p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>Users of affected versions can change stream_auth mountpoints to use\n      password authentication instead.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All icecast users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/icecast-2.4.2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2015-3026",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-3026"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "K_F",
+      "Tag": "requester",
+      "Timestamp": "2015-05-11T16:10:32Z"
+    },
+    {
+      "Text": "mrueg",
+      "Tag": "submitter",
+      "Timestamp": "2015-08-15T13:08:56Z"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "ID": "200505-17",
+  "Title": "Qpopper: Multiple Vulnerabilities",
+  "Synopsis": "\n    Qpopper contains two vulnerabilities allowing an attacker to overwrite\n    arbitrary files and create files with insecure permissions.\n  ",
+  "Product": {
+    "Text": "qpopper",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-05-23",
+  "Revised": {
+    "Text": "2005-05-23",
+    "Count": "01"
+  },
+  "Bug": [
+    "90622"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-mail/qpopper",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.0.5-r3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.0.5-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Qpopper is a widely used server for the POP3 protocol.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Jens Steube discovered that Qpopper doesn't drop privileges to\n    process local files from normal users (CAN-2005-1151). The upstream\n    developers discovered that Qpopper can be forced to create group or\n    world writeable files (CAN-2005-1152).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A malicious local attacker could exploit Qpopper to overwrite\n    arbitrary files as root or create new files which are group or world\n    writeable.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Qpopper users should upgrade to the latest available version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-mail/qpopper-4.0.5-r3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-1151",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1151"
+      },
+      {
+        "Text": "CAN-2005-1152",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1152"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-05-10T16:31:30Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-05-23T19:25:37Z"
+    }
+  ]
+}

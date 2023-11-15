@@ -1,0 +1,120 @@
+{
+  "ID": "200907-16",
+  "Title": "Python: Integer overflows",
+  "Synopsis": "\n    Multiple integer overflows in Python have an unspecified impact.\n  ",
+  "Product": {
+    "Text": "python",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-07-19",
+  "Revised": {
+    "Text": "2009-07-19",
+    "Count": "01"
+  },
+  "Bug": [
+    "246991"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-lang/python",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.5.4-r2",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "2.4.6",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.5.4-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Python is an interpreted, interactive, object-oriented programming\n    language.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Chris Evans reported multiple integer overflows in the expandtabs\n    method, as implemented by (1) the string_expandtabs function in\n    Objects/stringobject.c and (2) the unicode_expandtabs function in\n    Objects/unicodeobject.c.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could exploit these vulnerabilities in Python\n    applications or daemons that pass user-controlled input to vulnerable\n    functions. The security impact is currently unknown but may include the\n    execution of arbitrary code or a Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Python 2.5 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Python 2.4 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/python-2.5.4-r2\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/python-2.4.6\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-5031",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5031"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-07-10T13:26:22Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-07-19T15:28:36Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-07-19T15:28:41Z"
+    }
+  ]
+}

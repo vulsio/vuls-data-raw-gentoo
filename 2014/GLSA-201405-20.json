@@ -1,0 +1,98 @@
+{
+  "ID": "201405-20",
+  "Title": "JBIG-KIT: Denial of service",
+  "Synopsis": "A stack-based buffer overflow in JBIG-KIT might allow remote\n    attackers to cause a Denial of Service.\n  ",
+  "Product": {
+    "Text": "jbigkit",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-05-18",
+  "Revised": {
+    "Text": "2014-05-18",
+    "Count": "1"
+  },
+  "Bug": [
+    "507254"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/jbigkit",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>JBIG-KIT is a software implementation of the JBIG1 data compression\n      standard.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>JBIG-KIT contains a stack-based buffer overflow in the jbg_dec_in\n      function in libjbig/jbig.c.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could possibly cause a Denial of Service condition via\n      a specially crafted image file.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All JBIG-KIT users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/jbigkit-2.1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2013-6369",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-6369"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "requester",
+      "Timestamp": "2014-05-15T03:04:08Z"
+    },
+    {
+      "Text": "Zlogene",
+      "Tag": "submitter",
+      "Timestamp": "2014-05-18T12:48:40Z"
+    }
+  ]
+}

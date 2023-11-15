@@ -1,0 +1,98 @@
+{
+  "ID": "201911-01",
+  "Title": "OpenSSH: Integer overflow",
+  "Synopsis": "An integer overflow in OpenSSH might allow an attacker to execute\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "openssh",
+    "Type": "ebuild"
+  },
+  "Announced": "2019-11-07",
+  "Revised": {
+    "Text": "2019-11-07",
+    "Count": "1"
+  },
+  "Bug": [
+    "697046"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/openssh",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "8.0_p1-r4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "8.0_p1-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>OpenSSH is a complete SSH protocol implementation that includes SFTP\n      client and server support.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>OpenSSH, when built with “xmss” USE flag enabled, has a\n      pre-authentication integer overflow if a client or server is configured\n      to use a crafted XMSS key.\n    </p>\n    \n    <p>NOTE: This USE flag is disabled by default!</p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could connect to a vulnerable OpenSSH server using a\n      special crafted XMSS key possibly resulting in execution of arbitrary\n      code with the privileges of the process or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>Disable XMSS key type.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All OpenSSH users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=net-misc/openssh/openssh-8.0_p1-r4\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2019-16905",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2019-16905"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2019-10-26T14:48:28Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2019-11-07T19:01:23Z"
+    }
+  ]
+}

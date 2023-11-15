@@ -1,0 +1,103 @@
+{
+  "ID": "200804-07",
+  "Title": "PECL APC: Buffer Overflow",
+  "Synopsis": "\n    A buffer overflow vulnerability in PECL APC might allow for the remote\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "pecl-apc",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-04-09",
+  "Revised": {
+    "Text": "2008-04-09",
+    "Count": "01"
+  },
+  "Bug": [
+    "214576"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-php5/pecl-apc",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.0.16-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.0.16-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    PECL Alternative PHP Cache (PECL APC) is a free, open, and robust\n    framework for caching and optimizing PHP intermediate code.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Daniel Papasian discovered a stack-based buffer overflow in the\n    apc_search_paths() function in the file apc.c when processing long\n    filenames.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker could exploit this vulnerability to execute arbitrary\n    code in PHP applications that pass user-controlled input to the\n    include() function.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All PECL APC users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-php5/pecl-apc-3.0.16-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-1488",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1488"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-04-03T14:46:37Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-04-03T14:49:16Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-04-03T23:31:29Z"
+    }
+  ]
+}

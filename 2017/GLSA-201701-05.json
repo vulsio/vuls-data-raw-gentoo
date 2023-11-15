@@ -1,0 +1,98 @@
+{
+  "ID": "201701-05",
+  "Title": "BusyBox: Denial of service",
+  "Synopsis": "A vulnerability in BusyBox might allow remote attackers to cause a\n    Denial of Service condition.\n  ",
+  "Product": {
+    "Text": "busybox",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-01-01",
+  "Revised": {
+    "Text": "2017-01-01",
+    "Count": "1"
+  },
+  "Bug": [
+    "590478"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-apps/busybox",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.25.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.25.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>BusyBox is a set of tools for embedded systems and is a replacement for\n      GNU Coreutils.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>The recv_and_process_client_pkt function in networking/ntpd.c in BusyBox\n      allows remote attackers to cause a Denial of Service (CPU and bandwidth\n      consumption) via a forged NTP packet, which triggers a communication\n      loop.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker might send a specially crafted package to a machine\n      running BusyBox ntpd, possibly resulting in a Denial of Service\n      condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All BusyBox users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-apps/busybox-1.25.1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2016-6301",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-6301"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "b-man",
+      "Tag": "requester",
+      "Timestamp": "2017-01-01T12:19:19Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2017-01-01T15:33:56Z"
+    }
+  ]
+}

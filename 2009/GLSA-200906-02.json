@@ -1,0 +1,98 @@
+{
+  "ID": "200906-02",
+  "Title": "Ruby: Denial of service",
+  "Synopsis": "\n    A flaw in the Ruby standard library might allow remote attackers to cause a\n    Denial of Service attack.\n  ",
+  "Product": {
+    "Text": "ruby",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-06-28",
+  "Revised": {
+    "Text": "2009-06-28",
+    "Count": "01"
+  },
+  "Bug": [
+    "273213"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-lang/ruby",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.8.6_p369",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.8.6_p369",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Ruby is an interpreted object-oriented programming language. The\n    elaborate standard library includes the \"BigDecimal\" class.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Tadayoshi Funaba reported that BigDecimal in\n    ext/bigdecimal/bigdecimal.c does not properly handle string arguments\n    containing overly long numbers.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could exploit this issue to remotely cause a Denial\n    of Service attack.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Ruby users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/ruby-1.8.6_p369\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-1904",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1904"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-06-21T14:29:50Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-06-28T21:32:27Z"
+    }
+  ]
+}

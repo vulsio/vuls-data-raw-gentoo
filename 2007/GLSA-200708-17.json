@@ -1,0 +1,120 @@
+{
+  "ID": "200708-17",
+  "Title": "Opera: Multiple vulnerabilities",
+  "Synopsis": "\n    Opera contain several vulnerabilities, some of which may allow the\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "opera",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-08-22",
+  "Revised": {
+    "Text": "2007-08-22",
+    "Count": "01"
+  },
+  "Bug": [
+    "185497",
+    "188987"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-client/opera",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "9.23",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "9.23",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Opera is a multi-platform web browser.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    An error known as \"a virtual function call on an invalid pointer\" has\n    been discovered in the JavaScript engine (CVE-2007-4367). Furthermore,\n    iDefense Labs reported that an already-freed pointer may be still used\n    under unspecified circumstances in the BitTorrent support\n    (CVE-2007-3929). At last, minor other errors have been discovered,\n    relative to memory read protection (Opera Advisory 861) and URI\n    displays (CVE-2007-3142, CVE-2007-3819).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could trigger the BitTorrent vulnerability by\n    enticing a user into starting a malicious BitTorrent download, and\n    execute arbitrary code through unspecified vectors. Additionally, a\n    specially crafted JavaScript may trigger the \"virtual function\"\n    vulnerability. The JavaScript engine can also access previously freed\n    but uncleaned memory. Finally, a user can be fooled with a too long\n    HTTP server name that does not fit the dialog box, or a URI containing\n    whitespaces.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time for all these\n    vulnerabilities.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Opera users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/opera-9.23\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-3142",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3142"
+      },
+      {
+        "Text": "CVE-2007-3819",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3819"
+      },
+      {
+        "Text": "CVE-2007-3929",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3929"
+      },
+      {
+        "Text": "CVE-2007-4367",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4367"
+      },
+      {
+        "Text": "Opera Advisory 861",
+        "Link": "https://www.opera.com/support/search/view/861/"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-07-29T20:48:46Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-07-29T20:48:57Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-08-20T09:59:22Z"
+    }
+  ]
+}

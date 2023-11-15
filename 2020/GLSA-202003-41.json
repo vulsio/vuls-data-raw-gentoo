@@ -1,0 +1,98 @@
+{
+  "ID": "202003-41",
+  "Title": "GNU FriBidi: Heap-based buffer overflow",
+  "Synopsis": "A heap-based buffer overflow in GNU FriBidi might allow remote\n    attackers to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "fribidi",
+    "Type": "ebuild"
+  },
+  "Announced": "2020-03-19",
+  "Revised": {
+    "Text": "2020-03-19",
+    "Count": "1"
+  },
+  "Bug": [
+    "699338"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/fribidi",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.8",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.8",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>The Free Implementation of the Unicode Bidirectional Algorithm.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A heap-based buffer overflow vulnerability was found in GNU FriBidi.</p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could possibly cause a memory corruption, execute\n      arbitrary code with the privileges of the process or cause a Denial of\n      Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All FriBidi users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/fribidi-1.0.8\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2019-18397",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2019-18397"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2020-03-19T16:36:42Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2020-03-19T16:41:09Z"
+    }
+  ]
+}

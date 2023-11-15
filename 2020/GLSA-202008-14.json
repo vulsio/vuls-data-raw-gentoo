@@ -1,0 +1,98 @@
+{
+  "ID": "202008-14",
+  "Title": "Wireshark: Denial of service",
+  "Synopsis": "A vulnerability in Wireshark could lead to a Denial of Service\n    condition.\n  ",
+  "Product": {
+    "Text": "wireshark",
+    "Type": "ebuild"
+  },
+  "Announced": "2020-08-26",
+  "Revised": {
+    "Text": "2020-08-26",
+    "Count": "1"
+  },
+  "Bug": [
+    "736914"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-analyzer/wireshark",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.2.6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.2.6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Wireshark is a network protocol analyzer formerly known as ethereal.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A double free error was discovered in Wireshark’s Kafka dissector.</p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could exploit these vulnerabilities by sending a\n      malformed packet or enticing a user to read a malformed packet trace\n      file, causing a Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Wireshark users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-analyzer/wireshark-3.2.6\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2020-17498",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-17498"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "sam_c",
+      "Tag": "requester",
+      "Timestamp": "2020-08-26T14:35:43Z"
+    },
+    {
+      "Text": "sam_c",
+      "Tag": "submitter",
+      "Timestamp": "2020-08-26T21:33:02Z"
+    }
+  ]
+}

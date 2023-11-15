@@ -1,0 +1,107 @@
+{
+  "ID": "200310-04",
+  "Title": "Apache: buffer overflows and a possible information disclosure",
+  "Synopsis": "\n    Multiple stack-based buffer overflows in mod_alias and mod_rewrite can allow\n    execution of arbitrary code and cause a denial of service, and a bug in the\n    way mod_cgid handles CGI redirect paths could result in CGI output going to\n    the wrong client.\n  ",
+  "Product": {
+    "Text": "Apache",
+    "Type": "ebuild"
+  },
+  "Announced": "2003-10-31",
+  "Revised": {
+    "Text": "2007-12-30",
+    "Count": "02"
+  },
+  "Bug": [
+    "32271"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-servers/apache",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.48",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "2.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.48",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Apache HTTP Server is one of the most popular web servers on the\n    Internet.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Multiple stack-based buffer overflows in mod_alias and mod_rewrite allow\n    attackers who can create or edit configuration files including .htaccess\n    files, to cause a denial of service and execute arbitrary code via a regular\n    expression containing more than 9 captures, and a bug in the way mod_cgid\n    handles CGI redirect paths could result in CGI output going to the wrong\n    client when a threaded MPM is used, resulting in an information disclosure.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker may cause a denial of service or execute arbitrary code with the\n    privileges of the user that is running apache.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    It is recommended that all Gentoo Linux users who are running\n    net-misc/apache 2.x upgrade:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    Please remember to update your config files in /etc/apache2 as --datadir has\n    been changed to /var/www/localhost.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    # emerge -pv '>=www-servers/apache-2.0.48'\n    # emerge '>=www-servers/apache-2.0.48'\n    # emerge clean\n    # /etc/init.d/apache2 restart"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2003-0789",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2003-0789"
+      },
+      {
+        "Text": "CAN-2003-0542",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2003-0542"
+      }
+    ]
+  },
+  "Metadata": null
+}

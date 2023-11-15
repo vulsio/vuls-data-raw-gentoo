@@ -1,0 +1,110 @@
+{
+  "ID": "201702-07",
+  "Title": "OpenSSL: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in OpenSSL, the worst of\n    which might allow attackers to access sensitive information.\n  ",
+  "Product": {
+    "Text": "openssl",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-02-14",
+  "Revised": {
+    "Text": "2017-02-14",
+    "Count": "1"
+  },
+  "Bug": [
+    "607318"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/openssl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.2k",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.2k",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>OpenSSL is an Open Source toolkit implementing the Secure Sockets Layer\n      (SSL v2/v3) and Transport Layer Security (TLS v1) as well as a general\n      purpose cryptography library.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in OpenSSL. Please review\n      the CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker is able to crash applications linked against OpenSSL\n      or could obtain sensitive private-key information via an attack against\n      the Diffie-Hellman (DH) ciphersuite.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All OpenSSL users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/openssl-1.0.2k\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2016-7055",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-7055"
+      },
+      {
+        "Text": "CVE-2017-3730",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-3730"
+      },
+      {
+        "Text": "CVE-2017-3731",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-3731"
+      },
+      {
+        "Text": "CVE-2017-3732",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-3732"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2017-02-13T01:30:38Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2017-02-14T12:34:58Z"
+    }
+  ]
+}

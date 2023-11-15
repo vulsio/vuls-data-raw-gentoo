@@ -1,0 +1,98 @@
+{
+  "ID": "200707-04",
+  "Title": "GNU C Library: Integer overflow",
+  "Synopsis": "\n    An integer overflow in the dynamic loader, ld.so, could result in the\n    execution of arbitrary code with escalated privileges.\n  ",
+  "Product": {
+    "Text": "glibc",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-07-03",
+  "Revised": {
+    "Text": "2007-07-03",
+    "Count": "01"
+  },
+  "Bug": [
+    "183844"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-libs/glibc",
+        "Auto": "yes",
+        "Arch": "x86",
+        "Unaffected": [
+          {
+            "Text": "2.5-r4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.5-r4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The GNU C library is the standard C library used by Gentoo Linux\n    systems. It provides programs with basic facilities and interfaces to\n    system calls. ld.so is the dynamic linker which prepares dynamically\n    linked programs for execution by resolving runtime dependencies and\n    related functions.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Tavis Ormandy of the Gentoo Linux Security Team discovered a flaw in\n    the handling of the hardware capabilities mask by the dynamic loader.\n    If a mask is specified with a high population count, an integer\n    overflow could occur when allocating memory.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    As the hardware capabilities mask is honored by the dynamic loader\n    during the execution of suid and sgid programs, in theory this\n    vulnerability could result in the execution of arbitrary code with root\n    privileges. This update is provided as a precaution against currently\n    unknown attack vectors.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-libs/glibc-2.5-r4\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-3508",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3508"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    taviso\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-07-01T18:20:09Z"
+    },
+    {
+      "Text": "\n    taviso\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-07-03T13:34:58Z"
+    }
+  ]
+}

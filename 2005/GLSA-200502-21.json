@@ -1,0 +1,107 @@
+{
+  "ID": "200502-21",
+  "Title": "lighttpd: Script source disclosure",
+  "Synopsis": "\n    An attacker can trick lighttpd into revealing the source of scripts that\n    should be executed as CGI or FastCGI applications.\n  ",
+  "Product": {
+    "Text": "lighttpd",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-02-15",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "81776"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-servers/lighttpd",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.3.10-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.3.10-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    lighttpd is a small-footprint, fast, compliant and very flexible\n    web-server which is optimized for high-performance environments.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    lighttpd uses file extensions to determine which elements are programs\n    that should be executed and which are static pages that should be sent\n    as-is. By appending %00 to the filename, you can evade the extension\n    detection mechanism while still accessing the file.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    A remote attacker could send specific queries and access the source of\n    scripts that should have been executed as CGI or FastCGI applications.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All lighttpd users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-servers/lighttpd-1.3.10-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "lighttpd-announce Advisory",
+        "Link": "https://article.gmane.org/gmane.comp.web.lighttpd/1171"
+      },
+      {
+        "Text": "CVE-2005-0453",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0453"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-02-14T12:34:31Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-02-14T20:13:10Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-02-14T20:53:12Z"
+    }
+  ]
+}

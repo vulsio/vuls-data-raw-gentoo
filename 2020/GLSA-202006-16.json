@@ -1,0 +1,98 @@
+{
+  "ID": "202006-16",
+  "Title": "PCRE2: Denial of service",
+  "Synopsis": "A vulnerability in PCRE2 could lead to a Denial of Service\n    condition.\n  ",
+  "Product": {
+    "Text": "pcre2",
+    "Type": "ebuild"
+  },
+  "Announced": "2020-06-15",
+  "Revised": {
+    "Text": "2020-06-15",
+    "Count": "1"
+  },
+  "Bug": [
+    "717800"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-libs/pcre2",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "10.34",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "10.34",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>PCRE2 is a project based on PCRE (Perl Compatible Regular Expressions)\n      which has a new and revised API.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>PCRE2 has a flaw when handling JIT-compiled regex using the \\X pattern.</p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>An attacker could cause a possible Denial of Service condition.</p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All PCRE2 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-libs/pcre2-10.34\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2019-20454",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2019-20454"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "sam_c",
+      "Tag": "requester",
+      "Timestamp": "2020-05-12T14:41:37Z"
+    },
+    {
+      "Text": "sam_c",
+      "Tag": "submitter",
+      "Timestamp": "2020-06-15T15:48:59Z"
+    }
+  ]
+}

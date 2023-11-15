@@ -1,0 +1,103 @@
+{
+  "ID": "200701-28",
+  "Title": "thttpd: Unauthenticated remote file access",
+  "Synopsis": "\n    The default configuration of the Gentoo thttpd package potentially allows\n    unauthenticated access to system files when used with newer versions of\n    baselayout.\n  ",
+  "Product": {
+    "Text": "thttpd",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-01-31",
+  "Revised": {
+    "Text": "2007-03-11",
+    "Count": "02"
+  },
+  "Bug": [
+    "142047"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-servers/thttpd",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.25b-r6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.25b-r6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    thttpd is a webserver designed to be simple, small, and fast.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    thttpd is vulnerable to an underlying change made to the\n    start-stop-daemon command in the current stable Gentoo baselayout\n    package (version 1.12.6). In the new version, the start-stop-daemon\n    command performs a \"chdir /\" command just before starting the thttpd\n    process. In the Gentoo default configuration, this causes thttpd to\n    start with the document root set to \"/\", the sytem root directory.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    When thttpd starts with the document root set to the system root\n    directory, all files on the system that are readable by the thttpd\n    process can be remotely accessed by unauthenticated users.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Alter the THTTPD_OPTS variable in /etc/conf.d/thttpd to include the\n    \"-d\" option to specify the document root. Alternatively, modify the\n    THTTPD_OPTS variable in /etc/conf.d/thttpd to specify a thttpd.conf\n    file using the \"-C\" option, and then configure the \"dir=\" directive in\n    that thttpd.conf file.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All thttpd users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-servers/thttpd-2.25b-r5\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-0664",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0664"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    shellsage\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-01-26T12:41:44Z"
+    },
+    {
+      "Text": "\n    aetius\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-01-27T17:49:26Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-01-31T21:45:13Z"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "ID": "201701-24",
+  "Title": "PgBouncer: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in PgBouncer, the worst of\n    which may allow an attacker to bypass authentication.\n  ",
+  "Product": {
+    "Text": "pgbouncer",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-01-11",
+  "Revised": {
+    "Text": "2017-01-11",
+    "Count": "1"
+  },
+  "Bug": [
+    "550124",
+    "600184"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-db/pgbouncer",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.7.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.7.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>PgBouncer is a lightweight connection pooler for PostgreSQL.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in PgBouncer. Please\n      review the CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker might send a specially crafted package possibly\n      resulting in a Denial of Service condition. Furthermore, a remote\n      attacker might bypass authentication in configurations using the\n      “auth_user” feature.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All PgBouncer users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-db/pgbouncer-1.7.2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2015-4054",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-4054"
+      },
+      {
+        "Text": "CVE-2015-6817",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-6817"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2017-01-09T13:32:34Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2017-01-11T12:24:51Z"
+    }
+  ]
+}

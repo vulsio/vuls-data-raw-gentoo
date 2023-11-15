@@ -1,0 +1,98 @@
+{
+  "ID": "201612-30",
+  "Title": "SoX: User-assisted execution of arbitrary code",
+  "Synopsis": "Multiple heap overflows in SoX may allow remote attackers to\n    execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "sox",
+    "Type": "ebuild"
+  },
+  "Announced": "2016-12-11",
+  "Revised": {
+    "Text": "2016-12-11",
+    "Count": "1"
+  },
+  "Bug": [
+    "533296"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-sound/sox",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "14.4.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "14.4.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>SoX is a command line utility that can convert various formats of\n      computer audio files in to other formats.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A heap-based buffer overflow can be triggered when processing a\n      malicious NIST Sphere or WAV audio file.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could coerce the victim to run SoX against their\n      malicious file. This may be leveraged by an attacker to gain control of\n      program execution with the privileges of the user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All SoX users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-sound/sox-14.4.2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2014-8145\n    ",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-8145"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2016-11-23T00:47:17Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2016-12-11T23:50:03Z"
+    }
+  ]
+}

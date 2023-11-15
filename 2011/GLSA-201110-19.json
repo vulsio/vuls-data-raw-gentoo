@@ -1,0 +1,119 @@
+{
+  "ID": "201110-19",
+  "Title": "X.Org X Server: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities in the X.Org X server might allow local\n    attackers to disclose information.\n  ",
+  "Product": {
+    "Text": "xorg-server",
+    "Type": "ebuild"
+  },
+  "Announced": "2011-10-22",
+  "Revised": {
+    "Text": "2011-10-22",
+    "Count": "2"
+  },
+  "Bug": [
+    "387069"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "x11-base/xorg-server",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.9.5-r1",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.10.4-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.10.4-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>The X Window System is a graphical windowing system based on a\n      client/server model.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>vladz reported the following vulnerabilities in the X.Org X server:</p>\n    \n    <ul>\n      <li>The X.Org X server follows symbolic links when trying to access the\n        lock file for a X display, showing a predictable behavior depending on\n        the file type of the link target (CVE-2011-4028).\n      </li>\n      <li>The X.Org X server lock file mechanism allows for a race condition to\n        cause the X server to modify the file permissions of an arbitrary file\n        to 0444 (CVE-2011-4029).\n      </li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A local attacker could exploit these vulnerabilities to disclose\n      information by making arbitrary files on a system world-readable or gain\n      information whether a specified file exists on the system and whether it\n      is a file, directory, or a named pipe.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All X.Org X Server 1.9 users should upgrade to the latest 1.9 version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All X.Org X Server 1.10 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=x11-base/xorg-server-1.9.5-r1\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=x11-base/xorg-server-1.10.4-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2011-4028",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-4028"
+      },
+      {
+        "Text": "CVE-2011-4029",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-4029"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "a3li",
+      "Tag": "requester",
+      "Timestamp": "2011-10-13T20:53:51Z"
+    },
+    {
+      "Text": "a3li",
+      "Tag": "submitter",
+      "Timestamp": "2011-10-22T17:19:57Z"
+    }
+  ]
+}

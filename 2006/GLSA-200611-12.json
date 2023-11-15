@@ -1,0 +1,98 @@
+{
+  "ID": "200611-12",
+  "Title": "Ruby: Denial of Service vulnerability",
+  "Synopsis": "\n    The Ruby cgi.rb CGI library is vulnerable to a Denial of Service attack.\n  ",
+  "Product": {
+    "Text": "ruby",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-11-20",
+  "Revised": {
+    "Text": "2009-06-11",
+    "Count": "02"
+  },
+  "Bug": [
+    "153497"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-lang/ruby",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.8.5-r3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.8.5-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Ruby is a dynamic, open source programming language with a focus on\n    simplicity and productivity.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Zed Shaw, Jeremy Kemper, and Jamis Buck of the Mongrel project reported\n    that the CGI library shipped with Ruby is vulnerable to a remote Denial\n    of Service by an unauthenticated user.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    The vulnerability can be exploited by sending the cgi.rb library an\n    HTTP request with multipart MIME encoding that contains a malformed\n    MIME boundary specifier beginning with \"-\" instead of \"--\". Successful\n    exploitation of the vulnerability causes the library to go into an\n    infinite loop waiting for additional nonexistent input.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Ruby users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/ruby-1.8.5-r3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-5467",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5467"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    aetius\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-11-10T13:03:41Z"
+    },
+    {
+      "Text": "\n    vorlon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-11-15T21:17:28Z"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "ID": "201208-01",
+  "Title": "socat: Arbitrary code execution",
+  "Synopsis": "A buffer overflow in socat might allow remote attackers to execute\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "socat",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-08-14",
+  "Revised": {
+    "Text": "2012-08-14",
+    "Count": "1"
+  },
+  "Bug": [
+    "415977"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/socat",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.7.2.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.7.2.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>socat is a multipurpose bidirectional relay, similar to netcat.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A vulnerability in the \"xioscan_readline()\" function in xio-readline.c\n      could cause a heap-based buffer overflow.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A remote attacker could possibly execute arbitrary code with the\n      privileges of the socat process.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All socat users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/socat-1.7.2.1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-0219",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0219"
+      },
+      {
+        "Text": "\n      Socat security advisory 3\n    ",
+        "Link": "http://www.dest-unreach.org/socat/contrib/socat-secadv3.html"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2012-07-11T21:57:34Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-08-14T20:30:08Z"
+    }
+  ]
+}

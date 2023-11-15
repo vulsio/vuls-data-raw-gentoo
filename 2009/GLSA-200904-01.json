@@ -1,0 +1,119 @@
+{
+  "ID": "200904-01",
+  "Title": "Openfire: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities were discovered in Openfire, the worst of which\n    may allow remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "openfire",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-04-02",
+  "Revised": {
+    "Text": "2009-04-02",
+    "Count": "01"
+  },
+  "Bug": [
+    "246008",
+    "254309"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-im/openfire",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.6.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.6.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Ignite Realtime Openfire is a fast real-time collaboration server.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Two vulnerabilities have been reported by Federico Muttis, from CORE\n    IMPACT's Exploit Writing Team:\n    </p>\n    <ul>\n    <li>\n    Multiple missing or incomplete input validations in several .jsps\n    (CVE-2009-0496).\n    </li>\n    <li>\n    Incorrect input validation of the \"log\" parameter in log.jsp\n    (CVE-2009-0497).\n    </li>\n    </ul> <p>\n    Multiple vulnerabilities have been reported by Andreas Kurtz:\n    </p>\n    <ul>\n    <li>\n    Erroneous built-in exceptions to input validation in login.jsp\n    (CVE-2008-6508).\n    </li>\n    <li>\n    Unsanitized user input to the \"type\" parameter in\n    sipark-log-summary.jsp used in SQL statement. (CVE-2008-6509)\n    </li>\n    <li>\n    A Cross-Site-Scripting vulnerability due to unsanitized input to the\n    \"url\" parameter. (CVE-2008-6510, CVE-2008-6511)\n    </li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could execute arbitrary code on clients' systems by\n    uploading a specially crafted plugin, bypassing authentication.\n    Additionally, an attacker could read arbitrary files on the server or\n    execute arbitrary SQL statements. Depending on the server's\n    configuration the attacker might also execute code on the server via an\n    SQL injection.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Openfire users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-im/openfire-3.6.3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-6508",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-6508"
+      },
+      {
+        "Text": "CVE-2008-6509",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-6509"
+      },
+      {
+        "Text": "CVE-2008-6510",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-6510"
+      },
+      {
+        "Text": "CVE-2008-6511",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-6511"
+      },
+      {
+        "Text": "CVE-2009-0496",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0496"
+      },
+      {
+        "Text": "CVE-2009-0497",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0497"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    mabi\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-03-21T10:46:26Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-03-21T11:36:24Z"
+    }
+  ]
+}

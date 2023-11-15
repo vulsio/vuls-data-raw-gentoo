@@ -1,0 +1,98 @@
+{
+  "ID": "202305-27",
+  "Title": "Tinyproxy: Memory Disclosure",
+  "Synopsis": "A vulnerability has been discovered in Tinyproxy which could be used to achieve memory disclosure.",
+  "Product": {
+    "Text": "tinyproxy",
+    "Type": "ebuild"
+  },
+  "Announced": "2023-05-21",
+  "Revised": {
+    "Text": "2023-05-21",
+    "Count": "1"
+  },
+  "Bug": [
+    "871924"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-proxy/tinyproxy",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.11.1_p20220908",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.11.1_p20220908",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n        <p>Tinyproxy is a light-weight HTTP/HTTPS proxy daemon for POSIX operating systems.</p>\n    "
+  },
+  "Description": {
+    "Text": "\n        <p>Tinyproxy&#39;s request processing does not sufficiently null-initialize variables used in error pages.</p>\n    "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n        <p>Contents of the Tinyproxy server&#39;s memory could be disclosed via generated error pages.</p>\n    "
+  },
+  "Workaround": {
+    "Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+  },
+  "Resolution": {
+    "Text": "\n        \n        \n        \n    ",
+    "P": [
+      {
+        "Text": "All Tinyproxy users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=net-proxy/tinyproxy-1.11.1_p20220908\"\n        "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2022-40468",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-40468"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ajak",
+      "Tag": "requester",
+      "Timestamp": "2023-05-21T19:44:29.410959Z"
+    },
+    {
+      "Text": "ajak",
+      "Tag": "submitter",
+      "Timestamp": "2023-05-21T19:44:29.417842Z"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "ID": "200603-08",
+  "Title": "GnuPG: Incorrect signature verification",
+  "Synopsis": "\n    GnuPG may erroneously report a modified or unsigned message has a valid\n    digital signature.\n  ",
+  "Product": {
+    "Text": "gnupg",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-03-10",
+  "Revised": {
+    "Text": "2006-03-10",
+    "Count": "01"
+  },
+  "Bug": [
+    "125217"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-crypt/gnupg",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.2.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.2.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The GNU Privacy Guard, GnuPG, is a free replacement for the PGP\n    suite of cryptographic software that may be used without restriction,\n    as it does not rely on any patented algorithms. GnuPG can be used to\n    digitally sign messages, a method of ensuring the authenticity of a\n    message using public key cryptography.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    OpenPGP is the standard that defines the format of digital\n    signatures supported by GnuPG. OpenPGP signatures consist of multiple\n    sections, in a strictly defined order. Tavis Ormandy of the Gentoo\n    Linux Security Audit Team discovered that certain illegal signature\n    formats could allow signed data to be modified without detection. GnuPG\n    has previously attempted to be lenient when processing malformed or\n    legacy signature formats, but this has now been found to be insecure.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker may be able to construct or modify a\n    digitally-signed message, potentially allowing them to bypass\n    authentication systems, or impersonate another user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All GnuPG users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-crypt/gnupg-1.4.2.2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-0049",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0049"
+      },
+      {
+        "Text": "GnuPG Announcement",
+        "Link": "http://lists.gnupg.org/pipermail/gnupg-announce/2006q1/000216.html"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    taviso\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-03-08T22:34:09Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-03-10T21:32:19Z"
+    }
+  ]
+}

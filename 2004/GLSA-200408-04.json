@@ -1,0 +1,106 @@
+{
+  "ID": "200408-04",
+  "Title": "PuTTY: Pre-authentication arbitrary code execution",
+  "Synopsis": "\n    PuTTY contains a vulnerability allowing a SSH server to execute arbitrary\n    code on the connecting client.\n  ",
+  "Product": {
+    "Text": "PuTTY",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-08-05",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "03"
+  },
+  "Bug": [
+    "59383"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/putty",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.55",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.54",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    PuTTY is a free implementation of Telnet and SSH for Win32 and Unix\n    platforms, along with an xterm terminal emulator.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    PuTTY contains a vulnerability allowing a malicious server to execute\n    arbitrary code on the connecting client before host key verification.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    When connecting to a server using the SSH2 protocol an attacker is able\n    to execute arbitrary code with the permissions of the user running\n    PuTTY by sending specially crafted packets to the client during the\n    authentication process but before host key verification.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time. All users are encouraged to\n    upgrade to the latest available version of PuTTY.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All PuTTY users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv \">=net-misc/putty-0.55\"\n    # emerge \">=net-misc/putty-0.55\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Corelabs Advisory",
+        "Link": "https://www.coresecurity.com/common/showdoc.php?idx=417&idxseccion=10"
+      },
+      {
+        "Text": "PuTTY ChangeLog",
+        "Link": "https://www.chiark.greenend.org.uk/~sgtatham/putty/changes.html"
+      },
+      {
+        "Text": "CVE-2004-1440",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1440"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-08-04T17:20:53Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-08-05T09:03:08Z"
+    }
+  ]
+}

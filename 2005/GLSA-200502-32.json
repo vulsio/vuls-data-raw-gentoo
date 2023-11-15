@@ -1,0 +1,107 @@
+{
+  "ID": "200502-32",
+  "Title": "UnAce: Buffer overflow and directory traversal vulnerabilities",
+  "Synopsis": "UnAce is vulnerable to several buffer overflow and directory\n    traversal attacks.\n  ",
+  "Product": {
+    "Text": "unace",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-02-28",
+  "Revised": {
+    "Text": "2014-05-19",
+    "Count": "2"
+  },
+  "Bug": [
+    "81958"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-arch/unace",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.5-r3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.5-r3",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>UnAce is an utility to extract, view and test the contents of an ACE\n      archive.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Ulf Harnhammar discovered that UnAce suffers from buffer overflows when\n      testing, unpacking or listing specially crafted ACE archives\n      (CAN-2005-0160). He also found out that UnAce is vulnerable to directory\n      traversal attacks, if an archive contains “./..” sequences or\n      absolute filenames (CAN-2005-0161).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>An attacker could exploit the buffer overflows to execute malicious code\n      or the directory traversals to overwrite arbitrary files.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All UnAce users should upgrade to the latest available version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-arch/unace-2.5-r3\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CAN-2005-0160\n    ",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0160"
+      },
+      {
+        "Text": "\n      CAN-2005-0161\n    ",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0161"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "system",
+      "Tag": "requester",
+      "Timestamp": "2011-10-07T22:18:40Z"
+    },
+    {
+      "Text": "system",
+      "Tag": "submitter",
+      "Timestamp": "2014-05-19T00:38:42Z"
+    },
+    {
+      "Text": "system",
+      "Tag": "bugReady",
+      "Timestamp": "2014-05-19T00:38:44Z"
+    }
+  ]
+}

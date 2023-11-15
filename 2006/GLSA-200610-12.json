@@ -1,0 +1,103 @@
+{
+  "ID": "200610-12",
+  "Title": "Apache mod_tcl: Format string vulnerability",
+  "Synopsis": "\n    A format string vulnerabilty has been found in Apache mod_tcl, which could\n    lead to the remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "mod_tcl",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-10-24",
+  "Revised": {
+    "Text": "2006-10-24",
+    "Count": "01"
+  },
+  "Bug": [
+    "151359"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apache/mod_tcl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Apache mod_tcl is a TCL interpreting module for the Apache 2.x web\n    server.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Sparfell discovered format string errors in calls to the set_var\n    function in tcl_cmds.c and tcl_core.c.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker could exploit the vulnerability to execute arbitrary\n    code with the rights of the user running the Apache server.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All mod_tcl users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apache/mod_tcl-1.0.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-4154",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4154"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-10-21T12:26:41Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-10-21T20:37:41Z"
+    },
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-10-23T14:13:35Z"
+    }
+  ]
+}

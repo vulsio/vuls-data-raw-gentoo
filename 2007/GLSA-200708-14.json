@@ -1,0 +1,113 @@
+{
+  "ID": "200708-14",
+  "Title": "NVIDIA drivers: Denial of service",
+  "Synopsis": "\n    A vulnerability has been discovered in the NVIDIA graphic drivers, allowing\n    for a Denial of Service.\n  ",
+  "Product": {
+    "Text": "nvidia-drivers",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-08-19",
+  "Revised": {
+    "Text": "2007-10-11",
+    "Count": "03"
+  },
+  "Bug": [
+    "183567"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "x11-drivers/nvidia-drivers",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "71.86.01",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.0.7185",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.0.9639",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "100.14.06",
+            "Range": "eq",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The NVIDIA drivers provide support for NVIDIA graphic boards.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Gregory Shikhman discovered that the default Gentoo setup of NVIDIA\n    drivers creates the /dev/nvidia* with insecure file permissions.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could send arbitrary values into the devices, possibly\n    resulting in hardware damage on the graphic board or a Denial of\n    Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All NVIDIA drivers users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \"x11-drivers/nvidia-drivers\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-3532",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3532"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-07-28T07:38:56Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-07-28T07:39:35Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-08-12T20:41:51Z"
+    }
+  ]
+}

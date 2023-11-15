@@ -1,0 +1,115 @@
+{
+  "ID": "200809-18",
+  "Title": "ClamAV: Multiple Denials of Service",
+  "Synopsis": "\n    Multiple vulnerabilities in ClamAV may result in a Denial of Service.\n  ",
+  "Product": {
+    "Text": "clamav",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-09-25",
+  "Revised": {
+    "Text": "2008-09-25",
+    "Count": "01"
+  },
+  "Bug": [
+    "236665"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-antivirus/clamav",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.94",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.94",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Clam AntiVirus is a free anti-virus toolkit for UNIX, designed\n    especially for e-mail scanning on mail gateways.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Hanno boeck reported an error in libclamav/chmunpack.c when processing\n    CHM files (CVE-2008-1389). Other unspecified vulnerabilities were also\n    reported, including a NULL pointer dereference in libclamav\n    (CVE-2008-3912), memory leaks in freshclam/manager.c (CVE-2008-3913),\n    and file descriptor leaks in libclamav/others.c and libclamav/sis.c\n    (CVE-2008-3914).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user or automated system to scan a\n    specially crafted CHM, possibly resulting in a Denial of Service\n    (daemon crash). The other attack vectors mentioned above could also\n    result in a Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All ClamAV users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-antivirus/clamav-0.94\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-1389",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1389"
+      },
+      {
+        "Text": "CVE-2008-3912",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3912"
+      },
+      {
+        "Text": "CVE-2008-3913",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3913"
+      },
+      {
+        "Text": "CVE-2008-3914",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3914"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-09-18T21:57:14Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-09-24T19:42:36Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-09-24T19:42:53Z"
+    }
+  ]
+}

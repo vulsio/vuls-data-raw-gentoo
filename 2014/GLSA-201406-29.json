@@ -1,0 +1,98 @@
+{
+  "ID": "201406-29",
+  "Title": "spice-gtk: Privilege escalation",
+  "Synopsis": "A vulnerability in spice-gtk could allow local attackers to gain\n    escalated privileges.\n  ",
+  "Product": {
+    "Text": "spice-gtk",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-06-26",
+  "Revised": {
+    "Text": "2014-06-26",
+    "Count": "1"
+  },
+  "Bug": [
+    "435694"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/spice-gtk",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.14",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.14",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>spice-gtk is a set of GObject and Gtk objects for connecting to Spice\n      servers and a client GUI.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>spice-gtk does not properly sanitize the DBUS_SYSTEM_BUS_ADDRESS\n      environment variable.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A local attacker may be able to gain escalated privileges.</p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All spice-gtk users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/spice-gtk-0.14\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-4425",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-4425"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "craig",
+      "Tag": "requester",
+      "Timestamp": "2012-12-16T21:53:39Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2014-06-26T23:23:49Z"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "ID": "201710-28",
+  "Title": "Jython: Arbitrary code execution",
+  "Synopsis": "A vulnerability in Jython may lead to arbitrary code execution.\n  ",
+  "Product": {
+    "Text": "Jython",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-10-29",
+  "Revised": {
+    "Text": "2017-10-29",
+    "Count": "1"
+  },
+  "Bug": [
+    "621876"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-java/jython",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.7.0-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.7.0-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>An implementation of Python written in Java.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was found that Jython is vulnerable to arbitrary code execution by\n      sending a serialized function to the deserializer.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>Remote execution of arbitrary code by enticing a user to execute\n      malicious code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Jython users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-java/jython-2.7.0-r2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2016-4000\n    ",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4000"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "jmbailey",
+      "Tag": "requester",
+      "Timestamp": "2017-10-26T13:31:13Z"
+    },
+    {
+      "Text": "jmbailey",
+      "Tag": "submitter",
+      "Timestamp": "2017-10-29T17:17:48Z"
+    }
+  ]
+}

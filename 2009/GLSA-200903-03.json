@@ -1,0 +1,103 @@
+{
+  "ID": "200903-03",
+  "Title": "Audacity: User-assisted execution of arbitrary code",
+  "Synopsis": "\n    A boundary error in Audacity allows for the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "audacity",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-03-06",
+  "Revised": {
+    "Text": "2009-03-06",
+    "Count": "01"
+  },
+  "Bug": [
+    "253493"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-sound/audacity",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.3.6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.3.6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Audacity is a free cross-platform audio editor.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Houssamix discovered a boundary error in the\n    String_parse::get_nonspace_quoted() function in\n    lib-src/allegro/strparse.cpp.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user into importing a specially\n    crafted *.gro file, resulting in the execution of arbitrary code or a\n    Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Audacity users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-sound/audacity-1.3.6\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-0490",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0490"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-03-05T20:19:24Z"
+    },
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-03-05T23:00:03Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-03-06T22:00:48Z"
+    }
+  ]
+}

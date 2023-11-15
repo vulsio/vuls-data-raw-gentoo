@@ -1,0 +1,103 @@
+{
+  "ID": "200411-02",
+  "Title": "Cherokee: Format string vulnerability",
+  "Synopsis": "\n    Cherokee contains a format string vulnerability that could lead to denial\n    of service or the execution of arbitary code.\n  ",
+  "Product": {
+    "Text": "cherokee",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-11-01",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "67667"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-servers/cherokee",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.4.17.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.4.17",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Cherokee is an extra-light web server.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Florian Schilhabel from the Gentoo Linux Security Audit Team found a\n    format string vulnerability in the cherokee_logger_ncsa_write_string()\n    function.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    Using a specially crafted URL when authenticating via auth_pam, a\n    malicious user may be able to crash the server or execute arbitrary\n    code on the target machine with permissions of the user running\n    Cherokee.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Cherokee users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-servers/cherokee-0.4.17.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2004-1097",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1097"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-11-01T10:17:11Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-11-01T11:49:51Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-11-01T15:51:07Z"
+    }
+  ]
+}

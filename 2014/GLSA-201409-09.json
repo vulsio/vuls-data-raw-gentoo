@@ -1,0 +1,166 @@
+{
+  "ID": "201409-09",
+  "Title": "Bash: Code Injection",
+  "Synopsis": "A parsing flaw related to functions and environments in Bash could\n    allow attackers to inject code.\n  ",
+  "Product": {
+    "Text": "bash",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-09-24",
+  "Revised": {
+    "Text": "2014-10-04",
+    "Count": "4"
+  },
+  "Bug": [
+    "523592"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-shells/bash",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.1_p18",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "3.2_p52",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "4.0_p39",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "4.1_p12",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "4.2_p48",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.2_p48",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Bash is the standard GNU Bourne Again SHell. </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Stephane Chazelas reported that Bash incorrectly handles function\n      definitions, allowing attackers to inject arbitrary code.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A remote attacker could exploit this vulnerability to execute arbitrary\n      commands even in restricted environments.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Bash 3.1 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All Bash 3.2 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All Bash 4.0 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All Bash 4.1 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All Bash 4.2 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-shells/bash-3.1_p18:3.1\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-shells/bash-3.2_p52:3.2\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-shells/bash-4.0_p39:4.0\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-shells/bash-4.1_p12:4.1\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-shells/bash-4.2_p48\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-6271",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-6271"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "a3li",
+      "Tag": "requester",
+      "Timestamp": "2014-09-24T16:00:19Z"
+    },
+    {
+      "Text": "a3li",
+      "Tag": "submitter",
+      "Timestamp": "2014-10-04T22:25:14Z"
+    }
+  ]
+}

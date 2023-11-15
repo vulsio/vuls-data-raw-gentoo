@@ -1,0 +1,114 @@
+{
+  "ID": "201006-14",
+  "Title": "Newt: User-assisted execution of arbitrary code",
+  "Synopsis": "\n    A heap-based buffer overflow in the Newt library might allow remote,\n    user-assisted attackers to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "newt",
+    "Type": "ebuild"
+  },
+  "Announced": "2010-06-02",
+  "Revised": {
+    "Text": "2010-06-02",
+    "Count": "01"
+  },
+  "Bug": [
+    "285854"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/newt",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.52.10-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.52.10-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Newt is a library for displaying text mode user interfaces.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Miroslav Lichvar reported that Newt is prone to a heap-based buffer\n    overflow in textbox.c.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to enter a specially crafted\n    string into a text dialog box rendered by Newt, possibly resulting in\n    the remote execution of arbitrary code with the privileges of the user\n    running the application, or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Newt users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    NOTE: This is a legacy GLSA. Updates for all affected architectures are\n    available since October 26, 2009. It is likely that your system is\n    already no longer affected by this issue.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/newt-0.52.10-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-2905",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2905"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-11-06T09:28:48Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2010-05-31T05:47:34Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2010-05-31T05:47:41Z"
+    }
+  ]
+}

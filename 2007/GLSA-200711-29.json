@@ -1,0 +1,113 @@
+{
+  "ID": "200711-29",
+  "Title": "Samba: Execution of arbitrary code",
+  "Synopsis": "\n    Samba contains two buffer overflow vulnerabilities potentially resulting in\n    the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "samba",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-11-20",
+  "Revised": {
+    "Text": "2007-12-05",
+    "Count": "03"
+  },
+  "Bug": [
+    "197519"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-fs/samba",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.0.27a",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.0.27a",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Samba is a suite of SMB and CIFS client/server programs for UNIX.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Two vulnerabilities have been reported in nmbd. Alin Rad Pop (Secunia\n    Research) discovered a boundary checking error in the\n    reply_netbios_packet() function which could lead to a stack-based\n    buffer overflow (CVE-2007-5398). The Samba developers discovered a\n    boundary error when processing GETDC logon requests also leading to a\n    buffer overflow (CVE-2007-4572).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    To exploit the first vulnerability, a remote unauthenticated attacker\n    could send specially crafted WINS \"Name Registration\" requests followed\n    by a WINS \"Name Query\" request. This might lead to execution of\n    arbitrary code with elevated privileges. Note that this vulnerability\n    is exploitable only when WINS server support is enabled in Samba. The\n    second vulnerability could be exploited by sending specially crafted\n    \"GETDC\" mailslot requests, but requires Samba to be configured as a\n    Primary or Backup Domain Controller. It is not believed the be\n    exploitable to execute arbitrary code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    To work around the first vulnerability, disable WINS support in Samba\n    by setting \"<i>wins support = no</i>\" in the \"global\" section of your\n    smb.conf and restart Samba.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Samba users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    The first vulnerability (CVE-2007-5398) was already fixed in Samba\n    3.0.26a-r2.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-fs/samba-3.0.27a\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-4572",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4572"
+      },
+      {
+        "Text": "CVE-2007-5398",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5398"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-11-03T23:37:14Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-11-20T21:13:02Z"
+    }
+  ]
+}

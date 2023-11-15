@@ -1,0 +1,123 @@
+{
+  "ID": "200410-19",
+  "Title": "glibc: Insecure tempfile handling in catchsegv script",
+  "Synopsis": "\n    The catchsegv script in the glibc package is vulnerable to symlink attacks,\n    potentially allowing a local user to overwrite arbitrary files with the\n    rights of the user running the script.\n  ",
+  "Product": {
+    "Text": "glibc",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-10-21",
+  "Revised": {
+    "Text": "2004-10-21",
+    "Count": "01"
+  },
+  "Bug": [
+    "66358"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-libs/glibc",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.2.5-r9",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "2.3.2-r12",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "2.3.3.20040420-r2",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "2.3.4.20040619-r2",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "2.3.4.20040808-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.3.4.20040808",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    glibc is a package that contains the GNU C library.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The catchsegv script creates temporary files in world-writeable directories\n    with predictable names.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary files\n    directory, pointing to a valid file somewhere on the filesystem. When\n    catchsegv script is called, this would result in the file being overwritten\n    with the rights of the user running the utility, which could be the root\n    user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All glibc users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n\n    # emerge -pv sys-libs/glibc\n    # emerge sys-libs/glibc"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-0968",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0968"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-10-20T14:29:16Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-10-20T14:29:39Z"
+    },
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-10-20T16:11:58Z"
+    }
+  ]
+}

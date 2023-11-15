@@ -1,0 +1,103 @@
+{
+  "ID": "200711-28",
+  "Title": "Perl: Buffer overflow",
+  "Synopsis": "\n    A buffer overflow in the Regular Expression engine in Perl possibly allows\n    for the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "perl",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-11-19",
+  "Revised": {
+    "Text": "2007-11-19",
+    "Count": "01"
+  },
+  "Bug": [
+    "198196"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-lang/perl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.8.8-r4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.8.8-r4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Perl is a stable, cross-platform programming language created by Larry\n    Wall.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Tavis Ormandy and Will Drewry (Google Security Team) discovered a\n    heap-based buffer overflow in the Regular Expression engine (regcomp.c)\n    that occurs when switching from byte to Unicode (UTF-8) characters in a\n    regular expression.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could either entice a user to compile a specially\n    crafted regular expression or actively compile it in case the script\n    accepts remote input of regular expressions, possibly leading to the\n    execution of arbitrary code with the privileges of the user running\n    Perl.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Perl users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/perl-5.8.8-r4\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-5116",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5116"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-11-14T01:27:30Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-11-15T00:34:08Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-11-19T14:24:28Z"
+    }
+  ]
+}

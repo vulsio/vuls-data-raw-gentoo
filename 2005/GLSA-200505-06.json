@@ -1,0 +1,116 @@
+{
+  "ID": "200505-06",
+  "Title": "TCPDump: Decoding routines Denial of Service vulnerability",
+  "Synopsis": "\n    A flaw in the decoding of network packets renders TCPDump vulnerable to a\n    remote Denial of Service attack.\n  ",
+  "Product": {
+    "Text": "tcpdump",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-05-09",
+  "Revised": {
+    "Text": "2005-06-12",
+    "Count": "02"
+  },
+  "Bug": [
+    "90541",
+    "95349"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-analyzer/tcpdump",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.8.3-r3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.8.3-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    TCPDump is a tool for network monitoring and data acquisition.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    TCPDump improperly handles and decodes ISIS (CAN-2005-1278), BGP\n    (CAN-2005-1267, CAN-2005-1279), LDP (CAN-2005-1279) and RSVP\n    (CAN-2005-1280) packets. TCPDump might loop endlessly after receiving\n    malformed packets.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A malicious remote attacker can exploit the decoding issues for a\n    Denial of Service attack by sending specially crafted packets, possibly\n    causing TCPDump to loop endlessly.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All TCPDump users should upgrade to the latest available version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/tcpdump-3.8.3-r3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-1267",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2005-1267"
+      },
+      {
+        "Text": "CAN-2005-1278",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2005-1278"
+      },
+      {
+        "Text": "CAN-2005-1279",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2005-1279"
+      },
+      {
+        "Text": "CAN-2005-1280",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2005-1280"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-05-08T15:18:02Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-05-08T15:56:20Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-05-09T19:22:22Z"
+    }
+  ]
+}

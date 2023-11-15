@@ -1,0 +1,98 @@
+{
+  "ID": "201412-20",
+  "Title": "GNUstep Base library: Denial of service",
+  "Synopsis": "A vulnerability in GNUstep Base library could lead to Denial of\n    Service.\n  ",
+  "Product": {
+    "Text": "gnustep-base",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-12-13",
+  "Revised": {
+    "Text": "2014-12-13",
+    "Count": "1"
+  },
+  "Bug": [
+    "508370"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "gnustep-base/gnustep-base",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.24.6-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.24.6-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>GNUstep Base library is a free software package implementing the API of\n      the OpenStep Foundation Kit (tm), including later additions.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>GNUstep Base library does not properly handle the file descriptor for\n      logging, when run as a daemon.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could send a specially crafted request, possibly\n      resulting in a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All GNUstep Base library users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=gnustep-base/gnustep-base-1.24.6-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-2980",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-2980"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2014-08-04T19:07:11Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2014-12-13T18:03:50Z"
+    }
+  ]
+}

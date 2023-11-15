@@ -1,0 +1,93 @@
+{
+  "ID": "201612-12",
+  "Title": "Patch: Denial of service",
+  "Synopsis": "Patch is vulnerable to a locally generated Denial of Service\n    condition.\n  ",
+  "Product": {
+    "Text": "patch",
+    "Type": "ebuild"
+  },
+  "Announced": "2016-12-05",
+  "Revised": {
+    "Text": "2016-12-05",
+    "Count": "1"
+  },
+  "Bug": [
+    "538658"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-devel/patch",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.7.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.7.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Patch takes a patch file containing a difference listing produced by the\n      diff program and applies those differences to one or more original files,\n      producing patched versions.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Due to a flaw in Patch, the application can enter an infinite loop when\n      processing a specially crafted diff file.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A local attacker could pass a specially crafted diff file to Patch,\n      possibly resulting in a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All patch users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-devel/patch-2.7.4\"\n    "
+    ]
+  },
+  "References": {
+    "URI": null
+  },
+  "Metadata": [
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "requester",
+      "Timestamp": "2016-02-25T07:47:45Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2016-12-05T01:16:43Z"
+    }
+  ]
+}

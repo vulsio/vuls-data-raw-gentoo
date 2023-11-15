@@ -1,0 +1,103 @@
+{
+  "ID": "200508-18",
+  "Title": "PhpWiki: Arbitrary command execution through XML-RPC",
+  "Synopsis": "\n    PhpWiki includes PHP XML-RPC code which is vulnerable to arbitrary command\n    execution.\n  ",
+  "Product": {
+    "Text": "phpwiki",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-08-26",
+  "Revised": {
+    "Text": "2005-08-26",
+    "Count": "01"
+  },
+  "Bug": [
+    "102380"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/phpwiki",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.3.10-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.3.10-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    PhpWiki is an application that creates a web site where anyone can\n    edit the pages through HTML forms.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Earlier versions of PhpWiki contain an XML-RPC library that\n    improperly handles XML-RPC requests and responses with malformed nested\n    tags.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker could exploit this vulnerability to inject\n    arbitrary PHP script code into eval() statements by sending a specially\n    crafted XML document to PhpWiki.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All PhpWiki users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/phpwiki-1.3.10-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-2498",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2498"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-08-25T08:45:11Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-08-25T11:46:47Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-08-25T20:44:22Z"
+    }
+  ]
+}

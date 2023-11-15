@@ -1,0 +1,103 @@
+{
+  "ID": "201412-26",
+  "Title": "strongSwan: Multiple Vulnerabilities",
+  "Synopsis": "Two vulnerabilities have been found in strongSwan, possibly\n    resulting in Denial of Service or a bypass in authentication restrictions. \n  ",
+  "Product": {
+    "Text": "strongswan",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-12-13",
+  "Revised": {
+    "Text": "2014-12-13",
+    "Count": "1"
+  },
+  "Bug": [
+    "507722",
+    "509832"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/strongswan",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.1.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.1.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>strongSwan is an IPSec implementation for Linux.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A NULL pointer dereference and an error in the IKEv2 implementation have\n      been found in strongSwan.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could create a Denial of Service condition or bypass\n      security restrictions.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All strongSwan users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/strongswan-5.1.3\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-2338",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-2338"
+      },
+      {
+        "Text": "CVE-2014-2891",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-2891"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2014-08-04T19:27:51Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2014-12-13T18:56:21Z"
+    }
+  ]
+}

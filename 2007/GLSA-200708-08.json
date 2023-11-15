@@ -1,0 +1,107 @@
+{
+  "ID": "200708-08",
+  "Title": "SquirrelMail G/PGP plugin: Arbitrary code execution",
+  "Synopsis": "\n    Multiple vulnerabilities have been discovered in SquirrelMail, allowing for\n    the remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "squirrelmail",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-08-11",
+  "Revised": {
+    "Text": "2007-08-11",
+    "Count": "01"
+  },
+  "Bug": [
+    "185010"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "mail-client/squirrelmail",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.10a-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.10a-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    SquirrelMail is a webmail package written in PHP. It supports IMAP and\n    SMTP protocols.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The functions deletekey(), gpg_check_sign_pgp_mime() and gpg_recv_key()\n    used in the SquirrelMail G/PGP encryption plugin do not properly escape\n    user-supplied data.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    An authenticated user could use the plugin to execute arbitrary code on\n    the server, or a remote attacker could send a specially crafted e-mail\n    to a SquirrelMail user, possibly leading to the execution of arbitrary\n    code with the privileges of the user running the underlying web server.\n    Note that the G/PGP plugin is disabled by default.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Enter the SquirrelMail configuration directory\n    (/usr/share/webapps/squirrelmail/version/htdocs/config), then execute\n    the conf.pl script. Select the plugins menu, then select the gpg plugin\n    item number in the \"Installed Plugins\" list to disable it. Press S to\n    save your changes, then Q to quit.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All SquirrelMail users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-client/squirrelmail-1.4.10a-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-1924",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1924"
+      },
+      {
+        "Text": "CVE-2006-4169",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4169"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-07-20T20:59:21Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-07-23T13:21:57Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-07-23T13:22:43Z"
+    }
+  ]
+}

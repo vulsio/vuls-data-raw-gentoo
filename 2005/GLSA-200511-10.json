@@ -1,0 +1,107 @@
+{
+  "ID": "200511-10",
+  "Title": "RAR: Format string and buffer overflow vulnerabilities",
+  "Synopsis": "\n    RAR contains a format string error and a buffer overflow vulnerability that\n    may be used to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "rar",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-11-13",
+  "Revised": {
+    "Text": "2005-11-13",
+    "Count": "01"
+  },
+  "Bug": [
+    "111926"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-arch/rar",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.5.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.5.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    RAR is a powerful archive manager that can decompress RAR, ZIP and\n    other files, and can create new archives in RAR and ZIP file format.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Tan Chew Keong reported about two vulnerabilities found in RAR:\n    </p>\n    <ul>\n    <li>A format string error exists when displaying a diagnostic\n    error message that informs the user of an invalid filename in an\n    UUE/XXE encoded file.</li>\n    <li>Some boundary errors in the processing\n    of malicious ACE archives can be exploited to cause a buffer\n    overflow.</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could exploit these vulnerabilities by enticing\n    a user to:\n    </p>\n    <ul><li>decode a specially crafted UUE/XXE file,\n    or</li>\n    <li>extract a malicious ACE archive containing a file with an\n    overly long filename.</li>\n    </ul>\n    <p>\n    When the user performs these\n    actions, the arbitrary code of the attacker's choice will be executed.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All RAR users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-arch/rar-3.5.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "RAR Release Notes",
+        "Link": "http://www.rarlabs.com/rarnew.htm"
+      },
+      {
+        "Text": "Secunia Research 11/10/2005",
+        "Link": "https://secunia.com/secunia_research/2005-53/advisory/"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-11-11T09:12:31Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-11-11T14:35:09Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-11-11T14:35:22Z"
+    }
+  ]
+}

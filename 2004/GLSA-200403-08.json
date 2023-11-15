@@ -1,0 +1,97 @@
+{
+  "ID": "200403-08",
+  "Title": "oftpd DoS vulnerability",
+  "Synopsis": "\n    A remotely-exploitable overflow exists in oftpd, allowing an attacker to\n    crash the oftpd daemon.\n  ",
+  "Product": {
+    "Text": "oftpd",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-03-29",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "45738"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-ftp/oftpd",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.3.7",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.3.6",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Quote from <uri link=\"http://www.time-travellers.org/oftpd/\">http://www.time-travellers\n    .org/oftpd/</uri>\n    </p>\n    <p>\n    \"oftpd is designed to be as secure as an anonymous FTP server can\n    possibly be. It runs as non-root for most of the time, and uses the\n    Unix chroot() command to hide most of the systems directories from\n    external users - they cannot change into them even if the server is\n    totally compromised! It contains its own directory change code, so that\n    it can run efficiently as a threaded server, and its own directory\n    listing code (most FTP servers execute the system \"ls\" command to list\n    files).\"\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Issuing a port command with a number higher than 255 causes the server\n    to crash. The port command may be issued before any authentication\n    takes place, meaning the attacker does not need to know a valid\n    username and password in order to exploit this vulnerability.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    This exploit causes a denial of service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    While a workaround is not currently known for this issue, all users are\n    advised to upgrade to the latest version of the affected package.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All users should upgrade to the current version of the affected\n    package:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv \">=net-ftp/oftpd-0.3.7\"\n    # emerge \">=net-ftp/oftpd-0.3.7\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "osftpd DoS Vulnerability",
+        "Link": "https://www.time-travellers.org/oftpd/oftpd-dos.html"
+      },
+      {
+        "Text": "CVE-2004-0376",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0376"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-05-22T05:52:22Z"
+    }
+  ]
+}

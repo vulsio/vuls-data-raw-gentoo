@@ -1,0 +1,148 @@
+{
+  "ID": "200812-17",
+  "Title": "Ruby: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities have been discovered in Ruby that allow for\n    attacks including arbitrary code execution and Denial of Service.\n  ",
+  "Product": {
+    "Text": "ruby",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-12-16",
+  "Revised": {
+    "Text": "2008-12-16",
+    "Count": "01"
+  },
+  "Bug": [
+    "225465",
+    "236060"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-lang/ruby",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.8.6_p287-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.8.6_p287-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Ruby is an interpreted object-oriented programming language. The\n    elaborate standard library includes an HTTP server (\"WEBRick\") and a\n    class for XML parsing (\"REXML\").\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Multiple vulnerabilities have been discovered in the Ruby interpreter\n    and its standard libraries. Drew Yao of Apple Product Security\n    discovered the following flaws:\n    </p>\n    <ul>\n    <li>Arbitrary code execution\n    or Denial of Service (memory corruption) in the rb_str_buf_append()\n    function (CVE-2008-2662).</li>\n    <li>Arbitrary code execution or Denial\n    of Service (memory corruption) in the rb_ary_stor() function\n    (CVE-2008-2663).</li>\n    <li>Memory corruption via alloca in the\n    rb_str_format() function (CVE-2008-2664).</li>\n    <li>Memory corruption\n    (\"REALLOC_N\") in the rb_ary_splice() and rb_ary_replace() functions\n    (CVE-2008-2725).</li>\n    <li>Memory corruption (\"beg + rlen\") in the\n    rb_ary_splice() and rb_ary_replace() functions (CVE-2008-2726).</li>\n    </ul> <p>\n    Furthermore, several other vulnerabilities have been reported:\n    </p>\n    <ul>\n    <li>Tanaka Akira reported an issue with resolv.rb that enables\n    attackers to spoof DNS responses (CVE-2008-1447).</li>\n    <li>Akira Tagoh\n    of RedHat discovered a Denial of Service (crash) issue in the\n    rb_ary_fill() function in array.c (CVE-2008-2376).</li>\n    <li>Several\n    safe level bypass vulnerabilities were discovered and reported by Keita\n    Yamaguchi (CVE-2008-3655).</li>\n    <li>Christian Neukirchen is credited\n    for discovering a Denial of Service (CPU consumption) attack in the\n    WEBRick HTTP server (CVE-2008-3656).</li>\n    <li>A fault in the dl module\n    allowed the circumvention of taintness checks which could possibly lead\n    to insecure code execution was reported by \"sheepman\"\n    (CVE-2008-3657).</li>\n    <li>Tanaka Akira again found a DNS spoofing\n    vulnerability caused by the resolv.rb implementation using poor\n    randomness (CVE-2008-3905).</li>\n    <li>Luka Treiber and Mitja Kolsek\n    (ACROS Security) disclosed a Denial of Service (CPU consumption)\n    vulnerability in the REXML module when dealing with recursive entity\n    expansion (CVE-2008-3790).</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    These vulnerabilities allow remote attackers to execute arbitrary code,\n    spoof DNS responses, bypass Ruby's built-in security and taintness\n    checks, and cause a Denial of Service via crash or CPU exhaustion.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Ruby users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/ruby-1.8.6_p287-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-1447",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1447"
+      },
+      {
+        "Text": "CVE-2008-2376",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2376"
+      },
+      {
+        "Text": "CVE-2008-2662",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2662"
+      },
+      {
+        "Text": "CVE-2008-2663",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2663"
+      },
+      {
+        "Text": "CVE-2008-2664",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2664"
+      },
+      {
+        "Text": "CVE-2008-2725",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2725"
+      },
+      {
+        "Text": "CVE-2008-2726",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2726"
+      },
+      {
+        "Text": "CVE-2008-3655",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3655"
+      },
+      {
+        "Text": "CVE-2008-3656",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3656"
+      },
+      {
+        "Text": "CVE-2008-3657",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3657"
+      },
+      {
+        "Text": "CVE-2008-3790",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3790"
+      },
+      {
+        "Text": "CVE-2008-3905",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3905"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-09-21T11:43:41Z"
+    },
+    {
+      "Text": "\n    hoffie\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-11-10T18:52:14Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-11-27T16:38:46Z"
+    }
+  ]
+}

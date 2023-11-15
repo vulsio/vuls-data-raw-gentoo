@@ -1,0 +1,102 @@
+{
+  "ID": "200603-11",
+  "Title": "Freeciv: Denial of service",
+  "Synopsis": "\n    A memory allocation bug in Freeciv allows a remote attacker to perform a\n    Denial of Service attack.\n  ",
+  "Product": {
+    "Text": "freeciv",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-03-16",
+  "Revised": {
+    "Text": "2006-03-16",
+    "Count": "01"
+  },
+  "Bug": [
+    "125304"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "games-strategy/freeciv",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.8",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.8",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Freeciv is an open source turn-based multiplayer strategy game,\n    similar to the famous Civilization series.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Luigi Auriemma discovered that Freeciv could be tricked into the\n    allocation of enormous chunks of memory when trying to uncompress\n    malformed data packages, possibly leading to an out of memory condition\n    which causes Freeciv to crash or freeze.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could exploit this issue to cause a Denial of\n    Service by sending specially crafted data packages to the Freeciv game\n    server.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Play solo games or restrict your multiplayer games to trusted\n    parties.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Freeciv users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=games-strategy/freeciv-2.0.8\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-0047",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0047"
+      },
+      {
+        "Text": "Original advisory",
+        "Link": "http://aluigi.altervista.org/adv/freecivdos-adv.txt"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-03-12T20:13:19Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-03-12T20:29:12Z"
+    }
+  ]
+}

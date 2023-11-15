@@ -1,0 +1,103 @@
+{
+  "ID": "200701-26",
+  "Title": "KSirc: Denial of Service vulnerability",
+  "Synopsis": "\n    KSirc is vulnerable to a Denial of Service attack.\n  ",
+  "Product": {
+    "Text": "ksirc",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-01-29",
+  "Revised": {
+    "Text": "2007-01-30",
+    "Count": "01"
+  },
+  "Bug": [
+    "159658"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "kde-base/ksirc",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.5.5-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.5.5-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    KSirc is the default KDE IRC client.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    KSirc fails to check the size of an incoming PRIVMSG string sent from\n    an IRC server during the connection process.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A malicious IRC server could send a long PRIVMSG string to the KSirc\n    client causing an assertion failure and the dereferencing of a null\n    pointer, resulting in a crash.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All KSirc users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=kde-base/ksirc-3.5.5-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-6811",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6811"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    vorlon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-01-24T20:03:08Z"
+    },
+    {
+      "Text": "\n    vorlon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-01-24T20:03:22Z"
+    },
+    {
+      "Text": "\n    hyakuhei\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-01-25T11:44:16Z"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "ID": "202003-24",
+  "Title": "file: Heap-based buffer overflow",
+  "Synopsis": "A heap-based buffer overflow in file might allow remote attackers\n    to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "file",
+    "Type": "ebuild"
+  },
+  "Announced": "2020-03-15",
+  "Revised": {
+    "Text": "2020-03-15",
+    "Count": "1"
+  },
+  "Bug": [
+    "698610"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-apps/file",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.37-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.37-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>file is a utility that guesses a file format by scanning binary data for\n      patterns.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was discovered that file incorrectly handled certain malformed files.</p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to process a specially crafted\n      file via libmagic or file, possibly resulting in execution of arbitrary\n      code with the privileges of the process or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All file users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-apps/file-5.37-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2019-18218",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2019-18218"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2020-03-15T04:56:34Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2020-03-15T14:35:19Z"
+    }
+  ]
+}

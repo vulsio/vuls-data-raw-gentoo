@@ -1,0 +1,103 @@
+{
+  "ID": "200909-09",
+  "Title": "Screenie: Insecure temporary file usage",
+  "Synopsis": "\n    An insecure temporary file usage has been reported in Screenie, allowing\n    for symlink attacks.\n  ",
+  "Product": {
+    "Text": "screenie",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-09-09",
+  "Revised": {
+    "Text": "2009-09-09",
+    "Count": "01"
+  },
+  "Bug": [
+    "250476"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-misc/screenie",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.30.0-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.30.0-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Screenie is a small screen frontend that is designed to be a session\n    handler.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Dmitry E. Oboukhov reported that Screenie does not handle\n    \"/tmp/.screenie.#####\" temporary files securely.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could perform symlink attacks to overwrite arbitrary\n    files with the privileges of the user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Screenie users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-misc/screenie-1.30.0-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-5371",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5371"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    craig\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-06-12T22:09:23Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-08-28T07:52:34Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-08-31T03:37:54Z"
+    }
+  ]
+}

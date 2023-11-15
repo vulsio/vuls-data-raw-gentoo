@@ -1,0 +1,132 @@
+{
+  "ID": "200610-11",
+  "Title": "OpenSSL: Multiple vulnerabilities",
+  "Synopsis": "\n    OpenSSL contains multiple vulnerabilities including the possible remote\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "openssl",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-10-24",
+  "Revised": {
+    "Text": "2006-10-24",
+    "Count": "01"
+  },
+  "Bug": [
+    "145510"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/openssl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.9.8d",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.7l",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.9.8d",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    OpenSSL is a toolkit implementing the Secure Sockets Layer, Transport\n    Layer Security protocols and a general-purpose cryptography library.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Tavis Ormandy and Will Drewry, both of the Google Security Team,\n    discovered that the SSL_get_shared_ciphers() function contains a buffer\n    overflow vulnerability, and that the SSLv2 client code contains a flaw\n    leading to a crash. Additionally Dr. Stephen N. Henson found that the\n    ASN.1 handler contains two Denial of Service vulnerabilities: while\n    parsing an invalid ASN.1 structure and while handling certain types of\n    public key.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    An attacker could trigger the buffer overflow vulnerability by sending\n    a malicious suite of ciphers to an application using the vulnerable\n    function, and thus execute arbitrary code with the rights of the user\n    running the application. An attacker could also consume CPU and/or\n    memory by exploiting the Denial of Service vulnerabilities. Finally a\n    malicious server could crash a SSLv2 client through the SSLv2\n    vulnerability.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All OpenSSL 0.9.8 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All OpenSSL 0.9.7 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/openssl-0.9.8d\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/openssl-0.9.7l\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-2937",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2937"
+      },
+      {
+        "Text": "CVE-2006-2940",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2940"
+      },
+      {
+        "Text": "CVE-2006-3738",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3738"
+      },
+      {
+        "Text": "CVE-2006-4343",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4343"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-09-28T15:36:31Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-10-13T16:05:39Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-10-24T10:05:56Z"
+    }
+  ]
+}

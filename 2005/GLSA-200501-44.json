@@ -1,0 +1,111 @@
+{
+  "ID": "200501-44",
+  "Title": "ncpfs: Multiple vulnerabilities",
+  "Synopsis": "\n    The ncpfs utilities contain multiple flaws, potentially resulting in the\n    remote execution of arbitrary code or local file access with elevated\n    privileges.\n  ",
+  "Product": {
+    "Text": "ncpfs",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-01-30",
+  "Revised": {
+    "Text": "2005-01-30",
+    "Count": "01"
+  },
+  "Bug": [
+    "77414"
+  ],
+  "Access": "remote and local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-fs/ncpfs",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.2.6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.2.6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    ncpfs is a NCP protocol network filesystem driver that allows\n    access to NetWare services, to mount volumes of NetWare servers or\n    print to NetWare print queues.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Erik Sjolund discovered two vulnerabilities in the programs\n    bundled with ncpfs: there is a potentially exploitable buffer overflow\n    in ncplogin (CAN-2005-0014), and due to a flaw in nwclient.c, utilities\n    using the NetWare client functions insecurely access files with\n    elevated privileges (CAN-2005-0013).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    The buffer overflow might allow a malicious remote NetWare server\n    to execute arbitrary code on the NetWare client. Furthermore, a local\n    attacker may be able to create links and access files with elevated\n    privileges using SUID ncpfs utilities.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All ncpfs users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-fs/ncpfs-2.2.6\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-0013",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0013"
+      },
+      {
+        "Text": "CAN-2005-0014",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0014"
+      },
+      {
+        "Text": "ncpfs ChangeLog",
+        "Link": "ftp://platan.vc.cvut.cz/pub/linux/ncpfs/Changes-2.2.6"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-01-29T09:02:48Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-01-29T11:01:37Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-01-29T11:18:51Z"
+    }
+  ]
+}

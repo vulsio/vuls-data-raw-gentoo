@@ -1,0 +1,173 @@
+{
+  "ID": "200603-02",
+  "Title": "teTeX, pTeX, CSTeX: Multiple overflows in included XPdf code",
+  "Synopsis": "\n    CSTeTeX, pTeX, and teTeX include vulnerable XPdf code to handle PDF files,\n    making them vulnerable to the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "tetex",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-03-04",
+  "Revised": {
+    "Text": "2006-03-04",
+    "Count": "01"
+  },
+  "Bug": [
+    "115775"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-text/tetex",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.2-r8",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.2-r8",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "app-text/cstetex",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.2-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.2-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "app-text/ptex",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.1.5-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.1.5-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    teTex is a complete TeX distribution. It is used for creating and\n    manipulating LaTeX documents. CSTeX is a TeX distribution with Czech\n    and Slovak support. pTeX is and ASCII publishing TeX distribution.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    CSTeX, teTex, and pTeX include XPdf code to handle PDF files. This\n    XPdf code is vulnerable to several heap overflows (GLSA 200512-08) as\n    well as several buffer and integer overflows discovered by Chris Evans\n    (CESA-2005-003).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could entice a user to open a specially crafted PDF\n    file with teTeX, pTeX or CSTeX, potentially resulting in the execution\n    of arbitrary code with the rights of the user running the affected\n    application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All teTex users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All CSTeX users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All pTeX users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/tetex-2.0.2-r8\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/cstetex-2.0.2-r2\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/ptex-3.1.5-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-3193",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-3193"
+      },
+      {
+        "Text": "GLSA 200512-08",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200512-08.xml"
+      },
+      {
+        "Text": "CESA-2005-003",
+        "Link": "http://scary.beasts.org/security/CESA-2005-003.txt"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-02-16T20:57:52Z"
+    },
+    {
+      "Text": "\n    dragonheart\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-02-17T12:11:23Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-03-04T16:30:04Z"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "ID": "201310-02",
+  "Title": "isync: Man-in-the-Middle attack",
+  "Synopsis": "A vulnerability in isync could allow remote attackers to perform\n    man-in-the-middle attacks.\n  ",
+  "Product": {
+    "Text": "isync",
+    "Type": "ebuild"
+  },
+  "Announced": "2013-10-05",
+  "Revised": {
+    "Text": "2013-10-05",
+    "Count": "1"
+  },
+  "Bug": [
+    "458420"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-mail/isync",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>isync is an IMAP and MailDir mailbox synchronizer. </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>isync does not properly verify the server’s hostname against the CN\n      field in the SSL certificate.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>A remote server could perform man-in-the-middle attacks to disclose\n      passwords or obtain other sensitive information.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All isync users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-mail/isync-1.0.6\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2013-0289",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0289"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2013-04-08T23:32:51Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2013-10-05T20:45:35Z"
+    }
+  ]
+}

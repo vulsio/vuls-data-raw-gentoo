@@ -1,0 +1,102 @@
+{
+  "ID": "201701-23",
+  "Title": "Botan: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in Botan, the worst of\n    which might allow remote attackers to obtain ECDSA secret keys.\n  ",
+  "Product": {
+    "Text": "botan",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-01-11",
+  "Revised": {
+    "Text": "2017-01-11",
+    "Count": "1"
+  },
+  "Bug": [
+    "581324"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/botan",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.10.13",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.10.13",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Botan (Japanese for peony) is a cryptography library written in C++11.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in Botan. Please review\n      the CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker might obtain ECDSA secret keys via a timing\n      side-channel attack or could possibly bypass TLS policy.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Botan users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/botan-1.10.13\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2016-2849",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-2849"
+      },
+      {
+        "Text": "CVE-2016-2850",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-2850"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2017-01-09T17:45:34Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2017-01-11T12:23:40Z"
+    }
+  ]
+}

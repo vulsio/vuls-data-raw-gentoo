@@ -1,0 +1,107 @@
+{
+  "ID": "200802-10",
+  "Title": "Python: PCRE Integer overflow",
+  "Synopsis": "\n    A vulnerability within Python's copy of PCRE might lead to the execution of\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "python",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-02-23",
+  "Revised": {
+    "Text": "2008-02-23",
+    "Count": "01"
+  },
+  "Bug": [
+    "198373"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-lang/python",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.3.6-r4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.3.6-r4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Python is an interpreted, interactive, object-oriented programming\n    language.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Python 2.3 includes a copy of PCRE which is vulnerable to an integer\n    overflow vulnerability, leading to a buffer overflow.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could exploit the vulnerability by tricking a vulnerable\n    Python application to compile a regular expressions, which could\n    possibly lead to the execution of arbitrary code, a Denial of Service\n    or the disclosure of sensitive information.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Python 2.3 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/python-2.3.6-r4\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-7228",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-7228"
+      },
+      {
+        "Text": "GLSA 200711-30",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200711-30.xml"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-01-07T19:00:53Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-01-28T18:01:42Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-02-18T22:37:11Z"
+    }
+  ]
+}

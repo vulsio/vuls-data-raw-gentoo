@@ -1,0 +1,102 @@
+{
+  "ID": "200511-06",
+  "Title": "fetchmail: Password exposure in fetchmailconf",
+  "Synopsis": "\n    fetchmailconf fails to properly handle file permissions, temporarily\n    exposing sensitive information to other local users.\n  ",
+  "Product": {
+    "Text": "fetchmail",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-11-06",
+  "Revised": {
+    "Text": "2005-11-06",
+    "Count": "01"
+  },
+  "Bug": [
+    "110366"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-mail/fetchmail",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "6.2.5.2-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "6.2.5.2-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    fetchmail is a utility that retrieves and forwards mail from\n    remote systems using IMAP, POP, and other protocols. It ships with\n    fetchmailconf, a graphical utility used to create configuration files.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Thomas Wolff discovered that fetchmailconf opens the configuration\n    file with default permissions, writes the configuration to it, and only\n    then restricts read permissions to the owner.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could exploit the race condition to retrieve\n    sensitive information like IMAP/POP passwords.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Run \"umask 077\" to temporarily strengthen default permissions,\n    then run \"fetchmailconf\" from the same shell.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All fetchmail users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-mail/fetchmail-6.2.5.2-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Fetchmail Security Advisory",
+        "Link": "http://fetchmail.berlios.de/fetchmail-SA-2005-02.txt"
+      },
+      {
+        "Text": "CVE-2005-3088",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3088"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-11-04T12:31:43Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-11-04T12:31:54Z"
+    }
+  ]
+}

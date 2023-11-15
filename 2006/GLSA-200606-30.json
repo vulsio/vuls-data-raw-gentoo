@@ -1,0 +1,103 @@
+{
+  "ID": "200606-30",
+  "Title": "Kiax: Arbitrary code execution",
+  "Synopsis": "\n    A security vulnerability in the iaxclient library could lead to the\n    execution of arbitrary code by a remote attacker.\n  ",
+  "Product": {
+    "Text": "kiax",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-06-30",
+  "Revised": {
+    "Text": "2006-06-30",
+    "Count": "01"
+  },
+  "Bug": [
+    "136099"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/kiax",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.8.5_p1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.8.5_p1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Kiax is a graphical softphone supporting the IAX protocol (Inter\n    Asterisk eXchange), which allows PC users to make VoIP calls to\n    Asterisk servers.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The iax_net_read function in the iaxclient library fails to properly\n    handle IAX2 packets with truncated full frames or mini-frames. These\n    frames are detected in a length check but processed anyway, leading to\n    buffer overflows.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    By sending a specially crafted IAX2 packet, an attacker could execute\n    arbitrary code with the permissions of the user running Kiax.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Kiax users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/kiax-0.8.5_p1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-2923",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2923"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-06-22T11:02:44Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-06-22T11:16:37Z"
+    },
+    {
+      "Text": "\n    dizzutch\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-06-22T15:23:48Z"
+    }
+  ]
+}

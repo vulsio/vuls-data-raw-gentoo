@@ -1,0 +1,107 @@
+{
+  "ID": "200606-06",
+  "Title": "AWStats: Remote execution of arbitrary code",
+  "Synopsis": "\n    AWStats contains a bug in the sanitization of the input parameters which\n    can lead to the remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "awstats",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-06-07",
+  "Revised": {
+    "Text": "2009-05-28",
+    "Count": "02"
+  },
+  "Bug": [
+    "130487"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-misc/awstats",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "6.5-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "6.5-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    AWStats is an advanced log file analyzer and statistics generator.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Hendrik Weimer has found that if updating the statistics via the\n    web frontend is enabled, it is possible to inject arbitrary code via a\n    pipe character in the \"migrate\" parameter. Additionally, r0t has\n    discovered that AWStats fails to properly sanitize user-supplied input\n    in awstats.pl.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker can execute arbitrary code on the server in the\n    context of the application running the AWStats CGI script if updating\n    of the statistics via web frontend is allowed. Nonetheless, all\n    configurations are affected by a cross-site scripting vulnerability in\n    awstats.pl, allowing a remote attacker to execute arbitrary scripts\n    running in the context of the victim's browser.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Disable statistics updates using the web frontend to avoid code\n    injection. However, there is no known workaround at this time\n    concerning the cross-site scripting vulnerability.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All AWStats users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-misc/awstats-6.5-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-1945",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1945"
+      },
+      {
+        "Text": "CVE-2006-2237",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2237"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-05-20T08:51:28Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-05-21T19:06:44Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-06-05T17:20:28Z"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "ID": "202107-50",
+  "Title": "Singularity: Remote code execution",
+  "Synopsis": "A vulnerability in Singularity could result in remote code\n    execution.\n  ",
+  "Product": {
+    "Text": "singularity",
+    "Type": "ebuild"
+  },
+  "Announced": "2021-07-22",
+  "Revised": {
+    "Text": "2021-07-22",
+    "Count": "1"
+  },
+  "Bug": [
+    "792465"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-cluster/singularity",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.7.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.7.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Singularity is the container platform for performance sensitive\n      workloads.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Singularity always uses the default remote endpoint,\n      ‘cloud.syslabs.io’, for action commands using the ‘library://’\n      URI rather than the configured remote endpoint.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>An attacker that that can push a malicious container to the default\n      remote endpoint could execute code on hosts that fetch the container.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Singularity users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-cluster/singularity-3.7.4\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2021-32635",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-32635"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ajak",
+      "Tag": "requester",
+      "Timestamp": "2021-07-19T02:57:15Z"
+    },
+    {
+      "Text": "ajak",
+      "Tag": "submitter",
+      "Timestamp": "2021-07-22T04:54:09Z"
+    }
+  ]
+}

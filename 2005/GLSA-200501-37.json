@@ -1,0 +1,102 @@
+{
+  "ID": "200501-37",
+  "Title": "GraphicsMagick: PSD decoding heap overflow",
+  "Synopsis": "\n    GraphicsMagick is vulnerable to a heap overflow when decoding Photoshop\n    Document (PSD) files, which could lead to arbitrary code execution.\n  ",
+  "Product": {
+    "Text": "GraphicsMagick",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-01-26",
+  "Revised": {
+    "Text": "2005-01-26",
+    "Count": "01"
+  },
+  "Bug": [
+    "79336"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-gfx/graphicsmagick",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.1.5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    GraphicsMagick is a collection of tools to read, write and\n    manipulate images in many formats. GraphicsMagick is originally derived\n    from ImageMagick 5.5.2.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Andrei Nigmatulin discovered that handling a Photoshop Document\n    (PSD) file with more than 24 layers in ImageMagick could trigger a heap\n    overflow (GLSA 200501-26). GraphicsMagick is based on the same code and\n    therefore suffers from the same flaw.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could potentially design a malicious PSD image file to\n    cause arbitrary code execution with the permissions of the user running\n    GraphicsMagick.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All GraphicsMagick users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/graphicsmagick-1.1.5\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-0005",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0005"
+      },
+      {
+        "Text": "GLSA 200501-26",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200501-26.xml"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-01-26T12:20:54Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-01-26T12:21:35Z"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "ID": "201310-17",
+  "Title": "pmake: Insecure temporary file usage",
+  "Synopsis": "pmake uses temporary files in an insecure manner, allowing for\n    symlink attacks.\n  ",
+  "Product": {
+    "Text": "pmake",
+    "Type": "ebuild"
+  },
+  "Announced": "2013-10-28",
+  "Revised": {
+    "Text": "2013-10-28",
+    "Count": "2"
+  },
+  "Bug": [
+    "367891"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-devel/pmake",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.111.3.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.111.3.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>pmake is Debian’s version of NetBSD’s make, a tool to build programs\n      in parallel.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>/usr/share/mk/bsd.lib.mk and /usr/share/mk/bsd.prog.mk create temporary\n      files insecurely, with predictable names (/tmp/_depend[PID]), and\n      without using $TMPDIR.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>The make include files allow local users to overwrite arbitrary files\n      via a symlink attack.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All pmake users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-devel/pmake-1.111.3.1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2011-1920",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-1920"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "craig",
+      "Tag": "requester",
+      "Timestamp": "2011-10-08T22:19:21Z"
+    },
+    {
+      "Text": "craig",
+      "Tag": "submitter",
+      "Timestamp": "2013-10-28T11:31:35Z"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "ID": "202310-03",
+  "Title": "glibc: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities in glibc could result in Local Privilege Escalation.",
+  "Product": {
+    "Text": "glibc",
+    "Type": "ebuild"
+  },
+  "Announced": "2023-10-04",
+  "Revised": {
+    "Text": "2023-10-04",
+    "Count": "1"
+  },
+  "Bug": [
+    "867952",
+    "914281",
+    "915127"
+  ],
+  "Access": "local and remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-libs/glibc",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.37-r7",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.37-r7",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n        <p>glibc is a package that contains the GNU C library.</p>\n    "
+  },
+  "Description": {
+    "Text": "\n        <p>Multiple vulnerabilities have been discovered in glibc. Please review the CVE identifiers referenced below for details.</p>\n    "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n        <p>An attacker could elevate privileges from a local user to root.</p>\n    "
+  },
+  "Workaround": {
+    "Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+  },
+  "Resolution": {
+    "Text": "\n        \n        \n        \n    ",
+    "P": [
+      {
+        "Text": "All glibc users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=sys-libs/glibc-2.37-r7\"\n        "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2022-39046",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-39046"
+      },
+      {
+        "Text": "CVE-2023-4527",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2023-4527"
+      },
+      {
+        "Text": "CVE-2023-4806",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2023-4806"
+      },
+      {
+        "Text": "CVE-2023-4911",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2023-4911"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "sam",
+      "Tag": "requester",
+      "Timestamp": "2023-10-04T08:02:08.857868Z"
+    },
+    {
+      "Text": "sam",
+      "Tag": "submitter",
+      "Timestamp": "2023-10-04T08:02:08.860070Z"
+    }
+  ]
+}

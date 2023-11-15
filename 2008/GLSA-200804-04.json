@@ -1,0 +1,111 @@
+{
+  "ID": "200804-04",
+  "Title": "MySQL: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities in MySQL might lead to privilege escalation and\n    Denial of Service.\n  ",
+  "Product": {
+    "Text": "mysql",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-04-06",
+  "Revised": {
+    "Text": "2008-04-06",
+    "Count": "01"
+  },
+  "Bug": [
+    "201669"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-db/mysql",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.0.54",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.0.54",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    MySQL is a popular multi-threaded, multi-user SQL server.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Multiple vulnerabilities have been reported in MySQL:\n    </p>\n    <ul>\n    <li>Mattias Jonsson reported that a \"RENAME TABLE\" command against a\n    table with explicit \"DATA DIRECTORY\" and \"INDEX DIRECTORY\" options\n    would overwrite the file to which the symlink points\n    (CVE-2007-5969).</li>\n    <li>Martin Friebe discovered that MySQL does not\n    update the DEFINER value of a view when the view is altered\n    (CVE-2007-6303).</li>\n    <li>Philip Stoev discovered that the federated\n    engine expects the response of a remote MySQL server to contain a\n    minimum number of columns in query replies (CVE-2007-6304).</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An authenticated remote attacker could exploit the first vulnerability\n    to overwrite MySQL system tables and escalate privileges, or use the\n    second vulnerability to gain privileges via an \"ALTER VIEW\" statement.\n    Remote federated MySQL servers could cause a Denial of Service in the\n    local MySQL server by exploiting the third vulnerability.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All MySQL users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-db/mysql-5.0.54\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-5969",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5969"
+      },
+      {
+        "Text": "CVE-2007-6303",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6303"
+      },
+      {
+        "Text": "CVE-2007-6304",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6304"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-01-28T18:21:58Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-02-09T20:29:29Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-04-03T23:20:56Z"
+    }
+  ]
+}

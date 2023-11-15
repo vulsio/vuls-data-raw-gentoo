@@ -1,0 +1,103 @@
+{
+  "ID": "200903-11",
+  "Title": "PyCrypto: Execution of arbitrary code",
+  "Synopsis": "\n    A buffer overflow in PyCrypto might lead to the execution of arbitrary code\n    when decrypting using ARC2.\n  ",
+  "Product": {
+    "Text": "pycrypto",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-03-09",
+  "Revised": {
+    "Text": "2009-03-09",
+    "Count": "01"
+  },
+  "Bug": [
+    "258049"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-python/pycrypto",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.1-r8",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.1-r8",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    PyCrypto is the Python Cryptography Toolkit.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Mike Wiacek of the Google Security Team reported a buffer overflow in\n    the ARC2 module when processing a large ARC2 key length.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user or automated system to decrypt an\n    ARC2 stream in an application using PyCrypto, possibly resulting in the\n    execution of arbitrary code or a Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All PyCrypto users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-python/pycrypto-2.0.1-r8\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-0544",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0544"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-03-07T16:35:09Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-03-07T18:22:46Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-03-07T18:24:44Z"
+    }
+  ]
+}

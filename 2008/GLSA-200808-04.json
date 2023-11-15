@@ -1,0 +1,124 @@
+{
+  "ID": "200808-04",
+  "Title": "Wireshark: Denial of service",
+  "Synopsis": "\n    Multiple Denial of Service vulnerabilities have been discovered in\n    Wireshark.\n  ",
+  "Product": {
+    "Text": "wireshark",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-08-06",
+  "Revised": {
+    "Text": "2008-08-06",
+    "Count": "01"
+  },
+  "Bug": [
+    "230411",
+    "231587"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-analyzer/wireshark",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Wireshark is a network protocol analyzer with a graphical front-end.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Multiple vulnerabilities related to memory management were discovered\n    in the GSM SMS dissector (CVE-2008-3137), the PANA and KISMET\n    dissectors (CVE-2008-3138), the RTMPT dissector (CVE-2008-3139), the\n    syslog dissector (CVE-2008-3140) and the RMI dissector (CVE-2008-3141)\n    and when reassembling fragmented packets (CVE-2008-3145).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could exploit these vulnerabilities by sending a\n    specially crafted packet on a network being monitored by Wireshark or\n    enticing a user to read a malformed packet trace file, causing a Denial\n    of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Wireshark users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/wireshark-1.0.2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-3137",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3137"
+      },
+      {
+        "Text": "CVE-2008-3138",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3138"
+      },
+      {
+        "Text": "CVE-2008-3139",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3139"
+      },
+      {
+        "Text": "CVE-2008-3140",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3140"
+      },
+      {
+        "Text": "CVE-2008-3141",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3141"
+      },
+      {
+        "Text": "CVE-2008-3145",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3145"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-07-15T10:40:07Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-07-30T18:25:58Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-07-30T18:26:07Z"
+    }
+  ]
+}

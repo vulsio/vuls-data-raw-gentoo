@@ -1,0 +1,129 @@
+{
+  "ID": "200607-12",
+  "Title": "OpenOffice.org: Multiple vulnerabilities",
+  "Synopsis": "\n    OpenOffice.org is affected by three security vulnerabilities which can be\n    exploited to allow the execution of arbitrary code by a remote attacker.\n  ",
+  "Product": {
+    "Text": "OpenOffice.org",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-07-28",
+  "Revised": {
+    "Text": "2006-07-28",
+    "Count": "01"
+  },
+  "Bug": [
+    "138545"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-office/openoffice",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "app-office/openoffice-bin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    OpenOffice.org is an open source office productivity suite, including\n    word processing, spreadsheet, presentation, drawing, data charting,\n    formula editing, and file conversion facilities.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Internal security audits by OpenOffice.org have discovered three\n    security vulnerabilities related to Java applets, macros and the XML\n    file format parser.\n    </p>\n    <ul><li>Specially crafted Java applets can\n    break through the \"sandbox\".</li>\n    <li>Specially crafted macros make it\n    possible to inject BASIC code into documents which is executed when the\n    document is loaded.</li>\n    <li>Loading a malformed XML file can cause a\n    buffer overflow.</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker might exploit these vulnerabilities to escape the Java\n    sandbox, execute arbitrary code or BASIC code with the permissions of\n    the user running OpenOffice.org.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Disabling Java applets will protect against the vulnerability in the\n    handling of Java applets. There are no workarounds for the macro and\n    file format vulnerabilities.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All OpenOffice.org users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-office/openoffice-2.0.3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "OpenOffice.org Security Bulletin 2006-06-29",
+        "Link": "https://www.openoffice.org/security/bulletin-20060629.html"
+      },
+      {
+        "Text": "CVE-2006-2199",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=2006-2199"
+      },
+      {
+        "Text": "CVE-2006-2198",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=2006-2198"
+      },
+      {
+        "Text": "CVE-2006-3117",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=2006-3117"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    dizzutch\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-07-19T12:40:14Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-07-20T16:32:57Z"
+    }
+  ]
+}

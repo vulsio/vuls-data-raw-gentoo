@@ -1,0 +1,140 @@
+{
+  "ID": "200608-28",
+  "Title": "PHP: Arbitary code execution",
+  "Synopsis": "\n    PHP contains a function that, when used, could allow a remote attacker to\n    execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "php",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-08-29",
+  "Revised": {
+    "Text": "2008-03-29",
+    "Count": "05"
+  },
+  "Bug": [
+    "143126"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-lang/php",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.4.3-r1",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "4.4.4-r4",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "4.4.6",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "4.4.7",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "4.4.8_pre20070816",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "5.1.4-r6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.1.4-r6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    PHP is a widely-used general-purpose scripting language that is\n    especially suited for Web development and can be embedded into HTML.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The sscanf() PHP function contains an array boundary error that can be\n    exploited to dereference a null pointer. This can possibly allow the\n    bypass of the safe mode protection by executing arbitrary code.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker might be able to exploit this vulnerability in PHP\n    applications making use of the sscanf() function, potentially resulting\n    in the execution of arbitrary code or the execution of scripted\n    contents in the context of the affected site.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All PHP 4.x users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All PHP 5.x users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/php-4.4.3-r1\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/php-5.1.4-r6\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-4020",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4020"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-08-23T20:16:18Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-08-26T14:28:36Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-08-26T15:12:31Z"
+    }
+  ]
+}

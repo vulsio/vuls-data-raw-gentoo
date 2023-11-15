@@ -1,0 +1,103 @@
+{
+  "ID": "200706-02",
+  "Title": "Evolution: User-assisted execution of arbitrary code",
+  "Synopsis": "\n    A vulnerability has been discovered in Evolution allowing for the execution\n    of arbitrary code.\n  ",
+  "Product": {
+    "Text": "evolution",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-06-06",
+  "Revised": {
+    "Text": "2007-06-06",
+    "Count": "01"
+  },
+  "Bug": [
+    "170879"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "mail-client/evolution",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.8.3-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.8.3-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Evolution is the mail client of the GNOME desktop environment.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Ulf Harnhammar from Secunia Research has discovered a format string\n    error in the write_html() function in the file\n    calendar/gui/e-cal-component-memo-preview.c.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted\n    shared memo, possibly resulting in the execution of arbitrary code with\n    the privileges of the user running Evolution.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Evolution users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-client/evolution-2.8.3-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-1002",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1002"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-06-02T07:29:21Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-06-03T18:06:03Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-06-06T20:42:46Z"
+    }
+  ]
+}

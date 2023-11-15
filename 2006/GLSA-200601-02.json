@@ -1,0 +1,232 @@
+{
+  "ID": "200601-02",
+  "Title": "KPdf, KWord: Multiple overflows in included Xpdf code",
+  "Synopsis": "\n    KPdf and KWord both include vulnerable Xpdf code to handle PDF files,\n    making them vulnerable to the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "kdegraphics, kpdf, koffice, kword",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-01-04",
+  "Revised": {
+    "Text": "2006-01-07",
+    "Count": "03"
+  },
+  "Bug": [
+    "114429",
+    "115851"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "kde-base/kdegraphics",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.4.3-r3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.4.3-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "kde-base/kpdf",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.4.3-r3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.4.3-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "app-office/koffice",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.2-r6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.2-r6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "app-office/kword",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.2-r6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.2-r6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    KPdf is a KDE-based PDF viewer included in the kdegraphics package.\n    KWord is a KDE-based word processor also included in the koffice\n    package.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    KPdf and KWord both include Xpdf code to handle PDF files. This Xpdf\n    code is vulnerable to several heap overflows (GLSA 200512-08) as well\n    as several buffer and integer overflows discovered by Chris Evans\n    (CESA-2005-003).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could entice a user to open a specially crafted PDF file\n    with Kpdf or KWord, potentially resulting in the execution of arbitrary\n    code with the rights of the user running the affected application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All kdegraphics users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Kpdf users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All KOffice users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All KWord users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=kde-base/kdegraphics-3.4.3-r3\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=kde-base/kpdf-3.4.3-r3\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-office/koffice-1.4.2-r6\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-office/kword-1.4.2-r6\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-3191",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-3191"
+      },
+      {
+        "Text": "CAN-2005-3192",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-3192"
+      },
+      {
+        "Text": "CAN-2005-3193",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-3193"
+      },
+      {
+        "Text": "CVE-2005-3624",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3624"
+      },
+      {
+        "Text": "CVE-2005-3625",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3625"
+      },
+      {
+        "Text": "CVE-2005-3626",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3626"
+      },
+      {
+        "Text": "CVE-2005-3627",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3627"
+      },
+      {
+        "Text": "CVE-2005-3628",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3628"
+      },
+      {
+        "Text": "GLSA 200512-08",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200512-08.xml"
+      },
+      {
+        "Text": "KDE Security Advisory: kpdf/xpdf multiple integer overflows",
+        "Link": "https://www.kde.org/info/security/advisory-20051207-2.txt"
+      },
+      {
+        "Text": "CESA-2005-003",
+        "Link": "http://scary.beasts.org/security/CESA-2005-003.txt"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-12-08T08:56:38Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-01-04T21:03:58Z"
+    }
+  ]
+}

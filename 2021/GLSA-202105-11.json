@@ -1,0 +1,98 @@
+{
+  "ID": "202105-11",
+  "Title": "GNU Screen: User-assisted execution of arbitrary code",
+  "Synopsis": "A vulnerability in GNU screen may allow a remote attacker to\n    execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "screen",
+    "Type": "ebuild"
+  },
+  "Announced": "2021-05-26",
+  "Revised": {
+    "Text": "2021-05-26",
+    "Count": "1"
+  },
+  "Bug": [
+    "769770"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-misc/screen",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.8.0-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.8.0-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>GNU Screen is a full-screen window manager that multiplexes a physical\n      terminal between several processes, typically interactive shells.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was discovered that GNU screen did not properly handle certain UTF-8\n      character sequences.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to run a program where attacker\n      controls the output inside a GNU screen session, possibly resulting in\n      execution of arbitrary code with the privileges of the process or a\n      Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>This vulnerability can be mitigated by disabling UTF-8 processing in\n      .screenrc.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All GNU screen users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-misc/screen-4.8.0-r2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2021-26937",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-26937"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2021-05-25T21:07:51Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2021-05-26T08:14:58Z"
+    }
+  ]
+}

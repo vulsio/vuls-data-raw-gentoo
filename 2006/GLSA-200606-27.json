@@ -1,0 +1,103 @@
+{
+  "ID": "200606-27",
+  "Title": "Mutt: Buffer overflow",
+  "Synopsis": "\n    Mutt contains a buffer overflow that could result in arbitrary code\n    execution.\n  ",
+  "Product": {
+    "Text": "mutt",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-06-28",
+  "Revised": {
+    "Text": "2006-06-28",
+    "Count": "01"
+  },
+  "Bug": [
+    "138125"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "mail-client/mutt",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.5.11-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.5.11-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Mutt is a small but very powerful text-based mail client.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    TAKAHASHI Tamotsu has discovered that Mutt contains a boundary error in\n    the \"browse_get_namespace()\" function in browse.c, which can be\n    triggered when receiving an overly long namespace from an IMAP server.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A malicious IMAP server can send an overly long namespace to Mutt in\n    order to crash the application, and possibly execute arbitrary code\n    with the permissions of the user running Mutt.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Mutt users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-client/mutt-1.5.11-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-3242",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3242"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-06-27T19:49:38Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-06-27T20:02:54Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-06-28T10:14:15Z"
+    }
+  ]
+}

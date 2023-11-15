@@ -1,0 +1,137 @@
+{
+  "ID": "201702-03",
+  "Title": "Firejail: Privilege escalation",
+  "Synopsis": "Firejail is vulnerable to the escalation of privileges due to an\n    incomplete fix for CVE-2017-5180.\n  ",
+  "Product": {
+    "Text": "firejail",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-02-09",
+  "Revised": {
+    "Text": "2017-02-09",
+    "Count": "1"
+  },
+  "Bug": [
+    "607382"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-apps/firejail",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.9.44.8",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.9.44.8",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "sys-apps/firejail-lts",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.9.38.10",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.9.38.10",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>A SUID program that reduces the risk of security breaches by restricting\n      the running environment of untrusted applications using Linux namespaces\n      and seccomp-bpf.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>The unaffected packages listed in GLSA 201612-48 had an incomplete fix\n      as reported by Sebastian Krahmer of SuSE. This has been properly patched\n      in the latest releases.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>An attacker could possibly bypass sandbox protection, cause a Denial of\n      Service condition, or escalate privileges.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Firejail users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All Firejail-lts users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-apps/firejail-0.9.44.8\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-apps/firejail-lts-0.9.38.10\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2017-5940",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-5940"
+      },
+      {
+        "Text": "\n      Firejail Release Notes\n    ",
+        "Link": "https://firejail.wordpress.com/download-2/release-notes/"
+      },
+      {
+        "Text": "GLSA 201612-48",
+        "Link": "https://security.gentoo.org/glsa/201612-48"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2017-01-30T13:28:16Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2017-02-09T15:35:45Z"
+    }
+  ]
+}

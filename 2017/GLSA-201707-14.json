@@ -1,0 +1,98 @@
+{
+  "ID": "201707-14",
+  "Title": "Gajim: Information disclosure",
+  "Synopsis": "A vulnerability in Gajim might allow remote attackers to intercept\n    encrypted communications.\n  ",
+  "Product": {
+    "Text": "gajim",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-07-10",
+  "Revised": {
+    "Text": "2017-07-10",
+    "Count": "1"
+  },
+  "Bug": [
+    "620146"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-im/gajim",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.16.6-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.16.6-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Gajim is a Jabber/XMPP client which uses GTK+.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Gajim unconditionally implements the “XEP-0146: Remote Controlling\n      Clients” extension.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>Remote attackers, by enticing a user to connect to a malicious XMPP\n      server, could extract plaintext from Off The Record (OTR) encrypted\n      sessions.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Gajim users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-im/gajim-0.16.6-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2016-10376\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-10376"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "BlueKnight",
+      "Tag": "requester",
+      "Timestamp": "2017-07-04T21:23:24Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2017-07-10T00:02:36Z"
+    }
+  ]
+}

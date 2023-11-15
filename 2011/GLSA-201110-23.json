@@ -1,0 +1,98 @@
+{
+  "ID": "201110-23",
+  "Title": "Apache mod_authnz_external: SQL injection",
+  "Synopsis": "An input sanitation flaw in mod_authnz_external allows remote\n    attacker to conduct SQL injection.\n  ",
+  "Product": {
+    "Text": "mod_authnz_external",
+    "Type": "ebuild"
+  },
+  "Announced": "2011-10-25",
+  "Revised": {
+    "Text": "2011-10-25",
+    "Count": "1"
+  },
+  "Bug": [
+    "386165"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apache/mod_authnz_external",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.2.6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.2.6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>mod_authnz_external is a tool for creating custom authentication\n      backends for HTTP basic authentication.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>mysql/mysql-auth.pl in mod_authnz_external does not properly sanitize\n      input before using it in an SQL query.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>A remote attacker could exploit this vulnerability to inject arbitrary\n      SQL statements by using a specially crafted username for HTTP\n      authentication on a site using mod_authnz_external.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Apache mod_authnz_external users should upgrade to the latest\n      version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=www-apache/mod_authnz_external-3.2.6\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2011-2688",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2688"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    underling\n  ",
+      "Tag": "requester",
+      "Timestamp": "2011-10-18T14:42:12Z"
+    },
+    {
+      "Text": "a3li",
+      "Tag": "submitter",
+      "Timestamp": "2011-10-25T17:13:58Z"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "ID": "200803-06",
+  "Title": "SWORD: Shell command injection",
+  "Synopsis": "\n    Insufficient input checking in SWORD may allow shell command injection.\n  ",
+  "Product": {
+    "Text": "sword",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-03-03",
+  "Revised": {
+    "Text": "2008-03-03",
+    "Count": "01"
+  },
+  "Bug": [
+    "210754"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-text/sword",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.5.8-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.5.8-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    SWORD is a library for Bible study software.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Dan Dennison reported that the diatheke.pl script used in SWORD does\n    not properly sanitize shell meta-characters in the \"range\" parameter\n    before processing it.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker could provide specially crafted input to a vulnerable\n    application, possibly resulting in the remote execution of arbitrary\n    shell commands with the privileges of the user running SWORD (generally\n    the web server account).\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All SWORD users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/sword-1.5.8-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-0932",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0932"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-02-23T19:11:13Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-02-29T12:41:01Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-02-29T12:41:15Z"
+    }
+  ]
+}

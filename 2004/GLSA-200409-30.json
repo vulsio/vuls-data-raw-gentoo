@@ -1,0 +1,119 @@
+{
+  "ID": "200409-30",
+  "Title": "xine-lib: Multiple vulnerabilities",
+  "Synopsis": "\n    xine-lib contains several vulnerabilities potentially allowing the\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "xine-lib",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-09-22",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "64348"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/xine-lib",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1_rc6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1_rc5-r3",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    xine-lib is a multimedia library which can be utilized to create\n    multimedia frontends.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    xine-lib contains two stack-based overflows and one heap-based\n    overflow. In the code reading VCD disc labels, the ISO disc label is\n    copied into an unprotected stack buffer of fixed size. Also, there is a\n    buffer overflow in the code that parses subtitles and prepares them for\n    display (XSA-2004-4). Finally, xine-lib contains a heap-based overflow\n    in the DVD sub-picture decoder (XSA-2004-5).\n    </p>\n    <p>\n    (Please note that the VCD MRL issue mentioned in XSA-2004-4 was fixed\n    with GLSA 200408-18.)\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    With carefully-crafted VCDs, DVDs, MPEGs or subtitles, an attacker may\n    cause xine-lib to execute arbitrary code with the permissions of the\n    user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All xine-lib users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv \">=media-libs/xine-lib-1_rc6\"\n    # emerge \">=media-libs/xine-lib-1_rc6\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "BugTraq Announcement (XSA-2004-4)",
+        "Link": "http://www.securityfocus.com/archive/1/375485/2004-09-02/2004-09-08/0"
+      },
+      {
+        "Text": "BugTraq Announcement (XSA-2004-5)",
+        "Link": "http://www.securityfocus.com/archive/1/375482/2004-09-02/2004-09-08/0"
+      },
+      {
+        "Text": "CVE-2004-1379",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1379"
+      },
+      {
+        "Text": "CVE-2004-1475",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1475"
+      },
+      {
+        "Text": "CVE-2004-1476",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1476"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-09-20T06:34:44Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-09-21T20:55:54Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-09-22T11:19:16Z"
+    }
+  ]
+}

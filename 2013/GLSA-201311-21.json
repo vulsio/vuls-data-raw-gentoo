@@ -1,0 +1,98 @@
+{
+  "ID": "201311-21",
+  "Title": "cpio: Arbitrary code execution ",
+  "Synopsis": "A heap-based buffer overflow in cpio might allow a remote rmt\n    server to execute arbitrary code or cause a Denial of Service condition.\n  ",
+  "Product": {
+    "Text": "cpio",
+    "Type": "ebuild"
+  },
+  "Announced": "2013-11-28",
+  "Revised": {
+    "Text": "2013-11-28",
+    "Count": "1"
+  },
+  "Bug": [
+    "314663"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-arch/cpio",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.11",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.11",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>GNU cpio copies files into or out of a cpio or tar archive.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Cpio contains a heap-based buffer overflow in the rmt_read__ function in\n      lib/rtapelib.c.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote server could sending more data than was requested, related to\n      archive filenames that contain a : (colon) character, possibly resulting\n      in execution of arbitrary code or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All cpio users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-arch/cpio-2.11\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2010-0624\n    ",
+        "Link": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-0624"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    underling\n  ",
+      "Tag": "requester",
+      "Timestamp": "2011-10-07T23:37:31Z"
+    },
+    {
+      "Text": "Zlogene",
+      "Tag": "submitter",
+      "Timestamp": "2013-11-28T08:19:10Z"
+    }
+  ]
+}

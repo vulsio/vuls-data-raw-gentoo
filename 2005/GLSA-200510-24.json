@@ -1,0 +1,118 @@
+{
+  "ID": "200510-24",
+  "Title": "Mantis: Multiple vulnerabilities",
+  "Synopsis": "\n    Mantis is affected by multiple vulnerabilities ranging from information\n    disclosure to arbitrary script execution.\n  ",
+  "Product": {
+    "Text": "Mantis",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-10-28",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "110326"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/mantisbt",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.19.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.19.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Mantis is a web-based bugtracking system written in PHP.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Mantis contains several vulnerabilities, including:\n    </p>\n    <ul>\n    <li>a remote file inclusion vulnerability</li>\n    <li>an SQL injection vulnerability</li>\n    <li>multiple cross site scripting vulnerabilities</li>\n    <li>multiple information disclosure vulnerabilities</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    An attacker could exploit the remote file inclusion vulnerability to\n    execute arbitrary script code, and the SQL injection vulnerability to\n    access or modify sensitive information from the Mantis database.\n    Furthermore the cross-site scripting issues give an attacker the\n    ability to inject and execute malicious script code or to steal\n    cookie-based authentication credentials, potentially compromising the\n    victim's browser. An attacker could exploit other vulnerabilities to\n    disclose information.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Mantis users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/mantisbt-0.19.3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Mantis ChangeLog",
+        "Link": "https://www.mantisbt.org/changelog.php"
+      },
+      {
+        "Text": "CVE-2005-3335",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3335"
+      },
+      {
+        "Text": "CVE-2005-3336",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3336"
+      },
+      {
+        "Text": "CVE-2005-3337",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3337"
+      },
+      {
+        "Text": "CVE-2005-3338",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3338"
+      },
+      {
+        "Text": "CVE-2005-3339",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3339"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-10-26T05:38:14Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-10-26T05:38:58Z"
+    }
+  ]
+}

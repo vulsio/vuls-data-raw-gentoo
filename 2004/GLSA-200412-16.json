@@ -1,0 +1,157 @@
+{
+  "ID": "200412-16",
+  "Title": "kdelibs, kdebase: Multiple vulnerabilities",
+  "Synopsis": "\n    kdelibs and kdebase contain a flaw allowing password disclosure when\n    creating a link to a remote file. Furthermore Konqueror is vulnerable to\n    window injection.\n  ",
+  "Product": {
+    "Text": "KDE",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-12-19",
+  "Revised": {
+    "Text": "2004-12-19",
+    "Count": "01"
+  },
+  "Bug": [
+    "72804",
+    "73869"
+  ],
+  "Access": "remote and local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "kde-base/kdelibs",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.2.3-r4",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "3.3.1-r2",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "3.3.2-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.3.2-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "kde-base/kdebase",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.2.3-r3",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "3.3.1-r2",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.3.2-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    KDE is a feature-rich graphical desktop environment for Linux and\n    Unix-like Operating Systems. The KDE core libraries (kdebase and\n    kdelibs) provide native support for many protocols. Konqueror is the\n    KDE web browser and filemanager.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Daniel Fabian discovered that the KDE core libraries contain a\n    flaw allowing password disclosure by making a link to a remote file.\n    When creating this link, the resulting URL contains authentication\n    credentials used to access the remote file (CAN 2004-1171).\n    </p>\n    <p>\n    The Konqueror webbrowser allows websites to load webpages into a window\n    or tab currently used by another website (CAN-2004-1158).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A malicious user could have access to the authentication\n    credentials of other users depending on the file permissions.\n    </p>\n    <p>\n    A malicious website could use the window injection vulnerability to\n    load content in a window apparently belonging to another website.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All kdelibs users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All kdebase users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=kde-base/kdelibs-3.2.3-r4\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=kde-base/kdebase-3.2.3-r3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "KDE Security Advisory: plain text password exposure",
+        "Link": "https://www.kde.org/info/security/advisory-20041209-1.txt"
+      },
+      {
+        "Text": "CAN 2004-1171",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1171"
+      },
+      {
+        "Text": "KDE Security Advisory: Konqueror Window Injection Vulnerability",
+        "Link": "https://www.kde.org/info/security/advisory-20041213-1.txt"
+      },
+      {
+        "Text": "CAN 2004-1158",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1158"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-12-09T20:24:54Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-12-19T14:04:36Z"
+    }
+  ]
+}

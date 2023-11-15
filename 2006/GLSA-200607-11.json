@@ -1,0 +1,102 @@
+{
+  "ID": "200607-11",
+  "Title": "TunePimp: Buffer overflow",
+  "Synopsis": "\n    A vulnerability in TunePimp has been reported which could lead to the\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "Tunepimp",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-07-28",
+  "Revised": {
+    "Text": "2007-06-01",
+    "Count": "02"
+  },
+  "Bug": [
+    "140184"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/tunepimp",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.5.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.4.2",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The TunePimp library (also referred to as libtunepimp) is a development\n    library geared towards developers who wish to create MusicBrainz\n    enabled tagging applications.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Kevin Kofler has reported a vulnerability where three stack variables\n    are allocated with 255, 255 and 100 bytes respectively, yet 256 bytes\n    are read into each. This could lead to buffer overflows.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    Running an affected version of TunePimp could lead to the execution of\n    arbitrary code by a remote attacker.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All tunepimp users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/tunepimp-0.5.\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-3600",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3600"
+      },
+      {
+        "Text": "MusicBrainz bug #1764",
+        "Link": "http://bugs.musicbrainz.org/ticket/1764"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    dizzutch\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-07-25T17:18:27Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-07-27T17:51:46Z"
+    }
+  ]
+}

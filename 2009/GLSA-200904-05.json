@@ -1,0 +1,106 @@
+{
+  "ID": "200904-05",
+  "Title": "ntp: Certificate validation error",
+  "Synopsis": "\n    An error in the OpenSSL certificate chain validation in ntp might allow for\n    spoofing attacks.\n  ",
+  "Product": {
+    "Text": "ntp",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-04-05",
+  "Revised": {
+    "Text": "2009-04-05",
+    "Count": "01"
+  },
+  "Bug": [
+    "254098"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/ntp",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.2.4_p6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.2.4_p6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    ntp contains the client and daemon implementations for the Network Time\n    Protocol.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    It has been reported that ntp incorrectly checks the return value of\n    the EVP_VerifyFinal(), a vulnerability related to CVE-2008-5077 (GLSA\n    200902-02).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could exploit this vulnerability to spoof arbitrary\n    names to conduct Man-In-The-Middle attacks and intercept sensitive\n    information.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All ntp users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/ntp-4.2.4_p6\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-5077",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5077"
+      },
+      {
+        "Text": "CVE-2009-0021",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0021"
+      },
+      {
+        "Text": "GLSA 200902-02",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200902-02.xml"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-03-31T11:41:38Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-03-31T11:41:46Z"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "ID": "202105-16",
+  "Title": "X.Org X11 library: Denial of service",
+  "Synopsis": "A vulnerability in X.Org X11 library could lead to a Denial of\n    Service condition.\n  ",
+  "Product": {
+    "Text": "libx11",
+    "Type": "ebuild"
+  },
+  "Announced": "2021-05-26",
+  "Revised": {
+    "Text": "2021-05-26",
+    "Count": "1"
+  },
+  "Bug": [
+    "790824"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "x11-libs/libX11",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.7.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.7.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>X.Org is an implementation of the X Window System. The X.Org X11 library\n      provides the X11 protocol library files.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was discovered that XLookupColor() and other X.Org X11 library\n      functions lacked proper validation of the length of their string\n      parameters.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>An attacker could emit arbitrary X protocol requests to the X server\n      through malicious crafted string parameters in applications linked\n      against X.Org X11 library.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All X.Org X11 library users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=x11-libs/libX11-1.7.1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2021-31535",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-31535"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2021-05-24T15:55:58Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2021-05-26T08:37:54Z"
+    }
+  ]
+}

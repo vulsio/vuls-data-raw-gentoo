@@ -1,0 +1,139 @@
+{
+  "ID": "200512-16",
+  "Title": "OpenMotif, AMD64 x86 emulation X libraries: Buffer overflows in libUil library",
+  "Synopsis": "\n    Two buffer overflows have been discovered in libUil, part of the OpenMotif\n    toolkit, that can potentially lead to the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "openmotif",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-12-28",
+  "Revised": {
+    "Text": "2006-01-29",
+    "Count": "03"
+  },
+  "Bug": [
+    "114234",
+    "116481"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "x11-libs/openmotif",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.2.3-r8",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "2.1.30-r13",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.2.3-r8",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "app-emulation/emul-linux-x86-xlibs",
+        "Auto": "yes",
+        "Arch": "amd64",
+        "Unaffected": [
+          {
+            "Text": "2.2.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.2.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    OpenMotif provides a free version of the Motif toolkit for open source\n    applications. The OpenMotif libraries are included in the AMD64 x86\n    emulation X libraries, which emulate the x86 (32-bit) architecture on\n    the AMD64 (64-bit) architecture.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    xfocus discovered two potential buffer overflows in the libUil library,\n    in the diag_issue_diagnostic and open_source_file functions.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    Remotely-accessible or SUID applications making use of the affected\n    functions might be exploited to execute arbitrary code with the\n    privileges of the user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All OpenMotif users should upgrade to an unaffected version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All AMD64 x86 emulation X libraries users should upgrade to the latest\n    version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --unmerge --verbose x11-libs/openmotif\n    # emerge --ask --oneshot --verbose x11-libs/openmotif",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose app-emulation/emul-linux-x86-xlibs"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-3964",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3964"
+      },
+      {
+        "Text": "xfocus SD-051202 Original Advisory",
+        "Link": "http://archives.neohapsis.com/archives/fulldisclosure/2005-12/0047.html"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-12-27T10:06:00Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-12-27T10:07:13Z"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "ID": "201803-10",
+  "Title": "collectd: Multiple vulnerabilities",
+  "Synopsis": "Gentoo's collectd package contains multiple vulnerabilities, the\n    worst of which may allow local attackers to escalate privileges.\n  ",
+  "Product": {
+    "Text": "collectd",
+    "Type": "ebuild"
+  },
+  "Announced": "2018-03-22",
+  "Revised": {
+    "Text": "2018-03-22",
+    "Count": "1"
+  },
+  "Bug": [
+    "628540",
+    "637538"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-admin/collectd",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.7.2-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.7.2-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>collectd is a daemon which collects system and application performance\n      metrics periodically and provides mechanisms to store the values in a\n      variety of ways, for example in RRD files.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been found in Gentoo’s collectd package.\n      Please review the referenced CVE identifiers and bug entries for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A local attacker, who either is already collectd’s system user or\n      belongs to collectd’s group, could potentially gain root privileges and\n      cause a Denial of Service condition.\n    </p>\n    \n    <p>Remote attackers could cause a Denial of Service condition via specially\n      crafted SNMP responses.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All collectd users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-admin/collectd-5.7.2-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2017-16820\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-16820"
+      },
+      {
+        "Text": "\n      CVE-2017-18240\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-18240"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2018-03-03T16:45:48Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2018-03-22T00:14:20Z"
+    }
+  ]
+}

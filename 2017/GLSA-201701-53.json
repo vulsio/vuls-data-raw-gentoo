@@ -1,0 +1,98 @@
+{
+  "ID": "201701-53",
+  "Title": "Lua: Buffer overflow",
+  "Synopsis": "A buffer overflow in Lua might allow context-dependent attackers to\n    execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "lua",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-01-23",
+  "Revised": {
+    "Text": "2017-01-23",
+    "Count": "1"
+  },
+  "Bug": [
+    "520480"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-lang/lua",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.1.5-r4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.1.5-r4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Lua is a powerful, efficient, lightweight, embeddable scripting\n      language. It supports procedural programming, object-oriented\n      programming, functional programming, data-driven programming, and data\n      description.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A buffer overflow was discovered in the vararg functions in ldo.c in\n      Lua.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>Context-dependent could cause a Denial of Service condition or execute\n      arbitrary code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Lua users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-lang/lua-5.1.5-r4\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-5461",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-5461"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "b-man",
+      "Tag": "requester",
+      "Timestamp": "2017-01-19T10:51:05Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2017-01-23T03:32:26Z"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "ID": "201204-02",
+  "Title": "InspIRCd: Arbitrary code execution",
+  "Synopsis": "A heap-based buffer overflow in InspIRCd may allow execution of\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "InspIRCd",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-04-10",
+  "Revised": {
+    "Text": "2012-04-10",
+    "Count": "1"
+  },
+  "Bug": [
+    "409159"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-irc/inspircd",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.5-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.5-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>InspIRCd (Inspire IRCd) is a modular C++ IRC daemon</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A vulnerability in InspIRCd allows DNS compression features to control\n      the number of overflowed bytes sent to the heap-based buffer \"res[]\" in\n      dns.cpp.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A remote attacker could send specially crafted DNS responses, possibly\n      resulting in execution of arbitrary code with the privileges of the\n      process or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All InspIRCd users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-irc/inspircd-2.0.5-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-1836",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1836"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2012-03-23T11:55:36Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-04-10T11:06:33Z"
+    }
+  ]
+}

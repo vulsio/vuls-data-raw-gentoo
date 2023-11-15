@@ -1,0 +1,104 @@
+{
+  "ID": "201603-03",
+  "Title": "Roundcube: Multiple Vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in Roundcube allowing\n    remote authenticated users to execute arbitrary code, inject arbitrary web\n    scripts, and perform cross-site scripting (XSS).\n  ",
+  "Product": {
+    "Text": "roundcube",
+    "Type": "ebuild"
+  },
+  "Announced": "2016-03-09",
+  "Revised": {
+    "Text": "2016-03-09",
+    "Count": "1"
+  },
+  "Bug": [
+    "554866",
+    "564476",
+    "570336"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "mail-client/roundcube",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.1.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Free and open source webmail software for the masses, written in PHP.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Remote authenticated users with certain permissions can read arbitrary\n      files or possibly execute arbitrary code via .. in the _skin parameter to\n      index.php.  Additionally, a cross-site scripting (XSS) vulnerability in\n      program/js/app.js allows remote authenticated users to inject arbitrary\n      web script or HTML via the file name in a drag-n-drop file upload.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A remote authenticated user could possibly execute arbitrary code with\n      the privileges of the process, inject arbitrary web scripts or HTML, read\n      arbitrary files, or perform XSS.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Roundcube users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=mail-client/roundcube-1.1.4”\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2015-8105\n    ",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8105"
+      },
+      {
+        "Text": "\n      CVE-2015-8770\n    ",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8770"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "K_F",
+      "Tag": "requester",
+      "Timestamp": "2016-02-08T20:35:16Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2016-03-09T09:28:53Z"
+    }
+  ]
+}

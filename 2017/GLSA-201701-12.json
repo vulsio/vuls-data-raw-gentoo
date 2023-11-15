@@ -1,0 +1,118 @@
+{
+  "ID": "201701-12",
+  "Title": "memcached: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in memcached which could\n    lead to the remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "memcached",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-01-02",
+  "Revised": {
+    "Text": "2017-01-02",
+    "Count": "1"
+  },
+  "Bug": [
+    "598836"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/memcached",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.33",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.33",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>memcached is a high-performance, distributed memory object caching\n      system\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple integer overflow vulnerabilities were discovered in memcached.\n      Please review the CVE identifiers and Cisco TALOS reports referenced\n      below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could abuse memcached’s binary protocol leading to\n      the remote execution of arbitrary code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All memcached users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/memcached-1.4.33\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2016-8704",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-8704"
+      },
+      {
+        "Text": "CVE-2016-8705",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-8705"
+      },
+      {
+        "Text": "CVE-2016-8706",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-8706"
+      },
+      {
+        "Text": "\n      TALOS-2016-0219\n    ",
+        "Link": "https://www.talosintelligence.com/reports/TALOS-2016-0219/"
+      },
+      {
+        "Text": "\n      TALOS-2016-0220\n    ",
+        "Link": "https://www.talosintelligence.com/reports/TALOS-2016-0220/"
+      },
+      {
+        "Text": "\n      TALOS-2016-0221\n    ",
+        "Link": "https://www.talosintelligence.com/reports/TALOS-2016-0221/"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "b-man",
+      "Tag": "requester",
+      "Timestamp": "2017-01-02T07:31:20Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2017-01-02T14:42:05Z"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "ID": "200511-01",
+  "Title": "libgda: Format string vulnerabilities",
+  "Synopsis": "\n    Two format string vulnerabilities in libgda may lead to the execution of\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "libgda",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-11-02",
+  "Revised": {
+    "Text": "2005-11-02",
+    "Count": "01"
+  },
+  "Bug": [
+    "110467"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "gnome-extra/libgda",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.2-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.2-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    libgda is the library handling the data abstraction layer in the\n    Gnome data access architecture (GNOME-DB). It can also be used by\n    non-GNOME applications to manage data stored in databases or XML files.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Steve Kemp discovered two format string vulnerabilities in the\n    gda_log_error and gda_log_message functions. Some applications may pass\n    untrusted input to those functions and be vulnerable.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could pass malicious input to an application making\n    use of the vulnerable libgda functions, potentially resulting in the\n    execution of arbitrary code with the rights of that application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All libgda users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=gnome-extra/libgda-1.2.2-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-2958",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2958"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-10-30T15:09:20Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-10-30T15:09:33Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-11-01T13:44:10Z"
+    }
+  ]
+}

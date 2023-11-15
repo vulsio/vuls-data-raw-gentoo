@@ -1,0 +1,107 @@
+{
+  "ID": "200606-14",
+  "Title": "GDM: Privilege escalation",
+  "Synopsis": "\n    An authentication error in GDM could allow users to gain elevated\n    privileges.\n  ",
+  "Product": {
+    "Text": "gdm",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-06-12",
+  "Revised": {
+    "Text": "2006-06-19",
+    "Count": "02"
+  },
+  "Bug": [
+    "135027"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "gnome-base/gdm",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.8.0.8",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.8.0.8",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    GDM is the GNOME display manager.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    GDM allows a normal user to access the configuration manager.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    When the \"face browser\" in GDM is enabled, a normal user can use the\n    \"configure login manager\" with his/her own password instead of the root\n    password, and thus gain additional privileges.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All GDM users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=gnome-base/gdm-2.8.0.8\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Gnome Bugzilla entry",
+        "Link": "https://bugzilla.gnome.org/show_bug.cgi?id=343476"
+      },
+      {
+        "Text": "CVE-2006-2452",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2452"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-06-08T10:45:03Z"
+    },
+    {
+      "Text": "\n    daxomatic\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-06-09T08:32:35Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-06-12T04:30:05Z"
+    }
+  ]
+}

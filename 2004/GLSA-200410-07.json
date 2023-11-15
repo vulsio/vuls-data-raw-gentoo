@@ -1,0 +1,103 @@
+{
+  "ID": "200410-07",
+  "Title": "ed: Insecure temporary file handling",
+  "Synopsis": "\n    The ed utility is vulnerable to symlink attacks, potentially allowing a\n    local user to overwrite or change rights on arbitrary files with the rights\n    of the user running ed, which could be the root user.\n  ",
+  "Product": {
+    "Text": "ed",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-10-09",
+  "Revised": {
+    "Text": "2004-10-09",
+    "Count": "01"
+  },
+  "Bug": [
+    "66400"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-apps/ed",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.2-r4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.2-r3",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    ed is a line-oriented text editor, used to create or modify text files,\n    both interactively and via shell scripts.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    ed insecurely creates temporary files in world-writeable directories with\n    predictable names. Given that ed is used in various system shell scripts,\n    they are by extension affected by the same vulnerability.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary files\n    directory, pointing to a valid file somewhere on the filesystem. When ed is\n    called, this would result in file access with the rights of the user\n    running the utility, which could be the root user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All ed users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n\n    # emerge -pv \">=sys-apps/ed-0.2-r4\"\n    # emerge \">=sys-apps/ed-0.2-r4\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2000-1137",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2000-1137"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-10-08T21:10:12Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-10-08T21:10:49Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-10-09T09:43:17Z"
+    }
+  ]
+}

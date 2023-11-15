@@ -1,0 +1,103 @@
+{
+  "ID": "200604-14",
+  "Title": "Dia: Arbitrary code execution through XFig import",
+  "Synopsis": "\n    Buffer overflows in Dia's XFig import could allow remote attackers to\n    execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "dia",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-04-23",
+  "Revised": {
+    "Text": "2006-04-23",
+    "Count": "01"
+  },
+  "Bug": [
+    "128107"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-office/dia",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.94-r5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.94-r5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Dia is a GTK+ based diagram creation program.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    infamous41md discovered multiple buffer overflows in Dia's XFig\n    file import plugin.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    By enticing a user to import a specially crafted XFig file into\n    Dia, an attacker could exploit this issue to execute arbitrary code\n    with the rights of the user running Dia.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Dia users should upgrade to the latest available version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-office/dia-0.94-r5\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-1550",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1550"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-04-22T17:58:09Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-04-22T17:58:17Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-04-22T20:01:59Z"
+    }
+  ]
+}

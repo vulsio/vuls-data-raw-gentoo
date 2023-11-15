@@ -1,0 +1,111 @@
+{
+  "ID": "200609-06",
+  "Title": "AdPlug: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple heap and buffer overflows exist in AdPlug.\n  ",
+  "Product": {
+    "Text": "adplug",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-09-12",
+  "Revised": {
+    "Text": "2006-09-12",
+    "Count": "01"
+  },
+  "Bug": [
+    "139593"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/adplug",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    AdPlug is a free, cross-platform, and hardware-independent AdLib sound\n    player library.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    AdPlug is vulnerable to buffer and heap overflows when processing the\n    following types of files: CFF, MTK, DMO, U6M, DTM, and S3M.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    By enticing a user to load a specially crafted file, an attacker could\n    execute arbitrary code with the privileges of the user running AdPlug.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There are no known workarounds at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All AdPlug users should update to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/adplug-2.0.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "BugTraq Announcement",
+        "Link": "http://www.securityfocus.com/archive/1/439432/30/0/threaded"
+      },
+      {
+        "Text": "CVE-2006-3581",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3581"
+      },
+      {
+        "Text": "CVE-2006-3582",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3582"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-09-06T14:38:47Z"
+    },
+    {
+      "Text": "\n    hlieberman\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-09-06T23:03:51Z"
+    },
+    {
+      "Text": "\n    hlieberman\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-09-12T00:51:08Z"
+    }
+  ]
+}

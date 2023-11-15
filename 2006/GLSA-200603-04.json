@@ -1,0 +1,103 @@
+{
+  "ID": "200603-04",
+  "Title": "IMAP Proxy: Format string vulnerabilities",
+  "Synopsis": "\n    Format string vulnerabilities in IMAP Proxy may lead to the execution of\n    arbitrary code when connected to malicious IMAP servers.\n  ",
+  "Product": {
+    "Text": "up-imapproxy",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-03-06",
+  "Revised": {
+    "Text": "2006-03-06",
+    "Count": "01"
+  },
+  "Bug": [
+    "107679"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-mail/up-imapproxy",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    IMAP Proxy (also known as up-imapproxy) proxies IMAP transactions\n    between an IMAP client and an IMAP server.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Steve Kemp discovered two format string errors in IMAP Proxy.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could design a malicious IMAP server and entice\n    someone to connect to it using IMAP Proxy, resulting in the execution\n    of arbitrary code with the rights of the victim user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Only connect to trusted IMAP servers using IMAP Proxy.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All IMAP Proxy users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-mail/up-imapproxy-1.2.4\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-2661",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2661"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-03-05T09:44:08Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-03-05T09:44:28Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-03-05T15:59:30Z"
+    }
+  ]
+}

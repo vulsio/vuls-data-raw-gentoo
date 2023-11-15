@@ -1,0 +1,134 @@
+{
+  "ID": "200710-24",
+  "Title": "OpenOffice.org: Heap-based buffer overflow",
+  "Synopsis": "\n    A heap-based buffer overflow vulnerability has been discovered in\n    OpenOffice.org, allowing for the remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "openoffice",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-10-23",
+  "Revised": {
+    "Text": "2007-10-23",
+    "Count": "01"
+  },
+  "Bug": [
+    "192818"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-office/openoffice",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.3.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.3.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "app-office/openoffice-bin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.3.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.3.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    OpenOffice.org is an open source office productivity suite, including\n    word processing, spreadsheet, presentation, drawing, data charting,\n    formula editing, and file conversion facilities.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    iDefense Labs reported that the TIFF parsing code uses untrusted values\n    to calculate buffer sizes, which can lead to an integer overflow\n    resulting in heap-based buffer overflow.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted\n    document, possibly leading to execution of arbitrary code with the\n    privileges of the user running OpenOffice.org.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All OpenOffice.org users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All OpenOffice.org binary users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-office/openoffice-2.3.0\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-office/openoffice-bin-2.3.0\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-2834",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2834"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-10-20T21:31:00Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-10-20T21:31:08Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-10-21T10:52:39Z"
+    }
+  ]
+}

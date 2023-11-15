@@ -1,0 +1,98 @@
+{
+  "ID": "202201-01",
+  "Title": "Polkit: Local privilege escalation",
+  "Synopsis": "A vulnerability in polkit could lead to local root privilege escalation.\n\t",
+  "Product": {
+    "Text": "polkit",
+    "Type": "ebuild"
+  },
+  "Announced": "2022-01-27",
+  "Revised": {
+    "Text": "2022-01-27",
+    "Count": "1"
+  },
+  "Bug": [
+    "832057"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-auth/polkit",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.120-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.120-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n\t\t<p>polkit is a toolkit for managing policies related to unprivileged processes communicating with privileged process. </p>\n\t"
+  },
+  "Description": {
+    "Text": "\n\t\t<p>Flawed input validation of arguments was discovered in the &#39;pkexec&#39; program&#39;s main() function.</p>\n\t"
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n\t\t<p>A local attacker could achieve root privilege escalation.</p>\n\t"
+  },
+  "Workaround": {
+    "Text": "\n\t\t<p>Run the following command as root:\n# chmod 0755 /usr/bin/pkexec</p>\n\t"
+  },
+  "Resolution": {
+    "Text": "\n\t\t\n\n\t\t\n\t",
+    "P": [
+      {
+        "Text": "Upgrade Polkit to a patched version.",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n\t\t\t# emerge --sync\n\t\t\t# emerge --ask --verbose \">=sys-auth/polkit-0.120-r2\"\n\t\t"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2021-4034",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-4034"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "sam",
+      "Tag": "requester",
+      "Timestamp": "2022-01-27T04:56:33.847737Z"
+    },
+    {
+      "Text": "sam",
+      "Tag": "submitter",
+      "Timestamp": "2022-01-27T04:56:33.851433Z"
+    }
+  ]
+}

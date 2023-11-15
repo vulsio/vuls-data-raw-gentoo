@@ -1,0 +1,107 @@
+{
+  "ID": "200602-06",
+  "Title": "ImageMagick: Format string vulnerability",
+  "Synopsis": "\n    A vulnerability in ImageMagick allows attackers to crash the application\n    and potentially execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "ImageMagick",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-02-13",
+  "Revised": {
+    "Text": "2006-02-13",
+    "Count": "01"
+  },
+  "Bug": [
+    "83542"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-gfx/imagemagick",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "6.2.5.5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "6.2.5.5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    ImageMagick is an application suite to manipulate and convert\n    images. It is often used as a utility backend by web applications like\n    forums, content management systems or picture galleries.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The SetImageInfo function was found vulnerable to a format string\n    mishandling. Daniel Kobras discovered that the handling of \"%\"-escaped\n    sequences in filenames passed to the function is inadequate. This is a\n    new vulnerability that is not addressed by GLSA 200503-11.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    By feeding specially crafted file names to ImageMagick, an\n    attacker can crash the program and possibly execute arbitrary code with\n    the privileges of the user running ImageMagick.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All ImageMagick users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/imagemagick-6.2.5.5\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-0082",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0082"
+      },
+      {
+        "Text": "GLSA 200503-11",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200503-11.xml"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-02-01T19:11:00Z"
+    },
+    {
+      "Text": "\n    frilled\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-02-02T08:22:50Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-02-09T18:59:37Z"
+    }
+  ]
+}

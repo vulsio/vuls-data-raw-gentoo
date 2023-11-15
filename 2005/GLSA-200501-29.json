@@ -1,0 +1,103 @@
+{
+  "ID": "200501-29",
+  "Title": "Mailman: Cross-site scripting vulnerability",
+  "Synopsis": "\n    Mailman is vulnerable to cross-site scripting attacks.\n  ",
+  "Product": {
+    "Text": "mailman",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-01-22",
+  "Revised": {
+    "Text": "2005-01-22",
+    "Count": "01"
+  },
+  "Bug": [
+    "77524"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-mail/mailman",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.1.5-r3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.1.5-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Mailman is a Python-based mailing list server with an extensive\n    web interface.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Florian Weimer has discovered a cross-site scripting vulnerability\n    in the error messages that are produced by Mailman.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    By enticing a user to visiting a specially-crafted URL, an\n    attacker can execute arbitrary script code running in the context of\n    the victim's browser.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Mailman users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-mail/mailman-2.1.5-r3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-1177",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1177"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-01-19T10:01:17Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-01-20T09:22:10Z"
+    },
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-01-21T16:36:40Z"
+    }
+  ]
+}

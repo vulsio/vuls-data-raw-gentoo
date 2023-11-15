@@ -1,0 +1,102 @@
+{
+  "ID": "200501-26",
+  "Title": "ImageMagick: PSD decoding heap overflow",
+  "Synopsis": "\n    ImageMagick is vulnerable to a heap overflow when decoding Photoshop\n    Document (PSD) files, which could lead to arbitrary code execution.\n  ",
+  "Product": {
+    "Text": "imagemagick",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-01-20",
+  "Revised": {
+    "Text": "2005-01-20",
+    "Count": "01"
+  },
+  "Bug": [
+    "77932"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-gfx/imagemagick",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "6.1.8.8",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "6.1.8.8",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    ImageMagick is a collection of tools to read, write and manipulate\n    images in many formats.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Andrei Nigmatulin discovered that a Photoshop Document (PSD) file\n    with more than 24 layers could trigger a heap overflow.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could potentially design a mailicous PSD image file to\n    cause arbitrary code execution with the permissions of the user running\n    ImageMagick.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All ImageMagick users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/imagemagick-6.1.8.8\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-0005",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0005"
+      },
+      {
+        "Text": "iDEFENSE Advisory",
+        "Link": "http://www.idefense.com/application/poi/display?id=184&type=vulnerabilities"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-01-18T13:50:38Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-01-20T09:15:57Z"
+    }
+  ]
+}

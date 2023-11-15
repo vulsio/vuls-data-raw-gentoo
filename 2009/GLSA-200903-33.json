@@ -1,0 +1,189 @@
+{
+  "ID": "200903-33",
+  "Title": "FFmpeg: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities in FFmpeg may lead to the remote execution of\n    arbitrary code or a Denial of Service.\n  ",
+  "Product": {
+    "Text": "ffmpeg gst-plugins-ffmpeg mplayer",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-03-19",
+  "Revised": {
+    "Text": "2009-03-19",
+    "Count": "01"
+  },
+  "Bug": [
+    "231831",
+    "231834",
+    "245313",
+    "257217",
+    "257381"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-video/ffmpeg",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.4.9_p20090201",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.4.9_p20090201",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "media-plugins/gst-plugins-ffmpeg",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.10.5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.10.5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "media-video/mplayer",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0_rc2_p28450",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0_rc2_p28450",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    FFmpeg is a complete solution to record, convert and stream audio and\n    video. gst-plugins-ffmpeg is a FFmpeg based gstreamer plugin which\n    includes a vulnerable copy of FFmpeg code. Mplayer is a multimedia\n    player which also includes a vulnerable copy of the code.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Multiple vulnerabilities were found in FFmpeg:\n    </p>\n    <ul><li>astrange\n    reported a stack-based buffer overflow in the str_read_packet() in\n    libavformat/psxstr.c when processing .str files (CVE-2008-3162).</li>\n    <li>Multiple buffer overflows in libavformat/utils.c\n    (CVE-2008-4866).</li>\n    <li>A buffer overflow in libavcodec/dca.c\n    (CVE-2008-4867).</li>\n    <li>An unspecified vulnerability in the\n    avcodec_close() function in libavcodec/utils.c (CVE-2008-4868).</li>\n    <li>Unspecified memory leaks (CVE-2008-4869).</li>\n    <li>Tobias Klein\n    repoerted a NULL pointer dereference due to an integer signedness error\n    in the fourxm_read_header() function in libavformat/4xm.c\n    (CVE-2009-0385).</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted media\n    file, possibly leading to the execution of arbitrary code with the\n    privileges of the user running the application, or a Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All FFmpeg users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All gst-plugins-ffmpeg users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Mplayer users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-video/ffmpeg-0.4.9_p20090201\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-plugins/gst-plugins-ffmpeg-0.10.5\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-video/mplayer-1.0_rc2_p28450\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-3162",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3162 "
+      },
+      {
+        "Text": "CVE-2008-4866",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4866"
+      },
+      {
+        "Text": "CVE-2008-4867",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4867"
+      },
+      {
+        "Text": "CVE-2008-4868",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4868"
+      },
+      {
+        "Text": "CVE-2008-4869",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4869"
+      },
+      {
+        "Text": "CVE-2009-0385",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0385"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-10-31T21:30:59Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-03-17T22:05:30Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-03-17T22:05:39Z"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "ID": "200612-03",
+  "Title": "GnuPG: Multiple vulnerabilities",
+  "Synopsis": "\n    GnuPG is vulnerable to a buffer overflow and an erroneous function pointer\n    dereference that can result in the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "gnupg",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-12-10",
+  "Revised": {
+    "Text": "2006-12-10",
+    "Count": "02"
+  },
+  "Bug": [
+    "156476",
+    "156947"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-crypt/gnupg",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The GNU Privacy Guard, GnuPG, is a free replacement for the PGP suite\n    of cryptographic software.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Hugh Warrington has reported a boundary error in GnuPG, in the\n    \"ask_outfile_name()\" function from openfile.c: the\n    make_printable_string() function could return a string longer than\n    expected. Additionally, Tavis Ormandy of the Gentoo Security Team\n    reported a design error in which a function pointer can be incorrectly\n    dereferenced.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to interactively use GnuPG on a\n    crafted file and trigger the boundary error, which will result in a\n    buffer overflow. They could also entice a user to process a signed or\n    encrypted file with gpg or gpgv, possibly called through another\n    application like a mail client, to trigger the dereference error. Both\n    of these vulnerabilities would result in the execution of arbitrary\n    code with the permissions of the user running GnuPG. gpg-agent, gpgsm\n    and other tools are not affected.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All GnuPG users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \"=app-crypt/gnupg-1.4*\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-6169",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6169"
+      },
+      {
+        "Text": "CVE-2006-6235",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6235"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-12-07T11:29:58Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-12-08T11:06:22Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-12-09T21:41:04Z"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "ID": "200605-02",
+  "Title": "X.Org: Buffer overflow in XRender extension",
+  "Synopsis": "\n    A buffer overflow in the XRender extension potentially allows any X.Org\n    user to execute arbitrary code with elevated privileges.\n  ",
+  "Product": {
+    "Text": "X.Org",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-05-02",
+  "Revised": {
+    "Text": "2006-05-02",
+    "Count": "01"
+  },
+  "Bug": [
+    "130979"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "x11-base/xorg-x11",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "6.8.2-r7",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "6.8.2-r7",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    X.Org is X.Org Foundation's public implementation of the X Window\n    System.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    X.Org miscalculates the size of a buffer in the XRender extension.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    An X.Org user could exploit this issue to make the X server\n    execute arbitrary code with elevated privileges.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All X.Org users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-base/xorg-x11-6.8.2-r7\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-1526",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1526"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-05-01T14:14:06Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-05-02T17:42:54Z"
+    }
+  ]
+}

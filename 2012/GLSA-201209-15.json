@@ -1,0 +1,111 @@
+{
+  "ID": "201209-15",
+  "Title": "Asterisk: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in Asterisk, the worst of\n    which may allow execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "asterisk",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-09-26",
+  "Revised": {
+    "Text": "2012-09-26",
+    "Count": "1"
+  },
+  "Bug": [
+    "425050",
+    "433750"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/asterisk",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.8.15.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.8.15.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Asterisk is an open source telephony engine and toolkit.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been found in Asterisk:</p>\n    \n    <ul>\n      <li>An error in manager.c allows shell access (CVE-2012-2186).</li>\n      <li>An error in Asterisk could cause all RTP ports to be exhausted\n        (CVE-2012-3812).\n      </li>\n      <li>A double-free error could occur when two parties attempt to\n        manipulate the same voicemail account simultaneously (CVE-2012-3863).\n      </li>\n      <li>Asterisk does not properly implement certain ACL rules\n        (CVE-2012-4737).\n      </li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote, authenticated attacker could execute arbitrary code with the\n      privileges of the process, cause a Denial of Service condition, or bypass\n      outbound call restrictions.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Asterisk users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/asterisk-1.8.15.1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-2186",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-2186"
+      },
+      {
+        "Text": "CVE-2012-3812",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3812"
+      },
+      {
+        "Text": "CVE-2012-3863",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3863"
+      },
+      {
+        "Text": "CVE-2012-4737",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-4737"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    underling\n  ",
+      "Tag": "requester",
+      "Timestamp": "2012-08-14T15:47:40Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-09-26T21:43:31Z"
+    }
+  ]
+}

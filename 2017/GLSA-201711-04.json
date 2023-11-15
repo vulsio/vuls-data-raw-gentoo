@@ -1,0 +1,130 @@
+{
+  "ID": "201711-04",
+  "Title": "MariaDB, MySQL: Root privilege escalation",
+  "Synopsis": "A vulnerability was discovered in MariaDB and MySQL which may allow\n    local users to gain root privileges.\n  ",
+  "Product": {
+    "Text": "mariadb,mysql",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-11-10",
+  "Revised": {
+    "Text": "2017-11-10",
+    "Count": "1"
+  },
+  "Bug": [
+    "635704",
+    "635706"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-db/mariadb",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "10.0.30-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "10.0.30-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "dev-db/mysql",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.6.36-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.6.36-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>MySQL is a popular multi-threaded, multi-user SQL server. MariaDB is an\n      enhanced, drop-in replacement for MySQL.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>The Gentoo installation scripts before 2017-09-29 have chown calls for\n      user-writable directory trees, which allows local users to gain\n      privileges by leveraging access to the mysql account for creation of a\n      link.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A local attacker could escalate privileges to root.</p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All MariaDB users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All MySQL users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-db/mariadb-10.0.30-r1\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-db/mysql-5.6.36-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2017-15945\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-15945"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2017-10-28T18:23:53Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2017-11-10T22:46:58Z"
+    }
+  ]
+}

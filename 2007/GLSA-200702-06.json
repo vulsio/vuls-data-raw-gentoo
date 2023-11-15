@@ -1,0 +1,124 @@
+{
+  "ID": "200702-06",
+  "Title": "BIND: Denial of service",
+  "Synopsis": "\n    ISC BIND contains two vulnerabilities allowing a Denial of Service under\n    certain conditions.\n  ",
+  "Product": {
+    "Text": "bind",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-02-17",
+  "Revised": {
+    "Text": "2007-02-17",
+    "Count": "01"
+  },
+  "Bug": [
+    "163692"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-dns/bind",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "9.3.4",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "9.2.8",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "9.3.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    ISC BIND is the Internet Systems Consortium implementation of the\n    Domain Name System (DNS) protocol.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    An unspecified improper usage of an already freed context has been\n    reported. Additionally, an assertion error could be triggered in the\n    DNSSEC validation of some responses to type ANY queries with multiple\n    RRsets.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could crash the server through unspecified vectors\n    or, if DNSSEC validation is enabled, by sending certain crafted ANY\n    queries.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time for the first issue. The\n    DNSSEC validation Denial of Service can be prevented by disabling\n    DNSSEC validation until the upgrade to a fixed version. Note that\n    DNSSEC validation is disabled on a default configuration.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All ISC BIND 9.3 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All ISC BIND 9.2 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dns/bind-9.3.4\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dns/bind-9.2.8\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-0493",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0493"
+      },
+      {
+        "Text": "CVE-2007-0494",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0494"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-02-16T09:07:21Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-02-16T17:39:52Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-02-17T15:53:00Z"
+    }
+  ]
+}

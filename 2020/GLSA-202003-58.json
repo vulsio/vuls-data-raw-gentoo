@@ -1,0 +1,103 @@
+{
+  "ID": "202003-58",
+  "Title": "UnZip: User-assisted execution of arbitrary code",
+  "Synopsis": "Multiple vulnerabilities have been found in UnZip, the worst of\n    which could result in the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "unzip",
+    "Type": "ebuild"
+  },
+  "Announced": "2020-03-26",
+  "Revised": {
+    "Text": "2020-03-26",
+    "Count": "1"
+  },
+  "Bug": [
+    "647008",
+    "691566"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-arch/unzip",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "6.0_p25",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "6.0_p25",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Info-ZIP’s UnZip is a tool to list and extract files inside PKZIP\n      compressed files.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in UnZip. Please review\n      the CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted ZIP\n      archive using UnZip, possibly resulting in execution of arbitrary code\n      with the privileges of the process or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All UnZip users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-arch/unzip-6.0_p25\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2018-1000035\n    ",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2018-1000035"
+      },
+      {
+        "Text": "CVE-2019-13232",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2019-13232"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2020-03-26T18:14:24Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2020-03-26T18:18:52Z"
+    }
+  ]
+}

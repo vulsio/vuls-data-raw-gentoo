@@ -1,0 +1,136 @@
+{
+  "ID": "200409-24",
+  "Title": "Foomatic: Arbitrary command execution in foomatic-rip filter",
+  "Synopsis": "\n    The foomatic-rip filter in foomatic-filters contains a vulnerability which\n    may allow arbitrary command execution on the print server.\n  ",
+  "Product": {
+    "Text": "foomatic",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-09-20",
+  "Revised": {
+    "Text": "2004-09-20",
+    "Count": "01"
+  },
+  "Bug": [
+    "64166"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-print/foomatic",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.0.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.0.1",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "net-print/foomatic-filters",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.0.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.0.1",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Foomatic is a system for connecting printer drivers with spooler systems\n    such as CUPS and LPD. The foomatic-filters package contains wrapper scripts\n    which are designed to be used with Foomatic.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    There is a vulnerability in the foomatic-filters package. This\n    vulnerability is due to insufficient checking of command-line parameters\n    and environment variables in the foomatic-rip filter.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    This vulnerability may allow both local and remote attackers to execute\n    arbitrary commands on the print server with the permissions of the spooler\n    (oftentimes the \"lp\" user).\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All foomatic users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    PLEASE NOTE: You should update foomatic, instead of foomatic-filters. This\n    will help to ensure that all other foomatic components remain functional.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n\n    # emerge -pv \">=net-print/foomatic-3.0.2\"\n    # emerge \">=net-print/foomatic-3.0.2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Foomatic Announcement",
+        "Link": "http://www.linuxprinting.org/pipermail/foomatic-devel/2004q3/001996.html"
+      },
+      {
+        "Text": "Mandrakesoft Security Advisory",
+        "Link": "http://www.mandrakesoft.com/security/advisories?name=MDKSA-2004:094"
+      },
+      {
+        "Text": "CAN 2004-0801",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0801"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    condordes\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-09-16T17:39:12Z"
+    },
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-09-20T01:02:29Z"
+    }
+  ]
+}

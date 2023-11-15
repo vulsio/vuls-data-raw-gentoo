@@ -1,0 +1,109 @@
+{
+  "ID": "201405-27",
+  "Title": "LibYAML: Arbitrary code execution",
+  "Synopsis": "A vulnerability in LibYAML could allow an attacker to execute\n    arbitrary code or cause a Denial of Service condition.\n  ",
+  "Product": {
+    "Text": "libyaml",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-05-23",
+  "Revised": {
+    "Text": "2014-05-23",
+    "Count": "1"
+  },
+  "Bug": [
+    "505948"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/libyaml",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.1.6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.1.6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>LibYAML is a YAML 1.1 parser and emitter written in C.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>The yaml_parser_scan_uri_escapes() function does not properly expand\n      strings passed as input, which can result in a heap-based buffer\n      overflow.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>An attacker could provide a specially-crafted YAML document, which, when\n      parsed by LibYAML, could result in arbitrary code execution or cause the\n      application to crash.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All LibYAML users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "Packages which depend on this library may need to be recompiled. Tools\n      such as revdep-rebuild may assist in identifying these packages.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/libyaml-0.1.6\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-2525",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-2525"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "requester",
+      "Timestamp": "2014-05-15T03:39:38Z"
+    },
+    {
+      "Text": "\n    creffett\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2014-05-23T08:42:20Z"
+    }
+  ]
+}

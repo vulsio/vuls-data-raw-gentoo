@@ -1,0 +1,98 @@
+{
+  "ID": "201701-04",
+  "Title": "Mutt: Heap-based buffer overflow",
+  "Synopsis": "A heap-based buffer overflow in Mutt might allow remote attackers\n    to cause a Denial of Service condition.\n  ",
+  "Product": {
+    "Text": "mutt",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-01-01",
+  "Revised": {
+    "Text": "2017-01-01",
+    "Count": "1"
+  },
+  "Bug": [
+    "530842"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "mail-client/mutt",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.5.23-r5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.5.23-r5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Mutt is a small but very powerful text-based mail client.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A heap-based buffer overflow was discovered in Mutt’s mutt_substrdup\n      function.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could cause a Denial of Service condition.</p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Mutt users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=mail-client/mutt-1.5.23-r5\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-9116",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-9116"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "b-man",
+      "Tag": "requester",
+      "Timestamp": "2017-01-01T11:02:45Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2017-01-01T15:05:18Z"
+    }
+  ]
+}

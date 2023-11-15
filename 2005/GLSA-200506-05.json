@@ -1,0 +1,103 @@
+{
+  "ID": "200506-05",
+  "Title": "SilverCity: Insecure file permissions",
+  "Synopsis": "\n    Executable files with insecure permissions can be modified causing an\n    unsuspecting user to run arbitrary code.\n  ",
+  "Product": {
+    "Text": "silvercity",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-06-08",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "93558"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-text/silvercity",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.9.5-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.9.5-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    SilverCity provides lexical analysis for over 20 programming and markup\n    languages.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The SilverCity package installs three executable files with insecure\n    permissions.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could modify the executable files, causing arbitrary\n    code to be executed with the permissions of an unsuspecting SilverCity\n    user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There are no known workarounds at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All SilverCity users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/silvercity-0.9.5-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-1941",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1941"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-06-06T18:24:23Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-06-06T18:24:47Z"
+    },
+    {
+      "Text": "\n    r2d2\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-06-07T01:08:04Z"
+    }
+  ]
+}

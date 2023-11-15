@@ -1,0 +1,135 @@
+{
+  "ID": "200609-05",
+  "Title": "OpenSSL, AMD64 x86 emulation base libraries: RSA signature forgery",
+  "Synopsis": "\n    OpenSSL fails to properly validate PKCS #1 v1.5 signatures.\n  ",
+  "Product": {
+    "Text": "openssl",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-09-07",
+  "Revised": {
+    "Text": "2006-09-08",
+    "Count": "02"
+  },
+  "Bug": [
+    "146375",
+    "146438"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/openssl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.9.7k",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.9.7k",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "app-emulation/emul-linux-x86-baselibs",
+        "Auto": "yes",
+        "Arch": "amd64",
+        "Unaffected": [
+          {
+            "Text": "2.5.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.5.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    OpenSSL is a toolkit implementing the Secure Sockets Layer, Transport\n    Layer Security protocols and a general-purpose cryptography library.\n    The x86 emulation base libraries for AMD64 contain a vulnerable version\n    of OpenSSL.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Daniel Bleichenbacher discovered that it might be possible to forge\n    signatures signed by RSA keys with the exponent of 3.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    Since several CAs are using an exponent of 3 it might be possible for\n    an attacker to create a key with a false CA signature.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All OpenSSL users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All AMD64 x86 emulation base libraries users should upgrade to the\n    latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/openssl-0.9.7k\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-emulation/emul-linux-x86-baselibs-2.5.2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-4339",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4339"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-09-05T19:16:58Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-09-06T10:57:51Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-09-07T20:02:33Z"
+    }
+  ]
+}

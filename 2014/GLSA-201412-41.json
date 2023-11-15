@@ -1,0 +1,98 @@
+{
+  "ID": "201412-41",
+  "Title": "OpenVPN: Denial of service",
+  "Synopsis": "A vulnerability in OpenVPN could lead to Denial of Service.",
+  "Product": {
+    "Text": "openvpn",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-12-26",
+  "Revised": {
+    "Text": "2014-12-26",
+    "Count": "1"
+  },
+  "Bug": [
+    "531308"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/openvpn",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.3.6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.3.6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>OpenVPN is a multi-platform, full-featured SSL VPN solution.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>OpenVPN does not properly handle control channel packets that are too\n      small.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote authenticated attacker could send a specially crafted control\n      channel packet, possibly resulting in a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All OpenVPN users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/openvpn-2.3.6\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-8104",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-8104"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2014-12-04T00:38:51Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2014-12-26T17:10:38Z"
+    }
+  ]
+}

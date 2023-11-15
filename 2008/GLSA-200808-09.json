@@ -1,0 +1,98 @@
+{
+  "ID": "200808-09",
+  "Title": "OpenLDAP: Denial of Service vulnerability",
+  "Synopsis": "\n    A flaw in OpenLDAP allows remote unauthenticated attackers to cause a\n    Denial of Service.\n  ",
+  "Product": {
+    "Text": "openldap",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-08-08",
+  "Revised": {
+    "Text": "2008-08-08",
+    "Count": "01"
+  },
+  "Bug": [
+    "230269"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-nds/openldap",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.3.43",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.3.43",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    OpenLDAP Software is an open source implementation of the Lightweight\n    Directory Access Protocol.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Cameron Hotchkies discovered an error within the parsing of ASN.1 BER\n    encoded packets in the \"ber_get_next()\" function in\n    libraries/liblber/io.c.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    A remote unauthenticated attacker can send a specially crafted ASN.1\n    BER encoded packet which will trigger the error and cause an\n    \"assert()\", terminating the \"slapd\" daemon.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All OpenLDAP users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-nds/openldap-2.3.43\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-2952",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2952"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-08-05T20:53:02Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-08-05T20:54:49Z"
+    }
+  ]
+}

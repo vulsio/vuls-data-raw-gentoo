@@ -1,0 +1,103 @@
+{
+  "ID": "200903-36",
+  "Title": "MLDonkey: Information disclosure",
+  "Synopsis": "\n    A vulnerability in the MLDonkey web interface allows remote attackers to\n    disclose arbitrary files.\n  ",
+  "Product": {
+    "Text": "mldonkey",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-03-23",
+  "Revised": {
+    "Text": "2009-03-23",
+    "Count": "01"
+  },
+  "Bug": [
+    "260072"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-p2p/mldonkey",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.0.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.0.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    MLDonkey is a multi-network P2P application written in Ocaml, coming\n    with its own Gtk GUI, web and telnet interface.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Michael Peselnik reported that src/utils/lib/url.ml in the web\n    interface of MLDonkey does not handle file names with leading double\n    slashes properly.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could gain access to arbitrary files readable by the\n    user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Disable the web interface or restrict access to it.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All MLDonkey users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-p2p/mldonkey-3.0.0\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-0753",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0753"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-03-22T20:26:47Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-03-22T20:38:08Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-03-22T22:00:11Z"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "ID": "200408-12",
+  "Title": "Gaim: MSN protocol parsing function buffer overflow",
+  "Synopsis": "\n    Gaim contains a remotely exploitable buffer overflow vulnerability in the\n    MSN-protocol parsing code that may allow remote execution of arbitrary\n    code.\n  ",
+  "Product": {
+    "Text": "gaim",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-08-12",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "03"
+  },
+  "Bug": [
+    "60034"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-im/gaim",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.81-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.81",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Gaim is a multi-protocol instant messaging client for Linux which\n    supports many instant messaging protocols.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Sebastian Krahmer of the SuSE Security Team has discovered a remotely\n    exploitable buffer overflow vulnerability in the code handling MSN\n    protocol parsing.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    By sending a carefully-crafted message, an attacker may execute\n    arbitrary code with the permissions of the user running Gaim.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time. All users are encouraged to\n    upgrade to the latest available version of Gaim.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Gaim users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv \">=net-im/gaim-0.81-r1\"\n    # emerge \">=net-im/gaim-0.81-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "OSVDB ID: 8382",
+        "Link": "http://www.osvdb.org/displayvuln.php?osvdb_id=8382"
+      },
+      {
+        "Text": "CVE-2004-0500",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0500"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-08-12T16:07:01Z"
+    }
+  ]
+}

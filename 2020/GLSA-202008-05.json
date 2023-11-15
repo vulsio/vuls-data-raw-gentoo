@@ -1,0 +1,98 @@
+{
+  "ID": "202008-05",
+  "Title": "gThumb: Arbitrary code execution",
+  "Synopsis": "A buffer overflow in gThumb might allow remote attacker(s) to\n    execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "gthumb",
+    "Type": "ebuild"
+  },
+  "Announced": "2020-08-08",
+  "Revised": {
+    "Text": "2020-08-08",
+    "Count": "1"
+  },
+  "Bug": [
+    "712932"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-gfx/gthumb",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.10.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.10.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>gThumb is an image viewer and browser for GNOME.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A heap-based buffer overflow in gThumb’s\n      _cairo_image_surface_create_from_jpeg() function, located in\n      extensions/cairo_io/cairo-image-surface-jpeg.c was discovered.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted image\n      file using gThumb, possibly resulting in execution of arbitrary code with\n      the privileges of the process or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All gThumb users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-gfx/gthumb-3.10.0\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2019-20326",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2019-20326"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "sam_c",
+      "Tag": "requester",
+      "Timestamp": "2020-08-08T01:58:55Z"
+    },
+    {
+      "Text": "sam_c",
+      "Tag": "submitter",
+      "Timestamp": "2020-08-08T04:18:29Z"
+    }
+  ]
+}

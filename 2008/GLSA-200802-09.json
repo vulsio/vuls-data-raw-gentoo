@@ -1,0 +1,107 @@
+{
+  "ID": "200802-09",
+  "Title": "ClamAV: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities in ClamAV may result in the remote execution of\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "clamav",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-02-21",
+  "Revised": {
+    "Text": "2008-02-21",
+    "Count": "01"
+  },
+  "Bug": [
+    "209915"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-antivirus/clamav",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.92.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.92.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Clam AntiVirus is a free anti-virus toolkit for UNIX, designed\n    especially for e-mail scanning on mail gateways.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    An integer overflow has been reported in the \"cli_scanpe()\" function in\n    file libclamav/pe.c (CVE-2008-0318). Another unspecified vulnerability\n    has been reported in file libclamav/mew.c (CVE-2008-0728).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker could entice a user or automated system to scan a\n    specially crafted file, possibly leading to the execution of arbitrary\n    code with the privileges of the user running ClamAV (either a system\n    user or the \"clamav\" user if clamd is compromised).\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All ClamAV users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-antivirus/clamav-0.92.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-0318",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0318"
+      },
+      {
+        "Text": "CVE-2008-0728",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0728"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-02-19T20:13:32Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-02-19T20:14:59Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-02-19T21:50:12Z"
+    }
+  ]
+}

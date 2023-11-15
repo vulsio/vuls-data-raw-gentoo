@@ -1,0 +1,98 @@
+{
+  "ID": "202105-31",
+  "Title": "Nettle: Denial of service",
+  "Synopsis": "A vulnerability in Nettle could lead to a Denial of Service\n    condition.\n  ",
+  "Product": {
+    "Text": "nettle",
+    "Type": "ebuild"
+  },
+  "Announced": "2021-05-26",
+  "Revised": {
+    "Text": "2021-05-26",
+    "Count": "1"
+  },
+  "Bug": [
+    "780483"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/nettle",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.7.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.7.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Nettle is a cryptographic library that is designed to fit easily in\n      almost any context: In cryptographic toolkits for object-oriented\n      languages, such as C++, Python, or Pike, in applications like lsh or\n      GnuPG, or even in kernel space.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was discovered that Nettle incorrectly handled signature\n      verification.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>A remote attacker could send a specially crafted valid-looking input\n      signature, possibly resulting in a Denial of Service condition or force\n      an invalid signature.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Nettle users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/nettle-3.7.2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2021-20305",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-20305"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2021-05-25T20:00:54Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2021-05-26T10:12:28Z"
+    }
+  ]
+}

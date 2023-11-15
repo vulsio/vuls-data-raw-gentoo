@@ -1,0 +1,98 @@
+{
+  "ID": "201701-41",
+  "Title": "MiniUPnPc: Buffer overflow",
+  "Synopsis": "A buffer overflow in MiniUPnPc might allow remote attackers to\n    cause a Denial of Service condition.\n  ",
+  "Product": {
+    "Text": "miniupnpc",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-01-17",
+  "Revised": {
+    "Text": "2017-01-17",
+    "Count": "01"
+  },
+  "Bug": [
+    "512666"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-libs/miniupnpc",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.9.20150427",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.9.20150427",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>UPnP client library and a simple UPnP client.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>An out-of-bounds read was discovered in the getHTTPResponse function in\n      miniwget.c in MiniUPnPc.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>Remote attackers, through specially crafted headers, could cause a\n      Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All MiniUPnPc users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-libs/miniupnpc-1.9.20150427\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-3985",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-3985"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2017-01-15T18:49:39Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2017-01-17T09:18:54Z"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "ID": "201406-02",
+  "Title": "libarchive: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in libarchive, some of\n    which may allow execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "libarchive",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-06-01",
+  "Revised": {
+    "Text": "2014-06-01",
+    "Count": "1"
+  },
+  "Bug": [
+    "366687",
+    "463632"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-arch/libarchive",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.1.2-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.1.2-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>libarchive is a library for manipulating different streaming archive\n      formats, including certain tar variants, several cpio formats, and both\n      BSD and GNU ar variants.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in libarchive. Please\n      review the CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user or automated process to open a\n      specially crafted archive using an application linked against libarchive,\n      possibly resulting in execution of arbitrary code with the privileges of\n      the process or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All libarchive users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "Packages which depend on this library may need to be recompiled. Tools\n      such as revdep-rebuild may assist in identifying some of these packages.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-arch/libarchive-3.1.2-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2010-4666",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-4666"
+      },
+      {
+        "Text": "CVE-2011-1777",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-1777"
+      },
+      {
+        "Text": "CVE-2011-1778",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-1778"
+      },
+      {
+        "Text": "CVE-2011-1779",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-1779"
+      },
+      {
+        "Text": "CVE-2013-0211",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0211"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    underling\n  ",
+      "Tag": "requester",
+      "Timestamp": "2012-01-22T19:10:06Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2014-06-01T15:10:38Z"
+    }
+  ]
+}

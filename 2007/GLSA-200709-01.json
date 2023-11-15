@@ -1,0 +1,107 @@
+{
+  "ID": "200709-01",
+  "Title": "MIT Kerberos 5: Multiple vulnerabilities",
+  "Synopsis": "\n    Two vulnerabilities have been found in MIT Kerberos 5, which could allow a\n    remote unauthenticated user to execute arbitrary code with root privileges.\n  ",
+  "Product": {
+    "Text": "mit-krb5",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-09-11",
+  "Revised": {
+    "Text": "2007-09-11",
+    "Count": "01"
+  },
+  "Bug": [
+    "191301"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-crypt/mit-krb5",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.5.3-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.5.3-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    MIT Kerberos 5 is a suite of applications that implement the Kerberos\n    network protocol. kadmind is the MIT Kerberos 5 administration daemon.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    A stack buffer overflow (CVE-2007-3999) has been reported in\n    svcauth_gss_validate() of the RPC library of kadmind. Another\n    vulnerability (CVE-2007-4000) has been found in\n    kadm5_modify_policy_internal(), which does not check the return values\n    of krb5_db_get_policy() correctly.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    The RPC related vulnerability can be exploited by a remote\n    unauthenticated attacker to execute arbitrary code with root privileges\n    on the host running kadmind. The second vulnerability requires the\n    remote attacker to be authenticated and to have \"modify policy\"\n    privileges. It could then also allow for the remote execution of\n    arbitrary code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All MIT Kerberos 5 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-crypt/mit-krb5-1.5.3-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-3999",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3999"
+      },
+      {
+        "Text": "CVE-2007-4000",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4000"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-09-08T22:29:04Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-09-09T19:22:20Z"
+    },
+    {
+      "Text": "\n    vorlon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-09-10T18:34:17Z"
+    }
+  ]
+}

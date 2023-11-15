@@ -1,0 +1,107 @@
+{
+  "ID": "200502-16",
+  "Title": "ht://Dig: Cross-site scripting vulnerability",
+  "Synopsis": "\n    ht://Dig is vulnerable to cross-site scripting attacks.\n  ",
+  "Product": {
+    "Text": "htdig",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-02-13",
+  "Revised": {
+    "Text": "2005-02-13",
+    "Count": "01"
+  },
+  "Bug": [
+    "80602"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-misc/htdig",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.1.6-r7",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.1.6-r7",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    ht://Dig is an HTTP/HTML indexing and searching system.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Michael Krax discovered that ht://Dig fails to validate the\n    'config' parameter before displaying an error message containing the\n    parameter. This flaw could allow an attacker to conduct cross-site\n    scripting attacks.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    By sending a carefully crafted message, an attacker can inject and\n    execute script code in the victim's browser window. This allows to\n    modify the behaviour of ht://Dig, and/or leak session information such\n    as cookies to the attacker.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All ht://Dig users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-misc/htdig-3.1.6-r7\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-0085",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0085"
+      },
+      {
+        "Text": "SecurityTracker #1013078",
+        "Link": "http://securitytracker.com/alerts/2005/Feb/1013078.html"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-02-13T17:17:57Z"
+    },
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-02-13T17:19:04Z"
+    },
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-02-13T20:15:40Z"
+    }
+  ]
+}

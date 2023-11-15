@@ -1,0 +1,98 @@
+{
+  "ID": "202101-22",
+  "Title": "libvirt: Unintended access to /dev/mapper/control",
+  "Synopsis": "A vulnerability in libvirt may allow root privilege escalation.",
+  "Product": {
+    "Text": "libvirt",
+    "Type": "ebuild"
+  },
+  "Announced": "2021-01-26",
+  "Revised": {
+    "Text": "2021-01-26",
+    "Count": "1"
+  },
+  "Bug": [
+    "739948"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-emulation/libvirt",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "6.7.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "6.7.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>libvirt is a C toolkit for manipulating virtual machines.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A file descriptor for /dev/mapper/control was insufficiently protected.</p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A local attacker may be able to escalate to root privileges.</p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All libvirt users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-emulation/libvirt-6.7.0\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2020-14339",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-14339"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "sam_c",
+      "Tag": "requester",
+      "Timestamp": "2020-10-05T23:25:12Z"
+    },
+    {
+      "Text": "sam_c",
+      "Tag": "submitter",
+      "Timestamp": "2021-01-26T00:10:19Z"
+    }
+  ]
+}

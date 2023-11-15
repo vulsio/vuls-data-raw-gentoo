@@ -1,0 +1,111 @@
+{
+  "ID": "201406-06",
+  "Title": "Mumble: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in Mumble, the worst of\n    which could lead to arbitrary code execution.\n  ",
+  "Product": {
+    "Text": "mumble",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-06-06",
+  "Revised": {
+    "Text": "2014-06-06",
+    "Count": "1"
+  },
+  "Bug": [
+    "500486",
+    "510380"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-sound/mumble",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Mumble is low-latency voice chat software intended for use with gaming.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in Mumble:</p>\n    \n    <ul>\n      <li>A crafted length prefix value can trigger a heap-based buffer\n        overflow or NULL pointer dereference in the\n        opus_packet_get_samples_per_frame function (CVE-2014-0044)\n      </li>\n      <li>A crafted packet can trigger an error in the opus_decode_float\n        function, leading to a heap-based buffer overflow (CVE-2014-0045)\n      </li>\n      <li>A crafted SVG referencing local files can lead to resource exhaustion\n        or hangs (CVE-2014-3755)\n      </li>\n      <li>Mumble does not properly escape HTML in some external strings before\n        displaying them (CVE-2014-3756)\n      </li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A remote attacker could possibly execute arbitrary code with the\n      privileges of the process or cause a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Mumble users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-sound/mumble-1.2.6\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-0044",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0044"
+      },
+      {
+        "Text": "CVE-2014-0045",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0045"
+      },
+      {
+        "Text": "CVE-2014-3755",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-3755"
+      },
+      {
+        "Text": "CVE-2014-3756",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-3756"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "requester",
+      "Timestamp": "2014-05-21T03:01:45Z"
+    },
+    {
+      "Text": "\n    creffett\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2014-06-06T12:14:42Z"
+    }
+  ]
+}

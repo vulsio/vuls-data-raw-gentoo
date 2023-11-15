@@ -1,0 +1,103 @@
+{
+  "ID": "200611-23",
+  "Title": "Mono: Insecure temporary file creation",
+  "Synopsis": "\n    Mono is vulnerable to linking attacks, potentially allowing a local user to\n    overwrite arbitrary files.\n  ",
+  "Product": {
+    "Text": "mono",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-11-28",
+  "Revised": {
+    "Text": "2006-11-28",
+    "Count": "01"
+  },
+  "Bug": [
+    "150264"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-lang/mono",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.1.13.8.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.13.8.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Mono provides the necessary software to develop and run .NET client and\n    server applications.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Sebastian Krahmer of the SuSE Security Team discovered that the\n    System.CodeDom.Compiler classes of Mono create temporary files with\n    insecure permissions.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could create links in the temporary file directory,\n    pointing to a valid file somewhere on the filesystem. When an affected\n    class is called, this could result in the file being overwritten with\n    the rights of the user running the script.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Mono users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/mono-1.1.13.8.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-5072",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5072"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-11-24T09:48:51Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-11-27T17:16:01Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-11-28T12:13:57Z"
+    }
+  ]
+}

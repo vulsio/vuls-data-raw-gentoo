@@ -1,0 +1,102 @@
+{
+  "ID": "200509-10",
+  "Title": "Mailutils: Format string vulnerability in imap4d",
+  "Synopsis": "\n    The imap4d server contains a vulnerability allowing an authenticated user\n    to execute arbitrary code with the privileges of the imap4d process.\n  ",
+  "Product": {
+    "Text": "mailutils",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-09-17",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "105458"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-mail/mailutils",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.6-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.6-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The GNU Mailutils are a collection of mail-related utilities, including\n    an IMAP4 server (imap4d).\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The imap4d server contains a format string bug in the handling of IMAP\n    SEARCH requests.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    An authenticated IMAP user could exploit the format string error in\n    imap4d to execute arbitrary code as the imap4d user, which is usually\n    root.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There are no known workarounds at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All GNU Mailutils users should upgrade to the latest available version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-mail/mailutils-0.6-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "iDEFENSE 09.09.05 advisory",
+        "Link": "http://www.idefense.com/application/poi/display?id=303&type=vulnerabilities"
+      },
+      {
+        "Text": "CVE-2005-2878",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2878"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-09-15T13:42:03Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-09-15T13:42:17Z"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "ID": "201703-05",
+  "Title": "GNU Libtasn1: Denial of service",
+  "Synopsis": "A vulnerability in Libtasn1 allows remote attackers to cause a\n    Denial of Service condition.\n  ",
+  "Product": {
+    "Text": "libtasn1",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-03-28",
+  "Revised": {
+    "Text": "2017-03-28",
+    "Count": "1"
+  },
+  "Bug": [
+    "579748"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/libtasn1",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.8",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.8",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>A library that provides Abstract Syntax Notation One (ASN.1, as\n      specified by the X.680 ITU-T recommendation) parsing and structures\n      management, and Distinguished Encoding Rules (DER, as per X.690) encoding\n      and decoding functions.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Libtasn1 does not correctly handle certain malformed DER certificates.</p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user or automated system to process a\n      specially crafted certificate using Libtasn1, resulting in a Denial of\n      Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Libtasn1 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/libtasn1-4.8\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2016-4008",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-4008"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "b-man",
+      "Tag": "requester",
+      "Timestamp": "2017-02-22T11:00:00Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2017-03-28T02:54:28Z"
+    }
+  ]
+}

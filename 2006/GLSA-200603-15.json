@@ -1,0 +1,103 @@
+{
+  "ID": "200603-15",
+  "Title": "Crypt::CBC: Insecure initialization vector",
+  "Synopsis": "\n    Crypt::CBC uses an insecure initialization vector, potentially resulting in\n    a weaker encryption.\n  ",
+  "Product": {
+    "Text": "crypt-cbc",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-03-17",
+  "Revised": {
+    "Text": "2006-03-17",
+    "Count": "01"
+  },
+  "Bug": [
+    "126048"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-perl/crypt-cbc",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.17",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.17",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Crypt::CBC is a Perl module to encrypt data using cipher block\n    chaining (CBC).\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Lincoln Stein discovered that Crypt::CBC fails to handle 16 bytes\n    long initializiation vectors correctly when running in the RandomIV\n    mode, resulting in a weaker encryption because the second part of every\n    block will always be encrypted with zeros if the blocksize of the\n    cipher is greater than 8 bytes.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    An attacker could exploit weak ciphertext produced by Crypt::CBC\n    to bypass certain security restrictions or to gain access to sensitive\n    data.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Crypt::CBC users should upgrade to the latest available\n    version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-perl/crypt-cbc-2.17\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-0898",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0898"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-03-14T21:26:26Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-03-14T21:26:50Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-03-14T23:04:56Z"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "ID": "201412-03",
+  "Title": "Dovecot: Denial of service",
+  "Synopsis": "A vulnerability in Dovecot could allow a remote attacker to create\n    a Denial of Service condition.\n  ",
+  "Product": {
+    "Text": "dovecot",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-12-08",
+  "Revised": {
+    "Text": "2014-12-08",
+    "Count": "1"
+  },
+  "Bug": [
+    "509954"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-mail/dovecot",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.2.13",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.2.13",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Dovecot is an open source IMAP and POP3 email server.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Dovecot does not properly close connections, allowing a resource\n      exhaustion for incomplete SSL/TLS handshakes.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could possibly cause a Denial of Service condition.</p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Dovecot users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-mail/dovecot-2.2.13\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-3430",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-3430"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2014-08-04T18:57:07Z"
+    },
+    {
+      "Text": "Zlogene",
+      "Tag": "submitter",
+      "Timestamp": "2014-12-08T22:57:38Z"
+    }
+  ]
+}

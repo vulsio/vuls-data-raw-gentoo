@@ -1,0 +1,98 @@
+{
+  "ID": "201206-34",
+  "Title": "msmtp: X.509 NULL spoofing vulnerability",
+  "Synopsis": "An error in the hostname matching in msmtp might enable remote\n    attackers to conduct man-in-the-middle attacks.   \n  ",
+  "Product": {
+    "Text": "msmtp",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-06-25",
+  "Revised": {
+    "Text": "2012-06-25",
+    "Count": "1"
+  },
+  "Bug": [
+    "293647"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "mail-mta/msmtp",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.19",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.19",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>msmtp is an SMTP client and SMTP plugin for mail user agents such as\n      Mutt.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A vulnerability have been discovered in msmtp. Please review the CVE\n      identifier referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker might employ a specially crafted certificate to\n      conduct man-in-the-middle attacks on SSL connections made using msmtp. \n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All msmtp users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=mail-mta/msmtp-1.4.19\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-3942",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-3942"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "craig",
+      "Tag": "requester",
+      "Timestamp": "2011-10-07T23:37:28Z"
+    },
+    {
+      "Text": "craig",
+      "Tag": "submitter",
+      "Timestamp": "2012-06-25T18:51:50Z"
+    }
+  ]
+}

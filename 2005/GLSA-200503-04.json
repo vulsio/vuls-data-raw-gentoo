@@ -1,0 +1,110 @@
+{
+  "ID": "200503-04",
+  "Title": "phpWebSite: Arbitrary PHP execution and path disclosure",
+  "Synopsis": "\n    Remote attackers can upload and execute arbitrary PHP scripts, another flaw\n    reveals the full path of scripts.\n  ",
+  "Product": {
+    "Text": "phpwebsite",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-03-01",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "83297"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/phpwebsite",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.10.0-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.10.0-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    phpWebSite provides a complete web site content management system.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    NST discovered that, when submitting an announcement, uploaded files\n    aren't correctly checked for malicious code. They also found out that\n    phpWebSite is vulnerable to a path disclosure.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker can exploit this issue to upload files to a directory\n    within the web root. By calling the uploaded script the attacker could\n    then execute arbitrary PHP code with the rights of the web server. By\n    passing specially crafted requests to the search module, remote\n    attackers can also find out the full path of PHP scripts.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All phpWebSite users should upgrade to the latest available version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync \n    # emerge --ask --oneshot --verbose \">=www-apps/phpwebsite-0.10.0-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Secunia Advisory SA14399",
+        "Link": "https://secunia.com/advisories/14399/"
+      },
+      {
+        "Text": "phpWebSite announcement",
+        "Link": "http://phpwebsite.appstate.edu/index.php?module=announce&ANN_id=922&ANN_user_op=view"
+      },
+      {
+        "Text": "CVE-2005-0565",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0565"
+      },
+      {
+        "Text": "CVE-2005-0572",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0572"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-02-25T21:23:09Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-02-27T12:09:41Z"
+    }
+  ]
+}

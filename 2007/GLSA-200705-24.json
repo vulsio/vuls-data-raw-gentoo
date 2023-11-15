@@ -1,0 +1,103 @@
+{
+  "ID": "200705-24",
+  "Title": "libpng: Denial of service",
+  "Synopsis": "\n    A vulnerability in libpng may allow a remote attacker to crash applications\n    that handle untrusted images.\n  ",
+  "Product": {
+    "Text": "libpng",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-05-31",
+  "Revised": {
+    "Text": "2007-05-31",
+    "Count": "01"
+  },
+  "Bug": [
+    "178004"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/libpng",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.17",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.17",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    libpng is a free ANSI C library used to process and manipulate PNG\n    images.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Mats Palmgren fixed an error in file pngrutil.c in which the trans[]\n    array might be not allocated because of images with a bad tRNS chunk\n    CRC value.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could craft an image that when processed or viewed by\n    an application using libpng causes the application to terminate\n    abnormally.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    Please note that due to separate bugs in libpng 1.2.17, Gentoo does not\n    provide libpng-1.2.17 but libpng-1.2.18. All libpng users should\n    upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/libpng-1.2.18\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-2445",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2445"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-05-27T07:35:26Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-05-27T13:49:05Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-05-31T08:41:58Z"
+    }
+  ]
+}

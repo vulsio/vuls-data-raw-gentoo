@@ -1,0 +1,111 @@
+{
+  "ID": "200506-15",
+  "Title": "PeerCast: Format string vulnerability",
+  "Synopsis": "\n    PeerCast suffers from a format string vulnerability that could allow\n    arbitrary code execution.\n  ",
+  "Product": {
+    "Text": "peercast",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-06-19",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "96199"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-sound/peercast",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.1212",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.1212",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    PeerCast is a media streaming system based on P2P technology.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    James Bercegay of the GulfTech Security Research Team discovered that\n    PeerCast insecurely implements formatted printing when receiving a\n    request with a malformed URL.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker could exploit this vulnerability by sending a request\n    with a specially crafted URL to a PeerCast server to execute arbitrary\n    code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All PeerCast users should upgrade to the latest available version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-sound/peercast-0.1212\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "GulfTech Advisory",
+        "Link": "http://www.gulftech.org/?node=research&article_id=00077-05282005"
+      },
+      {
+        "Text": "PeerCast Announcement",
+        "Link": "http://www.peercast.org/forum/viewtopic.php?p=11596"
+      },
+      {
+        "Text": "CVE-2005-1806",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1806"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-06-15T19:02:57Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-06-15T19:42:18Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-06-19T19:09:07Z"
+    }
+  ]
+}

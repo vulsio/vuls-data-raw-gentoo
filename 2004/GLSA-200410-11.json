@@ -1,0 +1,127 @@
+{
+  "ID": "200410-11",
+  "Title": "tiff: Buffer overflows in image decoding",
+  "Synopsis": "\n    Multiple heap-based overflows have been found in the tiff library image\n    decoding routines, potentially allowing to execute arbitrary code with the\n    rights of the user viewing a malicious image.\n  ",
+  "Product": {
+    "Text": "tiff",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-10-13",
+  "Revised": {
+    "Text": "2004-10-13",
+    "Count": "01"
+  },
+  "Bug": null,
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/tiff",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.6.1-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.6.1-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "media-gfx/xv",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.10a-r8",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.10a-r7",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The tiff library contains encoding and decoding routines for the Tag Image\n    File Format. It is called by numerous programs, including GNOME and KDE, to\n    help in displaying TIFF images. xv is a multi-format image manipulation\n    utility that is statically linked to the tiff library.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Chris Evans found heap-based overflows in RLE decoding routines in\n    tif_next.c, tif_thunder.c and potentially tif_luv.c.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to view a carefully crafted TIFF\n    image file, which would potentially lead to execution of arbitrary code\n    with the rights of the user viewing the image. This affects any program\n    that makes use of the tiff library, including GNOME and KDE web browsers or\n    mail readers.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All tiff library users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    xv makes use of the tiff library and needs to be recompiled to receive the\n    new patched version of the library. All xv users should also upgrade to the\n    latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n\n    # emerge -pv \">=media-libs/tiff-3.6.1-r2\"\n    # emerge \">=media-libs/tiff-3.6.1-r2\"",
+      "\n    # emerge sync\n\n    # emerge -pv \">=media-gfx/xv-3.10a-r8\"\n    # emerge \">=media-gfx/xv-3.10a-r8\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-0803",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0803"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-10-11T13:05:01Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-10-13T14:38:12Z"
+    }
+  ]
+}

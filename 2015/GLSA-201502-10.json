@@ -1,0 +1,125 @@
+{
+  "ID": "201502-10",
+  "Title": "libpng: User-assisted execution of arbitrary code",
+  "Synopsis": "Two vulnerabilities have been found in libpng, possibly resulting\n    in execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "libpng",
+    "Type": "ebuild"
+  },
+  "Announced": "2015-02-15",
+  "Revised": {
+    "Text": "2017-01-03",
+    "Count": "3"
+  },
+  "Bug": [
+    "531264",
+    "533358"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/libpng",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.6.16",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.5.21",
+            "Range": "ge",
+            "Slot": "1.5"
+          },
+          {
+            "Text": "1.2.52",
+            "Range": "ge",
+            "Slot": "1.2"
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.6.16",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>libpng is a standard library used to process PNG (Portable Network\n      Graphics) images. It is used by several programs, including web browsers\n      and potentially server processes.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Two vulnerabilities have been discovered in libpng:</p>\n    \n    <ul>\n      <li>The png_user_version_check function contains an out-of-bounds memory\n        access error (libpng 1.6.15 Release Notes)\n      </li>\n      <li>The png_combine_row function contains an integer overflow error,\n        which could result in a heap-based buffer overflow (CVE-2014-9495)\n      </li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A context-dependent attacker could entice a user to open a specially\n      crafted PNG file using an application linked against libpng, possibly\n      resulting in execution of arbitrary code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All libpng 1.6 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All libpng 1.5 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/libpng-1.6.16\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/libpng-1.5.21\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-9495",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-9495"
+      },
+      {
+        "Text": "\n      libpng 1.6.15 Release Notes\n    ",
+        "Link": "http://www.libpng.org/pub/png/src/libpng-1.6.15-README.txt"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "requester",
+      "Timestamp": "2015-01-15T22:55:48Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2017-01-03T04:39:38Z"
+    }
+  ]
+}

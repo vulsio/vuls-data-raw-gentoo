@@ -1,0 +1,159 @@
+{
+  "ID": "200501-38",
+  "Title": "Perl: rmtree and DBI tmpfile vulnerabilities",
+  "Synopsis": "\n    The Perl DBI library and File::Path::rmtree function are vulnerable to\n    symlink attacks.\n  ",
+  "Product": {
+    "Text": "Perl",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-01-26",
+  "Revised": {
+    "Text": "2005-03-15",
+    "Count": "03"
+  },
+  "Bug": [
+    "75696",
+    "78634",
+    "79685"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-perl/DBI",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.37-r1",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.38-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.38",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "dev-lang/perl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.8.6-r4",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "5.8.5-r5",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "5.8.4-r4",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "5.8.2-r4",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.8.6-r3",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Perl is a cross platform programming language. The DBI is the standard\n    database interface module for Perl.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Javier Fernandez-Sanguino Pena discovered that the DBI library creates\n    temporary files in an insecure, predictable way (CAN-2005-0077). Paul\n    Szabo found out that \"File::Path::rmtree\" is vulnerable to various race\n    conditions (CAN-2004-0452, CAN-2005-0448).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary files\n    directory that point to a valid file somewhere on the filesystem. When\n    the DBI library or File::Path::rmtree is executed, this could be used\n    to overwrite or remove files with the rights of the user calling these\n    functions.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There are no known workarounds at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Perl users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All DBI library users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose dev-lang/perl",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose dev-perl/DBI"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-0452",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0452"
+      },
+      {
+        "Text": "CAN-2005-0077",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0077"
+      },
+      {
+        "Text": "CAN-2005-0448",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0448"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-01-26T15:06:53Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-01-26T20:14:36Z"
+    }
+  ]
+}

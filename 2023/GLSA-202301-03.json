@@ -1,0 +1,98 @@
+{
+  "ID": "202301-03",
+  "Title": "scikit-learn: Denial of Service",
+  "Synopsis": "A vulnerability was found in scikit-learn which could result in denial of service.",
+  "Product": {
+    "Text": "scikit-learn",
+    "Type": "ebuild"
+  },
+  "Announced": "2023-01-11",
+  "Revised": {
+    "Text": "2023-01-11",
+    "Count": "1"
+  },
+  "Bug": [
+    "758323"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sci-libs/scikit-learn",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.1.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n        <p>scikit-learn is a machine learning library for Python.</p>\n    "
+  },
+  "Description": {
+    "Text": "\n        <p>When supplied with a crafted model SVM, predict() can result in a null pointer dereference.</p>\n    "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n        <p>An attcker capable of providing a crafted model to scikit-learn can result in denial of service.</p>\n    "
+  },
+  "Workaround": {
+    "Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+  },
+  "Resolution": {
+    "Text": "\n        \n        \n        \n    ",
+    "P": [
+      {
+        "Text": "All scikit-learn users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=sci-libs/scikit-learn-1.1.1\"\n        "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2020-28975",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-28975"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ajak",
+      "Tag": "requester",
+      "Timestamp": "2023-01-11T05:16:33.475780Z"
+    },
+    {
+      "Text": "ajak",
+      "Tag": "submitter",
+      "Timestamp": "2023-01-11T05:16:33.478230Z"
+    }
+  ]
+}

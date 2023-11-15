@@ -1,0 +1,114 @@
+{
+  "ID": "201110-05",
+  "Title": "GnuTLS: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities were found in GnuTLS, allowing for easier\n    man-in-the-middle attacks.\n  ",
+  "Product": {
+    "Text": "gnutls",
+    "Type": "ebuild"
+  },
+  "Announced": "2011-10-10",
+  "Revised": {
+    "Text": "2011-10-10",
+    "Count": "1"
+  },
+  "Bug": [
+    "281224",
+    "292025"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-libs/gnutls",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.10.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.10.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>GnuTLS is an Open Source implementation of the TLS 1.2 and SSL 3.0\n      protocols.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in GnuTLS. Please review\n      the CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>An attacker could perform man-in-the-middle attacks to spoof arbitrary\n      SSL servers via a crafted certificate issued by a legitimate\n      Certification Authority or to inject an arbitrary amount of chosen\n      plaintext into the beginning of the application protocol stream, allowing\n      for further exploitation.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All GnuTLS users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "NOTE: This is a legacy GLSA. Updates for all affected architectures are\n      available since August 6, 2010. It is likely that your system is already\n      no longer affected by this issue.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-libs/gnutls-2.10.0\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-2730",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-2730"
+      },
+      {
+        "Text": "CVE-2009-3555",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-3555"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2011-10-07T23:38:18Z"
+    },
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2011-10-10T20:33:39Z"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "ID": "200710-10",
+  "Title": "SKK Tools: Insecure temporary file creation",
+  "Synopsis": "\n    SKK insecurely creates temporary files.\n  ",
+  "Product": {
+    "Text": "skktools",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-10-12",
+  "Revised": {
+    "Text": "2007-10-12",
+    "Count": "01"
+  },
+  "Bug": [
+    "193121"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-i18n/skktools",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    SKK is a Japanese input method for Emacs.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    skkdic-expr.c insecurely writes temporary files to a location in the\n    form $TMPDIR/skkdic$PID.{pag,dir,db}, where $PID is the process ID.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could create symbolic links in the directory where the\n    temporary files are written, pointing to a valid file somewhere on the\n    filesystem that is writable by the user running the SKK software. When\n    SKK writes the temporary file, the target valid file would then be\n    overwritten with the contents of the SKK temporary file.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All SKK Tools users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-i18n/skktools-1.2-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-3916",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3916"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-09-20T19:17:24Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-09-20T19:18:40Z"
+    },
+    {
+      "Text": "\n    aetius\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-10-07T20:45:18Z"
+    }
+  ]
+}

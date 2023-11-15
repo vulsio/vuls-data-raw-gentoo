@@ -1,0 +1,121 @@
+{
+  "ID": "201701-18",
+  "Title": "Python: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in Python, the worst of\n    which could lead to arbitrary code execution.\n  ",
+  "Product": {
+    "Text": "python",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-01-10",
+  "Revised": {
+    "Text": "2017-02-24",
+    "Count": "2"
+  },
+  "Bug": [
+    "531002",
+    "585910",
+    "585946"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-lang/python",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.7.12",
+            "Range": "ge",
+            "Slot": "2.7"
+          },
+          {
+            "Text": "3.4.5",
+            "Range": "ge",
+            "Slot": "3.4"
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.4.5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Python is an interpreted, interactive, object-oriented programming\n      language.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in Python. Please review\n      the CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted index\n      file using Python’s dumbdbm module, possibly resulting in execution of\n      arbitrary code with the privileges of the process.\n    </p>\n    \n    <p>A remote attacker could entice a user to process a specially crafted\n      input stream using Python’s zipimporter module, possibly allowing\n      attackers to cause unspecified impact.\n    </p>\n    \n    <p>A man in the middle attacker could strip out the STARTTLS command\n      without generating an exception on the Python SMTP client application,\n      preventing the establishment of the TLS layer.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Python 2 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All Python 3 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-lang/python-2.7.12:2.7\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-lang/python-3.4.5:3.4\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2016-0772",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-0772"
+      },
+      {
+        "Text": "CVE-2016-5636",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-5636"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "b-man",
+      "Tag": "requester",
+      "Timestamp": "2017-01-03T06:13:03Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2017-02-24T10:28:53Z"
+    }
+  ]
+}

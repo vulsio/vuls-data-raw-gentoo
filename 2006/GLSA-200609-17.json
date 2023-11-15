@@ -1,0 +1,98 @@
+{
+  "ID": "200609-17",
+  "Title": "OpenSSH: Denial of service",
+  "Synopsis": "\n    A flaw in the OpenSSH daemon allows remote unauthenticated attackers to\n    cause a Denial of Service.\n  ",
+  "Product": {
+    "Text": "openssh",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-09-27",
+  "Revised": {
+    "Text": "2006-09-27",
+    "Count": "02"
+  },
+  "Bug": [
+    "148228"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/openssh",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.3_p2-r5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.3_p2-r5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    OpenSSH is a free suite of applications for the SSH protocol, developed\n    and maintained by the OpenBSD project.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Tavis Ormandy of the Google Security Team discovered a Denial of\n    Service vulnerability in the SSH protocol version 1 CRC compensation\n    attack detector.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote unauthenticated attacker may be able to trigger excessive CPU\n    usage by sending a pathological SSH message, denying service to other\n    legitimate users or processes.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    The system administrator may disable SSH protocol version 1 in\n    /etc/ssh/sshd_config.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All OpenSSH users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/openssh-4.3_p2-r5\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-4924",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4924"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    taviso\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-09-21T22:24:46Z"
+    },
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-09-27T16:06:09Z"
+    }
+  ]
+}

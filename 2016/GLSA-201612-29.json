@@ -1,0 +1,98 @@
+{
+  "ID": "201612-29",
+  "Title": "libmms: Remote execution of arbitrary code",
+  "Synopsis": "A heap-based buffer overflow vulnerability in libmms might allow\n    remote attackers to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "libmms",
+    "Type": "ebuild"
+  },
+  "Announced": "2016-12-11",
+  "Revised": {
+    "Text": "2016-12-11",
+    "Count": "1"
+  },
+  "Bug": [
+    "507822"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/libmms",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.6.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.6.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>libmms is a library for downloading (streaming) media files using the\n      mmst and mmsh protocols.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A heap-based buffer overflow was discovered in the get_answer function\n      within mmsh.c of libmms.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker might send a specially crafted MMS over HTTP (MMSH)\n      response, possibly resulting in the remote execution of arbitrary code\n      with the privileges of the process.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All libmms users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/libmms-0.6.4\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-2892",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-2892"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "b-man",
+      "Tag": "requester",
+      "Timestamp": "2016-11-27T10:19:34Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2016-12-11T23:47:07Z"
+    }
+  ]
+}

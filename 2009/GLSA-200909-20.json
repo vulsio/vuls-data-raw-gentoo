@@ -1,0 +1,103 @@
+{
+  "ID": "200909-20",
+  "Title": "cURL: Certificate validation error",
+  "Synopsis": "\n    An error in the X.509 certificate handling of cURL might enable remote\n    attackers to conduct man-in-the-middle attacks.\n  ",
+  "Product": {
+    "Text": "curl",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-09-25",
+  "Revised": {
+    "Text": "2009-09-25",
+    "Count": "01"
+  },
+  "Bug": [
+    "281515"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/curl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "7.19.6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "7.19.6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    cURL is a command line tool for transferring files with URL syntax,\n    supporting numerous protocols.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Scott Cantor reported that cURL does not properly handle fields in\n    X.509 certificates that contain an ASCII NUL (\\0) character.\n    Specifically, the processing of such fields is stopped at the first\n    occurence of a NUL character. This type of vulnerability was recently\n    discovered by Dan Kaminsky and Moxie Marlinspike.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker might employ a specially crafted X.509 certificate\n    (that for instance contains a NUL character in the Common Name field)\n    to conduct man-in-the-middle attacks.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All cURL users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/curl-7.19.6\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-2417",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2417"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-09-13T18:08:24Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-09-14T12:08:01Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-09-25T18:22:08Z"
+    }
+  ]
+}

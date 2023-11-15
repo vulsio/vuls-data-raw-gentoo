@@ -1,0 +1,107 @@
+{
+  "ID": "200603-24",
+  "Title": "RealPlayer: Buffer overflow vulnerability",
+  "Synopsis": "\n    RealPlayer is vulnerable to a buffer overflow that could lead to remote\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "RealPlayer",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-03-26",
+  "Revised": {
+    "Text": "2006-03-26",
+    "Count": "01"
+  },
+  "Bug": [
+    "127352"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-video/realplayer",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "10.0.7",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "10.0.7",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    RealPlayer is a multimedia player capable of handling multiple\n    multimedia file formats.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    RealPlayer is vulnerable to a buffer overflow when processing\n    malicious SWF files.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    By enticing a user to open a specially crafted SWF file an\n    attacker could execute arbitrary code with the permissions of the user\n    running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All RealPlayer users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-video/realplayer-10.0.7\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-0323",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0323"
+      },
+      {
+        "Text": "RealNetworks Advisory",
+        "Link": "http://service.real.com/realplayer/security/03162006_player/en/"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-03-23T23:38:12Z"
+    },
+    {
+      "Text": "\n    formula7\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-03-24T13:36:18Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-03-26T17:28:15Z"
+    }
+  ]
+}

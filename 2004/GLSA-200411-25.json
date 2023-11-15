@@ -1,0 +1,118 @@
+{
+  "ID": "200411-25",
+  "Title": "SquirrelMail: Encoded text XSS vulnerability",
+  "Synopsis": "\n    Squirrelmail fails to properly sanitize user input, which could lead to a\n    compromise of webmail accounts.\n  ",
+  "Product": {
+    "Text": "SquirrelMail",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-11-17",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "70739"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "mail-client/squirrelmail",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.3a-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.3a-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    SquirrelMail is a webmail package written in PHP. It supports IMAP and\n    SMTP, and can optionally be installed with SQL support.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    SquirrelMail fails to properly sanitize certain strings when decoding\n    specially-crafted headers.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    By enticing a user to read a specially-crafted e-mail, an attacker can\n    execute arbitrary scripts running in the context of the victim's\n    browser. This could lead to a compromise of the user's webmail account,\n    cookie theft, etc.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All SquirrelMail users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    Note: Users with the vhosts USE flag set should manually use\n    webapp-config to finalize the update.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-client/squirrelmail-1.4.3a-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "SquirrelMail Advisory",
+        "Link": "https://article.gmane.org/gmane.mail.squirrelmail.user/21169"
+      },
+      {
+        "Text": "CVE-2004-1036",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1036"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-11-13T07:50:02Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-11-14T18:02:58Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-11-14T18:40:00Z"
+    }
+  ]
+}

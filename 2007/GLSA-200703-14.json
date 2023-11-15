@@ -1,0 +1,118 @@
+{
+  "ID": "200703-14",
+  "Title": "Asterisk: SIP Denial of service",
+  "Synopsis": "\n    Asterisk is vulnerable to Denial of Service in the SIP channel.\n  ",
+  "Product": {
+    "Text": "asterisk",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-03-16",
+  "Revised": {
+    "Text": "2007-03-16",
+    "Count": "01"
+  },
+  "Bug": [
+    "169616"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/asterisk",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.14-r1",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.0.12-r1",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.14-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Asterisk is an open source implementation of a telephone private branch\n    exchange (PBX).\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The MU Security Research Team discovered that Asterisk contains a\n    NULL-pointer dereferencing error in the SIP channel when handling\n    request messages.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could cause an Asterisk server listening for SIP\n    messages to crash by sending a specially crafted SIP request message.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Asterisk users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    Note: Asterisk 1.0.x is no longer supported upstream so users should\n    consider upgrading to Asterisk 1.2.x.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose net-misc/asterisk"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-1306",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1306"
+      },
+      {
+        "Text": "MU-200703-01",
+        "Link": "http://labs.musecurity.com/advisories/MU-200703-01.txt"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-03-16T07:59:58Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-03-16T10:36:56Z"
+    }
+  ]
+}

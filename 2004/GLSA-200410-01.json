@@ -1,0 +1,107 @@
+{
+  "ID": "200410-01",
+  "Title": "sharutils: Buffer overflows in shar.c and unshar.c",
+  "Synopsis": "\n    sharutils contains two buffer overflow vulnerabilities that could lead to\n    arbitrary code execution.\n  ",
+  "Product": {
+    "Text": "sharutils",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-10-01",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "65773"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-arch/sharutils",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.2.1-r10",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.2.1-r9",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    sharutils contains utilities to manage shell archives.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    sharutils contains two buffer overflows. Ulf Harnhammar discovered a\n    buffer overflow in shar.c, where the length of data returned by the wc\n    command is not checked. Florian Schilhabel discovered another buffer\n    overflow in unshar.c.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could exploit these vulnerabilities to execute arbitrary\n    code as the user running one of the sharutils programs.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All sharutils users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv \">=app-arch/sharutils-4.2.1-r10\"\n    # emerge \">=app-arch/sharutils-4.2.1-r10\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Debian Bug #265904",
+        "Link": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=265904"
+      },
+      {
+        "Text": "CVE-2004-1773",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1773"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-09-30T04:54:59Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-09-30T18:01:09Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-10-01T08:08:15Z"
+    }
+  ]
+}

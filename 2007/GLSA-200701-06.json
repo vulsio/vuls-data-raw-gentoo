@@ -1,0 +1,98 @@
+{
+  "ID": "200701-06",
+  "Title": "w3m: Format string vulnerability",
+  "Synopsis": "\n    w3m does not correctly handle format string specifiers in SSL certificates.\n  ",
+  "Product": {
+    "Text": "w3m",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-01-12",
+  "Revised": {
+    "Text": "2007-01-12",
+    "Count": "01"
+  },
+  "Bug": [
+    "159145"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-client/w3m",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.5.1-r4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.5.1-r4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    w3m is a multi-platform text-based web browser.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    w3m in -dump or -backend mode does not correctly handle printf() format\n    string specifiers in the Common Name (CN) field of an X.509 SSL\n    certificate.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could entice a user to visit a malicious website that would\n    load a specially crafted X.509 SSL certificate containing \"%n\" or other\n    format string specifiers, possibly resulting in the execution of\n    arbitrary code with the rights of the user running w3m.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All w3m users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/w3m-0.5.1-r4\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-6772",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6772"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    aetius\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-01-11T00:57:23Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-01-11T11:00:25Z"
+    }
+  ]
+}

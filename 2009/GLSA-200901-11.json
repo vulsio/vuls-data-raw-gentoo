@@ -1,0 +1,103 @@
+{
+  "ID": "200901-11",
+  "Title": "Avahi: Denial of service",
+  "Synopsis": "\n    A Denial of Service vulnerability has been discovered in Avahi.\n  ",
+  "Product": {
+    "Text": "avahi",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-01-14",
+  "Revised": {
+    "Text": "2009-01-14",
+    "Count": "01"
+  },
+  "Bug": [
+    "250913"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-dns/avahi",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.6.24",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.6.24",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Avahi is a system that facilitates service discovery on a local\n    network.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Hugo Dias reported a failed assertion in the\n    originates_from_local_legacy_unicast_socket() function in\n    avahi-core/server.c when processing mDNS packets with a source port of\n    0.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could send specially crafted packets to the daemon,\n    leading to its crash.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Avahi users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dns/avahi-0.6.24\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-5081",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5081"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    craig\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-01-11T18:41:03Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-01-12T22:42:38Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-01-12T22:42:49Z"
+    }
+  ]
+}

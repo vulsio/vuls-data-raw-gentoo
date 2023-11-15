@@ -1,0 +1,102 @@
+{
+  "ID": "200704-10",
+  "Title": "Inkscape: Two format string vulnerabilities",
+  "Synopsis": "\n    Two format string vulnerabilities have been discovered in Inkscape,\n    allowing for user-assisted execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "Inkscape",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-04-16",
+  "Revised": {
+    "Text": "2007-04-16",
+    "Count": "01"
+  },
+  "Bug": [
+    "171799"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-gfx/inkscape",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.45.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.45.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Inkscape is a vector graphics editor, using Scalable Vector Graphics\n    (SVG) Format.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Kees Cook has discovered two vulnerabilities in Inkscape. The\n    application does not properly handle format string specifiers in some\n    dialog boxes. Inkscape is also vulnerable to another format string\n    error in its Jabber whiteboard protocol.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted URI,\n    possibly leading to execution of arbitrary code with the privileges of\n    the user running Inkscape.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Inkscape users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/inkscape-0.45.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-1463",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1463"
+      },
+      {
+        "Text": "CVE-2007-1464",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1464"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-04-09T20:15:01Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-04-11T18:16:25Z"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "ID": "200402-04",
+  "Title": "Gallery 1.4.1 and below remote exploit vulnerability",
+  "Synopsis": "\n    The Gallery developers have discovered a potentially serious security flaw\n    in Gallery 1.3.1, 1.3.2, 1.3.3, 1.4 and 1.4.1 which can allow a \n    remote exploit of your webserver.\n  ",
+  "Product": {
+    "Text": "Gallery",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-02-11",
+  "Revised": {
+    "Text": "2004-02-11",
+    "Count": "01"
+  },
+  "Bug": [
+    "39638"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/gallery",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.1_p1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.1_p1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Gallery is an open source image management system written in PHP.\n    More information is available at http://gallery.sourceforge.net\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Starting in the 1.3.1 release, Gallery includes code to simulate the behaviour\n    of the PHP 'register_globals' variable in environments where that setting\n    is disabled.  It is simulated by extracting the values of the various\n    $HTTP_ global variables into the global namespace.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A crafted URL such as \n    http://example.com/gallery/init.php?HTTP_POST_VARS=xxx  causes the\n    'register_globals' simulation code to overwrite the $HTTP_POST_VARS which,\n    when it is extracted, will deliver the given payload. If the\n    payload compromises $GALLERY_BASEDIR then the malicious user can perform a\n    PHP injection exploit and gain remote access to the webserver with PHP \n    user UID access rights.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    The workaround for the vulnerability is to replace init.php and\n    setup/init.php with the files in the following ZIP file:\n    http://prdownloads.sourceforge.net/gallery/patch_1.4.1-to-1.4.1-pl1.zip?download \n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All users are encouraged to upgrade their gallery installation:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    # emerge -p \">=www-apps/gallery-1.4.1_p1\"\n    # emerge \">=www-apps/gallery-1.4.1_p1\""
+    ]
+  },
+  "References": {
+    "URI": null
+  },
+  "Metadata": null
+}

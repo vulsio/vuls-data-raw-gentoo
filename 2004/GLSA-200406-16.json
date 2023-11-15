@@ -1,0 +1,97 @@
+{
+  "ID": "200406-16",
+  "Title": "Apache 1.3: Buffer overflow in mod_proxy",
+  "Synopsis": "\n    A bug in mod_proxy may allow a remote attacker to execute arbitrary code\n    when Apache is configured a certain way.\n  ",
+  "Product": {
+    "Text": "Apache",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-06-21",
+  "Revised": {
+    "Text": "2007-12-30",
+    "Count": "02"
+  },
+  "Bug": [
+    "53544"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-servers/apache",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.3.31-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.3.31-r1",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Apache HTTP Server Project is an effort to develop and maintain an\n    open-source HTTP server for modern operating systems. The goal of this\n    project is to provide a secure, efficient and extensible server that\n    provides services in tune with the current HTTP standards.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    A bug in the proxy_util.c file may lead to a remote buffer overflow. To\n    trigger the vulnerability an attacker would have to get mod_proxy to\n    connect to a malicous server which returns an invalid (negative)\n    Content-Length.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could cause a Denial of Service as the Apache child handling\n    the request, which will die and under some circumstances execute arbitrary\n    code as the user running Apache, usually \"apache\".\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time. All users are encouraged to\n    upgrade to the latest available version:\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    Apache 1.x users should upgrade to the latest version of Apache:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n\n    # emerge -pv \">=www-servers/apache-1.3.31-r2\"\n    # emerge \">=www-servers/apache-1.3.31-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Georgi Guninski security advisory #69, 2004",
+        "Link": "http://www.guninski.com/modproxy1.html"
+      },
+      {
+        "Text": "CAN-2004-0492",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0492"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

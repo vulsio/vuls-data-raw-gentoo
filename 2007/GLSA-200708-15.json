@@ -1,0 +1,103 @@
+{
+  "ID": "200708-15",
+  "Title": "Apache mod_jk: Directory traversal",
+  "Synopsis": "\n    A directory traversal vulnerability has been discovered in Apache mod_jk.\n  ",
+  "Product": {
+    "Text": "mod_jk",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-08-19",
+  "Revised": {
+    "Text": "2007-08-19",
+    "Count": "01"
+  },
+  "Bug": [
+    "186218"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apache/mod_jk",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.23",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.23",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Apache mod_jk is a connector for the Tomcat web server.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Apache mod_jk decodes the URL within Apache before passing them to\n    Tomcat, which decodes them a second time.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    A remote attacker could browse a specially crafted URL on an Apache\n    server running mod_jk, possibly gaining access to restricted resources.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Apache mod_jk users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apache/mod_jk-1.2.23\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-1860",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1860"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-07-29T22:06:43Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-07-29T22:08:30Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-08-12T21:01:34Z"
+    }
+  ]
+}

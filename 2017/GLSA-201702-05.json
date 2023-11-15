@@ -1,0 +1,98 @@
+{
+  "ID": "201702-05",
+  "Title": "Lsyncd: Remote execution of arbitrary code",
+  "Synopsis": "A vulnerability in Lsyncd allows execution of arbitrary code.",
+  "Product": {
+    "Text": "lsyncd",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-02-10",
+  "Revised": {
+    "Text": "2017-02-10",
+    "Count": "1"
+  },
+  "Bug": [
+    "529678"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-admin/lsyncd",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.1.6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.1.6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>A daemon to synchronize local directories using rsync.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>default-rsyncssh.lua in Lsyncd performed insufficient sanitising of\n      filenames.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>An attacker, able to control files processed by Lsyncd, could possibly\n      execute arbitrary code with the privileges of the process or cause a\n      Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Lsyncd users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-admin/lsyncd-2.1.6\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-8990",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-8990"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "b-man",
+      "Tag": "requester",
+      "Timestamp": "2017-02-01T09:30:15Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2017-02-10T23:08:07Z"
+    }
+  ]
+}

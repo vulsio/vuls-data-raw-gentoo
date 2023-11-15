@@ -1,0 +1,98 @@
+{
+  "ID": "201804-14",
+  "Title": "GDK-PixBuf: Remote code execution",
+  "Synopsis": "A vulnerability has been found in GDK-PixBuf that may allow a\n    remote attacker to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "gdkpixbuf",
+    "Type": "ebuild"
+  },
+  "Announced": "2018-04-17",
+  "Revised": {
+    "Text": "2018-04-17",
+    "Count": "1"
+  },
+  "Bug": [
+    "644770"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "x11-libs/gdk-pixbuf",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.36.11",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.36.11",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>GDK-PixBuf is an image loading library for GTK+.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Several integer overflows were discovered in GDK-PixBuf’s gif_get_lzw\n      function.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker, by enticing a user to process a specially crafted\n      image file, could execute arbitrary code or cause a Denial of Service\n      condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All GDK-PixBuf users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=x11-libs/gdk-pixbuf-2.36.11\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2017-1000422\n    ",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2017-1000422"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "b-man",
+      "Tag": "requester",
+      "Timestamp": "2018-04-17T17:12:14Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2018-04-17T18:21:26Z"
+    }
+  ]
+}

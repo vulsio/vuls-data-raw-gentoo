@@ -1,0 +1,103 @@
+{
+  "ID": "200903-12",
+  "Title": "OptiPNG: User-assisted execution of arbitrary code",
+  "Synopsis": "\n    A vulnerability in OptiPNG might result in user-assisted execution of\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "optipng",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-03-09",
+  "Revised": {
+    "Text": "2009-03-09",
+    "Count": "01"
+  },
+  "Bug": [
+    "260265"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-gfx/optipng",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.6.2-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.6.2-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    OptiPNG is a PNG optimizer that recompresses image files to a smaller\n    size, without losing any information.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Roy Tam reported a use-after-free vulnerability in the\n    GIFReadNextExtension() function in lib/pngxtern/gif/gifread.c leading\n    to a memory corruption when reading a GIF image.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to process a specially crafted\n    GIF image, possibly resulting in the execution of arbitrary code with\n    the privileges of the user running the application, or a Denial of\n    Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All OptiPNG users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/optipng-0.6.2-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-0749",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0749"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-03-07T16:36:48Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-03-07T18:09:51Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-03-07T18:10:05Z"
+    }
+  ]
+}

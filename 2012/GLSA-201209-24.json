@@ -1,0 +1,225 @@
+{
+  "ID": "201209-24",
+  "Title": "PostgreSQL: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in PostgreSQL which may\n    allow a remote attacker to conduct several attacks.\n    \n  ",
+  "Product": {
+    "Text": "PostgreSQL",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-09-28",
+  "Revised": {
+    "Text": "2014-01-20",
+    "Count": "2"
+  },
+  "Bug": [
+    "406037",
+    "419727",
+    "431766"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-db/postgresql-server",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "9.1.5",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "9.0.9",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "8.4.13",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "8.3.20",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "8.4.17",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "8.4.19",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "9.0.13",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "9.0.14",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "9.0.15",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "8.4.14",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "8.4.15",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "8.4.16",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "9.0.16",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "9.0.17",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "9.1.5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>PostgreSQL is an open source object-relational database management\n      system.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in PostgreSQL. Please\n      review the CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could spoof SSL connections. Furthermore, a remote\n      authenticated attacker could cause a Denial of Service, read and write\n      arbitrary files, inject SQL commands into dump scripts, or bypass\n      database restrictions to execute database functions.\n    </p>\n    \n    <p>A context-dependent attacker could more easily obtain access via\n      authentication attempts with an initial substring of the intended\n      password. \n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All PostgreSQL 9.1 server users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All PostgreSQL 9.0 server users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All PostgreSQL 8.4 server users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All PostgreSQL 8.3 server users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-db/postgresql-server-9.1.5\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-db/postgresql-server-9.0.9\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-db/postgresql-server-8.4.13\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-db/postgresql-server-8.3.20\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-0866",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0866"
+      },
+      {
+        "Text": "CVE-2012-0867",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0867"
+      },
+      {
+        "Text": "CVE-2012-0868",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0868"
+      },
+      {
+        "Text": "CVE-2012-2143",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-2143"
+      },
+      {
+        "Text": "CVE-2012-2655",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-2655"
+      },
+      {
+        "Text": "CVE-2012-3488",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3488"
+      },
+      {
+        "Text": "CVE-2012-3489",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3489"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    underling\n  ",
+      "Tag": "requester",
+      "Timestamp": "2012-04-08T15:26:13Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2014-01-20T09:36:28Z"
+    }
+  ]
+}

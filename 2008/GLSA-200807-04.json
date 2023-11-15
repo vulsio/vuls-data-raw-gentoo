@@ -1,0 +1,98 @@
+{
+  "ID": "200807-04",
+  "Title": "Poppler: User-assisted execution of arbitrary code",
+  "Synopsis": "\n    Poppler is affected by a memory management issue, which could lead to the\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "poppler",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-07-08",
+  "Revised": {
+    "Text": "2008-07-08",
+    "Count": "01"
+  },
+  "Bug": [
+    "229931"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-text/poppler",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.6.3-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.6.3-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Poppler is a cross-platform PDF rendering library originally based on\n    Xpdf.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Felipe Andres Manzano reported a memory management issue in the Page\n    class constructor/destructor.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted PDF\n    file with a Poppler-based PDF viewer such as Gentoo's Xpdf, Epdfview,\n    or Evince, potentially resulting in the execution of arbitrary code\n    with the privileges of the user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All poppler users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/poppler-0.6.3-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-2950",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2950"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    vorlon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-07-07T09:09:47Z"
+    },
+    {
+      "Text": "\n    vorlon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-07-08T18:44:36Z"
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "ID": "200410-04",
+  "Title": "PHP: Memory disclosure and arbitrary location file upload",
+  "Synopsis": "\n    Two bugs in PHP may allow the disclosure of portions of memory and allow\n    remote attackers to upload files to arbitrary locations.\n  ",
+  "Product": {
+    "Text": "PHP",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-10-06",
+  "Revised": {
+    "Text": "2004-10-06",
+    "Count": "01"
+  },
+  "Bug": [
+    "64223"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-php/php",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.3.9 ",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.3.9",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "dev-php/mod_php",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.3.9",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.3.9",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "dev-php/php-cgi",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.3.9",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.3.9",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    PHP is a general-purpose scripting language widely used to develop\n    web-based applications. It can run inside a web server using the mod_php\n    module or the CGI version of PHP, or can run stand-alone in a CLI.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Stefano Di Paola discovered two bugs in PHP. The first is a parse error in\n    php_variables.c that could allow a remote attacker to view the contents of\n    the target machine's memory. Additionally, an array processing error in the\n    SAPI_POST_HANDLER_FUNC() function inside rfc1867.c could lead to the\n    $_FILES array being overwritten.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could exploit the first vulnerability to view memory\n    contents. On a server with a script that provides file uploads, an attacker\n    could exploit the second vulnerability to upload files to an arbitrary\n    location. On systems where the HTTP server is allowed to write in a\n    HTTP-accessible location, this could lead to remote execution of arbitrary\n    commands with the rights of the HTTP server.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All PHP, mod_php and php-cgi users should upgrade to the latest stable\n    version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n\n    # emerge -pv \">=dev-php/php-4.3.9\"\n    # emerge \">=dev-php/php-4.3.9\"\n\n    # emerge -pv \">=dev-php/mod_php-4.3.9\"\n    # emerge \">=dev-php/mod_php-4.3.9\"\n\n    # emerge -pv \">=dev-php/php-cgi-4.3.9\"\n    # emerge \">=dev-php/php-cgi-4.3.9\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Secunia Advisory",
+        "Link": "https://secunia.com/advisories/12560/"
+      },
+      {
+        "Text": "BugTraq post regarding the php_variables.c issue",
+        "Link": "http://www.securityfocus.com/archive/1/375294"
+      },
+      {
+        "Text": "BugTraq post regarding the rfc1867.c issue",
+        "Link": "http://www.securityfocus.com/archive/1/375370"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    dmargoli\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-09-29T20:40:17Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-09-30T20:25:12Z"
+    },
+    {
+      "Text": "\n    dmargoli\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-10-03T18:04:56Z"
+    }
+  ]
+}

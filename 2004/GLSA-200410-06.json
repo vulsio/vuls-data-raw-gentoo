@@ -1,0 +1,108 @@
+{
+  "ID": "200410-06",
+  "Title": "CUPS: Leakage of sensitive information",
+  "Synopsis": "\n    CUPS leaks information about user names and passwords when using remote\n    printing to SMB-shared printers which require authentication.\n  ",
+  "Product": {
+    "Text": "cups",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-10-09",
+  "Revised": {
+    "Text": "2004-10-09",
+    "Count": "01"
+  },
+  "Bug": [
+    "66501"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-print/cups",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.1.20-r3",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.1.21-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.20-r2",
+            "Range": "le",
+            "Slot": ""
+          },
+          {
+            "Text": "1.1.21",
+            "Range": "eq",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Common UNIX Printing System (CUPS) is a cross-platform print spooler.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    When printing to a SMB-shared printer requiring authentication, CUPS leaks\n    the user name and password to a logfile.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local user could gain knowledge of sensitive authentication data.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All CUPS users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n\n    # emerge -pv \">=net-print/cups-1.1.20-r3\"\n    # emerge \">=net-print/cups-1.1.20-r3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-0923",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0923"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-10-08T18:27:07Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-10-08T21:07:38Z"
+    }
+  ]
+}

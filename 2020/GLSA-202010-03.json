@@ -1,0 +1,115 @@
+{
+  "ID": "202010-03",
+  "Title": "libjpeg-turbo: Information disclosure",
+  "Synopsis": "An information disclosure vulnerability in libjpeg-turbo allow\n    remote attackers to obtain sensitive information.\n  ",
+  "Product": {
+    "Text": "libjpeg-turbo",
+    "Type": "ebuild"
+  },
+  "Announced": "2020-10-20",
+  "Revised": {
+    "Text": "2020-10-20",
+    "Count": "1"
+  },
+  "Bug": [
+    "727010"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/libjpeg-turbo",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.5.3-r3",
+            "Range": "ge",
+            "Slot": "0/0.1"
+          },
+          {
+            "Text": "2.0.4-r1",
+            "Range": "ge",
+            "Slot": "0/0.2"
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.4-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>libjpeg-turbo is a MMX, SSE, and SSE2 SIMD accelerated JPEG library.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was discovered that libjpeg-turbo incorrectly handled certain PPM\n      files.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted PPM\n      file using an application linked against libjpeg-turbo, possibly allowing\n      attacker to obtain sensitive information.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All libjpeg-turbo 1.x users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All libjpeg-turbo 2.x users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=media-libs/libjpeg-turbo-1.5.3-r3:0/0.1\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=media-libs/libjpeg-turbo-2.0.4-r1:0/0.2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2020-13790",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-13790"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "sam_c",
+      "Tag": "requester",
+      "Timestamp": "2020-08-08T04:33:31Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2020-10-20T10:43:26Z"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "ID": "201412-05",
+  "Title": "Clam AntiVirus: Denial of service",
+  "Synopsis": "A vulnerability in Clam AntiVirus can lead to a Denial of Service\n    condition.\n  ",
+  "Product": {
+    "Text": "clamav",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-12-09",
+  "Revised": {
+    "Text": "2014-12-09",
+    "Count": "2"
+  },
+  "Bug": [
+    "529728"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-antivirus/clamav",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.98.5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.98.5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Clam AntiVirus is an open source (GPL) anti-virus toolkit for UNIX,\n      designed especially for e-mail scanning on mail gateways.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A heap-based buffer overflow exists in the cli_scanpe function in\n      libclamav/pe.c in ClamAV.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could possibly cause a Denial of Service condition via\n      a specially crafted file.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Clam AntiVirus users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-antivirus/clamav-0.98.5\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-9050",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-9050"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "requester",
+      "Timestamp": "2014-12-07T19:55:16Z"
+    },
+    {
+      "Text": "Zlogene",
+      "Tag": "submitter",
+      "Timestamp": "2014-12-09T12:58:59Z"
+    }
+  ]
+}

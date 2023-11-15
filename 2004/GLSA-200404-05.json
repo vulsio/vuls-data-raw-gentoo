@@ -1,0 +1,88 @@
+{
+  "ID": "200404-05",
+  "Title": "ipsec-tools contains an X.509 certificates vulnerability.",
+  "Synopsis": "\n    ipsec-tools contains a vulnerability that affects connections authenticated \n    with X.509 certificates.\n  ",
+  "Product": {
+    "Text": "ipsec-tools",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-04-07",
+  "Revised": {
+    "Text": "2004-04-07",
+    "Count": "01"
+  },
+  "Bug": [
+    "47013"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-firewall/ipsec-tools",
+        "Auto": "yes",
+        "Arch": "amd64",
+        "Unaffected": [
+          {
+            "Text": "0.2.5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.2.4",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    From http://ipsec-tools.sourceforge.net/ :\n    </p>\n    <p>\n    \"IPsec-Tools is a port of KAME's IPsec utilities to the Linux-2.6\n    IPsec implementation.\"\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    <i>racoon</i> (a utility in the ipsec-tools package) does not verify digital\n    signatures on Phase1 packets.  This means  that anybody holding the correct\n    X.509 certificate would be able to establish a connection, even if they did\n    not have the corresponding private key.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    Since digital signatures are not verified by the <i>racoon</i> tool, an attacker may\n\tbe able to connect to the VPN gateway and/or execute a man-in-the-middle attack.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    A workaround is not currently known for this issue. All users are advised\n    to upgrade to the latest version of the affected package.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    ipsec-tools users should upgrade to version 0.2.5 or later:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n \n    # emerge -pv \">=net-firewall/ipsec-tools-0.2.5\"\n    # emerge \">=net-firewall/ipsec-tools-0.2.5\""
+    ]
+  },
+  "References": {
+    "URI": null
+  },
+  "Metadata": [
+    {
+      "Text": "klieber",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

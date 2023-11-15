@@ -1,0 +1,107 @@
+{
+  "ID": "200502-01",
+  "Title": "FireHOL: Insecure temporary file creation",
+  "Synopsis": "\n    FireHOL is vulnerable to symlink attacks, potentially allowing a local user\n    to overwrite arbitrary files.\n  ",
+  "Product": {
+    "Text": "FireHOL",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-02-01",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "79330"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-firewall/firehol",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.224",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.224",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    FireHOL is an iptables rules generator.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    FireHOL insecurely creates temporary files with predictable names.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could create malicious symbolic links to arbitrary\n    system files. When FireHOL is executed, this could lead to these files\n    being overwritten with the rights of the user launching FireHOL,\n    usually the root user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All FireHOL users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-firewall/firehol-1.224\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "FireHOL CVS log",
+        "Link": "https://cvs.sourceforge.net/viewcvs.py/firehol/firehol/firehol.sh"
+      },
+      {
+        "Text": "CVE-2005-0225",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0225"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-01-28T10:32:33Z"
+    },
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-01-29T16:54:50Z"
+    },
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-01-31T23:48:34Z"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "ID": "201611-19",
+  "Title": "Tar: Extract pathname bypass",
+  "Synopsis": "A path traversal attack in Tar may lead to the remote execution of\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "tar",
+    "Type": "ebuild"
+  },
+  "Announced": "2016-11-22",
+  "Revised": {
+    "Text": "2016-11-22",
+    "Count": "2"
+  },
+  "Bug": [
+    "598334"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-arch/tar",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.29-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.29-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>The Tar program provides the ability to create and manipulate tar\n      archives.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Tar attempts to avoid path traversal attacks by removing offending parts\n      of the element name at extract. This sanitizing leads to a vulnerability\n      where the attacker can bypass the path name(s) specified on the command\n      line.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>The attacker can create a crafted tar archive that, if extracted by the\n      victim, replaces files and directories the victim has access to in the\n      target directory, regardless of the path name(s) specified on the command\n      line.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Tar users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-arch/tar-1.29-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2016-6321",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-6321"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "b-man",
+      "Tag": "requester",
+      "Timestamp": "2016-11-11T06:05:11Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2016-11-22T11:59:11Z"
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "ID": "202210-32",
+  "Title": "hiredis, hiredis-py: Multiple Vulnerabilities",
+  "Synopsis": "An integer overflow has been found in hiredis which could result in arbitrary code execution.",
+  "Product": {
+    "Text": "hiredis,hiredis",
+    "Type": "ebuild"
+  },
+  "Announced": "2022-10-31",
+  "Revised": {
+    "Text": "2022-10-31",
+    "Count": "1"
+  },
+  "Bug": [
+    "873079",
+    "816318"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/hiredis",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "dev-python/hiredis",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n        <p>hiredis is a minimalistic C client library for the Redis database.\r\n\r\nhiredis-py is a Python extension that wraps hiredis.</p>\n    "
+  },
+  "Description": {
+    "Text": "\n        <p>Hiredis is vulnerable to integer overflow if provided maliciously crafted or corrupted `RESP` `mult-bulk` protocol data. When parsing `multi-bulk` (array-like) replies, hiredis fails to check if `count * sizeof(redisReply*)` can be represented in `SIZE_MAX`. If it can not, and the `calloc()` call doesn&#39;t itself make this check, it would result in a short allocation and subsequent buffer overflow.</p>\n    "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n        <p>Malicious Redis commands could result in remote code execution.</p>\n    "
+  },
+  "Workaround": {
+    "Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+  },
+  "Resolution": {
+    "Text": "\n        \n        \n        \n        \n        \n        \n        \n    ",
+    "P": [
+      {
+        "Text": "All hiredis users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All hiredis-py users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=dev-libs/hiredis-1.0.1\"\n        ",
+      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=dev-python/hiredis-2.0.0\"\n        "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2021-32765",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-32765"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ajak",
+      "Tag": "requester",
+      "Timestamp": "2022-10-31T01:29:20.506011Z"
+    },
+    {
+      "Text": "ajak",
+      "Tag": "submitter",
+      "Timestamp": "2022-10-31T01:29:20.514033Z"
+    }
+  ]
+}

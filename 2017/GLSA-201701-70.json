@@ -1,0 +1,98 @@
+{
+  "ID": "201701-70",
+  "Title": "Firewalld: Improper authentication methods",
+  "Synopsis": "A vulnerability in Firewalld allows firewall configurations to be\n    modified by unauthenticated users.\n  ",
+  "Product": {
+    "Text": "firewalld",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-01-29",
+  "Revised": {
+    "Text": "2017-01-29",
+    "Count": "1"
+  },
+  "Bug": [
+    "591458"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-firewall/firewalld",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.4.3.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.4.3.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Firewalld provides a dynamically managed firewall with support for\n      network/firewall zones to define the trust level of network connections\n      or interfaces.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A flaw in Firewalld allows any locally logged in user to tamper with or\n      change firewall settings.  This is due to how Firewalld handles\n      authentication via polkit which is not properly applied to 5 particular\n      functions to include: addPassthrough, removePassthrough, addEntry,\n      removeEntry, and setEntries.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A local attacker could tamper or change firewall settings leading to the\n      additional exposure of systems to include unauthorized remote access.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Firewalld users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-firewall/firewalld-0.4.3.3\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2016-5410",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-5410"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "b-man",
+      "Tag": "requester",
+      "Timestamp": "2017-01-04T03:14:04Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2017-01-29T16:21:27Z"
+    }
+  ]
+}

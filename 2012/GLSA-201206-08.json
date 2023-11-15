@@ -1,0 +1,103 @@
+{
+  "ID": "201206-08",
+  "Title": "Wicd: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in Wicd, the worst of\n    which might allow execution of arbitrary code as root.\n  ",
+  "Product": {
+    "Text": "wicd",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-06-21",
+  "Revised": {
+    "Text": "2012-06-21",
+    "Count": "1"
+  },
+  "Bug": [
+    "401005",
+    "411729"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/wicd",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.7.2.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.7.2.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Wicd is an open source wired and wireless network manager for Linux.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Two vulnerabilities have been found in Wicd:</p>\n    \n    <ul>\n      <li>Passwords and passphrases are written to /var/log/wicd\n        (CVE-2012-0813).\n      </li>\n      <li>Input from the daemon's D-Bus interface is not properly sanitized\n        (CVE-2012-2095).\n      </li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A local attacker could gain privileges of the root user or obtain\n      sensitive information.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Wicd users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/wicd-1.7.2.1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-0813",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0813"
+      },
+      {
+        "Text": "CVE-2012-2095",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-2095"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    underling\n  ",
+      "Tag": "requester",
+      "Timestamp": "2012-04-15T04:06:17Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-06-21T10:10:59Z"
+    }
+  ]
+}

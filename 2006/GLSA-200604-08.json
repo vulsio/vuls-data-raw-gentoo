@@ -1,0 +1,107 @@
+{
+  "ID": "200604-08",
+  "Title": "libapreq2: Denial of Service vulnerability",
+  "Synopsis": "\n    A vulnerability has been reported in libapreq2 which could lead to a Denial\n    of Service.\n  ",
+  "Product": {
+    "Text": "libapreq2",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-04-17",
+  "Revised": {
+    "Text": "2006-04-17",
+    "Count": "01"
+  },
+  "Bug": [
+    "128610"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apache/libapreq2",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.07",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.07",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    libapreq is a shared library with associated modules for\n    manipulating client request data via the Apache API.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    A vulnerability has been reported in the apreq_parse_headers() and\n    apreq_parse_urlencoded() functions of Apache2::Request.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could possibly exploit the vulnerability to\n    cause a Denial of Service by CPU consumption.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All libapreq2 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apache/libapreq2-2.07\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-0042",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0042"
+      },
+      {
+        "Text": "libapreq2 Changes",
+        "Link": "https://svn.apache.org/viewcvs.cgi/httpd/apreq/tags/v2_07/CHANGES?rev=376998&view=markup"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-04-09T19:33:11Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-04-11T17:20:17Z"
+    },
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-04-13T19:11:49Z"
+    }
+  ]
+}

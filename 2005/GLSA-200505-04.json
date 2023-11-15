@@ -1,0 +1,136 @@
+{
+  "ID": "200505-04",
+  "Title": "GnuTLS: Denial of Service vulnerability",
+  "Synopsis": "\n    The GnuTLS library is vulnerable to Denial of Service attacks.\n  ",
+  "Product": {
+    "Text": "GnuTLS",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-05-09",
+  "Revised": {
+    "Text": "2005-05-09",
+    "Count": "01"
+  },
+  "Bug": [
+    "90726"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-libs/gnutls",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.3",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.0.25",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    GnuTLS is a free TLS 1.0 and SSL 3.0 implementation for the GNU\n    project.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    A vulnerability has been discovered in the record packet parsing\n    in the GnuTLS library. Additionally, a flaw was also found in the RSA\n    key export functionality.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could exploit this vulnerability and cause a\n    Denial of Service to any application that utilizes the GnuTLS library.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All GnuTLS users should remove the existing installation and\n    upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    Due to small API changes with the previous version, please do\n    the following to ensure your applications are using the latest GnuTLS\n    that you just emerged.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    Previously exported RSA keys can be fixed by executing the\n    following command on the key files:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --unmerge gnutls\n    # emerge --ask --oneshot --verbose net-libs/gnutls",
+      "\n    # revdep-rebuild --soname-regexp libgnutls.so.1[0-1]",
+      "\n    # certtool -k infile outfile"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "GnuTLS Announcement",
+        "Link": "http://lists.gnupg.org/pipermail/gnutls-dev/2005-April/000858.html"
+      },
+      {
+        "Text": "CAN-2005-1431",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1431"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-04-29T18:20:03Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-04-30T14:44:07Z"
+    },
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-04-30T16:35:11Z"
+    }
+  ]
+}

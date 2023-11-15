@@ -1,0 +1,103 @@
+{
+  "ID": "201101-02",
+  "Title": "Tor: Remote heap-based buffer overflow",
+  "Synopsis": "\n    Tor is vulnerable to a heap-based buffer overflow that may allow arbitrary\n    code execution.\n  ",
+  "Product": {
+    "Text": "Tor",
+    "Type": "ebuild"
+  },
+  "Announced": "2011-01-15",
+  "Revised": {
+    "Text": "2011-01-15",
+    "Count": "01"
+  },
+  "Bug": [
+    "349312"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/tor",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.2.1.28",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.2.1.28",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Tor is an implementation of second generation Onion Routing, a\n    connection-oriented anonymizing communication service.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Tor contains a heap-based buffer overflow in the processing of user or\n    attacker supplied data. No additional information is available.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    Successful exploitation of this vulnerability may allow an\n    unauthenticated remote attacker to execute arbitrary code with the\n    permissions of the Tor user, or to cause a Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Tor users should upgrade to the latest stable version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/tor-0.2.1.28\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2010-1676",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-1676"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    underling\n  ",
+      "Tag": "requester",
+      "Timestamp": "2011-01-07T23:48:00Z"
+    },
+    {
+      "Text": "\n    underling\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2011-01-08T05:24:30Z"
+    },
+    {
+      "Text": "\n    underling\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2011-01-08T05:24:40Z"
+    }
+  ]
+}

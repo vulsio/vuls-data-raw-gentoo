@@ -1,0 +1,103 @@
+{
+  "ID": "201006-09",
+  "Title": "sudo: Privilege escalation",
+  "Synopsis": "\n    A flaw in sudo's -e option may allow local attackers to execute arbitrary\n    commands.\n  ",
+  "Product": {
+    "Text": "sudo",
+    "Type": "ebuild"
+  },
+  "Announced": "2010-06-01",
+  "Revised": {
+    "Text": "2010-06-01",
+    "Count": "01"
+  },
+  "Bug": [
+    "321697"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-admin/sudo",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.7.2_p6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.7.2_p6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    sudo allows a system administrator to give users the ability to run\n    commands as other users.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The command matching functionality does not properly handle when a file\n    in the current working directory has the same name as a pseudo-command\n    in the sudoers file and the PATH contains an entry for \".\".\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A local attacker with the permission to run sudoedit could, under\n    certain circumstances, execute arbitrary commands as whichever user he\n    has permission to run sudoedit as, typically root.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All sudo users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-admin/sudo-1.7.2_p6\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2010-1163",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-1163"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2010-05-29T20:27:33Z"
+    },
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2010-05-30T14:58:46Z"
+    },
+    {
+      "Text": "\n    vorlon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2010-05-30T18:08:55Z"
+    }
+  ]
+}

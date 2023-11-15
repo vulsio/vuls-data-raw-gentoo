@@ -1,0 +1,111 @@
+{
+  "ID": "200611-26",
+  "Title": "ProFTPD: Remote execution of arbitrary code",
+  "Synopsis": "\n    ProFTPD is affected by mutiple vulnerabilities allowing for the remote\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "proftpd",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-11-30",
+  "Revised": {
+    "Text": "2006-11-30",
+    "Count": "01"
+  },
+  "Bug": [
+    "154650"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-ftp/proftpd",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.3.0a",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.3.0a",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    ProFTPD is a highly-configurable FTP server.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Evgeny Legerov discovered a stack-based buffer overflow in the\n    s_replace() function in support.c, as well as a buffer overflow in in\n    the mod_tls module. Additionally, an off-by-two error related to the\n    CommandBufferSize configuration directive was reported.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    An authenticated attacker could exploit the s_replace() vulnerability\n    by uploading a crafted .message file or sending specially crafted\n    commands to the server, possibly resulting in the execution of\n    arbitrary code with the rights of the user running ProFTPD. An\n    unauthenticated attacker could send specially crafted data to the\n    server with mod_tls enabled which could result in the execution of\n    arbitrary code with the rights of the user running ProFTPD. Finally,\n    the off-by-two error related to the CommandBufferSize configuration\n    directive was fixed - exploitability of this error is disputed. Note\n    that the default configuration on Gentoo is to run ProFTPD as an\n    unprivileged user, and has mod_tls disabled.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All ProFTPD users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-ftp/proftpd-1.3.0a\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-5815",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5815"
+      },
+      {
+        "Text": "CVE-2006-6170",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6170"
+      },
+      {
+        "Text": "CVE-2006-6171 (disputed)",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6171"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-11-28T20:50:41Z"
+    },
+    {
+      "Text": "\n    aetius\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-11-29T12:52:56Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-11-30T22:38:58Z"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "ID": "201406-03",
+  "Title": "Fail2ban: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in Fail2ban, the worst of\n    which allows remote attackers to cause a Denial of Service condition.\n  ",
+  "Product": {
+    "Text": "fail2ban",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-06-01",
+  "Revised": {
+    "Text": "2014-06-01",
+    "Count": "1"
+  },
+  "Bug": [
+    "364883",
+    "473118",
+    "499802"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-analyzer/fail2ban",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.8.12",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.8.12",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Fail2ban is a tool for parsing log files and banning IP addresses which\n      show suspicious behavior.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in Fail2ban. Please review\n      the CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could send a crafted URL to a web site which, when\n      parsed by Fail2ban, would deny a specific IP address. Also, errors in\n      regular expressions within certain filters can cause arbitrary IP\n      addresses to be banned. Furthermore, a local attacker could perform\n      symlink attacks to overwrite arbitrary files with the privileges of the\n      user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Fail2ban users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-analyzer/fail2ban-0.8.12\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-5023",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-5023"
+      },
+      {
+        "Text": "CVE-2013-2178",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2178"
+      },
+      {
+        "Text": "CVE-2013-7176",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-7176"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "craig",
+      "Tag": "requester",
+      "Timestamp": "2011-10-07T23:37:06Z"
+    },
+    {
+      "Text": "\n    pinkbyte\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2014-06-01T15:17:17Z"
+    }
+  ]
+}

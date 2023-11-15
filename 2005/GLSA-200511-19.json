@@ -1,0 +1,108 @@
+{
+  "ID": "200511-19",
+  "Title": "eix: Insecure temporary file creation",
+  "Synopsis": "\n    eix has an insecure temporary file creation vulnerability, potentially\n    allowing a local user to overwrite arbitrary files.\n  ",
+  "Product": {
+    "Text": "eix",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-11-22",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "112061"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-portage/eix",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.5.0_pre2",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.3.0-r2",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.5.0_pre2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    eix is a small utility for searching ebuilds with indexing for fast\n    results.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Eric Romang discovered that eix creates a temporary file with a\n    predictable name. eix creates a temporary file in /tmp/eix.*.sync where\n    * is the process ID of the shell running eix.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker can watch the process list and determine the process\n    ID of the shell running eix while the \"emerge --sync\" command is\n    running, then create a link from the corresponding temporary file to a\n    system file, which would result in the file being overwritten with the\n    rights of the user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All eix users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose app-portage/eix"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-3785",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3785"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-11-21T09:11:10Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-11-21T20:48:28Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-11-22T08:46:22Z"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "ID": "200712-09",
+  "Title": "Ruby-GNOME2: Format string error",
+  "Synopsis": "\n    A format string error has been discovered in Ruby-GNOME2, possibly leading\n    to the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "ruby-gtk2",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-12-09",
+  "Revised": {
+    "Text": "2007-12-09",
+    "Count": "01"
+  },
+  "Bug": [
+    "200623"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-ruby/ruby-gtk2",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.16.0-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.16.0-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Ruby-GNOME2 is a set of bindings for using GTK+ within the Ruby\n    programming language.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Chris Rohlf discovered that the \"Gtk::MessageDialog.new()\" method in\n    the file gtk/src/rbgtkmessagedialog.c does not properly sanitize the\n    \"message\" parameter before passing it to the gtk_message_dialog_new()\n    function.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could send a specially crafted string to an\n    application using Ruby-GNOME2, possibly leading to the execution of\n    arbitrary code with the privileges of the user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Ruby-GNOME2 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-ruby/ruby-gtk2-0.16.0-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-6183",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6183"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-12-04T18:00:54Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-12-04T22:24:59Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-12-04T22:25:12Z"
+    }
+  ]
+}

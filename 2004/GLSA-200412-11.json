@@ -1,0 +1,107 @@
+{
+  "ID": "200412-11",
+  "Title": "Cscope: Insecure creation of temporary files",
+  "Synopsis": "\n    Cscope is vulnerable to symlink attacks, potentially allowing a local user\n    to overwrite arbitrary files.\n  ",
+  "Product": {
+    "Text": "cscope",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-12-16",
+  "Revised": {
+    "Text": "2004-12-16",
+    "Count": "01"
+  },
+  "Bug": [
+    "71595"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-util/cscope",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "15.5-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "15.5-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Cscope is a developer utility used to browse and manage source\n    code.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Cscope creates temporary files in world-writable directories with\n    predictable names.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary\n    files directory, pointing to a valid file somewhere on the filesystem.\n    When Cscope is executed, this would result in the file being\n    overwritten with the rights of the user running the utility, which\n    could be the root user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Cscope users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-util/cscope-15.5-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-0996",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0996"
+      },
+      {
+        "Text": "BugTraq Advisory",
+        "Link": "http://www.securityfocus.com/archive/1/381443"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-11-29T16:19:40Z"
+    },
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-11-29T17:43:04Z"
+    },
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-12-16T20:27:56Z"
+    }
+  ]
+}

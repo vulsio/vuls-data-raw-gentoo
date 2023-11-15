@@ -1,0 +1,107 @@
+{
+  "ID": "200708-06",
+  "Title": "Net::DNS: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities have been discovered in the Net::DNS Perl module,\n    allowing for a Denial of Service and a cache poisoning attack.\n  ",
+  "Product": {
+    "Text": "net-dns",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-08-11",
+  "Revised": {
+    "Text": "2007-08-11",
+    "Count": "01"
+  },
+  "Bug": [
+    "184029"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-perl/Net-DNS",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.60",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.60",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Net::DNS is a Perl implementation of a DNS resolver.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    hjp discovered an error when handling DNS query IDs which make them\n    partially predictable. Steffen Ullrich discovered an error in the\n    dn_expand() function which could lead to an endless loop.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could send a specially crafted DNS request to the\n    server which could result in a Denial of Service with an infinite\n    recursion, or perform a cache poisoning attack.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Net::DNS users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-perl/Net-DNS-0.60\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-3377",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3377"
+      },
+      {
+        "Text": "CVE-2007-3409",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3409"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    aetius\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-07-16T13:12:37Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-07-25T05:32:52Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-07-30T09:51:53Z"
+    }
+  ]
+}

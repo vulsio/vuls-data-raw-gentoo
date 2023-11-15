@@ -1,0 +1,103 @@
+{
+  "ID": "200712-12",
+  "Title": "IRC Services: Denial of service",
+  "Synopsis": "\n    A Denial of Service vulnerability has been reported in IRC Services.\n  ",
+  "Product": {
+    "Text": "ircservices",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-12-13",
+  "Revised": {
+    "Text": "2007-12-13",
+    "Count": "01"
+  },
+  "Bug": [
+    "199897"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-irc/ircservices",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.0.63",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.0.63",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    IRC Services is a system of services to be used with Internet Relay\n    Chat networks.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    loverboy reported that the \"default_encrypt()\" function in file\n    encrypt.c does not properly handle overly long passwords.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could provide an overly long password to the\n    vulnerable server, resulting in a Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All IRC Services users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-irc/ircservices-5.0.63\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-6122",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6122"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-12-10T21:48:10Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-12-10T21:51:02Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-12-11T22:44:42Z"
+    }
+  ]
+}

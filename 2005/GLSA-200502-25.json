@@ -1,0 +1,103 @@
+{
+  "ID": "200502-25",
+  "Title": "Squid: Denial of Service through DNS responses",
+  "Synopsis": "\n    Squid contains a bug in the handling of certain DNS responses resulting in\n    a Denial of Service.\n  ",
+  "Product": {
+    "Text": "Squid",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-02-18",
+  "Revised": {
+    "Text": "2005-02-18",
+    "Count": "01"
+  },
+  "Bug": [
+    "81997"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-proxy/squid",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.5.8",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.5.8",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Squid is a full-featured Web proxy cache designed to run on\n    Unix-like systems. It supports proxying and caching of HTTP, FTP, and\n    other protocols, as well as SSL support, cache hierarchies, transparent\n    caching, access control lists and many other features.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Handling of certain DNS responses trigger assertion failures.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    By returning a specially crafted DNS response an attacker could\n    cause Squid to crash by triggering an assertion failure.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Squid users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-proxy/squid-2.5.8\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-0446",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0446"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-02-17T20:33:19Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-02-17T21:28:52Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-02-18T09:26:51Z"
+    }
+  ]
+}

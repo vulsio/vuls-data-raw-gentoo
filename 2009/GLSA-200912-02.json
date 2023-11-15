@@ -1,0 +1,168 @@
+{
+  "ID": "200912-02",
+  "Title": "Ruby on Rails: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities have been discovered in Rails, the worst of which\n    leading to the execution of arbitrary SQL statements.\n  ",
+  "Product": {
+    "Text": "rails",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-12-20",
+  "Revised": {
+    "Text": "2009-12-20",
+    "Count": "01"
+  },
+  "Bug": [
+    "200159",
+    "237385",
+    "247549",
+    "276279",
+    "283396",
+    "294797"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-ruby/rails",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.3.5",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "2.2.3-r1",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.2.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Ruby on Rails is a web-application and persistence framework.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The following vulnerabilities were discovered:\n    </p>\n    <ul>\n    <li>sameer\n    reported that lib/action_controller/cgi_process.rb removes the\n    :cookie_only attribute from the default session options\n    (CVE-2007-6077), due to an incomplete fix for CVE-2007-5380 (GLSA\n    200711-17).</li>\n    <li>Tobias Schlottke reported that the :limit and\n    :offset parameters of ActiveRecord::Base.find() are not properly\n    sanitized before being processed (CVE-2008-4094).</li>\n    <li>Steve from\n    Coderrr reported that the CRSF protection in protect_from_forgery()\n    does not parse the text/plain MIME format (CVE-2008-7248).</li>\n    <li>Nate reported a documentation error that leads to the assumption\n    that a block returning nil passed to\n    authenticate_or_request_with_http_digest() would deny access to the\n    requested resource (CVE-2009-2422).</li>\n    <li>Brian Mastenbrook reported\n    an input sanitation flaw, related to multibyte characters\n    (CVE-2009-3009).</li>\n    <li>Gabe da Silveira reported an input sanitation\n    flaw in the strip_tags() function (CVE-2009-4214).</li>\n    <li>Coda Hale\n    reported an information disclosure vulnerability related to HMAC\n    digests (CVE-2009-3086).</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could send specially crafted requests to a vulnerable\n    application, possibly leading to the execution of arbitrary SQL\n    statements or a circumvention of access control. A remote attacker\n    could also conduct session fixation attacks to hijack a user's session\n    or bypass the CSRF protection mechanism, or furthermore conduct\n    Cross-Site Scripting attacks or forge a digest via multiple attempts.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Ruby on Rails 2.3.x users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Ruby on Rails 2.2.x users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    NOTE: All applications using Ruby on Rails should also be configured to\n    use the latest version available by running \"rake rails:update\" inside\n    the application directory.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-ruby/rails-2.3.5\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \"=dev-ruby/rails-2.2.3-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-5380",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5380"
+      },
+      {
+        "Text": "CVE-2007-6077",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6077"
+      },
+      {
+        "Text": "CVE-2008-4094",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4094"
+      },
+      {
+        "Text": "CVE-2008-7248",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-7248"
+      },
+      {
+        "Text": "CVE-2009-2422",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2422"
+      },
+      {
+        "Text": "CVE-2009-3009",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3009"
+      },
+      {
+        "Text": "CVE-2009-3086",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3086"
+      },
+      {
+        "Text": "CVE-2009-4214",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4214"
+      },
+      {
+        "Text": "GLSA 200711-17",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200711-17.xml"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-11-30T18:11:48Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-03-11T19:07:59Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-03-19T12:17:35Z"
+    }
+  ]
+}

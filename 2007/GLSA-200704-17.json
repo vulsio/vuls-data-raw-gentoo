@@ -1,0 +1,103 @@
+{
+  "ID": "200704-17",
+  "Title": "3proxy: Buffer overflow",
+  "Synopsis": "\n    A vulnerability has been discovered in 3proxy allowing for the remote\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "3proxy",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-04-22",
+  "Revised": {
+    "Text": "2007-04-22",
+    "Count": "01"
+  },
+  "Bug": [
+    "174429"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-proxy/3proxy",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.5.3h",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.5.3h",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    3proxy is a multi-protocol proxy, including HTTP/HTTPS/FTP and SOCKS\n    support.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The 3proxy development team reported a buffer overflow in the logurl()\n    function when processing overly long requests.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker could send a specially crafted transparent request to\n    the proxy, resulting in the execution of arbitrary code with privileges\n    of the user running 3proxy.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All 3proxy users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-proxy/3proxy-0.5.3h\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-2031",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2031"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-04-18T05:09:29Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-04-18T08:45:40Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-04-18T20:45:40Z"
+    }
+  ]
+}

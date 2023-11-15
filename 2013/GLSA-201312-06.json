@@ -1,0 +1,98 @@
+{
+  "ID": "201312-06",
+  "Title": "Festival: Arbitrary code execution",
+  "Synopsis": "A vulnerability in Festival could result in arbitrary code\n    execution, and privilege escalation.\n  ",
+  "Product": {
+    "Text": "festival",
+    "Type": "ebuild"
+  },
+  "Announced": "2013-12-09",
+  "Revised": {
+    "Text": "2013-12-09",
+    "Count": "1"
+  },
+  "Bug": [
+    "386319"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-accessibility/festival",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Festival is a Text to Speech Engine from The Centre for Speech\n      Technology Research.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A vulnerability in Festival Server has an incorrect path in\n      LD_LIBRARY_PATH, which allows local users to place a Trojan horse shared\n      library in the current working directory.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A local attacker can execute arbitrary a Trojan horse shared library,\n      potentially resulting in arbitrary code execution and privilege\n      escalation.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Festival users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-accessibility/festival-2.1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2010-3996",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-3996"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2012-12-04T22:54:17Z"
+    },
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2013-12-09T05:41:22Z"
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "ID": "200908-07",
+  "Title": "Perl Compress::Raw modules: Denial of service",
+  "Synopsis": "\n    An off-by-one error in Compress::Raw::Zlib and Compress::Raw::Bzip2 might\n    lead to a Denial of Service.\n  ",
+  "Product": {
+    "Text": "Compress-Raw-Zlib Compress-Raw-Bzip2",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-08-18",
+  "Revised": {
+    "Text": "2009-08-18",
+    "Count": "01"
+  },
+  "Bug": [
+    "273141",
+    "281955"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "perl-core/Compress-Raw-Zlib",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.020",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.020",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "perl-core/Compress-Raw-Bzip2",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.020",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.020",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Compress::Raw::Zlib and Compress::Raw::Bzip2 are Perl low-level\n    interfaces to the zlib and bzip2 compression libraries.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Leo Bergolth reported an off-by-one error in the inflate() function in\n    Zlib.xs of Compress::Raw::Zlib, possibly leading to a heap-based buffer\n    overflow (CVE-2009-1391).\n    </p>\n    <p>\n    Paul Marquess discovered a similar vulnerability in the bzinflate()\n    function in Bzip2.xs of Compress::Raw::Bzip2 (CVE-2009-1884).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker might entice a user or automated system (for instance\n    running SpamAssassin or AMaViS) to process specially crafted files,\n    possibly resulting in a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Compress::Raw::Zlib users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Compress::Raw::Bzip2 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=perl-core/Compress-Raw-Zlib-2.020\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=perl-core/Compress-Raw-Bzip2-2.020\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-1391",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1391"
+      },
+      {
+        "Text": "CVE-2009-1884",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1884"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-07-19T17:33:05Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-08-04T18:43:38Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-08-05T13:32:50Z"
+    }
+  ]
+}

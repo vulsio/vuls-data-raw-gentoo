@@ -1,0 +1,106 @@
+{
+  "ID": "200604-06",
+  "Title": "ClamAV: Multiple vulnerabilities",
+  "Synopsis": "\n    ClamAV contains multiple vulnerabilities that could lead to remote\n    execution of arbitrary code or cause an application crash.\n  ",
+  "Product": {
+    "Text": "clamav",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-04-07",
+  "Revised": {
+    "Text": "2006-04-07",
+    "Count": "01"
+  },
+  "Bug": [
+    "128963"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-antivirus/clamav",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.88.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.88.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    ClamAV is a GPL virus scanner.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    ClamAV contains format string vulnerabilities in the logging code\n    (CVE-2006-1615). Furthermore Damian Put discovered an integer overflow\n    in ClamAV's PE header parser (CVE-2006-1614) and David Luyer discovered\n    that ClamAV can be tricked into performing an invalid memory access\n    (CVE-2006-1630).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    By sending a malicious attachment to a mail server running ClamAV,\n    a remote attacker could cause a Denial of Service or the execution of\n    arbitrary code. Note that the overflow in the PE header parser is only\n    exploitable when the ArchiveMaxFileSize option is disabled.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All ClamAV users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-antivirus/clamav-0.88.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-1614",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1614"
+      },
+      {
+        "Text": "CVE-2006-1615",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1615"
+      },
+      {
+        "Text": "CVE-2006-1630",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1630"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-04-06T18:09:01Z"
+    },
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-04-07T19:35:00Z"
+    }
+  ]
+}

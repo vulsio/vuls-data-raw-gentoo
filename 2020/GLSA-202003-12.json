@@ -1,0 +1,103 @@
+{
+  "ID": "202003-12",
+  "Title": "sudo: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in sudo, the worst of\n    which could result in privilege escalation.\n  ",
+  "Product": {
+    "Text": "sudo",
+    "Type": "ebuild"
+  },
+  "Announced": "2020-03-14",
+  "Revised": {
+    "Text": "2020-03-14",
+    "Count": "1"
+  },
+  "Bug": [
+    "697462",
+    "707574"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-admin/sudo",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.8.31",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.8.31",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>sudo (su “do”) allows a system administrator to delegate authority\n      to give certain users (or groups of users) the ability to run some (or\n      all) commands as root or another user while providing an audit trail of\n      the commands and their arguments.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in sudo. Please review the\n      CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A local attacker could expose or corrupt memory information, inject code\n      to be run as a root user or cause a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All sudo users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-admin/sudo-1.8.31\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2019-14287",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2019-14287"
+      },
+      {
+        "Text": "CVE-2019-18634",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2019-18634"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2020-02-29T15:42:31Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2020-03-14T16:20:57Z"
+    }
+  ]
+}

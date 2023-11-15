@@ -1,0 +1,133 @@
+{
+  "ID": "202008-10",
+  "Title": "Chromium, Google Chrome: Heap buffer overflow",
+  "Synopsis": "\n    A vulnerablity has been found in Chromium and Google Chrome that could\n    allow a remote attacker to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "chromium,google-chrome",
+    "Type": "ebuild"
+  },
+  "Announced": "2020-08-25",
+  "Revised": {
+    "Text": "2020-08-25",
+    "Count": "1"
+  },
+  "Bug": [
+    "737942"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-client/chromium",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "84.0.4147.135",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "84.0.4147.135",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "www-client/google-chrome",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "84.0.4147.135",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "84.0.4147.135",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    \n    <p>Chromium is an open-source browser project that aims to build a safer,\n      faster, and more stable way for all users to experience the web.\n    </p>\n    \n    <p>Google Chrome is one fast, simple, and secure browser for all your\n      devices.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A buffer overflow has been discovered in Chromium and Google Chrome’s\n      SwiftShader component.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker, by enticing a user to visit a specially crafted\n      website, could execute arbitrary code with the privileges of the process.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Chromium users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All Google Chrome users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=www-client/chromium-84.0.4147.135\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=www-client/google-chrome-84.0.4147.135\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2020-6556",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-6556"
+      },
+      {
+        "Text": "\n      Upstream advisory\n    ",
+        "Link": "https://chromereleases.googleblog.com/2020/08/stable-channel-update-for-desktop_18.html"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "sam_c",
+      "Tag": "requester",
+      "Timestamp": "2020-08-24T00:46:35Z"
+    },
+    {
+      "Text": "sam_c",
+      "Tag": "submitter",
+      "Timestamp": "2020-08-25T12:53:21Z"
+    }
+  ]
+}

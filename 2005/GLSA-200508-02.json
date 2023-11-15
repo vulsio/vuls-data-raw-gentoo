@@ -1,0 +1,103 @@
+{
+  "ID": "200508-02",
+  "Title": "ProFTPD: Format string vulnerabilities",
+  "Synopsis": "\n    Under specific circumstances, ProFTPD is vulnerable to format string\n    vulnerabilities, potentially resulting in the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "proftpd",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-08-01",
+  "Revised": {
+    "Text": "2005-08-01",
+    "Count": "01"
+  },
+  "Bug": [
+    "100364"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-ftp/proftpd",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.10-r7",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.10-r7",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    ProFTPD is a configurable GPL-licensed FTP server software.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p> \"infamous42md\" reported that ProFTPD is vulnerable to format\n    string vulnerabilities when displaying a shutdown message containing\n    the name of the current directory, and when displaying response\n    messages to the client using information retrieved from a database\n    using mod_sql.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could create a directory with a malicious name\n    that would trigger the format string issue if specific variables are\n    used in the shutdown message, potentially resulting in a Denial of\n    Service or the execution of arbitrary code with the rights of the user\n    running the ProFTPD server. An attacker with control over the database\n    contents could achieve the same result by introducing malicious\n    messages that would trigger the other format string issue when used in\n    server responses.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Do not use the \"%C\", \"%R\", or \"%U\" in shutdown messages, and do\n    not set the \"SQLShowInfo\" directive.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All ProFTPD users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-ftp/proftpd-1.2.10-r7\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-2390",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2390"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-07-27T14:13:46Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-07-30T00:11:05Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-07-31T14:18:50Z"
+    }
+  ]
+}

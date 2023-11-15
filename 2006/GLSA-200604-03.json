@@ -1,0 +1,112 @@
+{
+  "ID": "200604-03",
+  "Title": "FreeRADIUS: Authentication bypass in EAP-MSCHAPv2 module",
+  "Synopsis": "\n    The EAP-MSCHAPv2 module of FreeRADIUS is affected by a validation issue\n    which causes some authentication checks to be bypassed.\n  ",
+  "Product": {
+    "Text": "freeradius",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-04-04",
+  "Revised": {
+    "Text": "2006-04-04",
+    "Count": "01"
+  },
+  "Bug": [
+    "127229"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-dialup/freeradius",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.1.1",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.0.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    FreeRADIUS is an open source RADIUS authentication server\n    implementation.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    FreeRADIUS suffers from insufficient input validation in the\n    EAP-MSCHAPv2 state machine.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could cause the server to bypass authentication checks\n    by manipulating the EAP-MSCHAPv2 client state machine.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All FreeRADIUS users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dialup/freeradius-1.1.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-1354",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1354"
+      },
+      {
+        "Text": "FreeRADIUS Vulnerability Notifications",
+        "Link": "https://www.freeradius.org/security.html"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-04-01T10:41:34Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-04-01T10:42:20Z"
+    },
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-04-01T23:30:58Z"
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "ID": "200407-01",
+  "Title": "Esearch: Insecure temp file handling",
+  "Synopsis": "\n    The eupdatedb utility in esearch creates a file in /tmp without first\n    checking for symlinks. This makes it possible for any user to create\n    arbitrary files.\n  ",
+  "Product": {
+    "Text": "esearch",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-07-01",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "55424"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-portage/esearch",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.6.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.6.1",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Esearch is a replacement for the Portage command \"emerge search\". It\n    uses an index to speed up searching of the Portage tree.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The eupdatedb utility uses a temporary file (/tmp/esearchdb.py.tmp) to\n    indicate that the eupdatedb process is running. When run, eupdatedb\n    checks to see if this file exists, but it does not check to see if it\n    is a broken symlink. In the event that the file is a broken symlink,\n    the script will create the file pointed to by the symlink, instead of\n    printing an error and exiting.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could create a symlink from /tmp/esearchdb.py.tmp to a\n    nonexistent file (such as /etc/nologin), and the file will be created\n    the next time esearchdb is run.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time. All users should upgrade to\n    the latest available version of esearch.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All users should upgrade to the latest available version of esearch, as\n    follows:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv \">=app-portage/esearch-0.6.2\"\n    # emerge \">=app-portage/esearch-0.6.2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2004-0655",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0655"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    condordes\n  ",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

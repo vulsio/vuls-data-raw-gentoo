@@ -1,0 +1,98 @@
+{
+  "ID": "201611-07",
+  "Title": "polkit: Heap-corruption on duplicate IDs ",
+  "Synopsis": "polkit is vulnerable to local privilege escalation.",
+  "Product": {
+    "Text": "polkit",
+    "Type": "ebuild"
+  },
+  "Announced": "2016-11-15",
+  "Revised": {
+    "Text": "2016-11-15",
+    "Count": "1"
+  },
+  "Bug": [
+    "555666"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-auth/polkit",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.113",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.113",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>polkit is a toolkit for managing policies relating to unprivileged\n      processes communicating with privileged processes.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A vulnerability was discovered in polkit’s\n      polkit_backend_action_pool_init function due to duplicate action IDs in\n      action descriptions.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>Local attackers are able to gain unauthorized privileges on the system.</p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All polkit users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-auth/polkit-0.113\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2015-3255",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-3255"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "requester",
+      "Timestamp": "2015-12-25T00:47:50Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2016-11-15T07:23:23Z"
+    }
+  ]
+}

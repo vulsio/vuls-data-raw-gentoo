@@ -1,0 +1,98 @@
+{
+  "ID": "202210-20",
+  "Title": "Nicotine+: Denial of Service",
+  "Synopsis": "A vulnerability has been found in Nicotine+ which could result in denial of service.",
+  "Product": {
+    "Text": "nicotine+",
+    "Type": "ebuild"
+  },
+  "Announced": "2022-10-31",
+  "Revised": {
+    "Text": "2022-10-31",
+    "Count": "1"
+  },
+  "Bug": [
+    "835374"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-p2p/nicotine+",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.2.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.2.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n        <p>Nicotine+ is a fork of nicotine, a Soulseek client in Python.</p>\n    "
+  },
+  "Description": {
+    "Text": "\n        <p>Nicotine+ does not sufficiently validate file path in download requests.</p>\n    "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n        <p>A file path in a download request which contains a null character will cause a crash of Nicotine+.</p>\n    "
+  },
+  "Workaround": {
+    "Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+  },
+  "Resolution": {
+    "Text": "\n        \n        \n        \n    ",
+    "P": [
+      {
+        "Text": "All Nicotine+ users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=net-p2p/nicotine+-3.2.1\"\n        "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2021-45848",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-45848"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ajak",
+      "Tag": "requester",
+      "Timestamp": "2022-10-31T01:14:04.156383Z"
+    },
+    {
+      "Text": "ajak",
+      "Tag": "submitter",
+      "Timestamp": "2022-10-31T01:14:04.161504Z"
+    }
+  ]
+}

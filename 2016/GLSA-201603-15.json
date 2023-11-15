@@ -1,0 +1,137 @@
+{
+  "ID": "201603-15",
+  "Title": "OpenSSL: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in OpenSSL, the worst\n    allowing remote attackers to decrypt TLS sessions.\n  ",
+  "Product": {
+    "Text": "openssl",
+    "Type": "ebuild"
+  },
+  "Announced": "2016-03-20",
+  "Revised": {
+    "Text": "2016-03-20",
+    "Count": "1"
+  },
+  "Bug": [
+    "575548"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/openssl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.2g-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.2g-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>OpenSSL is an Open Source toolkit implementing the Secure Sockets Layer\n      (SSL v2/v3) and Transport Layer Security (TLS v1) as well as a general\n      purpose cryptography library.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in OpenSSL, the worst\n      being a cross-protocol attack called DROWN that could lead to the\n      decryption of TLS sessions. Please review the CVE identifiers referenced\n      below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could decrypt TLS sessions by using a server\n      supporting SSLv2 and EXPORT cipher suites as a\n      Bleichenbacher RSA padding oracle, cause a Denial of Service condition,\n      obtain sensitive information from memory and (in rare circumstances)\n      recover RSA keys.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>A workaround for DROWN is disabling the SSLv2 protocol on all SSL/TLS\n      servers.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All OpenSSL users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "Please note that beginning with OpenSSL 1.0.2, in order to mitigate the\n      DROWN attack, the OpenSSL project disables SSLv2 by default at\n      build-time. As this change would cause severe issues with some Gentoo\n      packages that depend on OpenSSL, Gentoo still ships OpenSSL with SSLv2\n      enabled at build-time. Note that this does not mean that you are still\n      vulnerable to DROWN because the OpenSSL project has taken further\n      precautions and applications would need to explicitly request SSLv2. We\n      are working on a migration path to phase out SSLv2 that ensures that no\n      user-facing issues occur. Please reference bug 576128 for further details\n      on how this decision was made.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/openssl-1.0.2g-r2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2016-0702",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-0702"
+      },
+      {
+        "Text": "CVE-2016-0703",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-0703"
+      },
+      {
+        "Text": "CVE-2016-0704",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-0704"
+      },
+      {
+        "Text": "CVE-2016-0705",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-0705"
+      },
+      {
+        "Text": "CVE-2016-0797",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-0797"
+      },
+      {
+        "Text": "CVE-2016-0798",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-0798"
+      },
+      {
+        "Text": "CVE-2016-0799",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-0799"
+      },
+      {
+        "Text": "CVE-2016-0800",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-0800"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2016-03-01T14:45:13Z"
+    },
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2016-03-20T13:46:37Z"
+    }
+  ]
+}

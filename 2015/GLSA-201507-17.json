@@ -1,0 +1,98 @@
+{
+  "ID": "201507-17",
+  "Title": "SNMP: Denial of service",
+  "Synopsis": "A vulnerability in SNMP could lead to a Denial of Service\n    condition.\n  ",
+  "Product": {
+    "Text": "net-snmp",
+    "Type": "ebuild"
+  },
+  "Announced": "2015-07-10",
+  "Revised": {
+    "Text": "2015-07-10",
+    "Count": "2"
+  },
+  "Bug": [
+    "522062"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-analyzer/net-snmp",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.7.3_pre5-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.7.3_pre5-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>SNMP is a widely used protocol for monitoring the health and welfare of\n      network equipment.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A specially crafted trap message triggers a conversion to an erroneous\n      variable type when the -OQ option is used.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could possibly cause a Denial of Service condition.</p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All SNMP users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=net-analyzer/net-snmp-5.7.3_pre5-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-3565",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-3565"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "K_F",
+      "Tag": "requester",
+      "Timestamp": "2015-05-11T16:23:12Z"
+    },
+    {
+      "Text": "Zlogene",
+      "Tag": "submitter",
+      "Timestamp": "2015-07-10T14:05:46Z"
+    }
+  ]
+}

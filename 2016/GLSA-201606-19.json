@@ -1,0 +1,98 @@
+{
+  "ID": "201606-19",
+  "Title": "kwalletd: Information disclosure",
+  "Synopsis": "Kwalletd password stores are vulnerable to codebook attacks.",
+  "Product": {
+    "Text": "kwalletd",
+    "Type": "ebuild"
+  },
+  "Announced": "2016-06-27",
+  "Revised": {
+    "Text": "2016-06-27",
+    "Count": "1"
+  },
+  "Bug": [
+    "496768"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "kde-apps/kwalletd",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.14.3-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.14.3-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Kwalletd is is a credentials management application for KDE.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Kwalletd in KWallet uses Blowfish with ECB mode instead of CBC mode when\n      encrypting the password store.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>Local attackers, with access to the password store, could conduct a\n      codebook attack in order to obtain confidential passwords.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All kwalletd users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=kde-apps/kwalletd-4.14.3-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2013-7252",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-7252"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "K_F",
+      "Tag": "requester",
+      "Timestamp": "2015-05-11T16:07:07Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2016-06-27T22:45:32Z"
+    }
+  ]
+}

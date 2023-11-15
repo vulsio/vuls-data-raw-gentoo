@@ -1,0 +1,106 @@
+{
+  "ID": "200609-10",
+  "Title": "DokuWiki: Arbitrary command execution",
+  "Synopsis": "\n    Vulnerabilities in some accessory scripts of DokuWiki allow remote code\n    execution.\n  ",
+  "Product": {
+    "Text": "dokuwiki",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-09-14",
+  "Revised": {
+    "Text": "2006-09-14",
+    "Count": "01"
+  },
+  "Bug": [
+    "146800"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/dokuwiki",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "20060309d",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "20060309d",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    DokuWiki is a wiki targeted at developer teams, workgroups and small\n    companies. It does not use a database backend.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    \"rgod\" discovered that DokuWiki doesn't sanitize the X-FORWARDED-FOR\n    HTTP header, allowing the injection of arbitrary contents - such as PHP\n    commands - into a file. Additionally, the accessory scripts installed\n    in the \"bin\" DokuWiki directory are vulnerable to directory traversal\n    attacks, allowing to copy and execute the previously injected code.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker may execute arbitrary PHP (and thus probably system)\n    commands with the permissions of the user running the process serving\n    DokuWiki pages.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Disable remote access to the \"bin\" subdirectory of the DokuWiki\n    installation. Remove the directory if you don't use the scripts in\n    there.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All DokuWiki users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/dokuwiki-20060309d\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-4674",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4674"
+      },
+      {
+        "Text": "CVE-2006-4675",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4675"
+      },
+      {
+        "Text": "CVE-2006-4679",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4679"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    frilled\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-09-14T07:55:18Z"
+    },
+    {
+      "Text": "\n    frilled\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-09-14T15:09:04Z"
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "ID": "201201-18",
+  "Title": "bip: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities in bip might allow remote unauthenticated\n    attackers to cause a Denial of Service or possibly execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "bip",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-01-30",
+  "Revised": {
+    "Text": "2012-01-30",
+    "Count": "1"
+  },
+  "Bug": [
+    "336321",
+    "400599"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-irc/bip",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.8.8-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.8.8-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>bip is a multi-user IRC proxy with SSL support.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in bip:</p>\n    \n    <ul>\n      <li>Uli Schlachter reported that bip does not properly handle invalid\n        data during authentication, resulting in a daemon crash\n        (CVE-2010-3071).\n      </li>\n      <li>Julien Tinnes reported that bip does not check the number of open\n        file descriptors against FD_SETSIZE, resulting in a stack buffer\n        overflow (CVE-2012-0806).\n      </li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A remote attacker could exploit these vulnerabilities to execute\n      arbitrary code with the privileges of the user running the bip daemon, or\n      cause a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All bip users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "NOTE: The CVE-2010-3071 flaw was already corrected in an earlier version\n      of bip and is included in this advisory for completeness.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-irc/bip-0.8.8-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2010-3071",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-3071"
+      },
+      {
+        "Text": "CVE-2012-0806",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0806"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    underling\n  ",
+      "Tag": "requester",
+      "Timestamp": "2011-10-07T23:37:17Z"
+    },
+    {
+      "Text": "a3li",
+      "Tag": "submitter",
+      "Timestamp": "2012-01-30T12:28:13Z"
+    }
+  ]
+}

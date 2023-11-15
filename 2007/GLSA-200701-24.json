@@ -1,0 +1,103 @@
+{
+  "ID": "200701-24",
+  "Title": "VLC media player: Format string vulnerability",
+  "Synopsis": "\n    VLC media player improperly handles format strings, allowing for the\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "vlc",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-01-26",
+  "Revised": {
+    "Text": "2007-01-26",
+    "Count": "01"
+  },
+  "Bug": [
+    "159845"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-video/vlc",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.8.6-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.8.6-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    VLC media player is a multimedia player for various audio and video\n    formats.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Kevin Finisterre has discovered that when handling media locations,\n    various functions throughout VLC media player make improper use of\n    format strings.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could entice a user to open a specially crafted media\n    location or M3U file with VLC media player, and execute arbitrary code\n    on the system with the rights of the user running VLC media player.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All VLC media player users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-video/vlc-0.8.6-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-0017",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0017"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-01-15T23:30:46Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-01-16T17:08:55Z"
+    },
+    {
+      "Text": "\n    shellsage\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-01-18T02:10:51Z"
+    }
+  ]
+}

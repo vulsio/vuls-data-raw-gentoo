@@ -1,0 +1,102 @@
+{
+  "ID": "201706-22",
+  "Title": "libksba: Denial of Service and information disclosure",
+  "Synopsis": "Multiple vulnerabilities have been found in libksba which might\n    allow remote attackers to obtain sensitive information or crash an\n    libksba-based application.\n  ",
+  "Product": {
+    "Text": "libksba",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-06-22",
+  "Revised": {
+    "Text": "2017-06-22",
+    "Count": "1"
+  },
+  "Bug": [
+    "592078"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/libksba",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.3.5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.3.5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Libksba is a X.509 and CMS (PKCS#7) library.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was found that an unproportionate amount of memory is allocated when\n      parsing crafted certificates in libskba, which may lead to Denial of\n      Service condition.\n    </p>\n    \n    <p>Moreover in libksba 1.3.4, allocated memory is uninitialized and could\n      potentially contain sensitive data left in freed memory block.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker, able to interact with an libksba-based application,\n      could possibly obtain sensitive information or cause a Denial of Service\n      condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All libksba users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/libksba-1.3.5\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2016-4579",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-4579"
+      },
+      {
+        "Text": "Upstream report",
+        "Link": "http://seclists.org/oss-sec/2016/q3/343"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "BlueKnight",
+      "Tag": "requester",
+      "Timestamp": "2017-04-19T05:51:10Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2017-06-22T17:42:08Z"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "ID": "201709-19",
+  "Title": "Exim: Local privilege escalation",
+  "Synopsis": "A vulnerability in Exim may allow local users to gain root\n    privileges.\n    \n  ",
+  "Product": {
+    "Text": "exim",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-09-24",
+  "Revised": {
+    "Text": "2017-09-24",
+    "Count": "1"
+  },
+  "Bug": [
+    "622212"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "mail-mta/exim",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.89-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.89-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Exim is a message transfer agent (MTA) developed at the University of\n      Cambridge for use on Unix systems connected to the Internet.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Exim supports the use of multiple “-p” command line arguments\n      causing a memory leak. This could lead to a stack-clash in user-space and\n      as result the attacker can, “clash” or “smash” the stack or\n      another memory region, or “jump” over the stack guard-page.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A local attacker could obtain root privileges.</p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Exim users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=mail-mta/exim-4.89-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2017-1000369\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-1000369"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "chrisadr",
+      "Tag": "requester",
+      "Timestamp": "2017-09-19T01:45:18Z"
+    },
+    {
+      "Text": "chrisadr",
+      "Tag": "submitter",
+      "Timestamp": "2017-09-24T15:49:28Z"
+    }
+  ]
+}

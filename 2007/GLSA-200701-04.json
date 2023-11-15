@@ -1,0 +1,130 @@
+{
+  "ID": "200701-04",
+  "Title": "SeaMonkey: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities have been reported in the SeaMonkey project, some\n    of which may allow the remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "seamonkey",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-01-10",
+  "Revised": {
+    "Text": "2007-01-10",
+    "Count": "01"
+  },
+  "Bug": [
+    "158576"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-client/seamonkey",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.7",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.7",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The SeaMonkey project is a community effort to deliver\n    production-quality releases of code derived from the application\n    formerly known as the 'Mozilla Application Suite'.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    An anonymous researcher found evidence of memory corruption in the way\n    SeaMonkey handles certain types of SVG comment DOM nodes. Georgi\n    Guninski and David Bienvenu discovered buffer overflows in the\n    processing of long \"Content-Type:\" and long non-ASCII MIME email\n    headers. Additionally, Frederik Reiss discovered a heap-based buffer\n    overflow in the conversion of a CSS cursor. Several other issues with\n    memory corruption were also fixed. SeaMonkey also contains less severe\n    vulnerabilities involving JavaScript and Java.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    An attacker could entice a user to load malicious JavaScript or a\n    malicious web page with a SeaMonkey application, possibly leading to\n    the execution of arbitrary code with the rights of the user running\n    those products. An attacker could also perform cross-site scripting\n    attacks, leading to the exposure of sensitive information, like user\n    credentials. Note that the execution of JavaScript or Java applets is\n    disabled by default in the SeaMonkey email client, and enabling it is\n    strongly discouraged.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There are no known workarounds for all the issues at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All SeaMonkey users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/seamonkey-1.0.7\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-6497",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6497"
+      },
+      {
+        "Text": "CVE-2006-6498",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6498"
+      },
+      {
+        "Text": "CVE-2006-6499",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6499"
+      },
+      {
+        "Text": "CVE-2006-6500",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6500"
+      },
+      {
+        "Text": "CVE-2006-6501",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6501"
+      },
+      {
+        "Text": "CVE-2006-6502",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6502"
+      },
+      {
+        "Text": "CVE-2006-6503",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6503"
+      },
+      {
+        "Text": "CVE-2006-6504",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6504"
+      },
+      {
+        "Text": "CVE-2006-6505",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6505"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-12-28T16:02:48Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-01-10T21:26:08Z"
+    }
+  ]
+}

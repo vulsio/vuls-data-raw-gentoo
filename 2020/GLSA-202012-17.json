@@ -1,0 +1,98 @@
+{
+  "ID": "202012-17",
+  "Title": "D-Bus: Denial of service",
+  "Synopsis": "A local Denial of Service vulnerability was discovered in D-Bus.",
+  "Product": {
+    "Text": "dbus",
+    "Type": "ebuild"
+  },
+  "Announced": "2020-12-23",
+  "Revised": {
+    "Text": "2020-12-23",
+    "Count": "1"
+  },
+  "Bug": [
+    "755392"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-apps/dbus",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.12.20",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.12.20",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>D-Bus is a message bus system which processes can use to talk to each\n      other.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was discovered that D-Bus did not properly handle the situation when\n      two usernames have the same numeric UID.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>An attacker could possibly cause a Denial of Service condition or\n      trigger other undefined behavior, possibly including incorrect\n      authorization decisions.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All D-Bus users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-apps/dbus-1.12.20\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      dbus 1.12.20 security update announcement\n    ",
+        "Link": "https://lists.freedesktop.org/archives/ftp-release/2020-July/000758.html"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2020-12-23T00:47:59Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2020-12-23T19:54:00Z"
+    }
+  ]
+}

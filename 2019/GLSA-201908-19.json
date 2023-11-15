@@ -1,0 +1,98 @@
+{
+  "ID": "201908-19",
+  "Title": "GNU Wget: Arbitrary code execution",
+  "Synopsis": "A vulnerability in GNU Wget might allow an attacker to execute\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "wget",
+    "Type": "ebuild"
+  },
+  "Announced": "2019-08-15",
+  "Revised": {
+    "Text": "2019-08-15",
+    "Count": "1"
+  },
+  "Bug": [
+    "682994"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/wget",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.20.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.20.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>GNU Wget is a free software package for retrieving files using HTTP,\n      HTTPS and FTP, the most widely-used Internet protocols.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A buffer overflow was discovered in GNU’s Wget.</p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>An attacker could possibly execute arbitrary code with the privileges of\n      the process or cause a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All GNU Wget users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/wget-1.20.3\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2019-5953",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2019-5953"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "b-man",
+      "Tag": "requester",
+      "Timestamp": "2019-08-10T20:46:31Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2019-08-15T17:51:26Z"
+    }
+  ]
+}

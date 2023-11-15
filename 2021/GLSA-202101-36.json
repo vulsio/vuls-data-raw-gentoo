@@ -1,0 +1,120 @@
+{
+  "ID": "202101-36",
+  "Title": "ImageMagick: Command injection",
+  "Synopsis": "A vulnerability in ImageMagick's handling of PDF was discovered\n    possibly allowing code execution.\n  ",
+  "Product": {
+    "Text": "imagemagick",
+    "Type": "ebuild"
+  },
+  "Announced": "2021-01-29",
+  "Revised": {
+    "Text": "2021-01-29",
+    "Count": "1"
+  },
+  "Bug": [
+    "756829"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-gfx/imagemagick",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "7.0.10.41-r1",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "6.9.11.41-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "7.0.10.41-r1",
+            "Range": "lt",
+            "Slot": ""
+          },
+          {
+            "Text": "6.9.11.41-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>A collection of tools and libraries for many image formats.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A flaw in ImageMagick’s handling of password protected PDFs was\n      discovered.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted PDF\n      using ImageMagick possibly resulting in execution of arbitrary code with\n      the privileges of the process or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>Do not open untrusted PDFs.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All ImageMagick 7 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All ImageMagick 6 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=media-gfx/imagemagick-7.0.10.41-r1\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=media-gfx/imagemagick-6.9.11.41-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2020-29599",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-29599"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "sam_c",
+      "Tag": "requester",
+      "Timestamp": "2021-01-28T02:24:26Z"
+    },
+    {
+      "Text": "sam_c",
+      "Tag": "submitter",
+      "Timestamp": "2021-01-29T00:02:42Z"
+    }
+  ]
+}

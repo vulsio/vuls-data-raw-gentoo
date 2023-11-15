@@ -1,0 +1,98 @@
+{
+  "ID": "201309-07",
+  "Title": "libotr: Arbitrary code execution",
+  "Synopsis": "A buffer overflow vulnerability in libotr could allow a remote\n    attacker to execute arbitrary code or cause a Denial of Service condition.\n  ",
+  "Product": {
+    "Text": "libotr",
+    "Type": "ebuild"
+  },
+  "Announced": "2013-09-15",
+  "Revised": {
+    "Text": "2013-09-15",
+    "Count": "1"
+  },
+  "Bug": [
+    "430486"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-libs/libotr",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.2.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.2.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>libotr is a portable off-the-record messaging library.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple heap-based buffer overflows are present in the Base64 decoder\n      of libotr.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A remote attacker could send a specially crafted OTR message, resulting\n      in arbitrary code execution with the privileges of the process or a\n      Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All libotr users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-libs/libotr-3.2.1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-3461",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3461"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    creffett\n  ",
+      "Tag": "requester",
+      "Timestamp": "2013-09-11T14:50:36Z"
+    },
+    {
+      "Text": "\n    creffett\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2013-09-15T04:34:43Z"
+    }
+  ]
+}

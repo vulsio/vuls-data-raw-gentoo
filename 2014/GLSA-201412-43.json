@@ -1,0 +1,103 @@
+{
+  "ID": "201412-43",
+  "Title": "MuPDF: User-assisted execution of arbitrary code",
+  "Synopsis": "Multiple vulnerabilities have been found in MuPDF, possibly\n    resulting in remote code execution or Denial of Service.\n  ",
+  "Product": {
+    "Text": "mupdf",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-12-26",
+  "Revised": {
+    "Text": "2014-12-26",
+    "Count": "1"
+  },
+  "Bug": [
+    "358029",
+    "498876"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-text/mupdf",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.3_p20140118",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.3_p20140118",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>MuPDF is a lightweight PDF viewer and toolkit written in portable C. </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in MuPDF. Please review\n      the CVE identifier and Secunia Research referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted PDF\n      using MuPDF, possibly resulting in execution of arbitrary code with the\n      privileges of the process or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All MuPDF users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-text/mupdf-1.3_p20140118\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-2013",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-2013"
+      },
+      {
+        "Text": "Secunia Research:\n      MuPDF Two Integer Overflow Vulnerabilities\n    ",
+        "Link": "https://secunia.com/secunia_research/2011-12/"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    underling\n  ",
+      "Tag": "requester",
+      "Timestamp": "2011-10-07T23:37:03Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2014-12-26T17:54:11Z"
+    }
+  ]
+}

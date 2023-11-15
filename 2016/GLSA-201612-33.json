@@ -1,0 +1,98 @@
+{
+  "ID": "201612-33",
+  "Title": "GPL Ghostscript: User-assisted execution of arbitrary code",
+  "Synopsis": "An integer overflow in GPL Ghostscript may allow remote attackers\n    to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "ghostscript-gpl",
+    "Type": "ebuild"
+  },
+  "Announced": "2016-12-13",
+  "Revised": {
+    "Text": "2016-12-13",
+    "Count": "2"
+  },
+  "Bug": [
+    "556316"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-text/ghostscript-gpl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "9.09",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "9.09",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Ghostscript is an interpreter for the PostScript language and for PDF.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>An integer overflow flaw was discovered that leads to an out-of-bounds\n      read and write in gs_ttf.ps.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted file,\n      possibly resulting in the execution of arbitrary code with the privileges\n      of the process or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All GPL Ghostscript users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-text/ghostscript-gpl-9.09\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2015-3228",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-3228"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2016-11-22T15:13:30Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2016-12-13T06:58:50Z"
+    }
+  ]
+}

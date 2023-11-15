@@ -1,0 +1,103 @@
+{
+  "ID": "200512-13",
+  "Title": "Dropbear: Privilege escalation",
+  "Synopsis": "\n    A buffer overflow in Dropbear could allow authenticated users to execute\n    arbitrary code as the root user.\n  ",
+  "Product": {
+    "Text": "dropbear",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-12-23",
+  "Revised": {
+    "Text": "2005-12-23",
+    "Count": "01"
+  },
+  "Bug": [
+    "116006"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/dropbear",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.47",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.47",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Dropbear is an SSH server and client with a small memory\n    footprint.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Under certain conditions Dropbear could fail to allocate a\n    sufficient amount of memory, possibly resulting in a buffer overflow.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    By sending specially crafted data to the server, authenticated\n    users could exploit this vulnerability to execute arbitrary code with\n    the permissions of the SSH server user, which is the root user by\n    default.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Dropbear users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/dropbear-0.47\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-4178",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-4178"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-12-20T11:10:03Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-12-20T16:40:12Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-12-21T10:00:54Z"
+    }
+  ]
+}

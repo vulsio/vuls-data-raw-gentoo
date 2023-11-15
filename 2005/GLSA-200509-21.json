@@ -1,0 +1,117 @@
+{
+  "ID": "200509-21",
+  "Title": "Hylafax: Insecure temporary file creation in xferfaxstats script",
+  "Synopsis": "\n    Hylafax is vulnerable to linking attacks, potentially allowing a local user\n    to overwrite arbitrary files.\n  ",
+  "Product": {
+    "Text": "hylafax",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-09-30",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "106882"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/hylafax",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.2.0-r3",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "4.2.1-r2",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "4.2.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.2.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Hylafax is a client-server fax package for class 1 and 2 fax modems.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Javier Fernandez-Sanguino has discovered that xferfaxstats cron script\n    supplied by Hylafax insecurely creates temporary files with predictable\n    filenames.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary file\n    directory, pointing to a valid file somewhere on the filesystem. When\n    the xferfaxstats script of Hylafax is executed, this would result in\n    the file being overwritten with the rights of the user running the\n    script, which typically is the root user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Hylafax users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose net-misc/hylafax"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Original bug report",
+        "Link": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=329384"
+      },
+      {
+        "Text": "CVE-2005-3069",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3069"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-09-28T15:24:43Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-09-28T19:07:36Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-09-30T07:45:48Z"
+    }
+  ]
+}

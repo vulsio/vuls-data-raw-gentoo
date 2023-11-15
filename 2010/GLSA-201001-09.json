@@ -1,0 +1,120 @@
+{
+  "ID": "201001-09",
+  "Title": "Ruby: Terminal Control Character Injection",
+  "Synopsis": "\n    An input sanitation flaw in the WEBrick HTTP server included in Ruby might\n    allow remote attackers to inject arbitrary control characters into terminal\n    sessions.\n  ",
+  "Product": {
+    "Text": "ruby",
+    "Type": "ebuild"
+  },
+  "Announced": "2010-01-14",
+  "Revised": {
+    "Text": "2010-01-14",
+    "Count": "01"
+  },
+  "Bug": [
+    "300468"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-lang/ruby",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.8.7_p249",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.8.6_p388",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.8.7_p249",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Ruby is an interpreted scripting language for quick and easy\n    object-oriented programming. It comes bundled with a HTTP server\n    (\"WEBrick\").\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Giovanni Pellerano, Alessandro Tanasi and Francesco Ongaro reported\n    that WEBrick does not filter terminal control characters, for instance\n    when handling HTTP logs.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could send a specially crafted HTTP request to a\n    WEBrick server to inject arbitrary terminal control characters,\n    possibly resulting in the execution of arbitrary commands, data loss,\n    or other unspecified impact. This could also be used to facilitate\n    other attacks.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Ruby 1.8.7 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Ruby 1.8.6 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/ruby-1.8.7_p249\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/ruby-1.8.6_p388\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-4492",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4492"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "requester",
+      "Timestamp": "2010-01-13T19:56:42Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2010-01-13T20:40:12Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2010-01-13T20:40:18Z"
+    }
+  ]
+}

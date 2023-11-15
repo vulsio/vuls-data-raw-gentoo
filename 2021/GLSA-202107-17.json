@@ -1,0 +1,98 @@
+{
+  "ID": "202107-17",
+  "Title": "Mechanize: Command injection",
+  "Synopsis": "A file named by an attacker being utilized by Mechanize could\n    result in arbitrary code execution.\n  ",
+  "Product": {
+    "Text": "mechanize",
+    "Type": "ebuild"
+  },
+  "Announced": "2021-07-08",
+  "Revised": {
+    "Text": "2021-07-08",
+    "Count": "1"
+  },
+  "Bug": [
+    "768609"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-ruby/mechanize",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.7.7",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.7.7",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Mechanize is a Ruby library used for automating interaction with\n      websites.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Mechanize does not neutralize filename input and could allow arbitrary\n      code execution if an attacker can control filenames used by Mechanize.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>Please review the referenced CVE identifiers for details.</p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Mechanize users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-ruby/mechanize-2.7.7\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2021-21289",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-21289"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2021-05-31T21:54:48Z"
+    },
+    {
+      "Text": "ajak",
+      "Tag": "submitter",
+      "Timestamp": "2021-07-08T03:38:36Z"
+    }
+  ]
+}

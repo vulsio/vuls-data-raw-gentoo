@@ -1,0 +1,103 @@
+{
+  "ID": "200510-06",
+  "Title": "Dia: Arbitrary code execution through SVG import",
+  "Synopsis": "\n    Improperly sanitised data in Dia allows remote attackers to execute\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "dia",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-10-06",
+  "Revised": {
+    "Text": "2005-10-06",
+    "Count": "01"
+  },
+  "Bug": [
+    "107916"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-office/dia",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.94-r3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.94-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Dia is a gtk+ based diagram creation program released under the\n    GPL license.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Joxean Koret discovered that the SVG import plugin in Dia fails to\n    properly sanitise data read from an SVG file.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could create a specially crafted SVG file, which, when\n    imported into Dia, could lead to the execution of arbitrary code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Dia users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-office/dia-0.94-r3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-2966",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2966"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-10-04T12:58:56Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-10-04T18:51:11Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-10-05T07:39:21Z"
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "ID": "200408-17",
+  "Title": "rsync: Potential information leakage",
+  "Synopsis": "\n    rsync fails to properly sanitize paths. This vulnerability could allow the\n    listing of arbitrary files and allow file overwriting outside module's path\n    on rsync server configurations that allow uploading.\n  ",
+  "Product": {
+    "Text": "rsync",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-08-17",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "60309"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/rsync",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.6.0-r3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.6.0-r2",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    rsync is a utility that provides fast incremental file transfers. It is\n    used to efficiently synchronize files between hosts and is used by\n    emerge to fetch Gentoo's Portage tree. rsyncd is the rsync daemon,\n    which listens to connections from rsync clients.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The paths sent by the rsync client are not checked thoroughly enough.\n    It does not affect the normal send/receive filenames that specify what\n    files should be transferred. It does affect certain option paths that\n    cause auxilliary files to be read or written.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    When rsyncd is used without chroot (\"use chroot = false\" in the\n    rsyncd.conf file), this vulnerability could allow the listing of\n    arbitrary files outside module's path and allow file overwriting\n    outside module's path on rsync server configurations that allows\n    uploading. Both possibilities are exposed only when chroot option is\n    disabled.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    You should never set the rsync daemon to run with \"use chroot = false\".\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All users should update to the latest version of the rsync package.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv \">=net-misc/rsync-2.6.0-r3\"\n    # emerge \">=net-misc/rsync-2.6.0-r3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "rsync Advisory",
+        "Link": "https://samba.org/rsync/#security_aug04"
+      },
+      {
+        "Text": "rsync 2.6.2 announcement",
+        "Link": "https://lists.samba.org/archive/rsync-announce/2004/000017.html"
+      },
+      {
+        "Text": "CVE-2004-0792",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0792"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-08-14T19:22:18Z"
+    }
+  ]
+}

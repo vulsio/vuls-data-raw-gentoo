@@ -1,0 +1,98 @@
+{
+  "ID": "201405-28",
+  "Title": "xmonad-contrib: Arbitrary code execution",
+  "Synopsis": "A remote command injection vulnerability has been discovered in\n    xmonad-contrib.\n  ",
+  "Product": {
+    "Text": "xmonad-contrib",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-05-28",
+  "Revised": {
+    "Text": "2014-05-28",
+    "Count": "1"
+  },
+  "Bug": [
+    "478288"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "x11-wm/xmonad-contrib",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.11.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.11.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>xmonad-contrib is a set of third party tiling algorithms,\n      configurations, and scripts for xmonad.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A vulnerability in the Xmonad.Hooks.DynamicLog module could allow a\n      malicious website with a specially crafted title to inject commands into\n      the title bar which would be executed when the bar is clicked.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could possibly execute arbitrary code with the\n      privileges of the process or cause a Denial of\n      Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All xmonad-contrib users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=x11-wm/xmonad-contrib-0.11.2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2013-1436",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1436"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    pinkbyte\n  ",
+      "Tag": "requester",
+      "Timestamp": "2014-02-27T13:53:05Z"
+    },
+    {
+      "Text": "\n    pinkbyte\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2014-05-28T06:50:25Z"
+    }
+  ]
+}

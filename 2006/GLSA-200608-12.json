@@ -1,0 +1,107 @@
+{
+  "ID": "200608-12",
+  "Title": "x11vnc: Authentication bypass in included LibVNCServer code",
+  "Synopsis": "\n    VNC servers created with x11vnc accept insecure protocol types, even when\n    the server does not offer it, resulting in the possibility of unauthorized\n    access to the server.\n  ",
+  "Product": {
+    "Text": "x11vnc",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-08-07",
+  "Revised": {
+    "Text": "2006-08-07",
+    "Count": "01"
+  },
+  "Bug": [
+    "142559"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "x11-misc/x11vnc",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.8.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.8.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    x11vnc provides VNC servers for X displays.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    x11vnc includes vulnerable LibVNCServer code, which fails to properly\n    validate protocol types effectively letting users decide what protocol\n    to use, such as \"Type 1 - None\" (GLSA-200608-05). x11vnc will accept\n    this security type, even if it is not offered by the server.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    An attacker could exploit this vulnerability to gain unauthorized\n    access with the privileges of the user running the VNC server.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All x11vnc users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-misc/x11vnc-0.8.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-2450",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2450"
+      },
+      {
+        "Text": "GLSA-200608-05",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200608-05.xml"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-08-05T07:18:47Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-08-05T16:44:29Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-08-05T17:17:11Z"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "ID": "200510-02",
+  "Title": "Berkeley MPEG Tools: Multiple insecure temporary files",
+  "Synopsis": "\n    The Berkeley MPEG Tools use temporary files in various insecure ways,\n    potentially allowing a local user to overwrite arbitrary files.\n  ",
+  "Product": {
+    "Text": "MPEG Tools",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-10-03",
+  "Revised": {
+    "Text": "2005-10-03",
+    "Count": "01"
+  },
+  "Bug": [
+    "107344"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-video/mpeg-tools",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.5b-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.5b-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Berkeley MPEG Tools are a collection of utilities for\n    manipulating MPEG video technology, including an encoder (mpeg_encode)\n    and various conversion utilities.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Mike Frysinger of the Gentoo Security Team discovered that\n    mpeg_encode and the conversion utilities were creating temporary files\n    with predictable or fixed filenames. The 'test' make target of the MPEG\n    Tools also relied on several temporary files created insecurely.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary\n    files directory, pointing to a valid file somewhere on the filesystem.\n    When the utilities are executed (or 'make test' is run), this would\n    result in the file being overwritten with the rights of the user\n    running the command.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Berkeley MPEG Tools users should upgrade to the latest\n    version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-video/mpeg-tools-1.5b-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-3115",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-3115"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-09-30T07:41:47Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-10-01T09:55:55Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-10-02T13:13:54Z"
+    }
+  ]
+}

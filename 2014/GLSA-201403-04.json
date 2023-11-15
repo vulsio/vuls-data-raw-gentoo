@@ -1,0 +1,109 @@
+{
+  "ID": "201403-04",
+  "Title": "QtCore: Denial of service",
+  "Synopsis": "A vulnerability in QXmlSimpleReader class can be used to cause a\n    Denial of Service condition.\n  ",
+  "Product": {
+    "Text": "qt-core",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-03-13",
+  "Revised": {
+    "Text": "2014-03-13",
+    "Count": "1"
+  },
+  "Bug": [
+    "494728"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-qt/qtcore",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.8.5-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.8.5-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>The Qt toolkit is a comprehensive C++ application development framework.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A vulnerability in QXmlSimpleReader’s XML entity parsing has been\n      discovered.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted XML\n      file using an application linked against QtCore, possibly resulting in\n      Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All QtCore users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "Packages which depend on this library may need to be recompiled. Tools\n      such as revdep-rebuild may assist in identifying these packages.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-qt/qtcore-4.8.5-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2013-4549",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4549"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "Zlogene",
+      "Tag": "requester",
+      "Timestamp": "2014-02-19T14:50:40Z"
+    },
+    {
+      "Text": "\n    pinkbyte\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2014-03-13T16:57:59Z"
+    }
+  ]
+}

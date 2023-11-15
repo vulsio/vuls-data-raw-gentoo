@@ -1,0 +1,107 @@
+{
+  "ID": "200509-02",
+  "Title": "Gnumeric: Heap overflow in the included PCRE library",
+  "Synopsis": "\n    Gnumeric is vulnerable to a heap overflow, possibly leading to the\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "Gnumeric",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-09-03",
+  "Revised": {
+    "Text": "2005-09-03",
+    "Count": "01"
+  },
+  "Bug": [
+    "104010"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-office/gnumeric",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.3-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.3-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Gnumeric spreadsheet is a versatile application developed as\n    part of the GNOME Office project. libpcre is a library providing\n    functions for Perl-compatible regular expressions.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Gnumeric contains a private copy of libpcre which is subject to an\n    integer overflow leading to a heap overflow (see GLSA 200508-17).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could potentially exploit this vulnerability by\n    tricking a user into opening a specially crafted spreadsheet, which\n    could lead to the execution of arbitrary code with the privileges of\n    the user running Gnumeric.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Gnumeric users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-office/gnumeric-1.4.3-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-2491",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2491"
+      },
+      {
+        "Text": "GLSA 200508-17",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200508-17.xml"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-09-02T07:34:06Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-09-02T08:27:17Z"
+    },
+    {
+      "Text": "\n    formula7\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-09-02T15:23:09Z"
+    }
+  ]
+}

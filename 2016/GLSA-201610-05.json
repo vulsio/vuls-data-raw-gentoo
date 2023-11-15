@@ -1,0 +1,185 @@
+{
+  "ID": "201610-05",
+  "Title": "Subversion, Serf: Multiple Vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in Subversion and Serf,\n    the worst of which could lead to execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "subversion serf",
+    "Type": "ebuild"
+  },
+  "Announced": "2016-10-11",
+  "Revised": {
+    "Text": "2016-10-11",
+    "Count": "2"
+  },
+  "Bug": [
+    "500482",
+    "518716",
+    "519202",
+    "545348",
+    "556076",
+    "567810",
+    "581448",
+    "586046"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-vcs/subversion",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.9.4",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.8.16",
+            "Range": "rgt",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.9.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "net-libs/serf",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.3.7",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.3.7",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Subversion is a version control system intended to eventually replace\n      CVS. Like CVS, it has an optional client-server architecture (where the\n      server can be an Apache server running mod_svn, or an ssh program as in\n      CVS’s :ext: method). In addition to supporting the features found in\n      CVS, Subversion also provides support for moving and copying files and\n      directories.\n    </p>\n    \n    <p>The serf library is a high performance C-based HTTP client library built\n      upon the Apache Portable Runtime (APR) library.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in Subversion and Serf.\n      Please review the CVE identifiers referenced below for details\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could possibly execute arbitrary code with the\n      privileges of the process, conduct a man-in-the-middle attack, obtain\n      sensitive information, or cause a Denial of Service Condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Subversion users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All Serf users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-vcs/subversion-1.9.4\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-libs/serf-1.3.7\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-0032",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0032"
+      },
+      {
+        "Text": "CVE-2014-3504",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-3504"
+      },
+      {
+        "Text": "CVE-2014-3522",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-3522"
+      },
+      {
+        "Text": "CVE-2014-3528",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-3528"
+      },
+      {
+        "Text": "CVE-2015-0202",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-0202"
+      },
+      {
+        "Text": "CVE-2015-0248",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-0248"
+      },
+      {
+        "Text": "CVE-2015-0251",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-0251"
+      },
+      {
+        "Text": "CVE-2015-3184",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-3184"
+      },
+      {
+        "Text": "CVE-2015-3187",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-3187"
+      },
+      {
+        "Text": "CVE-2015-5259",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-5259"
+      },
+      {
+        "Text": "CVE-2016-2167",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-2167"
+      },
+      {
+        "Text": "CVE-2016-2168",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-2168"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "K_F",
+      "Tag": "requester",
+      "Timestamp": "2015-05-11T16:09:05Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2016-10-11T12:44:03Z"
+    }
+  ]
+}

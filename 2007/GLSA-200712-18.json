@@ -1,0 +1,107 @@
+{
+  "ID": "200712-18",
+  "Title": "Multi-Threaded DAAP Daemon: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities in the web server in the Multi-Threaded DAAP\n    Daemon may lead to the remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "mt-daapd",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-12-29",
+  "Revised": {
+    "Text": "2007-12-29",
+    "Count": "01"
+  },
+  "Bug": [
+    "200110"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-sound/mt-daapd",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.2.4.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.2.4.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Multi-Threaded DAAP Daemon (mt-daapd), also known as the Firefly Media\n    Server, is a software to serve digital music to the Roku Soundbridge\n    and Apple's iTunes.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    nnp discovered multiple vulnerabilities in the XML-RPC handler in the\n    file webserver.c. The ws_addarg() function contains a format string\n    vulnerability, as it does not properly sanitize username and password\n    data from the \"Authorization: Basic\" HTTP header line (CVE-2007-5825).\n    The ws_decodepassword() and ws_getheaders() functions do not correctly\n    handle empty Authorization header lines, or header lines without a ':'\n    character, leading to NULL pointer dereferences (CVE-2007-5824).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker could send specially crafted HTTP requests to the web\n    server in the Multi-Threaded DAAP Daemon, possibly leading to the\n    execution of arbitrary code with the privileges of the user running the\n    web server or a Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Multi-Threaded DAAP Daemon users should upgrade to the latest\n    version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-sound/mt-daapd-0.2.4.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-5824",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5824"
+      },
+      {
+        "Text": "CVE-2007-5825",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5825"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-12-18T21:05:33Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-12-23T20:01:54Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-12-23T20:02:16Z"
+    }
+  ]
+}

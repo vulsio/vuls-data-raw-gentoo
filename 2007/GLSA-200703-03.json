@@ -1,0 +1,107 @@
+{
+  "ID": "200703-03",
+  "Title": "ClamAV: Denial of service",
+  "Synopsis": "\n    ClamAV contains two vulnerabilities allowing a Denial of Service.\n  ",
+  "Product": {
+    "Text": "clamav",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-03-02",
+  "Revised": {
+    "Text": "2007-03-02",
+    "Count": "01"
+  },
+  "Bug": [
+    "167201"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-antivirus/clamav",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.90",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.90",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    ClamAV is a GPL virus scanner.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    An anonymous researcher discovered a file descriptor leak error in the\n    processing of CAB archives and a lack of validation of the \"id\"\n    parameter string used to create local files when parsing MIME headers.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker can send several crafted CAB archives with a\n    zero-length record header that will fill the available file descriptors\n    until no other is available, which will prevent ClamAV from scanning\n    most archives. An attacker can also send an email with specially\n    crafted MIME headers to overwrite local files with the permissions of\n    the user running ClamAV, such as the virus database file, which could\n    prevent ClamAV from detecting any virus.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    The first vulnerability can be prevented by refusing any file of type\n    CAB, but there is no known workaround for the second issue.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All ClamAV users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-antivirus/clamav-0.90\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-0897",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0897"
+      },
+      {
+        "Text": "CVE-2007-0898",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0898"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-02-26T22:43:01Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-02-27T13:49:10Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-03-02T00:24:54Z"
+    }
+  ]
+}

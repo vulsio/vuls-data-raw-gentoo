@@ -1,0 +1,98 @@
+{
+  "ID": "201701-67",
+  "Title": "a2ps: Arbitrary code execution",
+  "Synopsis": "A vulnerability in a2ps' fixps script might allow remote attackers\n    to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "a2ps",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-01-29",
+  "Revised": {
+    "Text": "2017-01-29",
+    "Count": "1"
+  },
+  "Bug": [
+    "506352"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-text/a2ps",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.14-r5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.14-r5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>a2ps is an Any to PostScript filter.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>a2ps’ fixps script does not invoke gs with the -dSAFER option.</p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>Remote attackers, by enticing a user to process a specially crafted\n      PostScript file, could delete arbitrary files or execute arbitrary code\n      with the privileges of the process.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All a2ps users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-text/a2ps-4.14-r5\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-0466",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0466"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2017-01-24T18:44:55Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2017-01-29T16:07:45Z"
+    }
+  ]
+}

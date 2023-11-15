@@ -1,0 +1,118 @@
+{
+  "ID": "200712-03",
+  "Title": "GNU Emacs: Multiple vulnerabilities",
+  "Synopsis": "\n    Two vulnerabilities were found in GNU Emacs possibly leading to the\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "emacs",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-12-09",
+  "Revised": {
+    "Text": "2007-12-09",
+    "Count": "01"
+  },
+  "Bug": [
+    "197958",
+    "200297"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-editors/emacs",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "22.1-r3",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "21.4-r14",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "19",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "22.1-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    GNU Emacs is a highly extensible and customizable text editor.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Drake Wilson reported that the hack-local-variables() function in GNU\n    Emacs 22 does not properly match assignments of local variables in a\n    file against a list of unsafe or risky variables, allowing to override\n    them (CVE-2007-5795). Andreas Schwab (SUSE) discovered a stack-based\n    buffer overflow in the format function when handling values with high\n    precision (CVE-2007-6109).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    Remote attackers could entice a user to open a specially crafted file\n    in GNU Emacs, possibly leading to the execution of arbitrary Emacs Lisp\n    code (via CVE-2007-5795) or arbitrary code (via CVE-2007-6109) with the\n    privileges of the user running GNU Emacs.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    The first vulnerability can be worked around by setting the\n    \"enable-local-variables\" option to \"nil\", disabling the processing of\n    local variable lists. GNU Emacs prior to version 22 is not affected by\n    this vulnerability. There is no known workaround for the second\n    vulnerability at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All GNU Emacs users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-editors/emacs-22.1-r3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-5795",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5795"
+      },
+      {
+        "Text": "CVE-2007-6109",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6109"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-11-20T22:12:50Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-12-05T01:01:27Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-12-07T13:59:32Z"
+    }
+  ]
+}

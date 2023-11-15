@@ -1,0 +1,98 @@
+{
+  "ID": "201701-11",
+  "Title": "musl: Integer overflow",
+  "Synopsis": "An integer overflow in musl might allow an attacker to execute\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "musl",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-01-02",
+  "Revised": {
+    "Text": "2017-01-02",
+    "Count": "1"
+  },
+  "Bug": [
+    "597498"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-libs/musl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.1.15-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.15-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>musl is a “libc”, an implementation of the standard library\n      functionality described in the ISO C and POSIX standards, plus common\n      extensions, intended for use on Linux-based systems.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A vulnerability was discovered in musl’s tre_tnfa_run_parallel\n      function buffer overflow logic, due to the incorrect use of integer types\n      and missing overflow checks.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>An attacker, who controls the regular expression and/or string being\n      searched, could execute arbitrary code with the privileges of the\n      process.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All musl users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-libs/musl-1.1.15-r2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2016-8859",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-8859"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "b-man",
+      "Tag": "requester",
+      "Timestamp": "2017-01-02T07:23:08Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2017-01-02T14:34:33Z"
+    }
+  ]
+}

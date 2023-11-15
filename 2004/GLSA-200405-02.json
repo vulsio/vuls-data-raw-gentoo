@@ -1,0 +1,97 @@
+{
+  "ID": "200405-02",
+  "Title": "Multiple vulnerabilities in LHa",
+  "Synopsis": "\n    Two stack-based buffer overflows and two directory traversal problems have\n    been found in LHa. These vulnerabilities can be used to execute arbitrary\n    code or as a denial of service attack.\n  ",
+  "Product": {
+    "Text": "lha",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-05-09",
+  "Revised": {
+    "Text": "2006-10-20",
+    "Count": "02"
+  },
+  "Bug": [
+    "49961"
+  ],
+  "Access": "remote ",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-arch/lha",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "114i-r2",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "114i-r1",
+            "Range": "rle",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    LHa is a console-based program for packing and unpacking LHarc archives.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Ulf Harnhammar found two stack overflows and two directory traversal\n    vulnerabilities in LHa version 1.14 and 1.17. A stack overflow occurs when\n    testing or extracting archives containing long file or directory names.\n    Furthermore, LHa doesn't contain sufficient protection against relative or\n    absolute archive paths.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    The stack overflows can be exploited to execute arbitrary code with the\n    rights of the user testing or extracting the archive. The directory\n    traversal vulnerabilities can be used to overwrite files in the filesystem\n    with the rights of the user extracting the archive, potentially leading to\n    denial of service or privilege escalation. Since LHa is often interfaced to\n    other software like an email virus scanner, this attack can be used\n    remotely.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time. All users are advised to upgrade\n    to the latest available version of LHa.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All users of LHa should upgrade to the latest stable version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n\n    # emerge -pv \">=app-arch/lha-114i-r2\"\n    # emerge \">=app-arch/lha-114i-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-0234",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0234"
+      },
+      {
+        "Text": "CAN-2004-0235",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0235"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

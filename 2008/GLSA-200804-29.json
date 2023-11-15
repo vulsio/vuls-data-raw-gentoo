@@ -1,0 +1,107 @@
+{
+  "ID": "200804-29",
+  "Title": "Comix: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities in Comix may lead to execution of arbitrary\n    commands and a Denial of Service.\n  ",
+  "Product": {
+    "Text": "comix",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-04-25",
+  "Revised": {
+    "Text": "2008-04-25",
+    "Count": "01"
+  },
+  "Bug": [
+    "215694"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-gfx/comix",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.6.4-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.6.4-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Comix is a GTK comic book viewer.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Comix does not properly sanitize filenames containing shell\n    metacharacters when they are passed to the rar, unrar, or jpegtran\n    programs (CVE-2008-1568). Comix also creates directories with\n    predictable names (CVE-2008-1796).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could exploit the first vulnerability by enticing a\n    user to use Comix to open a file with a specially crafted filename,\n    resulting in the execution of arbitrary commands. The second\n    vulnerability could be exploited by a local attacker to cause a Denial\n    of Service by creating a file or directory with the same filename as\n    the predictable filename used by Comix.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Comix users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/comix-3.6.4-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-1568",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1568"
+      },
+      {
+        "Text": "CVE-2008-1796",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1796"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-04-10T14:29:23Z"
+    },
+    {
+      "Text": "\n    mfleming\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-04-10T22:35:39Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-04-13T23:01:03Z"
+    }
+  ]
+}

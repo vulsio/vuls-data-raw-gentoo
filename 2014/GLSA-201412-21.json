@@ -1,0 +1,102 @@
+{
+  "ID": "201412-21",
+  "Title": "mod_wsgi: Privilege escalation",
+  "Synopsis": "Two vulnerabilities have been found in mod_wsgi, the worst of which\n    could result in local privilege escalation.\n  ",
+  "Product": {
+    "Text": "mod_wsgi",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-12-13",
+  "Revised": {
+    "Text": "2014-12-13",
+    "Count": "1"
+  },
+  "Bug": [
+    "510938"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apache/mod_wsgi",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>mod_wsgi is an Apache2 module for running Python WSGI applications.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Two vulnerabilities have been found in mod_wsgi:</p>\n    \n    <ul>\n      <li>Error codes returned by setuid are not properly handled\n        (CVE-2014-0240)\n      </li>\n      <li>A memory leak exists via the “Content-Type” header\n        (CVE-2014-0242)\n      </li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A local attacker may be able to gain escalated privileges. Furthermore,\n      a remote attacker may be able to obtain sensitive information.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All mod_wsgi users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=www-apache/mod_wsgi-3.5\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-0240",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0240"
+      },
+      {
+        "Text": "CVE-2014-0242",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0242"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "requester",
+      "Timestamp": "2014-06-14T02:20:25Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2014-12-13T18:03:56Z"
+    }
+  ]
+}

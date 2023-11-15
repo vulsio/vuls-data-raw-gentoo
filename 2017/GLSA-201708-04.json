@@ -1,0 +1,92 @@
+{
+  "ID": "201708-04",
+  "Title": "Ked Password Manager: Information leak",
+  "Synopsis": "An insecure file usage has been reported in Ked Password Manager\n    possibly allowing confidential information to be disclosed.\n  ",
+  "Product": {
+    "Text": "kedpm",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-08-21",
+  "Revised": {
+    "Text": "2017-08-26",
+    "Count": "3"
+  },
+  "Bug": [
+    "616690"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-admin/kedpm",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": null,
+        "Vulnerable": [
+          {
+            "Text": "0.4.0-r2",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Helps to manage large numbers of passwords and related information and\n      simplifies the tasks of searching and entering password data.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A history file in ~/.kedpm/history is written in clear text. All of the\n      commands performed in the password manager are written there. This can\n      lead to the disclosure of the master password if the “password”\n      command is used with an argument. The names of the password entries\n      created and consulted are also accessible in clear text.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>An attacker could obtain confidential information.</p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "Gentoo Security recommends that users unmerge Ked Password Manager:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --unmerge \"app-admin/kedpm\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2017-8296",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-8296"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "b-man",
+      "Tag": "requester",
+      "Timestamp": "2017-08-14T23:18:50Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2017-08-26T14:46:29Z"
+    }
+  ]
+}

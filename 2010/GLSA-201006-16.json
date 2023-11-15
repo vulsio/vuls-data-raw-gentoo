@@ -1,0 +1,114 @@
+{
+  "ID": "201006-16",
+  "Title": "GD: User-assisted execution of arbitrary code",
+  "Synopsis": "\n    The GD library is prone to a buffer overflow vulnerability.\n  ",
+  "Product": {
+    "Text": "gd",
+    "Type": "ebuild"
+  },
+  "Announced": "2010-06-03",
+  "Revised": {
+    "Text": "2010-06-03",
+    "Count": "01"
+  },
+  "Bug": [
+    "292130"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/gd",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.35-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.35-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    GD is a graphic library for fast image creation.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Tomas Hoger reported that the _gdGetColors() function in gd_gd.c does\n    not properly verify the colorsTotal struct member, possibly leading to\n    a buffer overflow.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted image\n    file with a program using the GD library, possibly resulting in the\n    remote execution of arbitrary code with the privileges of the user\n    running the application, or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All GD users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    NOTE: This is a legacy GLSA. Updates for all affected architectures are\n    available since November 21, 2009. It is likely that your system is\n    already no longer affected by this issue.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/gd-2.0.35-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-3546",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3546"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    craig\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-12-18T02:08:27Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2010-05-31T05:59:40Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2010-05-31T05:59:48Z"
+    }
+  ]
+}

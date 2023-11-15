@@ -1,0 +1,119 @@
+{
+  "ID": "200701-16",
+  "Title": "Adobe Acrobat Reader: Multiple vulnerabilities",
+  "Synopsis": "\n    Adobe Acrobat Reader is vulnerable to remote code execution, Denial of\n    Service, and cross-site scripting attacks.\n  ",
+  "Product": {
+    "Text": "acroread",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-01-22",
+  "Revised": {
+    "Text": "2007-01-22",
+    "Count": "01"
+  },
+  "Bug": [
+    "159874"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-text/acroread",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "7.0.9",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "7.0.9",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Adobe Acrobat Reader is a PDF reader released by Adobe.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Adobe Acrobat Reader in stand-alone mode is vulnerable to remote code\n    execution via heap corruption when loading a specially crafted PDF\n    file.\n    </p>\n    <p>\n    The browser plugin released with Adobe Acrobat Reader (nppdf.so) does\n    not properly handle URLs, and crashes if given a URL that is too long.\n    The plugin does not correctly handle JavaScript, and executes\n    JavaScript that is given as a GET variable to the URL of a PDF file.\n    Lastly, the plugin does not properly handle the FDF, xml, xfdf AJAX\n    request parameters following the # character in a URL, allowing for\n    multiple cross-site scripting vulnerabilities.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could entice a user to open a specially crafted PDF file\n    and execute arbitrary code with the rights of the user running Adobe\n    Acrobat Reader. An attacker could also entice a user to browse to a\n    specially crafted URL and either crash the Adobe Acrobat Reader browser\n    plugin, execute arbitrary JavaScript in the context of the user's\n    browser, or inject arbitrary HTML or JavaScript into the document being\n    viewed by the user. Note that users who have emerged Adobe Acrobat\n    Reader with the \"nsplugin\" USE flag disabled are not vulnerable to\n    issues with the Adobe Acrobat Reader browser plugin.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Adobe Acrobat Reader users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/acroread-7.0.9\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-5857",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5857"
+      },
+      {
+        "Text": "CVE-2007-0044",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0044"
+      },
+      {
+        "Text": "CVE-2007-0045",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0045"
+      },
+      {
+        "Text": "CVE-2007-0046",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0046"
+      },
+      {
+        "Text": "CVE-2007-0048",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0048"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-01-14T12:10:48Z"
+    },
+    {
+      "Text": "\n    shellsage\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-01-15T00:45:48Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-01-22T12:38:29Z"
+    }
+  ]
+}

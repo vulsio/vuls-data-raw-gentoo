@@ -1,0 +1,97 @@
+{
+  "ID": "200406-21",
+  "Title": "mit-krb5: Multiple buffer overflows in krb5_aname_to_localname",
+  "Synopsis": "\n    mit-krb5 contains multiple buffer overflows in the function\n    krb5_aname_to_localname(). This could potentially lead to a complete remote\n    system compromise.\n  ",
+  "Product": {
+    "Text": "mit-krb5",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-06-29",
+  "Revised": {
+    "Text": "2004-06-29",
+    "Count": "01"
+  },
+  "Bug": [
+    "52744"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-crypt/mit-krb5",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.3.3-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.3.3",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    mit-krb5 is the free implementation of the Kerberos network authentication\n    protocol by the Massachusetts Institute of Technology.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The library function krb5_aname_to_localname() contains multiple buffer\n    overflows. This is only exploitable if explicit mapping or rules-based\n    mapping is enabled. These are not enabled as default.\n    </p>\n    <p>\n    With explicit mapping enabled, an attacker must authenticate using a\n    principal name listed in the explicit mapping list.\n    </p>\n    <p>\n    With rules-based mapping enabled, an attacker must first be able to create\n    arbitrary principal names either in the local realm Kerberos realm or in a\n    remote realm from which the local realm's service are reachable by\n    cross-realm authentication.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    An attacker could use these vulnerabilities to execute arbitrary code with\n    the permissions of the user running mit-krb5, which could be the root user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time. All users are encouraged to\n    upgrade to the latest available version.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    mit-krb5 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n\n    # emerge -pv \">=app-crypt/mit-krb5-1.3.3-r1\"\n    # emerge \">=app-crypt/mit-krb5-1.3.3-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-0523",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0523"
+      },
+      {
+        "Text": "MIT krb5 Security Advisory",
+        "Link": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2004-001-an_to_ln.txt"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

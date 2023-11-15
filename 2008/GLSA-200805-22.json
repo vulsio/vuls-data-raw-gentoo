@@ -1,0 +1,103 @@
+{
+  "ID": "200805-22",
+  "Title": "MPlayer: User-assisted execution of arbitrary code",
+  "Synopsis": "\n    An integer overflow vulnerability in MPlayer may allow for the execution of\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "mplayer",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-05-29",
+  "Revised": {
+    "Text": "2008-05-29",
+    "Count": "01"
+  },
+  "Bug": [
+    "215006"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-video/mplayer",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0_rc2_p26753",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0_rc2_p26753",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    MPlayer is a media player including support for a wide range of audio\n    and video formats.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    k`sOSe reported an integer overflow vulnerability in the\n    sdpplin_parse() function in the file stream/realrtsp/sdpplin.c, which\n    can be exploited to overwrite arbitrary memory regions via an overly\n    large \"StreamCount\" SDP parameter.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted media\n    file, possibly resulting in the execution of arbitrary code with the\n    privileges of the user running MPlayer.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All MPlayer users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-video/mplayer-1.0_rc2_p26753\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-1558",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1558"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-05-22T17:37:55Z"
+    },
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-05-27T21:32:21Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-05-28T13:57:42Z"
+    }
+  ]
+}

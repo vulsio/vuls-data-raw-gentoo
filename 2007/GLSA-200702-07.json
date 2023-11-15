@@ -1,0 +1,218 @@
+{
+  "ID": "200702-07",
+  "Title": "Sun JDK/JRE: Execution of arbitrary code",
+  "Synopsis": "\n    Sun Java Development Kit (JDK) and Java Runtime Environment (JRE) contain a\n    memory corruption flaw that allows the applets to gain elevated privileges\n    potentially leading to the execute of arbitrary code.\n  ",
+  "Product": {
+    "Text": "java",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-02-17",
+  "Revised": {
+    "Text": "2008-07-16",
+    "Count": "05"
+  },
+  "Bug": [
+    "162511"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-java/sun-jdk",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.5.0.10",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.4.2.18",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.4.2.17",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.4.2.15",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.4.2.14",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.4.2.13",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.5.0.10",
+            "Range": "lt",
+            "Slot": ""
+          },
+          {
+            "Text": "1.4.2.13",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "dev-java/sun-jre-bin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.5.0.10",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.4.2.18",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.4.2.17",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.4.2.15",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.4.2.14",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.4.2.13",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.5.0.10",
+            "Range": "lt",
+            "Slot": ""
+          },
+          {
+            "Text": "1.4.2.13",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Sun Java Development Kit (JDK) and the Sun Java Runtime Environment\n    (JRE) provide the Sun Java platform.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    A anonymous researcher discovered that an error in the handling of a\n    GIF image with a zero width field block leads to a memory corruption\n    flaw.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could entice a user to run a specially crafted Java applet\n    or application that would load a crafted GIF image, which could result\n    in escalation of privileges and unauthorized access to system\n    resources.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Sun Java Development Kit 1.5 users should upgrade to the latest\n    version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Sun Java Development Kit 1.4 users should upgrade to the latest\n    version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Sun Java Runtime Environment 1.5 users should upgrade to the latest\n    version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Sun Java Runtime Environment 1.4 users should upgrade to the latest\n    version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-java/sun-jdk-1.5.0.10\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \"=dev-java/sun-jdk-1.4.2*\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-java/sun-jre-bin-1.5.0.10\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \"=dev-java/sun-jre-bin-1.4.2*\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-0243",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0243"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-02-10T19:27:14Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-02-10T23:53:12Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-02-12T23:55:24Z"
+    }
+  ]
+}

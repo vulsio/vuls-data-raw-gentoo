@@ -1,0 +1,109 @@
+{
+  "ID": "200405-16",
+  "Title": "Multiple XSS Vulnerabilities in SquirrelMail",
+  "Synopsis": "\n    SquirrelMail is subject to several XSS and one SQL injection vulnerability.\n  ",
+  "Product": {
+    "Text": "SquirrelMail",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-05-25",
+  "Revised": {
+    "Text": "2006-05-27",
+    "Count": "04"
+  },
+  "Bug": [
+    "49675"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "mail-client/squirrelmail",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.3_rc1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.3_rc1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    SquirrelMail is a webmail package written in PHP. It supports IMAP and\n    SMTP, and can optionally be installed with SQL support.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Several unspecified cross-site scripting (XSS) vulnerabilities and a\n    well hidden SQL injection vulnerability were found. An XSS attack\n    allows an attacker to insert malicious code into a web-based\n    application. SquirrelMail does not check for code when parsing\n    variables received via the URL query string.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    One of the XSS vulnerabilities could be exploited by an attacker to\n    steal cookie-based authentication credentials from the user's browser.\n    The SQL injection issue could potentially be used by an attacker to run\n    arbitrary SQL commands inside the SquirrelMail database with privileges\n    of the SquirrelMail database user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time. All users are advised to\n    upgrade to version 1.4.3_rc1 or higher of SquirrelMail.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All SquirrelMail users should upgrade to the latest stable version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv \">=mail-client/squirrelmail-1.4.3_rc1\"\n    # emerge \">=mail-client/squirrelmail-1.4.3_rc1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "SquirrelMail 1.4.3_rc1 release annoucement",
+        "Link": "https://sourceforge.net/mailarchive/forum.php?thread_id=4199060&forum_id=1988"
+      },
+      {
+        "Text": "Bugtraq security annoucement",
+        "Link": "http://www.securityfocus.com/bid/10246/"
+      },
+      {
+        "Text": "CERT description of XSS",
+        "Link": "https://www.cert.org/advisories/CA-2000-02.html"
+      },
+      {
+        "Text": "CVE-2004-0519",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0519"
+      },
+      {
+        "Text": "CVE-2004-0521",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0521"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

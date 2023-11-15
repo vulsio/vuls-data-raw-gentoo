@@ -1,0 +1,107 @@
+{
+  "ID": "200611-11",
+  "Title": "TikiWiki: Multiple vulnerabilities",
+  "Synopsis": "\n    TikiWiki allows for the disclosure of MySQL database authentication\n    credentials and for cross-site scripting attacks.\n  ",
+  "Product": {
+    "Text": "tikiwiki",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-11-20",
+  "Revised": {
+    "Text": "2006-11-20",
+    "Count": "01"
+  },
+  "Bug": [
+    "153820"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/tikiwiki",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.9.6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.9.6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    TikiWiki is an open source content management system written in PHP.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    In numerous files TikiWiki provides an empty sort_mode parameter,\n    causing TikiWiki to display additional information, including database\n    authentication credentials, in certain error messages. TikiWiki also\n    improperly sanitizes the \"url\" request variable sent to\n    tiki-featured_link.php.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could cause a database error in various pages of a TikiWiki\n    instance by providing an empty sort_mode request variable, and gain\n    unauthorized access to credentials of the MySQL databases used by\n    TikiWiki. An attacker could also entice a user to browse to a specially\n    crafted URL that could run scripts in the scope of the user's browser.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All TikiWiki users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/tikiwiki-1.9.6\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-5702",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5702"
+      },
+      {
+        "Text": "CVE-2006-5703",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5703"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-11-10T17:34:20Z"
+    },
+    {
+      "Text": "\n    shellsage\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-11-10T18:20:06Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-11-13T22:24:46Z"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "ID": "201702-26",
+  "Title": "Nagios: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in Nagios, the worst of\n    which could lead to privilege escalation.\n  ",
+  "Product": {
+    "Text": "nagios",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-02-21",
+  "Revised": {
+    "Text": "2017-02-21",
+    "Count": "1"
+  },
+  "Bug": [
+    "595194",
+    "598104",
+    "600864",
+    "602216"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-analyzer/nagios-core",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.2.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.2.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Nagios is an open source host, service and network monitoring program.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in Nagios. Please review\n      the CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A local attacker, who either is already Nagios’s system user or\n      belongs to Nagios’s group, could potentially escalate privileges.\n    </p>\n    \n    <p>In addition, a remote attacker could read or write to arbitrary files by\n      spoofing a crafted response from the Nagios RSS feed server.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Nagios users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-analyzer/nagios-core-4.2.4\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-4796",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2008-4796"
+      },
+      {
+        "Text": "CVE-2008-7313",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2008-7313"
+      },
+      {
+        "Text": "CVE-2016-8641",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-8641"
+      },
+      {
+        "Text": "CVE-2016-9565",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-9565"
+      },
+      {
+        "Text": "CVE-2016-9566",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-9566"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2017-01-30T01:56:03Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2017-02-21T00:04:00Z"
+    }
+  ]
+}

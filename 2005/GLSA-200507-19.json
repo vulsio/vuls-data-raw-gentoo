@@ -1,0 +1,107 @@
+{
+  "ID": "200507-19",
+  "Title": "zlib: Buffer overflow",
+  "Synopsis": "\n    zlib is vulnerable to a buffer overflow which could potentially lead to\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "zlib",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-07-22",
+  "Revised": {
+    "Text": "2005-07-22",
+    "Count": "01"
+  },
+  "Bug": [
+    "99751"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-libs/zlib",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    zlib is a widely used free and patent unencumbered data\n    compression library.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    zlib improperly handles invalid data streams which could lead to a\n    buffer overflow.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    By creating a specially crafted compressed data stream, attackers\n    can overwrite data structures for applications that use zlib, resulting\n    in arbitrary code execution or a Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All zlib users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-libs/zlib-1.2.3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Full Disclosure Announcement",
+        "Link": "http://archives.neohapsis.com/archives/fulldisclosure/2005-07/0489.html"
+      },
+      {
+        "Text": "CAN-2005-1849",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1849"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-07-21T05:28:09Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-07-21T07:38:10Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-07-21T18:38:18Z"
+    }
+  ]
+}

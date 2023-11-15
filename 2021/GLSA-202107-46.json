@@ -1,0 +1,98 @@
+{
+  "ID": "202107-46",
+  "Title": "mpv: Format string vulnerability",
+  "Synopsis": "A format string vulnerability was found in mpv, potentially\n    resulting in arbitrary code execution.\n  ",
+  "Product": {
+    "Text": "mpv",
+    "Type": "ebuild"
+  },
+  "Announced": "2021-07-20",
+  "Revised": {
+    "Text": "2021-07-20",
+    "Count": "1"
+  },
+  "Bug": [
+    "780474"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-video/mpv",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.33.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.33.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Video player based on MPlayer/mplayer2.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>mpv uses untrusted input within format strings.</p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted m3u\n      playlist file using mpv, possibly resulting in execution of arbitrary\n      code with the privileges of the process or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All mpv users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-video/mpv-0.33.1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2021-30145",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-30145"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ajak",
+      "Tag": "requester",
+      "Timestamp": "2021-07-16T02:03:07Z"
+    },
+    {
+      "Text": "ajak",
+      "Tag": "submitter",
+      "Timestamp": "2021-07-20T04:16:47Z"
+    }
+  ]
+}

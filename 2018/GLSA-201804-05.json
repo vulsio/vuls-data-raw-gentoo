@@ -1,0 +1,107 @@
+{
+  "ID": "201804-05",
+  "Title": "ISC DHCP: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in ISC DHCP, the worst of\n    which could allow for the remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "dhcp",
+    "Type": "ebuild"
+  },
+  "Announced": "2018-04-08",
+  "Revised": {
+    "Text": "2018-04-08",
+    "Count": "1"
+  },
+  "Bug": [
+    "644708",
+    "649010"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/dhcp",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.3.6_p1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.3.6_p1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>ISC DHCP is a Dynamic Host Configuration Protocol (DHCP) client/server.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in ISC DHCP. Please review\n      the CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>Remote attackers could execute arbitrary code, cause a Denial of Service\n      condition, or have other unspecified impacts.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There are no known workarounds at this time for CVE-2018-5732 or\n      CVE-2018-5733.\n    </p>\n    \n    <p>In accordance with upstream documentation, the recommended workaround\n      for CVE-2017-3144 is, “to disallow access to the OMAPI control port\n      from unauthorized clients (in accordance with best practices for server\n      operation).”\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All DHCP users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/dhcp-4.3.6_p1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2017-3144",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2017-3144"
+      },
+      {
+        "Text": "CVE-2018-5732",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2018-5732"
+      },
+      {
+        "Text": "CVE-2018-5733",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2018-5733"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "chrisadr",
+      "Tag": "requester",
+      "Timestamp": "2018-03-13T18:06:24Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2018-04-08T16:46:04Z"
+    }
+  ]
+}

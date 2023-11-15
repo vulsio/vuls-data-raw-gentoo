@@ -1,0 +1,134 @@
+{
+  "ID": "200608-11",
+  "Title": "Webmin, Usermin: File Disclosure",
+  "Synopsis": "\n    Webmin and Usermin are vulnerable to an arbitrary file disclosure through a\n    specially crafted URL.\n  ",
+  "Product": {
+    "Text": "webmin/usermin",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-08-06",
+  "Revised": {
+    "Text": "2006-08-06",
+    "Count": "01"
+  },
+  "Bug": [
+    "138552"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-admin/webmin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.290",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.290",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "app-admin/usermin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.220",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.220",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Webmin is a web-based interface for Unix-like systems. Usermin is a\n    simplified version of Webmin designed for use by normal users rather\n    than system administrators.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    A vulnerability in both Webmin and Usermin has been discovered by Kenny\n    Chen, wherein simplify_path is called before the HTML is decoded.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A non-authenticated user can read any file on the server using a\n    specially crafted URL.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    For a temporary workaround, IP Access Control can be setup on Webmin\n    and Usermin.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Webmin users should update to the latest stable version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Usermin users should update to the latest stable version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --verbose --oneshot \">=app-admin/webmin-1.290\"",
+      "\n    # emerge --sync\n    # emerge --ask --verbose --oneshot \">=app-admin/usermin-1.220\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-3392",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3392"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n  ",
+      "Tag": "",
+      "Timestamp": ""
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-08-06T17:23:21Z"
+    },
+    {
+      "Text": "\n    hlieberman\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-08-06T18:24:45Z"
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "ID": "200711-19",
+  "Title": "TikiWiki: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities have been discovered in TikiWiki, possibly\n    resulting in the remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "tikiwiki",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-11-14",
+  "Revised": {
+    "Text": "2007-11-14",
+    "Count": "01"
+  },
+  "Bug": [
+    "195503"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-apps/tikiwiki",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.9.8.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.9.8.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    TikiWiki is an open source content management system written in PHP.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Stefan Esser reported that a previous vulnerability (CVE-2007-5423,\n    GLSA 200710-21) was not properly fixed in TikiWiki 1.9.8.1\n    (CVE-2007-5682). The TikiWiki development team also added several\n    checks to avoid file inclusion.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker could exploit these vulnerabilities to inject\n    arbitrary code with the privileges of the user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All TikiWiki users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/tikiwiki-1.9.8.3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "GLSA 200710-21",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200710-21.xml"
+      },
+      {
+        "Text": "CVE-2007-5423",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5423"
+      },
+      {
+        "Text": "CVE-2007-5682",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5682"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-10-27T13:39:33Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-11-03T23:20:18Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-11-13T23:14:54Z"
+    }
+  ]
+}

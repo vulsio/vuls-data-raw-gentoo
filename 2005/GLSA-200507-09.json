@@ -1,0 +1,111 @@
+{
+  "ID": "200507-09",
+  "Title": "Adobe Acrobat Reader: Buffer overflow vulnerability",
+  "Synopsis": "\n    Adobe Acrobat Reader is vulnerable to a buffer overflow that could lead to\n    remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "acroread",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-07-11",
+  "Revised": {
+    "Text": "2005-07-11",
+    "Count": "01"
+  },
+  "Bug": [
+    "98101"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-text/acroread",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "7.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.10",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Adobe Acrobat Reader is a utility used to view PDF files.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    A buffer overflow has been discovered in the\n    UnixAppOpenFilePerform() function, which is called when Adobe Acrobat\n    Reader tries to open a file with the \"\\Filespec\" tag.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    By enticing a user to open a specially crafted PDF document, a\n    remote attacker could exploit this vulnerability to execute arbitrary\n    code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    Since Adobe will most likely not update the 5.0 series of Adobe\n    Acrobat Reader for Linux, all users should upgrade to the latest\n    available version of the 7.0 series:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/acroread-7.0\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-1625",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1625"
+      },
+      {
+        "Text": "iDEFENSE Security Advisory",
+        "Link": "http://www.idefense.com/application/poi/display?id=279&type=vulnerabilities&flashstatus=true"
+      },
+      {
+        "Text": "Adobe Security Advisory",
+        "Link": "https://www.adobe.com/support/techdocs/329083.html"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-07-08T08:39:08Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-07-08T15:11:50Z"
+    },
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-07-09T18:37:26Z"
+    }
+  ]
+}

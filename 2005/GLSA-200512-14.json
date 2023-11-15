@@ -1,0 +1,98 @@
+{
+  "ID": "200512-14",
+  "Title": "NBD Tools: Buffer overflow in NBD server",
+  "Synopsis": "\n    The NBD server is vulnerable to a buffer overflow that may result in the\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "NBD",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-12-23",
+  "Revised": {
+    "Text": "2005-12-23",
+    "Count": "01"
+  },
+  "Bug": [
+    "116314"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-block/nbd",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.8.2-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.8.2-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The NBD Tools are the Network Block Device utilities allowing one\n    to use remote block devices over a TCP/IP network. It includes a\n    userland NBD server.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Kurt Fitzner discovered that the NBD server allocates a request\n    buffer that fails to take into account the size of the reply header.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker could send a malicious request that can result\n    in the execution of arbitrary code with the rights of the NBD server.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All NBD Tools users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-block/nbd-2.8.2-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-3534",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3534"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-12-23T10:21:27Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-12-23T10:21:38Z"
+    }
+  ]
+}

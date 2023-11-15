@@ -1,0 +1,98 @@
+{
+  "ID": "202105-17",
+  "Title": "rxvt-unicode: User-assisted execution of arbitrary code",
+  "Synopsis": "A vulnerability in rxvt-unicode may allow a remote attacker to\n    execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "rxvt-unicode",
+    "Type": "ebuild"
+  },
+  "Announced": "2021-05-26",
+  "Revised": {
+    "Text": "2021-05-26",
+    "Count": "1"
+  },
+  "Bug": [
+    "790782"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "x11-terms/rxvt-unicode",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "9.22-r9",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "9.22-r9",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>rxvt-unicode (urxvt) is a clone of the rxvt terminal emulator.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was discovered that rxvt-unicode did not properly handle certain\n      escape sequences.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to run a program where attacker\n      controls the output inside a rxvt terminal window, possibly resulting in\n      execution of arbitrary code with the privileges of the process or a\n      Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All rxvt-unicode users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=x11-terms/rxvt-unicode-9.22-r9\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2021-33477",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-33477"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2021-05-24T15:13:20Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2021-05-26T08:38:12Z"
+    }
+  ]
+}

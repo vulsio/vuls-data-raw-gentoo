@@ -1,0 +1,102 @@
+{
+  "ID": "201201-10",
+  "Title": "JasPer: User-assisted execution of arbitrary code",
+  "Synopsis": "Multiple memory management errors in JasPer could result in\n    execution of arbitrary code or a Denial of Service.\n  ",
+  "Product": {
+    "Text": "JasPer",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-01-23",
+  "Revised": {
+    "Text": "2012-01-23",
+    "Count": "1"
+  },
+  "Bug": [
+    "394879"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/jasper",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.900.1-r4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.900.1-r4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>The JasPer Project is an open-source initiative to provide a free\n      software-based reference implementation of the codec specified in the\n      JPEG-2000 Part-1 (jpeg2k) standard.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Two vulnerabilities have been found in JasPer:</p>\n    \n    <ul>\n      <li>The jpc_cox_getcompparms function in libjasper/jpc/jpc_cs.c contains\n        an error that could overwrite certain callback pointers, possibly\n        causing a heap-based buffer overflow (CVE-2011-4516).\n      </li>\n      <li>The jpc_crg_getparms function in libjasper/jpc/jpc_cs.c uses an\n        incorrect data type, possibly causing a heap-based buffer overflow\n        (CVE-2011-4517).\n      </li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user or automated system to process\n      specially crafted JPEG-2000 files with an application using JasPer,\n      possibly resulting in the execution of arbitrary code with the privileges\n      of the application, or a Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All JasPer users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/jasper-1.900.1-r4\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2011-4516",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-4516"
+      },
+      {
+        "Text": "CVE-2011-4517",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-4517"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    underling\n  ",
+      "Tag": "requester",
+      "Timestamp": "2011-12-27T05:22:50Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-01-23T19:50:54Z"
+    }
+  ]
+}

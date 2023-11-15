@@ -1,0 +1,103 @@
+{
+  "ID": "200804-16",
+  "Title": "rsync: Execution of arbitrary code",
+  "Synopsis": "\n    A buffer overflow in rsync might lead to the remote execution of arbitrary\n    code when extended attributes are being used.\n  ",
+  "Product": {
+    "Text": "rsync",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-04-17",
+  "Revised": {
+    "Text": "2008-04-17",
+    "Count": "01"
+  },
+  "Bug": [
+    "216887"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/rsync",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.6.9-r6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.6.9-r6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    rsync is a file transfer program to keep remote directories\n    synchronized.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Sebastian Krahmer of SUSE reported an integer overflow in the\n    expand_item_list() function in the file util.c which might lead to a\n    heap-based buffer overflow when extended attribute (xattr) support is\n    enabled.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker could send a file containing specially crafted\n    extended attributes to an rsync deamon, or entice a user to sync from\n    an rsync server containing specially crafted files, possibly leading to\n    the execution of arbitrary code.\n    </p>\n    <p>\n    Please note that extended attributes are only enabled when USE=\"acl\" is\n    enabled, which is the default setting.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Disable extended attributes in the rsync daemon by setting \"<i>refuse\n    options = xattrs</i>\" in the file \"/etc/rsyncd.conf\" (or append\n    \"xattrs\" to an existing \"refuse\" statement). When synchronizing to a\n    server, do not provide the \"-X\" parameter to rsync. You can also\n    disable the \"acl\" USE flag for rsync and recompile the package.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All rsync users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/rsync-2.6.9-r6\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-1720",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1720"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-04-14T22:37:35Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-04-14T23:01:29Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-04-14T23:01:42Z"
+    }
+  ]
+}

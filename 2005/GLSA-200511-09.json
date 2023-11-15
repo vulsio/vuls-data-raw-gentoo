@@ -1,0 +1,107 @@
+{
+  "ID": "200511-09",
+  "Title": "Lynx: Arbitrary command execution",
+  "Synopsis": "\n    Lynx is vulnerable to an issue which allows the remote execution of\n    arbitrary commands.\n  ",
+  "Product": {
+    "Text": "lynx",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-11-13",
+  "Revised": {
+    "Text": "2005-11-13",
+    "Count": "01"
+  },
+  "Bug": [
+    "112213"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-client/lynx",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.8.5-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.8.5-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Lynx is a fully-featured WWW client for users running\n    cursor-addressable, character-cell display devices such as vt100\n    terminals and terminal emulators.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    iDefense labs discovered a problem within the feature to execute\n    local cgi-bin programs via the \"lynxcgi:\" URI handler. Due to a\n    configuration error, the default settings allow websites to specify\n    commands to run as the user running Lynx.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker can entice a user to access a malicious HTTP\n    server, causing Lynx to execute arbitrary commands.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Disable \"lynxcgi\" links by specifying the following directive in\n    lynx.cfg:\n    </p>\n    <code>\n    TRUSTED_LYNXCGI:none</code>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Lynx users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/lynx-2.8.5-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-2929",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2929"
+      },
+      {
+        "Text": "iDefense Security Advisory 11.11.05",
+        "Link": "http://www.idefense.com/application/poi/display?id=338&type=vulnerabilities"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    taviso\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-11-11T20:17:54Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-11-11T21:30:52Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-11-13T17:03:02Z"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "ID": "200604-13",
+  "Title": "fbida: Insecure temporary file creation",
+  "Synopsis": "\n    fbida is vulnerable to linking attacks, potentially allowing a local user\n    to overwrite arbitrary files.\n  ",
+  "Product": {
+    "Text": "fbida",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-04-23",
+  "Revised": {
+    "Text": "2006-04-23",
+    "Count": "01"
+  },
+  "Bug": [
+    "129470"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-gfx/fbida",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.03-r3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.03-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    fbida is a collection of image viewers and editors for the\n    framebuffer console and X11.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Jan Braun has discovered that the \"fbgs\" script provided by fbida\n    insecurely creates temporary files in the \"/var/tmp\" directory.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could create links in the temporary file\n    directory, pointing to a valid file somewhere on the filesystem. When\n    an affected script is called, this could result in the file being\n    overwritten with the rights of the user running the script.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All fbida users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/fbida-2.03-r3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-1695",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1695"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-04-21T15:53:11Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-04-21T16:54:39Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-04-22T21:26:19Z"
+    }
+  ]
+}

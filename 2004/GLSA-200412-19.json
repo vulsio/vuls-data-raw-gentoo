@@ -1,0 +1,110 @@
+{
+  "ID": "200412-19",
+  "Title": "phpMyAdmin: Multiple vulnerabilities",
+  "Synopsis": "\n    phpMyAdmin contains multiple vulnerabilities which could lead to file\n    disclosure or command execution.\n  ",
+  "Product": {
+    "Text": "phpmyadmin",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-12-19",
+  "Revised": {
+    "Text": "2004-12-19",
+    "Count": "01"
+  },
+  "Bug": [
+    "74303"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-db/phpmyadmin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.6.1_rc1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.6.1_rc1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    phpMyAdmin is a tool written in PHP intended to handle the\n    administration of MySQL databases from a web-browser.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Nicolas Gregoire (exaprobe.com) has discovered two vulnerabilities\n    that exist only on a webserver where PHP safe_mode is off. These\n    vulnerabilities could lead to command execution or file disclosure.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    On a system where external MIME-based transformations are enabled,\n    an attacker can insert offensive values in MySQL, which would start a\n    shell when the data is browsed. On a system where the UploadDir is\n    enabled, read_dump.php could use the unsanitized sql_localfile variable\n    to disclose a file.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    You can temporarily enable PHP safe_mode or disable external\n    MIME-based transformation AND disable the UploadDir. But instead, we\n    strongly advise to update your version to 2.6.1_rc1.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All phpMyAdmin users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-db/phpmyadmin-2.6.1_rc1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-1147",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1147"
+      },
+      {
+        "Text": "CAN-2004-1148",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1148"
+      },
+      {
+        "Text": "PHPMyAdmin advisory: PMASA-2004-4",
+        "Link": "https://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2004-4"
+      },
+      {
+        "Text": "Exaprobe.com advisory: esa-2004-1213",
+        "Link": "http://www.exaprobe.com/labs/advisories/esa-2004-1213.html"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    SeJo\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-12-16T13:35:32Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-12-18T14:47:08Z"
+    }
+  ]
+}

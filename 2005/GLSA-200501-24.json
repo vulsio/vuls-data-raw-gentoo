@@ -1,0 +1,107 @@
+{
+  "ID": "200501-24",
+  "Title": "tnftp: Arbitrary file overwriting",
+  "Synopsis": "\n    tnftp fails to validate filenames when downloading files, making it\n    vulnerable to arbitrary file overwriting.\n  ",
+  "Product": {
+    "Text": "tnftp",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-01-14",
+  "Revised": {
+    "Text": "2005-01-14",
+    "Count": "01"
+  },
+  "Bug": [
+    "74704"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-ftp/tnftp",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "20050103",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "20050103",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    tnftp is a NetBSD FTP client with several advanced features.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The 'mget' function in cmds.c lacks validation of the filenames\n    that are supplied by the server.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker running an FTP server could supply clients with\n    malicious filenames, potentially allowing the overwriting of arbitrary\n    files with the permission of the connected user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All tnftp users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-ftp/tnftp-20050103\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-1294",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1294"
+      },
+      {
+        "Text": "Original Advisory",
+        "Link": "http://tigger.uic.edu/~jlongs2/holes/tnftp.txt"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-01-10T09:24:54Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-01-11T21:44:41Z"
+    },
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-01-12T23:35:57Z"
+    }
+  ]
+}

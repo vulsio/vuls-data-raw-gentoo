@@ -1,0 +1,103 @@
+{
+  "ID": "200711-25",
+  "Title": "MySQL: Denial of service",
+  "Synopsis": "\n    A Denial of Service vulnerability was found in MySQL.\n  ",
+  "Product": {
+    "Text": "mysql",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-11-18",
+  "Revised": {
+    "Text": "2007-11-18",
+    "Count": "01"
+  },
+  "Bug": [
+    "198988"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-db/mysql",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.0.44-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.0.44-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    MySQL is a popular multi-threaded, multi-user SQL server.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Joe Gallo and Artem Russakovskii reported an error in the\n    convert_search_mode_to_innobase() function in ha_innodb.cc in the\n    InnoDB engine that is leading to a failed assertion when handling\n    CONTAINS operations.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote authenticated attacker with ALTER privileges could send a\n    specially crafted request to a vulnerable database server possibly\n    leading to a Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All MySQL users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-db/mysql-5.0.44-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-5925",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5925"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-11-18T14:18:51Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-11-18T20:09:52Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-11-18T20:10:13Z"
+    }
+  ]
+}

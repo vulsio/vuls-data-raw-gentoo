@@ -1,0 +1,98 @@
+{
+  "ID": "202210-11",
+  "Title": "schroot: Denial of Service",
+  "Synopsis": "A vulnerability has been discovered in schroot which could result in denial of service of the schroot service.",
+  "Product": {
+    "Text": "schroot",
+    "Type": "ebuild"
+  },
+  "Announced": "2022-10-31",
+  "Revised": {
+    "Text": "2022-10-31",
+    "Count": "1"
+  },
+  "Bug": [
+    "867016"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-util/schroot",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.6.13_p2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.6.13_p2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n        <p>schroot is a utility to execute commands in a chroot environment.</p>\n    "
+  },
+  "Description": {
+    "Text": "\n        <p>schroot is unecessarily permissive in rules regarding chroot and session names.</p>\n    "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n        <p>A crafted chroot or session name can break the internal state of the schroot service, leading to denial of service.</p>\n    "
+  },
+  "Workaround": {
+    "Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+  },
+  "Resolution": {
+    "Text": "\n        \n        \n        \n    ",
+    "P": [
+      {
+        "Text": "All schroot users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=dev-util/schroot-1.6.13\"\n        "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2022-2787",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-2787"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ajak",
+      "Tag": "requester",
+      "Timestamp": "2022-10-31T01:08:56.631015Z"
+    },
+    {
+      "Text": "ajak",
+      "Tag": "submitter",
+      "Timestamp": "2022-10-31T01:08:56.636355Z"
+    }
+  ]
+}

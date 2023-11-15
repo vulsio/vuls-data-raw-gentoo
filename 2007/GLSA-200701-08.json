@@ -1,0 +1,115 @@
+{
+  "ID": "200701-08",
+  "Title": "Opera: Two remote code execution vulnerabilities",
+  "Synopsis": "\n    Two vulnerabilities may allow the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "opera",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-01-12",
+  "Revised": {
+    "Text": "2007-01-12",
+    "Count": "01"
+  },
+  "Bug": [
+    "160369"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-client/opera",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "9.10",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "9.10",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Opera is a multi-platform web browser.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Christoph Deal discovered that JPEG files with a specially crafted DHT\n    marker can be exploited to cause a heap overflow. Furthermore, an\n    anonymous person discovered that Opera does not correctly handle\n    objects passed to the \"createSVGTransformFromMatrix()\" function.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could potentially exploit the vulnerabilities to execute\n    arbitrary code with the privileges of the user running Opera by\n    enticing a victim to open a specially crafted JPEG file or a website\n    containing malicious JavaScript code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    The vendor recommends disabling JavaScript to avoid the\n    \"createSVGTransformFromMatrix\" vulnerability. There is no known\n    workaround for the other vulnerability.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Opera users should update to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/opera-9.10\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Opera Advisory (createSVGTransformFromMatrix)",
+        "Link": "https://www.opera.com/support/search/supsearch.dml?index=851"
+      },
+      {
+        "Text": "Opera Advisory (JPEG)",
+        "Link": "https://www.opera.com/support/search/supsearch.dml?index=852"
+      },
+      {
+        "Text": "CVE-2007-0126",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0126"
+      },
+      {
+        "Text": "CVE-2007-0127",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0127"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-01-09T12:37:33Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-01-09T12:37:44Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-01-09T18:43:10Z"
+    }
+  ]
+}

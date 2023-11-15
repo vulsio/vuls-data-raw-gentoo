@@ -1,0 +1,107 @@
+{
+  "ID": "200502-29",
+  "Title": "Cyrus IMAP Server: Multiple overflow vulnerabilities",
+  "Synopsis": "\n    The Cyrus IMAP Server is affected by several overflow vulnerabilities which\n    could potentially lead to the remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "cyrus-imapd",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-02-23",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "82404"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-mail/cyrus-imapd",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.2.12",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.2.12",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Cyrus IMAP Server is an efficient, highly-scalable IMAP e-mail\n    server.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Possible single byte overflows have been found in the imapd annotate\n    extension and mailbox handling code. Furthermore stack buffer overflows\n    have been found in fetchnews, the backend and imapd.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker, who could be an authenticated user or an admin of a\n    peering news server, could exploit these vulnerabilities to execute\n    arbitrary code with the rights of the user running the Cyrus IMAP\n    Server.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Cyrus IMAP Server users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-mail/cyrus-imapd-2.2.12\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Cyrus IMAP Announcement",
+        "Link": "http://asg.web.cmu.edu/archive/message.php?mailbox=archive.info-cyrus&msg=33723"
+      },
+      {
+        "Text": "CVE-2005-0546",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0546"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-02-18T10:42:26Z"
+    },
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-02-19T20:45:06Z"
+    },
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-02-23T12:49:07Z"
+    }
+  ]
+}

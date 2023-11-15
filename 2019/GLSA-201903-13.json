@@ -1,0 +1,107 @@
+{
+  "ID": "201903-13",
+  "Title": "BIND: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in BIND, the worst of\n    which could result in a Denial of Service condition.\n  ",
+  "Product": {
+    "Text": "bind",
+    "Type": "ebuild"
+  },
+  "Announced": "2019-03-14",
+  "Revised": {
+    "Text": "2019-03-14",
+    "Count": "1"
+  },
+  "Bug": [
+    "657654",
+    "666946"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-dns/bind",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "9.12.1_p2-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "9.12.1_p2-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>BIND (Berkeley Internet Name Domain) is a Name Server.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in BIND. Please review the\n      CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>BIND can improperly permit recursive query service to unauthorized\n      clients possibly resulting in a Denial of Service condition or to be used\n      in DNS reflection attacks.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All bind users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-dns/bind-9.12.1_p2-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2018-5738",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2018-5738"
+      },
+      {
+        "Text": "CVE-2018-5740",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2018-5740"
+      },
+      {
+        "Text": "CVE-2018-5741",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2018-5741"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "BlueKnight",
+      "Tag": "requester",
+      "Timestamp": "2019-03-10T00:30:31Z"
+    },
+    {
+      "Text": "BlueKnight",
+      "Tag": "submitter",
+      "Timestamp": "2019-03-14T01:41:21Z"
+    }
+  ]
+}

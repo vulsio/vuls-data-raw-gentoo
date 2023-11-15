@@ -1,0 +1,102 @@
+{
+  "ID": "202309-08",
+  "Title": "Requests: Information Leak",
+  "Synopsis": "A vulnerability has been discovered in Requests which could result in the disclosure of plaintext secrets.",
+  "Product": {
+    "Text": "requests",
+    "Type": "ebuild"
+  },
+  "Announced": "2023-09-17",
+  "Revised": {
+    "Text": "2023-09-17",
+    "Count": "1"
+  },
+  "Bug": [
+    "906970"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-python/requests",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.31.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.31.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n        <p>Requests is an HTTP library for human beings.</p>\n    "
+  },
+  "Description": {
+    "Text": "\n        <p>Requests is vulnerable to potentially leaking Proxy-Authorization headers to destination servers, specifically during redirects to an HTTPS origin with authentication credentials encoded into the URL.</p>\n    "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n        <p>Users&#39; proxy authentication secrets could be disclosed to parties beyond the used HTTP proxy server.</p>\n    "
+  },
+  "Workaround": {
+    "Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+  },
+  "Resolution": {
+    "Text": "\n        \n        \n        \n    ",
+    "P": [
+      {
+        "Text": "All Requests users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=dev-python/requests-2.31.0\"\n        "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2023-32681",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2023-32681"
+      },
+      {
+        "Text": "GHSA-j8r2-6x86-q33q",
+        "Link": ""
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ajak",
+      "Tag": "requester",
+      "Timestamp": "2023-09-17T06:32:25.550438Z"
+    },
+    {
+      "Text": "sam",
+      "Tag": "submitter",
+      "Timestamp": "2023-09-17T06:32:25.553604Z"
+    }
+  ]
+}

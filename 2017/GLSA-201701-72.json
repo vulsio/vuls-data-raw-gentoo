@@ -1,0 +1,98 @@
+{
+  "ID": "201701-72",
+  "Title": "libXpm: Remote execution of arbitrary code",
+  "Synopsis": "An integer overflow in libXpm might allow remote attackers to\n    execute arbitrary code or cause a Denial of Service Condition.\n  ",
+  "Product": {
+    "Text": "libxpm",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-01-29",
+  "Revised": {
+    "Text": "2017-01-29",
+    "Count": "1"
+  },
+  "Bug": [
+    "602782"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "x11-libs/libXpm",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.5.12",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.5.12",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>The X PixMap image format is an extension of the monochrome X BitMap\n      format specified in the X protocol, and is commonly used in traditional X\n      applications.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>An integer overflow was discovered in libXpm’s src/CrDatFrI.c file. \n      On 64 bit systems, this allows an overflow to occur on 32 bit integers\n      while parsing XPM extensions in a file.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker, by enticing a user to process a specially crafted XPM\n      file, could execute arbitrary code with the privileges of the process or\n      cause a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All libXpm users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=x11-libs/libXpm-3.5.12\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2016-10164\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-10164"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2017-01-26T15:22:27Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2017-01-29T16:58:23Z"
+    }
+  ]
+}

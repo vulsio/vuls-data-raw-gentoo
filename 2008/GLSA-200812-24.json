@@ -1,0 +1,112 @@
+{
+  "ID": "200812-24",
+  "Title": "VLC: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities in VLC may lead to the remote execution of\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "vlc",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-12-24",
+  "Revised": {
+    "Text": "2008-12-24",
+    "Count": "01"
+  },
+  "Bug": [
+    "245774",
+    "249391"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-video/vlc",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.9.8a",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.9.8a",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    VLC is a cross-platform media player and streaming server.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Tobias Klein reported the following vulnerabilities:\n    </p>\n    <ul>\n    <li>A\n    stack-based buffer overflow when processing CUE image files in\n    modules/access/vcd/cdrom.c (CVE-2008-5032).</li>\n    <li>A stack-based\n    buffer overflow when processing RealText (.rt) subtitle files in the\n    ParseRealText() function in modules/demux/subtitle.c\n    (CVE-2008-5036).</li>\n    <li>An integer overflow when processing RealMedia\n    (.rm) files in the ReadRealIndex() function in real.c in the Real\n    demuxer plugin, leading to a heap-based buffer overflow\n    (CVE-2008-5276).</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted CUE\n    image file, RealMedia file or RealText subtitle file, possibly\n    resulting in the execution of arbitrary code with the privileges of the\n    user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All VLC users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-video/vlc-0.9.8a\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-5032",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5032"
+      },
+      {
+        "Text": "CVE-2008-5036",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5036"
+      },
+      {
+        "Text": "CVE-2008-5276",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5276"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-12-15T14:05:23Z"
+    },
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-12-21T19:55:55Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-12-21T20:12:40Z"
+    }
+  ]
+}

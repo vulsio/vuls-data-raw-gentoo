@@ -1,0 +1,98 @@
+{
+  "ID": "201408-08",
+  "Title": "file: Denial of service",
+  "Synopsis": "A vulnerability in file could result in Denial of Service. ",
+  "Product": {
+    "Text": "file",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-08-26",
+  "Revised": {
+    "Text": "2014-08-29",
+    "Count": "6"
+  },
+  "Bug": [
+    "505534"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-apps/file",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.15",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.15",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>file is a utility that guesses a file format by scanning binary data for\n      patterns. \n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>BEGIN regular expression in the awk script detector in\n      magic/Magdir/commands uses multiple wildcards with unlimited repetitions.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A context-dependent attacker could entice a user to open a specially\n      crafted file,\n      possibly resulting in a Denial of Service condition. \n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All file users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-apps/file-5.15\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2013-7345",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-7345"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "requester",
+      "Timestamp": "2014-07-06T21:48:15Z"
+    },
+    {
+      "Text": "Zlogene",
+      "Tag": "submitter",
+      "Timestamp": "2014-08-29T12:33:10Z"
+    }
+  ]
+}

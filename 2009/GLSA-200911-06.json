@@ -1,0 +1,103 @@
+{
+  "ID": "200911-06",
+  "Title": "PEAR Net_Traceroute: Command injection",
+  "Synopsis": "\n    An input sanitation error in PEAR Net_Traceroute might allow remote\n    attackers to execute arbitrary commands.\n  ",
+  "Product": {
+    "Text": "PEAR-Net_Traceroute",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-11-26",
+  "Revised": {
+    "Text": "2009-11-26",
+    "Count": "01"
+  },
+  "Bug": [
+    "294264"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-php/PEAR-Net_Traceroute",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.21.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.21.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    PEAR Net_Traceroute is an OS independent wrapper class for executing\n    traceroute calls from PHP.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Pasquale Imperato reported that the $host parameter to the traceroute()\n    function in Traceroute.php is not properly sanitized before being\n    passed to exec().\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker could exploit this vulnerability when user input is\n    passed directly to PEAR Net_Traceroute in a PHP script, possibly\n    resulting in the remote execution of arbitrary shell commands with the\n    privileges of the user running the affected PHP script.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Ensure that all data that is passed to the traceroute() function is\n    properly shell escaped (for instance using the escapeshellcmd()\n    function).\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All PEAR Net_Traceroute users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-php/PEAR-Net_Traceroute-0.21.2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-4025",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4025"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-11-26T07:38:17Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-11-26T07:53:00Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-11-26T19:14:35Z"
+    }
+  ]
+}

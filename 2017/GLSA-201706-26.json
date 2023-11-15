@@ -1,0 +1,138 @@
+{
+  "ID": "201706-26",
+  "Title": "Vim, gVim: Remote execution of arbitrary code",
+  "Synopsis": "Multiple vulnerabilities have been found in Vim and gVim, the worst\n    of which might allow remote attackers to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "vim,gvim",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-06-22",
+  "Revised": {
+    "Text": "2017-06-22",
+    "Count": "1"
+  },
+  "Bug": [
+    "609150",
+    "611386"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-editors/vim",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "8.0.0386",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "8.0.0386",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "app-editors/gvim",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "8.0.0386",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "8.0.0386",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Vim is an efficient, highly configurable improved version of the classic\n      ‘vi’ text editor. gVim is the GUI version of Vim.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in Vim and gVim. Please\n      review the CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted spell\n      file using Vim or gVim, possibly resulting in execution of arbitrary code\n      with the privileges of the process or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Vim users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All gVim users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-editors/vim-8.0.0386\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-editors/gvim-8.0.0386\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2017-5953",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-5953"
+      },
+      {
+        "Text": "CVE-2017-6349",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-6349"
+      },
+      {
+        "Text": "CVE-2017-6350",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-6350"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "BlueKnight",
+      "Tag": "requester",
+      "Timestamp": "2017-03-24T05:30:35Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2017-06-22T19:18:53Z"
+    }
+  ]
+}

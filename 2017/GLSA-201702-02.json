@@ -1,0 +1,98 @@
+{
+  "ID": "201702-02",
+  "Title": "RTMPDump: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in RTMPDump, the worst of\n    which could lead to arbitrary code execution.\n  ",
+  "Product": {
+    "Text": "rtmpdump",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-02-06",
+  "Revised": {
+    "Text": "2017-02-06",
+    "Count": "1"
+  },
+  "Bug": [
+    "570242"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-video/rtmpdump",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.4_p20161210",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.4_p20161210",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>RTMPDump is an RTMP client intended to stream audio or video flash\n      content\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in RTMPDump.</p>\n    \n    <p>The following is a list of vulnerabilities fixed:</p>\n    \n    <ul>\n      <li>Additional decode input size checks</li>\n      <li>Ignore zero-length packets</li>\n      <li>Potential integer overflow in RTMPPacket_Alloc().</li>\n      <li>Obsolete RTMPPacket_Free() call left over from original C++ to C\n        rewrite\n      </li>\n      <li>AMFProp_GetObject must make sure the prop is actually an object</li>\n    </ul>\n    \n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted media\n      flash file using RTMPDump. This could possibly result in the execution of\n      arbitrary code with the privileges of the process or a Denial of Service\n      condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All RTMPDump users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=media-video/rtmpdump-2.4_p20161210\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "OSS ML\n      CVE Request\n    ",
+        "Link": "http://www.openwall.com/lists/oss-security/2015/12/30/1"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "BlueKnight",
+      "Tag": "requester",
+      "Timestamp": "2017-01-27T06:35:09Z"
+    },
+    {
+      "Text": "BlueKnight",
+      "Tag": "submitter",
+      "Timestamp": "2017-02-06T02:08:12Z"
+    }
+  ]
+}

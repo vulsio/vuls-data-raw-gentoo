@@ -1,0 +1,98 @@
+{
+  "ID": "202101-25",
+  "Title": "Mutt: Denial of service",
+  "Synopsis": "A vulnerability in Mutt could lead to a Denial of Service\n    condition.\n  ",
+  "Product": {
+    "Text": "mutt",
+    "Type": "ebuild"
+  },
+  "Announced": "2021-01-26",
+  "Revised": {
+    "Text": "2021-01-26",
+    "Count": "1"
+  },
+  "Bug": [
+    "765790"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "mail-client/mutt",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.4-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.4-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Mutt is a small but very powerful text-based mail client.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A memory leak could occur when a crafted email message is received.</p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>An attacker could cause a possible Denial of Service condition.</p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Mutt users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=mail-client/mutt-2.0.4-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2021-3181",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-3181"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "sam_c",
+      "Tag": "requester",
+      "Timestamp": "2021-01-25T23:33:22Z"
+    },
+    {
+      "Text": "sam_c",
+      "Tag": "submitter",
+      "Timestamp": "2021-01-26T00:13:00Z"
+    }
+  ]
+}

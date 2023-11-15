@@ -1,0 +1,98 @@
+{
+  "ID": "202210-36",
+  "Title": "libjxl: Denial of Service",
+  "Synopsis": "A vulnerability has been found in libjxl which could result in denial of service.",
+  "Product": {
+    "Text": "libjxl",
+    "Type": "ebuild"
+  },
+  "Announced": "2022-10-31",
+  "Revised": {
+    "Text": "2022-10-31",
+    "Count": "1"
+  },
+  "Bug": [
+    "856037"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/libjxl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.7.0_pre20220825",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.7.0_pre20220825",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n        <p>libjxl is the JPEG XL image format reference implementation.</p>\n    "
+  },
+  "Description": {
+    "Text": "\n        <p>libjxl contains an unecessary assertion in jxl::LowMemoryRenderPipeline::Init.</p>\n    "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n        <p>An attacker can cause a denial of service of the libjxl process via a crafted input file.</p>\n    "
+  },
+  "Workaround": {
+    "Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+  },
+  "Resolution": {
+    "Text": "\n        \n        \n        \n    ",
+    "P": [
+      {
+        "Text": "All users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=media-libs/libjxl-0.7.0_pre20220825\"\n        "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2022-34000",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-34000"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ajak",
+      "Tag": "requester",
+      "Timestamp": "2022-10-31T20:21:23.265436Z"
+    },
+    {
+      "Text": "ajak",
+      "Tag": "submitter",
+      "Timestamp": "2022-10-31T20:21:23.274675Z"
+    }
+  ]
+}

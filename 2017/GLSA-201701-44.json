@@ -1,0 +1,98 @@
+{
+  "ID": "201701-44",
+  "Title": "CVS: Heap-based overflow",
+  "Synopsis": "A heap-based buffer overflow in CVS might allow remote attackers to\n    execute\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "cvs",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-01-19",
+  "Revised": {
+    "Text": "2017-01-19",
+    "Count": "01"
+  },
+  "Bug": [
+    "402593"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-vcs/cvs",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.12.12-r11",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.12.12-r11",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>CVS (Concurrent Versions System) is an open-source network-transparent\n      version control system. It contains both a client utility and a server.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A heap-based buffer overflow was discovered in the proxy_connect\n      function in src/client.c in CVS.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>An attacker, utilizing a remote HTTP proxy server, could cause a Denial\n      of Service condition or possibly execute arbitrary code via a crafted\n      HTTP response.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All CVS users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-vcs/cvs-1.12.12-r11\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-0804",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0804"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "b-man",
+      "Tag": "requester",
+      "Timestamp": "2017-01-18T08:43:18Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2017-01-19T19:06:48Z"
+    }
+  ]
+}

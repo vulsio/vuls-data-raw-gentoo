@@ -1,0 +1,91 @@
+{
+  "ID": "200311-03",
+  "Title": "HylaFAX: Remote code exploit in hylafax",
+  "Synopsis": "\n    A format bug condition allows a remote attacjer to execute arbitrary code as\n    the root user.\n  ",
+  "Product": {
+    "Text": "HylaFAX",
+    "Type": "ebuild"
+  },
+  "Announced": "2003-11-10",
+  "Revised": {
+    "Text": "2003-11-10",
+    "Count": "01"
+  },
+  "Bug": [
+    "33368"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/hylafax",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.1.8",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.1.7",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    HylaFAX is a popular client-server fax package.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    During a code review of the hfaxd server, the SuSE Security Team discovered\n    a format bug condition that allows a remote attacker to execute arbitrary\n    code as the root user.  However, the bug cannot be triggered in the default\n    hylafax configuration.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could execute arbitrary code with root privileges.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    Users are encouraged to perform an 'emerge sync' and upgrade the package to\n    the latest available version.  Vulnerable versions of hylafax have been\n    removed from portage.  Specific steps to upgrade:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    # emerge -pv '>=net-misc/hylafax-4.1.8'\n    # emerge '>=net-misc/hylafax-4.1.8'\n    # emerge clean"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2003-0886",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2003-0886"
+      },
+      {
+        "Text": "SuSE Security Announcment",
+        "Link": "http://www.novell.com/linux/security/advisories/2003_045_hylafax.html"
+      }
+    ]
+  },
+  "Metadata": null
+}

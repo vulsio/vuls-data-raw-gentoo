@@ -1,0 +1,134 @@
+{
+  "ID": "200511-13",
+  "Title": "Sylpheed, Sylpheed-Claws: Buffer overflow in LDIF importer",
+  "Synopsis": "\n    Sylpheed and Sylpheed-Claws contain a buffer overflow vulnerability which\n    may lead to the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "sylpheed sylpheed-claws",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-11-15",
+  "Revised": {
+    "Text": "2005-11-15",
+    "Count": "01"
+  },
+  "Bug": [
+    "111853"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "mail-client/sylpheed",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "mail-client/sylpheed-claws",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.5-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.5-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Sylpheed is a lightweight email client and newsreader.\n    Sylpheed-Claws is a 'bleeding edge' version of Sylpheed. They both\n    support the import of address books in LDIF (Lightweight Directory\n    Interchange Format).\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Colin Leroy reported buffer overflow vulnerabilities in Sylpheed\n    and Sylpheed-Claws. The LDIF importer uses a fixed length buffer to\n    store data of variable length. Two similar problems exist also in the\n    Mutt and Pine addressbook importers of Sylpheed-Claws.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    By convincing a user to import a specially-crafted LDIF file into\n    the address book, a remote attacker could cause the program to crash,\n    potentially allowing the execution of arbitrary code with the\n    privileges of the user running the software.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Sylpheed users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Sylpheed-Claws users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-client/sylpheed-2.0.4\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-client/sylpheed-claws-1.0.5-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-3354",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3354"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-11-13T17:42:22Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-11-13T18:10:25Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-11-15T08:35:12Z"
+    }
+  ]
+}

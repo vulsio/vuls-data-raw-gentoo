@@ -1,0 +1,134 @@
+{
+  "ID": "200701-07",
+  "Title": "OpenOffice.org: EMF/WMF file handling vulnerabilities",
+  "Synopsis": "\n    A truncation error and integer overflows in the EMF/WMF file handling of\n    OpenOffice.org could be exploited to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "openoffice",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-01-12",
+  "Revised": {
+    "Text": "2007-01-12",
+    "Count": "01"
+  },
+  "Bug": [
+    "159951"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-office/openoffice-bin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.1.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.1.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "app-office/openoffice",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    OpenOffice.org is an open source office productivity suite, including\n    word processing, spreadsheet, presentation, drawing, data charting,\n    formula editing, and file conversion facilities.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    John Heasman of NGSSoftware has discovered integer overflows in the\n    EMR_POLYPOLYGON and EMR_POLYPOLYGON16 processing and an error within\n    the handling of META_ESCAPE records.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could exploit these vulnerabilities to cause heap overflows\n    and potentially execute arbitrary code with the privileges of the user\n    running OpenOffice.org by enticing the user to open a document\n    containing a malicious WMF/EMF file.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround known at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All OpenOffice.org binary users should update to version 2.1.0 or\n    later:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All OpenOffice.org users should update to version 2.0.4 or later:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-office/openoffice-bin-2.1.0\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-office/openoffice-2.0.4\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-5870",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5870"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-01-09T18:48:36Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-01-09T19:06:14Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-01-12T12:16:11Z"
+    }
+  ]
+}

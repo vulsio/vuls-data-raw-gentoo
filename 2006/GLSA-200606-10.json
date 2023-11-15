@@ -1,0 +1,103 @@
+{
+  "ID": "200606-10",
+  "Title": "Cscope: Many buffer overflows",
+  "Synopsis": "\n    Cscope is vulnerable to multiple buffer overflows that could lead to the\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "Cscope",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-06-11",
+  "Revised": {
+    "Text": "2006-06-11",
+    "Count": "01"
+  },
+  "Bug": [
+    "133829"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-util/cscope",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "15.5-r6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "15.5-r6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Cscope is a developer's tool for browsing source code.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Cscope does not verify the length of file names sourced in\n    #include statements.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A user could be enticed to source a carefully crafted file which\n    will allow the attacker to execute arbitrary code with the permissions\n    of the user running Cscope.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Cscope users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-util/cscope-15.5-r6\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2004-2541",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-2541"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-06-01T07:07:22Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-06-05T17:21:43Z"
+    },
+    {
+      "Text": "\n    dizzutch\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-06-05T18:50:34Z"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "ID": "200407-07",
+  "Title": "Shorewall : Insecure temp file handling",
+  "Synopsis": "\n    Shorewall contains a bug in the code handling the creation of temporary\n    files and directories. This can allow a non-root user to overwrite\n    arbitrary system files.\n  ",
+  "Product": {
+    "Text": "Shorewall",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-07-08",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "55675"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-firewall/shorewall",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.4.10f",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.4.10c",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Shorewall is a high level tool for configuring Netfilter, the firewall\n    facility included in the Linux Kernel.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Shorewall uses temporary files and directories in an insecure manner. A\n    local user could create symbolic links at specific locations,\n    eventually overwriting other files on the filesystem with the rights of\n    the shorewall process.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could exploit this vulnerability to overwrite arbitrary\n    system files with root privileges, resulting in Denial of Service or\n    further exploitation.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time. All users should upgrade to\n    the latest available version of Shorewall.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All users should upgrade to the latest available version of Shorewall,\n    as follows:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv \">=net-firewall/shorewall-1.4.10f\"\n    # emerge \">=net-firewall/shorewall-1.4.10f\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Shorewall Announcement",
+        "Link": "http://lists.shorewall.net/pipermail/shorewall-announce/2004-June/000385.html"
+      },
+      {
+        "Text": "CVE-2004-0647",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0647"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

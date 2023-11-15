@@ -1,0 +1,102 @@
+{
+  "ID": "201310-16",
+  "Title": "TPTEST: Arbitrary code execution",
+  "Synopsis": "Two buffer overflow vulnerabilities in TPTEST may allow remote\n    attackers to execute arbitrary code or cause Denial of Service.\n  ",
+  "Product": {
+    "Text": "tptest",
+    "Type": "ebuild"
+  },
+  "Announced": "2013-10-26",
+  "Revised": {
+    "Text": "2013-10-26",
+    "Count": "1"
+  },
+  "Bug": [
+    "261191"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-analyzer/tptest",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.1.7-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.1.7-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>TPTEST is a tool to measure the speed of a user’s Internet connection.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>The GetStatsFromLine() function in TPTEST is vulnerable to buffer\n      overflows from STATS lines with long email and pwd fields.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could send a specially-crafted STATS line, possibly\n      resulting in arbitrary code execution or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All TPTEST users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-analyzer/tptest-3.1.7-r2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-0650",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-0650"
+      },
+      {
+        "Text": "CVE-2009-0659",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-0659"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    pinkbyte\n  ",
+      "Tag": "requester",
+      "Timestamp": "2013-10-10T10:39:46Z"
+    },
+    {
+      "Text": "\n    creffett\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2013-10-26T20:08:51Z"
+    }
+  ]
+}

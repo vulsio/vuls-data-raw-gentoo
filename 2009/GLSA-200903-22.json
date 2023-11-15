@@ -1,0 +1,103 @@
+{
+  "ID": "200903-22",
+  "Title": "Ganglia: Execution of arbitrary code",
+  "Synopsis": "\n    A buffer-overflow in Ganglia's gmetad might lead to the execution of\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "ganglia",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-03-10",
+  "Revised": {
+    "Text": "2009-03-10",
+    "Count": "01"
+  },
+  "Bug": [
+    "255366"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-cluster/ganglia",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.1.1-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.1.1-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Ganglia is a scalable distributed monitoring system for clusters and\n    grids.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Spike Spiegel reported a stack-based buffer overflow in the\n    process_path() function when processing overly long pathnames in\n    gmetad/server.c.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker could send a specially crafted request to the gmetad\n    service leading to the execution of arbitrary code or a Denial of\n    Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Ganglia users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-cluster/ganglia-3.1.1-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2009-0241",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0241"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-02-03T00:12:46Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-02-12T16:26:05Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-02-12T16:27:02Z"
+    }
+  ]
+}

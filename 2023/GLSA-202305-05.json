@@ -1,0 +1,98 @@
+{
+  "ID": "202305-05",
+  "Title": "xfce4-settings: Browser Argument Injection",
+  "Synopsis": "A vulnerability has been discovered in xfce4-settings which could result in universal cross site scripting (\"uXSS\").",
+  "Product": {
+    "Text": "xfce4-settings",
+    "Type": "ebuild"
+  },
+  "Announced": "2023-05-03",
+  "Revised": {
+    "Text": "2023-05-03",
+    "Count": "1"
+  },
+  "Bug": [
+    "880257"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "xfce-base/xfce4-settings",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.17.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.17.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n        <p>xfce4-settings contains the configuration system for the Xfce desktop environment.</p>\n    "
+  },
+  "Description": {
+    "Text": "\n        <p>xfce4-settings does not sufficiently sanitize URLs opened via xdg4-mime-helper-tool (which is called when a user clicks a link in e.g. Firefox).</p>\n    "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n        <p>The vulnerability can be leveraged into 1-click universal cross site scripting in some browsers, or potentially other unspecified impact.</p>\n    "
+  },
+  "Workaround": {
+    "Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+  },
+  "Resolution": {
+    "Text": "\n        \n        \n        \n    ",
+    "P": [
+      {
+        "Text": "All xfce4-settings users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=xfce-base/xfce4-settings-4.17.1\"\n        "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2022-45062",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-45062"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ajak",
+      "Tag": "requester",
+      "Timestamp": "2023-05-03T09:14:46.477138Z"
+    },
+    {
+      "Text": "sam",
+      "Tag": "submitter",
+      "Timestamp": "2023-05-03T09:14:46.480051Z"
+    }
+  ]
+}

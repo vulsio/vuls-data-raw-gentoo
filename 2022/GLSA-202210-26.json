@@ -1,0 +1,98 @@
+{
+  "ID": "202210-26",
+  "Title": "Shadow: TOCTOU Race",
+  "Synopsis": "A TOCTOU race has been discovered in Shadow, which could result in the unauthorized modification of files.",
+  "Product": {
+    "Text": "shadow",
+    "Type": "ebuild"
+  },
+  "Announced": "2022-10-31",
+  "Revised": {
+    "Text": "2022-10-31",
+    "Count": "1"
+  },
+  "Bug": [
+    "830486"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-apps/shadow",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.12.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.12.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n        <p>Shadow contains utilities to deal with user accounts</p>\n    "
+  },
+  "Description": {
+    "Text": "\n        <p>A TOCTOU race condition was discovered in shadow. A local attacker with write privileges in a directory removed or copied by usermod/userdel could potentially exploit this flaw when the administrator invokes usermod/userdel.</p>\n    "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n        <p>An unauthorized user could potentially modify files which they do not have write permissions for.</p>\n    "
+  },
+  "Workaround": {
+    "Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+  },
+  "Resolution": {
+    "Text": "\n        \n        \n        \n    ",
+    "P": [
+      {
+        "Text": "All Shadow users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=sys-apps/shadow-4.12.2\"\n        "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2013-4235",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2013-4235"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ajak",
+      "Tag": "requester",
+      "Timestamp": "2022-10-31T01:22:12.661215Z"
+    },
+    {
+      "Text": "ajak",
+      "Tag": "submitter",
+      "Timestamp": "2022-10-31T01:22:12.666288Z"
+    }
+  ]
+}

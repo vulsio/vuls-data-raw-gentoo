@@ -1,0 +1,97 @@
+{
+  "ID": "200408-18",
+  "Title": "xine-lib: VCD MRL buffer overflow",
+  "Synopsis": "\n    xine-lib contains an exploitable buffer overflow in the VCD handling code\n  ",
+  "Product": {
+    "Text": "xine-lib",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-08-17",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "59948"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/xine-lib",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1_rc5-r3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1_rc5-r2",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    xine-lib is a multimedia library which can be utilized to create\n    multimedia frontends.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    xine-lib contains a bug where it is possible to overflow the vcd://\n    input source identifier management buffer through carefully crafted\n    playlists.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker may construct a carefully-crafted playlist file which will\n    cause xine-lib to execute arbitrary code with the permissions of the\n    user. In order to conform with the generic naming standards of most\n    Unix-like systems, playlists can have extensions other than .asx (the\n    standard xine playlist format), and made to look like another file\n    (MP3, AVI, or MPEG for example). If an attacker crafts a playlist with\n    a valid header, they can insert a VCD playlist line that can cause a\n    buffer overflow and possible shellcode execution.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time. All users are encouraged to\n    upgrade to the latest available version of xine-lib.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All xine-lib users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv \">=media-libs/xine-lib-1_rc5-r3\"\n    # emerge \">=media-libs/xine-lib-1_rc5-r3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Open Security Advisory",
+        "Link": "http://www.open-security.org/advisories/6"
+      },
+      {
+        "Text": "CVE-2004-1475",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1475"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-08-14T05:07:02Z"
+    }
+  ]
+}

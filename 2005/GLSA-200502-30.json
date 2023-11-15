@@ -1,0 +1,103 @@
+{
+  "ID": "200502-30",
+  "Title": "cmd5checkpw: Local password leak vulnerability",
+  "Synopsis": "\n    cmd5checkpw contains a flaw allowing local users to access other users\n    cmd5checkpw passwords.\n  ",
+  "Product": {
+    "Text": "cmd5checkpw",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-02-25",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "78256"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-mail/cmd5checkpw",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.22-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.22-r1",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    cmd5checkpw is a checkpassword compatible authentication program that\n    uses CRAM-MD5 authentication mode.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Florian Westphal discovered that cmd5checkpw is installed setuid\n    cmd5checkpw but does not drop privileges before calling execvp(), so\n    the invoked program retains the cmd5checkpw euid.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    Local users that know at least one valid /etc/poppasswd user/password\n    combination can read the /etc/poppasswd file.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All cmd5checkpw users should upgrade to the latest available version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync \n    # emerge --ask --oneshot --verbose \">=net-mail/cmd5checkpw-0.22-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-0580",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0580"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-02-24T11:26:13Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-02-25T09:22:33Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-02-25T09:25:07Z"
+    }
+  ]
+}

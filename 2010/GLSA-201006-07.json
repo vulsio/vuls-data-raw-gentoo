@@ -1,0 +1,146 @@
+{
+  "ID": "201006-07",
+  "Title": "SILC: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities were discovered in SILC Toolkit and SILC Client,\n    the worst of which allowing for execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "silc-toolkit silc-client",
+    "Type": "ebuild"
+  },
+  "Announced": "2010-06-01",
+  "Revised": {
+    "Text": "2010-06-01",
+    "Count": "01"
+  },
+  "Bug": [
+    "284561"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-im/silc-toolkit",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.1.10",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.10",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "net-im/silc-client",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.1.8",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.8",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    SILC (Secure Internet Live Conferencing protocol) Toolkit is a software\n    development kit for use in clients, and SILC Client is an IRSSI-based\n    text client.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Multiple vulnerabilities were discovered in SILC Toolkit and SILC\n    Client. For further information please consult the CVE entries\n    referenced below.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could overwrite stack locations and possibly execute\n    arbitrary code via a crafted OID value, Content-Length header or format\n    string specifiers in a nickname field or channel name.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All SILC Toolkit users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All SILC Client users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-im/silc-toolkit-1.1.10\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-im/silc-client-1.1.8\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-7159",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-7159"
+      },
+      {
+        "Text": "CVE-2008-7160",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-7160"
+      },
+      {
+        "Text": "CVE-2009-3051",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3051"
+      },
+      {
+        "Text": "CVE-2009-3163",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3163"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    craig\n  ",
+      "Tag": "requester",
+      "Timestamp": "2010-05-22T11:17:59Z"
+    },
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2010-05-27T13:36:35Z"
+    },
+    {
+      "Text": "\n    vorlon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2010-05-27T17:55:42Z"
+    }
+  ]
+}

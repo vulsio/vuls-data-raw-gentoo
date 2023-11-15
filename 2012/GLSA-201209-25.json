@@ -1,0 +1,316 @@
+{
+  "ID": "201209-25",
+  "Title": "VMware Player, Server, Workstation: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in VMware Player, Server,\n    and Workstation, allowing remote and local attackers to conduct several\n    attacks, including privilege escalation, remote execution of arbitrary\n    code, and a Denial of Service.\n  ",
+  "Product": {
+    "Text": "vmware-server vmware-player vmware-workstation",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-09-29",
+  "Revised": {
+    "Text": "2012-09-29",
+    "Count": "2"
+  },
+  "Bug": [
+    "213548",
+    "224637",
+    "236167",
+    "245941",
+    "265139",
+    "282213",
+    "297367",
+    "335866",
+    "385727"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-emulation/vmware-player",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": null,
+        "Vulnerable": [
+          {
+            "Text": "2.5.5.328052",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "app-emulation/vmware-workstation",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": null,
+        "Vulnerable": [
+          {
+            "Text": "6.5.5.328052",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "app-emulation/vmware-server",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": null,
+        "Vulnerable": [
+          {
+            "Text": "1.0.9.156507",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>VMware Player, Server, and Workstation allow emulation of a complete PC\n      on a PC without the usual performance overhead of most emulators.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in VMware Player, Server,\n      and Workstation. Please review the CVE identifiers referenced below for\n      details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>Local users may be able to gain escalated privileges, cause a Denial of\n      Service, or gain sensitive information. \n    </p>\n    \n    <p>A remote attacker could entice a user to open a specially crafted file,\n      possibly resulting in the remote execution of arbitrary code, or a Denial\n      of Service. Remote attackers also may be able to spoof DNS traffic, read\n      arbitrary files, or inject arbitrary web script to the VMware Server\n      Console. \n    </p>\n    \n    <p>Furthermore, guest OS users may be able to execute arbitrary code on the\n      host OS, gain escalated privileges on the guest OS, or cause a Denial of\n      Service (crash the host OS).\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "Gentoo discontinued support for VMware Player. We recommend that users\n      unmerge VMware Player:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "NOTE: Users could upgrade to\n      “>=app-emulation/vmware-player-3.1.5”, however these packages are\n      not currently stable.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "Gentoo discontinued support for VMware Workstation. We recommend that\n      users unmerge VMware Workstation:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "NOTE: Users could upgrade to\n      “>=app-emulation/vmware-workstation-7.1.5”, however these packages\n      are not currently stable.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "Gentoo discontinued support for VMware Server. We recommend that users\n      unmerge VMware Server:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --unmerge \"app-emulation/vmware-player\"\n    ",
+      "\n      # emerge --unmerge \"app-emulation/vmware-workstation\"\n    ",
+      "\n      # emerge --unmerge \"app-emulation/vmware-server\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-5269",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-5269"
+      },
+      {
+        "Text": "\n      CVE-2007-5503 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-5503 "
+      },
+      {
+        "Text": "\n      CVE-2007-5671 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-5671 "
+      },
+      {
+        "Text": "\n      CVE-2008-0967 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2008-0967 "
+      },
+      {
+        "Text": "\n      CVE-2008-1340 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2008-1340 "
+      },
+      {
+        "Text": "\n      CVE-2008-1361 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2008-1361 "
+      },
+      {
+        "Text": "\n      CVE-2008-1362 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2008-1362 "
+      },
+      {
+        "Text": "\n      CVE-2008-1363 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2008-1363 "
+      },
+      {
+        "Text": "\n      CVE-2008-1364 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2008-1364 "
+      },
+      {
+        "Text": "\n      CVE-2008-1392 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2008-1392 "
+      },
+      {
+        "Text": "\n      CVE-2008-1447 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2008-1447 "
+      },
+      {
+        "Text": "\n      CVE-2008-1806 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2008-1806 "
+      },
+      {
+        "Text": "\n      CVE-2008-1807 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2008-1807 "
+      },
+      {
+        "Text": "\n      CVE-2008-1808 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2008-1808 "
+      },
+      {
+        "Text": "\n      CVE-2008-2098 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2008-2098 "
+      },
+      {
+        "Text": "\n      CVE-2008-2100 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2008-2100 "
+      },
+      {
+        "Text": "\n      CVE-2008-2101 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2008-2101 "
+      },
+      {
+        "Text": "\n      CVE-2008-4915 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2008-4915 "
+      },
+      {
+        "Text": "\n      CVE-2008-4916 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2008-4916 "
+      },
+      {
+        "Text": "\n      CVE-2008-4917 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2008-4917 "
+      },
+      {
+        "Text": "\n      CVE-2009-0040 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-0040 "
+      },
+      {
+        "Text": "\n      CVE-2009-0909 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-0909 "
+      },
+      {
+        "Text": "\n      CVE-2009-0910 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-0910 "
+      },
+      {
+        "Text": "CVE-2009-1244",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-1244"
+      },
+      {
+        "Text": "\n      CVE-2009-2267 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-2267 "
+      },
+      {
+        "Text": "\n      CVE-2009-3707 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-3707 "
+      },
+      {
+        "Text": "\n      CVE-2009-3732 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-3732 "
+      },
+      {
+        "Text": "\n      CVE-2009-3733 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-3733 "
+      },
+      {
+        "Text": "\n      CVE-2009-4811 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-4811 "
+      },
+      {
+        "Text": "\n      CVE-2010-1137 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-1137 "
+      },
+      {
+        "Text": "\n      CVE-2010-1138 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-1138 "
+      },
+      {
+        "Text": "\n      CVE-2010-1139 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-1139 "
+      },
+      {
+        "Text": "\n      CVE-2010-1140 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-1140 "
+      },
+      {
+        "Text": "\n      CVE-2010-1141 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-1141 "
+      },
+      {
+        "Text": "\n      CVE-2010-1142 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-1142 "
+      },
+      {
+        "Text": "\n      CVE-2010-1143 \n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-1143 "
+      },
+      {
+        "Text": "CVE-2011-3868",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3868"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "system",
+      "Tag": "requester",
+      "Timestamp": "2011-10-07T23:37:01Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-09-29T13:12:45Z"
+    }
+  ]
+}

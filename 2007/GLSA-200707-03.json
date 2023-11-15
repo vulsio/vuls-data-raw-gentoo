@@ -1,0 +1,108 @@
+{
+  "ID": "200707-03",
+  "Title": "Evolution: User-assisted remote execution of arbitrary code",
+  "Synopsis": "\n    The IMAP client of Evolution contains a vulnerability potentially leading\n    to the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "evolution-data-server",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-07-02",
+  "Revised": {
+    "Text": "2007-07-02",
+    "Count": "01"
+  },
+  "Bug": [
+    "182011"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "gnome-extra/evolution-data-server",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.8.3-r5",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.6.2-r1",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.8.3-r5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Evolution is the mail client of the GNOME desktop environment. Camel is\n    the Evolution Data Server module that handles mail functions.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The imap_rescan() function of the file camel-imap-folder.c does not\n    properly sanitize the \"SEQUENCE\" response sent by an IMAP server before\n    being used to index arrays.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A malicious or compromised IMAP server could trigger the vulnerability\n    and execute arbitrary code with the permissions of the user running\n    Evolution.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Evolution users should upgrade evolution-data-server to the latest\n    version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \"gnome-extra/evolution-data-server\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-3257",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3257"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-06-20T15:13:37Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-06-25T16:19:12Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-06-25T16:19:36Z"
+    }
+  ]
+}

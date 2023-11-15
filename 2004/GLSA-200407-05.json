@@ -1,0 +1,128 @@
+{
+  "ID": "200407-05",
+  "Title": "XFree86, X.org: XDM ignores requestPort setting",
+  "Synopsis": "\n    XDM will open TCP sockets for its chooser, even if the\n    DisplayManager.requestPort setting is set to 0. This may allow authorized\n    users to access a machine remotely via X, even if the administrator has\n    configured XDM to refuse such connections.\n  ",
+  "Product": {
+    "Text": "xdm",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-07-05",
+  "Revised": {
+    "Text": "2004-07-05",
+    "Count": "01"
+  },
+  "Bug": [
+    "53226"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "x11-base/xfree",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.3.0-r6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.3.0-r5",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "x11-base/xorg-x11",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "6.7.0-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "6.7.0",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The X Display Manager (XDM) is a program which provides a graphical login\n    prompt to users on the console or on remote X terminals. It has largely\n    been superseded by programs such as GDM and KDM.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    XDM will open TCP sockets for its chooser, even if the\n    DisplayManager.requestPort setting is set to 0. Remote clients can use this\n    port to connect to XDM and request a login window, thus allowing access to\n    the system.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    Authorized users may be able to login remotely to a machine running XDM,\n    even if this option is disabled in XDM's configuration. Please note that an\n    attacker must have a preexisting account on the machine in order to exploit\n    this vulnerability.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time. All users should upgrade to the\n    latest available version of X.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    If you are using XFree86, you should run the following:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    If you are using X.org's X11 server, you should run the following:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n\n    # emerge -pv \">=x11-base/xfree-4.3.0-r6\"\n    # emerge \">=x11-base/xfree-4.3.0-r6\"",
+      "\n    # emerge sync\n\n    # emerge -pv \">=x11-base/xorg-x11-6.7.0-r1\"\n    # emerge \">=x11-base/xorg-x11-6.7.0-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN 2004-0419",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0419"
+      },
+      {
+        "Text": "XFree86 Bug",
+        "Link": "http://bugs.xfree86.org/show_bug.cgi?id=1376"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    condordes\n  ",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

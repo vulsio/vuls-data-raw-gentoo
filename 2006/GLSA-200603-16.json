@@ -1,0 +1,103 @@
+{
+  "ID": "200603-16",
+  "Title": "Metamail: Buffer overflow",
+  "Synopsis": "\n    A buffer overflow in Metamail could possibly be exploited to execute\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "metamail",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-03-17",
+  "Revised": {
+    "Text": "2006-03-17",
+    "Count": "01"
+  },
+  "Bug": [
+    "126052"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-mail/metamail",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.7.45.3-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.7.45.3-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Metamail is a program that decodes MIME encoded mail.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Ulf Harnhammar discovered a buffer overflow in Metamail when\n    processing mime boundraries.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    By sending a specially crafted email, attackers could potentially\n    exploit this vulnerability to crash Metamail or to execute arbitrary\n    code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Metamail users should update to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-mail/metamail-2.7.45.3-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-0709",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0709"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-03-14T21:16:22Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-03-16T09:48:07Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-03-16T21:04:49Z"
+    }
+  ]
+}

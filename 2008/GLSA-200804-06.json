@@ -1,0 +1,103 @@
+{
+  "ID": "200804-06",
+  "Title": "UnZip: User-assisted execution of arbitrary code",
+  "Synopsis": "\n    A double free vulnerability discovered in UnZip might lead to the execution\n    of arbitrary code.\n  ",
+  "Product": {
+    "Text": "unzip",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-04-06",
+  "Revised": {
+    "Text": "2008-04-06",
+    "Count": "01"
+  },
+  "Bug": [
+    "213761"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-arch/unzip",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.52-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.52-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Info-ZIP's UnZip is a tool to list and extract files inside PKZIP\n    compressed files.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Tavis Ormandy of the Google Security Team discovered that the NEEDBITS\n    macro in the inflate_dynamic() function in the file inflate.c can be\n    invoked using invalid buffers, which can lead to a double free.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    Remote attackers could entice a user or automated system to open a\n    specially crafted ZIP file that might lead to the execution of\n    arbitrary code or a Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All UnZip users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-arch/unzip-5.52-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-0888",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0888"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-03-29T19:46:56Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-04-03T22:38:54Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-04-03T22:39:11Z"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "ID": "201204-08",
+  "Title": "Perl DBD-Pg Module: Arbitrary code execution",
+  "Synopsis": "Two format string vulnerabilities have been found in the Perl\n    DBD-Pg module, allowing a remote PostgreSQL servers to execute arbitrary\n    code.\n  ",
+  "Product": {
+    "Text": "DBD-Pg",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-04-17",
+  "Revised": {
+    "Text": "2012-04-17",
+    "Count": "1"
+  },
+  "Bug": [
+    "407549"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-perl/DBD-Pg",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.19.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.19.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>DBD-Pg is a PostgreSQL interface module for Perl.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Format string vulnerabilities have been found in the the \"pg_warn()\" and\n      \"dbd_st_prepare()\" functions in dbdimp.c.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote PostgreSQL server could send specially crafted database\n      warnings or DBD statements, possibly resulting in execution of arbitrary\n      code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All users of the Perl DBD-Pg module should upgrade to the latest\n      version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-perl/DBD-Pg-2.19.0\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-1151",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1151"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2012-03-17T19:18:38Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-04-17T22:44:31Z"
+    }
+  ]
+}

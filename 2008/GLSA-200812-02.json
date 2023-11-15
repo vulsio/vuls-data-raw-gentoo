@@ -1,0 +1,107 @@
+{
+  "ID": "200812-02",
+  "Title": "enscript: User-assisted execution of arbitrary code",
+  "Synopsis": "\n    Two buffer overflows in enscript might lead to the execution of arbitrary\n    code.\n  ",
+  "Product": {
+    "Text": "enscript",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-12-02",
+  "Revised": {
+    "Text": "2008-12-02",
+    "Count": "02"
+  },
+  "Bug": [
+    "243228"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-text/enscript",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.6.4-r4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.6.4-r4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    enscript is a powerful ASCII to PostScript file converter.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Two stack-based buffer overflows in the read_special_escape() function\n    in src/psgen.c have been reported. Ulf Harnhammar of Secunia Research\n    discovered a vulnerability related to the \"setfilename\" command\n    (CVE-2008-3863), and Kees Cook of Ubuntu discovered a vulnerability\n    related to the \"font\" escape sequence (CVE-2008-4306).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could entice a user or automated system to process\n    specially crafted input with the special escapes processing enabled\n    using the \"-e\" option, possibly resulting in the execution of arbitrary\n    code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All enscript users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/enscript-1.6.4-r4\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-3863",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3863"
+      },
+      {
+        "Text": "CVE-2008-4306",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4306"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-11-27T17:28:05Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-11-27T17:37:26Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-11-27T17:37:33Z"
+    }
+  ]
+}

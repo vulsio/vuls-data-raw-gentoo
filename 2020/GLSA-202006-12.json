@@ -1,0 +1,98 @@
+{
+  "ID": "202006-12",
+  "Title": "GNU Mailutils: Privilege escalation",
+  "Synopsis": "A vulnerability has been found in GNU Mailutils allowing privilege\n    escalation.\n  ",
+  "Product": {
+    "Text": "mailutils",
+    "Type": "ebuild"
+  },
+  "Announced": "2020-06-13",
+  "Revised": {
+    "Text": "2020-06-13",
+    "Count": "1"
+  },
+  "Bug": [
+    "700806"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-mail/mailutils",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.8",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.8",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>The GNU Mailutils are a collection of mail-related utilities, including\n      an IMAP4 server (imap4d).\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>GNU Mailutils runs maidag by default with setuid root permissions.</p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>An attacker can use this to write to arbitrary files as root.</p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All GNU Mailutils users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-mail/mailutils-3.8\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2019-18862",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2019-18862"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "sam_c",
+      "Tag": "requester",
+      "Timestamp": "2020-05-12T21:52:25Z"
+    },
+    {
+      "Text": "sam_c",
+      "Tag": "submitter",
+      "Timestamp": "2020-06-13T01:51:38Z"
+    }
+  ]
+}

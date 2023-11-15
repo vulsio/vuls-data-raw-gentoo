@@ -1,0 +1,124 @@
+{
+  "ID": "200903-41",
+  "Title": "gedit: Untrusted search path",
+  "Synopsis": "\n    A vulnerability in gedit might allow local attackers to execute arbitrary\n    code.\n  ",
+  "Product": {
+    "Text": "gedit",
+    "Type": "ebuild"
+  },
+  "Announced": "2009-03-30",
+  "Revised": {
+    "Text": "2009-03-30",
+    "Count": "01"
+  },
+  "Bug": [
+    "257004"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-editors/gedit",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.22.3-r1",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "2.24.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.24.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    gedit is a text editor for the GNOME desktop.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    James Vega reported that gedit uses the current working directory when\n    searching for python modules, a vulnerability related to CVE-2008-5983.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could entice a user to open gedit from a specially\n    crafted environment, possibly resulting in the execution of arbitrary\n    code with the privileges of the user running the application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Do not run gedit from untrusted working directories.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All gedit 2.22.x users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All gedit 2.24.x users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-editors/gedit-2.22.3-r1\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-editors/gedit-2.24.3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-5983",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5983"
+      },
+      {
+        "Text": "CVE-2009-0314",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0314"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-03-23T09:17:57Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2009-03-30T11:46:10Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2009-03-30T11:46:20Z"
+    }
+  ]
+}

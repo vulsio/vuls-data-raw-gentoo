@@ -1,0 +1,103 @@
+{
+  "ID": "200711-12",
+  "Title": "Tomboy: User-assisted execution of arbitrary code",
+  "Synopsis": "\n    Tomboy doesn't properly handle environment variables, potentially allowing\n    a local attacker to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "tomboy",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-11-08",
+  "Revised": {
+    "Text": "2007-11-08",
+    "Count": "01"
+  },
+  "Bug": [
+    "189249"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-misc/tomboy",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.8.1-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.8.1-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Tomboy is a GTK-based desktop note-taking application written in C# and\n    the Mono C#.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Jan Oravec reported that the \"/usr/bin/tomboy\" script sets the\n    \"LD_LIBRARY_PATH\" environment variable incorrectly, which might result\n    in the current working directory (.) to be included when searching for\n    dynamically linked libraries of the Mono Runtime application.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could entice a user into running Tomboy in a directory\n    containing a specially crafted library file to execute arbitrary code\n    with the privileges of the user running Tomboy.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Do not run Tomboy from an untrusted working directory.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Tomboy users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-misc/tomboy-0.8.1-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-4790",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-4790"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-11-06T01:11:29Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-11-06T04:11:22Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-11-06T04:11:35Z"
+    }
+  ]
+}

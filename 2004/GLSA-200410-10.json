@@ -1,0 +1,113 @@
+{
+  "ID": "200410-10",
+  "Title": "gettext: Insecure temporary file handling",
+  "Synopsis": "\n    The gettext utility is vulnerable to symlink attacks, potentially allowing\n    a local user to overwrite or change permissions on arbitrary files with the\n    rights of the user running gettext, which could be the root user.\n  ",
+  "Product": {
+    "Text": "gettext",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-10-10",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "04"
+  },
+  "Bug": [
+    "66355",
+    "85766"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-devel/gettext",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.14.1-r1",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.12.1-r2",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.14.1-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    gettext is a set of utilities for the GNU Translation Project which\n    provides a set of tools and documentation to help produce multi-lingual\n    messages in programs.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    gettext insecurely creates temporary files in world-writeable\n    directories with predictable names.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary files\n    directory, pointing to a valid file somewhere on the filesystem. When\n    gettext is called, this would result in file access with the rights of\n    the user running the utility, which could be the root user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All gettext users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-devel/gettext-0.14.1-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "BugTraq Advisory",
+        "Link": "http://www.securityfocus.com/advisories/7263"
+      },
+      {
+        "Text": "CVE-2004-0966",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0966"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-10-10T10:51:13Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-10-10T10:51:21Z"
+    },
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-10-10T21:46:28Z"
+    }
+  ]
+}

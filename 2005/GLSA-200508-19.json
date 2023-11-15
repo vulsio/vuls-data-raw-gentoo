@@ -1,0 +1,103 @@
+{
+  "ID": "200508-19",
+  "Title": "lm_sensors: Insecure temporary file creation",
+  "Synopsis": "\n    lm_sensors is vulnerable to linking attacks, potentially allowing a local\n    user to overwrite arbitrary files.\n  ",
+  "Product": {
+    "Text": "lm_sensors",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-08-30",
+  "Revised": {
+    "Text": "2005-08-30",
+    "Count": "01"
+  },
+  "Bug": [
+    "103568"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-apps/lm_sensors",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.9.1-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.9.1-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    lm_sensors is a software package that provides drivers for\n    monitoring the temperatures, voltages, and fans of Linux systems with\n    hardware monitoring devices.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Javier Fernandez-Sanguino Pena has discovered that lm_sensors\n    insecurely creates temporary files with predictable filenames when\n    saving configurations.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary file\n    directory, pointing to a valid file somewhere on the filesystem. When\n    the pwmconfig script of lm_sensors is executed, this would result in\n    the file being overwritten with the rights of the user running the\n    script, which typically is the root user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All lm_sensors users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-apps/lm_sensors-2.9.1-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-2672",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2672"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-08-27T09:37:19Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-08-27T09:38:55Z"
+    },
+    {
+      "Text": "\n    formula7\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-08-27T22:28:16Z"
+    }
+  ]
+}

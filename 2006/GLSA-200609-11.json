@@ -1,0 +1,124 @@
+{
+  "ID": "200609-11",
+  "Title": "BIND: Denial of service",
+  "Synopsis": "\n    ISC BIND contains two vulnerabilities allowing a Denial of Service under\n    certain conditions.\n  ",
+  "Product": {
+    "Text": "bind",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-09-15",
+  "Revised": {
+    "Text": "2006-09-15",
+    "Count": "01"
+  },
+  "Bug": [
+    "146486"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-dns/bind",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "9.3.2-r4",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "9.2.6-r4",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "9.3.2-r4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    ISC BIND is the Internet Systems Consortium implementation of the\n    Domain Name System (DNS) protocol.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Queries for SIG records will cause an assertion error if more than one\n    SIG RRset is returned. Additionally, an INSIST failure can be triggered\n    by sending multiple recursive queries if the response to the query\n    arrives after all the clients looking for the response have left the\n    recursion queue.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker having access to a recursive server can crash the server by\n    querying the SIG records where there are multiple SIG RRsets, or by\n    sending many recursive queries in a short time. The exposure can be\n    lowered by restricting the clients that can ask for recursion. An\n    attacker can also crash an authoritative server serving a DNSSEC zone\n    in which there are multiple SIG RRsets.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There are no known workarounds at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All BIND 9.3 users should update to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All BIND 9.2 users should update to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dns/bind-9.3.2-r4\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dns/bind-9.2.6-r4\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2006-4095",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4095"
+      },
+      {
+        "Text": "CVE-2006-4096",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4096"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "requester",
+      "Timestamp": "2006-09-06T10:13:53Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-09-07T11:28:27Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-09-14T22:49:56Z"
+    }
+  ]
+}

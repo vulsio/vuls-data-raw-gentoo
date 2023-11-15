@@ -1,0 +1,150 @@
+{
+  "ID": "200411-15",
+  "Title": "OpenSSL, Groff: Insecure tempfile handling",
+  "Synopsis": "\n    groffer, included in the Groff package, and the der_chop script, included\n    in the OpenSSL package, are both vulnerable to symlink attacks, potentially\n    allowing a local user to overwrite arbitrary files with the rights of the\n    user running the utility.\n  ",
+  "Product": {
+    "Text": "OpenSSL",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-11-08",
+  "Revised": {
+    "Text": "2006-08-23",
+    "Count": "02"
+  },
+  "Bug": [
+    "68404",
+    "68407"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/openssl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.9.7d-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.9.7d-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "sys-apps/groff",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.19.1-r2",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "1.18.1.1",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.19.1-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    OpenSSL is a toolkit implementing the Secure Sockets Layer and\n    Transport Layer Security protocols as well as a general-purpose\n    cryptography library. It includes the der_chop script, which is used to\n    convert DER-encoded certificates to PEM format. Groff (GNU Troff) is a\n    typesetting package which reads plain text mixed with formatting\n    commands and produces formatted output. It includes groffer, a command\n    used to display groff files and man pages on X and tty.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    groffer and the der_chop script create temporary files in\n    world-writeable directories with predictable names.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary files\n    directory, pointing to a valid file somewhere on the filesystem. When\n    groffer or der_chop is executed, this would result in the file being\n    overwritten with the rights of the user running the utility, which\n    could be the root user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Groff users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All OpenSSL users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    Note: /etc/ssl/misc/der_chop is protected by Portage as a configuration\n    file. Don't forget to use etc-update and overwrite the old version with\n    the new one.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose sys-apps/groff",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/openssl-0.9.7d-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-0969",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0969"
+      },
+      {
+        "Text": "CAN-2004-0975",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0975"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-11-07T18:43:48Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-11-07T18:44:31Z"
+    }
+  ]
+}

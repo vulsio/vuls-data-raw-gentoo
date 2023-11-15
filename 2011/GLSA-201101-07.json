@@ -1,0 +1,114 @@
+{
+  "ID": "201101-07",
+  "Title": "Prewikka: password disclosure",
+  "Synopsis": "\n    Due to a world-readable file, a local attacker can obtain the SQL database\n    password used by Prewikka.\n  ",
+  "Product": {
+    "Text": "Prewikka",
+    "Type": "ebuild"
+  },
+  "Announced": "2011-01-16",
+  "Revised": {
+    "Text": "2011-01-16",
+    "Count": "01"
+  },
+  "Bug": [
+    "270056"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-analyzer/prewikka",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.9.14-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.9.14-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Prewikka is a graphical front-end analysis console for the Prelude\n    Hybrid IDS Framework.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The permissions of the prewikka.conf file are set world readable.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could obtain the SQL database password used by\n    Prewikka.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Prewikka users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    NOTE: This is a legacy GLSA. Updates for all affected architectures are\n    available since May 18, 2009 . It is likely that your system is already\n    no longer affected by this issue.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/prewikka-0.9.14-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2010-2058",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-2058"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    craig\n  ",
+      "Tag": "requester",
+      "Timestamp": "2009-06-23T20:26:04Z"
+    },
+    {
+      "Text": "\n    craig\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2010-04-11T12:57:02Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2010-09-21T20:08:51Z"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "ID": "202007-40",
+  "Title": "Thin: Privilege escalation",
+  "Synopsis": "A vulnerability was discovered in Thin which may allow local\n    attackers to kill arbitrary processes (denial of service).\n  ",
+  "Product": {
+    "Text": "thin",
+    "Type": "ebuild"
+  },
+  "Announced": "2020-07-27",
+  "Revised": {
+    "Text": "2020-07-27",
+    "Count": "1"
+  },
+  "Bug": [
+    "642200"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-servers/thin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": null,
+        "Vulnerable": [
+          {
+            "Text": "1.7.2",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Thin is a small and fast Ruby web server.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was discovered that Gentoo’s Thin ebuild does not properly handle\n      its temporary runtime directories. This only affects OpenRC systems, as\n      the flaw was exploitable via the init script.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A local attacker could cause denial of service by killing arbitrary\n      processes.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "Gentoo has discontinued support for Thin. We recommend that users\n      unmerge Thin:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "NOTE: The Gentoo developer(s) maintaining Thin have discontinued support\n      at this time. It may be possible that a new Gentoo developer will update\n      Thin at a later date. There are many other web servers available in the\n      tree in the www-servers category.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --unmerge \"www-servers/thin\"\n    "
+    ]
+  },
+  "References": {
+    "URI": null
+  },
+  "Metadata": [
+    {
+      "Text": "sam_c",
+      "Tag": "requester",
+      "Timestamp": "2020-06-14T00:47:13Z"
+    },
+    {
+      "Text": "sam_c",
+      "Tag": "submitter",
+      "Timestamp": "2020-07-27T00:48:08Z"
+    }
+  ]
+}

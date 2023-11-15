@@ -1,0 +1,98 @@
+{
+  "ID": "201810-09",
+  "Title": "X.Org X Server: Privilege escalation",
+  "Synopsis": "A vulnerability in X.Org X Server allows local users to escalate\n    privileges.\n  ",
+  "Product": {
+    "Text": "xorg x server",
+    "Type": "ebuild"
+  },
+  "Announced": "2018-10-30",
+  "Revised": {
+    "Text": "2018-10-30",
+    "Count": "1"
+  },
+  "Bug": [
+    "669588"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "x11-base/xorg-server",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.20.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.20.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>The X Window System is a graphical windowing system based on a\n      client/server model.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>An incorrect permission check for -modulepath and -logfile options when\n      starting Xorg. X server allows unprivileged users with the ability to log\n      in to the system via physical console to escalate their privileges and\n      run arbitrary code under root privileges.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A local attacker can escalate privileges to root by passing crafted\n      parameters to the X.org X server.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All X.Org X Server users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=x11-base/xorg-server-1.20.3\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2018-14665",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2018-14665"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2018-10-30T15:53:55Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2018-10-30T20:42:13Z"
+    }
+  ]
+}

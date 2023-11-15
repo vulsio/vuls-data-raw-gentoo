@@ -1,0 +1,129 @@
+{
+  "ID": "201701-36",
+  "Title": "Apache: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in Apache, the worst of\n    which could lead to a Denial of Service condition.\n  ",
+  "Product": {
+    "Text": "apache",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-01-15",
+  "Revised": {
+    "Text": "2017-01-17",
+    "Count": "02"
+  },
+  "Bug": [
+    "529130",
+    "589226",
+    "601736",
+    "603130"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-servers/apache",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.4.25",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.4.25",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>The Apache HTTP server is one of the most popular web servers on the\n      Internet.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in Apache. Please review\n      the CVE identifiers, upstream Apache Software Foundation documentation,\n      and HTTPoxy website referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could cause a Denial of Service condition via multiple\n      vectors or response splitting and cache pollution. Additionally, an\n      attacker could intercept unsecured (HTTP) transmissions via the HTTPoxy\n      vulnerability.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Apache users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=www-servers/apache-2.4.25\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Apache\n      Software Foundation Projects and \"httpoxy\" CERT VU #797896\n    ",
+        "Link": "https://www.apache.org/security/asf-httpoxy-response.txt"
+      },
+      {
+        "Text": "CVE-2014-3583",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-3583"
+      },
+      {
+        "Text": "CVE-2016-0736",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-0736"
+      },
+      {
+        "Text": "CVE-2016-2161",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-2161"
+      },
+      {
+        "Text": "CVE-2016-5387",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-5387"
+      },
+      {
+        "Text": "CVE-2016-8740",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-8740"
+      },
+      {
+        "Text": "CVE-2016-8743",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-8743"
+      },
+      {
+        "Text": "HTTPoxy Website",
+        "Link": "https://httpoxy.org/"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "BlueKnight",
+      "Tag": "requester",
+      "Timestamp": "2016-11-01T05:14:20Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2017-01-17T12:28:49Z"
+    }
+  ]
+}

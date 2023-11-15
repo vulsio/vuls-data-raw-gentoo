@@ -1,0 +1,98 @@
+{
+  "ID": "202211-07",
+  "Title": "sysstat: Arbitrary Code Execution",
+  "Synopsis": "An integer overflow vulnerability has been found in sysstat which could result in arbitrary code execution.",
+  "Product": {
+    "Text": "sysstat",
+    "Type": "ebuild"
+  },
+  "Announced": "2022-11-22",
+  "Revised": {
+    "Text": "2023-05-29",
+    "Count": "2"
+  },
+  "Bug": [
+    "880543"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-admin/sysstat",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "12.6.2-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "12.6.2-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n        <p>sysstat is a package containing a number of performance monitoring utilities for Linux, including sar, mpstat, iostat and sa tools.</p>\n    "
+  },
+  "Description": {
+    "Text": "\n        <p>On 32 bit systems, an integer overflow can be triggered when displaying activity data files.</p>\n    "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n        <p>Arbitrary code execution can be achieved via sufficiently crafted malicious input.</p>\n    "
+  },
+  "Workaround": {
+    "Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+  },
+  "Resolution": {
+    "Text": "\n        \n        \n        \n    ",
+    "P": [
+      {
+        "Text": "All sysstat users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=app-admin/sysstat-12.6.2-r1\"\n        "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2022-39377",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-39377"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ajak",
+      "Tag": "requester",
+      "Timestamp": "2022-11-22T03:51:28.943709Z"
+    },
+    {
+      "Text": "ajak",
+      "Tag": "submitter",
+      "Timestamp": "2022-11-22T03:51:28.948154Z"
+    }
+  ]
+}

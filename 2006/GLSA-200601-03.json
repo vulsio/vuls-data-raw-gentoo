@@ -1,0 +1,106 @@
+{
+  "ID": "200601-03",
+  "Title": "HylaFAX: Multiple vulnerabilities",
+  "Synopsis": "\n    HylaFAX is vulnerable to arbitrary code execution and unauthorized access\n    vulnerabilities.\n  ",
+  "Product": {
+    "Text": "hylafax",
+    "Type": "ebuild"
+  },
+  "Announced": "2006-01-06",
+  "Revised": {
+    "Text": "2006-01-06",
+    "Count": "01"
+  },
+  "Bug": [
+    "116389"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/hylafax",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.2.3-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.2.3-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    HylaFAX is an enterprise-class system for sending and receiving\n    facsimile messages and for sending alpha-numeric pages.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Patrice Fournier discovered that HylaFAX runs the notify script on\n    untrusted user input. Furthermore, users can log in without a password\n    when HylaFAX is installed with the pam USE-flag disabled.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    An attacker could exploit the input validation vulnerability to\n    run arbitrary code as the user running HylaFAX, which is usually uucp.\n    The password vulnerability could be exploited to log in without proper\n    user credentials.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All HylaFAX users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/hylafax-4.2.3-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-3538",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3538"
+      },
+      {
+        "Text": "CVE-2005-3539",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3539"
+      },
+      {
+        "Text": "HylaFAX release announcement",
+        "Link": "https://www.hylafax.org/content/HylaFAX_4.2.4_release"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2006-01-02T21:40:30Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2006-01-06T13:37:21Z"
+    }
+  ]
+}

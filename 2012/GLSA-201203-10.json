@@ -1,0 +1,130 @@
+{
+  "ID": "201203-10",
+  "Title": "libmikmod: User-assisted execution of arbitrary code",
+  "Synopsis": "Multiple buffer overflow vulnerabilities in libmikmod may allow an\n    attacker to execute arbitrary code or cause a Denial of Service condition.\n  ",
+  "Product": {
+    "Text": "libmikmod",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-03-06",
+  "Revised": {
+    "Text": "2012-03-06",
+    "Count": "1"
+  },
+  "Bug": [
+    "335892"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/libmikmod",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.2.0_beta2-r3",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "3.1.12-r1",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.2.0_beta2-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>libmikmod is a library to play a wide range of module formats.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple boundary errors have been found in load_it.c in libmikmod,\n      which may cause a buffer overflow.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to open specially crafted files in\n      an application linked against libmikmod, possibly resulting in execution\n      of arbitrary code with the permissions of the user running the\n      application, or Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All libmikmod 3.2 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All libmikmod 3.1 users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "Packages which depend on this library may need to be recompiled. Tools\n      such as revdep-rebuild may assist in identifying some of these packages.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=media-libs/libmikmod-3.2.0_beta2-r3\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/libmikmod-3.1.12-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2010-2546",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-2546"
+      },
+      {
+        "Text": "CVE-2010-2971",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-2971"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2012-03-02T20:38:21Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-03-06T01:42:39Z"
+    }
+  ]
+}

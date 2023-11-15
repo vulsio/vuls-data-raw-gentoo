@@ -1,0 +1,98 @@
+{
+  "ID": "201210-03",
+  "Title": "rdesktop: Directory Traversal",
+  "Synopsis": "A vulnerability which allows a remote attacking server to read or\n    overwrite arbitrary files has been found in rdesktop.\n  ",
+  "Product": {
+    "Text": "rdesktop",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-10-18",
+  "Revised": {
+    "Text": "2012-10-18",
+    "Count": "1"
+  },
+  "Bug": [
+    "364191"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/rdesktop",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.7.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.7.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>rdesktop is a Remote Desktop Protocol (RDP) Client.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A vulnerability has been discovered in rdesktop. Please review the CVE\n      identifier referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>Remote RDP servers may be able to read or overwrite arbitrary files via\n      a .. (dot dot) in a pathname.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All rdesktop users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/rdesktop-1.7.0\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2011-1595",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-1595"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    underling\n  ",
+      "Tag": "requester",
+      "Timestamp": "2011-10-07T23:37:09Z"
+    },
+    {
+      "Text": "craig",
+      "Tag": "submitter",
+      "Timestamp": "2012-10-18T20:47:56Z"
+    }
+  ]
+}

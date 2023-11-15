@@ -1,0 +1,107 @@
+{
+  "ID": "201405-17",
+  "Title": "Munin: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been discovered in Munin which may\n    lead to symlink attacks, file creation, or bypass of security restrictions.\n  ",
+  "Product": {
+    "Text": "munin",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-05-18",
+  "Revised": {
+    "Text": "2014-05-18",
+    "Count": "1"
+  },
+  "Bug": [
+    "412881",
+    "445250"
+  ],
+  "Access": "local, remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-analyzer/munin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.8-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.8-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Munin is an open source server monitoring tool.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in Munin. Please review\n      the CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A local attacker could perform symlink attacks to overwrite arbitrary\n      files with the privileges of the user running the application.\n    </p>\n    \n    <p>A remote attacker could create files or load new Munin configuration\n      files.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Munin users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-analyzer/munin-2.0.8-r2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2012-2103",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-2103"
+      },
+      {
+        "Text": "CVE-2012-3512",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3512"
+      },
+      {
+        "Text": "CVE-2012-3513",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3513"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2012-12-23T00:14:15Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2014-05-18T11:35:16Z"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "ID": "201006-13",
+  "Title": "Smarty: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities in the Smarty template engine might allow remote\n    attackers to execute arbitrary PHP code.\n  ",
+  "Product": {
+    "Text": "smarty",
+    "Type": "ebuild"
+  },
+  "Announced": "2010-06-02",
+  "Revised": {
+    "Text": "2010-06-02",
+    "Count": "01"
+  },
+  "Bug": [
+    "212147",
+    "243856",
+    "270494"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-php/smarty",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.6.23",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.6.23",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Smarty is a template engine for PHP.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Multiple vulnerabilities have been discovered in Smarty:\n    </p>\n    <ul>\n    <li>The vendor reported that the modifier.regex_replace.php plug-in\n    contains an input sanitation flaw related to the ASCII NUL character\n    (CVE-2008-1066).</li>\n    <li>The vendor reported that the\n    _expand_quoted_text() function in libs/Smarty_Compiler.class.php\n    contains an input sanitation flaw via multiple vectors (CVE-2008-4810,\n    CVE-2008-4811).</li>\n    <li>Nine:Situations:Group::bookoo reported that\n    the smarty_function_math() function in libs/plugins/function.math.php\n    contains input sanitation flaw (CVE-2009-1669).</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    These issues might allow a remote attacker to execute arbitrary PHP\n    code.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Smarty users should upgrade to an unaffected version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    NOTE: This is a legacy GLSA. Updates for all affected architectures are\n    available since June 2, 2009. It is likely that your system is already\n    no longer affected by this issue.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-php/smarty-2.6.23\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-1066",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1066"
+      },
+      {
+        "Text": "CVE-2008-4810",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4810"
+      },
+      {
+        "Text": "CVE-2008-4811",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4811"
+      },
+      {
+        "Text": "CVE-2009-1669",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1669"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-03-15T21:06:13Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-09-19T19:51:21Z"
+    },
+    {
+      "Text": "\n    a3li\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2010-05-30T11:16:44Z"
+    }
+  ]
+}

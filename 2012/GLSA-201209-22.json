@@ -1,0 +1,98 @@
+{
+  "ID": "201209-22",
+  "Title": "libgssglue: Privilege escalation",
+  "Synopsis": "A vulnerability in libgssglue may allow a local attacker to gain\n    escalated privileges.\n  ",
+  "Product": {
+    "Text": "libgssglue",
+    "Type": "ebuild"
+  },
+  "Announced": "2012-09-28",
+  "Revised": {
+    "Text": "2012-09-28",
+    "Count": "1"
+  },
+  "Bug": [
+    "385321"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-libs/libgssglue",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>libgssglue exports a GSSAPI interface which calls other random GSSAPI\n      libraries.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>libgssglue does not securely use getenv() when loading a library for a\n      setuid application.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A local attacker could gain escalated privileges.</p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All libgssglue users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-libs/libgssglue-0.4\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2011-2709",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2709"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2012-09-09T12:06:10Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2012-09-28T00:34:59Z"
+    }
+  ]
+}

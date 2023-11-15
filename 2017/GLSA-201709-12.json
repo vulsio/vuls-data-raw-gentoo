@@ -1,0 +1,160 @@
+{
+  "ID": "201709-12",
+  "Title": "Perl: Race condition vulnerability",
+  "Synopsis": "A vulnerability in module File::Path for Perl allows local\n    attackers to set arbitrary mode values on arbitrary files bypassing\n    security restrictions.\n  ",
+  "Product": {
+    "Text": "perl",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-09-17",
+  "Revised": {
+    "Text": "2017-09-17",
+    "Count": "1"
+  },
+  "Bug": [
+    "620304"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-lang/perl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.24.1-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.24.1-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "perl-core/File-Path",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.130.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.130.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "virtual/perl-File-Path",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.130.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.130.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>File::Path module provides a convenient way to create directories of\n      arbitrary depth and to delete an entire directory subtree from the\n      filesystem.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A race condition occurs within concurrent environments. This condition\n      was discovered by The cPanel Security Team in the rmtree and remove_tree\n      functions in the File-Path module before 2.13 for Perl. This is due to\n      the  time-of-check-to-time-of-use (TOCTOU) race condition between the\n      stat() that decides the inode is a directory and the chmod() that tries\n      to make it user-rwx.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A local attacker could exploit this condition to set arbitrary mode\n      values on arbitrary files and hence bypass security restrictions.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Perl users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All File-Path users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All Perl-File-Path users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-lang/perl-5.24.1-r2\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=perl-core/File-Path-2.130.0\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=virtual/perl-File-Path-2.130.0\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "\n      CVE-2017-6512\n    ",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-6512"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "chrisadr",
+      "Tag": "requester",
+      "Timestamp": "2017-09-12T03:14:08Z"
+    },
+    {
+      "Text": "chrisadr",
+      "Tag": "submitter",
+      "Timestamp": "2017-09-17T19:28:53Z"
+    }
+  ]
+}

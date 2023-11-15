@@ -1,0 +1,165 @@
+{
+  "ID": "200803-14",
+  "Title": "Ghostscript: Buffer overflow",
+  "Synopsis": "\n    A stack-based buffer overflow has been discovered in Ghostscript, allowing\n    arbitrary code execution.\n  ",
+  "Product": {
+    "Text": "ghostscript",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-03-08",
+  "Revised": {
+    "Text": "2008-03-08",
+    "Count": "01"
+  },
+  "Bug": [
+    "208999"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-text/ghostscript-esp",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "8.15.4-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "8.15.4-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "app-text/ghostscript-gpl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "8.61-r3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "8.61-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "app-text/ghostscript-gnu",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "8.60.0-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "8.60.0-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Ghostscript is a suite of software based on an interpreter for\n    PostScript and PDF.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Chris Evans (Google Security) discovered a stack-based buffer overflow\n    within the zseticcspace() function in the file zicc.c when processing a\n    PostScript file containing a long \"Range\" array in a .seticcscpate\n    operator.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could exploit this vulnerability by enticing a user\n    to open a specially crafted PostScript file, which could possibly lead\n    to the execution of arbitrary code or a Denial of Service.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Ghostscript ESP users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Ghostscript GPL users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Ghostscript GNU users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/ghostscript-esp-8.15.4-r1\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/ghostscript-gpl-8.61-r3\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/ghostscript-gnu-8.60.0-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-0411",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0411"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-03-02T15:25:45Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-03-02T15:25:54Z"
+    },
+    {
+      "Text": "\n    psychoschlumpf\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-03-05T20:06:31Z"
+    }
+  ]
+}

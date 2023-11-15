@@ -1,0 +1,98 @@
+{
+  "ID": "201609-02",
+  "Title": "Bundler: Insecure installation",
+  "Synopsis": "A vulnerability has been found in Bundler, allowing injection of\n    arbitrary code via the gem installation process.\n  ",
+  "Product": {
+    "Text": "bundler",
+    "Type": "ebuild"
+  },
+  "Announced": "2016-09-26",
+  "Revised": {
+    "Text": "2016-09-26",
+    "Count": "1"
+  },
+  "Bug": [
+    "523798"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-ruby/bundler",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.7.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.7.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Bundler provides a consistent environment for Ruby projects by tracking\n      and installing the exact gems and versions that are needed.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Bundler, allows the installation of gems from different sources with the\n      same names, when multiple top-level gem sources are used.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>Remote attackers could inject arbitrary code via the gem install\n      process.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Bundler users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-ruby/bundler-1.7.3\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2013-0334",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0334"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "requester",
+      "Timestamp": "2015-01-31T22:12:51Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2016-09-26T04:04:29Z"
+    }
+  ]
+}

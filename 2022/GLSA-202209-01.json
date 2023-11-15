@@ -1,0 +1,130 @@
+{
+  "ID": "202209-01",
+  "Title": "GNU Gzip, XZ Utils: Arbitrary file write",
+  "Synopsis": "A vulnerability has been discovered in GNU Gzip and XZ Utils' grep helpers which could result in writes to arbitrary files.",
+  "Product": {
+    "Text": "gzip,xz-utils",
+    "Type": "ebuild"
+  },
+  "Announced": "2022-09-07",
+  "Revised": {
+    "Text": "2022-09-07",
+    "Count": "1"
+  },
+  "Bug": [
+    "837152",
+    "837155"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-arch/gzip",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.12",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.12",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "app-arch/xz-utils",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "5.2.5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "5.2.5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n        <p>GNU Gzip is a popular data compression program.\r\n\r\nXZ Utils is free general-purpose data compression software with a high compression ratio.</p>\n    "
+  },
+  "Description": {
+    "Text": "\n        <p>GNU Gzip and XZ Utils&#39; grep helpers do not sufficiently validate certain multi-line file names.</p>\n    "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n        <p>In some cases, writing to arbitrary files such as shell initialization files can be escalation to remote code execution.</p>\n    "
+  },
+  "Workaround": {
+    "Text": "\n        <p>Ensuring only trusted input is passed to GNU Gzip and XZ Utils&#39; grep helpers minimizes the potential impact.</p>\n    "
+  },
+  "Resolution": {
+    "Text": "\n        \n        \n        \n        \n        \n        \n        \n    ",
+    "P": [
+      {
+        "Text": "All GNU Gzip users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All XZ Utils users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=app-arch/gzip-1.12\"\n        ",
+      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=app-arch/xz-utils-5.2.5\"\n        "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2022-1271",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-1271"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ajak",
+      "Tag": "requester",
+      "Timestamp": "2022-09-07T02:51:56.494624Z"
+    },
+    {
+      "Text": "ajak",
+      "Tag": "submitter",
+      "Timestamp": "2022-09-07T02:51:56.504364Z"
+    }
+  ]
+}

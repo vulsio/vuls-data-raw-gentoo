@@ -1,0 +1,103 @@
+{
+  "ID": "200712-11",
+  "Title": "Portage: Information disclosure",
+  "Synopsis": "\n    Portage may disclose sensitive information when updating configuration\n    files.\n  ",
+  "Product": {
+    "Text": "portage",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-12-13",
+  "Revised": {
+    "Text": "2007-12-13",
+    "Count": "01"
+  },
+  "Bug": [
+    "193589"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-apps/portage",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.1.3.11",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.1.3.11",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Portage is the default Gentoo package management system.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Mike Frysinger reported that the \"etc-update\" utility uses temporary\n    files with the standard umask, which results in the files being\n    world-readable when merging configuration files in a default setup.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could access sensitive information when configuration\n    files are being merged.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Portage users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-apps/portage-2.1.3.11\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-6249",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6249"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-12-10T21:27:57Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-12-10T21:28:40Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-12-11T22:39:19Z"
+    }
+  ]
+}

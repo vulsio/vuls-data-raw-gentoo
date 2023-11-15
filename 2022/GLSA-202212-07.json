@@ -1,0 +1,102 @@
+{
+  "ID": "202212-07",
+  "Title": "libksba: Remote Code Execution",
+  "Synopsis": "An integer overflow vulnerability has been found in libksba which could result in remote code execution.",
+  "Product": {
+    "Text": "libksba",
+    "Type": "ebuild"
+  },
+  "Announced": "2022-12-28",
+  "Revised": {
+    "Text": "2022-12-28",
+    "Count": "1"
+  },
+  "Bug": [
+    "877453"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/libksba",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.6.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.6.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n        <p>Libksba is a X.509 and CMS (PKCS#7) library.</p>\n    "
+  },
+  "Description": {
+    "Text": "\n        <p>An integer overflow in parsing ASN.1 objects could lead to a buffer overflow.</p>\n    "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n        <p>Crafted ASN.1 objects could trigger an integer overflow and buffer overflow to result in remote code execution.</p>\n    "
+  },
+  "Workaround": {
+    "Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+  },
+  "Resolution": {
+    "Text": "\n        \n        \n        \n    ",
+    "P": [
+      {
+        "Text": "All libksba users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=dev-libs/libksba-1.6.3\"\n        "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2022-3515",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-3515"
+      },
+      {
+        "Text": "CVE-2022-47629",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-47629"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ajak",
+      "Tag": "requester",
+      "Timestamp": "2022-12-28T18:58:25.172111Z"
+    },
+    {
+      "Text": "ajak",
+      "Tag": "submitter",
+      "Timestamp": "2022-12-28T18:58:25.175039Z"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "ID": "201804-01",
+  "Title": "libxslt: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities were discovered in libxslt, the worst of\n    which may allow a remote attacker to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "libxslt",
+    "Type": "ebuild"
+  },
+  "Announced": "2018-04-04",
+  "Revised": {
+    "Text": "2018-04-04",
+    "Count": "1"
+  },
+  "Bug": [
+    "598204",
+    "612194"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/libxslt",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.1.30",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.30",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>libxslt is the XSLT C library developed for the GNOME project. XSLT is\n      an XML language to define transformations for XML.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in libxslt. Please review\n      the CVE identifiers referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker, via a crafted HTML page, could possibly execute\n      arbitrary code, cause a Denial of Service condition or leak information.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All libxslt users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/libxslt-1.1.30\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2016-4738",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2016-4738"
+      },
+      {
+        "Text": "CVE-2017-5029",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2017-5029"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "BlueKnight",
+      "Tag": "requester",
+      "Timestamp": "2017-04-19T05:20:01Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2018-04-04T01:51:21Z"
+    }
+  ]
+}

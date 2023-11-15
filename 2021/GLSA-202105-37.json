@@ -1,0 +1,98 @@
+{
+  "ID": "202105-37",
+  "Title": "Nextcloud Desktop Client: User-assisted execution of arbitrary code",
+  "Synopsis": "A vulnerability in Nextcloud Desktop Client could allow a remote\n    attacker to execute arbitrary commands.\n  ",
+  "Product": {
+    "Text": "nextcloud-client",
+    "Type": "ebuild"
+  },
+  "Announced": "2021-05-26",
+  "Revised": {
+    "Text": "2021-05-26",
+    "Count": "1"
+  },
+  "Bug": [
+    "783531"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/nextcloud-client",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.1.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.1.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>The Nextcloud Desktop Client is a tool to synchronize files from\n      Nextcloud Server with your computer.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was discovered that Nextcloud Desktop Client did not validate URLs.</p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to connect to a malicious\n      Nextcloud server to cause the execution of arbitrary commands with the\n      privileges of the user running the Nextcloud Desktop Client application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Nextcloud Desktop Client users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/nextcloud-client-3.1.3\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2021-22879",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-22879"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2021-05-25T14:10:09Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2021-05-26T13:19:22Z"
+    }
+  ]
+}

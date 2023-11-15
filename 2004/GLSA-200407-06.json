@@ -1,0 +1,105 @@
+{
+  "ID": "200407-06",
+  "Title": "libpng: Buffer overflow on row buffers",
+  "Synopsis": "\n    libpng contains a buffer overflow vulnerability potentially allowing an\n    attacker to perform a Denial of Service attack or even execute arbitrary\n    code.\n  ",
+  "Product": {
+    "Text": "libpng",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-07-08",
+  "Revised": {
+    "Text": "2004-07-08",
+    "Count": "01"
+  },
+  "Bug": [
+    "56307"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/libpng",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.5-r7",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.5-r6",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    libpng is a standard library used to process PNG (Portable Network\n    Graphics) images. It is used by several other programs, including web\n    browsers and potentially server processes.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Due to a wrong calculation of loop offset values, libpng contains a buffer\n    overflow vulnerability on the row buffers. This vulnerability was initially\n    patched in January 2003 but since it has been discovered that libpng\n    contains the same vulnerability in two other places.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could exploit this vulnerability to cause programs linked\n    against the library to crash or execute arbitrary code with the permissions\n    of the user running the vulnerable program, which could be the root user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time. All users are encouraged to\n    upgrade to the latest available version.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All libpng users should upgrade to the latest stable version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    You should also run revdep-rebuild to rebuild any packages that depend on\n    older versions of libpng :\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n\n    # emerge -pv \">=media-libs/libpng-1.2.5-r7\"\n    # emerge \">=media-libs/libpng-1.2.5-r7\"",
+      "\n    # revdep-rebuild"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2002-1363",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2002-1363"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

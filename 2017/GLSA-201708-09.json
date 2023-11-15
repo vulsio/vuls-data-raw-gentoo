@@ -1,0 +1,97 @@
+{
+  "ID": "201708-09",
+  "Title": "AutoTrace: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in AutoTrace, the worst of\n    which could cause a Denial of Service condition.\n  ",
+  "Product": {
+    "Text": "autotrace",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-08-26",
+  "Revised": {
+    "Text": "2017-08-26",
+    "Count": "1"
+  },
+  "Bug": [
+    "613992",
+    "619040"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-gfx/autotrace",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": null,
+        "Vulnerable": [
+          {
+            "Text": "0.31.1-r8",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>AutoTrace converts bitmap to vector graphics.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Heap-based buffer overflows have been discovered in the\n      pstoedit_suffix_table_init and pnm_load_rawpbm functions of AutoTrace.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>Remote attackers, by enticing a user to process a crafted bmp image\n      file, could cause a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "Gentoo has discontinued support for AutoTrace. We recommend that users\n      unmerge AutoTrace:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --unmerge \"media-gfx/autotrace\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2016-7392",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-7392"
+      },
+      {
+        "Text": "CVE-2017-9153",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-9153"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "b-man",
+      "Tag": "requester",
+      "Timestamp": "2017-08-22T03:00:50Z"
+    },
+    {
+      "Text": "b-man",
+      "Tag": "submitter",
+      "Timestamp": "2017-08-26T14:47:40Z"
+    }
+  ]
+}

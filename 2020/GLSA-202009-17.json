@@ -1,0 +1,98 @@
+{
+  "ID": "202009-17",
+  "Title": "gpsd: Arbitrary code execution",
+  "Synopsis": "A vulnerability in gpsd could allow remote code execution.",
+  "Product": {
+    "Text": "gpsd",
+    "Type": "ebuild"
+  },
+  "Announced": "2020-09-29",
+  "Revised": {
+    "Text": "2020-09-29",
+    "Count": "1"
+  },
+  "Bug": [
+    "743766"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sci-geosciences/gpsd",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.18",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.18",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>gpsd is a GPS daemon and library for USB/serial GPS devices and\n      GPS/mapping clients.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A stack-based buffer overflow was discovered in gpsd on port 2947/TCP or\n      crafted JSON inputs.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could possibly execute arbitrary code with the\n      privileges of the process, or cause a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All gpsd users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sci-geosciences/gpsd-3.18\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2018-17937",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2018-17937"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "sam_c",
+      "Tag": "requester",
+      "Timestamp": "2020-09-25T20:46:53Z"
+    },
+    {
+      "Text": "sam_c",
+      "Tag": "submitter",
+      "Timestamp": "2020-09-29T18:06:31Z"
+    }
+  ]
+}

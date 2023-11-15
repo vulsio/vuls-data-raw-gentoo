@@ -1,0 +1,102 @@
+{
+  "ID": "200407-03",
+  "Title": "Apache 2: Remote denial of service attack",
+  "Synopsis": "\n    A bug in Apache may allow a remote attacker to perform a Denial of Service\n    attack. With certain configurations this could lead to a heap based buffer\n    overflow.\n  ",
+  "Product": {
+    "Text": "Apache",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-07-04",
+  "Revised": {
+    "Text": "2007-12-30",
+    "Count": "02"
+  },
+  "Bug": [
+    "55441"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-servers/apache",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.49-r4",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.49-r3",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Apache HTTP Server Project is an effort to develop and maintain an\n    open-source HTTP server for modern operating systems. The goal of this\n    project is to provide a secure, efficient and extensible server that\n    provides services in tune with the current HTTP standards.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    A bug in the protocol.c file handling header lines will cause Apache to\n    allocate memory for header lines starting with TAB or SPACE.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker can exploit this vulnerability to perform a Denial of Service\n    attack by causing Apache to exhaust all memory. On 64 bit systems with more\n    than 4GB of virtual memory a possible integer signedness error could lead\n    to a buffer based overflow causing Apache to crash and under some\n    circumstances execute arbitrary code as the user running Apache, usually\n    \"apache\".\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time. All users are encouraged to\n    upgrade to the latest available version:\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    Apache 2 users should upgrade to the latest version of Apache:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n\n    # emerge -pv \">=www-servers/apache-2.0.49-r4\"\n    # emerge \">=www-servers/apache-2.0.49-r4\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Georgi Guninski security advisory #70, 2004",
+        "Link": "http://www.guninski.com/httpd1.html"
+      },
+      {
+        "Text": "CAN-2004-0493",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0493"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

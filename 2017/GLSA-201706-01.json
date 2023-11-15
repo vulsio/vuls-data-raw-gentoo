@@ -1,0 +1,93 @@
+{
+  "ID": "201706-01",
+  "Title": "MUNGE: Privilege escalation ",
+  "Synopsis": "Gentoo's MUNGE ebuilds are vulnerable to privilege escalation due\n    to improper permissions.\n  ",
+  "Product": {
+    "Text": "munge",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-06-06",
+  "Revised": {
+    "Text": "2017-06-06",
+    "Count": "1"
+  },
+  "Bug": [
+    "602596"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "sys-auth/munge",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.5.10-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.5.10-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>An authentication service for creating and validating credentials.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>It was discovered that Gentoo’s default MUNGE installation suffered\n      from a privilege escalation vulnerability (munge user to root) due to\n      improper permissions and a runscript which called chown() on a user\n      controlled file.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A local attacker, who either is already MUNGE’s system user or belongs\n      to MUNGE’s group, could potentially escalate privileges.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All MUNGE users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-auth/munge-0.5.10-r2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": null
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2017-01-08T22:27:29Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2017-06-06T06:21:40Z"
+    }
+  ]
+}

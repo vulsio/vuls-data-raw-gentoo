@@ -1,0 +1,157 @@
+{
+  "ID": "200409-21",
+  "Title": "Apache 2, mod_dav: Multiple vulnerabilities",
+  "Synopsis": "\n    Several vulnerabilities have been found in Apache 2 and mod_dav for Apache\n    1.3 which could allow a remote attacker to cause a Denial of Service or a\n    local user to get escalated privileges.\n  ",
+  "Product": {
+    "Text": "apache",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-09-16",
+  "Revised": {
+    "Text": "2007-12-30",
+    "Count": "02"
+  },
+  "Bug": [
+    "62626",
+    "63948",
+    "64145"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-servers/apache",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.0.51",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "2.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.0.51",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "net-www/mod_dav",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.3-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.3-r1",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Apache HTTP server is one of most popular web servers on the internet.\n    mod_ssl provides SSL v2/v3 and TLS v1 support for it and mod_dav is the\n    Apache module for Distributed Authoring and Versioning (DAV).\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    A potential infinite loop has been found in the input filter of mod_ssl\n    (CAN-2004-0748) as well as a possible segmentation fault in the\n    char_buffer_read function if reverse proxying to a SSL server is being used\n    (CAN-2004-0751). Furthermore, mod_dav, as shipped in Apache httpd 2 or\n    mod_dav 1.0.x for Apache 1.3, contains a NULL pointer dereference which can\n    be triggered remotely (CAN-2004-0809). The third issue is an input\n    validation error found in the IPv6 URI parsing routines within the apr-util\n    library (CAN-2004-0786). Additionally a possible buffer overflow has been\n    reported when expanding environment variables during the parsing of\n    configuration files (CAN-2004-0747).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could cause a Denial of Service either by aborting a SSL\n    connection in a special way, resulting in CPU consumption, by exploiting\n    the segmentation fault in mod_ssl or the mod_dav flaw. A remote attacker\n    could also crash a httpd child process by sending a specially crafted URI.\n    The last vulnerabilty could be used by a local user to gain the privileges\n    of a httpd child, if the server parses a carefully prepared .htaccess file.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Apache 2 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All mod_dav users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n\n    # emerge -pv \">=www-servers/apache-2.0.51\"\n    # emerge \">=www-servers/apache-2.0.51\"",
+      "\n    # emerge sync\n\n    # emerge -pv \">=net-www/mod_dav-1.0.3-r2\"\n    # emerge \">=net-www/mod_dav-1.0.3-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2004-0747",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0747"
+      },
+      {
+        "Text": "CAN-2004-0748",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0748"
+      },
+      {
+        "Text": "CAN-2004-0751",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0751"
+      },
+      {
+        "Text": "CAN-2004-0786",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0786"
+      },
+      {
+        "Text": "CAN-2004-0809",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0809"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2004-09-09T04:54:03Z"
+    },
+    {
+      "Text": "\n    vorlon078\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-09-10T18:02:25Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-09-16T20:45:09Z"
+    }
+  ]
+}

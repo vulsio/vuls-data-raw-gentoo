@@ -1,0 +1,103 @@
+{
+  "ID": "201309-18",
+  "Title": "libvirt: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in libvirt, allowing\n    remote attackers to execute arbitrary code or cause Denial of Service.\n  ",
+  "Product": {
+    "Text": "libvirt",
+    "Type": "ebuild"
+  },
+  "Announced": "2013-09-25",
+  "Revised": {
+    "Text": "2013-09-25",
+    "Count": "1"
+  },
+  "Bug": [
+    "454588",
+    "470096"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-emulation/libvirt",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.5.1-r3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.5.1-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>libvirt is a C toolkit for manipulating virtual machines.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>An error in the virNetMessageFree() function in rpc/virnetserverclient.c\n      can lead to a use-after-free. Additionally, a socket leak in the\n      remoteDispatchStoragePoolListAllVolumes command can lead to file\n      descriptor exhaustion.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could cause certain errors during an RPC connection to\n      cause a message to be freed without being removed from the message queue,\n      possibly resulting in execution of arbitrary code or a Denial of Service\n      condition. Additionally, a remote attacker could repeatedly issue the\n      command to list all pool volumes, causing a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All libvirt users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=app-emulation/libvirt-1.0.5.1-r3\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2013-0170",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0170"
+      },
+      {
+        "Text": "CVE-2013-1962",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1962"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2013-02-26T00:00:24Z"
+    },
+    {
+      "Text": "\n    creffett\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2013-09-25T16:52:55Z"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "ID": "200504-05",
+  "Title": "Gaim: Denial of Service issues",
+  "Synopsis": "\n    Gaim contains multiple vulnerabilities that can lead to a Denial of\n    Service.\n  ",
+  "Product": {
+    "Text": "Gaim",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-04-06",
+  "Revised": {
+    "Text": "2005-04-06",
+    "Count": "03"
+  },
+  "Bug": [
+    "87903"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-im/gaim",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.2.1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.2.1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Gaim is a full featured instant messaging client which handles a\n    variety of instant messaging protocols.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Multiple vulnerabilities have been addressed in the latest release of\n    Gaim:\n    </p>\n    <ul><li>A buffer overread in the gaim_markup_strip_html() function,\n    which is used when logging conversations (CAN-2005-0965).</li>\n    <li>Markup tags are improperly escaped using Gaim's IRC plugin\n    (CAN-2005-0966).</li>\n    <li>Sending a specially crafted file transfer request to a Gaim Jabber\n    user can trigger a crash (CAN-2005-0967).</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "low",
+    "Text": "\n    <p>\n    An attacker could possibly cause a Denial of Service by exploiting any\n    of these vulnerabilities.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Gaim users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-im/gaim-1.2.1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-0967",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0967"
+      },
+      {
+        "Text": "CAN-2005-0966",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0966"
+      },
+      {
+        "Text": "CAN-2005-0965",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0965"
+      },
+      {
+        "Text": "Gaim Vulnerability Index",
+        "Link": "https://gaim.sourceforge.net/security/"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-04-04T16:07:52Z"
+    },
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-04-04T16:59:15Z"
+    },
+    {
+      "Text": "\n    lewk\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-04-06T11:01:53Z"
+    }
+  ]
+}

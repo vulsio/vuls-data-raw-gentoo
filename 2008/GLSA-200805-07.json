@@ -1,0 +1,144 @@
+{
+  "ID": "200805-07",
+  "Title": "Linux Terminal Server Project: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities have been discovered in components shipped with\n    LTSP which allow remote attackers to compromise terminal clients.\n  ",
+  "Product": {
+    "Text": "ltsp",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-05-09",
+  "Revised": {
+    "Text": "2008-05-09",
+    "Count": "01"
+  },
+  "Bug": [
+    "215699"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/ltsp",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": null,
+        "Vulnerable": [
+          {
+            "Text": "5.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The Linux Terminal Server Project adds thin-client support to Linux\n    servers.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    LTSP version 4.2, ships prebuilt copies of programs such as the Linux\n    Kernel, the X.org X11 server (GLSA 200705-06, GLSA 200710-16, GLSA\n    200801-09), libpng (GLSA 200705-24, GLSA 200711-08), Freetype (GLSA\n    200705-02, GLSA 200705-22) and OpenSSL (GLSA 200710-06, GLSA 200710-30)\n    which were subject to multiple security vulnerabilities since 2006.\n    Please note that the given list of vulnerabilities might not be\n    exhaustive.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could possibly exploit vulnerabilities in the\n    aforementioned programs and execute arbitrary code, disclose sensitive\n    data or cause a Denial of Service within LTSP 4.2 clients.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    LTSP 4.2 is not maintained upstream in favor of version 5. Since\n    version 5 is not yet available in Gentoo, the package has been masked.\n    We recommend that users unmerge LTSP:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    If you have a requirement for Linux Terminal Servers, please either set\n    up a terminal server by hand or use one of the distributions that\n    already migrated to LTSP 5. If you want to contribute to the\n    integration of LTSP 5 in Gentoo, or want to follow its development,\n    find details in bug 177580.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --unmerge net-misc/ltsp"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "GLSA 200705-02",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200705-02.xml"
+      },
+      {
+        "Text": "GLSA 200705-06",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200705-06.xml"
+      },
+      {
+        "Text": "GLSA 200705-22",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200705-22.xml"
+      },
+      {
+        "Text": "GLSA 200705-24",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200705-24.xml"
+      },
+      {
+        "Text": "GLSA 200710-06",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200710-06.xml"
+      },
+      {
+        "Text": "GLSA 200710-16",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200710-16.xml"
+      },
+      {
+        "Text": "GLSA 200710-30",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200710-30.xml"
+      },
+      {
+        "Text": "GLSA 200711-08",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200711-08.xml"
+      },
+      {
+        "Text": "GLSA 200801-09",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200801-09.xml"
+      },
+      {
+        "Text": "Gentoo bug 177580: Port LTSP 5 to Gentoo",
+        "Link": "https://bugs.gentoo.org/177580"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-04-01T19:23:11Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-04-03T14:49:37Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-04-03T22:27:26Z"
+    }
+  ]
+}

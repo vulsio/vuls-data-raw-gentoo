@@ -1,0 +1,111 @@
+{
+  "ID": "200508-12",
+  "Title": "Evolution: Format string vulnerabilities",
+  "Synopsis": "\n    Evolution is vulnerable to format string vulnerabilities which may result\n    in remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "evolution",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-08-23",
+  "Revised": {
+    "Text": "2005-08-23",
+    "Count": "01"
+  },
+  "Bug": [
+    "102051"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "mail-client/evolution",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.2.3-r3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.2.3-r3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Evolution is a GNOME groupware application.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Ulf Harnhammar discovered that Evolution is vulnerable to format\n    string bugs when viewing attached vCards and when displaying contact\n    information from remote LDAP servers or task list data from remote\n    servers (CAN-2005-2549). He also discovered that Evolution fails to\n    handle special calendar entries if the user switches to the Calendars\n    tab (CAN-2005-2550).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could attach specially crafted vCards to emails or\n    setup malicious LDAP servers or calendar entries which would trigger\n    the format string vulnerabilities when viewed or accessed from\n    Evolution. This could potentially result in the execution of arbitrary\n    code with the rights of the user running Evolution.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Evolution users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-client/evolution-2.2.3-r3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-2549",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2549"
+      },
+      {
+        "Text": "CAN-2005-2550",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2550"
+      },
+      {
+        "Text": "SITIC Vulnerability Advisory SA05-001",
+        "Link": "http://www.sitic.se/eng/advisories_and_recommendations/sa05-001.html"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-08-21T20:42:02Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-08-22T11:14:56Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-08-23T07:46:15Z"
+    }
+  ]
+}

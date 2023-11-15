@@ -1,0 +1,138 @@
+{
+  "ID": "200410-16",
+  "Title": "PostgreSQL: Insecure temporary file use in make_oidjoins_check",
+  "Synopsis": "\n    The make_oidjoins_check script, part of the PostgreSQL package, is\n    vulnerable to symlink attacks, potentially allowing a local user to\n    overwrite arbitrary files with the rights of the user running the utility.\n  ",
+  "Product": {
+    "Text": "PostgreSQL",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-10-18",
+  "Revised": {
+    "Text": "2009-05-28",
+    "Count": "04"
+  },
+  "Bug": [
+    "66371"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-db/postgresql",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "7.4.5-r2",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "7.3.7-r2",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "7.3.15",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "7.3.16",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "7.3.18",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "7.3.21",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "7.4.5-r1",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    PostgreSQL is an open source database based on the POSTGRES database\n    management system. It includes several contributed scripts including\n    the make_oidjoins_check script.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The make_oidjoins_check script insecurely creates temporary files in\n    world-writeable directories with predictable names.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary files\n    directory, pointing to a valid file somewhere on the filesystem. When\n    make_oidjoins_check is called, this would result in file overwrite with\n    the rights of the user running the utility, which could be the root\n    user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All PostgreSQL users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    Upgrade notes: PostgreSQL 7.3.x users should upgrade to the latest\n    available 7.3.x version to retain database compatibility.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv \">=dev-db/postgresql-7.4.5-r2\"\n    # emerge \">=dev-db/postgresql-7.4.5-r2\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Trustix Advisory #2004-0050",
+        "Link": "https://www.trustix.org/errata/2004/0050/"
+      },
+      {
+        "Text": "CVE-2004-0977",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0977"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2004-10-18T13:31:59Z"
+    },
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2004-10-18T13:32:56Z"
+    }
+  ]
+}

@@ -1,0 +1,396 @@
+{
+  "ID": "200803-30",
+  "Title": "ssl-cert eclass: Certificate disclosure",
+  "Synopsis": "\n    An error in the usage of the ssl-cert eclass within multiple ebuilds might\n    allow for disclosure of generated SSL private keys.\n  ",
+  "Product": {
+    "Text": "ssl-cert.eclass",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-03-20",
+  "Revised": {
+    "Text": "2008-03-20",
+    "Count": "01"
+  },
+  "Bug": [
+    "174759"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-admin/conserver",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "8.1.16",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "8.1.16",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "mail-mta/postfix",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.4.6-r2",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "2.3.8-r1",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "2.2.11-r1",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.4.6-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "net-ftp/netkit-ftpd",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.17-r7",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.17-r7",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "net-im/ejabberd",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.1.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "net-irc/unrealircd",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.2.7-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.2.7-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "net-mail/cyrus-imapd",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.3.9-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.3.9-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "net-mail/dovecot",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.10",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.10",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "net-misc/stunnel",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.21-r1",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "4.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.21-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "net-nntp/inn",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.4.3-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.4.3-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    The ssl-cert eclass is a code module used by Gentoo ebuilds to generate\n    SSL certificates.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Robin Johnson reported that the docert() function provided by\n    ssl-cert.eclass can be called by source building stages of an ebuild,\n    such as src_compile() or src_install(), which will result in the\n    generated SSL keys being included inside binary packages (binpkgs).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A local attacker could recover the SSL keys from publicly readable\n    binary packages when \"<i>emerge</i>\" is called with the \"<i>--buildpkg\n    (-b)</i>\" or \"<i>--buildpkgonly (-B)</i>\" option. Remote attackers can\n    recover these keys if the packages are served to a network. Binary\n    packages built using \"<i>quickpkg</i>\" are not affected.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    Do not use pre-generated SSL keys, but use keys that were generated\n    using a different Certificate Authority.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    Upgrading to newer versions of the above packages will neither remove\n    possibly compromised SSL certificates, nor old binary packages. Please\n    remove the certificates installed by Portage, and then emerge an\n    upgrade to the package.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Conserver users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Postfix 2.4 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Postfix 2.3 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Postfix 2.2 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Netkit FTP Server users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All ejabberd users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All UnrealIRCd users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Cyrus IMAP Server users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Dovecot users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All stunnel 4 users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All InterNetNews users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-admin/conserver-8.1.16\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-mta/postfix-2.4.6-r2\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-mta/postfix-2.3.8-r1\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-mta/postfix-2.2.11-r1\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-ftp/netkit-ftpd-0.17-r7\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-im/ejabberd-1.1.3\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-irc/unrealircd-3.2.7-r2\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-mail/cyrus-imapd-2.3.9-r1\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-mail/dovecot-1.0.10\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/stunnel-4.21\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-nntp/inn-2.4.3-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-1383",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1383"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-03-14T23:17:10Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-03-15T00:11:06Z"
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "ID": "200811-01",
+  "Title": "Opera: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities have been discovered in Opera, allowing for the\n    execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "opera",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-11-03",
+  "Revised": {
+    "Text": "2008-11-03",
+    "Count": "01"
+  },
+  "Bug": [
+    "235298",
+    "240500",
+    "243060",
+    "244980"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "www-client/opera",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "9.62",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "9.62",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Opera is a fast web browser that is available free of charge.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Multiple vulnerabilities have been discovered in Opera:\n    </p>\n    <ul>\n    <li>Opera does not restrict the ability of a framed web page to change\n    the address associated with a different frame (CVE-2008-4195).</li>\n    <li>Chris Weber (Casaba Security) discovered a Cross-site scripting\n    vulnerability (CVE-2008-4196).</li>\n    <li>Michael A. Puls II discovered\n    that Opera can produce argument strings that contain uninitialized\n    memory, when processing custom shortcut and menu commands\n    (CVE-2008-4197).</li>\n    <li>Lars Kleinschmidt discovered that Opera, when\n    rendering an HTTP page that has loaded an HTTPS page into a frame,\n    displays a padlock icon and offers a security information dialog\n    reporting a secure connection (CVE-2008-4198).</li>\n    <li>Opera does not\n    prevent use of links from web pages to feed source files on the local\n    disk (CVE-2008-4199).</li>\n    <li>Opera does not ensure that the address\n    field of a news feed represents the feed's actual URL\n    (CVE-2008-4200).</li>\n    <li>Opera does not check the CRL override upon\n    encountering a certificate that lacks a CRL (CVE-2008-4292).</li>\n    <li>Chris (Matasano Security) reported that Opera may crash if it is\n    redirected by a malicious page to a specially crafted address\n    (CVE-2008-4694).</li>\n    <li>Nate McFeters reported that Opera runs Java\n    applets in the context of the local machine, if that applet has been\n    cached and a page can predict the cache path for that applet and load\n    it from the cache (CVE-2008-4695).</li>\n    <li>Roberto Suggi Liverani\n    (Security-Assessment.com) reported that Opera's History Search results\n    does not escape certain constructs correctly, allowing for the\n    injection of scripts into the page (CVE-2008-4696).</li>\n    <li>David\n    Bloom reported that Opera's Fast Forward feature incorrectly executes\n    scripts from a page held in a frame in the outermost page instead of\n    the page the JavaScript URL was located (CVE-2008-4697).</li>\n    <li>David\n    Bloom reported that Opera does not block some scripts when previewing a\n    news feed (CVE-2008-4698).</li>\n    <li>Opera does not correctly sanitize\n    content when certain parameters are passed to Opera's History Search,\n    allowing scripts to be injected into the History Search results page\n    (CVE-2008-4794).</li>\n    <li>Opera's links panel incorrectly causes\n    scripts from a page held in a frame to be executed in the outermost\n    page instead of the page where the URL was located\n    (CVE-2008-4795).</li>\n    </ul>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    These vulnerabilties allow remote attackers to execute arbitrary code,\n    to run scripts injected into Opera's History Search with elevated\n    privileges, to inject arbitrary web script or HTML into web pages, to\n    manipulate the address bar, to change Opera's preferences, to determine\n    the validity of local filenames, to read cache files, browsing history,\n    and subscribed feeds or to conduct other attacks.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Opera users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/opera-9.62\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-4195",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4195"
+      },
+      {
+        "Text": "CVE-2008-4196",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4196"
+      },
+      {
+        "Text": "CVE-2008-4197",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4197"
+      },
+      {
+        "Text": "CVE-2008-4198",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4198"
+      },
+      {
+        "Text": "CVE-2008-4199",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4199"
+      },
+      {
+        "Text": "CVE-2008-4200",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4200"
+      },
+      {
+        "Text": "CVE-2008-4292",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4292"
+      },
+      {
+        "Text": "CVE-2008-4694",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4694"
+      },
+      {
+        "Text": "CVE-2008-4695",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4695"
+      },
+      {
+        "Text": "CVE-2008-4696",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4696"
+      },
+      {
+        "Text": "CVE-2008-4697",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4697"
+      },
+      {
+        "Text": "CVE-2008-4698",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4698"
+      },
+      {
+        "Text": "CVE-2008-4794",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4794"
+      },
+      {
+        "Text": "CVE-2008-4795",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4795"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-10-13T21:25:07Z"
+    },
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-11-03T18:39:54Z"
+    }
+  ]
+}

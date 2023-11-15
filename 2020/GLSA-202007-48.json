@@ -1,0 +1,98 @@
+{
+  "ID": "202007-48",
+  "Title": "OCaml: Arbitrary code execution",
+  "Synopsis": "An integer overflow was discovered in OCaml's standard library,\n    possibly allowing arbitrary execution of code.\n  ",
+  "Product": {
+    "Text": "ocaml",
+    "Type": "ebuild"
+  },
+  "Announced": "2020-07-27",
+  "Revised": {
+    "Text": "2020-07-27",
+    "Count": "2"
+  },
+  "Bug": [
+    "719134"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-lang/ocaml",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.09.0",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.09.0",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>OCaml is a high-level, strongly-typed, functional, and object-oriented\n      programming language from the ML family of languages\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>The caml_ba_deserialize function in byterun/bigarray.c in the standard\n      library of OCaml has an integer overflow.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could possibly execute arbitrary code with the\n      privileges of the process, or cause a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All OCaml users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-lang/ocaml-4.09.0\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2018-9838",
+        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2018-9838"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "sam_c",
+      "Tag": "requester",
+      "Timestamp": "2020-07-26T15:40:49Z"
+    },
+    {
+      "Text": "sam_c",
+      "Tag": "submitter",
+      "Timestamp": "2020-07-27T01:25:07Z"
+    }
+  ]
+}

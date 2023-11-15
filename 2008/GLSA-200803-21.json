@@ -1,0 +1,108 @@
+{
+  "ID": "200803-21",
+  "Title": "Sarg: Remote execution of arbitrary code",
+  "Synopsis": "\n    Sarg is vulnerable to the execution of arbitrary code when processed with\n    untrusted input files.\n  ",
+  "Product": {
+    "Text": "sarg",
+    "Type": "ebuild"
+  },
+  "Announced": "2008-03-12",
+  "Revised": {
+    "Text": "2008-03-12",
+    "Count": "01"
+  },
+  "Bug": [
+    "212208",
+    "212731"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-analyzer/sarg",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.2.5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.2.5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Sarg (Squid Analysis Report Generator) is a tool that provides many\n    informations about the Squid web proxy server users activities: time,\n    sites, traffic, etc.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Sarg doesn't properly check its input for abnormal content when\n    processing Squid log files.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker using a vulnerable Squid as a proxy server or a\n    reverse-proxy server can inject arbitrary content into the \"User-Agent\"\n    HTTP client header, that will be processed by sarg, which will lead to\n    the execution of arbitrary code, or JavaScript injection, allowing\n    Cross-Site Scripting attacks and the theft of credentials.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All sarg users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/sarg-2.2.5\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2008-1167",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1167"
+      },
+      {
+        "Text": "CVE-2008-1168",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1168"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "requester",
+      "Timestamp": "2008-03-08T16:52:09Z"
+    },
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2008-03-09T18:03:52Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2008-03-09T21:03:08Z"
+    }
+  ]
+}

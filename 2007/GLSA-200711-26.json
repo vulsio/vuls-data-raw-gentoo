@@ -1,0 +1,114 @@
+{
+  "ID": "200711-26",
+  "Title": "teTeX: Multiple vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities have been discovered in teTeX, possibly allowing\n    to execute arbitrary code or overwrite arbitrary files.\n  ",
+  "Product": {
+    "Text": "tetex",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-11-18",
+  "Revised": {
+    "Text": "2007-11-18",
+    "Count": "01"
+  },
+  "Bug": [
+    "198238"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-text/tetex",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "3.0_p1-r6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "3.0_p1-r6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    teTeX is a complete TeX distribution for editing documents.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Joachim Schrod discovered several buffer overflow vulnerabilities and\n    an insecure temporary file creation in the \"dvilj\" application that is\n    used by dvips to convert DVI files to printer formats (CVE-2007-5937,\n    CVE-2007-5936). Bastien Roucaries reported that the \"dvips\" application\n    is vulnerable to two stack-based buffer overflows when processing DVI\n    documents with long \\href{} URIs (CVE-2007-5935). teTeX also includes\n    code from Xpdf that is vulnerable to a memory corruption and two\n    heap-based buffer overflows (GLSA 200711-22); and it contains code from\n    T1Lib that is vulnerable to a buffer overflow when processing an overly\n    long font filename (GLSA 200710-12).\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to process a specially crafted\n    DVI or PDF file which could lead to the execution of arbitrary code\n    with the privileges of the user running the application. A local\n    attacker could exploit the \"dvilj\" vulnerability to conduct a symlink\n    attack to overwrite arbitrary files.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All teTeX users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/tetex-3.0_p1-r6\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-5935",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5935"
+      },
+      {
+        "Text": "CVE-2007-5936",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5936"
+      },
+      {
+        "Text": "CVE-2007-5937",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5937"
+      },
+      {
+        "Text": "GLSA 200710-12",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200710-12.xml"
+      },
+      {
+        "Text": "GLSA 200711-22",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200711-22.xml"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-11-13T01:13:42Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-11-18T21:46:32Z"
+    }
+  ]
+}

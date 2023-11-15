@@ -1,0 +1,106 @@
+{
+  "ID": "200408-01",
+  "Title": "MPlayer: GUI filename handling overflow",
+  "Synopsis": "\n    When compiled with GUI support MPlayer is vulnerable to a remotely\n    exploitable buffer overflow attack.\n  ",
+  "Product": {
+    "Text": "MPlayer",
+    "Type": "ebuild"
+  },
+  "Announced": "2004-08-01",
+  "Revised": {
+    "Text": "2006-05-22",
+    "Count": "02"
+  },
+  "Bug": [
+    "55456"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-video/mplayer",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0_pre4-r7",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0_pre4-r7",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    MPlayer is a media player capable of handling multiple multimedia file\n    formats.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    The MPlayer GUI code contains several buffer overflow vulnerabilities,\n    and at least one in the TranslateFilename() function is exploitable.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    By enticing a user to play a file with a carefully crafted filename an\n    attacker could execute arbitrary code with the permissions of the user\n    running MPlayer.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    To work around this issue, users can compile MPlayer without GUI\n    support by disabling the gtk USE flag. All users are encouraged to\n    upgrade to the latest available version of MPlayer.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All MPlayer users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge sync\n    \n    # emerge -pv \">=media-video/mplayer-1.0_pre4-r7\"\n    # emerge \">=media-video/mplayer-1.0_pre4-r7\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "Bugtraq Announcement",
+        "Link": "http://www.securityfocus.com/bid/10615/"
+      },
+      {
+        "Text": "Open-Security Announcement",
+        "Link": "http://www.open-security.org/advisories/5"
+      },
+      {
+        "Text": "CVE-2004-0659",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0659"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": ""
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "submitter",
+      "Timestamp": ""
+    }
+  ]
+}

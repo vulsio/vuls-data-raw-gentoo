@@ -1,0 +1,115 @@
+{
+  "ID": "200504-01",
+  "Title": "telnet-bsd: Multiple buffer overflows",
+  "Synopsis": "\n    The telnet-bsd telnet client is vulnerable to two buffer overflows, which\n    could allow a malicious telnet server operator to execute arbitrary code.\n  ",
+  "Product": {
+    "Text": "telnet",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-04-01",
+  "Revised": {
+    "Text": "2005-04-01",
+    "Count": "01"
+  },
+  "Bug": [
+    "87019"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/telnet-bsd",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    telnet-bsd provides a command line telnet client which is used for\n    remote login using the telnet protocol.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    A buffer overflow has been identified in the env_opt_add()\n    function of telnet-bsd, where a response requiring excessive escaping\n    can cause a heap-based buffer overflow. Another issue has been\n    identified in the slc_add_reply() function, where a large number of SLC\n    commands can overflow a fixed size buffer.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    Successful exploitation would require a vulnerable user to connect\n    to an attacker-controlled host using telnet, potentially executing\n    arbitrary code with the permissions of the telnet user.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All telnet-bsd users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/telnet-bsd-1.0-r1\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CAN-2005-0468",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0468"
+      },
+      {
+        "Text": "IDEF0867",
+        "Link": "http://www.idefense.com/application/poi/display?id=221&type=vulnerabilities"
+      },
+      {
+        "Text": "CAN-2005-0469",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0469"
+      },
+      {
+        "Text": "IDEF0866",
+        "Link": "http://www.idefense.com/application/poi/display?id=220&type=vulnerabilities"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-03-29T16:15:13Z"
+    },
+    {
+      "Text": "\n    taviso\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-03-29T17:09:56Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-03-31T06:01:07Z"
+    }
+  ]
+}

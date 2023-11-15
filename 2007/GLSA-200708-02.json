@@ -1,0 +1,103 @@
+{
+  "ID": "200708-02",
+  "Title": "Xvid: Array indexing vulnerabilities",
+  "Synopsis": "\n    Several array indexing vulnerabilities were discovered in Xvid, possibly\n    allowing for the remote execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "xvid",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-08-08",
+  "Revised": {
+    "Text": "2007-08-08",
+    "Count": "01"
+  },
+  "Bug": [
+    "183145"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-libs/xvid",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.1.3",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.1.3",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Xvid is a popular open source video codec licensed under the GPL.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Trixter Jack discovered an array indexing error in the\n    get_intra_block() function in the file src/bitstream/mbcoding.c. The\n    get_inter_block_h263() and get_inter_block_mpeg() functions in the same\n    file were also reported as vulnerable.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker could exploit these vulnerabilities to execute arbitrary\n    code by tricking a user or automated system into processing a malicious\n    video file with an application that makes use of the Xvid library.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Xvid users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/xvid-1.1.3\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-3329",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3329"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-07-14T21:54:33Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-07-15T18:56:27Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-07-16T07:58:51Z"
+    }
+  ]
+}

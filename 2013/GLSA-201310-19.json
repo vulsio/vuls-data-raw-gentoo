@@ -1,0 +1,98 @@
+{
+  "ID": "201310-19",
+  "Title": "X2Go Server: Arbitrary code execution",
+  "Synopsis": "A path vulnerability in X2Go Server may allow remote execution of\n    arbitrary code.\n  ",
+  "Product": {
+    "Text": "x2goserver",
+    "Type": "ebuild"
+  },
+  "Announced": "2013-10-28",
+  "Revised": {
+    "Text": "2013-10-28",
+    "Count": "1"
+  },
+  "Bug": [
+    "472582"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "net-misc/x2goserver",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.0.0.2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.0.0.2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>X2Go is an open source terminal server project.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A vulnerability in the setgid wrapper x2gosqlitewrapper.c does not\n      hardcode an internal path to x2gosqlitewrapper.pl, allowing a remote\n      attacker to change that path.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>A remote attacker may be able to execute arbitrary code with the\n      privileges of the user running the server process.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All X2Go Server users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/x2goserver-4.0.0.2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2013-4376",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4376"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    creffett\n  ",
+      "Tag": "requester",
+      "Timestamp": "2013-09-11T15:02:19Z"
+    },
+    {
+      "Text": "\n    creffett\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2013-10-28T12:03:05Z"
+    }
+  ]
+}

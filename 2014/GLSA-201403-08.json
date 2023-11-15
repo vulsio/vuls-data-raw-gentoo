@@ -1,0 +1,98 @@
+{
+  "ID": "201403-08",
+  "Title": "PlRPC: Arbitrary code execution",
+  "Synopsis": "PlRPC uses Storable which allows for code execution prior to\n    Authentication\n  ",
+  "Product": {
+    "Text": "PlRPC",
+    "Type": "ebuild"
+  },
+  "Announced": "2014-03-27",
+  "Revised": {
+    "Text": "2014-03-27",
+    "Count": "1"
+  },
+  "Bug": [
+    "497692"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-perl/PlRPC",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.202.0-r2",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.202.0-r2",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>The Perl RPC Module is a Perl module that implements IDL-free RPCs.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>PlRPC uses Storable module for serialization and deserialization of\n      untrusted data. Deserialized data can contain objects which can lead to\n      loading of foreign modules, and possible execution of arbitrary code.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could possibly execute\n      arbitrary code with the privileges of the process, or cause a Denial of\n      Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>External authentication mechanism can be used with PlRPC such as TLS or\n      IPSEC.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All PlRPC users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-perl/PlRPC-0.202.0-r2\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2013-7284",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-7284"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "requester",
+      "Timestamp": "2014-01-28T06:14:53Z"
+    },
+    {
+      "Text": "\n    BlueKnight\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2014-03-27T10:25:44Z"
+    }
+  ]
+}

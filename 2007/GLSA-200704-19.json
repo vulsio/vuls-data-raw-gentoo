@@ -1,0 +1,103 @@
+{
+  "ID": "200704-19",
+  "Title": "Blender: User-assisted remote execution of arbitrary code",
+  "Synopsis": "\n    A vulnerability has been discovered in Blender allowing for user-assisted\n    arbitrary code execution.\n  ",
+  "Product": {
+    "Text": "Blender",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-04-23",
+  "Revised": {
+    "Text": "2007-04-23",
+    "Count": "01"
+  },
+  "Bug": [
+    "168907"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "media-gfx/blender",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.43",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.43",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Blender is a 3D creation, animation and publishing program.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Stefan Cornelius of Secunia Research discovered an insecure use of the\n    \"eval()\" function in kmz_ImportWithMesh.py.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted\n    Blender file (.kmz or .kml), resulting in the execution of arbitrary\n    Python code with the privileges of the user running Blender.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Blender users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/blender-2.43\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-1253",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1253"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-04-17T18:07:32Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-04-18T09:36:27Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-04-18T20:46:11Z"
+    }
+  ]
+}

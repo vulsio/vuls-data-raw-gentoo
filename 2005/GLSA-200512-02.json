@@ -1,0 +1,138 @@
+{
+  "ID": "200512-02",
+  "Title": "Webmin, Usermin: Format string vulnerability",
+  "Synopsis": "\n    Webmin and Usermin are vulnerable to a format string vulnerability which\n    may lead to the execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "webmin usermin",
+    "Type": "ebuild"
+  },
+  "Announced": "2005-12-07",
+  "Revised": {
+    "Text": "2005-12-07",
+    "Count": "01"
+  },
+  "Bug": [
+    "113888"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-admin/webmin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.250",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.250",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "app-admin/usermin",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.180",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.180",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    Webmin is a web-based interface for Unix-like systems. Usermin is\n    a simplified version of Webmin designed for use by normal users rather\n    than system administrators.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Jack Louis discovered that the Webmin and Usermin \"miniserv.pl\"\n    web server component is vulnerable to a Perl format string\n    vulnerability. Login with the supplied username is logged via the Perl\n    \"syslog\" facility in an unsafe manner.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "high",
+    "Text": "\n    <p>\n    A remote attacker can trigger this vulnerability via a specially\n    crafted username containing format string data. This can be exploited\n    to consume a large amount of CPU and memory resources on a vulnerable\n    system, and possibly to execute arbitrary code of the attacker's choice\n    with the permissions of the user running Webmin.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All Webmin users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    All Usermin users should upgrade to the latest version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-admin/webmin-1.250\"",
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-admin/usermin-1.180\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2005-3912",
+        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3912"
+      },
+      {
+        "Text": "Dyad Security Advisory",
+        "Link": "https://www.dyadsecurity.com/webmin-0001.html"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    koon\n  ",
+      "Tag": "requester",
+      "Timestamp": "2005-12-01T16:39:12Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2005-12-04T19:02:00Z"
+    },
+    {
+      "Text": "\n    adir\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2005-12-05T03:16:21Z"
+    }
+  ]
+}

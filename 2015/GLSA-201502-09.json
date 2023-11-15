@@ -1,0 +1,98 @@
+{
+  "ID": "201502-09",
+  "Title": "Antiword: User-assisted execution of arbitrary code",
+  "Synopsis": "A buffer overflow vulnerability in Antiword could result in\n    execution of arbitrary code or Denial of Service.\n  ",
+  "Product": {
+    "Text": "antiword",
+    "Type": "ebuild"
+  },
+  "Announced": "2015-02-07",
+  "Revised": {
+    "Text": "2015-02-07",
+    "Count": "1"
+  },
+  "Bug": [
+    "531404"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-text/antiword",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "0.37-r1",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "0.37-r1",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Antiword is a free MS Word reader.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>A buffer overflow vulnerability has been found in wordole.c in Antiword.</p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted\n      document using Antiword, possibly resulting in execution of arbitrary\n      code with the privileges of the process or a Denial of Service condition.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Antiword users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-text/antiword-0.37-r1\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2014-8123",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-8123"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "ackle",
+      "Tag": "requester",
+      "Timestamp": "2015-01-11T21:48:35Z"
+    },
+    {
+      "Text": "ackle",
+      "Tag": "submitter",
+      "Timestamp": "2015-02-07T20:39:20Z"
+    }
+  ]
+}

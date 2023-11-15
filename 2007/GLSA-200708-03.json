@@ -1,0 +1,111 @@
+{
+  "ID": "200708-03",
+  "Title": "libarchive (formerly named as bsdtar): Multiple PaX Extension Header Vulnerabilities",
+  "Synopsis": "\n    Multiple vulnerabilities were found in libarchive (formerly named as\n    app-archive/bsdtar), possibly allowing for the execution of arbitrary code\n    or a Denial of Service.\n  ",
+  "Product": {
+    "Text": "libarchive",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-08-08",
+  "Revised": {
+    "Text": "2007-08-08",
+    "Count": "02"
+  },
+  "Bug": [
+    "184984"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-arch/libarchive",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "2.2.4",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "2.2.4",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    libarchive is a library for manipulating different streaming archive\n    formats, including certain tar variants, several cpio formats, and both\n    BSD and GNU ar variants.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    CPNI, CERT-FI, Tim Kientzle, and Colin Percival reported a buffer\n    overflow (CVE-2007-3641), an infinite loop (CVE-2007-3644), and a NULL\n    pointer dereference (CVE-2007-3645) within the processing of archives\n    having corrupted PaX extension headers.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    An attacker can trick a user or automated system to process an archive\n    with malformed PaX extension headers into execute arbitrary code, crash\n    an application using the library, or cause a high CPU load.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    All libarchive or bsdtar users should upgrade to the latest libarchive\n    version:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-arch/libarchive-2.2.4\""
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-3641",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3641"
+      },
+      {
+        "Text": "CVE-2007-3644",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3644"
+      },
+      {
+        "Text": "CVE-2007-3645",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3645"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-07-15T10:30:41Z"
+    },
+    {
+      "Text": "\n    DerCorny\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-07-15T19:19:38Z"
+    },
+    {
+      "Text": "\n    jaervosz\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-07-17T17:56:39Z"
+    }
+  ]
+}

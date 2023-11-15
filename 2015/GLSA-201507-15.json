@@ -1,0 +1,148 @@
+{
+  "ID": "201507-15",
+  "Title": "OpenSSL: Alternate chains certificate forgery",
+  "Synopsis": "Certain checks on untrusted certificates can be bypassed.",
+  "Product": {
+    "Text": "openssl",
+    "Type": "ebuild"
+  },
+  "Announced": "2015-07-10",
+  "Revised": {
+    "Text": "2016-02-26",
+    "Count": "3"
+  },
+  "Bug": [
+    "554172"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "dev-libs/openssl",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "1.0.1p",
+            "Range": "ge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p6",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p7",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p8",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p9",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p10",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p11",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p12",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p13",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p14",
+            "Range": "rge",
+            "Slot": ""
+          },
+          {
+            "Text": "0.9.8z_p15",
+            "Range": "rge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "1.0.1p",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>OpenSSL is an Open Source toolkit implementing the Secure Sockets Layer\n      (SSL v2/v3) and Transport Layer Security (TLS v1) as well as a general\n      purpose cryptography library.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>During certificate verification, OpenSSL attempts to find an alternative\n      certificate chain if the first attempt to build such a chain fails.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A remote attacker could cause certain checks on untrusted\n      certificates to be bypassed, such as the CA flag, enabling them to use a\n      valid leaf certificate to act as a CA and “issue” an invalid\n      certificate.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All OpenSSL users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/openssl-1.0.1p\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2015-1793",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-1793"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "requester",
+      "Timestamp": "2015-07-08T09:20:30Z"
+    },
+    {
+      "Text": "\n    keytoaster\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2016-02-26T14:46:50Z"
+    }
+  ]
+}

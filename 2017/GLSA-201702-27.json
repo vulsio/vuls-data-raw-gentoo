@@ -1,0 +1,138 @@
+{
+  "ID": "201702-27",
+  "Title": "Xen: Multiple vulnerabilities",
+  "Synopsis": "Multiple vulnerabilities have been found in Xen, the worst of which\n    could lead to the execution of arbitrary code on the host system.\n  ",
+  "Product": {
+    "Text": "xen",
+    "Type": "ebuild"
+  },
+  "Announced": "2017-02-21",
+  "Revised": {
+    "Text": "2017-02-21",
+    "Count": "1"
+  },
+  "Bug": [
+    "607840",
+    "609160"
+  ],
+  "Access": "local",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "app-emulation/xen",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.7.1-r5",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.7.1-r5",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "app-emulation/xen-tools",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": [
+          {
+            "Text": "4.7.1-r6",
+            "Range": "ge",
+            "Slot": ""
+          }
+        ],
+        "Vulnerable": [
+          {
+            "Text": "4.7.1-r6",
+            "Range": "lt",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>Xen is a bare-metal hypervisor.</p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>Multiple vulnerabilities have been discovered in Xen. Please review the\n      CVE identifiers and Xen Security Advisory referenced below for details.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>A local attacker could potentially execute arbitrary code with\n      privileges of Xen (QEMU) process on the host, gain privileges on the host\n      system, cause a Denial of Service condition, or obtain sensitive\n      information.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n    \n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "All Xen users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "All Xen Tools users should upgrade to the latest version:",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-emulation/xen-4.7.1-r5\"\n    ",
+      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=app-emulation/xen-tools-4.7.1-r6\"\n    "
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2017-2615",
+        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-2615"
+      },
+      {
+        "Text": "XSA-207",
+        "Link": "https://xenbits.xen.org/xsa/advisory-207.html"
+      },
+      {
+        "Text": "XSA-208",
+        "Link": "https://xenbits.xen.org/xsa/advisory-208.html"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "whissi",
+      "Tag": "requester",
+      "Timestamp": "2017-02-16T18:01:38Z"
+    },
+    {
+      "Text": "whissi",
+      "Tag": "submitter",
+      "Timestamp": "2017-02-21T00:04:19Z"
+    }
+  ]
+}

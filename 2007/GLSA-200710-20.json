@@ -1,0 +1,125 @@
+{
+  "ID": "200710-20",
+  "Title": "PDFKit, ImageKits: Buffer overflow",
+  "Synopsis": "\n    PDFKit and ImageKits are vulnerable to an integer overflow and a stack\n    overflow allowing for the user-assisted execution of arbitrary code.\n  ",
+  "Product": {
+    "Text": "pdfkit imagekits",
+    "Type": "ebuild"
+  },
+  "Announced": "2007-10-18",
+  "Revised": {
+    "Text": "2007-10-18",
+    "Count": "01"
+  },
+  "Bug": [
+    "188185"
+  ],
+  "Access": "remote",
+  "Affected": {
+    "Package": [
+      {
+        "Name": "gnustep-libs/pdfkit",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": null,
+        "Vulnerable": [
+          {
+            "Text": "0.9_pre062906",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      },
+      {
+        "Name": "gnustep-libs/imagekits",
+        "Auto": "yes",
+        "Arch": "*",
+        "Unaffected": null,
+        "Vulnerable": [
+          {
+            "Text": "0.6",
+            "Range": "le",
+            "Slot": ""
+          }
+        ]
+      }
+    ],
+    "Service": {
+      "Text": "",
+      "Type": "",
+      "Fixed": ""
+    }
+  },
+  "Background": {
+    "Text": "\n    <p>\n    PDFKit is a framework for rendering of PDF content in GNUstep\n    applications. ImageKits is a collection of frameworks to support\n    imaging in GNUstep applications.\n    </p>\n  "
+  },
+  "Description": {
+    "Text": "\n    <p>\n    Maurycy Prodeus discovered an integer overflow vulnerability possibly\n    leading to a stack-based buffer overflow in the XPDF code which PDFKit\n    is based on. ImageKits also contains a copy of PDFKit.\n    </p>\n  "
+  },
+  "Impact": {
+    "Type": "normal",
+    "Text": "\n    <p>\n    By enticing a user to view a specially crafted PDF file with a viewer\n    based on ImageKits or PDFKit such as Gentoo's ViewPDF, a remote\n    attacker could cause an overflow, potentially resulting in the\n    execution of arbitrary code with the privileges of the user running the\n    application.\n    </p>\n  "
+  },
+  "Workaround": {
+    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+  },
+  "Resolution": {
+    "Text": "\n    \n    \n    \n  ",
+    "P": [
+      {
+        "Text": "\n    PDFKit and ImageKits are not maintained upstream, so the packages were\n    masked in Portage. We recommend that users unmerge PDFKit and\n    ImageKits:\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      },
+      {
+        "Text": "\n    As an alternative, users should upgrade their systems to use PopplerKit\n    instead of PDFKit and Vindaloo instead of ViewPDF.\n    ",
+        "URI": {
+          "Text": "",
+          "Link": ""
+        },
+        "Br": null,
+        "I": null,
+        "Code": "",
+        "P": ""
+      }
+    ],
+    "Code": [
+      "\n    # emerge --unmerge gnustep-libs/pdfkit\n    # emerge --unmerge gnustep-libs/imagekits"
+    ]
+  },
+  "References": {
+    "URI": [
+      {
+        "Text": "CVE-2007-3387",
+        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3387"
+      },
+      {
+        "Text": "GLSA 200709-12",
+        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200709-12.xml"
+      }
+    ]
+  },
+  "Metadata": [
+    {
+      "Text": "\n    falco\n  ",
+      "Tag": "requester",
+      "Timestamp": "2007-10-02T21:24:54Z"
+    },
+    {
+      "Text": "\n    rbu\n  ",
+      "Tag": "submitter",
+      "Timestamp": "2007-10-07T23:31:24Z"
+    },
+    {
+      "Text": "\n    p-y\n  ",
+      "Tag": "bugReady",
+      "Timestamp": "2007-10-09T18:28:10Z"
+    }
+  ]
+}
