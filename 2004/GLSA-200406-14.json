@@ -1,97 +1,97 @@
 {
-  "ID": "200406-14",
-  "Title": "aspell: Buffer overflow in word-list-compress",
-  "Synopsis": "\n    A bug in the aspell utility word-list-compress can allow an attacker to\n    execute arbitrary code.\n  ",
-  "Product": {
-    "Text": "aspell",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-06-17",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "03"
-  },
-  "Bug": [
-    "53389"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-text/aspell",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.50.5-r4",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.50.5-r3",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    aspell is a popular spell-checker. Dictionaries are available for many\n    languages.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    aspell includes a utility for handling wordlists called\n    word-list-compress. This utility fails to do proper bounds checking\n    when processing words longer than 256 bytes.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    If an attacker could entice a user to handle a wordlist containing very\n    long word lengths it could result in the execution of arbitrary code\n    with the permissions of the user running the program.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time. All users are encouraged to\n    upgrade to the latest available version.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All users should upgrade to the latest available version of aspell.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n    \n    # emerge -pv \">=app-text/aspell-0.50.5-r4\"\n    # emerge \">=app-text/aspell-0.50.5-r4\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "Nettwerked Advisory",
-        "Link": "http://nettwerked.mg2.org/advisories/wlc"
-      },
-      {
-        "Text": "CVE-2004-0548",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0548"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "submitter",
-      "Timestamp": ""
-    }
-  ]
+	"ID": "200406-14",
+	"Title": "aspell: Buffer overflow in word-list-compress",
+	"Synopsis": "\n    A bug in the aspell utility word-list-compress can allow an attacker to\n    execute arbitrary code.\n  ",
+	"Product": {
+		"Text": "aspell",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-06-17",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "03"
+	},
+	"Bug": [
+		"53389"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-text/aspell",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.50.5-r4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.50.5-r3",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    aspell is a popular spell-checker. Dictionaries are available for many\n    languages.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    aspell includes a utility for handling wordlists called\n    word-list-compress. This utility fails to do proper bounds checking\n    when processing words longer than 256 bytes.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    If an attacker could entice a user to handle a wordlist containing very\n    long word lengths it could result in the execution of arbitrary code\n    with the permissions of the user running the program.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time. All users are encouraged to\n    upgrade to the latest available version.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All users should upgrade to the latest available version of aspell.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n    \n    # emerge -pv \">=app-text/aspell-0.50.5-r4\"\n    # emerge \">=app-text/aspell-0.50.5-r4\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "Nettwerked Advisory",
+				"Link": "http://nettwerked.mg2.org/advisories/wlc"
+			},
+			{
+				"Text": "CVE-2004-0548",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0548"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "submitter",
+			"Timestamp": ""
+		}
+	]
 }

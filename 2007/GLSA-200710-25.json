@@ -1,114 +1,114 @@
 {
-  "ID": "200710-25",
-  "Title": "MLDonkey: Privilege escalation",
-  "Synopsis": "\n    The Gentoo MLDonkey ebuild adds a user to the system with a valid login\n    shell and no password.\n  ",
-  "Product": {
-    "Text": "mldonkey",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-10-24",
-  "Revised": {
-    "Text": "2007-11-07",
-    "Count": "02"
-  },
-  "Bug": [
-    "189412"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-p2p/mldonkey",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.9.0-r3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.9.0-r3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    MLDonkey is a peer-to-peer filesharing client that connects to several\n    different peer-to-peer networks, including Overnet and BitTorrent.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The Gentoo MLDonkey ebuild adds a user to the system named \"p2p\" so\n    that the MLDonkey service can run under a user with low privileges.\n    With older Portage versions this user is created with a valid login\n    shell and no password.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker could log into a vulnerable system as the p2p user.\n    This would require an installed login service that permitted empty\n    passwords, such as SSH configured with the \"PermitEmptyPasswords yes\"\n    option, a local login console, or a telnet server.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    See Resolution.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    Change the p2p user's shell to disallow login. For example, as root run\n    the following command:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    NOTE: updating to the current MLDonkey ebuild will not remove this\n    vulnerability, it must be fixed manually. The updated ebuild is to\n    prevent this problem from occurring in the future.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # usermod -s /bin/false p2p"
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-5714",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5714"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-09-10T16:21:11Z"
-    },
-    {
-      "Text": "\n    aetius\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-10-07T16:40:51Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-10-07T19:26:05Z"
-    }
-  ]
+	"ID": "200710-25",
+	"Title": "MLDonkey: Privilege escalation",
+	"Synopsis": "\n    The Gentoo MLDonkey ebuild adds a user to the system with a valid login\n    shell and no password.\n  ",
+	"Product": {
+		"Text": "mldonkey",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-10-24",
+	"Revised": {
+		"Text": "2007-11-07",
+		"Count": "02"
+	},
+	"Bug": [
+		"189412"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-p2p/mldonkey",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.9.0-r3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.9.0-r3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    MLDonkey is a peer-to-peer filesharing client that connects to several\n    different peer-to-peer networks, including Overnet and BitTorrent.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The Gentoo MLDonkey ebuild adds a user to the system named \"p2p\" so\n    that the MLDonkey service can run under a user with low privileges.\n    With older Portage versions this user is created with a valid login\n    shell and no password.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker could log into a vulnerable system as the p2p user.\n    This would require an installed login service that permitted empty\n    passwords, such as SSH configured with the \"PermitEmptyPasswords yes\"\n    option, a local login console, or a telnet server.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    See Resolution.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    Change the p2p user's shell to disallow login. For example, as root run\n    the following command:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    NOTE: updating to the current MLDonkey ebuild will not remove this\n    vulnerability, it must be fixed manually. The updated ebuild is to\n    prevent this problem from occurring in the future.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # usermod -s /bin/false p2p"
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-5714",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5714"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-09-10T16:21:11Z"
+		},
+		{
+			"Text": "\n    aetius\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-10-07T16:40:51Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-10-07T19:26:05Z"
+		}
+	]
 }

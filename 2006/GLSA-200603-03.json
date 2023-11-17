@@ -1,112 +1,112 @@
 {
-  "ID": "200603-03",
-  "Title": "MPlayer: Multiple integer overflows",
-  "Synopsis": "\n    MPlayer is vulnerable to integer overflows in FFmpeg and ASF decoding that\n    could potentially result in the execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "MPlayer",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-03-04",
-  "Revised": {
-    "Text": "2006-06-21",
-    "Count": "02"
-  },
-  "Bug": [
-    "115760",
-    "122029"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-video/mplayer",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.0.20060217",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "1.0_pre8",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.0.20060217",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    MPlayer is a media player capable of handling multiple multimedia file\n    formats.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    MPlayer makes use of the FFmpeg library, which is vulnerable to a heap\n    overflow in the avcodec_default_get_buffer() function discovered by\n    Simon Kilvington (see GLSA 200601-06). Furthermore, AFI Security\n    Research discovered two integer overflows in ASF file format decoding,\n    in the new_demux_packet() function from libmpdemux/demuxer.h and the\n    demux_asf_read_packet() function from libmpdemux/demux_asf.c.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker could craft a malicious media file which, when opened using\n    MPlayer, would lead to a heap-based buffer overflow. This could result\n    in the execution of arbitrary code with the permissions of the user\n    running MPlayer.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All MPlayer users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-video/mplayer-1.0.20060217\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2005-4048",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-4048"
-      },
-      {
-        "Text": "CVE-2006-0579",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0579"
-      },
-      {
-        "Text": "GLSA 200601-06",
-        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200601-06.xml"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-03-04T11:56:49Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-03-04T11:56:59Z"
-    }
-  ]
+	"ID": "200603-03",
+	"Title": "MPlayer: Multiple integer overflows",
+	"Synopsis": "\n    MPlayer is vulnerable to integer overflows in FFmpeg and ASF decoding that\n    could potentially result in the execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "MPlayer",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-03-04",
+	"Revised": {
+		"Text": "2006-06-21",
+		"Count": "02"
+	},
+	"Bug": [
+		"115760",
+		"122029"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-video/mplayer",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.0.20060217",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "1.0_pre8",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.0.20060217",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    MPlayer is a media player capable of handling multiple multimedia file\n    formats.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    MPlayer makes use of the FFmpeg library, which is vulnerable to a heap\n    overflow in the avcodec_default_get_buffer() function discovered by\n    Simon Kilvington (see GLSA 200601-06). Furthermore, AFI Security\n    Research discovered two integer overflows in ASF file format decoding,\n    in the new_demux_packet() function from libmpdemux/demuxer.h and the\n    demux_asf_read_packet() function from libmpdemux/demux_asf.c.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker could craft a malicious media file which, when opened using\n    MPlayer, would lead to a heap-based buffer overflow. This could result\n    in the execution of arbitrary code with the permissions of the user\n    running MPlayer.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All MPlayer users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-video/mplayer-1.0.20060217\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2005-4048",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-4048"
+			},
+			{
+				"Text": "CVE-2006-0579",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0579"
+			},
+			{
+				"Text": "GLSA 200601-06",
+				"Link": "https://www.gentoo.org/security/en/glsa/glsa-200601-06.xml"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-03-04T11:56:49Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-03-04T11:56:59Z"
+		}
+	]
 }

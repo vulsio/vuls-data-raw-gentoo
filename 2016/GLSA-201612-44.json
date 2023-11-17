@@ -1,98 +1,98 @@
 {
-  "ID": "201612-44",
-  "Title": "Roundcube: Arbitrary code execution",
-  "Synopsis": "A vulnerability in Roundcube could potentially lead to arbitrary\n    code execution.\n  ",
-  "Product": {
-    "Text": "roundcube",
-    "Type": "ebuild"
-  },
-  "Announced": "2016-12-24",
-  "Revised": {
-    "Text": "2016-12-24",
-    "Count": "1"
-  },
-  "Bug": [
-    "601410"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "mail-client/roundcube",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.2.3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.2.3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Free and open source webmail software for the masses, written in PHP.</p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Roundcube, when no SMTP server is configured and the sendmail program is\n      enabled, does not properly restrict the use of custom envelope-from\n      addresses on the sendmail command line.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>An authenticated remote attacker could possibly execute arbitrary code\n      with the privileges of the process, or cause a Denial of Service\n      condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>Don’t use a MTA (Mail Transfer Agent) in conjunction with Roundcube\n      which implements sendmail’s “-O” or “-X” parameter, or\n      configure Roundcube to use a SMTP server as recommended by upstream.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All Roundcube users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=mail-client/roundcube-1.2.3\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2016-9920",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-9920"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "whissi",
-      "Tag": "requester",
-      "Timestamp": "2016-12-23T15:26:48Z"
-    },
-    {
-      "Text": "whissi",
-      "Tag": "submitter",
-      "Timestamp": "2016-12-24T06:42:27Z"
-    }
-  ]
+	"ID": "201612-44",
+	"Title": "Roundcube: Arbitrary code execution",
+	"Synopsis": "A vulnerability in Roundcube could potentially lead to arbitrary\n    code execution.\n  ",
+	"Product": {
+		"Text": "roundcube",
+		"Type": "ebuild"
+	},
+	"Announced": "2016-12-24",
+	"Revised": {
+		"Text": "2016-12-24",
+		"Count": "1"
+	},
+	"Bug": [
+		"601410"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "mail-client/roundcube",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.2.3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.2.3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Free and open source webmail software for the masses, written in PHP.</p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Roundcube, when no SMTP server is configured and the sendmail program is\n      enabled, does not properly restrict the use of custom envelope-from\n      addresses on the sendmail command line.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>An authenticated remote attacker could possibly execute arbitrary code\n      with the privileges of the process, or cause a Denial of Service\n      condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>Don’t use a MTA (Mail Transfer Agent) in conjunction with Roundcube\n      which implements sendmail’s “-O” or “-X” parameter, or\n      configure Roundcube to use a SMTP server as recommended by upstream.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All Roundcube users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=mail-client/roundcube-1.2.3\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2016-9920",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-9920"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "whissi",
+			"Tag": "requester",
+			"Timestamp": "2016-12-23T15:26:48Z"
+		},
+		{
+			"Text": "whissi",
+			"Tag": "submitter",
+			"Timestamp": "2016-12-24T06:42:27Z"
+		}
+	]
 }

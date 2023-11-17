@@ -1,98 +1,98 @@
 {
-  "ID": "201706-27",
-  "Title": "FreeRADIUS: Security bypass",
-  "Synopsis": "A vulnerability in FreeRADIUS might allow remote attackers to\n    bypass authentication.\n  ",
-  "Product": {
-    "Text": "freeradius",
-    "Type": "ebuild"
-  },
-  "Announced": "2017-06-27",
-  "Revised": {
-    "Text": "2017-06-27",
-    "Count": "1"
-  },
-  "Bug": [
-    "620186"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-dialup/freeradius",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.0.14",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.0.14",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>FreeRADIUS is an open source RADIUS authentication server.</p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>It was discovered that the implementation of TTLS and PEAP in FreeRADIUS\n      skips inner authentication when it handles a resumed TLS connection. The\n      affected versions of FreeRADIUS fails to reliably prevent the resumption\n      of unauthenticated sessions unless the TLS session cache is disabled\n      completely.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>An unauthenticated remote user can bypass authentication by starting a\n      session, and then resuming an unauthenticated TLS session before inner\n      authentication has been completed successfully.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>Set “enabled = no” in the cache subsection of eap module settings to\n      disable TLS session caching.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All FreeRADIUS users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-dialup/freeradius-3.0.14\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2017-9148",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-9148"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "whissi",
-      "Tag": "requester",
-      "Timestamp": "2017-06-09T12:42:38Z"
-    },
-    {
-      "Text": "whissi",
-      "Tag": "submitter",
-      "Timestamp": "2017-06-27T09:57:00Z"
-    }
-  ]
+	"ID": "201706-27",
+	"Title": "FreeRADIUS: Security bypass",
+	"Synopsis": "A vulnerability in FreeRADIUS might allow remote attackers to\n    bypass authentication.\n  ",
+	"Product": {
+		"Text": "freeradius",
+		"Type": "ebuild"
+	},
+	"Announced": "2017-06-27",
+	"Revised": {
+		"Text": "2017-06-27",
+		"Count": "1"
+	},
+	"Bug": [
+		"620186"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-dialup/freeradius",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.0.14",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.0.14",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>FreeRADIUS is an open source RADIUS authentication server.</p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>It was discovered that the implementation of TTLS and PEAP in FreeRADIUS\n      skips inner authentication when it handles a resumed TLS connection. The\n      affected versions of FreeRADIUS fails to reliably prevent the resumption\n      of unauthenticated sessions unless the TLS session cache is disabled\n      completely.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>An unauthenticated remote user can bypass authentication by starting a\n      session, and then resuming an unauthenticated TLS session before inner\n      authentication has been completed successfully.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>Set “enabled = no” in the cache subsection of eap module settings to\n      disable TLS session caching.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All FreeRADIUS users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-dialup/freeradius-3.0.14\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2017-9148",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-9148"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "whissi",
+			"Tag": "requester",
+			"Timestamp": "2017-06-09T12:42:38Z"
+		},
+		{
+			"Text": "whissi",
+			"Tag": "submitter",
+			"Timestamp": "2017-06-27T09:57:00Z"
+		}
+	]
 }

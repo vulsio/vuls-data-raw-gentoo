@@ -1,87 +1,87 @@
 {
-  "ID": "200312-04",
-  "Title": "CVS: malformed module request vulnerability",
-  "Synopsis": "\n    A bug in cvs could allow attempts to create files and directories outside a\n    repository.\n  ",
-  "Product": {
-    "Text": "CVS",
-    "Type": "ebuild"
-  },
-  "Announced": "2003-12-08",
-  "Revised": {
-    "Text": "2003-12-08",
-    "Count": "01"
-  },
-  "Bug": [
-    "35371"
-  ],
-  "Access": "unknown",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-util/cvs",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.11.10",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.11.9",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    CVS, which stands for Concurrent Versions System, is a client/server\n    application which tracks changes to sets of files.  It allows multiple users\n    to work concurrently on files, and then merge their changes back into the\n    main tree (which can be on a remote system).  It also allows branching, or\n    maintaining separate versions for files.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Quote from ccvs.cvshome.org/servlets/NewsItemView?newsID=84:\n    \"Stable CVS 1.11.10 has been released. Stable releases contain only bug\n    fixes from previous versions of CVS. This release fixes a security issue\n    with no known exploits that could cause previous versions of CVS to attempt\n    to create files and directories in the filesystem root. This release also\n    fixes several issues relevant to case insensitive filesystems and some other\n    bugs. We recommend this upgrade for all CVS clients and servers!\"\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "minimal",
-    "Text": "\n    <p>\n    Attempts to create files and directories outside the repository may be\n    possible.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Gentoo Linux machines with cvs installed should be updated to use\n    dev-util/cvs-1.11.10 or higher:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n    # emerge -pv '>=dev-util/cvs-1.11.10'\n    # emerge '>=dev-util/cvs-1.11.10'\n    # emerge clean"
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2003-0977",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2003-0977"
-      }
-    ]
-  },
-  "Metadata": null
+	"ID": "200312-04",
+	"Title": "CVS: malformed module request vulnerability",
+	"Synopsis": "\n    A bug in cvs could allow attempts to create files and directories outside a\n    repository.\n  ",
+	"Product": {
+		"Text": "CVS",
+		"Type": "ebuild"
+	},
+	"Announced": "2003-12-08",
+	"Revised": {
+		"Text": "2003-12-08",
+		"Count": "01"
+	},
+	"Bug": [
+		"35371"
+	],
+	"Access": "unknown",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-util/cvs",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.11.10",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.11.9",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    CVS, which stands for Concurrent Versions System, is a client/server\n    application which tracks changes to sets of files.  It allows multiple users\n    to work concurrently on files, and then merge their changes back into the\n    main tree (which can be on a remote system).  It also allows branching, or\n    maintaining separate versions for files.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Quote from ccvs.cvshome.org/servlets/NewsItemView?newsID=84:\n    \"Stable CVS 1.11.10 has been released. Stable releases contain only bug\n    fixes from previous versions of CVS. This release fixes a security issue\n    with no known exploits that could cause previous versions of CVS to attempt\n    to create files and directories in the filesystem root. This release also\n    fixes several issues relevant to case insensitive filesystems and some other\n    bugs. We recommend this upgrade for all CVS clients and servers!\"\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "minimal",
+		"Text": "\n    <p>\n    Attempts to create files and directories outside the repository may be\n    possible.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Gentoo Linux machines with cvs installed should be updated to use\n    dev-util/cvs-1.11.10 or higher:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n    # emerge -pv '>=dev-util/cvs-1.11.10'\n    # emerge '>=dev-util/cvs-1.11.10'\n    # emerge clean"
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2003-0977",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2003-0977"
+			}
+		]
+	},
+	"Metadata": null
 }

@@ -1,98 +1,98 @@
 {
-  "ID": "201203-11",
-  "Title": "usbmuxd: User-assisted execution of arbitrary code",
-  "Synopsis": "A buffer overflow vulnerability in usbmuxd could result in the\n    execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "usbmuxd",
-    "Type": "ebuild"
-  },
-  "Announced": "2012-03-06",
-  "Revised": {
-    "Text": "2012-03-06",
-    "Count": "1"
-  },
-  "Bug": [
-    "399409"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-pda/usbmuxd",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.0.7-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.0.7-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>usbmuxd is a USB multiplex daemon for use with Apple iPhone and iPod\n      Touch devices.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>The \"receive_packet()\" function in libusbmuxd.c contains a boundary\n      error when parsing the \"SerialNumber\" field of a USB device, which could\n      cause a heap-based buffer overflow.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>An attacker could gain physical access or entice a user to connect to a\n      malicious USB device, possibly resulting in execution of arbitrary code\n      with the privileges of the \"usbmux\" user.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All usbmuxd users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-pda/usbmuxd-1.0.7-r1\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2012-0065",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0065"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "ago",
-      "Tag": "requester",
-      "Timestamp": "2012-01-23T14:30:43Z"
-    },
-    {
-      "Text": "ackle",
-      "Tag": "submitter",
-      "Timestamp": "2012-03-06T01:43:19Z"
-    }
-  ]
+	"ID": "201203-11",
+	"Title": "usbmuxd: User-assisted execution of arbitrary code",
+	"Synopsis": "A buffer overflow vulnerability in usbmuxd could result in the\n    execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "usbmuxd",
+		"Type": "ebuild"
+	},
+	"Announced": "2012-03-06",
+	"Revised": {
+		"Text": "2012-03-06",
+		"Count": "1"
+	},
+	"Bug": [
+		"399409"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-pda/usbmuxd",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.0.7-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.0.7-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>usbmuxd is a USB multiplex daemon for use with Apple iPhone and iPod\n      Touch devices.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>The \"receive_packet()\" function in libusbmuxd.c contains a boundary\n      error when parsing the \"SerialNumber\" field of a USB device, which could\n      cause a heap-based buffer overflow.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>An attacker could gain physical access or entice a user to connect to a\n      malicious USB device, possibly resulting in execution of arbitrary code\n      with the privileges of the \"usbmux\" user.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All usbmuxd users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-pda/usbmuxd-1.0.7-r1\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2012-0065",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0065"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "ago",
+			"Tag": "requester",
+			"Timestamp": "2012-01-23T14:30:43Z"
+		},
+		{
+			"Text": "ackle",
+			"Tag": "submitter",
+			"Timestamp": "2012-03-06T01:43:19Z"
+		}
+	]
 }

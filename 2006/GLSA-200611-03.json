@@ -1,108 +1,108 @@
 {
-  "ID": "200611-03",
-  "Title": "NVIDIA binary graphics driver: Privilege escalation vulnerability",
-  "Synopsis": "\n    The NVIDIA binary graphics driver is vulnerable to a local privilege\n    escalation through an X session.\n  ",
-  "Product": {
-    "Text": "nvidia-drivers",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-11-07",
-  "Revised": {
-    "Text": "2006-11-10",
-    "Count": "02"
-  },
-  "Bug": [
-    "151635"
-  ],
-  "Access": "remote, local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "x11-drivers/nvidia-drivers",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.0.8776",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "1.0.8762",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.0.8776",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    The NVIDIA binary graphics driver from NVIDIA Corporation provides the\n    kernel module and the GL modules for graphic acceleration on the NVIDIA\n    based graphic cards.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Rapid7 reported a boundary error in the NVIDIA binary graphics driver\n    that leads to a buffer overflow in the accelerated rendering\n    functionality.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    An X client could trigger the buffer overflow with a maliciously\n    crafted series of glyphs. A remote attacker could also entice a user to\n    open a specially crafted web page, document or X client that will\n    trigger the buffer overflow. This could result in the execution of\n    arbitrary code with root privileges or at least in the crash of the X\n    server.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Disable the accelerated rendering functionality in the Device section\n    of xorg.conf :\n    </p>\n    <code>Option      \"RenderAccel\" \"false\"</code>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    NVIDIA binary graphics driver users should upgrade to the latest\n    version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-drivers/nvidia-drivers-1.0.8776\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-5379",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5379"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-10-24T09:12:20Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-10-24T14:25:34Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-10-24T14:27:05Z"
-    }
-  ]
+	"ID": "200611-03",
+	"Title": "NVIDIA binary graphics driver: Privilege escalation vulnerability",
+	"Synopsis": "\n    The NVIDIA binary graphics driver is vulnerable to a local privilege\n    escalation through an X session.\n  ",
+	"Product": {
+		"Text": "nvidia-drivers",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-11-07",
+	"Revised": {
+		"Text": "2006-11-10",
+		"Count": "02"
+	},
+	"Bug": [
+		"151635"
+	],
+	"Access": "remote, local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "x11-drivers/nvidia-drivers",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.0.8776",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "1.0.8762",
+						"Range": "lt",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.0.8776",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    The NVIDIA binary graphics driver from NVIDIA Corporation provides the\n    kernel module and the GL modules for graphic acceleration on the NVIDIA\n    based graphic cards.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Rapid7 reported a boundary error in the NVIDIA binary graphics driver\n    that leads to a buffer overflow in the accelerated rendering\n    functionality.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    An X client could trigger the buffer overflow with a maliciously\n    crafted series of glyphs. A remote attacker could also entice a user to\n    open a specially crafted web page, document or X client that will\n    trigger the buffer overflow. This could result in the execution of\n    arbitrary code with root privileges or at least in the crash of the X\n    server.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Disable the accelerated rendering functionality in the Device section\n    of xorg.conf :\n    </p>\n    <code>Option      \"RenderAccel\" \"false\"</code>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    NVIDIA binary graphics driver users should upgrade to the latest\n    version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-drivers/nvidia-drivers-1.0.8776\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-5379",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5379"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-10-24T09:12:20Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-10-24T14:25:34Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-10-24T14:27:05Z"
+		}
+	]
 }

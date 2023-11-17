@@ -1,103 +1,103 @@
 {
-  "ID": "200612-13",
-  "Title": "libgsf: Buffer overflow",
-  "Synopsis": "\n    libgsf improperly allocates memory allowing for a heap overflow and\n    possibly the execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "libgsf",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-12-12",
-  "Revised": {
-    "Text": "2006-12-12",
-    "Count": "01"
-  },
-  "Bug": [
-    "156693"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "gnome-extra/libgsf",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.14.2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.14.2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    The GNOME Structured File Library is an I/O library that can read and\n    write common file types and handle structured formats that provide\n    file-system-in-a-file semantics.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    \"infamous41md\" has discovered that the \"ole_init_info\" function may\n    allocate too little memory for storing the contents of an OLE document,\n    resulting in a heap buffer overflow.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker could entice a user to open a specially crafted OLE\n    document, and possibly execute arbitrary code with the rights of the\n    user opening the document.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All libgsf users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=gnome-extra/libgsf-1.14.2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-4514",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4514"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-12-10T19:48:29Z"
-    },
-    {
-      "Text": "\n    vorlon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-12-10T20:34:33Z"
-    },
-    {
-      "Text": "\n    shellsage\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-12-11T18:08:22Z"
-    }
-  ]
+	"ID": "200612-13",
+	"Title": "libgsf: Buffer overflow",
+	"Synopsis": "\n    libgsf improperly allocates memory allowing for a heap overflow and\n    possibly the execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "libgsf",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-12-12",
+	"Revised": {
+		"Text": "2006-12-12",
+		"Count": "01"
+	},
+	"Bug": [
+		"156693"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "gnome-extra/libgsf",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.14.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.14.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    The GNOME Structured File Library is an I/O library that can read and\n    write common file types and handle structured formats that provide\n    file-system-in-a-file semantics.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    \"infamous41md\" has discovered that the \"ole_init_info\" function may\n    allocate too little memory for storing the contents of an OLE document,\n    resulting in a heap buffer overflow.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker could entice a user to open a specially crafted OLE\n    document, and possibly execute arbitrary code with the rights of the\n    user opening the document.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All libgsf users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=gnome-extra/libgsf-1.14.2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-4514",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4514"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-12-10T19:48:29Z"
+		},
+		{
+			"Text": "\n    vorlon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-12-10T20:34:33Z"
+		},
+		{
+			"Text": "\n    shellsage\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-12-11T18:08:22Z"
+		}
+	]
 }

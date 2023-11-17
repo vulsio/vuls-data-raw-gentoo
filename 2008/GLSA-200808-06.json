@@ -1,108 +1,108 @@
 {
-  "ID": "200808-06",
-  "Title": "libxslt: Execution of arbitrary code",
-  "Synopsis": "\n    libxslt is affected by a heap-based buffer overflow, possibly leading to\n    the execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "libxslt",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-08-06",
-  "Revised": {
-    "Text": "2008-08-06",
-    "Count": "01"
-  },
-  "Bug": [
-    "232172"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-libs/libxslt",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.1.24-r1",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "1.1.8",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.1.24-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    libxslt is the XSLT C library developed for the GNOME project. XSLT is\n    an XML language to define transformations for XML.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Chris Evans (Google Security) reported that the libexslt library that\n    is part of libxslt is affected by a heap-based buffer overflow in the\n    RC4 encryption/decryption functions.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to process an XML file using a\n    specially crafted XSLT stylesheet in an application linked against\n    libxslt, possibly leading to the execution of arbitrary code with the\n    privileges of the user running the application.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All libxslt users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/libxslt-1.1.24-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-2935",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2935"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-07-31T23:42:58Z"
-    },
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-08-01T23:18:29Z"
-    },
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-08-01T23:18:48Z"
-    }
-  ]
+	"ID": "200808-06",
+	"Title": "libxslt: Execution of arbitrary code",
+	"Synopsis": "\n    libxslt is affected by a heap-based buffer overflow, possibly leading to\n    the execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "libxslt",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-08-06",
+	"Revised": {
+		"Text": "2008-08-06",
+		"Count": "01"
+	},
+	"Bug": [
+		"232172"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-libs/libxslt",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.1.24-r1",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "1.1.8",
+						"Range": "lt",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.1.24-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    libxslt is the XSLT C library developed for the GNOME project. XSLT is\n    an XML language to define transformations for XML.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Chris Evans (Google Security) reported that the libexslt library that\n    is part of libxslt is affected by a heap-based buffer overflow in the\n    RC4 encryption/decryption functions.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to process an XML file using a\n    specially crafted XSLT stylesheet in an application linked against\n    libxslt, possibly leading to the execution of arbitrary code with the\n    privileges of the user running the application.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All libxslt users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/libxslt-1.1.24-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-2935",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2935"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-07-31T23:42:58Z"
+		},
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-08-01T23:18:29Z"
+		},
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-08-01T23:18:48Z"
+		}
+	]
 }

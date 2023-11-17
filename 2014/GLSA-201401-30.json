@@ -1,1212 +1,1212 @@
 {
-  "ID": "201401-30",
-  "Title": "Oracle JRE/JDK: Multiple vulnerabilities",
-  "Synopsis": "Multiple vulnerabilities have been found in the Oracle JRE/JDK,\n    allowing attackers to cause unspecified impact.\n  ",
-  "Product": {
-    "Text": "sun-jre-bin sun-jdk oracle-jdk-bin oracle-jre-bin\n    emul-linux-x86-java\n  ",
-    "Type": "ebuild"
-  },
-  "Announced": "2014-01-27",
-  "Revised": {
-    "Text": "2014-01-27",
-    "Count": "1"
-  },
-  "Bug": [
-    "404071",
-    "421073",
-    "433094",
-    "438706",
-    "451206",
-    "455174",
-    "458444",
-    "460360",
-    "466212",
-    "473830",
-    "473980",
-    "488210",
-    "498148"
-  ],
-  "Access": "local, remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-java/sun-jdk",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": null,
-        "Vulnerable": [
-          {
-            "Text": "1.6.0.45",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "dev-java/oracle-jdk-bin",
-        "Auto": "no",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.7.0.51",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.7.0.51",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "dev-java/sun-jre-bin",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": null,
-        "Vulnerable": [
-          {
-            "Text": "1.6.0.45",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "dev-java/oracle-jre-bin",
-        "Auto": "no",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.7.0.51",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.7.0.51",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-emulation/emul-linux-x86-java",
-        "Auto": "no",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.7.0.51",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.7.0.51",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>The Oracle Java Development Kit (JDK) (formerly known as Sun JDK) and\n      the Oracle Java Runtime Environment (JRE) (formerly known as Sun JRE)\n      provide the Oracle Java platform (formerly known as Sun Java Platform).\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Multiple vulnerabilities have been reported in the Oracle Java\n      implementation. Please review the CVE identifiers referenced below for\n      details.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>An unauthenticated, remote attacker could exploit these vulnerabilities\n      to execute arbitrary code.\n      Furthermore, a local or remote attacker could exploit these\n      vulnerabilities to cause unspecified impact, possibly including remote\n      execution of arbitrary code.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All Oracle JDK 1.7 users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "All Oracle JRE 1.7 users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "All users of the precompiled 32-bit Oracle JRE should upgrade to the\n      latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "All Sun Microsystems JDK/JRE 1.6 users are suggested to upgrade to one\n      of the newer Oracle packages like dev-java/oracle-jdk-bin or\n      dev-java/oracle-jre-bin or choose another alternative we provide; eg. the\n      IBM JDK/JRE or the open source IcedTea.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "NOTE: As Oracle has revoked the DLJ license for its Java implementation,\n      the packages can no longer be updated automatically. \n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=dev-java/oracle-jdk-bin-1.7.0.51\"\n    ",
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=dev-java/oracle-jre-bin-1.7.0.51\"\n    ",
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=app-emulation/emul-linux-x86-java-1.7.0.51\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2011-3563",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3563"
-      },
-      {
-        "Text": "CVE-2011-5035",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-5035"
-      },
-      {
-        "Text": "CVE-2012-0497",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0497"
-      },
-      {
-        "Text": "CVE-2012-0498",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0498"
-      },
-      {
-        "Text": "CVE-2012-0499",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0499"
-      },
-      {
-        "Text": "CVE-2012-0500",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0500"
-      },
-      {
-        "Text": "CVE-2012-0501",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0501"
-      },
-      {
-        "Text": "CVE-2012-0502",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0502"
-      },
-      {
-        "Text": "CVE-2012-0503",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0503"
-      },
-      {
-        "Text": "CVE-2012-0504",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0504"
-      },
-      {
-        "Text": "CVE-2012-0505",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0505"
-      },
-      {
-        "Text": "CVE-2012-0506",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0506"
-      },
-      {
-        "Text": "CVE-2012-0507",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0507"
-      },
-      {
-        "Text": "CVE-2012-0547",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0547"
-      },
-      {
-        "Text": "CVE-2012-1531",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1531"
-      },
-      {
-        "Text": "CVE-2012-1532",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1532"
-      },
-      {
-        "Text": "CVE-2012-1533",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1533"
-      },
-      {
-        "Text": "CVE-2012-1541",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1541"
-      },
-      {
-        "Text": "CVE-2012-1682",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1682"
-      },
-      {
-        "Text": "CVE-2012-1711",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1711"
-      },
-      {
-        "Text": "CVE-2012-1713",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1713"
-      },
-      {
-        "Text": "CVE-2012-1716",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1716"
-      },
-      {
-        "Text": "CVE-2012-1717",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1717"
-      },
-      {
-        "Text": "CVE-2012-1718",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1718"
-      },
-      {
-        "Text": "CVE-2012-1719",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1719"
-      },
-      {
-        "Text": "CVE-2012-1721",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1721"
-      },
-      {
-        "Text": "CVE-2012-1722",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1722"
-      },
-      {
-        "Text": "CVE-2012-1723",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1723"
-      },
-      {
-        "Text": "CVE-2012-1724",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1724"
-      },
-      {
-        "Text": "CVE-2012-1725",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1725"
-      },
-      {
-        "Text": "CVE-2012-1726",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1726"
-      },
-      {
-        "Text": "CVE-2012-3136",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3136"
-      },
-      {
-        "Text": "CVE-2012-3143",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3143"
-      },
-      {
-        "Text": "CVE-2012-3159",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3159"
-      },
-      {
-        "Text": "CVE-2012-3174",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3174"
-      },
-      {
-        "Text": "CVE-2012-3213",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3213"
-      },
-      {
-        "Text": "CVE-2012-3216",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3216"
-      },
-      {
-        "Text": "CVE-2012-3342",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3342"
-      },
-      {
-        "Text": "CVE-2012-4416",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-4416"
-      },
-      {
-        "Text": "CVE-2012-4681",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-4681"
-      },
-      {
-        "Text": "CVE-2012-5067",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5067"
-      },
-      {
-        "Text": "CVE-2012-5068",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5068"
-      },
-      {
-        "Text": "CVE-2012-5069",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5069"
-      },
-      {
-        "Text": "CVE-2012-5070",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5070"
-      },
-      {
-        "Text": "CVE-2012-5071",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5071"
-      },
-      {
-        "Text": "CVE-2012-5072",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5072"
-      },
-      {
-        "Text": "CVE-2012-5073",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5073"
-      },
-      {
-        "Text": "CVE-2012-5074",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5074"
-      },
-      {
-        "Text": "CVE-2012-5075",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5075"
-      },
-      {
-        "Text": "CVE-2012-5076",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5076"
-      },
-      {
-        "Text": "CVE-2012-5077",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5077"
-      },
-      {
-        "Text": "CVE-2012-5079",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5079"
-      },
-      {
-        "Text": "CVE-2012-5081",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5081"
-      },
-      {
-        "Text": "CVE-2012-5083",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5083"
-      },
-      {
-        "Text": "CVE-2012-5084",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5084"
-      },
-      {
-        "Text": "CVE-2012-5085",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5085"
-      },
-      {
-        "Text": "CVE-2012-5086",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5086"
-      },
-      {
-        "Text": "CVE-2012-5087",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5087"
-      },
-      {
-        "Text": "CVE-2012-5088",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5088"
-      },
-      {
-        "Text": "CVE-2012-5089",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5089"
-      },
-      {
-        "Text": "CVE-2013-0169",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0169"
-      },
-      {
-        "Text": "CVE-2013-0351",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0351"
-      },
-      {
-        "Text": "CVE-2013-0401",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0401"
-      },
-      {
-        "Text": "CVE-2013-0402",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0402"
-      },
-      {
-        "Text": "CVE-2013-0409",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0409"
-      },
-      {
-        "Text": "CVE-2013-0419",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0419"
-      },
-      {
-        "Text": "CVE-2013-0422",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0422"
-      },
-      {
-        "Text": "CVE-2013-0423",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0423"
-      },
-      {
-        "Text": "CVE-2013-0430",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0430"
-      },
-      {
-        "Text": "CVE-2013-0437",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0437"
-      },
-      {
-        "Text": "CVE-2013-0438",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0438"
-      },
-      {
-        "Text": "CVE-2013-0445",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0445"
-      },
-      {
-        "Text": "CVE-2013-0446",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0446"
-      },
-      {
-        "Text": "CVE-2013-0448",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0448"
-      },
-      {
-        "Text": "CVE-2013-0449",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0449"
-      },
-      {
-        "Text": "CVE-2013-0809",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0809"
-      },
-      {
-        "Text": "CVE-2013-1473",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1473"
-      },
-      {
-        "Text": "CVE-2013-1479",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1479"
-      },
-      {
-        "Text": "CVE-2013-1481",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1481"
-      },
-      {
-        "Text": "CVE-2013-1484",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1484"
-      },
-      {
-        "Text": "CVE-2013-1485",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1485"
-      },
-      {
-        "Text": "CVE-2013-1486",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1486"
-      },
-      {
-        "Text": "CVE-2013-1487",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1487"
-      },
-      {
-        "Text": "CVE-2013-1488",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1488"
-      },
-      {
-        "Text": "CVE-2013-1491",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1491"
-      },
-      {
-        "Text": "CVE-2013-1493",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1493"
-      },
-      {
-        "Text": "CVE-2013-1500",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1500"
-      },
-      {
-        "Text": "CVE-2013-1518",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1518"
-      },
-      {
-        "Text": "CVE-2013-1537",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1537"
-      },
-      {
-        "Text": "CVE-2013-1540",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1540"
-      },
-      {
-        "Text": "CVE-2013-1557",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1557"
-      },
-      {
-        "Text": "CVE-2013-1558",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1558"
-      },
-      {
-        "Text": "CVE-2013-1561",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1561"
-      },
-      {
-        "Text": "CVE-2013-1563",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1563"
-      },
-      {
-        "Text": "CVE-2013-1564",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1564"
-      },
-      {
-        "Text": "CVE-2013-1569",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1569"
-      },
-      {
-        "Text": "CVE-2013-1571",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1571"
-      },
-      {
-        "Text": "CVE-2013-2383",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2383"
-      },
-      {
-        "Text": "CVE-2013-2384",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2384"
-      },
-      {
-        "Text": "CVE-2013-2394",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2394"
-      },
-      {
-        "Text": "CVE-2013-2400",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2400"
-      },
-      {
-        "Text": "CVE-2013-2407",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2407"
-      },
-      {
-        "Text": "CVE-2013-2412",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2412"
-      },
-      {
-        "Text": "CVE-2013-2414",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2414"
-      },
-      {
-        "Text": "CVE-2013-2415",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2415"
-      },
-      {
-        "Text": "CVE-2013-2416",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2416"
-      },
-      {
-        "Text": "CVE-2013-2417",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2417"
-      },
-      {
-        "Text": "CVE-2013-2418",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2418"
-      },
-      {
-        "Text": "CVE-2013-2419",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2419"
-      },
-      {
-        "Text": "CVE-2013-2420",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2420"
-      },
-      {
-        "Text": "CVE-2013-2421",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2421"
-      },
-      {
-        "Text": "CVE-2013-2422",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2422"
-      },
-      {
-        "Text": "CVE-2013-2423",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2423"
-      },
-      {
-        "Text": "CVE-2013-2424",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2424"
-      },
-      {
-        "Text": "CVE-2013-2425",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2425"
-      },
-      {
-        "Text": "CVE-2013-2426",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2426"
-      },
-      {
-        "Text": "CVE-2013-2427",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2427"
-      },
-      {
-        "Text": "CVE-2013-2428",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2428"
-      },
-      {
-        "Text": "CVE-2013-2429",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2429"
-      },
-      {
-        "Text": "CVE-2013-2430",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2430"
-      },
-      {
-        "Text": "CVE-2013-2431",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2431"
-      },
-      {
-        "Text": "CVE-2013-2432",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2432"
-      },
-      {
-        "Text": "CVE-2013-2433",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2433"
-      },
-      {
-        "Text": "CVE-2013-2434",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2434"
-      },
-      {
-        "Text": "CVE-2013-2435",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2435"
-      },
-      {
-        "Text": "CVE-2013-2436",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2436"
-      },
-      {
-        "Text": "CVE-2013-2437",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2437"
-      },
-      {
-        "Text": "CVE-2013-2438",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2438"
-      },
-      {
-        "Text": "CVE-2013-2439",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2439"
-      },
-      {
-        "Text": "CVE-2013-2440",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2440"
-      },
-      {
-        "Text": "CVE-2013-2442",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2442"
-      },
-      {
-        "Text": "CVE-2013-2443",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2443"
-      },
-      {
-        "Text": "CVE-2013-2444",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2444"
-      },
-      {
-        "Text": "CVE-2013-2445",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2445"
-      },
-      {
-        "Text": "CVE-2013-2446",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2446"
-      },
-      {
-        "Text": "CVE-2013-2447",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2447"
-      },
-      {
-        "Text": "CVE-2013-2448",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2448"
-      },
-      {
-        "Text": "CVE-2013-2449",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2449"
-      },
-      {
-        "Text": "CVE-2013-2450",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2450"
-      },
-      {
-        "Text": "CVE-2013-2451",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2451"
-      },
-      {
-        "Text": "CVE-2013-2452",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2452"
-      },
-      {
-        "Text": "CVE-2013-2453",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2453"
-      },
-      {
-        "Text": "CVE-2013-2454",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2454"
-      },
-      {
-        "Text": "CVE-2013-2455",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2455"
-      },
-      {
-        "Text": "CVE-2013-2456",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2456"
-      },
-      {
-        "Text": "CVE-2013-2457",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2457"
-      },
-      {
-        "Text": "CVE-2013-2458",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2458"
-      },
-      {
-        "Text": "CVE-2013-2459",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2459"
-      },
-      {
-        "Text": "CVE-2013-2460",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2460"
-      },
-      {
-        "Text": "CVE-2013-2461",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2461"
-      },
-      {
-        "Text": "CVE-2013-2462",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2462"
-      },
-      {
-        "Text": "CVE-2013-2463",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2463"
-      },
-      {
-        "Text": "CVE-2013-2464",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2464"
-      },
-      {
-        "Text": "CVE-2013-2465",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2465"
-      },
-      {
-        "Text": "CVE-2013-2466",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2466"
-      },
-      {
-        "Text": "CVE-2013-2467",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2467"
-      },
-      {
-        "Text": "CVE-2013-2468",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2468"
-      },
-      {
-        "Text": "CVE-2013-2469",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2469"
-      },
-      {
-        "Text": "CVE-2013-2470",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2470"
-      },
-      {
-        "Text": "CVE-2013-2471",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2471"
-      },
-      {
-        "Text": "CVE-2013-2472",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2472"
-      },
-      {
-        "Text": "CVE-2013-2473",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2473"
-      },
-      {
-        "Text": "CVE-2013-3743",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-3743"
-      },
-      {
-        "Text": "CVE-2013-3744",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-3744"
-      },
-      {
-        "Text": "CVE-2013-3829",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-3829"
-      },
-      {
-        "Text": "CVE-2013-5772",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5772"
-      },
-      {
-        "Text": "CVE-2013-5774",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5774"
-      },
-      {
-        "Text": "CVE-2013-5775",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5775"
-      },
-      {
-        "Text": "CVE-2013-5776",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5776"
-      },
-      {
-        "Text": "CVE-2013-5777",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5777"
-      },
-      {
-        "Text": "CVE-2013-5778",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5778"
-      },
-      {
-        "Text": "CVE-2013-5780",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5780"
-      },
-      {
-        "Text": "CVE-2013-5782",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5782"
-      },
-      {
-        "Text": "CVE-2013-5783",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5783"
-      },
-      {
-        "Text": "CVE-2013-5784",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5784"
-      },
-      {
-        "Text": "CVE-2013-5787",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5787"
-      },
-      {
-        "Text": "CVE-2013-5788",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5788"
-      },
-      {
-        "Text": "CVE-2013-5789",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5789"
-      },
-      {
-        "Text": "CVE-2013-5790",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5790"
-      },
-      {
-        "Text": "CVE-2013-5797",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5797"
-      },
-      {
-        "Text": "CVE-2013-5800",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5800"
-      },
-      {
-        "Text": "CVE-2013-5801",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5801"
-      },
-      {
-        "Text": "CVE-2013-5802",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5802"
-      },
-      {
-        "Text": "CVE-2013-5803",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5803"
-      },
-      {
-        "Text": "CVE-2013-5804",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5804"
-      },
-      {
-        "Text": "CVE-2013-5805",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5805"
-      },
-      {
-        "Text": "CVE-2013-5806",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5806"
-      },
-      {
-        "Text": "CVE-2013-5809",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5809"
-      },
-      {
-        "Text": "CVE-2013-5810",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5810"
-      },
-      {
-        "Text": "CVE-2013-5812",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5812"
-      },
-      {
-        "Text": "CVE-2013-5814",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5814"
-      },
-      {
-        "Text": "CVE-2013-5817",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5817"
-      },
-      {
-        "Text": "CVE-2013-5818",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5818"
-      },
-      {
-        "Text": "CVE-2013-5819",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5819"
-      },
-      {
-        "Text": "CVE-2013-5820",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5820"
-      },
-      {
-        "Text": "CVE-2013-5823",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5823"
-      },
-      {
-        "Text": "CVE-2013-5824",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5824"
-      },
-      {
-        "Text": "CVE-2013-5825",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5825"
-      },
-      {
-        "Text": "CVE-2013-5829",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5829"
-      },
-      {
-        "Text": "CVE-2013-5830",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5830"
-      },
-      {
-        "Text": "CVE-2013-5831",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5831"
-      },
-      {
-        "Text": "CVE-2013-5832",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5832"
-      },
-      {
-        "Text": "CVE-2013-5838",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5838"
-      },
-      {
-        "Text": "CVE-2013-5840",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5840"
-      },
-      {
-        "Text": "CVE-2013-5842",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5842"
-      },
-      {
-        "Text": "CVE-2013-5843",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5843"
-      },
-      {
-        "Text": "CVE-2013-5844",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5844"
-      },
-      {
-        "Text": "CVE-2013-5846",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5846"
-      },
-      {
-        "Text": "CVE-2013-5848",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5848"
-      },
-      {
-        "Text": "CVE-2013-5849",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5849"
-      },
-      {
-        "Text": "CVE-2013-5850",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5850"
-      },
-      {
-        "Text": "CVE-2013-5851",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5851"
-      },
-      {
-        "Text": "CVE-2013-5852",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5852"
-      },
-      {
-        "Text": "CVE-2013-5854",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5854"
-      },
-      {
-        "Text": "CVE-2013-5870",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5870"
-      },
-      {
-        "Text": "CVE-2013-5878",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5878"
-      },
-      {
-        "Text": "CVE-2013-5887",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5887"
-      },
-      {
-        "Text": "CVE-2013-5888",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5888"
-      },
-      {
-        "Text": "CVE-2013-5889",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5889"
-      },
-      {
-        "Text": "CVE-2013-5893",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5893"
-      },
-      {
-        "Text": "CVE-2013-5895",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5895"
-      },
-      {
-        "Text": "CVE-2013-5896",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5896"
-      },
-      {
-        "Text": "CVE-2013-5898",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5898"
-      },
-      {
-        "Text": "CVE-2013-5899",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5899"
-      },
-      {
-        "Text": "CVE-2013-5902",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5902"
-      },
-      {
-        "Text": "CVE-2013-5904",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5904"
-      },
-      {
-        "Text": "CVE-2013-5905",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5905"
-      },
-      {
-        "Text": "CVE-2013-5906",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5906"
-      },
-      {
-        "Text": "CVE-2013-5907",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5907"
-      },
-      {
-        "Text": "CVE-2013-5910",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5910"
-      },
-      {
-        "Text": "CVE-2014-0368",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0368"
-      },
-      {
-        "Text": "CVE-2014-0373",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0373"
-      },
-      {
-        "Text": "CVE-2014-0375",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0375"
-      },
-      {
-        "Text": "CVE-2014-0376",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0376"
-      },
-      {
-        "Text": "CVE-2014-0382",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0382"
-      },
-      {
-        "Text": "CVE-2014-0385",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0385"
-      },
-      {
-        "Text": "CVE-2014-0387",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0387"
-      },
-      {
-        "Text": "CVE-2014-0403",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0403"
-      },
-      {
-        "Text": "CVE-2014-0408",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0408"
-      },
-      {
-        "Text": "CVE-2014-0410",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0410"
-      },
-      {
-        "Text": "CVE-2014-0411",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0411"
-      },
-      {
-        "Text": "CVE-2014-0415",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0415"
-      },
-      {
-        "Text": "CVE-2014-0416",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0416"
-      },
-      {
-        "Text": "CVE-2014-0417",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0417"
-      },
-      {
-        "Text": "CVE-2014-0418",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0418"
-      },
-      {
-        "Text": "CVE-2014-0422",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0422"
-      },
-      {
-        "Text": "CVE-2014-0423",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0423"
-      },
-      {
-        "Text": "CVE-2014-0424",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0424"
-      },
-      {
-        "Text": "CVE-2014-0428",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0428"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    underling\n  ",
-      "Tag": "requester",
-      "Timestamp": "2012-02-18T21:32:37Z"
-    },
-    {
-      "Text": "ackle",
-      "Tag": "submitter",
-      "Timestamp": "2014-01-27T01:17:59Z"
-    }
-  ]
+	"ID": "201401-30",
+	"Title": "Oracle JRE/JDK: Multiple vulnerabilities",
+	"Synopsis": "Multiple vulnerabilities have been found in the Oracle JRE/JDK,\n    allowing attackers to cause unspecified impact.\n  ",
+	"Product": {
+		"Text": "sun-jre-bin sun-jdk oracle-jdk-bin oracle-jre-bin\n    emul-linux-x86-java\n  ",
+		"Type": "ebuild"
+	},
+	"Announced": "2014-01-27",
+	"Revised": {
+		"Text": "2014-01-27",
+		"Count": "1"
+	},
+	"Bug": [
+		"404071",
+		"421073",
+		"433094",
+		"438706",
+		"451206",
+		"455174",
+		"458444",
+		"460360",
+		"466212",
+		"473830",
+		"473980",
+		"488210",
+		"498148"
+	],
+	"Access": "local, remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-java/sun-jdk",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": null,
+				"Vulnerable": [
+					{
+						"Text": "1.6.0.45",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "dev-java/oracle-jdk-bin",
+				"Auto": "no",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.7.0.51",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.7.0.51",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "dev-java/sun-jre-bin",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": null,
+				"Vulnerable": [
+					{
+						"Text": "1.6.0.45",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "dev-java/oracle-jre-bin",
+				"Auto": "no",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.7.0.51",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.7.0.51",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-emulation/emul-linux-x86-java",
+				"Auto": "no",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.7.0.51",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.7.0.51",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>The Oracle Java Development Kit (JDK) (formerly known as Sun JDK) and\n      the Oracle Java Runtime Environment (JRE) (formerly known as Sun JRE)\n      provide the Oracle Java platform (formerly known as Sun Java Platform).\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Multiple vulnerabilities have been reported in the Oracle Java\n      implementation. Please review the CVE identifiers referenced below for\n      details.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>An unauthenticated, remote attacker could exploit these vulnerabilities\n      to execute arbitrary code.\n      Furthermore, a local or remote attacker could exploit these\n      vulnerabilities to cause unspecified impact, possibly including remote\n      execution of arbitrary code.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All Oracle JDK 1.7 users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "All Oracle JRE 1.7 users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "All users of the precompiled 32-bit Oracle JRE should upgrade to the\n      latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "All Sun Microsystems JDK/JRE 1.6 users are suggested to upgrade to one\n      of the newer Oracle packages like dev-java/oracle-jdk-bin or\n      dev-java/oracle-jre-bin or choose another alternative we provide; eg. the\n      IBM JDK/JRE or the open source IcedTea.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "NOTE: As Oracle has revoked the DLJ license for its Java implementation,\n      the packages can no longer be updated automatically. \n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=dev-java/oracle-jdk-bin-1.7.0.51\"\n    ",
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=dev-java/oracle-jre-bin-1.7.0.51\"\n    ",
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=app-emulation/emul-linux-x86-java-1.7.0.51\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2011-3563",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3563"
+			},
+			{
+				"Text": "CVE-2011-5035",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-5035"
+			},
+			{
+				"Text": "CVE-2012-0497",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0497"
+			},
+			{
+				"Text": "CVE-2012-0498",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0498"
+			},
+			{
+				"Text": "CVE-2012-0499",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0499"
+			},
+			{
+				"Text": "CVE-2012-0500",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0500"
+			},
+			{
+				"Text": "CVE-2012-0501",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0501"
+			},
+			{
+				"Text": "CVE-2012-0502",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0502"
+			},
+			{
+				"Text": "CVE-2012-0503",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0503"
+			},
+			{
+				"Text": "CVE-2012-0504",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0504"
+			},
+			{
+				"Text": "CVE-2012-0505",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0505"
+			},
+			{
+				"Text": "CVE-2012-0506",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0506"
+			},
+			{
+				"Text": "CVE-2012-0507",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0507"
+			},
+			{
+				"Text": "CVE-2012-0547",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0547"
+			},
+			{
+				"Text": "CVE-2012-1531",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1531"
+			},
+			{
+				"Text": "CVE-2012-1532",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1532"
+			},
+			{
+				"Text": "CVE-2012-1533",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1533"
+			},
+			{
+				"Text": "CVE-2012-1541",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1541"
+			},
+			{
+				"Text": "CVE-2012-1682",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1682"
+			},
+			{
+				"Text": "CVE-2012-1711",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1711"
+			},
+			{
+				"Text": "CVE-2012-1713",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1713"
+			},
+			{
+				"Text": "CVE-2012-1716",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1716"
+			},
+			{
+				"Text": "CVE-2012-1717",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1717"
+			},
+			{
+				"Text": "CVE-2012-1718",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1718"
+			},
+			{
+				"Text": "CVE-2012-1719",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1719"
+			},
+			{
+				"Text": "CVE-2012-1721",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1721"
+			},
+			{
+				"Text": "CVE-2012-1722",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1722"
+			},
+			{
+				"Text": "CVE-2012-1723",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1723"
+			},
+			{
+				"Text": "CVE-2012-1724",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1724"
+			},
+			{
+				"Text": "CVE-2012-1725",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1725"
+			},
+			{
+				"Text": "CVE-2012-1726",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1726"
+			},
+			{
+				"Text": "CVE-2012-3136",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3136"
+			},
+			{
+				"Text": "CVE-2012-3143",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3143"
+			},
+			{
+				"Text": "CVE-2012-3159",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3159"
+			},
+			{
+				"Text": "CVE-2012-3174",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3174"
+			},
+			{
+				"Text": "CVE-2012-3213",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3213"
+			},
+			{
+				"Text": "CVE-2012-3216",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3216"
+			},
+			{
+				"Text": "CVE-2012-3342",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3342"
+			},
+			{
+				"Text": "CVE-2012-4416",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-4416"
+			},
+			{
+				"Text": "CVE-2012-4681",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-4681"
+			},
+			{
+				"Text": "CVE-2012-5067",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5067"
+			},
+			{
+				"Text": "CVE-2012-5068",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5068"
+			},
+			{
+				"Text": "CVE-2012-5069",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5069"
+			},
+			{
+				"Text": "CVE-2012-5070",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5070"
+			},
+			{
+				"Text": "CVE-2012-5071",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5071"
+			},
+			{
+				"Text": "CVE-2012-5072",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5072"
+			},
+			{
+				"Text": "CVE-2012-5073",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5073"
+			},
+			{
+				"Text": "CVE-2012-5074",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5074"
+			},
+			{
+				"Text": "CVE-2012-5075",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5075"
+			},
+			{
+				"Text": "CVE-2012-5076",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5076"
+			},
+			{
+				"Text": "CVE-2012-5077",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5077"
+			},
+			{
+				"Text": "CVE-2012-5079",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5079"
+			},
+			{
+				"Text": "CVE-2012-5081",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5081"
+			},
+			{
+				"Text": "CVE-2012-5083",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5083"
+			},
+			{
+				"Text": "CVE-2012-5084",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5084"
+			},
+			{
+				"Text": "CVE-2012-5085",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5085"
+			},
+			{
+				"Text": "CVE-2012-5086",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5086"
+			},
+			{
+				"Text": "CVE-2012-5087",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5087"
+			},
+			{
+				"Text": "CVE-2012-5088",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5088"
+			},
+			{
+				"Text": "CVE-2012-5089",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5089"
+			},
+			{
+				"Text": "CVE-2013-0169",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0169"
+			},
+			{
+				"Text": "CVE-2013-0351",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0351"
+			},
+			{
+				"Text": "CVE-2013-0401",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0401"
+			},
+			{
+				"Text": "CVE-2013-0402",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0402"
+			},
+			{
+				"Text": "CVE-2013-0409",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0409"
+			},
+			{
+				"Text": "CVE-2013-0419",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0419"
+			},
+			{
+				"Text": "CVE-2013-0422",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0422"
+			},
+			{
+				"Text": "CVE-2013-0423",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0423"
+			},
+			{
+				"Text": "CVE-2013-0430",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0430"
+			},
+			{
+				"Text": "CVE-2013-0437",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0437"
+			},
+			{
+				"Text": "CVE-2013-0438",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0438"
+			},
+			{
+				"Text": "CVE-2013-0445",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0445"
+			},
+			{
+				"Text": "CVE-2013-0446",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0446"
+			},
+			{
+				"Text": "CVE-2013-0448",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0448"
+			},
+			{
+				"Text": "CVE-2013-0449",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0449"
+			},
+			{
+				"Text": "CVE-2013-0809",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0809"
+			},
+			{
+				"Text": "CVE-2013-1473",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1473"
+			},
+			{
+				"Text": "CVE-2013-1479",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1479"
+			},
+			{
+				"Text": "CVE-2013-1481",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1481"
+			},
+			{
+				"Text": "CVE-2013-1484",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1484"
+			},
+			{
+				"Text": "CVE-2013-1485",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1485"
+			},
+			{
+				"Text": "CVE-2013-1486",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1486"
+			},
+			{
+				"Text": "CVE-2013-1487",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1487"
+			},
+			{
+				"Text": "CVE-2013-1488",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1488"
+			},
+			{
+				"Text": "CVE-2013-1491",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1491"
+			},
+			{
+				"Text": "CVE-2013-1493",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1493"
+			},
+			{
+				"Text": "CVE-2013-1500",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1500"
+			},
+			{
+				"Text": "CVE-2013-1518",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1518"
+			},
+			{
+				"Text": "CVE-2013-1537",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1537"
+			},
+			{
+				"Text": "CVE-2013-1540",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1540"
+			},
+			{
+				"Text": "CVE-2013-1557",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1557"
+			},
+			{
+				"Text": "CVE-2013-1558",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1558"
+			},
+			{
+				"Text": "CVE-2013-1561",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1561"
+			},
+			{
+				"Text": "CVE-2013-1563",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1563"
+			},
+			{
+				"Text": "CVE-2013-1564",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1564"
+			},
+			{
+				"Text": "CVE-2013-1569",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1569"
+			},
+			{
+				"Text": "CVE-2013-1571",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1571"
+			},
+			{
+				"Text": "CVE-2013-2383",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2383"
+			},
+			{
+				"Text": "CVE-2013-2384",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2384"
+			},
+			{
+				"Text": "CVE-2013-2394",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2394"
+			},
+			{
+				"Text": "CVE-2013-2400",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2400"
+			},
+			{
+				"Text": "CVE-2013-2407",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2407"
+			},
+			{
+				"Text": "CVE-2013-2412",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2412"
+			},
+			{
+				"Text": "CVE-2013-2414",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2414"
+			},
+			{
+				"Text": "CVE-2013-2415",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2415"
+			},
+			{
+				"Text": "CVE-2013-2416",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2416"
+			},
+			{
+				"Text": "CVE-2013-2417",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2417"
+			},
+			{
+				"Text": "CVE-2013-2418",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2418"
+			},
+			{
+				"Text": "CVE-2013-2419",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2419"
+			},
+			{
+				"Text": "CVE-2013-2420",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2420"
+			},
+			{
+				"Text": "CVE-2013-2421",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2421"
+			},
+			{
+				"Text": "CVE-2013-2422",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2422"
+			},
+			{
+				"Text": "CVE-2013-2423",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2423"
+			},
+			{
+				"Text": "CVE-2013-2424",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2424"
+			},
+			{
+				"Text": "CVE-2013-2425",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2425"
+			},
+			{
+				"Text": "CVE-2013-2426",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2426"
+			},
+			{
+				"Text": "CVE-2013-2427",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2427"
+			},
+			{
+				"Text": "CVE-2013-2428",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2428"
+			},
+			{
+				"Text": "CVE-2013-2429",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2429"
+			},
+			{
+				"Text": "CVE-2013-2430",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2430"
+			},
+			{
+				"Text": "CVE-2013-2431",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2431"
+			},
+			{
+				"Text": "CVE-2013-2432",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2432"
+			},
+			{
+				"Text": "CVE-2013-2433",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2433"
+			},
+			{
+				"Text": "CVE-2013-2434",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2434"
+			},
+			{
+				"Text": "CVE-2013-2435",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2435"
+			},
+			{
+				"Text": "CVE-2013-2436",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2436"
+			},
+			{
+				"Text": "CVE-2013-2437",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2437"
+			},
+			{
+				"Text": "CVE-2013-2438",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2438"
+			},
+			{
+				"Text": "CVE-2013-2439",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2439"
+			},
+			{
+				"Text": "CVE-2013-2440",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2440"
+			},
+			{
+				"Text": "CVE-2013-2442",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2442"
+			},
+			{
+				"Text": "CVE-2013-2443",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2443"
+			},
+			{
+				"Text": "CVE-2013-2444",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2444"
+			},
+			{
+				"Text": "CVE-2013-2445",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2445"
+			},
+			{
+				"Text": "CVE-2013-2446",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2446"
+			},
+			{
+				"Text": "CVE-2013-2447",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2447"
+			},
+			{
+				"Text": "CVE-2013-2448",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2448"
+			},
+			{
+				"Text": "CVE-2013-2449",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2449"
+			},
+			{
+				"Text": "CVE-2013-2450",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2450"
+			},
+			{
+				"Text": "CVE-2013-2451",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2451"
+			},
+			{
+				"Text": "CVE-2013-2452",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2452"
+			},
+			{
+				"Text": "CVE-2013-2453",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2453"
+			},
+			{
+				"Text": "CVE-2013-2454",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2454"
+			},
+			{
+				"Text": "CVE-2013-2455",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2455"
+			},
+			{
+				"Text": "CVE-2013-2456",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2456"
+			},
+			{
+				"Text": "CVE-2013-2457",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2457"
+			},
+			{
+				"Text": "CVE-2013-2458",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2458"
+			},
+			{
+				"Text": "CVE-2013-2459",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2459"
+			},
+			{
+				"Text": "CVE-2013-2460",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2460"
+			},
+			{
+				"Text": "CVE-2013-2461",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2461"
+			},
+			{
+				"Text": "CVE-2013-2462",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2462"
+			},
+			{
+				"Text": "CVE-2013-2463",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2463"
+			},
+			{
+				"Text": "CVE-2013-2464",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2464"
+			},
+			{
+				"Text": "CVE-2013-2465",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2465"
+			},
+			{
+				"Text": "CVE-2013-2466",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2466"
+			},
+			{
+				"Text": "CVE-2013-2467",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2467"
+			},
+			{
+				"Text": "CVE-2013-2468",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2468"
+			},
+			{
+				"Text": "CVE-2013-2469",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2469"
+			},
+			{
+				"Text": "CVE-2013-2470",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2470"
+			},
+			{
+				"Text": "CVE-2013-2471",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2471"
+			},
+			{
+				"Text": "CVE-2013-2472",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2472"
+			},
+			{
+				"Text": "CVE-2013-2473",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2473"
+			},
+			{
+				"Text": "CVE-2013-3743",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-3743"
+			},
+			{
+				"Text": "CVE-2013-3744",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-3744"
+			},
+			{
+				"Text": "CVE-2013-3829",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-3829"
+			},
+			{
+				"Text": "CVE-2013-5772",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5772"
+			},
+			{
+				"Text": "CVE-2013-5774",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5774"
+			},
+			{
+				"Text": "CVE-2013-5775",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5775"
+			},
+			{
+				"Text": "CVE-2013-5776",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5776"
+			},
+			{
+				"Text": "CVE-2013-5777",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5777"
+			},
+			{
+				"Text": "CVE-2013-5778",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5778"
+			},
+			{
+				"Text": "CVE-2013-5780",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5780"
+			},
+			{
+				"Text": "CVE-2013-5782",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5782"
+			},
+			{
+				"Text": "CVE-2013-5783",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5783"
+			},
+			{
+				"Text": "CVE-2013-5784",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5784"
+			},
+			{
+				"Text": "CVE-2013-5787",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5787"
+			},
+			{
+				"Text": "CVE-2013-5788",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5788"
+			},
+			{
+				"Text": "CVE-2013-5789",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5789"
+			},
+			{
+				"Text": "CVE-2013-5790",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5790"
+			},
+			{
+				"Text": "CVE-2013-5797",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5797"
+			},
+			{
+				"Text": "CVE-2013-5800",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5800"
+			},
+			{
+				"Text": "CVE-2013-5801",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5801"
+			},
+			{
+				"Text": "CVE-2013-5802",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5802"
+			},
+			{
+				"Text": "CVE-2013-5803",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5803"
+			},
+			{
+				"Text": "CVE-2013-5804",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5804"
+			},
+			{
+				"Text": "CVE-2013-5805",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5805"
+			},
+			{
+				"Text": "CVE-2013-5806",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5806"
+			},
+			{
+				"Text": "CVE-2013-5809",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5809"
+			},
+			{
+				"Text": "CVE-2013-5810",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5810"
+			},
+			{
+				"Text": "CVE-2013-5812",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5812"
+			},
+			{
+				"Text": "CVE-2013-5814",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5814"
+			},
+			{
+				"Text": "CVE-2013-5817",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5817"
+			},
+			{
+				"Text": "CVE-2013-5818",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5818"
+			},
+			{
+				"Text": "CVE-2013-5819",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5819"
+			},
+			{
+				"Text": "CVE-2013-5820",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5820"
+			},
+			{
+				"Text": "CVE-2013-5823",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5823"
+			},
+			{
+				"Text": "CVE-2013-5824",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5824"
+			},
+			{
+				"Text": "CVE-2013-5825",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5825"
+			},
+			{
+				"Text": "CVE-2013-5829",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5829"
+			},
+			{
+				"Text": "CVE-2013-5830",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5830"
+			},
+			{
+				"Text": "CVE-2013-5831",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5831"
+			},
+			{
+				"Text": "CVE-2013-5832",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5832"
+			},
+			{
+				"Text": "CVE-2013-5838",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5838"
+			},
+			{
+				"Text": "CVE-2013-5840",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5840"
+			},
+			{
+				"Text": "CVE-2013-5842",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5842"
+			},
+			{
+				"Text": "CVE-2013-5843",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5843"
+			},
+			{
+				"Text": "CVE-2013-5844",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5844"
+			},
+			{
+				"Text": "CVE-2013-5846",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5846"
+			},
+			{
+				"Text": "CVE-2013-5848",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5848"
+			},
+			{
+				"Text": "CVE-2013-5849",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5849"
+			},
+			{
+				"Text": "CVE-2013-5850",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5850"
+			},
+			{
+				"Text": "CVE-2013-5851",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5851"
+			},
+			{
+				"Text": "CVE-2013-5852",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5852"
+			},
+			{
+				"Text": "CVE-2013-5854",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5854"
+			},
+			{
+				"Text": "CVE-2013-5870",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5870"
+			},
+			{
+				"Text": "CVE-2013-5878",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5878"
+			},
+			{
+				"Text": "CVE-2013-5887",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5887"
+			},
+			{
+				"Text": "CVE-2013-5888",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5888"
+			},
+			{
+				"Text": "CVE-2013-5889",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5889"
+			},
+			{
+				"Text": "CVE-2013-5893",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5893"
+			},
+			{
+				"Text": "CVE-2013-5895",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5895"
+			},
+			{
+				"Text": "CVE-2013-5896",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5896"
+			},
+			{
+				"Text": "CVE-2013-5898",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5898"
+			},
+			{
+				"Text": "CVE-2013-5899",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5899"
+			},
+			{
+				"Text": "CVE-2013-5902",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5902"
+			},
+			{
+				"Text": "CVE-2013-5904",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5904"
+			},
+			{
+				"Text": "CVE-2013-5905",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5905"
+			},
+			{
+				"Text": "CVE-2013-5906",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5906"
+			},
+			{
+				"Text": "CVE-2013-5907",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5907"
+			},
+			{
+				"Text": "CVE-2013-5910",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5910"
+			},
+			{
+				"Text": "CVE-2014-0368",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0368"
+			},
+			{
+				"Text": "CVE-2014-0373",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0373"
+			},
+			{
+				"Text": "CVE-2014-0375",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0375"
+			},
+			{
+				"Text": "CVE-2014-0376",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0376"
+			},
+			{
+				"Text": "CVE-2014-0382",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0382"
+			},
+			{
+				"Text": "CVE-2014-0385",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0385"
+			},
+			{
+				"Text": "CVE-2014-0387",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0387"
+			},
+			{
+				"Text": "CVE-2014-0403",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0403"
+			},
+			{
+				"Text": "CVE-2014-0408",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0408"
+			},
+			{
+				"Text": "CVE-2014-0410",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0410"
+			},
+			{
+				"Text": "CVE-2014-0411",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0411"
+			},
+			{
+				"Text": "CVE-2014-0415",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0415"
+			},
+			{
+				"Text": "CVE-2014-0416",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0416"
+			},
+			{
+				"Text": "CVE-2014-0417",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0417"
+			},
+			{
+				"Text": "CVE-2014-0418",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0418"
+			},
+			{
+				"Text": "CVE-2014-0422",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0422"
+			},
+			{
+				"Text": "CVE-2014-0423",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0423"
+			},
+			{
+				"Text": "CVE-2014-0424",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0424"
+			},
+			{
+				"Text": "CVE-2014-0428",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0428"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    underling\n  ",
+			"Tag": "requester",
+			"Timestamp": "2012-02-18T21:32:37Z"
+		},
+		{
+			"Text": "ackle",
+			"Tag": "submitter",
+			"Timestamp": "2014-01-27T01:17:59Z"
+		}
+	]
 }

@@ -1,103 +1,103 @@
 {
-  "ID": "200412-20",
-  "Title": "NASM: Buffer overflow vulnerability",
-  "Synopsis": "\n    NASM is vulnerable to a buffer overflow that allows an attacker to execute\n    arbitrary code through the use of a malicious object file.\n  ",
-  "Product": {
-    "Text": "NASM",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-12-20",
-  "Revised": {
-    "Text": "2004-12-20",
-    "Count": "01"
-  },
-  "Bug": [
-    "74477"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-lang/nasm",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.98.38-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.98.38",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    NASM is a 80x86 assembler that has been created for portability\n    and modularity. NASM supports Pentium, P6, SSE MMX, and 3DNow\n    extensions. It also supports a wide range of objects formats (ELF,\n    a.out, COFF, ...), and has its own disassembler.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Jonathan Rockway discovered that NASM-0.98.38 has an unprotected\n    vsprintf() to an array in preproc.c. This code vulnerability may lead\n    to a buffer overflow and potential execution of arbitrary code.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could craft a malicious object file which, when\n    supplied in NASM, would result in the execution of arbitrary code with\n    the rights of the user running NASM.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All NASM users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/nasm-0.98.38-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "Original Advisory",
-        "Link": "https://sourceforge.net/mailarchive/forum.php?thread_id=6166881&forum_id=4978"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2004-12-16T22:07:20Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-12-16T22:07:54Z"
-    },
-    {
-      "Text": "\n    SeJo\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-12-17T11:34:13Z"
-    }
-  ]
+	"ID": "200412-20",
+	"Title": "NASM: Buffer overflow vulnerability",
+	"Synopsis": "\n    NASM is vulnerable to a buffer overflow that allows an attacker to execute\n    arbitrary code through the use of a malicious object file.\n  ",
+	"Product": {
+		"Text": "NASM",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-12-20",
+	"Revised": {
+		"Text": "2004-12-20",
+		"Count": "01"
+	},
+	"Bug": [
+		"74477"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-lang/nasm",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.98.38-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.98.38",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    NASM is a 80x86 assembler that has been created for portability\n    and modularity. NASM supports Pentium, P6, SSE MMX, and 3DNow\n    extensions. It also supports a wide range of objects formats (ELF,\n    a.out, COFF, ...), and has its own disassembler.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Jonathan Rockway discovered that NASM-0.98.38 has an unprotected\n    vsprintf() to an array in preproc.c. This code vulnerability may lead\n    to a buffer overflow and potential execution of arbitrary code.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could craft a malicious object file which, when\n    supplied in NASM, would result in the execution of arbitrary code with\n    the rights of the user running NASM.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All NASM users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/nasm-0.98.38-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "Original Advisory",
+				"Link": "https://sourceforge.net/mailarchive/forum.php?thread_id=6166881&forum_id=4978"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2004-12-16T22:07:20Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-12-16T22:07:54Z"
+		},
+		{
+			"Text": "\n    SeJo\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-12-17T11:34:13Z"
+		}
+	]
 }

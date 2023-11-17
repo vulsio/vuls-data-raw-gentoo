@@ -1,115 +1,115 @@
 {
-  "ID": "200508-01",
-  "Title": "Compress::Zlib: Buffer overflow",
-  "Synopsis": "\n    Compress::Zlib is vulnerable to a buffer overflow which could potentially\n    lead to execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "Compress-Zlib",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-08-01",
-  "Revised": {
-    "Text": "2009-05-28",
-    "Count": "02"
-  },
-  "Bug": [
-    "100540"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "perl-core/Compress-Zlib",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.35",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.35",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    The Compress::Zlib is a Perl module which provides an interface to\n    the zlib compression library.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Compress::Zlib 1.34 contains a local vulnerable version of zlib,\n    which may lead to a buffer overflow.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    By creating a specially crafted compressed data stream, attackers\n    can overwrite data structures for applications that use Compress::Zlib,\n    resulting in a Denial of Service and potentially arbitrary code\n    execution.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Compress::Zlib users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=perl-core/Compress-Zlib-1.35\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "GLSA 200507-19",
-        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200507-19.xml"
-      },
-      {
-        "Text": "GLSA 200507-05",
-        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200507-05.xml"
-      },
-      {
-        "Text": "CAN-2005-1849",
-        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1849"
-      },
-      {
-        "Text": "CAN-2005-2096",
-        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2096"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-07-28T11:43:56Z"
-    },
-    {
-      "Text": "\n    adir\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-07-29T23:24:17Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-08-01T05:55:33Z"
-    }
-  ]
+	"ID": "200508-01",
+	"Title": "Compress::Zlib: Buffer overflow",
+	"Synopsis": "\n    Compress::Zlib is vulnerable to a buffer overflow which could potentially\n    lead to execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "Compress-Zlib",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-08-01",
+	"Revised": {
+		"Text": "2009-05-28",
+		"Count": "02"
+	},
+	"Bug": [
+		"100540"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "perl-core/Compress-Zlib",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.35",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.35",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    The Compress::Zlib is a Perl module which provides an interface to\n    the zlib compression library.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Compress::Zlib 1.34 contains a local vulnerable version of zlib,\n    which may lead to a buffer overflow.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    By creating a specially crafted compressed data stream, attackers\n    can overwrite data structures for applications that use Compress::Zlib,\n    resulting in a Denial of Service and potentially arbitrary code\n    execution.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Compress::Zlib users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=perl-core/Compress-Zlib-1.35\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "GLSA 200507-19",
+				"Link": "https://www.gentoo.org/security/en/glsa/glsa-200507-19.xml"
+			},
+			{
+				"Text": "GLSA 200507-05",
+				"Link": "https://www.gentoo.org/security/en/glsa/glsa-200507-05.xml"
+			},
+			{
+				"Text": "CAN-2005-1849",
+				"Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1849"
+			},
+			{
+				"Text": "CAN-2005-2096",
+				"Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2096"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-07-28T11:43:56Z"
+		},
+		{
+			"Text": "\n    adir\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-07-29T23:24:17Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-08-01T05:55:33Z"
+		}
+	]
 }

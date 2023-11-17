@@ -1,123 +1,123 @@
 {
-  "ID": "200812-16",
-  "Title": "Dovecot: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities were found in the Dovecot mailserver.\n  ",
-  "Product": {
-    "Text": "dovecot",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-12-14",
-  "Revised": {
-    "Text": "2008-12-14",
-    "Count": "01"
-  },
-  "Bug": [
-    "240409",
-    "244962",
-    "245316"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-mail/dovecot",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.1.7-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.1.7-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Dovecot is an IMAP and POP3 server written with security primarily in\n    mind.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Several vulnerabilities were found in Dovecot:\n    </p>\n    <ul>\n    <li>The \"k\"\n    right in the acl_plugin does not work as expected (CVE-2008-4577,\n    CVE-2008-4578)</li>\n    <li>The dovecot.conf is world-readable, providing\n    improper protection for the ssl_key_password setting\n    (CVE-2008-4870)</li>\n    <li>A permanent Denial of Service with broken mail\n    headers is possible (CVE-2008-4907)</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    These vulnerabilities might allow a remote attacker to cause a Denial\n    of Service, to circumvent security restrictions or allow local\n    attackers to disclose the passphrase of the SSL private key.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Dovecot users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    Users should be aware that dovecot.conf will still be world-readable\n    after the update. If employing ssl_key_password, it should not be used\n    in dovecot.conf but in a separate file which should be included with\n    \"include_try\".\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-mail/dovecot-1.1.7-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-4577",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4577"
-      },
-      {
-        "Text": "CVE-2008-4578",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4578"
-      },
-      {
-        "Text": "CVE-2008-4870",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4870"
-      },
-      {
-        "Text": "CVE-2008-4907",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4907"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    craig\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-11-29T10:07:16Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-12-06T18:05:53Z"
-    }
-  ]
+	"ID": "200812-16",
+	"Title": "Dovecot: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities were found in the Dovecot mailserver.\n  ",
+	"Product": {
+		"Text": "dovecot",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-12-14",
+	"Revised": {
+		"Text": "2008-12-14",
+		"Count": "01"
+	},
+	"Bug": [
+		"240409",
+		"244962",
+		"245316"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-mail/dovecot",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.1.7-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.1.7-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Dovecot is an IMAP and POP3 server written with security primarily in\n    mind.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Several vulnerabilities were found in Dovecot:\n    </p>\n    <ul>\n    <li>The \"k\"\n    right in the acl_plugin does not work as expected (CVE-2008-4577,\n    CVE-2008-4578)</li>\n    <li>The dovecot.conf is world-readable, providing\n    improper protection for the ssl_key_password setting\n    (CVE-2008-4870)</li>\n    <li>A permanent Denial of Service with broken mail\n    headers is possible (CVE-2008-4907)</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    These vulnerabilities might allow a remote attacker to cause a Denial\n    of Service, to circumvent security restrictions or allow local\n    attackers to disclose the passphrase of the SSL private key.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Dovecot users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    Users should be aware that dovecot.conf will still be world-readable\n    after the update. If employing ssl_key_password, it should not be used\n    in dovecot.conf but in a separate file which should be included with\n    \"include_try\".\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-mail/dovecot-1.1.7-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-4577",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4577"
+			},
+			{
+				"Text": "CVE-2008-4578",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4578"
+			},
+			{
+				"Text": "CVE-2008-4870",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4870"
+			},
+			{
+				"Text": "CVE-2008-4907",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4907"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    craig\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-11-29T10:07:16Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-12-06T18:05:53Z"
+		}
+	]
 }

@@ -1,103 +1,103 @@
 {
-  "ID": "200909-01",
-  "Title": "Linux-PAM: Privilege escalation",
-  "Synopsis": "\n    An error in the handling of user names of Linux-PAM might allow remote\n    attackers to cause a Denial of Service or escalate privileges.\n  ",
-  "Product": {
-    "Text": "pam",
-    "Type": "ebuild"
-  },
-  "Announced": "2009-09-07",
-  "Revised": {
-    "Text": "2009-09-07",
-    "Count": "01"
-  },
-  "Bug": [
-    "261512"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sys-libs/pam",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.0.4",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.0.4",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Linux-PAM (Pluggable Authentication Modules) is an architecture\n    allowing the separation of the development of privilege granting\n    software from the development of secure and appropriate authentication\n    schemes.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Marcus Granado repoted that Linux-PAM does not properly handle user\n    names that contain Unicode characters. This is related to integer\n    signedness errors in the pam_StrTok() function in libpam/pam_misc.c.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could exploit this vulnerability to cause a Denial of\n    Service. A remote authenticated attacker could exploit this\n    vulnerability to log in to a system with the account of a user that has\n    a similar user name, but with non-ASCII characters.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Linux-PAM users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-libs/pam-1.0.4\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2009-0887",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0887"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    craig\n  ",
-      "Tag": "requester",
-      "Timestamp": "2009-07-10T18:01:34Z"
-    },
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-08-28T16:33:27Z"
-    },
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2009-08-31T03:38:46Z"
-    }
-  ]
+	"ID": "200909-01",
+	"Title": "Linux-PAM: Privilege escalation",
+	"Synopsis": "\n    An error in the handling of user names of Linux-PAM might allow remote\n    attackers to cause a Denial of Service or escalate privileges.\n  ",
+	"Product": {
+		"Text": "pam",
+		"Type": "ebuild"
+	},
+	"Announced": "2009-09-07",
+	"Revised": {
+		"Text": "2009-09-07",
+		"Count": "01"
+	},
+	"Bug": [
+		"261512"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-libs/pam",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.0.4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.0.4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Linux-PAM (Pluggable Authentication Modules) is an architecture\n    allowing the separation of the development of privilege granting\n    software from the development of secure and appropriate authentication\n    schemes.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Marcus Granado repoted that Linux-PAM does not properly handle user\n    names that contain Unicode characters. This is related to integer\n    signedness errors in the pam_StrTok() function in libpam/pam_misc.c.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could exploit this vulnerability to cause a Denial of\n    Service. A remote authenticated attacker could exploit this\n    vulnerability to log in to a system with the account of a user that has\n    a similar user name, but with non-ASCII characters.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Linux-PAM users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-libs/pam-1.0.4\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2009-0887",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0887"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    craig\n  ",
+			"Tag": "requester",
+			"Timestamp": "2009-07-10T18:01:34Z"
+		},
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-08-28T16:33:27Z"
+		},
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2009-08-31T03:38:46Z"
+		}
+	]
 }

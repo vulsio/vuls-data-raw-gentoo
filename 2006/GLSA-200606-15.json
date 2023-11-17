@@ -1,107 +1,107 @@
 {
-  "ID": "200606-15",
-  "Title": "Asterisk: IAX2 video frame buffer overflow",
-  "Synopsis": "\n    Asterisk contains a bug in the IAX2 channel driver making it vulnerable to\n    the remote execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "asterisk",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-06-14",
-  "Revised": {
-    "Text": "2006-06-14",
-    "Count": "01"
-  },
-  "Bug": [
-    "135680"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-misc/asterisk",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.0.11_p1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.0.11_p1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Asterisk is an open source implementation of a telephone private branch\n    exchange (PBX).\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Asterisk fails to properly check the length of truncated video frames\n    in the IAX2 channel driver which results in a buffer overflow.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    An attacker could exploit this vulnerability by sending a specially\n    crafted IAX2 video stream resulting in the execution of arbitrary code\n    with the permissions of the user running Asterisk.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Disable public IAX2 support.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Asterisk users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/asterisk-1.0.11_p1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-2898",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2898"
-      },
-      {
-        "Text": "Corelabs Asterisk PBX truncated video frame vulnerability advisory",
-        "Link": "https://www.coresecurity.com/common/showdoc.php?idx=547&idxseccion=10"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-06-08T10:46:16Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-06-09T08:21:48Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-06-14T09:36:11Z"
-    }
-  ]
+	"ID": "200606-15",
+	"Title": "Asterisk: IAX2 video frame buffer overflow",
+	"Synopsis": "\n    Asterisk contains a bug in the IAX2 channel driver making it vulnerable to\n    the remote execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "asterisk",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-06-14",
+	"Revised": {
+		"Text": "2006-06-14",
+		"Count": "01"
+	},
+	"Bug": [
+		"135680"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-misc/asterisk",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.0.11_p1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.0.11_p1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Asterisk is an open source implementation of a telephone private branch\n    exchange (PBX).\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Asterisk fails to properly check the length of truncated video frames\n    in the IAX2 channel driver which results in a buffer overflow.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    An attacker could exploit this vulnerability by sending a specially\n    crafted IAX2 video stream resulting in the execution of arbitrary code\n    with the permissions of the user running Asterisk.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Disable public IAX2 support.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Asterisk users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/asterisk-1.0.11_p1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-2898",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2898"
+			},
+			{
+				"Text": "Corelabs Asterisk PBX truncated video frame vulnerability advisory",
+				"Link": "https://www.coresecurity.com/common/showdoc.php?idx=547&idxseccion=10"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-06-08T10:46:16Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-06-09T08:21:48Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-06-14T09:36:11Z"
+		}
+	]
 }

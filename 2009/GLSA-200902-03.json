@@ -1,103 +1,103 @@
 {
-  "ID": "200902-03",
-  "Title": "Valgrind: Untrusted search path",
-  "Synopsis": "\n    An untrusted search path vulnerability in Valgrind might result in the\n    execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "valgrind",
-    "Type": "ebuild"
-  },
-  "Announced": "2009-02-12",
-  "Revised": {
-    "Text": "2009-02-12",
-    "Count": "01"
-  },
-  "Bug": [
-    "245317"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-util/valgrind",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.4.0",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.4.0",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Valgrind is an open-source memory debugger.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Tavis Ormandy reported that Valgrind loads a .valgrindrc file in the\n    current working directory, executing commands specified there.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A local attacker could prepare a specially crafted .valgrindrc file and\n    entice a user to run Valgrind from the directory containing that file,\n    resulting in the execution of arbitrary code with the privileges of the\n    user running Valgrind.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Do not run \"valgrind\" from untrusted working directories.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Valgrind users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-util/valgrind-3.4.0\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-4865",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4865"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2009-01-13T17:33:22Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-01-13T17:46:15Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2009-01-13T17:47:39Z"
-    }
-  ]
+	"ID": "200902-03",
+	"Title": "Valgrind: Untrusted search path",
+	"Synopsis": "\n    An untrusted search path vulnerability in Valgrind might result in the\n    execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "valgrind",
+		"Type": "ebuild"
+	},
+	"Announced": "2009-02-12",
+	"Revised": {
+		"Text": "2009-02-12",
+		"Count": "01"
+	},
+	"Bug": [
+		"245317"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-util/valgrind",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.4.0",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.4.0",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Valgrind is an open-source memory debugger.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Tavis Ormandy reported that Valgrind loads a .valgrindrc file in the\n    current working directory, executing commands specified there.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A local attacker could prepare a specially crafted .valgrindrc file and\n    entice a user to run Valgrind from the directory containing that file,\n    resulting in the execution of arbitrary code with the privileges of the\n    user running Valgrind.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Do not run \"valgrind\" from untrusted working directories.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Valgrind users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-util/valgrind-3.4.0\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-4865",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4865"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2009-01-13T17:33:22Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-01-13T17:46:15Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2009-01-13T17:47:39Z"
+		}
+	]
 }

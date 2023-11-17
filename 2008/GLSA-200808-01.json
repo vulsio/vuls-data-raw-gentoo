@@ -1,113 +1,113 @@
 {
-  "ID": "200808-01",
-  "Title": "xine-lib: User-assisted execution of arbitrary code",
-  "Synopsis": "\n    xine-lib is vulnerable to multiple buffer overflows when processing media\n    streams.\n  ",
-  "Product": {
-    "Text": "xine-lib",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-08-06",
-  "Revised": {
-    "Text": "2008-08-06",
-    "Count": "01"
-  },
-  "Bug": [
-    "213039",
-    "214270",
-    "218059"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-libs/xine-lib",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.1.13",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.1.13",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    xine-lib is the core library package for the xine media player, and\n    other players such as Amarok, Codeine/Dragon Player and Kaffeine.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Multiple vulnerabilities have been discovered in xine-lib:\n    </p>\n    <ul>\n    <li>\n    Alin Rad Pop of Secunia reported an array indexing vulnerability in the\n    sdpplin_parse() function in the file input/libreal/sdpplin.c when\n    processing streams from RTSP servers that contain a large \"streamid\"\n    SDP parameter (CVE-2008-0073).\n    </li>\n    <li>\n    Luigi Auriemma reported multiple integer overflows that result in\n    heap-based buffer overflows when processing \".FLV\", \".MOV\" \".RM\",\n    \".MVE\", \".MKV\", and \".CAK\" files (CVE-2008-1482).\n    </li>\n    <li>\n    Guido Landi reported a stack-based buffer overflow in the\n    demux_nsf_send_chunk() function when handling titles within NES Music\n    (.NSF) files (CVE-2008-1878).\n    </li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to play a specially crafted video\n    file or stream with a player using xine-lib, potentially resulting in\n    the execution of arbitrary code with the privileges of the user running\n    the player.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All xine-lib users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/xine-lib-1.1.13\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-0073",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0073"
-      },
-      {
-        "Text": "CVE-2008-1482",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1482"
-      },
-      {
-        "Text": "CVE-2008-1878",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1878"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-03-24T19:44:35Z"
-    },
-    {
-      "Text": "\n    vorlon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-04-10T20:23:27Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-04-14T00:56:00Z"
-    }
-  ]
+	"ID": "200808-01",
+	"Title": "xine-lib: User-assisted execution of arbitrary code",
+	"Synopsis": "\n    xine-lib is vulnerable to multiple buffer overflows when processing media\n    streams.\n  ",
+	"Product": {
+		"Text": "xine-lib",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-08-06",
+	"Revised": {
+		"Text": "2008-08-06",
+		"Count": "01"
+	},
+	"Bug": [
+		"213039",
+		"214270",
+		"218059"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-libs/xine-lib",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.1.13",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.1.13",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    xine-lib is the core library package for the xine media player, and\n    other players such as Amarok, Codeine/Dragon Player and Kaffeine.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Multiple vulnerabilities have been discovered in xine-lib:\n    </p>\n    <ul>\n    <li>\n    Alin Rad Pop of Secunia reported an array indexing vulnerability in the\n    sdpplin_parse() function in the file input/libreal/sdpplin.c when\n    processing streams from RTSP servers that contain a large \"streamid\"\n    SDP parameter (CVE-2008-0073).\n    </li>\n    <li>\n    Luigi Auriemma reported multiple integer overflows that result in\n    heap-based buffer overflows when processing \".FLV\", \".MOV\" \".RM\",\n    \".MVE\", \".MKV\", and \".CAK\" files (CVE-2008-1482).\n    </li>\n    <li>\n    Guido Landi reported a stack-based buffer overflow in the\n    demux_nsf_send_chunk() function when handling titles within NES Music\n    (.NSF) files (CVE-2008-1878).\n    </li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to play a specially crafted video\n    file or stream with a player using xine-lib, potentially resulting in\n    the execution of arbitrary code with the privileges of the user running\n    the player.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All xine-lib users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/xine-lib-1.1.13\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-0073",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0073"
+			},
+			{
+				"Text": "CVE-2008-1482",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1482"
+			},
+			{
+				"Text": "CVE-2008-1878",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1878"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-03-24T19:44:35Z"
+		},
+		{
+			"Text": "\n    vorlon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-04-10T20:23:27Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-04-14T00:56:00Z"
+		}
+	]
 }

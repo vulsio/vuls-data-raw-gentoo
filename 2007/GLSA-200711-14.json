@@ -1,255 +1,255 @@
 {
-  "ID": "200711-14",
-  "Title": "Mozilla Firefox, SeaMonkey, XULRunner: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities have been discovered in Mozilla Firefox, SeaMonkey\n    and XULRunner, potentially allowing to compromise a user's system.\n  ",
-  "Product": {
-    "Text": "firefox seamonkey xulrunner",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-11-12",
-  "Revised": {
-    "Text": "2007-11-12",
-    "Count": "01"
-  },
-  "Bug": [
-    "196480"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-client/mozilla-firefox",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.0.0.9",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.0.0.9",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "www-client/mozilla-firefox-bin",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.0.0.9",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.0.0.9",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "www-client/seamonkey",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.1.6",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.1.6",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "www-client/seamonkey-bin",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.1.6",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.1.6",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "net-libs/xulrunner",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.8.1.9",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.8.1.9",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Mozilla Firefox is a cross-platform web browser from Mozilla. SeaMonkey\n    is a free, cross-platform Internet suite.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Multiple vulnerabilities have been reported in Mozilla Firefox and\n    SeaMonkey. Various errors in the browser engine and the Javascript\n    engine can be exploited to cause a memory corruption (CVE-2007-5339 and\n    CVE-2007-5340). Before being used in a request, input passed to the\n    user ID when making an HTTP request with digest authentication is not\n    properly sanitised (CVE-2007-2292). The titlebar can be hidden by a XUL\n    markup language document (CVE-2007-5334). Additionally, an error exists\n    in the handling of \"smb:\" and \"sftp:\" URI schemes on systems with\n    gnome-vfs support (CVE-2007-5337). An unspecified error in the handling\n    of \"XPCNativeWrappers\" and not properly implementing JavaScript\n    onUnload() handlers may allow the execution of arbitrary Javascript\n    code (CVE-2007-5338 and CVE-2007-1095). Another error is triggered by\n    using the addMicrosummaryGenerator sidebar method to access file: URIs\n    (CVE-2007-5335).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could exploit these issues to execute arbitrary code,\n    gain the privileges of the user running the application, disclose\n    sensitive information, conduct phishing attacks, and read and\n    manipulate certain data.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Mozilla Firefox users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All Mozilla Firefox binary users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All SeaMonkey users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All SeaMonkey binary users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All XULRunner users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/mozilla-firefox-2.0.0.9\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/mozilla-firefox-bin-2.0.0.9\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/seamonkey-1.1.6\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/seamonkey-bin-1.1.6\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-libs/xulrunner-1.8.1.9\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-1095",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1095"
-      },
-      {
-        "Text": "CVE-2007-2292",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2292"
-      },
-      {
-        "Text": "CVE-2007-5334",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5334"
-      },
-      {
-        "Text": "CVE-2007-5335",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5335"
-      },
-      {
-        "Text": "CVE-2007-5337",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5337"
-      },
-      {
-        "Text": "CVE-2007-5338",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5338"
-      },
-      {
-        "Text": "CVE-2007-5339",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5339"
-      },
-      {
-        "Text": "CVE-2007-5340",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5340"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-10-24T22:27:12Z"
-    },
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-10-25T23:05:04Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-11-12T21:08:46Z"
-    }
-  ]
+	"ID": "200711-14",
+	"Title": "Mozilla Firefox, SeaMonkey, XULRunner: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities have been discovered in Mozilla Firefox, SeaMonkey\n    and XULRunner, potentially allowing to compromise a user's system.\n  ",
+	"Product": {
+		"Text": "firefox seamonkey xulrunner",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-11-12",
+	"Revised": {
+		"Text": "2007-11-12",
+		"Count": "01"
+	},
+	"Bug": [
+		"196480"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-client/mozilla-firefox",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.0.0.9",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.0.0.9",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "www-client/mozilla-firefox-bin",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.0.0.9",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.0.0.9",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "www-client/seamonkey",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.1.6",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.1.6",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "www-client/seamonkey-bin",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.1.6",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.1.6",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "net-libs/xulrunner",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.8.1.9",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.8.1.9",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Mozilla Firefox is a cross-platform web browser from Mozilla. SeaMonkey\n    is a free, cross-platform Internet suite.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Multiple vulnerabilities have been reported in Mozilla Firefox and\n    SeaMonkey. Various errors in the browser engine and the Javascript\n    engine can be exploited to cause a memory corruption (CVE-2007-5339 and\n    CVE-2007-5340). Before being used in a request, input passed to the\n    user ID when making an HTTP request with digest authentication is not\n    properly sanitised (CVE-2007-2292). The titlebar can be hidden by a XUL\n    markup language document (CVE-2007-5334). Additionally, an error exists\n    in the handling of \"smb:\" and \"sftp:\" URI schemes on systems with\n    gnome-vfs support (CVE-2007-5337). An unspecified error in the handling\n    of \"XPCNativeWrappers\" and not properly implementing JavaScript\n    onUnload() handlers may allow the execution of arbitrary Javascript\n    code (CVE-2007-5338 and CVE-2007-1095). Another error is triggered by\n    using the addMicrosummaryGenerator sidebar method to access file: URIs\n    (CVE-2007-5335).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could exploit these issues to execute arbitrary code,\n    gain the privileges of the user running the application, disclose\n    sensitive information, conduct phishing attacks, and read and\n    manipulate certain data.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Mozilla Firefox users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All Mozilla Firefox binary users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All SeaMonkey users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All SeaMonkey binary users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All XULRunner users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/mozilla-firefox-2.0.0.9\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/mozilla-firefox-bin-2.0.0.9\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/seamonkey-1.1.6\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/seamonkey-bin-1.1.6\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-libs/xulrunner-1.8.1.9\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-1095",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1095"
+			},
+			{
+				"Text": "CVE-2007-2292",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2292"
+			},
+			{
+				"Text": "CVE-2007-5334",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5334"
+			},
+			{
+				"Text": "CVE-2007-5335",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5335"
+			},
+			{
+				"Text": "CVE-2007-5337",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5337"
+			},
+			{
+				"Text": "CVE-2007-5338",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5338"
+			},
+			{
+				"Text": "CVE-2007-5339",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5339"
+			},
+			{
+				"Text": "CVE-2007-5340",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5340"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-10-24T22:27:12Z"
+		},
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-10-25T23:05:04Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-11-12T21:08:46Z"
+		}
+	]
 }

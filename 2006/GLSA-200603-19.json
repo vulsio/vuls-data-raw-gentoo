@@ -1,117 +1,117 @@
 {
-  "ID": "200603-19",
-  "Title": "cURL/libcurl: Buffer overflow in the handling of TFTP URLs",
-  "Synopsis": "\n    libcurl is affected by a buffer overflow in the handling of URLs for the\n    TFTP protocol, which could be exploited to compromise a user's system.\n  ",
-  "Product": {
-    "Text": "curl",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-03-21",
-  "Revised": {
-    "Text": "2006-03-21",
-    "Count": "01"
-  },
-  "Bug": [
-    "125766"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-misc/curl",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "7.15.1-r1",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "7.15.3",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "7.14.1",
-            "Range": "le",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "7.15.3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    cURL is a command line tool for transferring files with URL\n    syntax, supporting numerous protocols. libcurl is the corresponding\n    client-side library.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Ulf Harnhammar reported a possible buffer overflow in the handling\n    of TFTP URLs in libcurl due to the lack of boundary checks.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker could exploit this vulnerability to compromise a\n    user's system by enticing the user to request a malicious URL with\n    cURL/libcurl or to use a HTTP server redirecting to a malicious TFTP\n    URL.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All cURL users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/curl-7.15.1-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "Project cURL Security Advisory, March 20th 2006",
-        "Link": "https://curl.haxx.se/docs/adv_20060320.html"
-      },
-      {
-        "Text": "CVE-2006-1061",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1061"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-03-20T17:27:58Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-03-20T17:28:46Z"
-    },
-    {
-      "Text": "\n    vorlon078\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-03-20T22:09:32Z"
-    }
-  ]
+	"ID": "200603-19",
+	"Title": "cURL/libcurl: Buffer overflow in the handling of TFTP URLs",
+	"Synopsis": "\n    libcurl is affected by a buffer overflow in the handling of URLs for the\n    TFTP protocol, which could be exploited to compromise a user's system.\n  ",
+	"Product": {
+		"Text": "curl",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-03-21",
+	"Revised": {
+		"Text": "2006-03-21",
+		"Count": "01"
+	},
+	"Bug": [
+		"125766"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-misc/curl",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "7.15.1-r1",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "7.15.3",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "7.14.1",
+						"Range": "le",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "7.15.3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    cURL is a command line tool for transferring files with URL\n    syntax, supporting numerous protocols. libcurl is the corresponding\n    client-side library.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Ulf Harnhammar reported a possible buffer overflow in the handling\n    of TFTP URLs in libcurl due to the lack of boundary checks.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker could exploit this vulnerability to compromise a\n    user's system by enticing the user to request a malicious URL with\n    cURL/libcurl or to use a HTTP server redirecting to a malicious TFTP\n    URL.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All cURL users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/curl-7.15.1-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "Project cURL Security Advisory, March 20th 2006",
+				"Link": "https://curl.haxx.se/docs/adv_20060320.html"
+			},
+			{
+				"Text": "CVE-2006-1061",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1061"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-03-20T17:27:58Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-03-20T17:28:46Z"
+		},
+		{
+			"Text": "\n    vorlon078\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-03-20T22:09:32Z"
+		}
+	]
 }

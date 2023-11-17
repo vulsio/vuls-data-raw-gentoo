@@ -1,117 +1,117 @@
 {
-  "ID": "201410-02",
-  "Title": "Perl, Perl Locale-Maketext module: Multiple vulnerabilities",
-  "Synopsis": "Multiple vulnerabilities have been found in the Perl\n    Locale-Maketext module, allowing remote attackers to inject and execute\n    arbitrary Perl code.\n  ",
-  "Product": {
-    "Text": "Locale-Maketext",
-    "Type": "ebuild"
-  },
-  "Announced": "2014-10-12",
-  "Revised": {
-    "Text": "2014-12-29",
-    "Count": "2"
-  },
-  "Bug": [
-    "446376"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "perl-core/Locale-Maketext",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.230.0",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.230.0",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "dev-lang/perl",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "5.17.7",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "5.17.7",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Locale-Maketext - Perl framework for localization</p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Two vulnerabilities have been reported in the Locale-Maketext module for\n      Perl, which can be exploited by malicious users to compromise an\n      application using the module.\n    </p>\n    \n    <p>The vulnerabilities are caused due to the “_compile()” function not\n      properly sanitising input, which can be exploited to inject and execute\n      arbitrary Perl code.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could possibly execute arbitrary code with the\n      privileges of the process, or cause a Denial of Service condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All users of the Locale-Maketext module should upgrade to the latest\n      version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=perl-core/Locale-Maketext-1.230.0\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2012-6329",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-6329"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "ackle",
-      "Tag": "requester",
-      "Timestamp": "2013-01-01T20:38:14Z"
-    },
-    {
-      "Text": "\n    pinkbyte\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2014-12-29T20:02:06Z"
-    }
-  ]
+	"ID": "201410-02",
+	"Title": "Perl, Perl Locale-Maketext module: Multiple vulnerabilities",
+	"Synopsis": "Multiple vulnerabilities have been found in the Perl\n    Locale-Maketext module, allowing remote attackers to inject and execute\n    arbitrary Perl code.\n  ",
+	"Product": {
+		"Text": "Locale-Maketext",
+		"Type": "ebuild"
+	},
+	"Announced": "2014-10-12",
+	"Revised": {
+		"Text": "2014-12-29",
+		"Count": "2"
+	},
+	"Bug": [
+		"446376"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "perl-core/Locale-Maketext",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.230.0",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.230.0",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "dev-lang/perl",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "5.17.7",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "5.17.7",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Locale-Maketext - Perl framework for localization</p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Two vulnerabilities have been reported in the Locale-Maketext module for\n      Perl, which can be exploited by malicious users to compromise an\n      application using the module.\n    </p>\n    \n    <p>The vulnerabilities are caused due to the “_compile()” function not\n      properly sanitising input, which can be exploited to inject and execute\n      arbitrary Perl code.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could possibly execute arbitrary code with the\n      privileges of the process, or cause a Denial of Service condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All users of the Locale-Maketext module should upgrade to the latest\n      version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=perl-core/Locale-Maketext-1.230.0\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2012-6329",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-6329"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "ackle",
+			"Tag": "requester",
+			"Timestamp": "2013-01-01T20:38:14Z"
+		},
+		{
+			"Text": "\n    pinkbyte\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2014-12-29T20:02:06Z"
+		}
+	]
 }

@@ -1,391 +1,391 @@
 {
-  "ID": "201309-24",
-  "Title": "Xen: Multiple vulnerabilities",
-  "Synopsis": "Multiple vulnerabilities have been found in Xen, allowing attackers\n    on a Xen Virtual Machine to execute arbitrary code, cause Denial of\n    Service, or gain access to data on the host.\n  ",
-  "Product": {
-    "Text": "xen",
-    "Type": "ebuild"
-  },
-  "Announced": "2013-09-27",
-  "Revised": {
-    "Text": "2013-09-27",
-    "Count": "1"
-  },
-  "Bug": [
-    "385319",
-    "386371",
-    "420875",
-    "431156",
-    "454314",
-    "464724",
-    "472214",
-    "482860"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-emulation/xen",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.2.2-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.2.2-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-emulation/xen-tools",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.2.2-r3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.2.2-r3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-emulation/xen-pvgrub",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.2.2-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.2.2-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Xen is a bare-metal hypervisor.</p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Multiple vulnerabilities have been discovered in Xen. Please review the\n      CVE identifiers referenced below for details.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>Guest domains could possibly gain privileges, execute arbitrary code, or\n      cause a Denial of Service on the host domain (Dom0). Additionally, guest\n      domains could gain information about other virtual machines running on\n      the same host or read arbitrary files on the host.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>The CVEs listed below do not currently have fixes, but only apply to Xen\n      setups which have “tmem” specified on the hypervisor command line.\n      TMEM is not currently supported for use in production systems, and\n      administrators using tmem should disable it.\n      Relevant CVEs:\n      * CVE-2012-2497\n      * CVE-2012-6030\n      * CVE-2012-6031\n      * CVE-2012-6032\n      * CVE-2012-6033\n      * CVE-2012-6034\n      * CVE-2012-6035\n      * CVE-2012-6036\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All Xen users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "All Xen-tools users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "All Xen-pvgrub users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-emulation/xen-4.2.2-r1\"\n    ",
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=app-emulation/xen-tools-4.2.2-r3\"\n    ",
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=app-emulation/xen-pvgrub-4.2.2-r1\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2011-2901",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2901"
-      },
-      {
-        "Text": "CVE-2011-3262",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3262"
-      },
-      {
-        "Text": "CVE-2012-0217",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0217"
-      },
-      {
-        "Text": "CVE-2012-0218",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0218"
-      },
-      {
-        "Text": "CVE-2012-2934",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-2934"
-      },
-      {
-        "Text": "CVE-2012-3432",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3432"
-      },
-      {
-        "Text": "CVE-2012-3433",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3433"
-      },
-      {
-        "Text": "CVE-2012-3494",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3494"
-      },
-      {
-        "Text": "CVE-2012-3495",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3495"
-      },
-      {
-        "Text": "CVE-2012-3496",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3496"
-      },
-      {
-        "Text": "CVE-2012-3497",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3497"
-      },
-      {
-        "Text": "CVE-2012-3498",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3498"
-      },
-      {
-        "Text": "CVE-2012-3515",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3515"
-      },
-      {
-        "Text": "CVE-2012-4411",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-4411"
-      },
-      {
-        "Text": "CVE-2012-4535",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-4535"
-      },
-      {
-        "Text": "CVE-2012-4536",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-4536"
-      },
-      {
-        "Text": "CVE-2012-4537",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-4537"
-      },
-      {
-        "Text": "CVE-2012-4538",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-4538"
-      },
-      {
-        "Text": "CVE-2012-4539",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-4539"
-      },
-      {
-        "Text": "CVE-2012-5510",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5510"
-      },
-      {
-        "Text": "CVE-2012-5511",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5511"
-      },
-      {
-        "Text": "CVE-2012-5512",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5512"
-      },
-      {
-        "Text": "CVE-2012-5513",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5513"
-      },
-      {
-        "Text": "CVE-2012-5514",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5514"
-      },
-      {
-        "Text": "CVE-2012-5515",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5515"
-      },
-      {
-        "Text": "CVE-2012-5525",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5525"
-      },
-      {
-        "Text": "CVE-2012-5634",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5634"
-      },
-      {
-        "Text": "CVE-2012-6030",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-6030"
-      },
-      {
-        "Text": "CVE-2012-6031",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-6031"
-      },
-      {
-        "Text": "CVE-2012-6032",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-6032"
-      },
-      {
-        "Text": "CVE-2012-6033",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-6033"
-      },
-      {
-        "Text": "CVE-2012-6034",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-6034"
-      },
-      {
-        "Text": "CVE-2012-6035",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-6035"
-      },
-      {
-        "Text": "CVE-2012-6036",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-6036"
-      },
-      {
-        "Text": "CVE-2012-6075",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-6075"
-      },
-      {
-        "Text": "CVE-2012-6333",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-6333"
-      },
-      {
-        "Text": "CVE-2013-0151",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0151"
-      },
-      {
-        "Text": "CVE-2013-0152",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0152"
-      },
-      {
-        "Text": "CVE-2013-0153",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0153"
-      },
-      {
-        "Text": "CVE-2013-0154",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0154"
-      },
-      {
-        "Text": "CVE-2013-0215",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0215"
-      },
-      {
-        "Text": "CVE-2013-1432",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1432"
-      },
-      {
-        "Text": "CVE-2013-1917",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1917"
-      },
-      {
-        "Text": "CVE-2013-1918",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1918"
-      },
-      {
-        "Text": "CVE-2013-1919",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1919"
-      },
-      {
-        "Text": "CVE-2013-1920",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1920"
-      },
-      {
-        "Text": "CVE-2013-1922",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1922"
-      },
-      {
-        "Text": "CVE-2013-1952",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1952"
-      },
-      {
-        "Text": "CVE-2013-1964",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1964"
-      },
-      {
-        "Text": "CVE-2013-2076",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2076"
-      },
-      {
-        "Text": "CVE-2013-2077",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2077"
-      },
-      {
-        "Text": "CVE-2013-2078",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2078"
-      },
-      {
-        "Text": "CVE-2013-2194",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2194"
-      },
-      {
-        "Text": "CVE-2013-2195",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2195"
-      },
-      {
-        "Text": "CVE-2013-2196",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2196"
-      },
-      {
-        "Text": "CVE-2013-2211",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2211"
-      },
-      {
-        "Text": "\n      Xen TMEM\n    ",
-        "Link": "https://lists.xen.org/archives/html/xen-announce/2012-09/msg00006.html"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "craig",
-      "Tag": "requester",
-      "Timestamp": "2012-03-06T01:02:21Z"
-    },
-    {
-      "Text": "\n    creffett\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2013-09-27T20:19:09Z"
-    }
-  ]
+	"ID": "201309-24",
+	"Title": "Xen: Multiple vulnerabilities",
+	"Synopsis": "Multiple vulnerabilities have been found in Xen, allowing attackers\n    on a Xen Virtual Machine to execute arbitrary code, cause Denial of\n    Service, or gain access to data on the host.\n  ",
+	"Product": {
+		"Text": "xen",
+		"Type": "ebuild"
+	},
+	"Announced": "2013-09-27",
+	"Revised": {
+		"Text": "2013-09-27",
+		"Count": "1"
+	},
+	"Bug": [
+		"385319",
+		"386371",
+		"420875",
+		"431156",
+		"454314",
+		"464724",
+		"472214",
+		"482860"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-emulation/xen",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.2.2-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.2.2-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-emulation/xen-tools",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.2.2-r3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.2.2-r3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-emulation/xen-pvgrub",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.2.2-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.2.2-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Xen is a bare-metal hypervisor.</p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Multiple vulnerabilities have been discovered in Xen. Please review the\n      CVE identifiers referenced below for details.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>Guest domains could possibly gain privileges, execute arbitrary code, or\n      cause a Denial of Service on the host domain (Dom0). Additionally, guest\n      domains could gain information about other virtual machines running on\n      the same host or read arbitrary files on the host.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>The CVEs listed below do not currently have fixes, but only apply to Xen\n      setups which have “tmem” specified on the hypervisor command line.\n      TMEM is not currently supported for use in production systems, and\n      administrators using tmem should disable it.\n      Relevant CVEs:\n      * CVE-2012-2497\n      * CVE-2012-6030\n      * CVE-2012-6031\n      * CVE-2012-6032\n      * CVE-2012-6033\n      * CVE-2012-6034\n      * CVE-2012-6035\n      * CVE-2012-6036\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All Xen users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "All Xen-tools users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "All Xen-pvgrub users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-emulation/xen-4.2.2-r1\"\n    ",
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=app-emulation/xen-tools-4.2.2-r3\"\n    ",
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=app-emulation/xen-pvgrub-4.2.2-r1\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2011-2901",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2901"
+			},
+			{
+				"Text": "CVE-2011-3262",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3262"
+			},
+			{
+				"Text": "CVE-2012-0217",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0217"
+			},
+			{
+				"Text": "CVE-2012-0218",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0218"
+			},
+			{
+				"Text": "CVE-2012-2934",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-2934"
+			},
+			{
+				"Text": "CVE-2012-3432",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3432"
+			},
+			{
+				"Text": "CVE-2012-3433",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3433"
+			},
+			{
+				"Text": "CVE-2012-3494",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3494"
+			},
+			{
+				"Text": "CVE-2012-3495",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3495"
+			},
+			{
+				"Text": "CVE-2012-3496",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3496"
+			},
+			{
+				"Text": "CVE-2012-3497",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3497"
+			},
+			{
+				"Text": "CVE-2012-3498",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3498"
+			},
+			{
+				"Text": "CVE-2012-3515",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3515"
+			},
+			{
+				"Text": "CVE-2012-4411",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-4411"
+			},
+			{
+				"Text": "CVE-2012-4535",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-4535"
+			},
+			{
+				"Text": "CVE-2012-4536",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-4536"
+			},
+			{
+				"Text": "CVE-2012-4537",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-4537"
+			},
+			{
+				"Text": "CVE-2012-4538",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-4538"
+			},
+			{
+				"Text": "CVE-2012-4539",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-4539"
+			},
+			{
+				"Text": "CVE-2012-5510",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5510"
+			},
+			{
+				"Text": "CVE-2012-5511",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5511"
+			},
+			{
+				"Text": "CVE-2012-5512",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5512"
+			},
+			{
+				"Text": "CVE-2012-5513",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5513"
+			},
+			{
+				"Text": "CVE-2012-5514",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5514"
+			},
+			{
+				"Text": "CVE-2012-5515",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5515"
+			},
+			{
+				"Text": "CVE-2012-5525",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5525"
+			},
+			{
+				"Text": "CVE-2012-5634",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5634"
+			},
+			{
+				"Text": "CVE-2012-6030",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-6030"
+			},
+			{
+				"Text": "CVE-2012-6031",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-6031"
+			},
+			{
+				"Text": "CVE-2012-6032",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-6032"
+			},
+			{
+				"Text": "CVE-2012-6033",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-6033"
+			},
+			{
+				"Text": "CVE-2012-6034",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-6034"
+			},
+			{
+				"Text": "CVE-2012-6035",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-6035"
+			},
+			{
+				"Text": "CVE-2012-6036",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-6036"
+			},
+			{
+				"Text": "CVE-2012-6075",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-6075"
+			},
+			{
+				"Text": "CVE-2012-6333",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-6333"
+			},
+			{
+				"Text": "CVE-2013-0151",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0151"
+			},
+			{
+				"Text": "CVE-2013-0152",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0152"
+			},
+			{
+				"Text": "CVE-2013-0153",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0153"
+			},
+			{
+				"Text": "CVE-2013-0154",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0154"
+			},
+			{
+				"Text": "CVE-2013-0215",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-0215"
+			},
+			{
+				"Text": "CVE-2013-1432",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1432"
+			},
+			{
+				"Text": "CVE-2013-1917",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1917"
+			},
+			{
+				"Text": "CVE-2013-1918",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1918"
+			},
+			{
+				"Text": "CVE-2013-1919",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1919"
+			},
+			{
+				"Text": "CVE-2013-1920",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1920"
+			},
+			{
+				"Text": "CVE-2013-1922",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1922"
+			},
+			{
+				"Text": "CVE-2013-1952",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1952"
+			},
+			{
+				"Text": "CVE-2013-1964",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1964"
+			},
+			{
+				"Text": "CVE-2013-2076",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2076"
+			},
+			{
+				"Text": "CVE-2013-2077",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2077"
+			},
+			{
+				"Text": "CVE-2013-2078",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2078"
+			},
+			{
+				"Text": "CVE-2013-2194",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2194"
+			},
+			{
+				"Text": "CVE-2013-2195",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2195"
+			},
+			{
+				"Text": "CVE-2013-2196",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2196"
+			},
+			{
+				"Text": "CVE-2013-2211",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-2211"
+			},
+			{
+				"Text": "\n      Xen TMEM\n    ",
+				"Link": "https://lists.xen.org/archives/html/xen-announce/2012-09/msg00006.html"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "craig",
+			"Tag": "requester",
+			"Timestamp": "2012-03-06T01:02:21Z"
+		},
+		{
+			"Text": "\n    creffett\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2013-09-27T20:19:09Z"
+		}
+	]
 }

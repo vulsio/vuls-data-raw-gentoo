@@ -1,107 +1,107 @@
 {
-  "ID": "201003-01",
-  "Title": "sudo: Privilege escalation",
-  "Synopsis": "\n    Two vulnerabilities in sudo might allow local users to escalate privileges\n    and execute arbitrary code with root privileges.\n  ",
-  "Product": {
-    "Text": "sudo",
-    "Type": "ebuild"
-  },
-  "Announced": "2010-03-03",
-  "Revised": {
-    "Text": "2010-03-03",
-    "Count": "01"
-  },
-  "Bug": [
-    "306865"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-admin/sudo",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.7.2_p4",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.7.2_p4",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    sudo allows a system administrator to give users the ability to run\n    commands as other users.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Multiple vulnerabilities have been discovered in sudo:\n    </p>\n    <ul>\n    <li>Glenn Waller and neonsignal reported that sudo does not properly\n    handle access control of the \"sudoedit\" pseudo-command\n    (CVE-2010-0426).</li>\n    <li>Harald Koenig reported that sudo does not\n    properly set supplementary groups when using the \"runas_default\" option\n    (CVE-2010-0427).</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A local attacker with privileges to use \"sudoedit\" or the privilege to\n    execute commands with the \"runas_default\" setting enabled could\n    leverage these vulnerabilities to execute arbitrary code with elevated\n    privileges.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    CVE-2010-0426: Revoke all \"sudoedit\" privileges, or use the full path\n    to sudoedit. CVE-2010-0427: Remove all occurrences of the\n    \"runas_default\" setting.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All sudo users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-admin/sudo-1.7.2_p4\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2010-0426",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0426"
-      },
-      {
-        "Text": "CVE-2010-0427",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0427"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "requester",
-      "Timestamp": "2010-03-02T19:53:26Z"
-    },
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2010-03-02T20:22:07Z"
-    },
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2010-03-03T16:28:38Z"
-    }
-  ]
+	"ID": "201003-01",
+	"Title": "sudo: Privilege escalation",
+	"Synopsis": "\n    Two vulnerabilities in sudo might allow local users to escalate privileges\n    and execute arbitrary code with root privileges.\n  ",
+	"Product": {
+		"Text": "sudo",
+		"Type": "ebuild"
+	},
+	"Announced": "2010-03-03",
+	"Revised": {
+		"Text": "2010-03-03",
+		"Count": "01"
+	},
+	"Bug": [
+		"306865"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-admin/sudo",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.7.2_p4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.7.2_p4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    sudo allows a system administrator to give users the ability to run\n    commands as other users.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Multiple vulnerabilities have been discovered in sudo:\n    </p>\n    <ul>\n    <li>Glenn Waller and neonsignal reported that sudo does not properly\n    handle access control of the \"sudoedit\" pseudo-command\n    (CVE-2010-0426).</li>\n    <li>Harald Koenig reported that sudo does not\n    properly set supplementary groups when using the \"runas_default\" option\n    (CVE-2010-0427).</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A local attacker with privileges to use \"sudoedit\" or the privilege to\n    execute commands with the \"runas_default\" setting enabled could\n    leverage these vulnerabilities to execute arbitrary code with elevated\n    privileges.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    CVE-2010-0426: Revoke all \"sudoedit\" privileges, or use the full path\n    to sudoedit. CVE-2010-0427: Remove all occurrences of the\n    \"runas_default\" setting.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All sudo users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-admin/sudo-1.7.2_p4\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2010-0426",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0426"
+			},
+			{
+				"Text": "CVE-2010-0427",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0427"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "requester",
+			"Timestamp": "2010-03-02T19:53:26Z"
+		},
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2010-03-02T20:22:07Z"
+		},
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2010-03-03T16:28:38Z"
+		}
+	]
 }

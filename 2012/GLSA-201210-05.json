@@ -1,103 +1,103 @@
 {
-  "ID": "201210-05",
-  "Title": "Bash: Multiple vulnerabilities",
-  "Synopsis": "Two vulnerabilities have been found in Bash, the worst of which may\n    allow execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "bash",
-    "Type": "ebuild"
-  },
-  "Announced": "2012-10-20",
-  "Revised": {
-    "Text": "2012-10-20",
-    "Count": "1"
-  },
-  "Bug": [
-    "251319",
-    "431850"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-shells/bash",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.2_p37",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.2_p37",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Bash is the standard GNU Bourne Again SHell. </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Two vulnerabilities have been found in Bash:</p>\n    \n    <ul>\n      <li>Bash example scripts do not handle temporary files securely\n        (CVE-2008-5374).\n      </li>\n      <li>Improper bounds checking in Bash could cause a stack-based buffer\n        overflow (CVE-2012-3410).\n      </li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted Bash\n      script, possibly resulting in execution of arbitrary code with the\n      privileges of the process, or a Denial of Service condition of the Bash\n      executable. \n    </p>\n    \n    <p>A local attacker may be able to perform symlink attacks to overwrite\n      arbitrary files with the privileges of the user running the application\n      or bypass shell access restrictions.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All Bash users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-shells/bash-4.2_p37\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-5374",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2008-5374"
-      },
-      {
-        "Text": "CVE-2012-3410",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3410"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    underling\n  ",
-      "Tag": "requester",
-      "Timestamp": "2012-09-04T16:02:06Z"
-    },
-    {
-      "Text": "ackle",
-      "Tag": "submitter",
-      "Timestamp": "2012-10-20T00:12:47Z"
-    }
-  ]
+	"ID": "201210-05",
+	"Title": "Bash: Multiple vulnerabilities",
+	"Synopsis": "Two vulnerabilities have been found in Bash, the worst of which may\n    allow execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "bash",
+		"Type": "ebuild"
+	},
+	"Announced": "2012-10-20",
+	"Revised": {
+		"Text": "2012-10-20",
+		"Count": "1"
+	},
+	"Bug": [
+		"251319",
+		"431850"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-shells/bash",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.2_p37",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.2_p37",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Bash is the standard GNU Bourne Again SHell. </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Two vulnerabilities have been found in Bash:</p>\n    \n    <ul>\n      <li>Bash example scripts do not handle temporary files securely\n        (CVE-2008-5374).\n      </li>\n      <li>Improper bounds checking in Bash could cause a stack-based buffer\n        overflow (CVE-2012-3410).\n      </li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could entice a user to open a specially crafted Bash\n      script, possibly resulting in execution of arbitrary code with the\n      privileges of the process, or a Denial of Service condition of the Bash\n      executable. \n    </p>\n    \n    <p>A local attacker may be able to perform symlink attacks to overwrite\n      arbitrary files with the privileges of the user running the application\n      or bypass shell access restrictions.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All Bash users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-shells/bash-4.2_p37\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-5374",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2008-5374"
+			},
+			{
+				"Text": "CVE-2012-3410",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-3410"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    underling\n  ",
+			"Tag": "requester",
+			"Timestamp": "2012-09-04T16:02:06Z"
+		},
+		{
+			"Text": "ackle",
+			"Tag": "submitter",
+			"Timestamp": "2012-10-20T00:12:47Z"
+		}
+	]
 }

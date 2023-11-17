@@ -1,113 +1,113 @@
 {
-  "ID": "200804-13",
-  "Title": "Asterisk: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities have been found in Asterisk allowing for SQL\n    injection, session hijacking and unauthorized usage.\n  ",
-  "Product": {
-    "Text": "asterisk",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-04-14",
-  "Revised": {
-    "Text": "2008-04-14",
-    "Count": "01"
-  },
-  "Bug": [
-    "200792",
-    "202733",
-    "213883"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-misc/asterisk",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.2.27",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.2.27",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Asterisk is an open source telephony engine and tool kit.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Asterisk upstream developers reported multiple vulnerabilities:\n    </p>\n    <ul>\n    <li>The Call Detail Record Postgres logging engine (cdr_pgsql)\n    does not correctly escape the ANI and DNIS arguments before using them\n    in SQL statements (CVE-2007-6170).</li>\n    <li>When using database-based\n    registrations (\"realtime\") and host-based authentication, Asterisk does\n    not check the IP address when the username is correct and there is no\n    password provided (CVE-2007-6430).</li>\n    <li>The SIP channel driver does\n    not correctly determine if authentication is required\n    (CVE-2008-1332).</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    Remote authenticated attackers could send specially crafted data to\n    Asterisk to execute arbitrary SQL commands and compromise the\n    administrative database. Remote unauthenticated attackers could bypass\n    authentication using a valid username to hijack other user's sessions,\n    and establish sessions on the SIP channel without authentication.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Asterisk users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/asterisk-1.2.27\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-6170",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6170"
-      },
-      {
-        "Text": "CVE-2007-6430",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6430"
-      },
-      {
-        "Text": "CVE-2008-1332",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1332"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-03-29T20:11:29Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-04-03T14:50:06Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-04-07T07:59:17Z"
-    }
-  ]
+	"ID": "200804-13",
+	"Title": "Asterisk: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities have been found in Asterisk allowing for SQL\n    injection, session hijacking and unauthorized usage.\n  ",
+	"Product": {
+		"Text": "asterisk",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-04-14",
+	"Revised": {
+		"Text": "2008-04-14",
+		"Count": "01"
+	},
+	"Bug": [
+		"200792",
+		"202733",
+		"213883"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-misc/asterisk",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.2.27",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.2.27",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Asterisk is an open source telephony engine and tool kit.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Asterisk upstream developers reported multiple vulnerabilities:\n    </p>\n    <ul>\n    <li>The Call Detail Record Postgres logging engine (cdr_pgsql)\n    does not correctly escape the ANI and DNIS arguments before using them\n    in SQL statements (CVE-2007-6170).</li>\n    <li>When using database-based\n    registrations (\"realtime\") and host-based authentication, Asterisk does\n    not check the IP address when the username is correct and there is no\n    password provided (CVE-2007-6430).</li>\n    <li>The SIP channel driver does\n    not correctly determine if authentication is required\n    (CVE-2008-1332).</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    Remote authenticated attackers could send specially crafted data to\n    Asterisk to execute arbitrary SQL commands and compromise the\n    administrative database. Remote unauthenticated attackers could bypass\n    authentication using a valid username to hijack other user's sessions,\n    and establish sessions on the SIP channel without authentication.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Asterisk users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/asterisk-1.2.27\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-6170",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6170"
+			},
+			{
+				"Text": "CVE-2007-6430",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6430"
+			},
+			{
+				"Text": "CVE-2008-1332",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1332"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-03-29T20:11:29Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-04-03T14:50:06Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-04-07T07:59:17Z"
+		}
+	]
 }

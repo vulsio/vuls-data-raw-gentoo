@@ -1,107 +1,107 @@
 {
-  "ID": "200602-01",
-  "Title": "GStreamer FFmpeg plugin: Heap-based buffer overflow",
-  "Synopsis": "\n    The GStreamer FFmpeg plugin is vulnerable to a buffer overflow that may be\n    exploited by attackers to execute arbitrary code.\n  ",
-  "Product": {
-    "Text": "gst-plugins-ffmpeg",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-02-05",
-  "Revised": {
-    "Text": "2006-02-05",
-    "Count": "01"
-  },
-  "Bug": [
-    "119512"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-plugins/gst-plugins-ffmpeg",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.8.7-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.8.7-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    The GStreamer FFmpeg plugin uses code from the FFmpeg library to\n    provide fast colorspace conversion and multimedia decoders to the\n    GStreamer open source media framework.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The GStreamer FFmpeg plugin contains derived code from the FFmpeg\n    library, which is vulnerable to a heap overflow in the\n    \"avcodec_default_get_buffer()\" function discovered by Simon Kilvington\n    (see GLSA 200601-06).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to run an application using\n    the GStreamer FFmpeg plugin on a maliciously crafted PIX_FMT_PAL8\n    format image file (like PNG images), possibly leading to the execution\n    of arbitrary code with the permissions of the user running the\n    application.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All GStreamer FFmpeg plugin users should upgrade to the latest\n    version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-plugins/gst-plugins-ffmpeg-0.8.7-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2005-4048",
-        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-4048"
-      },
-      {
-        "Text": "GLSA 200601-06",
-        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200601-06.xml"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-01-29T21:54:38Z"
-    },
-    {
-      "Text": "\n    adir\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-01-31T03:13:44Z"
-    },
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-02-01T15:27:50Z"
-    }
-  ]
+	"ID": "200602-01",
+	"Title": "GStreamer FFmpeg plugin: Heap-based buffer overflow",
+	"Synopsis": "\n    The GStreamer FFmpeg plugin is vulnerable to a buffer overflow that may be\n    exploited by attackers to execute arbitrary code.\n  ",
+	"Product": {
+		"Text": "gst-plugins-ffmpeg",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-02-05",
+	"Revised": {
+		"Text": "2006-02-05",
+		"Count": "01"
+	},
+	"Bug": [
+		"119512"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-plugins/gst-plugins-ffmpeg",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.8.7-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.8.7-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    The GStreamer FFmpeg plugin uses code from the FFmpeg library to\n    provide fast colorspace conversion and multimedia decoders to the\n    GStreamer open source media framework.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The GStreamer FFmpeg plugin contains derived code from the FFmpeg\n    library, which is vulnerable to a heap overflow in the\n    \"avcodec_default_get_buffer()\" function discovered by Simon Kilvington\n    (see GLSA 200601-06).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to run an application using\n    the GStreamer FFmpeg plugin on a maliciously crafted PIX_FMT_PAL8\n    format image file (like PNG images), possibly leading to the execution\n    of arbitrary code with the permissions of the user running the\n    application.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All GStreamer FFmpeg plugin users should upgrade to the latest\n    version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-plugins/gst-plugins-ffmpeg-0.8.7-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2005-4048",
+				"Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-4048"
+			},
+			{
+				"Text": "GLSA 200601-06",
+				"Link": "https://www.gentoo.org/security/en/glsa/glsa-200601-06.xml"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-01-29T21:54:38Z"
+		},
+		{
+			"Text": "\n    adir\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-01-31T03:13:44Z"
+		},
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-02-01T15:27:50Z"
+		}
+	]
 }

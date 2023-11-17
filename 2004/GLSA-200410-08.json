@@ -1,107 +1,107 @@
 {
-  "ID": "200410-08",
-  "Title": "ncompress: Buffer overflow",
-  "Synopsis": "\n    compress and uncompress, which could be used by daemon programs, contain a\n    buffer overflow that could lead to remote execution of arbitrary code with\n    the rights of the daemon process.\n  ",
-  "Product": {
-    "Text": "ncompress",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-10-09",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "02"
-  },
-  "Bug": [
-    "66251"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-arch/ncompress",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.2.4-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.2.4",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    ncompress is a utility handling compression and decompression of\n    Lempel-Ziv archives, compatible with the original *nix compress and\n    uncompress utilities (.Z extensions).\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    compress and uncompress do not properly check bounds on command line\n    options, including the filename. Large parameters would trigger a\n    buffer overflow.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    By supplying a carefully crafted filename or other option, an attacker\n    could execute arbitrary code on the system. A local attacker could only\n    execute code with his own rights, but since compress and uncompress are\n    called by various daemon programs, this might also allow a remote\n    attacker to execute code with the rights of the daemon making use of\n    ncompress.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All ncompress users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n    \n    # emerge -pv \">=app-arch/ncompress-4.2.4-r1\"\n    # emerge \">=app-arch/ncompress-4.2.4-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "US-CERT Vulnerability Note VU#176363",
-        "Link": "https://www.kb.cert.org/vuls/id/176363"
-      },
-      {
-        "Text": "CVE-2001-1413",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-1413"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2004-10-08T21:09:39Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-10-08T21:11:15Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-10-09T10:24:20Z"
-    }
-  ]
+	"ID": "200410-08",
+	"Title": "ncompress: Buffer overflow",
+	"Synopsis": "\n    compress and uncompress, which could be used by daemon programs, contain a\n    buffer overflow that could lead to remote execution of arbitrary code with\n    the rights of the daemon process.\n  ",
+	"Product": {
+		"Text": "ncompress",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-10-09",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "02"
+	},
+	"Bug": [
+		"66251"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-arch/ncompress",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.2.4-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.2.4",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    ncompress is a utility handling compression and decompression of\n    Lempel-Ziv archives, compatible with the original *nix compress and\n    uncompress utilities (.Z extensions).\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    compress and uncompress do not properly check bounds on command line\n    options, including the filename. Large parameters would trigger a\n    buffer overflow.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    By supplying a carefully crafted filename or other option, an attacker\n    could execute arbitrary code on the system. A local attacker could only\n    execute code with his own rights, but since compress and uncompress are\n    called by various daemon programs, this might also allow a remote\n    attacker to execute code with the rights of the daemon making use of\n    ncompress.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All ncompress users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n    \n    # emerge -pv \">=app-arch/ncompress-4.2.4-r1\"\n    # emerge \">=app-arch/ncompress-4.2.4-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "US-CERT Vulnerability Note VU#176363",
+				"Link": "https://www.kb.cert.org/vuls/id/176363"
+			},
+			{
+				"Text": "CVE-2001-1413",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2001-1413"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2004-10-08T21:09:39Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-10-08T21:11:15Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-10-09T10:24:20Z"
+		}
+	]
 }

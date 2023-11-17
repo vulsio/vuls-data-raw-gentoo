@@ -1,174 +1,174 @@
 {
-  "ID": "200903-37",
-  "Title": "Ghostscript: User-assisted execution of arbitrary code",
-  "Synopsis": "\n    Multiple integer overflows in the Ghostscript ICC library might allow for\n    user-assisted execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "ghostscript-gpl ghostscript-esp ghostscript-gnu",
-    "Type": "ebuild"
-  },
-  "Announced": "2009-03-23",
-  "Revised": {
-    "Text": "2009-03-23",
-    "Count": "01"
-  },
-  "Bug": [
-    "261087"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-text/ghostscript-gpl",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "8.64-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "8.64-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-text/ghostscript-gnu",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "8.62.0",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "8.62.0",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-text/ghostscript-esp",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": null,
-        "Vulnerable": [
-          {
-            "Text": "8.15.4-r1",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Ghostscript is an interpreter for the PostScript language and the\n    Portable Document Format (PDF).\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Jan Lieskovsky from the Red Hat Security Response Team discovered the\n    following vulnerabilities in Ghostscript's ICC Library:\n    </p>\n    <ul>\n    <li>Multiple integer overflows (CVE-2009-0583).</li>\n    <li>Multiple\n    insufficient bounds checks on certain variable sizes\n    (CVE-2009-0584).</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted\n    PostScript file containing images and a malicious ICC profile, possibly\n    resulting in the execution of arbitrary code with the privileges of the\n    user running the application.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All GPL Ghostscript users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All GNU Ghostscript users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    We recommend that users unmerge ESP Ghostscript and use GPL or GNU\n    Ghostscript instead:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    For installation instructions, see above.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/ghostscript-gpl-8.64-r2\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/ghostscript-gnu-8.62.0\"",
-      "\n    # emerge --unmerge \"app-text/ghostscript-esp\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2009-0583",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0583"
-      },
-      {
-        "Text": "CVE-2009-0584",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0584"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "requester",
-      "Timestamp": "2009-03-22T20:18:05Z"
-    },
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-03-22T21:04:31Z"
-    },
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2009-03-23T13:39:36Z"
-    }
-  ]
+	"ID": "200903-37",
+	"Title": "Ghostscript: User-assisted execution of arbitrary code",
+	"Synopsis": "\n    Multiple integer overflows in the Ghostscript ICC library might allow for\n    user-assisted execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "ghostscript-gpl ghostscript-esp ghostscript-gnu",
+		"Type": "ebuild"
+	},
+	"Announced": "2009-03-23",
+	"Revised": {
+		"Text": "2009-03-23",
+		"Count": "01"
+	},
+	"Bug": [
+		"261087"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-text/ghostscript-gpl",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "8.64-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "8.64-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-text/ghostscript-gnu",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "8.62.0",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "8.62.0",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-text/ghostscript-esp",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": null,
+				"Vulnerable": [
+					{
+						"Text": "8.15.4-r1",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Ghostscript is an interpreter for the PostScript language and the\n    Portable Document Format (PDF).\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Jan Lieskovsky from the Red Hat Security Response Team discovered the\n    following vulnerabilities in Ghostscript's ICC Library:\n    </p>\n    <ul>\n    <li>Multiple integer overflows (CVE-2009-0583).</li>\n    <li>Multiple\n    insufficient bounds checks on certain variable sizes\n    (CVE-2009-0584).</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted\n    PostScript file containing images and a malicious ICC profile, possibly\n    resulting in the execution of arbitrary code with the privileges of the\n    user running the application.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All GPL Ghostscript users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All GNU Ghostscript users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    We recommend that users unmerge ESP Ghostscript and use GPL or GNU\n    Ghostscript instead:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    For installation instructions, see above.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/ghostscript-gpl-8.64-r2\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/ghostscript-gnu-8.62.0\"",
+			"\n    # emerge --unmerge \"app-text/ghostscript-esp\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2009-0583",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0583"
+			},
+			{
+				"Text": "CVE-2009-0584",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0584"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "requester",
+			"Timestamp": "2009-03-22T20:18:05Z"
+		},
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-03-22T21:04:31Z"
+		},
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2009-03-23T13:39:36Z"
+		}
+	]
 }

@@ -1,143 +1,143 @@
 {
-  "ID": "200911-03",
-  "Title": "UW IMAP toolkit: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities have been found in the UW IMAP toolkit and the\n    c-client library, the worst of which leading to the execution of arbitrary\n    code.\n  ",
-  "Product": {
-    "Text": "c-client uw-imap",
-    "Type": "ebuild"
-  },
-  "Announced": "2009-11-25",
-  "Revised": {
-    "Text": "2009-11-25",
-    "Count": "01"
-  },
-  "Bug": [
-    "245425",
-    "252567"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-libs/c-client",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2007e",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2007e",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "net-mail/uw-imap",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2007e",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2007e",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    The UW IMAP toolkit is a daemon for the IMAP and POP3 network mail\n    protocols. The c-client library provides an API for IMAP, POP3 and\n    other protocols.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Multiple vulnerabilities were found in the UW IMAP toolkit:\n    </p>\n    <ul>\n    <li>Aron Andersson and Jan Sahlin of Bitsec reported boundary errors in\n    the \"tmail\" and \"dmail\" utilities when processing overly long mailbox\n    names, leading to stack-based buffer overflows (CVE-2008-5005).</li>\n    <li>An error in smtp.c in the c-client library was found, leading to a\n    NULL pointer dereference vulnerability (CVE-2008-5006).</li>\n    <li>Ludwig\n    Nussel reported an off-by-one error in the rfc822_output_char()\n    function in the RFC822BUFFER routines in the c-client library, as used\n    by the UW IMAP toolkit (CVE-2008-5514).</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker could send an e-mail to a destination mailbox name\n    composed of a username and '+' character followed by a long string,\n    possibly leading to the execution of arbitrary code. A local attacker\n    could gain privileges by specifying a long folder extension argument to\n    the tmail or dmail program. Furthermore, a remote attacker could send a\n    specially crafted mail message to the UW IMAP toolkit or another daemon\n    using the c-client library, leading to a Denial of Service. A remote\n    SMTP server could respond to the QUIT command with a close of the TCP\n    connection instead of the expected 221 response code, possibly leading\n    to a Denial of Service.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All c-client library users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All UW IMAP toolkit users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-libs/c-client-2007e\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-mail/uw-imap-2007e\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-5005",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5005"
-      },
-      {
-        "Text": "CVE-2008-5006",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5006"
-      },
-      {
-        "Text": "CVE-2008-5514",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5514"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2009-01-13T17:17:18Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-01-13T17:27:25Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2009-11-25T13:23:47Z"
-    }
-  ]
+	"ID": "200911-03",
+	"Title": "UW IMAP toolkit: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities have been found in the UW IMAP toolkit and the\n    c-client library, the worst of which leading to the execution of arbitrary\n    code.\n  ",
+	"Product": {
+		"Text": "c-client uw-imap",
+		"Type": "ebuild"
+	},
+	"Announced": "2009-11-25",
+	"Revised": {
+		"Text": "2009-11-25",
+		"Count": "01"
+	},
+	"Bug": [
+		"245425",
+		"252567"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-libs/c-client",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2007e",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2007e",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "net-mail/uw-imap",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2007e",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2007e",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    The UW IMAP toolkit is a daemon for the IMAP and POP3 network mail\n    protocols. The c-client library provides an API for IMAP, POP3 and\n    other protocols.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Multiple vulnerabilities were found in the UW IMAP toolkit:\n    </p>\n    <ul>\n    <li>Aron Andersson and Jan Sahlin of Bitsec reported boundary errors in\n    the \"tmail\" and \"dmail\" utilities when processing overly long mailbox\n    names, leading to stack-based buffer overflows (CVE-2008-5005).</li>\n    <li>An error in smtp.c in the c-client library was found, leading to a\n    NULL pointer dereference vulnerability (CVE-2008-5006).</li>\n    <li>Ludwig\n    Nussel reported an off-by-one error in the rfc822_output_char()\n    function in the RFC822BUFFER routines in the c-client library, as used\n    by the UW IMAP toolkit (CVE-2008-5514).</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker could send an e-mail to a destination mailbox name\n    composed of a username and '+' character followed by a long string,\n    possibly leading to the execution of arbitrary code. A local attacker\n    could gain privileges by specifying a long folder extension argument to\n    the tmail or dmail program. Furthermore, a remote attacker could send a\n    specially crafted mail message to the UW IMAP toolkit or another daemon\n    using the c-client library, leading to a Denial of Service. A remote\n    SMTP server could respond to the QUIT command with a close of the TCP\n    connection instead of the expected 221 response code, possibly leading\n    to a Denial of Service.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All c-client library users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All UW IMAP toolkit users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-libs/c-client-2007e\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-mail/uw-imap-2007e\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-5005",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5005"
+			},
+			{
+				"Text": "CVE-2008-5006",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5006"
+			},
+			{
+				"Text": "CVE-2008-5514",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5514"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2009-01-13T17:17:18Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-01-13T17:27:25Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2009-11-25T13:23:47Z"
+		}
+	]
 }

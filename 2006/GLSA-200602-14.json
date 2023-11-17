@@ -1,103 +1,103 @@
 {
-  "ID": "200602-14",
-  "Title": "noweb: Insecure temporary file creation",
-  "Synopsis": "\n    noweb is vulnerable to symlink attacks, potentially allowing a local user\n    to overwrite arbitrary files.\n  ",
-  "Product": {
-    "Text": "noweb",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-02-26",
-  "Revised": {
-    "Text": "2006-02-26",
-    "Count": "01"
-  },
-  "Bug": [
-    "122705"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-text/noweb",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.9-r5",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.9-r5",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    noweb is a simple, extensible, and language independent literate\n    programming tool.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Javier Fernandez-Sanguino has discovered that the lib/toascii.nw\n    and shell/roff.mm scripts insecurely create temporary files with\n    predictable filenames.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary file\n    directory, pointing to a valid file somewhere on the filesystem. When\n    an affected script is called, this would result in the file being\n    overwritten with the rights of the user running the script.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All noweb users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/noweb-2.9-r5\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2005-3342",
-        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3342"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-02-23T20:08:48Z"
-    },
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-02-23T20:09:04Z"
-    },
-    {
-      "Text": "\n    formula7\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-02-24T14:44:04Z"
-    }
-  ]
+	"ID": "200602-14",
+	"Title": "noweb: Insecure temporary file creation",
+	"Synopsis": "\n    noweb is vulnerable to symlink attacks, potentially allowing a local user\n    to overwrite arbitrary files.\n  ",
+	"Product": {
+		"Text": "noweb",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-02-26",
+	"Revised": {
+		"Text": "2006-02-26",
+		"Count": "01"
+	},
+	"Bug": [
+		"122705"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-text/noweb",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.9-r5",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.9-r5",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    noweb is a simple, extensible, and language independent literate\n    programming tool.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Javier Fernandez-Sanguino has discovered that the lib/toascii.nw\n    and shell/roff.mm scripts insecurely create temporary files with\n    predictable filenames.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary file\n    directory, pointing to a valid file somewhere on the filesystem. When\n    an affected script is called, this would result in the file being\n    overwritten with the rights of the user running the script.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All noweb users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/noweb-2.9-r5\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2005-3342",
+				"Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3342"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-02-23T20:08:48Z"
+		},
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-02-23T20:09:04Z"
+		},
+		{
+			"Text": "\n    formula7\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-02-24T14:44:04Z"
+		}
+	]
 }

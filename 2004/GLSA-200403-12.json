@@ -1,97 +1,97 @@
 {
-  "ID": "200403-12",
-  "Title": "OpenLDAP DoS Vulnerability",
-  "Synopsis": "\n    A failed password operation can cause the OpenLDAP slapd server, if it is\n    using the back-ldbm backend, to free memory that was never allocated.\n  ",
-  "Product": {
-    "Text": "openldap",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-03-31",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "02"
-  },
-  "Bug": [
-    "26728"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-nds/openldap",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.1.13",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.1.12",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    OpenLDAP is a suite of LDAP-related application and development tools.\n    It includes slapd (the standalone LDAP server), slurpd (the standalone\n    LDAP replication server), and various LDAP libraries, utilities and\n    example clients.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    A password extended operation (password EXOP) which fails will cause\n    the slapd server to free() an uninitialized pointer, possibly resulting\n    in a segfault. This only affects servers using the back-ldbm backend.\n    </p>\n    <p>\n    Such a crash is not guaranteed with every failed operation, however, it\n    is possible.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker (or indeed, a normal user) may crash the OpenLDAP server,\n    creating a Denial of Service condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    A workaround is not currently known for this issue. All users are\n    advised to upgrade to the latest version of the affected package.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    OpenLDAP users should upgrade to version 2.1.13 or later:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n    \n    # emerge -pv \">=net-nds/openldap-2.1.13\"\n    # emerge \">=net-nds/openldap-2.1.13\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "OpenLDAP ITS Bug and Patch",
-        "Link": "https://www.openldap.org/its/index.cgi?findid=2390"
-      },
-      {
-        "Text": "CVE-2003-1201",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-1201"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-05-22T05:51:37Z"
-    }
-  ]
+	"ID": "200403-12",
+	"Title": "OpenLDAP DoS Vulnerability",
+	"Synopsis": "\n    A failed password operation can cause the OpenLDAP slapd server, if it is\n    using the back-ldbm backend, to free memory that was never allocated.\n  ",
+	"Product": {
+		"Text": "openldap",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-03-31",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "02"
+	},
+	"Bug": [
+		"26728"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-nds/openldap",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.1.13",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.1.12",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    OpenLDAP is a suite of LDAP-related application and development tools.\n    It includes slapd (the standalone LDAP server), slurpd (the standalone\n    LDAP replication server), and various LDAP libraries, utilities and\n    example clients.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    A password extended operation (password EXOP) which fails will cause\n    the slapd server to free() an uninitialized pointer, possibly resulting\n    in a segfault. This only affects servers using the back-ldbm backend.\n    </p>\n    <p>\n    Such a crash is not guaranteed with every failed operation, however, it\n    is possible.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker (or indeed, a normal user) may crash the OpenLDAP server,\n    creating a Denial of Service condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    A workaround is not currently known for this issue. All users are\n    advised to upgrade to the latest version of the affected package.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    OpenLDAP users should upgrade to version 2.1.13 or later:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n    \n    # emerge -pv \">=net-nds/openldap-2.1.13\"\n    # emerge \">=net-nds/openldap-2.1.13\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "OpenLDAP ITS Bug and Patch",
+				"Link": "https://www.openldap.org/its/index.cgi?findid=2390"
+			},
+			{
+				"Text": "CVE-2003-1201",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-1201"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-05-22T05:51:37Z"
+		}
+	]
 }

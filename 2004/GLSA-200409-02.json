@@ -1,98 +1,98 @@
 {
-  "ID": "200409-02",
-  "Title": "MySQL: Insecure temporary file creation in mysqlhotcopy",
-  "Synopsis": "\n    The mysqlhotcopy utility can create temporary files with predictable paths,\n    allowing an attacker to use a symlink to trick MySQL into overwriting\n    important data.\n  ",
-  "Product": {
-    "Text": "MySQL",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-09-01",
-  "Revised": {
-    "Text": "2004-09-01",
-    "Count": "01"
-  },
-  "Bug": [
-    "60744"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-db/mysql",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.0.20-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.0.20",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    MySQL is a popular open-source multi-threaded, multi-user SQL database\n    server.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Jeroen van Wolffelaar discovered that the MySQL database hot copy utility\n    (mysqlhotcopy.sh), when using the scp method, uses temporary files with\n    predictable names. A malicious local user with write access to the /tmp\n    directory could create a symbolic link pointing to a file, which may then\n    be overwritten. In cases where mysqlhotcopy is run as root, a malicious\n    user could create a symlink to a critical file such as /etc/passwd and\n    cause it to be overwritten.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local attacker could use this vulnerability to destroy other users' data\n    or corrupt and destroy system files, possibly leading to a denial of\n    service condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All MySQL users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n\n    # emerge -pv \">=dev-db/mysql-4.0.20-r1\"\n    # emerge \">=dev-db/mysql-4.0.20-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2004-0457",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0457"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2004-08-31T08:03:33Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-08-31T15:42:33Z"
-    }
-  ]
+	"ID": "200409-02",
+	"Title": "MySQL: Insecure temporary file creation in mysqlhotcopy",
+	"Synopsis": "\n    The mysqlhotcopy utility can create temporary files with predictable paths,\n    allowing an attacker to use a symlink to trick MySQL into overwriting\n    important data.\n  ",
+	"Product": {
+		"Text": "MySQL",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-09-01",
+	"Revised": {
+		"Text": "2004-09-01",
+		"Count": "01"
+	},
+	"Bug": [
+		"60744"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-db/mysql",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.0.20-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.0.20",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    MySQL is a popular open-source multi-threaded, multi-user SQL database\n    server.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Jeroen van Wolffelaar discovered that the MySQL database hot copy utility\n    (mysqlhotcopy.sh), when using the scp method, uses temporary files with\n    predictable names. A malicious local user with write access to the /tmp\n    directory could create a symbolic link pointing to a file, which may then\n    be overwritten. In cases where mysqlhotcopy is run as root, a malicious\n    user could create a symlink to a critical file such as /etc/passwd and\n    cause it to be overwritten.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local attacker could use this vulnerability to destroy other users' data\n    or corrupt and destroy system files, possibly leading to a denial of\n    service condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All MySQL users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n\n    # emerge -pv \">=dev-db/mysql-4.0.20-r1\"\n    # emerge \">=dev-db/mysql-4.0.20-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2004-0457",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0457"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2004-08-31T08:03:33Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-08-31T15:42:33Z"
+		}
+	]
 }

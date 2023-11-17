@@ -1,98 +1,98 @@
 {
-  "ID": "202003-09",
-  "Title": "OpenID library for Ruby: Server-Side Request Forgery",
-  "Synopsis": "A vulnerability in OpenID library for Ruby at worst might allow an\n    attacker to bypass authentication.\n  ",
-  "Product": {
-    "Text": "ruby-openid",
-    "Type": "ebuild"
-  },
-  "Announced": "2020-03-14",
-  "Revised": {
-    "Text": "2020-03-14",
-    "Count": "2"
-  },
-  "Bug": [
-    "698464"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-ruby/ruby-openid",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.9.2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.9.2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>A Ruby library for verifying and serving OpenID identities.</p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>It was discovered that OpenID library for Ruby performed discovery\n      first, and then verification.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>A remote attacker could possibly change the URL used for discovery and\n      trick the server into connecting to the URL. This server in turn could be\n      a private server not\n      publicly accessible.\n    </p>\n    \n    <p>In addition, if the client that uses this library discloses connection\n      errors, this in turn could disclose information from the private server\n      to the attacker.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All ruby-openid users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-ruby/ruby-openid-2.9.2\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2019-11027",
-        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2019-11027"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "whissi",
-      "Tag": "requester",
-      "Timestamp": "2020-03-13T02:03:43Z"
-    },
-    {
-      "Text": "whissi",
-      "Tag": "submitter",
-      "Timestamp": "2020-03-14T16:10:29Z"
-    }
-  ]
+	"ID": "202003-09",
+	"Title": "OpenID library for Ruby: Server-Side Request Forgery",
+	"Synopsis": "A vulnerability in OpenID library for Ruby at worst might allow an\n    attacker to bypass authentication.\n  ",
+	"Product": {
+		"Text": "ruby-openid",
+		"Type": "ebuild"
+	},
+	"Announced": "2020-03-14",
+	"Revised": {
+		"Text": "2020-03-14",
+		"Count": "2"
+	},
+	"Bug": [
+		"698464"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-ruby/ruby-openid",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.9.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.9.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>A Ruby library for verifying and serving OpenID identities.</p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>It was discovered that OpenID library for Ruby performed discovery\n      first, and then verification.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>A remote attacker could possibly change the URL used for discovery and\n      trick the server into connecting to the URL. This server in turn could be\n      a private server not\n      publicly accessible.\n    </p>\n    \n    <p>In addition, if the client that uses this library discloses connection\n      errors, this in turn could disclose information from the private server\n      to the attacker.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All ruby-openid users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-ruby/ruby-openid-2.9.2\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2019-11027",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2019-11027"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "whissi",
+			"Tag": "requester",
+			"Timestamp": "2020-03-13T02:03:43Z"
+		},
+		{
+			"Text": "whissi",
+			"Tag": "submitter",
+			"Timestamp": "2020-03-14T16:10:29Z"
+		}
+	]
 }

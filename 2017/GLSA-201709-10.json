@@ -1,102 +1,102 @@
 {
-  "ID": "201709-10",
-  "Title": "Git: Command injection",
-  "Synopsis": "A command injection vulnerability in Git may allow remote attackers\n    to execute arbitrary code.\n  ",
-  "Product": {
-    "Text": "git",
-    "Type": "ebuild"
-  },
-  "Announced": "2017-09-17",
-  "Revised": {
-    "Text": "2017-09-17",
-    "Count": "1"
-  },
-  "Bug": [
-    "627488"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-vcs/git",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.13.5",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.13.5",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Git is a small and fast distributed version control system designed to\n      handle small and large projects.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Specially crafted ‘ssh://...’ URLs may allow the owner of the\n      repository to execute arbitrary commands on client’s machine if those\n      commands are already installed on the client’s system. This is\n      especially dangerous when the third-party repository has one or more\n      submodules with specially crafted ‘ssh://...’ URLs. Each time the\n      repository is recursively cloned or submodules are updated the payload\n      will be triggered.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker, by enticing a user to clone a specially crafted\n      repository, could possibly execute arbitrary code with the privileges of\n      the process.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All Git users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-vcs/git-2.13.5\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "\n      CVE-2017-1000117\n    ",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-1000117"
-      },
-      {
-        "Text": "Mailing\n      list ARChives (MARC) Git Team Announce\n    ",
-        "Link": "https://marc.info/?l=git&m=150238802328673&w=2"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "b-man",
-      "Tag": "requester",
-      "Timestamp": "2017-09-08T23:46:38Z"
-    },
-    {
-      "Text": "chrisadr",
-      "Tag": "submitter",
-      "Timestamp": "2017-09-17T19:03:46Z"
-    }
-  ]
+	"ID": "201709-10",
+	"Title": "Git: Command injection",
+	"Synopsis": "A command injection vulnerability in Git may allow remote attackers\n    to execute arbitrary code.\n  ",
+	"Product": {
+		"Text": "git",
+		"Type": "ebuild"
+	},
+	"Announced": "2017-09-17",
+	"Revised": {
+		"Text": "2017-09-17",
+		"Count": "1"
+	},
+	"Bug": [
+		"627488"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-vcs/git",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.13.5",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.13.5",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Git is a small and fast distributed version control system designed to\n      handle small and large projects.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Specially crafted ‘ssh://...’ URLs may allow the owner of the\n      repository to execute arbitrary commands on client’s machine if those\n      commands are already installed on the client’s system. This is\n      especially dangerous when the third-party repository has one or more\n      submodules with specially crafted ‘ssh://...’ URLs. Each time the\n      repository is recursively cloned or submodules are updated the payload\n      will be triggered.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker, by enticing a user to clone a specially crafted\n      repository, could possibly execute arbitrary code with the privileges of\n      the process.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All Git users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-vcs/git-2.13.5\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "\n      CVE-2017-1000117\n    ",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-1000117"
+			},
+			{
+				"Text": "Mailing\n      list ARChives (MARC) Git Team Announce\n    ",
+				"Link": "https://marc.info/?l=git&m=150238802328673&w=2"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "b-man",
+			"Tag": "requester",
+			"Timestamp": "2017-09-08T23:46:38Z"
+		},
+		{
+			"Text": "chrisadr",
+			"Tag": "submitter",
+			"Timestamp": "2017-09-17T19:03:46Z"
+		}
+	]
 }

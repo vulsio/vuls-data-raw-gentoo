@@ -1,107 +1,107 @@
 {
-  "ID": "200704-22",
-  "Title": "BEAST: Denial of service",
-  "Synopsis": "\n    A vulnerability has been discovered in BEAST allowing for a Denial of\n    Service.\n  ",
-  "Product": {
-    "Text": "BEAST",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-04-27",
-  "Revised": {
-    "Text": "2007-04-27",
-    "Count": "01"
-  },
-  "Bug": [
-    "163146"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-sound/beast",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.7.1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.7.1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    BEdevilled Audio SysTem is an audio compositor, supporting a wide range\n    of audio formats.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    BEAST, which is installed as setuid root, fails to properly check\n    whether it can drop privileges accordingly if seteuid() fails due to a\n    user exceeding assigned resource limits.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "low",
-    "Text": "\n    <p>\n    A local user could exceed his resource limit in order to prevent the\n    seteuid() call from succeeding. This may lead BEAST to keep running\n    with root privileges. Then, the local user could use the \"save as\"\n    dialog box to overwrite any file on the vulnerable system, potentially\n    leading to a Denial of Service.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All BEAST users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-sound/beast-0.7.1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-2916",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2916"
-      },
-      {
-        "Text": "CVE-2006-4447",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4447"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-04-04T08:02:22Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-04-04T18:26:01Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-04-06T18:26:41Z"
-    }
-  ]
+	"ID": "200704-22",
+	"Title": "BEAST: Denial of service",
+	"Synopsis": "\n    A vulnerability has been discovered in BEAST allowing for a Denial of\n    Service.\n  ",
+	"Product": {
+		"Text": "BEAST",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-04-27",
+	"Revised": {
+		"Text": "2007-04-27",
+		"Count": "01"
+	},
+	"Bug": [
+		"163146"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-sound/beast",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.7.1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.7.1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    BEdevilled Audio SysTem is an audio compositor, supporting a wide range\n    of audio formats.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    BEAST, which is installed as setuid root, fails to properly check\n    whether it can drop privileges accordingly if seteuid() fails due to a\n    user exceeding assigned resource limits.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "low",
+		"Text": "\n    <p>\n    A local user could exceed his resource limit in order to prevent the\n    seteuid() call from succeeding. This may lead BEAST to keep running\n    with root privileges. Then, the local user could use the \"save as\"\n    dialog box to overwrite any file on the vulnerable system, potentially\n    leading to a Denial of Service.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All BEAST users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-sound/beast-0.7.1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-2916",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2916"
+			},
+			{
+				"Text": "CVE-2006-4447",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4447"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-04-04T08:02:22Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-04-04T18:26:01Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-04-06T18:26:41Z"
+		}
+	]
 }

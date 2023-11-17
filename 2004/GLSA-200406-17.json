@@ -1,101 +1,101 @@
 {
-  "ID": "200406-17",
-  "Title": "IPsec-Tools: authentication bug in racoon",
-  "Synopsis": "\n    racoon provided as part of IPsec-Tools fails do proper authentication.\n  ",
-  "Product": {
-    "Text": "IPsec-Tools",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-06-22",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "02"
-  },
-  "Bug": [
-    "53915"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-firewall/ipsec-tools",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.3.3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.3.3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    IPsec-Tools is a port of KAME's implementation of the IPsec utilities.\n    It contains a collection of network monitoring tools, including racoon,\n    ping, and ping6.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The KAME IKE daemon racoon is used to authenticate peers during Phase 1\n    when using either preshared keys, GSS-API, or RSA signatures. When\n    using RSA signatures racoon validates the X.509 certificate but not the\n    RSA signature.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    By sending a valid and trusted X.509 certificate and any private key an\n    attacker could exploit this vulnerability to perform man-in-the-middle\n    attacks and initiate unauthorized connections.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time. All users are encouraged to\n    upgrade to the latest available version.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All IPsec-Tools users should upgrade to the latest stable version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n    \n    # emerge -pv \">=net-firewall/ipsec-tools-0.3.3\"\n    # emerge \">=net-firewall/ipsec-tools-0.3.3\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "IPsec-Tools Advisory",
-        "Link": "https://ipsec-tools.sourceforge.net/x509sig.html"
-      },
-      {
-        "Text": "CVE-2004-0155",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0155"
-      },
-      {
-        "Text": "CVE-2004-0607",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0607"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "submitter",
-      "Timestamp": ""
-    }
-  ]
+	"ID": "200406-17",
+	"Title": "IPsec-Tools: authentication bug in racoon",
+	"Synopsis": "\n    racoon provided as part of IPsec-Tools fails do proper authentication.\n  ",
+	"Product": {
+		"Text": "IPsec-Tools",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-06-22",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "02"
+	},
+	"Bug": [
+		"53915"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-firewall/ipsec-tools",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.3.3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.3.3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    IPsec-Tools is a port of KAME's implementation of the IPsec utilities.\n    It contains a collection of network monitoring tools, including racoon,\n    ping, and ping6.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The KAME IKE daemon racoon is used to authenticate peers during Phase 1\n    when using either preshared keys, GSS-API, or RSA signatures. When\n    using RSA signatures racoon validates the X.509 certificate but not the\n    RSA signature.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    By sending a valid and trusted X.509 certificate and any private key an\n    attacker could exploit this vulnerability to perform man-in-the-middle\n    attacks and initiate unauthorized connections.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time. All users are encouraged to\n    upgrade to the latest available version.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All IPsec-Tools users should upgrade to the latest stable version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n    \n    # emerge -pv \">=net-firewall/ipsec-tools-0.3.3\"\n    # emerge \">=net-firewall/ipsec-tools-0.3.3\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "IPsec-Tools Advisory",
+				"Link": "https://ipsec-tools.sourceforge.net/x509sig.html"
+			},
+			{
+				"Text": "CVE-2004-0155",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0155"
+			},
+			{
+				"Text": "CVE-2004-0607",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0607"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "submitter",
+			"Timestamp": ""
+		}
+	]
 }

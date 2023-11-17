@@ -1,71 +1,71 @@
 {
-  "ID": "200312-01",
-  "Title": "rsync.gentoo.org: rotation server compromised",
-  "Synopsis": "\n    A server in the rsync.gentoo.org rotation was compromised.\n  ",
-  "Product": {
-    "Text": "rsync mirror",
-    "Type": "infrastructure"
-  },
-  "Announced": "2003-12-02",
-  "Revised": {
-    "Text": "2003-12-02",
-    "Count": "01"
-  },
-  "Bug": null,
-  "Access": "",
-  "Affected": {
-    "Package": null,
-    "Service": {
-      "Text": "",
-      "Type": "rsync",
-      "Fixed": "yes"
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    The rsync.gentoo.org rotation of servers provides an up to date Portage\n    tree using the rsync file transfer protocol.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    On December 2nd at approximately 03:45 UTC, one of the servers that makes up\n    the rsync.gentoo.org rotation was compromised via a remote exploit.  At this\n    point, we are still performing forensic analysis.  However, the compromised\n    system had both an IDS and a file integrity checker installed and we have a\n    very detailed forensic trail of what happened once the box was breached, so\n    we are reasonably confident that the portage tree stored on that box was\n    unaffected.\n    </p>\n    <p>\n    The attacker appears to have installed a rootkit and modified/deleted some\n    files to cover their tracks, but left the server otherwise untouched.  The\n    box was in a compromised state for approximately one hour before it was\n    discovered and shut down.  During this time, approximately 20 users\n    synchronized against the portage mirror stored on this box.  The method used\n    to gain access to the box remotely is still under investigation.  We will\n    release more details once we have ascertained the cause of the remote\n    exploit.\n    </p>\n    <p>\n    This box is not an official Gentoo infrastructure box and is instead donated\n    by a sponsor.  The box provides other services as well and the sponsor has\n    requested that we not publicly identify the box at this time.  Because the\n    Gentoo part of this box appears to be unaffected by this exploit, we are\n    currently honoring the sponsor's request.  That said, if at any point, we\n    determine that any file in the portage tree was modified in any way, we will\n    release full details about the compromised server.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "low",
-    "Text": "\n    <p>\n    There is no known impact at this time.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    Again, based on the forensic analysis done so far, we are reasonably\n    confident that no files within the Portage tree on the box were affected.\n    However, the server has been removed from all rsync.*.gentoo.org rotations\n    and will remain so until the forensic analysis has been completed and the\n    box has been wiped and rebuilt.  Thus, users preferring an extra level of\n    security may ensure that they have a correct and accurate portage tree by\n    running:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    Which will perform a sync against another server and ensure that all files\n    are up to date.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync"
-    ]
-  },
-  "References": {
-    "URI": null
-  },
-  "Metadata": null
+	"ID": "200312-01",
+	"Title": "rsync.gentoo.org: rotation server compromised",
+	"Synopsis": "\n    A server in the rsync.gentoo.org rotation was compromised.\n  ",
+	"Product": {
+		"Text": "rsync mirror",
+		"Type": "infrastructure"
+	},
+	"Announced": "2003-12-02",
+	"Revised": {
+		"Text": "2003-12-02",
+		"Count": "01"
+	},
+	"Bug": null,
+	"Access": "",
+	"Affected": {
+		"Package": null,
+		"Service": {
+			"Text": "",
+			"Type": "rsync",
+			"Fixed": "yes"
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    The rsync.gentoo.org rotation of servers provides an up to date Portage\n    tree using the rsync file transfer protocol.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    On December 2nd at approximately 03:45 UTC, one of the servers that makes up\n    the rsync.gentoo.org rotation was compromised via a remote exploit.  At this\n    point, we are still performing forensic analysis.  However, the compromised\n    system had both an IDS and a file integrity checker installed and we have a\n    very detailed forensic trail of what happened once the box was breached, so\n    we are reasonably confident that the portage tree stored on that box was\n    unaffected.\n    </p>\n    <p>\n    The attacker appears to have installed a rootkit and modified/deleted some\n    files to cover their tracks, but left the server otherwise untouched.  The\n    box was in a compromised state for approximately one hour before it was\n    discovered and shut down.  During this time, approximately 20 users\n    synchronized against the portage mirror stored on this box.  The method used\n    to gain access to the box remotely is still under investigation.  We will\n    release more details once we have ascertained the cause of the remote\n    exploit.\n    </p>\n    <p>\n    This box is not an official Gentoo infrastructure box and is instead donated\n    by a sponsor.  The box provides other services as well and the sponsor has\n    requested that we not publicly identify the box at this time.  Because the\n    Gentoo part of this box appears to be unaffected by this exploit, we are\n    currently honoring the sponsor's request.  That said, if at any point, we\n    determine that any file in the portage tree was modified in any way, we will\n    release full details about the compromised server.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "low",
+		"Text": "\n    <p>\n    There is no known impact at this time.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    Again, based on the forensic analysis done so far, we are reasonably\n    confident that no files within the Portage tree on the box were affected.\n    However, the server has been removed from all rsync.*.gentoo.org rotations\n    and will remain so until the forensic analysis has been completed and the\n    box has been wiped and rebuilt.  Thus, users preferring an extra level of\n    security may ensure that they have a correct and accurate portage tree by\n    running:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    Which will perform a sync against another server and ensure that all files\n    are up to date.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync"
+		]
+	},
+	"References": {
+		"URI": null
+	},
+	"Metadata": null
 }

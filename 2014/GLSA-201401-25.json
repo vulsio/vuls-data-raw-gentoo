@@ -1,120 +1,120 @@
 {
-  "ID": "201401-25",
-  "Title": "ldns: Arbitrary code execution",
-  "Synopsis": "A heap-based buffer overflow in ldns might allow remote attackers\n    to execute arbitrary code or cause a Denial of Service condition.\n  ",
-  "Product": {
-    "Text": "ldns",
-    "Type": "ebuild"
-  },
-  "Announced": "2014-01-21",
-  "Revised": {
-    "Text": "2014-01-21",
-    "Count": "1"
-  },
-  "Bug": [
-    "384249"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-libs/ldns",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.6.11",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.6.11",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>ldns is a fast DNS library with the goal to simplify DNS programming and\n      to allow developers to easily create software conforming to current RFCs\n      and Internet drafts.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>ldns contains a heap-based buffer overflow in the\n      ldns_rr_new_frm_str_internal function.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could execute arbitrary code or cause a Denial of\n      Service condition with a crafted Resource Record.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All ldns users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "Packages which depend on this library may need to be recompiled. Tools\n      such as revdep-rebuild may assist in identifying these packages.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "NOTE: This is a legacy GLSA. Updates for all affected architectures are\n      available since October 11, 2011. It is likely that your system is\n      already no longer affected by this issue.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-libs/ldns-1.6.11\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2011-3581",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3581"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    underling\n  ",
-      "Tag": "requester",
-      "Timestamp": "2011-10-07T23:37:31Z"
-    },
-    {
-      "Text": "craig",
-      "Tag": "submitter",
-      "Timestamp": "2014-01-21T20:44:51Z"
-    }
-  ]
+	"ID": "201401-25",
+	"Title": "ldns: Arbitrary code execution",
+	"Synopsis": "A heap-based buffer overflow in ldns might allow remote attackers\n    to execute arbitrary code or cause a Denial of Service condition.\n  ",
+	"Product": {
+		"Text": "ldns",
+		"Type": "ebuild"
+	},
+	"Announced": "2014-01-21",
+	"Revised": {
+		"Text": "2014-01-21",
+		"Count": "1"
+	},
+	"Bug": [
+		"384249"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-libs/ldns",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.6.11",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.6.11",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>ldns is a fast DNS library with the goal to simplify DNS programming and\n      to allow developers to easily create software conforming to current RFCs\n      and Internet drafts.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>ldns contains a heap-based buffer overflow in the\n      ldns_rr_new_frm_str_internal function.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could execute arbitrary code or cause a Denial of\n      Service condition with a crafted Resource Record.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All ldns users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "Packages which depend on this library may need to be recompiled. Tools\n      such as revdep-rebuild may assist in identifying these packages.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "NOTE: This is a legacy GLSA. Updates for all affected architectures are\n      available since October 11, 2011. It is likely that your system is\n      already no longer affected by this issue.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-libs/ldns-1.6.11\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2011-3581",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3581"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    underling\n  ",
+			"Tag": "requester",
+			"Timestamp": "2011-10-07T23:37:31Z"
+		},
+		{
+			"Text": "craig",
+			"Tag": "submitter",
+			"Timestamp": "2014-01-21T20:44:51Z"
+		}
+	]
 }

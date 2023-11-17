@@ -1,107 +1,107 @@
 {
-  "ID": "200704-06",
-  "Title": "Evince: Stack overflow in included gv code",
-  "Synopsis": "\n    Evince improperly handles user-supplied data possibly allowing for the\n    execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "evince",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-04-06",
-  "Revised": {
-    "Text": "2007-04-06",
-    "Count": "01"
-  },
-  "Bug": [
-    "156573"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-text/evince",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.6.1-r3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.6.1-r3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Evince is a document viewer for multiple document formats, including\n    PostScript.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Evince includes code from GNU gv that does not properly boundary check\n    user-supplied data before copying it into process buffers.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker could entice a user to open a specially crafted PostScript\n    document with Evince and possibly execute arbitrary code with the\n    rights of the user running Evince.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Evince users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/evince-0.6.1-r3\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-5864",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5864"
-      },
-      {
-        "Text": "GLSA-200611-20",
-        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200611-20.xml"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-03-29T16:08:33Z"
-    },
-    {
-      "Text": "\n    aetius\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-04-02T13:26:04Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-04-03T22:29:26Z"
-    }
-  ]
+	"ID": "200704-06",
+	"Title": "Evince: Stack overflow in included gv code",
+	"Synopsis": "\n    Evince improperly handles user-supplied data possibly allowing for the\n    execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "evince",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-04-06",
+	"Revised": {
+		"Text": "2007-04-06",
+		"Count": "01"
+	},
+	"Bug": [
+		"156573"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-text/evince",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.6.1-r3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.6.1-r3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Evince is a document viewer for multiple document formats, including\n    PostScript.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Evince includes code from GNU gv that does not properly boundary check\n    user-supplied data before copying it into process buffers.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker could entice a user to open a specially crafted PostScript\n    document with Evince and possibly execute arbitrary code with the\n    rights of the user running Evince.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Evince users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/evince-0.6.1-r3\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-5864",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5864"
+			},
+			{
+				"Text": "GLSA-200611-20",
+				"Link": "https://www.gentoo.org/security/en/glsa/glsa-200611-20.xml"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-03-29T16:08:33Z"
+		},
+		{
+			"Text": "\n    aetius\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-04-02T13:26:04Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-04-03T22:29:26Z"
+		}
+	]
 }

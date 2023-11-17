@@ -1,107 +1,107 @@
 {
-  "ID": "200705-07",
-  "Title": "Lighttpd: Two Denials of Service",
-  "Synopsis": "\n    Two vulnerabilities have been discovered in Lighttpd, each allowing for a\n    Denial of Service.\n  ",
-  "Product": {
-    "Text": "lighttpd",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-05-07",
-  "Revised": {
-    "Text": "2007-05-07",
-    "Count": "01"
-  },
-  "Bug": [
-    "174043"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-servers/lighttpd",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.4.14",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.4.14",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Lighttpd is a lightweight HTTP web server.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Robert Jakabosky discovered an infinite loop triggered by a connection\n    abort when Lighttpd processes carriage return and line feed sequences.\n    Marcus Rueckert discovered a NULL pointer dereference when a server\n    running Lighttpd tries to access a file with a mtime of 0.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could upload a specially crafted file to the server\n    or send a specially crafted request and then abort the connection,\n    possibly resulting in a crash or a Denial of Service by CPU\n    consumption.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Lighttpd users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-servers/lighttpd-1.4.14\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-1869",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1869"
-      },
-      {
-        "Text": "CVE-2007-1870",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1870"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-04-30T09:09:47Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-05-01T19:04:44Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-05-06T21:36:16Z"
-    }
-  ]
+	"ID": "200705-07",
+	"Title": "Lighttpd: Two Denials of Service",
+	"Synopsis": "\n    Two vulnerabilities have been discovered in Lighttpd, each allowing for a\n    Denial of Service.\n  ",
+	"Product": {
+		"Text": "lighttpd",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-05-07",
+	"Revised": {
+		"Text": "2007-05-07",
+		"Count": "01"
+	},
+	"Bug": [
+		"174043"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-servers/lighttpd",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.4.14",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.4.14",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Lighttpd is a lightweight HTTP web server.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Robert Jakabosky discovered an infinite loop triggered by a connection\n    abort when Lighttpd processes carriage return and line feed sequences.\n    Marcus Rueckert discovered a NULL pointer dereference when a server\n    running Lighttpd tries to access a file with a mtime of 0.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could upload a specially crafted file to the server\n    or send a specially crafted request and then abort the connection,\n    possibly resulting in a crash or a Denial of Service by CPU\n    consumption.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Lighttpd users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-servers/lighttpd-1.4.14\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-1869",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1869"
+			},
+			{
+				"Text": "CVE-2007-1870",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1870"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-04-30T09:09:47Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-05-01T19:04:44Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-05-06T21:36:16Z"
+		}
+	]
 }

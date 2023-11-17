@@ -1,140 +1,140 @@
 {
-  "ID": "200602-04",
-  "Title": "Xpdf, Poppler: Heap overflow",
-  "Synopsis": "\n    Xpdf and Poppler are vulnerable to a heap overflow that may be exploited to\n    execute arbitrary code.\n  ",
-  "Product": {
-    "Text": "xpdf poppler",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-02-12",
-  "Revised": {
-    "Text": "2006-02-12",
-    "Count": "01"
-  },
-  "Bug": [
-    "120985"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-text/xpdf",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.01-r7",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.01-r7",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-text/poppler",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.5.0-r4",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.5.0-r4",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Xpdf is a PDF file viewer that runs under the X Window System.\n    Poppler is a PDF rendering library based on the Xpdf 3.0 code base.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Dirk Mueller has reported a vulnerability in Xpdf. It is caused by\n    a missing boundary check in the splash rasterizer engine when handling\n    PDF splash images with overly large dimensions.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    By sending a specially crafted PDF file to a victim, an attacker\n    could cause an overflow, potentially resulting in the execution of\n    arbitrary code with the privileges of the user running the application.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Xpdf users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All Poppler users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/xpdf-3.01-r7\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/poppler-0.5.0-r4\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-0301",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0301"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    adir\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-02-08T03:05:29Z"
-    },
-    {
-      "Text": "\n    adir\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-02-08T03:06:48Z"
-    }
-  ]
+	"ID": "200602-04",
+	"Title": "Xpdf, Poppler: Heap overflow",
+	"Synopsis": "\n    Xpdf and Poppler are vulnerable to a heap overflow that may be exploited to\n    execute arbitrary code.\n  ",
+	"Product": {
+		"Text": "xpdf poppler",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-02-12",
+	"Revised": {
+		"Text": "2006-02-12",
+		"Count": "01"
+	},
+	"Bug": [
+		"120985"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-text/xpdf",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.01-r7",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.01-r7",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-text/poppler",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.5.0-r4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.5.0-r4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Xpdf is a PDF file viewer that runs under the X Window System.\n    Poppler is a PDF rendering library based on the Xpdf 3.0 code base.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Dirk Mueller has reported a vulnerability in Xpdf. It is caused by\n    a missing boundary check in the splash rasterizer engine when handling\n    PDF splash images with overly large dimensions.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    By sending a specially crafted PDF file to a victim, an attacker\n    could cause an overflow, potentially resulting in the execution of\n    arbitrary code with the privileges of the user running the application.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Xpdf users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All Poppler users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/xpdf-3.01-r7\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/poppler-0.5.0-r4\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-0301",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0301"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    adir\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-02-08T03:05:29Z"
+		},
+		{
+			"Text": "\n    adir\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-02-08T03:06:48Z"
+		}
+	]
 }

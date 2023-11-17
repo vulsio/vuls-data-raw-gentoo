@@ -1,110 +1,110 @@
 {
-  "ID": "200409-32",
-  "Title": "getmail: Filesystem overwrite vulnerability",
-  "Synopsis": "\n    getmail contains a vulnerability that could potentially allow any local\n    user to create or overwrite files in any directory on the system. This flaw\n    can be escalated further and possibly lead to a complete system compromise.\n  ",
-  "Product": {
-    "Text": "getmail",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-09-23",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "02"
-  },
-  "Bug": [
-    "64643"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-mail/getmail",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.2.0",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.2.0",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    getmail is a reliable fetchmail replacement that supports Maildir,\n    Mboxrd and external MDA delivery.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    David Watson discovered a vulnerability in getmail when it is\n    configured to run as root and deliver mail to the maildirs/mbox files\n    of untrusted local users. A malicious local user can then exploit a\n    race condition, or a similar symlink attack, and potentially cause\n    getmail to create or overwrite files in any directory on the system.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    An untrusted local user could potentially create or overwrite files in\n    any directory on the system. This vulnerability may also be exploited\n    to have arbitrary commands executed as root.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Do not run getmail as a privileged user; or, in version 4, use an\n    external MDA with explicitly configured user and group privileges.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All getmail users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n    \n    # emerge -pv \">=net-mail/getmail-4.2.0\"\n    # emerge \">=net-mail/getmail-4.2.0\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "getmail ChangeLog",
-        "Link": "http://www.qcc.ca/~charlesc/software/getmail-4/CHANGELOG"
-      },
-      {
-        "Text": "getmail Mailing List",
-        "Link": "https://article.gmane.org/gmane.mail.getmail.user/1430"
-      },
-      {
-        "Text": "CVE-2004-0880",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0880"
-      },
-      {
-        "Text": "CVE-2004-0881",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0881"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    lewk\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-09-21T21:51:14Z"
-    },
-    {
-      "Text": "\n    lewk\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-09-21T21:52:24Z"
-    }
-  ]
+	"ID": "200409-32",
+	"Title": "getmail: Filesystem overwrite vulnerability",
+	"Synopsis": "\n    getmail contains a vulnerability that could potentially allow any local\n    user to create or overwrite files in any directory on the system. This flaw\n    can be escalated further and possibly lead to a complete system compromise.\n  ",
+	"Product": {
+		"Text": "getmail",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-09-23",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "02"
+	},
+	"Bug": [
+		"64643"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-mail/getmail",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.2.0",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.2.0",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    getmail is a reliable fetchmail replacement that supports Maildir,\n    Mboxrd and external MDA delivery.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    David Watson discovered a vulnerability in getmail when it is\n    configured to run as root and deliver mail to the maildirs/mbox files\n    of untrusted local users. A malicious local user can then exploit a\n    race condition, or a similar symlink attack, and potentially cause\n    getmail to create or overwrite files in any directory on the system.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    An untrusted local user could potentially create or overwrite files in\n    any directory on the system. This vulnerability may also be exploited\n    to have arbitrary commands executed as root.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Do not run getmail as a privileged user; or, in version 4, use an\n    external MDA with explicitly configured user and group privileges.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All getmail users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n    \n    # emerge -pv \">=net-mail/getmail-4.2.0\"\n    # emerge \">=net-mail/getmail-4.2.0\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "getmail ChangeLog",
+				"Link": "http://www.qcc.ca/~charlesc/software/getmail-4/CHANGELOG"
+			},
+			{
+				"Text": "getmail Mailing List",
+				"Link": "https://article.gmane.org/gmane.mail.getmail.user/1430"
+			},
+			{
+				"Text": "CVE-2004-0880",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0880"
+			},
+			{
+				"Text": "CVE-2004-0881",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0881"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    lewk\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-09-21T21:51:14Z"
+		},
+		{
+			"Text": "\n    lewk\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-09-21T21:52:24Z"
+		}
+	]
 }

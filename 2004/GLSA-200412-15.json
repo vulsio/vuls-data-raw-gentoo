@@ -1,114 +1,114 @@
 {
-  "ID": "200412-15",
-  "Title": "Ethereal: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities exist in Ethereal, which may allow an attacker to\n    run arbitrary code, crash the program or perform DoS by CPU and disk\n    utilization.\n  ",
-  "Product": {
-    "Text": "Ethereal",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-12-19",
-  "Revised": {
-    "Text": "2004-12-19",
-    "Count": "01"
-  },
-  "Bug": [
-    "74443"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-analyzer/ethereal",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.10.8",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.10.8",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Ethereal is a feature rich network protocol analyzer.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    There are multiple vulnerabilities in versions of Ethereal earlier\n    than 0.10.8, including:\n    </p>\n    <ul>\n    <li>Bug in DICOM dissection\n    discovered by Bing could make Ethereal crash (CAN 2004-1139).</li>\n    <li>An invalid RTP timestamp could make Ethereal hang and create a\n    large temporary file (CAN 2004-1140).</li>\n    <li>The HTTP dissector could\n    access previously-freed memory (CAN 2004-1141).</li>\n    <li>Brian Caswell\n    discovered that an improperly formatted SMB could make Ethereal hang\n    (CAN 2004-1142).</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    An attacker might be able to use these vulnerabilities to crash\n    Ethereal, perform DoS by CPU and disk space utilization or even execute\n    arbitrary code with the permissions of the user running Ethereal, which\n    could be the root user.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    For a temporary workaround you can disable all affected protocol\n    dissectors by selecting Analyze-&gt;Enabled Protocols... and deselecting\n    them from the list. However, it is strongly recommended to upgrade to\n    the latest stable version.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All ethereal users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/ethereal-0.10.8\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "Ethereal enpa-sa-00016",
-        "Link": "http://www.ethereal.com/appnotes/enpa-sa-00016.html"
-      },
-      {
-        "Text": "CAN 2004-1139",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1139"
-      },
-      {
-        "Text": "CAN 2004-1140",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1140"
-      },
-      {
-        "Text": "CAN 2004-1141",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1141"
-      },
-      {
-        "Text": "CAN 2004-1142",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1142"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-12-15T13:06:28Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-12-19T14:01:55Z"
-    }
-  ]
+	"ID": "200412-15",
+	"Title": "Ethereal: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities exist in Ethereal, which may allow an attacker to\n    run arbitrary code, crash the program or perform DoS by CPU and disk\n    utilization.\n  ",
+	"Product": {
+		"Text": "Ethereal",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-12-19",
+	"Revised": {
+		"Text": "2004-12-19",
+		"Count": "01"
+	},
+	"Bug": [
+		"74443"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-analyzer/ethereal",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.10.8",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.10.8",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Ethereal is a feature rich network protocol analyzer.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    There are multiple vulnerabilities in versions of Ethereal earlier\n    than 0.10.8, including:\n    </p>\n    <ul>\n    <li>Bug in DICOM dissection\n    discovered by Bing could make Ethereal crash (CAN 2004-1139).</li>\n    <li>An invalid RTP timestamp could make Ethereal hang and create a\n    large temporary file (CAN 2004-1140).</li>\n    <li>The HTTP dissector could\n    access previously-freed memory (CAN 2004-1141).</li>\n    <li>Brian Caswell\n    discovered that an improperly formatted SMB could make Ethereal hang\n    (CAN 2004-1142).</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    An attacker might be able to use these vulnerabilities to crash\n    Ethereal, perform DoS by CPU and disk space utilization or even execute\n    arbitrary code with the permissions of the user running Ethereal, which\n    could be the root user.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    For a temporary workaround you can disable all affected protocol\n    dissectors by selecting Analyze-&gt;Enabled Protocols... and deselecting\n    them from the list. However, it is strongly recommended to upgrade to\n    the latest stable version.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All ethereal users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/ethereal-0.10.8\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "Ethereal enpa-sa-00016",
+				"Link": "http://www.ethereal.com/appnotes/enpa-sa-00016.html"
+			},
+			{
+				"Text": "CAN 2004-1139",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1139"
+			},
+			{
+				"Text": "CAN 2004-1140",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1140"
+			},
+			{
+				"Text": "CAN 2004-1141",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1141"
+			},
+			{
+				"Text": "CAN 2004-1142",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1142"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-12-15T13:06:28Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-12-19T14:01:55Z"
+		}
+	]
 }

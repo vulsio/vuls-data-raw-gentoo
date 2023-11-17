@@ -1,93 +1,93 @@
 {
-  "ID": "200404-14",
-  "Title": "Multiple format string vulnerabilities in cadaver",
-  "Synopsis": "\n    There are multiple format string vulnerabilities in the neon library used\n    in cadaver, possibly leading to execution of arbitrary code when connected\n    to a malicious server.\n  ",
-  "Product": {
-    "Text": "cadaver",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-04-19",
-  "Revised": {
-    "Text": "2004-04-19",
-    "Count": "01"
-  },
-  "Bug": [
-    "47799"
-  ],
-  "Access": "remote ",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-misc/cadaver",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.22.1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.22.1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    According to <uri link=\"http://www.webdav.org/cadaver\">http://www.webdav.org/cadaver</uri>,\n    cadaver is a command-line WebDAV client for Unix. It supports file upload,\n    download, on-screen display, namespace operations (move/copy), collection\n    creation and deletion, and locking operations.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Cadaver code includes the neon library, which in versions 0.24.4 and\n    previous is vulnerable to multiple format string attacks. The latest\n    version of cadaver uses version 0.24.5 of the neon library, which makes it\n    immune to this vulnerability.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    When using cadaver to connect to an untrusted WebDAV server, this\n    vulnerability can allow a malicious remote server to execute arbitrary code\n    on the client with the rights of the user using cadaver.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    A workaround is not currently known for this issue. All users are advised\n    to upgrade to the latest version of the affected package.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    cadaver users should upgrade to version 0.22.1 or later:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n\n    # emerge -pv \">=net-misc/cadaver-0.22.1\"\n    # emerge \">=net-misc/cadaver-0.22.1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2004-0179",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0179"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": ""
-    }
-  ]
+	"ID": "200404-14",
+	"Title": "Multiple format string vulnerabilities in cadaver",
+	"Synopsis": "\n    There are multiple format string vulnerabilities in the neon library used\n    in cadaver, possibly leading to execution of arbitrary code when connected\n    to a malicious server.\n  ",
+	"Product": {
+		"Text": "cadaver",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-04-19",
+	"Revised": {
+		"Text": "2004-04-19",
+		"Count": "01"
+	},
+	"Bug": [
+		"47799"
+	],
+	"Access": "remote ",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-misc/cadaver",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.22.1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.22.1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    According to <uri link=\"http://www.webdav.org/cadaver\">http://www.webdav.org/cadaver</uri>,\n    cadaver is a command-line WebDAV client for Unix. It supports file upload,\n    download, on-screen display, namespace operations (move/copy), collection\n    creation and deletion, and locking operations.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Cadaver code includes the neon library, which in versions 0.24.4 and\n    previous is vulnerable to multiple format string attacks. The latest\n    version of cadaver uses version 0.24.5 of the neon library, which makes it\n    immune to this vulnerability.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    When using cadaver to connect to an untrusted WebDAV server, this\n    vulnerability can allow a malicious remote server to execute arbitrary code\n    on the client with the rights of the user using cadaver.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    A workaround is not currently known for this issue. All users are advised\n    to upgrade to the latest version of the affected package.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    cadaver users should upgrade to version 0.22.1 or later:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n\n    # emerge -pv \">=net-misc/cadaver-0.22.1\"\n    # emerge \">=net-misc/cadaver-0.22.1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2004-0179",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0179"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": ""
+		}
+	]
 }

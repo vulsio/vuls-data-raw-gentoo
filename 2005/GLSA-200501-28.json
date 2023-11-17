@@ -1,134 +1,134 @@
 {
-  "ID": "200501-28",
-  "Title": "Xpdf, GPdf: Stack overflow in Decrypt::makeFileKey2",
-  "Synopsis": "\n    A stack overflow was discovered in Xpdf, potentially resulting in the\n    execution of arbitrary code. GPdf includes Xpdf code and therefore is\n    vulnerable to the same issue.\n  ",
-  "Product": {
-    "Text": "Xpdf",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-01-21",
-  "Revised": {
-    "Text": "2005-01-21",
-    "Count": "01"
-  },
-  "Bug": [
-    "77888",
-    "78128"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-text/xpdf",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.00-r8",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.00-r7",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-text/gpdf",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.8.2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.8.2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Xpdf is an open source viewer for Portable Document Format (PDF)\n    files. GPdf is a Gnome-based PDF viewer that includes some Xpdf code.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    iDEFENSE reports that the Decrypt::makeFileKey2 function in Xpdf's\n    Decrypt.cc insufficiently checks boundaries when processing /Encrypt\n    /Length tags in PDF files.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker could entice an user to open a specially-crafted PDF\n    file which would trigger a stack overflow, potentially resulting in\n    execution of arbitrary code with the rights of the user running Xpdf or\n    GPdf.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Xpdf users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All GPdf users should also upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/xpdf-3.00-r8\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/gpdf-2.8.2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2005-0064",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0064"
-      },
-      {
-        "Text": "iDEFENSE Advisory",
-        "Link": "http://www.idefense.com/application/poi/display?id=186&type=vulnerabilities&flashstatus=true"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-01-18T13:34:11Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-01-21T20:37:01Z"
-    }
-  ]
+	"ID": "200501-28",
+	"Title": "Xpdf, GPdf: Stack overflow in Decrypt::makeFileKey2",
+	"Synopsis": "\n    A stack overflow was discovered in Xpdf, potentially resulting in the\n    execution of arbitrary code. GPdf includes Xpdf code and therefore is\n    vulnerable to the same issue.\n  ",
+	"Product": {
+		"Text": "Xpdf",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-01-21",
+	"Revised": {
+		"Text": "2005-01-21",
+		"Count": "01"
+	},
+	"Bug": [
+		"77888",
+		"78128"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-text/xpdf",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.00-r8",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.00-r7",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-text/gpdf",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.8.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.8.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Xpdf is an open source viewer for Portable Document Format (PDF)\n    files. GPdf is a Gnome-based PDF viewer that includes some Xpdf code.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    iDEFENSE reports that the Decrypt::makeFileKey2 function in Xpdf's\n    Decrypt.cc insufficiently checks boundaries when processing /Encrypt\n    /Length tags in PDF files.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker could entice an user to open a specially-crafted PDF\n    file which would trigger a stack overflow, potentially resulting in\n    execution of arbitrary code with the rights of the user running Xpdf or\n    GPdf.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Xpdf users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All GPdf users should also upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/xpdf-3.00-r8\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/gpdf-2.8.2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2005-0064",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0064"
+			},
+			{
+				"Text": "iDEFENSE Advisory",
+				"Link": "http://www.idefense.com/application/poi/display?id=186&type=vulnerabilities&flashstatus=true"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-01-18T13:34:11Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-01-21T20:37:01Z"
+		}
+	]
 }

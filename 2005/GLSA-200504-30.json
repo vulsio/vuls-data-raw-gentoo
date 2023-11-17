@@ -1,98 +1,98 @@
 {
-  "ID": "200504-30",
-  "Title": "phpMyAdmin: Insecure SQL script installation",
-  "Synopsis": "\n    phpMyAdmin leaves the SQL install script with insecure permissions,\n    potentially leading to a database compromise.\n  ",
-  "Product": {
-    "Text": "phpmyadmin",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-04-30",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "02"
-  },
-  "Bug": [
-    "88831"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-db/phpmyadmin",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.6.2-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.6.2-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    phpMyAdmin is a tool written in PHP intended to handle the\n    administration of MySQL databases from a web-browser. phpMyAdmin uses a\n    pma MySQL user to control the linked-tables infrastructure. The SQL\n    install script sets the initial password for the pma user.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The phpMyAdmin installation process leaves the SQL install script with\n    insecure permissions.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local attacker could exploit this vulnerability to obtain the initial\n    phpMyAdmin password and from there obtain information about databases\n    accessible by phpMyAdmin.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Change the password for the phpMyAdmin MySQL user (pma):\n    </p>\n    <code>\n    mysql -u root -p\n    SET PASSWORD FOR 'pma'@'localhost' = PASSWORD('MyNewPassword');</code>\n    <p>\n    Update your phpMyAdmin config.inc.php:\n    </p>\n    <code>\n    $cfg['Servers'][$i]['controlpass']   = 'MyNewPassword';</code>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All phpMyAdmin users should change password for the pma user as\n    described above and upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-db/phpmyadmin-2.6.2-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2005-1392",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1392"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-04-29T08:17:12Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-04-29T18:24:53Z"
-    }
-  ]
+	"ID": "200504-30",
+	"Title": "phpMyAdmin: Insecure SQL script installation",
+	"Synopsis": "\n    phpMyAdmin leaves the SQL install script with insecure permissions,\n    potentially leading to a database compromise.\n  ",
+	"Product": {
+		"Text": "phpmyadmin",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-04-30",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "02"
+	},
+	"Bug": [
+		"88831"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-db/phpmyadmin",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.6.2-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.6.2-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    phpMyAdmin is a tool written in PHP intended to handle the\n    administration of MySQL databases from a web-browser. phpMyAdmin uses a\n    pma MySQL user to control the linked-tables infrastructure. The SQL\n    install script sets the initial password for the pma user.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The phpMyAdmin installation process leaves the SQL install script with\n    insecure permissions.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local attacker could exploit this vulnerability to obtain the initial\n    phpMyAdmin password and from there obtain information about databases\n    accessible by phpMyAdmin.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Change the password for the phpMyAdmin MySQL user (pma):\n    </p>\n    <code>\n    mysql -u root -p\n    SET PASSWORD FOR 'pma'@'localhost' = PASSWORD('MyNewPassword');</code>\n    <p>\n    Update your phpMyAdmin config.inc.php:\n    </p>\n    <code>\n    $cfg['Servers'][$i]['controlpass']   = 'MyNewPassword';</code>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All phpMyAdmin users should change password for the pma user as\n    described above and upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-db/phpmyadmin-2.6.2-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2005-1392",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1392"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-04-29T08:17:12Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-04-29T18:24:53Z"
+		}
+	]
 }

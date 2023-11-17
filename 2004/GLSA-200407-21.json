@@ -1,106 +1,106 @@
 {
-  "ID": "200407-21",
-  "Title": "Samba: Multiple buffer overflows",
-  "Synopsis": "\n    Two buffer overflows vulnerabilities were found in Samba, potentially\n    allowing the remote execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "Samba",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-07-29",
-  "Revised": {
-    "Text": "2004-07-29",
-    "Count": "02"
-  },
-  "Bug": [
-    "57962"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-fs/samba",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.0.5",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.0.4-r1",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Samba is a package which allows *nix systems to act as file servers for\n    Windows computers. It also allows *nix systems to mount shares exported by\n    a Samba/CIFS/Windows server. The Samba Web Administration Tool (SWAT) is a\n    web-based configuration tool part of the Samba package.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Evgeny Demidov found a buffer overflow in SWAT, located in the base64 data\n    decoder used to handle HTTP basic authentication (CAN-2004-0600). The same\n    flaw is present in the code used to handle the sambaMungedDial attribute\n    value, when using the ldapsam passdb backend. Another buffer overflow was\n    found in the code used to support the 'mangling method = hash' smb.conf\n    option (CAN-2004-0686). Note that the default Samba value for this option\n    is 'mangling method = hash2' which is not vulnerable.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    The SWAT authentication overflow could be exploited to execute arbitrary\n    code with the rights of the Samba daemon process. The overflow in the\n    sambaMungedDial handling code is not thought to be exploitable. The buffer\n    overflow in 'mangling method = hash' code could also be used to execute\n    arbitrary code on vulnerable configurations.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Users disabling SWAT, not using ldapsam passdb backends and not using the\n    'mangling method = hash' option are not vulnerable.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Samba users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n\n    # emerge -pv \">=net-fs/samba-3.0.5\"\n    # emerge \">=net-fs/samba-3.0.5\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "Samba 3.0.5 Release Notes",
-        "Link": "https://www.samba.org/samba/whatsnew/samba-3.0.5.html"
-      },
-      {
-        "Text": "CAN-2004-0600",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0600"
-      },
-      {
-        "Text": "CAN-2004-0686",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0686"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": ""
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": ""
-    }
-  ]
+	"ID": "200407-21",
+	"Title": "Samba: Multiple buffer overflows",
+	"Synopsis": "\n    Two buffer overflows vulnerabilities were found in Samba, potentially\n    allowing the remote execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "Samba",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-07-29",
+	"Revised": {
+		"Text": "2004-07-29",
+		"Count": "02"
+	},
+	"Bug": [
+		"57962"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-fs/samba",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.0.5",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.0.4-r1",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Samba is a package which allows *nix systems to act as file servers for\n    Windows computers. It also allows *nix systems to mount shares exported by\n    a Samba/CIFS/Windows server. The Samba Web Administration Tool (SWAT) is a\n    web-based configuration tool part of the Samba package.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Evgeny Demidov found a buffer overflow in SWAT, located in the base64 data\n    decoder used to handle HTTP basic authentication (CAN-2004-0600). The same\n    flaw is present in the code used to handle the sambaMungedDial attribute\n    value, when using the ldapsam passdb backend. Another buffer overflow was\n    found in the code used to support the 'mangling method = hash' smb.conf\n    option (CAN-2004-0686). Note that the default Samba value for this option\n    is 'mangling method = hash2' which is not vulnerable.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    The SWAT authentication overflow could be exploited to execute arbitrary\n    code with the rights of the Samba daemon process. The overflow in the\n    sambaMungedDial handling code is not thought to be exploitable. The buffer\n    overflow in 'mangling method = hash' code could also be used to execute\n    arbitrary code on vulnerable configurations.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Users disabling SWAT, not using ldapsam passdb backends and not using the\n    'mangling method = hash' option are not vulnerable.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Samba users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n\n    # emerge -pv \">=net-fs/samba-3.0.5\"\n    # emerge \">=net-fs/samba-3.0.5\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "Samba 3.0.5 Release Notes",
+				"Link": "https://www.samba.org/samba/whatsnew/samba-3.0.5.html"
+			},
+			{
+				"Text": "CAN-2004-0600",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0600"
+			},
+			{
+				"Text": "CAN-2004-0686",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0686"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": ""
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": ""
+		}
+	]
 }

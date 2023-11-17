@@ -1,130 +1,130 @@
 {
-  "ID": "200411-22",
-  "Title": "Davfs2, lvm-user: Insecure tempfile handling",
-  "Synopsis": "\n    Davfs2 and the lvmcreate_initrd script (included in the lvm-user package)\n    are both vulnerable to symlink attacks, potentially allowing a local user\n    to overwrite arbitrary files with the rights of the user running them.\n  ",
-  "Product": {
-    "Text": "davfs2",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-11-11",
-  "Revised": {
-    "Text": "2004-11-11",
-    "Count": "01"
-  },
-  "Bug": [
-    "68406",
-    "69149"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-fs/davfs2",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.2.2-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.2.2-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "sys-fs/lvm-user",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.0.7-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.0.7-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Davfs2 is a file system driver that allows you to mount a WebDAV\n    server as a local disk drive. lvm-user is a package providing userland\n    utilities for LVM (Logical Volume Management) 1.x features.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Florian Schilhabel from the Gentoo Linux Security Audit Team found\n    that Davfs2 insecurely created .pid files in /tmp. Furthermore, Trustix\n    Secure Linux found that the lvmcreate_initrd script, included in the\n    lvm-user Gentoo package, also creates temporary files in\n    world-writeable directories with predictable names.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary\n    files directory, pointing to a valid file somewhere on the filesystem.\n    When Davfs2 or lvmcreate_initrd is called, this would result in the\n    file being overwritten with the rights of the user running the\n    software, which could be the root user.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Davfs2 users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All lvm-user users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-fs/davfs2-0.2.2-r1\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-fs/lvm-user-1.0.7-r2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2004-0972",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0972"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-11-10T09:15:59Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-11-11T20:29:52Z"
-    }
-  ]
+	"ID": "200411-22",
+	"Title": "Davfs2, lvm-user: Insecure tempfile handling",
+	"Synopsis": "\n    Davfs2 and the lvmcreate_initrd script (included in the lvm-user package)\n    are both vulnerable to symlink attacks, potentially allowing a local user\n    to overwrite arbitrary files with the rights of the user running them.\n  ",
+	"Product": {
+		"Text": "davfs2",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-11-11",
+	"Revised": {
+		"Text": "2004-11-11",
+		"Count": "01"
+	},
+	"Bug": [
+		"68406",
+		"69149"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-fs/davfs2",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.2.2-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.2.2-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "sys-fs/lvm-user",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.0.7-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.0.7-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Davfs2 is a file system driver that allows you to mount a WebDAV\n    server as a local disk drive. lvm-user is a package providing userland\n    utilities for LVM (Logical Volume Management) 1.x features.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Florian Schilhabel from the Gentoo Linux Security Audit Team found\n    that Davfs2 insecurely created .pid files in /tmp. Furthermore, Trustix\n    Secure Linux found that the lvmcreate_initrd script, included in the\n    lvm-user Gentoo package, also creates temporary files in\n    world-writeable directories with predictable names.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary\n    files directory, pointing to a valid file somewhere on the filesystem.\n    When Davfs2 or lvmcreate_initrd is called, this would result in the\n    file being overwritten with the rights of the user running the\n    software, which could be the root user.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Davfs2 users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All lvm-user users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-fs/davfs2-0.2.2-r1\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-fs/lvm-user-1.0.7-r2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2004-0972",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0972"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-11-10T09:15:59Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-11-11T20:29:52Z"
+		}
+	]
 }

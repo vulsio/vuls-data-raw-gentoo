@@ -1,105 +1,105 @@
 {
-  "ID": "200405-22",
-  "Title": "Apache 1.3: Multiple vulnerabilities",
-  "Synopsis": "\n    Several security vulnerabilities have been fixed in the latest release of\n    Apache 1.3.\n  ",
-  "Product": {
-    "Text": "Apache",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-05-26",
-  "Revised": {
-    "Text": "2007-12-30",
-    "Count": "02"
-  },
-  "Bug": [
-    "51815"
-  ],
-  "Access": "remote ",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-servers/apache",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.3.31",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.3.31",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    The Apache HTTP Server Project is an effort to develop and maintain an\n    open-source HTTP server for modern operating systems. The goal of this\n    project is to provide a secure, efficient and extensible server that\n    provides services in tune with the current HTTP standards.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    On 64-bit big-endian platforms, mod_access does not properly parse\n    Allow/Deny rules using IP addresses without a netmask which could result in\n    failure to match certain IP addresses.\n    </p>\n    <p>\n    Terminal escape sequences are not filtered from error logs. This could be\n    used by an attacker to insert escape sequences into a terminal emulater\n    vulnerable to escape sequences.\n    </p>\n    <p>\n    mod_digest does not properly verify the nonce of a client response by using\n    a AuthNonce secret. This could permit an attacker to replay the response of\n    another website. This does not affect mod_auth_digest.\n    </p>\n    <p>\n    On certain platforms there is a starvation issue where listening sockets\n    fails to handle short-lived connection on a rarely-accessed listening\n    socket. This causes the child to hold the accept mutex and block out new\n    connections until another connection arrives on the same rarely-accessed\n    listening socket thus leading to a denial of service.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    These vulnerabilities could lead to attackers bypassing intended access\n    restrictions, denial of service, and possibly execution of arbitrary code.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All users should upgrade to the latest stable version of Apache 1.3.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n\n    # emerge -pv \">=www-servers/apache-1.3.31\"\n    # emerge \">=www-servers/apache-1.3.31\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2003-0993",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2003-0993"
-      },
-      {
-        "Text": "CAN-2003-0020",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2003-0020"
-      },
-      {
-        "Text": "CAN-2003-0987",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2003-0987"
-      },
-      {
-        "Text": "CAN-2004-0174",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0174"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "submitter",
-      "Timestamp": ""
-    }
-  ]
+	"ID": "200405-22",
+	"Title": "Apache 1.3: Multiple vulnerabilities",
+	"Synopsis": "\n    Several security vulnerabilities have been fixed in the latest release of\n    Apache 1.3.\n  ",
+	"Product": {
+		"Text": "Apache",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-05-26",
+	"Revised": {
+		"Text": "2007-12-30",
+		"Count": "02"
+	},
+	"Bug": [
+		"51815"
+	],
+	"Access": "remote ",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-servers/apache",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.3.31",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.3.31",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    The Apache HTTP Server Project is an effort to develop and maintain an\n    open-source HTTP server for modern operating systems. The goal of this\n    project is to provide a secure, efficient and extensible server that\n    provides services in tune with the current HTTP standards.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    On 64-bit big-endian platforms, mod_access does not properly parse\n    Allow/Deny rules using IP addresses without a netmask which could result in\n    failure to match certain IP addresses.\n    </p>\n    <p>\n    Terminal escape sequences are not filtered from error logs. This could be\n    used by an attacker to insert escape sequences into a terminal emulater\n    vulnerable to escape sequences.\n    </p>\n    <p>\n    mod_digest does not properly verify the nonce of a client response by using\n    a AuthNonce secret. This could permit an attacker to replay the response of\n    another website. This does not affect mod_auth_digest.\n    </p>\n    <p>\n    On certain platforms there is a starvation issue where listening sockets\n    fails to handle short-lived connection on a rarely-accessed listening\n    socket. This causes the child to hold the accept mutex and block out new\n    connections until another connection arrives on the same rarely-accessed\n    listening socket thus leading to a denial of service.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    These vulnerabilities could lead to attackers bypassing intended access\n    restrictions, denial of service, and possibly execution of arbitrary code.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All users should upgrade to the latest stable version of Apache 1.3.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n\n    # emerge -pv \">=www-servers/apache-1.3.31\"\n    # emerge \">=www-servers/apache-1.3.31\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2003-0993",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2003-0993"
+			},
+			{
+				"Text": "CAN-2003-0020",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2003-0020"
+			},
+			{
+				"Text": "CAN-2003-0987",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2003-0987"
+			},
+			{
+				"Text": "CAN-2004-0174",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0174"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "submitter",
+			"Timestamp": ""
+		}
+	]
 }

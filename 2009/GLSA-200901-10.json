@@ -1,103 +1,103 @@
 {
-  "ID": "200901-10",
-  "Title": "GnuTLS: Certificate validation error",
-  "Synopsis": "\n    A certificate validation error in GnuTLS might allow for spoofing attacks.\n  ",
-  "Product": {
-    "Text": "gnutls",
-    "Type": "ebuild"
-  },
-  "Announced": "2009-01-14",
-  "Revised": {
-    "Text": "2009-01-14",
-    "Count": "01"
-  },
-  "Bug": [
-    "245850"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-libs/gnutls",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.4.1-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.4.1-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    GnuTLS is an open-source implementation of TLS 1.0 and SSL 3.0.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Martin von Gagern reported that the _gnutls_x509_verify_certificate()\n    function in lib/x509/verify.c trusts certificate chains in which the\n    last certificate is an arbitrary trusted, self-signed certificate.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could exploit this vulnerability and spoof arbitrary\n    names to conduct Man-In-The-Middle attacks and intercept sensitive\n    information.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All GnuTLS users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-libs/gnutls-2.4.1-r2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-4989",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4989"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-11-30T19:06:26Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-01-10T23:37:58Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2009-01-10T23:38:09Z"
-    }
-  ]
+	"ID": "200901-10",
+	"Title": "GnuTLS: Certificate validation error",
+	"Synopsis": "\n    A certificate validation error in GnuTLS might allow for spoofing attacks.\n  ",
+	"Product": {
+		"Text": "gnutls",
+		"Type": "ebuild"
+	},
+	"Announced": "2009-01-14",
+	"Revised": {
+		"Text": "2009-01-14",
+		"Count": "01"
+	},
+	"Bug": [
+		"245850"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-libs/gnutls",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.4.1-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.4.1-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    GnuTLS is an open-source implementation of TLS 1.0 and SSL 3.0.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Martin von Gagern reported that the _gnutls_x509_verify_certificate()\n    function in lib/x509/verify.c trusts certificate chains in which the\n    last certificate is an arbitrary trusted, self-signed certificate.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could exploit this vulnerability and spoof arbitrary\n    names to conduct Man-In-The-Middle attacks and intercept sensitive\n    information.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All GnuTLS users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-libs/gnutls-2.4.1-r2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-4989",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4989"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-11-30T19:06:26Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-01-10T23:37:58Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2009-01-10T23:38:09Z"
+		}
+	]
 }

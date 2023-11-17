@@ -1,98 +1,98 @@
 {
-  "ID": "201607-13",
-  "Title": "libbsd: Arbitrary code execution",
-  "Synopsis": "A buffer overflow in libbsd might allow remote attackers to execute\n    arbitrary code.\n  ",
-  "Product": {
-    "Text": "",
-    "Type": "ebuild"
-  },
-  "Announced": "2016-07-20",
-  "Revised": {
-    "Text": "2016-07-20",
-    "Count": "1"
-  },
-  "Bug": [
-    "573160"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-libs/libbsd",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.8.2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.8.2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>This library provides useful functions commonly found on BSD systems,\n      and lacking on others like GNU systems, thus making it easier to port\n      projects with strong BSD origins, without needing to embed the same code\n      over and over again on each project.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>libbsd contains a buffer overflow in the fgetwln() function. An if\n      statement, which is responsible for checking the necessity to reallocate\n      memory in the target buffer, is off by one therefore an out of bounds\n      write occurs.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>Remote attackers could potentially execute arbitrary code with the\n      privileges of the process.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All libbsd users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --verbose --oneshot \">=dev-libs/libbsd-0.8.2\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2016-2090",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-2090"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "b-man",
-      "Tag": "requester",
-      "Timestamp": "2016-03-19T13:08:02Z"
-    },
-    {
-      "Text": "b-man",
-      "Tag": "submitter",
-      "Timestamp": "2016-07-20T11:20:49Z"
-    }
-  ]
+	"ID": "201607-13",
+	"Title": "libbsd: Arbitrary code execution",
+	"Synopsis": "A buffer overflow in libbsd might allow remote attackers to execute\n    arbitrary code.\n  ",
+	"Product": {
+		"Text": "",
+		"Type": "ebuild"
+	},
+	"Announced": "2016-07-20",
+	"Revised": {
+		"Text": "2016-07-20",
+		"Count": "1"
+	},
+	"Bug": [
+		"573160"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-libs/libbsd",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.8.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.8.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>This library provides useful functions commonly found on BSD systems,\n      and lacking on others like GNU systems, thus making it easier to port\n      projects with strong BSD origins, without needing to embed the same code\n      over and over again on each project.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>libbsd contains a buffer overflow in the fgetwln() function. An if\n      statement, which is responsible for checking the necessity to reallocate\n      memory in the target buffer, is off by one therefore an out of bounds\n      write occurs.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>Remote attackers could potentially execute arbitrary code with the\n      privileges of the process.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All libbsd users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --verbose --oneshot \">=dev-libs/libbsd-0.8.2\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2016-2090",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-2090"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "b-man",
+			"Tag": "requester",
+			"Timestamp": "2016-03-19T13:08:02Z"
+		},
+		{
+			"Text": "b-man",
+			"Tag": "submitter",
+			"Timestamp": "2016-07-20T11:20:49Z"
+		}
+	]
 }

@@ -1,103 +1,103 @@
 {
-  "ID": "200601-14",
-  "Title": "LibAST: Privilege escalation",
-  "Synopsis": "\n    A buffer overflow in LibAST may result in execution of arbitrary code with\n    escalated privileges.\n  ",
-  "Product": {
-    "Text": "LibAST",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-01-29",
-  "Revised": {
-    "Text": "2006-01-29",
-    "Count": "02"
-  },
-  "Bug": [
-    "120106"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "x11-libs/libast",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.7",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.7",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    LibAST is a utility library that was originally intended to accompany\n    Eterm, but may be used by various other applications.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Michael Jennings discovered an exploitable buffer overflow in the\n    configuration engine of LibAST.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    The vulnerability can be exploited to gain escalated privileges if the\n    application using LibAST is setuid/setgid and passes a specifically\n    crafted filename to LibAST's configuration engine.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Identify all applications linking against LibAST and verify they are\n    not setuid/setgid.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All users should upgrade to the latest version and run revdep-rebuild:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-libs/libast-0.7\"\n    # revdep-rebuild"
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-0224",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0224"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-01-25T21:44:39Z"
-    },
-    {
-      "Text": "\n    frilled\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-01-26T09:35:14Z"
-    },
-    {
-      "Text": "\n    adir\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-01-27T21:23:22Z"
-    }
-  ]
+	"ID": "200601-14",
+	"Title": "LibAST: Privilege escalation",
+	"Synopsis": "\n    A buffer overflow in LibAST may result in execution of arbitrary code with\n    escalated privileges.\n  ",
+	"Product": {
+		"Text": "LibAST",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-01-29",
+	"Revised": {
+		"Text": "2006-01-29",
+		"Count": "02"
+	},
+	"Bug": [
+		"120106"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "x11-libs/libast",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.7",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.7",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    LibAST is a utility library that was originally intended to accompany\n    Eterm, but may be used by various other applications.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Michael Jennings discovered an exploitable buffer overflow in the\n    configuration engine of LibAST.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    The vulnerability can be exploited to gain escalated privileges if the\n    application using LibAST is setuid/setgid and passes a specifically\n    crafted filename to LibAST's configuration engine.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Identify all applications linking against LibAST and verify they are\n    not setuid/setgid.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All users should upgrade to the latest version and run revdep-rebuild:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-libs/libast-0.7\"\n    # revdep-rebuild"
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-0224",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0224"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-01-25T21:44:39Z"
+		},
+		{
+			"Text": "\n    frilled\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-01-26T09:35:14Z"
+		},
+		{
+			"Text": "\n    adir\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-01-27T21:23:22Z"
+		}
+	]
 }

@@ -1,98 +1,98 @@
 {
-  "ID": "200807-14",
-  "Title": "Linux Audit: Buffer overflow",
-  "Synopsis": "\n    A buffer overflow vulnerability in Linux Audit may allow local attackers to\n    execute arbitrary code.\n  ",
-  "Product": {
-    "Text": "audit",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-07-31",
-  "Revised": {
-    "Text": "2008-07-31",
-    "Count": "01"
-  },
-  "Bug": [
-    "215705"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sys-process/audit",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.7.3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.7.3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Linux Audit is a set of userspace utilities for storing and processing\n    auditing records.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    A stack-based buffer overflow has been reported in the\n    audit_log_user_command() function in the file lib/audit_logging.c when\n    processing overly long arguments.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local attacker could execute a specially crafted command on the host\n    running Linux Audit, possibly resulting in the execution of arbitrary\n    code with the privileges of the user running Linux Audit.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Linux Audit users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-process/audit-1.7.3\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-1628",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1628"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-07-21T20:07:20Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-07-21T20:07:28Z"
-    }
-  ]
+	"ID": "200807-14",
+	"Title": "Linux Audit: Buffer overflow",
+	"Synopsis": "\n    A buffer overflow vulnerability in Linux Audit may allow local attackers to\n    execute arbitrary code.\n  ",
+	"Product": {
+		"Text": "audit",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-07-31",
+	"Revised": {
+		"Text": "2008-07-31",
+		"Count": "01"
+	},
+	"Bug": [
+		"215705"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-process/audit",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.7.3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.7.3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Linux Audit is a set of userspace utilities for storing and processing\n    auditing records.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    A stack-based buffer overflow has been reported in the\n    audit_log_user_command() function in the file lib/audit_logging.c when\n    processing overly long arguments.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local attacker could execute a specially crafted command on the host\n    running Linux Audit, possibly resulting in the execution of arbitrary\n    code with the privileges of the user running Linux Audit.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Linux Audit users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-process/audit-1.7.3\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-1628",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1628"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-07-21T20:07:20Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-07-21T20:07:28Z"
+		}
+	]
 }

@@ -1,107 +1,107 @@
 {
-  "ID": "200905-09",
-  "Title": "libsndfile: User-assisted execution of arbitrary code",
-  "Synopsis": "\n    Multiple heap-based buffer overflow vulnerabilities in libsndfile might\n    allow remote attackers to execute arbitrary code.\n  ",
-  "Product": {
-    "Text": "libsndfile",
-    "Type": "ebuild"
-  },
-  "Announced": "2009-05-27",
-  "Revised": {
-    "Text": "2009-05-27",
-    "Count": "01"
-  },
-  "Bug": [
-    "269863"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-libs/libsndfile",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.0.20",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.0.20",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    libsndfile is a C library for reading and writing files containing\n    sampled sound.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The following vulnerabilities have been found in libsndfile:\n    </p>\n    <ul>\n    <li>Tobias Klein reported that the header_read() function in\n    src/common.c uses user input for calculating a buffer size, possibly\n    leading to a heap-based buffer overflow (CVE-2009-1788).</li>\n    <li>The\n    vendor reported a boundary error in the aiff_read_header() function in\n    src/aiff.c, possibly leading to a heap-based buffer overflow\n    (CVE-2009-1791).</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted AIFF\n    or VOC file in a program using libsndfile, possibly resulting in the\n    execution of arbitrary code with the privileges of the user running the\n    application.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All libsndfile users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/libsndfile-1.0.20\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2009-1788",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1788"
-      },
-      {
-        "Text": "CVE-2009-1791",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1791"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "requester",
-      "Timestamp": "2009-05-22T17:42:40Z"
-    },
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-05-25T09:17:01Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2009-05-25T11:57:08Z"
-    }
-  ]
+	"ID": "200905-09",
+	"Title": "libsndfile: User-assisted execution of arbitrary code",
+	"Synopsis": "\n    Multiple heap-based buffer overflow vulnerabilities in libsndfile might\n    allow remote attackers to execute arbitrary code.\n  ",
+	"Product": {
+		"Text": "libsndfile",
+		"Type": "ebuild"
+	},
+	"Announced": "2009-05-27",
+	"Revised": {
+		"Text": "2009-05-27",
+		"Count": "01"
+	},
+	"Bug": [
+		"269863"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-libs/libsndfile",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.0.20",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.0.20",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    libsndfile is a C library for reading and writing files containing\n    sampled sound.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The following vulnerabilities have been found in libsndfile:\n    </p>\n    <ul>\n    <li>Tobias Klein reported that the header_read() function in\n    src/common.c uses user input for calculating a buffer size, possibly\n    leading to a heap-based buffer overflow (CVE-2009-1788).</li>\n    <li>The\n    vendor reported a boundary error in the aiff_read_header() function in\n    src/aiff.c, possibly leading to a heap-based buffer overflow\n    (CVE-2009-1791).</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted AIFF\n    or VOC file in a program using libsndfile, possibly resulting in the\n    execution of arbitrary code with the privileges of the user running the\n    application.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All libsndfile users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/libsndfile-1.0.20\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2009-1788",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1788"
+			},
+			{
+				"Text": "CVE-2009-1791",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1791"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "requester",
+			"Timestamp": "2009-05-22T17:42:40Z"
+		},
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-05-25T09:17:01Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2009-05-25T11:57:08Z"
+		}
+	]
 }

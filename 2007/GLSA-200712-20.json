@@ -1,106 +1,106 @@
 {
-  "ID": "200712-20",
-  "Title": "ClamAV: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities have been discovered in ClamAV allowing remote\n    execution of arbitrary code and Denial of Service attacks.\n  ",
-  "Product": {
-    "Text": "clamav",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-12-29",
-  "Revised": {
-    "Text": "2007-12-29",
-    "Count": "01"
-  },
-  "Bug": [
-    "202762"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-antivirus/clamav",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.91.2-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.91.2-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Clam AntiVirus is a free anti-virus toolkit for UNIX, designed\n    especially for e-mail scanning on mail gateways.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    iDefense reported an integer overflow vulnerability in the cli_scanpe()\n    function when parsing Portable Executable (PE) files packed in the MEW\n    format, that could be exploited to cause a heap-based buffer overflow\n    (CVE-2007-6335). Toeroek Edwin reported an off-by-one error when\n    decompressing MS-ZIP compressed CAB files (CVE-2007-6336). An\n    unspecified vulnerability related to the bzip2 decompression algorithm\n    has also been discovered (CVE-2007-6337).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker could entice a user or automated system to scan a\n    specially crafted file, possibly leading to the execution of arbitrary\n    code with the privileges of the user running ClamAV (either a system\n    user or the \"clamav\" user if clamd is compromised).\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All ClamAV users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-antivirus/clamav-0.91.2-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-6335",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6335"
-      },
-      {
-        "Text": "CVE-2007-6336",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6336"
-      },
-      {
-        "Text": "CVE-2007-6337",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6337"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-12-27T00:36:49Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-12-28T22:56:45Z"
-    }
-  ]
+	"ID": "200712-20",
+	"Title": "ClamAV: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities have been discovered in ClamAV allowing remote\n    execution of arbitrary code and Denial of Service attacks.\n  ",
+	"Product": {
+		"Text": "clamav",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-12-29",
+	"Revised": {
+		"Text": "2007-12-29",
+		"Count": "01"
+	},
+	"Bug": [
+		"202762"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-antivirus/clamav",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.91.2-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.91.2-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Clam AntiVirus is a free anti-virus toolkit for UNIX, designed\n    especially for e-mail scanning on mail gateways.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    iDefense reported an integer overflow vulnerability in the cli_scanpe()\n    function when parsing Portable Executable (PE) files packed in the MEW\n    format, that could be exploited to cause a heap-based buffer overflow\n    (CVE-2007-6335). Toeroek Edwin reported an off-by-one error when\n    decompressing MS-ZIP compressed CAB files (CVE-2007-6336). An\n    unspecified vulnerability related to the bzip2 decompression algorithm\n    has also been discovered (CVE-2007-6337).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker could entice a user or automated system to scan a\n    specially crafted file, possibly leading to the execution of arbitrary\n    code with the privileges of the user running ClamAV (either a system\n    user or the \"clamav\" user if clamd is compromised).\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All ClamAV users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-antivirus/clamav-0.91.2-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-6335",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6335"
+			},
+			{
+				"Text": "CVE-2007-6336",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6336"
+			},
+			{
+				"Text": "CVE-2007-6337",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6337"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-12-27T00:36:49Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-12-28T22:56:45Z"
+		}
+	]
 }

@@ -1,98 +1,98 @@
 {
-  "ID": "200501-43",
-  "Title": "f2c: Insecure temporary file creation",
-  "Synopsis": "\n    f2c is vulnerable to symlink attacks, potentially allowing a local user to\n    overwrite arbitrary files.\n  ",
-  "Product": {
-    "Text": "f2c",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-01-30",
-  "Revised": {
-    "Text": "2005-01-30",
-    "Count": "01"
-  },
-  "Bug": [
-    "79725"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-lang/f2c",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "20030320-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "20030320",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    f2c is a Fortran to C translator. Portage uses this package in\n    some ebuilds to build Fortran sources.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Javier Fernandez-Sanguino Pena from the Debian Security Audit Team\n    discovered that f2c creates temporary files in world-writeable\n    directories with predictable names.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary\n    files directory, pointing to a valid file somewhere on the filesystem.\n    When f2c is executed, this would result in the file being overwritten\n    with the rights of the user running the software, which could be the\n    root user.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All f2c users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/f2c-20030320-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2005-0017",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0017"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-01-29T12:00:55Z"
-    },
-    {
-      "Text": "\n    vorlon078\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-01-29T16:13:04Z"
-    }
-  ]
+	"ID": "200501-43",
+	"Title": "f2c: Insecure temporary file creation",
+	"Synopsis": "\n    f2c is vulnerable to symlink attacks, potentially allowing a local user to\n    overwrite arbitrary files.\n  ",
+	"Product": {
+		"Text": "f2c",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-01-30",
+	"Revised": {
+		"Text": "2005-01-30",
+		"Count": "01"
+	},
+	"Bug": [
+		"79725"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-lang/f2c",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "20030320-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "20030320",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    f2c is a Fortran to C translator. Portage uses this package in\n    some ebuilds to build Fortran sources.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Javier Fernandez-Sanguino Pena from the Debian Security Audit Team\n    discovered that f2c creates temporary files in world-writeable\n    directories with predictable names.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary\n    files directory, pointing to a valid file somewhere on the filesystem.\n    When f2c is executed, this would result in the file being overwritten\n    with the rights of the user running the software, which could be the\n    root user.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All f2c users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/f2c-20030320-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2005-0017",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0017"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-01-29T12:00:55Z"
+		},
+		{
+			"Text": "\n    vorlon078\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-01-29T16:13:04Z"
+		}
+	]
 }

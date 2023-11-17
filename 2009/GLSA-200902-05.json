@@ -1,107 +1,107 @@
 {
-  "ID": "200902-05",
-  "Title": "KTorrent: Multiple vulnerabilitites",
-  "Synopsis": "\n    Two vulnerabilities in the web interface plugin in KTorrent allow for\n    remote execution of code and arbitrary torrent uploads.\n  ",
-  "Product": {
-    "Text": "ktorrent",
-    "Type": "ebuild"
-  },
-  "Announced": "2009-02-23",
-  "Revised": {
-    "Text": "2009-02-23",
-    "Count": "01"
-  },
-  "Bug": [
-    "244741"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-p2p/ktorrent",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.2.8",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.2.8",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    KTorrent is a BitTorrent program for KDE.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The web interface plugin does not restrict access to the torrent upload\n    functionality (CVE-2008-5905) and does not sanitize request parameters\n    properly (CVE-2008-5906) .\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker could send specially crafted parameters to the web\n    interface that would allow for arbitrary torrent uploads and remote\n    code execution with the privileges of the KTorrent process.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Disabling the web interface plugin will prevent exploitation of both\n    issues. Click \"Plugins\" in the configuration menu and uncheck the\n    checkbox left of \"WebInterface\", then apply the changes.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All KTorrent users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-p2p/ktorrent-2.2.8\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-5905",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5905"
-      },
-      {
-        "Text": "CVE-2008-5906",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5906"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "requester",
-      "Timestamp": "2009-01-06T20:05:03Z"
-    },
-    {
-      "Text": "\n    craig\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-01-10T00:24:20Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2009-01-10T19:16:54Z"
-    }
-  ]
+	"ID": "200902-05",
+	"Title": "KTorrent: Multiple vulnerabilitites",
+	"Synopsis": "\n    Two vulnerabilities in the web interface plugin in KTorrent allow for\n    remote execution of code and arbitrary torrent uploads.\n  ",
+	"Product": {
+		"Text": "ktorrent",
+		"Type": "ebuild"
+	},
+	"Announced": "2009-02-23",
+	"Revised": {
+		"Text": "2009-02-23",
+		"Count": "01"
+	},
+	"Bug": [
+		"244741"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-p2p/ktorrent",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.2.8",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.2.8",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    KTorrent is a BitTorrent program for KDE.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The web interface plugin does not restrict access to the torrent upload\n    functionality (CVE-2008-5905) and does not sanitize request parameters\n    properly (CVE-2008-5906) .\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker could send specially crafted parameters to the web\n    interface that would allow for arbitrary torrent uploads and remote\n    code execution with the privileges of the KTorrent process.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Disabling the web interface plugin will prevent exploitation of both\n    issues. Click \"Plugins\" in the configuration menu and uncheck the\n    checkbox left of \"WebInterface\", then apply the changes.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All KTorrent users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-p2p/ktorrent-2.2.8\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-5905",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5905"
+			},
+			{
+				"Text": "CVE-2008-5906",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5906"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "requester",
+			"Timestamp": "2009-01-06T20:05:03Z"
+		},
+		{
+			"Text": "\n    craig\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-01-10T00:24:20Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2009-01-10T19:16:54Z"
+		}
+	]
 }

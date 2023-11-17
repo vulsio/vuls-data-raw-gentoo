@@ -1,107 +1,107 @@
 {
-  "ID": "200410-26",
-  "Title": "socat: Format string vulnerability",
-  "Synopsis": "\n    socat contains a format string vulnerability that can potentially lead to\n    remote or local execution of arbitrary code with the privileges of the\n    socat process.\n  ",
-  "Product": {
-    "Text": "socat",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-10-25",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "02"
-  },
-  "Bug": [
-    "68547"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-misc/socat",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.4.0.3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.4.0.3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    socat is a multipurpose bidirectional relay, similar to netcat.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    socat contains a syslog() based format string vulnerablility in the\n    '_msg()' function of 'error.c'. Exploitation of this bug is only\n    possible when socat is run with the '-ly' option, causing it to log\n    messages to syslog.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    Remote exploitation is possible when socat is used as a HTTP proxy\n    client and connects to a malicious server. Local privilege escalation\n    can be achieved when socat listens on a UNIX domain socket. Potential\n    execution of arbitrary code with the privileges of the socat process is\n    possible with both local and remote exploitations.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Disable logging to syslog by not using the '-ly' option when starting\n    socat.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All socat users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/socat-1.4.0.3\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "socat Security Advisory",
-        "Link": "http://www.dest-unreach.org/socat/advisory/socat-adv-1.html"
-      },
-      {
-        "Text": "CVE-2004-1484",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1484"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    vorlon078\n  ",
-      "Tag": "requester",
-      "Timestamp": "2004-10-23T13:12:08Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-10-23T13:30:23Z"
-    },
-    {
-      "Text": "\n    lewk\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-10-24T21:38:40Z"
-    }
-  ]
+	"ID": "200410-26",
+	"Title": "socat: Format string vulnerability",
+	"Synopsis": "\n    socat contains a format string vulnerability that can potentially lead to\n    remote or local execution of arbitrary code with the privileges of the\n    socat process.\n  ",
+	"Product": {
+		"Text": "socat",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-10-25",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "02"
+	},
+	"Bug": [
+		"68547"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-misc/socat",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.4.0.3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.4.0.3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    socat is a multipurpose bidirectional relay, similar to netcat.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    socat contains a syslog() based format string vulnerablility in the\n    '_msg()' function of 'error.c'. Exploitation of this bug is only\n    possible when socat is run with the '-ly' option, causing it to log\n    messages to syslog.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    Remote exploitation is possible when socat is used as a HTTP proxy\n    client and connects to a malicious server. Local privilege escalation\n    can be achieved when socat listens on a UNIX domain socket. Potential\n    execution of arbitrary code with the privileges of the socat process is\n    possible with both local and remote exploitations.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Disable logging to syslog by not using the '-ly' option when starting\n    socat.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All socat users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/socat-1.4.0.3\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "socat Security Advisory",
+				"Link": "http://www.dest-unreach.org/socat/advisory/socat-adv-1.html"
+			},
+			{
+				"Text": "CVE-2004-1484",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1484"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    vorlon078\n  ",
+			"Tag": "requester",
+			"Timestamp": "2004-10-23T13:12:08Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-10-23T13:30:23Z"
+		},
+		{
+			"Text": "\n    lewk\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-10-24T21:38:40Z"
+		}
+	]
 }

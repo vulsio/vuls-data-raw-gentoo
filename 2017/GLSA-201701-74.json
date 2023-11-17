@@ -1,132 +1,132 @@
 {
-  "ID": "201701-74",
-  "Title": "libpng: Remote execution of arbitrary code",
-  "Synopsis": "A null pointer dereference in libpng might allow remote attackers\n    to execute arbitrary code.\n  ",
-  "Product": {
-    "Text": "libpng",
-    "Type": "ebuild"
-  },
-  "Announced": "2017-01-29",
-  "Revised": {
-    "Text": "2017-01-29",
-    "Count": "1"
-  },
-  "Bug": [
-    "604082"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-libs/libpng",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.6.27",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "1.5.28",
-            "Range": "ge",
-            "Slot": "1.5"
-          },
-          {
-            "Text": "1.2.57",
-            "Range": "ge",
-            "Slot": "1.2"
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.6.27",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>libpng is a standard library used to process PNG (Portable Network\n      Graphics) images. It is used by several programs, including web browsers\n      and potentially server processes.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>A null pointer dereference was discovered in libpng in the\n      png_push_save_buffer function.  In order to be vulnerable, an application\n      has to load a text chunk into the PNG structure, then delete all text,\n      then add another text chunk to the same PNG structure, which seems to be\n      an unlikely sequence, but it is possible.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker, by enticing a user to process a specially crafted PNG\n      file, could execute arbitrary code with the privileges of the process.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All libpng 1.6.x users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "All libpng 1.5.x users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "All libpng 1.2.x users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/libpng-1.6.27\"\n    ",
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/libpng-1.5.28:1.5\"\n    ",
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/libpng-1.2.57:1.2\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "\n      CVE-2016-10087\n    ",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-10087"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "b-man",
-      "Tag": "requester",
-      "Timestamp": "2017-01-18T08:20:53Z"
-    },
-    {
-      "Text": "b-man",
-      "Tag": "submitter",
-      "Timestamp": "2017-01-29T17:07:28Z"
-    }
-  ]
+	"ID": "201701-74",
+	"Title": "libpng: Remote execution of arbitrary code",
+	"Synopsis": "A null pointer dereference in libpng might allow remote attackers\n    to execute arbitrary code.\n  ",
+	"Product": {
+		"Text": "libpng",
+		"Type": "ebuild"
+	},
+	"Announced": "2017-01-29",
+	"Revised": {
+		"Text": "2017-01-29",
+		"Count": "1"
+	},
+	"Bug": [
+		"604082"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-libs/libpng",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.6.27",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "1.5.28",
+						"Range": "ge",
+						"Slot": "1.5"
+					},
+					{
+						"Text": "1.2.57",
+						"Range": "ge",
+						"Slot": "1.2"
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.6.27",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>libpng is a standard library used to process PNG (Portable Network\n      Graphics) images. It is used by several programs, including web browsers\n      and potentially server processes.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>A null pointer dereference was discovered in libpng in the\n      png_push_save_buffer function.  In order to be vulnerable, an application\n      has to load a text chunk into the PNG structure, then delete all text,\n      then add another text chunk to the same PNG structure, which seems to be\n      an unlikely sequence, but it is possible.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker, by enticing a user to process a specially crafted PNG\n      file, could execute arbitrary code with the privileges of the process.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All libpng 1.6.x users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "All libpng 1.5.x users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "All libpng 1.2.x users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/libpng-1.6.27\"\n    ",
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/libpng-1.5.28:1.5\"\n    ",
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/libpng-1.2.57:1.2\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "\n      CVE-2016-10087\n    ",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-10087"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "b-man",
+			"Tag": "requester",
+			"Timestamp": "2017-01-18T08:20:53Z"
+		},
+		{
+			"Text": "b-man",
+			"Tag": "submitter",
+			"Timestamp": "2017-01-29T17:07:28Z"
+		}
+	]
 }

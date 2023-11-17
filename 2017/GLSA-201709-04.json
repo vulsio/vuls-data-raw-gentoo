@@ -1,98 +1,98 @@
 {
-  "ID": "201709-04",
-  "Title": "mod_gnutls: Certificate validation error",
-  "Synopsis": "A vulnerability in mod_gnutls allows remote attackers to spoof\n    clients via crafted certificates.\n  ",
-  "Product": {
-    "Text": "mod_gnutls",
-    "Type": "ebuild"
-  },
-  "Announced": "2017-09-17",
-  "Revised": {
-    "Text": "2017-09-17",
-    "Count": "1"
-  },
-  "Bug": [
-    "541038"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-apache/mod_gnutls",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.7.3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.7.3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>mod_gnutls is an extension for ​Apache’s httpd. It uses the\n      ​GnuTLS library to provide HTTPS. It supports some protocols and\n      features that mod_ssl does not.\n    </p>\n    \n  "
-  },
-  "Description": {
-    "Text": "\n    <p>It was discovered that the authentication hook in mod_gnutls does not\n      validate client’s certificates even when option\n      “GnuTLSClientVerify” is set to “require”.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could present a crafted certificate and spoof clients\n      data.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All mod_gnutls users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=www-apache/mod_gnutls-0.7.3\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "\n      CVE-2015-2091\n    ",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-2091"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "whissi",
-      "Tag": "requester",
-      "Timestamp": "2017-06-17T21:37:14Z"
-    },
-    {
-      "Text": "chrisadr",
-      "Tag": "submitter",
-      "Timestamp": "2017-09-17T15:43:18Z"
-    }
-  ]
+	"ID": "201709-04",
+	"Title": "mod_gnutls: Certificate validation error",
+	"Synopsis": "A vulnerability in mod_gnutls allows remote attackers to spoof\n    clients via crafted certificates.\n  ",
+	"Product": {
+		"Text": "mod_gnutls",
+		"Type": "ebuild"
+	},
+	"Announced": "2017-09-17",
+	"Revised": {
+		"Text": "2017-09-17",
+		"Count": "1"
+	},
+	"Bug": [
+		"541038"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-apache/mod_gnutls",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.7.3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.7.3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>mod_gnutls is an extension for ​Apache’s httpd. It uses the\n      ​GnuTLS library to provide HTTPS. It supports some protocols and\n      features that mod_ssl does not.\n    </p>\n    \n  "
+	},
+	"Description": {
+		"Text": "\n    <p>It was discovered that the authentication hook in mod_gnutls does not\n      validate client’s certificates even when option\n      “GnuTLSClientVerify” is set to “require”.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could present a crafted certificate and spoof clients\n      data.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All mod_gnutls users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=www-apache/mod_gnutls-0.7.3\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "\n      CVE-2015-2091\n    ",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-2091"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "whissi",
+			"Tag": "requester",
+			"Timestamp": "2017-06-17T21:37:14Z"
+		},
+		{
+			"Text": "chrisadr",
+			"Tag": "submitter",
+			"Timestamp": "2017-09-17T15:43:18Z"
+		}
+	]
 }

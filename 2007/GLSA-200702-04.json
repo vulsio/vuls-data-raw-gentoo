@@ -1,134 +1,134 @@
 {
-  "ID": "200702-04",
-  "Title": "RAR, UnRAR: Buffer overflow",
-  "Synopsis": "\n    RAR and UnRAR contain a buffer overflow allowing the execution of arbitrary\n    code.\n  ",
-  "Product": {
-    "Text": "rar, unrar",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-02-13",
-  "Revised": {
-    "Text": "2007-02-14",
-    "Count": "02"
-  },
-  "Bug": [
-    "166440"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-arch/rar",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.7.0_beta1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.7.0_beta1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-arch/unrar",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.7.3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.7.3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    RAR and UnRAR provide command line interfaces for compressing and\n    decompressing RAR files.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    RAR and UnRAR contain a boundary error when processing\n    password-protected archives that could result in a stack-based buffer\n    overflow.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to process a specially crafted\n    password-protected archive and execute arbitrary code with the rights\n    of the user uncompressing the archive.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All UnRAR users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All RAR users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-arch/unrar-3.7.3\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-arch/rar-3.7.0_beta1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-0855",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0855"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-02-12T15:25:34Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-02-12T23:14:14Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-02-13T23:24:39Z"
-    }
-  ]
+	"ID": "200702-04",
+	"Title": "RAR, UnRAR: Buffer overflow",
+	"Synopsis": "\n    RAR and UnRAR contain a buffer overflow allowing the execution of arbitrary\n    code.\n  ",
+	"Product": {
+		"Text": "rar, unrar",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-02-13",
+	"Revised": {
+		"Text": "2007-02-14",
+		"Count": "02"
+	},
+	"Bug": [
+		"166440"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-arch/rar",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.7.0_beta1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.7.0_beta1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-arch/unrar",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.7.3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.7.3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    RAR and UnRAR provide command line interfaces for compressing and\n    decompressing RAR files.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    RAR and UnRAR contain a boundary error when processing\n    password-protected archives that could result in a stack-based buffer\n    overflow.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to process a specially crafted\n    password-protected archive and execute arbitrary code with the rights\n    of the user uncompressing the archive.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All UnRAR users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All RAR users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-arch/unrar-3.7.3\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-arch/rar-3.7.0_beta1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-0855",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0855"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-02-12T15:25:34Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-02-12T23:14:14Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-02-13T23:24:39Z"
+		}
+	]
 }

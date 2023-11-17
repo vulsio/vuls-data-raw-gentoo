@@ -1,107 +1,107 @@
 {
-  "ID": "200702-01",
-  "Title": "Samba: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple flaws exist in the Samba suite of programs, the most serious of\n    which could result in the execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "samba",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-02-13",
-  "Revised": {
-    "Text": "2007-02-13",
-    "Count": "01"
-  },
-  "Bug": [
-    "165549"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-fs/samba",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.0.24",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.0.24",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Samba is a suite of SMB and CIFS client/server programs for UNIX.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    A format string vulnerability exists in the VFS module when handling\n    AFS file systems and an infinite loop has been discovered when handling\n    file rename operations.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A user with permission to write to a shared AFS file system may be able\n    to compromise the smbd process and execute arbitrary code with the\n    permissions of the daemon. The infinite loop could be abused to consume\n    excessive resources on the smbd host, denying service to legitimate\n    users.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Samba users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-fs/samba-3.0.24\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-0452",
-        "Link": "https://samba.org/samba/security/CVE-2007-0452.html"
-      },
-      {
-        "Text": "CVE-2007-0454",
-        "Link": "https://samba.org/samba/security/CVE-2007-0454.html"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-02-09T15:08:23Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-02-10T23:53:19Z"
-    },
-    {
-      "Text": "\n    taviso\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-02-12T23:21:02Z"
-    }
-  ]
+	"ID": "200702-01",
+	"Title": "Samba: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple flaws exist in the Samba suite of programs, the most serious of\n    which could result in the execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "samba",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-02-13",
+	"Revised": {
+		"Text": "2007-02-13",
+		"Count": "01"
+	},
+	"Bug": [
+		"165549"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-fs/samba",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.0.24",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.0.24",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Samba is a suite of SMB and CIFS client/server programs for UNIX.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    A format string vulnerability exists in the VFS module when handling\n    AFS file systems and an infinite loop has been discovered when handling\n    file rename operations.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A user with permission to write to a shared AFS file system may be able\n    to compromise the smbd process and execute arbitrary code with the\n    permissions of the daemon. The infinite loop could be abused to consume\n    excessive resources on the smbd host, denying service to legitimate\n    users.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Samba users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-fs/samba-3.0.24\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-0452",
+				"Link": "https://samba.org/samba/security/CVE-2007-0452.html"
+			},
+			{
+				"Text": "CVE-2007-0454",
+				"Link": "https://samba.org/samba/security/CVE-2007-0454.html"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-02-09T15:08:23Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-02-10T23:53:19Z"
+		},
+		{
+			"Text": "\n    taviso\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-02-12T23:21:02Z"
+		}
+	]
 }

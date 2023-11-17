@@ -1,107 +1,107 @@
 {
-  "ID": "201603-01",
-  "Title": "GIMP: Multiple vulnerabilities",
-  "Synopsis": "GIMP is vulnerable to multiple buffer overflows which could result\n    in the execution of arbitrary code or Denial of Service.\n  ",
-  "Product": {
-    "Text": "gimp",
-    "Type": "ebuild"
-  },
-  "Announced": "2016-03-06",
-  "Revised": {
-    "Text": "2016-05-04",
-    "Count": "2"
-  },
-  "Bug": [
-    "434582",
-    "493372"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-gfx/gimp",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.8.0",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.8.0",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>GIMP is a cross-platform image editor available for GNU/Linux, OS X,\n      Windows and more operating systems.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>GIMP’s network server, scriptfu, is vulnerable to the remote execution\n      of arbitrary code via the python-fu-eval command due to not requiring\n      authentication.  Additionally, the X Window Dump (XWD) plugin is\n      vulnerable to multiple buffer overflows possibly allowing the remote\n      execution of arbitrary code or Denial of Service.  The XWD plugin is\n      vulnerable due to not validating large color entries.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could possibly execute arbitrary code with the\n      privileges of the process due or perform a Denial of Service.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known work around at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All GIMP users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-gfx/gimp-2.8.0\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2012-4245",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-4245"
-      },
-      {
-        "Text": "\n      CVE-2013-1913\n    ",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-1913"
-      },
-      {
-        "Text": "\n      CVE-2013-1978\n    ",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-1978"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "b-man",
-      "Tag": "requester",
-      "Timestamp": "2016-03-02T11:01:16Z"
-    },
-    {
-      "Text": "b-man",
-      "Tag": "submitter",
-      "Timestamp": "2016-05-04T00:41:21Z"
-    }
-  ]
+	"ID": "201603-01",
+	"Title": "GIMP: Multiple vulnerabilities",
+	"Synopsis": "GIMP is vulnerable to multiple buffer overflows which could result\n    in the execution of arbitrary code or Denial of Service.\n  ",
+	"Product": {
+		"Text": "gimp",
+		"Type": "ebuild"
+	},
+	"Announced": "2016-03-06",
+	"Revised": {
+		"Text": "2016-05-04",
+		"Count": "2"
+	},
+	"Bug": [
+		"434582",
+		"493372"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-gfx/gimp",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.8.0",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.8.0",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>GIMP is a cross-platform image editor available for GNU/Linux, OS X,\n      Windows and more operating systems.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>GIMP’s network server, scriptfu, is vulnerable to the remote execution\n      of arbitrary code via the python-fu-eval command due to not requiring\n      authentication.  Additionally, the X Window Dump (XWD) plugin is\n      vulnerable to multiple buffer overflows possibly allowing the remote\n      execution of arbitrary code or Denial of Service.  The XWD plugin is\n      vulnerable due to not validating large color entries.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could possibly execute arbitrary code with the\n      privileges of the process due or perform a Denial of Service.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known work around at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All GIMP users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-gfx/gimp-2.8.0\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2012-4245",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-4245"
+			},
+			{
+				"Text": "\n      CVE-2013-1913\n    ",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-1913"
+			},
+			{
+				"Text": "\n      CVE-2013-1978\n    ",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-1978"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "b-man",
+			"Tag": "requester",
+			"Timestamp": "2016-03-02T11:01:16Z"
+		},
+		{
+			"Text": "b-man",
+			"Tag": "submitter",
+			"Timestamp": "2016-05-04T00:41:21Z"
+		}
+	]
 }

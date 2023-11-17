@@ -1,119 +1,119 @@
 {
-  "ID": "200512-03",
-  "Title": "phpMyAdmin: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple flaws in phpMyAdmin may lead to several XSS issues and local and\n    remote file inclusion vulnerabilities.\n  ",
-  "Product": {
-    "Text": "phpmyadmin",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-12-11",
-  "Revised": {
-    "Text": "2005-12-11",
-    "Count": "01"
-  },
-  "Bug": [
-    "114662"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-db/phpmyadmin",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.7.0_p1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.7.0_p1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    phpMyAdmin is a tool written in PHP intended to handle the\n    administration of MySQL over the web.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Stefan Esser from Hardened-PHP reported about multiple\n    vulnerabilties found in phpMyAdmin. The $GLOBALS variable allows\n    modifying the global variable import_blacklist to open phpMyAdmin to\n    local and remote file inclusion, depending on your PHP version\n    (CVE-2005-4079, PMASA-2005-9). Furthermore, it is also possible to\n    conduct an XSS attack via the $HTTP_HOST variable and a local and\n    remote file inclusion because the contents of the variable are under\n    total control of the attacker (CVE-2005-3665, PMASA-2005-8).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker may exploit these vulnerabilities by sending\n    malicious requests, causing the execution of arbitrary code with the\n    rights of the user running the web server. The cross-site scripting\n    issues allow a remote attacker to inject and execute malicious script\n    code or to steal cookie-based authentication credentials, potentially\n    allowing unauthorized access to phpMyAdmin.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All phpMyAdmin users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-db/phpmyadmin-2.7.0_p1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2005-3665",
-        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3665"
-      },
-      {
-        "Text": "CVE-2005-4079",
-        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-4079"
-      },
-      {
-        "Text": "PMASA-2005-8",
-        "Link": "https://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2005-8"
-      },
-      {
-        "Text": "PMASA-2005-9",
-        "Link": "https://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2005-9"
-      },
-      {
-        "Text": "Hardened-PHP Advisory 25/2005",
-        "Link": "https://www.hardened-php.net/advisory_252005.110.html"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-12-07T12:42:53Z"
-    },
-    {
-      "Text": "\n    adir\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-12-08T11:27:37Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-12-11T17:53:22Z"
-    }
-  ]
+	"ID": "200512-03",
+	"Title": "phpMyAdmin: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple flaws in phpMyAdmin may lead to several XSS issues and local and\n    remote file inclusion vulnerabilities.\n  ",
+	"Product": {
+		"Text": "phpmyadmin",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-12-11",
+	"Revised": {
+		"Text": "2005-12-11",
+		"Count": "01"
+	},
+	"Bug": [
+		"114662"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-db/phpmyadmin",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.7.0_p1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.7.0_p1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    phpMyAdmin is a tool written in PHP intended to handle the\n    administration of MySQL over the web.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Stefan Esser from Hardened-PHP reported about multiple\n    vulnerabilties found in phpMyAdmin. The $GLOBALS variable allows\n    modifying the global variable import_blacklist to open phpMyAdmin to\n    local and remote file inclusion, depending on your PHP version\n    (CVE-2005-4079, PMASA-2005-9). Furthermore, it is also possible to\n    conduct an XSS attack via the $HTTP_HOST variable and a local and\n    remote file inclusion because the contents of the variable are under\n    total control of the attacker (CVE-2005-3665, PMASA-2005-8).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker may exploit these vulnerabilities by sending\n    malicious requests, causing the execution of arbitrary code with the\n    rights of the user running the web server. The cross-site scripting\n    issues allow a remote attacker to inject and execute malicious script\n    code or to steal cookie-based authentication credentials, potentially\n    allowing unauthorized access to phpMyAdmin.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All phpMyAdmin users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-db/phpmyadmin-2.7.0_p1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2005-3665",
+				"Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3665"
+			},
+			{
+				"Text": "CVE-2005-4079",
+				"Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-4079"
+			},
+			{
+				"Text": "PMASA-2005-8",
+				"Link": "https://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2005-8"
+			},
+			{
+				"Text": "PMASA-2005-9",
+				"Link": "https://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2005-9"
+			},
+			{
+				"Text": "Hardened-PHP Advisory 25/2005",
+				"Link": "https://www.hardened-php.net/advisory_252005.110.html"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-12-07T12:42:53Z"
+		},
+		{
+			"Text": "\n    adir\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-12-08T11:27:37Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-12-11T17:53:22Z"
+		}
+	]
 }

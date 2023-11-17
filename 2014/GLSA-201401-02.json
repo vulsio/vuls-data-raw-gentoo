@@ -1,98 +1,98 @@
 {
-  "ID": "201401-02",
-  "Title": "Gajim: Information disclosure",
-  "Synopsis": "An error in Gajim causes invalid OpenSSL certificates to be\n    accepted as valid.\n  ",
-  "Product": {
-    "Text": "gajim",
-    "Type": "ebuild"
-  },
-  "Announced": "2014-01-06",
-  "Revised": {
-    "Text": "2014-01-06",
-    "Count": "1"
-  },
-  "Bug": [
-    "442860"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-im/gajim",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.15.3-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.15.3-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Gajim is a Jabber/XMPP client which uses GTK+.</p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>The _ssl_verify_callback() function in tls_nb.py does not properly\n      validate SSL certificates, causing any certificate to be accepted as\n      valid as long as the root CA is valid.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "low",
-    "Text": "\n    <p>A remote attacker might employ a specially crafted certificate to\n      conduct man-in-the-middle attacks on SSL connections and potentially\n      disclose sensitive information.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All Gajim users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-im/gajim-0.15.3-r1\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2012-5524",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5524"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    creffett\n  ",
-      "Tag": "requester",
-      "Timestamp": "2013-12-11T01:48:29Z"
-    },
-    {
-      "Text": "\n    creffett\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2014-01-06T19:16:07Z"
-    }
-  ]
+	"ID": "201401-02",
+	"Title": "Gajim: Information disclosure",
+	"Synopsis": "An error in Gajim causes invalid OpenSSL certificates to be\n    accepted as valid.\n  ",
+	"Product": {
+		"Text": "gajim",
+		"Type": "ebuild"
+	},
+	"Announced": "2014-01-06",
+	"Revised": {
+		"Text": "2014-01-06",
+		"Count": "1"
+	},
+	"Bug": [
+		"442860"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-im/gajim",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.15.3-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.15.3-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Gajim is a Jabber/XMPP client which uses GTK+.</p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>The _ssl_verify_callback() function in tls_nb.py does not properly\n      validate SSL certificates, causing any certificate to be accepted as\n      valid as long as the root CA is valid.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "low",
+		"Text": "\n    <p>A remote attacker might employ a specially crafted certificate to\n      conduct man-in-the-middle attacks on SSL connections and potentially\n      disclose sensitive information.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All Gajim users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-im/gajim-0.15.3-r1\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2012-5524",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-5524"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    creffett\n  ",
+			"Tag": "requester",
+			"Timestamp": "2013-12-11T01:48:29Z"
+		},
+		{
+			"Text": "\n    creffett\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2014-01-06T19:16:07Z"
+		}
+	]
 }

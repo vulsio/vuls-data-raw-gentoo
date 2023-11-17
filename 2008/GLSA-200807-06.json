@@ -1,112 +1,112 @@
 {
-  "ID": "200807-06",
-  "Title": "Apache: Denial of service",
-  "Synopsis": "\n    Multiple vulnerabilities in Apache might lead to a Denial of Service.\n  ",
-  "Product": {
-    "Text": "apache",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-07-09",
-  "Revised": {
-    "Text": "2008-07-09",
-    "Count": "01"
-  },
-  "Bug": [
-    "222643",
-    "227111"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-servers/apache",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.2.9",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.2.9",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    The Apache HTTP server is one of the most popular web servers on the\n    Internet.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Multiple vulnerabilities have been discovered in Apache:\n    </p>\n    <ul>\n    <li>\n    Dustin Kirkland reported that the mod_ssl module can leak memory when\n    the client reports support for a compression algorithm (CVE-2008-1678).\n    </li>\n    <li>\n    Ryujiro Shibuya reported that the ap_proxy_http_process_response()\n    function in the mod_proxy module does not limit the number of forwarded\n    interim responses (CVE-2008-2364).\n    </li>\n    <li>\n    sp3x of SecurityReason reported a Cross-Site Request Forgery\n    vulnerability in the balancer-manager in the mod_proxy_balancer module\n    (CVE-2007-6420).\n    </li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could exploit these vulnerabilities by connecting to\n    an Apache httpd, by causing an Apache proxy server to connect to a\n    malicious server, or by enticing a balancer administrator to connect to\n    a specially-crafted URL, resulting in a Denial of Service of the Apache\n    daemon.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Apache users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-servers/apache-2.2.9\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-6420",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6420"
-      },
-      {
-        "Text": "CVE-2008-1678",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1678"
-      },
-      {
-        "Text": "CVE-2008-2364",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2364"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-06-14T10:47:39Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-06-16T23:51:04Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-06-16T23:51:13Z"
-    }
-  ]
+	"ID": "200807-06",
+	"Title": "Apache: Denial of service",
+	"Synopsis": "\n    Multiple vulnerabilities in Apache might lead to a Denial of Service.\n  ",
+	"Product": {
+		"Text": "apache",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-07-09",
+	"Revised": {
+		"Text": "2008-07-09",
+		"Count": "01"
+	},
+	"Bug": [
+		"222643",
+		"227111"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-servers/apache",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.2.9",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.2.9",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    The Apache HTTP server is one of the most popular web servers on the\n    Internet.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Multiple vulnerabilities have been discovered in Apache:\n    </p>\n    <ul>\n    <li>\n    Dustin Kirkland reported that the mod_ssl module can leak memory when\n    the client reports support for a compression algorithm (CVE-2008-1678).\n    </li>\n    <li>\n    Ryujiro Shibuya reported that the ap_proxy_http_process_response()\n    function in the mod_proxy module does not limit the number of forwarded\n    interim responses (CVE-2008-2364).\n    </li>\n    <li>\n    sp3x of SecurityReason reported a Cross-Site Request Forgery\n    vulnerability in the balancer-manager in the mod_proxy_balancer module\n    (CVE-2007-6420).\n    </li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could exploit these vulnerabilities by connecting to\n    an Apache httpd, by causing an Apache proxy server to connect to a\n    malicious server, or by enticing a balancer administrator to connect to\n    a specially-crafted URL, resulting in a Denial of Service of the Apache\n    daemon.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Apache users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-servers/apache-2.2.9\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-6420",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6420"
+			},
+			{
+				"Text": "CVE-2008-1678",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1678"
+			},
+			{
+				"Text": "CVE-2008-2364",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2364"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-06-14T10:47:39Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-06-16T23:51:04Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-06-16T23:51:13Z"
+		}
+	]
 }

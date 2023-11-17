@@ -1,107 +1,107 @@
 {
-  "ID": "200605-14",
-  "Title": "libextractor: Two heap-based buffer overflows",
-  "Synopsis": "\n    libextractor is vulnerable to two heap overflow vulnerabilities which could\n    lead to the execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "libextractor",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-05-21",
-  "Revised": {
-    "Text": "2006-05-21",
-    "Count": "01"
-  },
-  "Bug": [
-    "133570"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-libs/libextractor",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.5.14",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.5.14",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    libextractor is a library used to extract metadata from arbitrary\n    files.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Luigi Auriemma has found two heap-based buffer overflows in\n    libextractor 0.5.13 and earlier: one of them occurs in the\n    asf_read_header function in the ASF plugin, and the other occurs in the\n    parse_trak_atom function in the Qt plugin.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    By enticing a user to open a malformed file using an application\n    that employs libextractor and its ASF or Qt plugins, an attacker could\n    execute arbitrary code in the context of the application running the\n    affected library.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All libextractor users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/libextractor-0.5.14\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-2458",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2458"
-      },
-      {
-        "Text": "Original advisory",
-        "Link": "http://aluigi.altervista.org/adv/libextho-adv.txt"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-05-19T13:49:39Z"
-    },
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-05-19T13:49:51Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-05-19T16:16:14Z"
-    }
-  ]
+	"ID": "200605-14",
+	"Title": "libextractor: Two heap-based buffer overflows",
+	"Synopsis": "\n    libextractor is vulnerable to two heap overflow vulnerabilities which could\n    lead to the execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "libextractor",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-05-21",
+	"Revised": {
+		"Text": "2006-05-21",
+		"Count": "01"
+	},
+	"Bug": [
+		"133570"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-libs/libextractor",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.5.14",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.5.14",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    libextractor is a library used to extract metadata from arbitrary\n    files.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Luigi Auriemma has found two heap-based buffer overflows in\n    libextractor 0.5.13 and earlier: one of them occurs in the\n    asf_read_header function in the ASF plugin, and the other occurs in the\n    parse_trak_atom function in the Qt plugin.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    By enticing a user to open a malformed file using an application\n    that employs libextractor and its ASF or Qt plugins, an attacker could\n    execute arbitrary code in the context of the application running the\n    affected library.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All libextractor users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/libextractor-0.5.14\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-2458",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2458"
+			},
+			{
+				"Text": "Original advisory",
+				"Link": "http://aluigi.altervista.org/adv/libextho-adv.txt"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-05-19T13:49:39Z"
+		},
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-05-19T13:49:51Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-05-19T16:16:14Z"
+		}
+	]
 }

@@ -1,106 +1,106 @@
 {
-  "ID": "200512-17",
-  "Title": "scponly: Multiple privilege escalation issues",
-  "Synopsis": "\n    Local users can exploit an scponly flaw to gain root privileges, and\n    scponly restricted users can use another vulnerability to evade shell\n    restrictions.\n  ",
-  "Product": {
-    "Text": "scponly",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-12-29",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "02"
-  },
-  "Bug": [
-    "116526"
-  ],
-  "Access": "local and remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-misc/scponly",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    scponly is a restricted shell, allowing only a few predefined commands.\n    It is often used as a complement to OpenSSH to provide access to remote\n    users without providing any remote execution privileges.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Max Vozeler discovered that the scponlyc command allows users to chroot\n    into arbitrary directories. Furthermore, Pekka Pessi reported that\n    scponly insufficiently validates command-line parameters to a scp or\n    rsync command.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A local attacker could gain root privileges by chrooting into arbitrary\n    directories containing hardlinks to setuid programs. A remote scponly\n    user could also send malicious parameters to a scp or rsync command\n    that would allow to escape the shell restrictions and execute arbitrary\n    programs.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All scponly users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/scponly-4.2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "scponly release notes",
-        "Link": "http://sublimation.org/scponly/index.html#relnotes"
-      },
-      {
-        "Text": "CVE-2005-4532",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-4532"
-      },
-      {
-        "Text": "CVE-2005-4533",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-4533"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-12-27T09:38:39Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-12-29T10:10:38Z"
-    }
-  ]
+	"ID": "200512-17",
+	"Title": "scponly: Multiple privilege escalation issues",
+	"Synopsis": "\n    Local users can exploit an scponly flaw to gain root privileges, and\n    scponly restricted users can use another vulnerability to evade shell\n    restrictions.\n  ",
+	"Product": {
+		"Text": "scponly",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-12-29",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "02"
+	},
+	"Bug": [
+		"116526"
+	],
+	"Access": "local and remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-misc/scponly",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    scponly is a restricted shell, allowing only a few predefined commands.\n    It is often used as a complement to OpenSSH to provide access to remote\n    users without providing any remote execution privileges.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Max Vozeler discovered that the scponlyc command allows users to chroot\n    into arbitrary directories. Furthermore, Pekka Pessi reported that\n    scponly insufficiently validates command-line parameters to a scp or\n    rsync command.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A local attacker could gain root privileges by chrooting into arbitrary\n    directories containing hardlinks to setuid programs. A remote scponly\n    user could also send malicious parameters to a scp or rsync command\n    that would allow to escape the shell restrictions and execute arbitrary\n    programs.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All scponly users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/scponly-4.2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "scponly release notes",
+				"Link": "http://sublimation.org/scponly/index.html#relnotes"
+			},
+			{
+				"Text": "CVE-2005-4532",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-4532"
+			},
+			{
+				"Text": "CVE-2005-4533",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-4533"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-12-27T09:38:39Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-12-29T10:10:38Z"
+		}
+	]
 }

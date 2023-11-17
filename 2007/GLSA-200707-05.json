@@ -1,129 +1,129 @@
 {
-  "ID": "200707-05",
-  "Title": "Webmin, Usermin: Cross-site scripting vulnerabilities",
-  "Synopsis": "\n    Webmin and Usermin are vulnerable to cross-site scripting vulnerabilities\n    (XSS).\n  ",
-  "Product": {
-    "Text": "webmin/usermin",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-07-05",
-  "Revised": {
-    "Text": "2007-07-05",
-    "Count": "01"
-  },
-  "Bug": [
-    "181385"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-admin/webmin",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.350",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.350",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-admin/usermin",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.280",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.280",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Webmin is a web-based administrative interface for Unix-like systems.\n    Usermin is a simplified version of Webmin designed for use by normal\n    users rather than system administrators.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The pam_login.cgi file does not properly sanitize user input before\n    sending it back as output to the user.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "low",
-    "Text": "\n    <p>\n    An unauthenticated attacker could entice a user to browse a specially\n    crafted URL, allowing for the execution of script code in the context\n    of the user's browser and for the theft of browser credentials. This\n    may permit the attacker to login to Webmin or Usermin with the user's\n    permissions.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Webmin users should update to the latest stable version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All Usermin users should update to the latest stable version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --verbose --oneshot \">=app-admin/webmin-1.350\"",
-      "\n    # emerge --sync\n    # emerge --ask --verbose --oneshot \">=app-admin/usermin-1.280\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-3156",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3156"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-06-25T19:12:36Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-06-29T13:33:55Z"
-    }
-  ]
+	"ID": "200707-05",
+	"Title": "Webmin, Usermin: Cross-site scripting vulnerabilities",
+	"Synopsis": "\n    Webmin and Usermin are vulnerable to cross-site scripting vulnerabilities\n    (XSS).\n  ",
+	"Product": {
+		"Text": "webmin/usermin",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-07-05",
+	"Revised": {
+		"Text": "2007-07-05",
+		"Count": "01"
+	},
+	"Bug": [
+		"181385"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-admin/webmin",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.350",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.350",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-admin/usermin",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.280",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.280",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Webmin is a web-based administrative interface for Unix-like systems.\n    Usermin is a simplified version of Webmin designed for use by normal\n    users rather than system administrators.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The pam_login.cgi file does not properly sanitize user input before\n    sending it back as output to the user.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "low",
+		"Text": "\n    <p>\n    An unauthenticated attacker could entice a user to browse a specially\n    crafted URL, allowing for the execution of script code in the context\n    of the user's browser and for the theft of browser credentials. This\n    may permit the attacker to login to Webmin or Usermin with the user's\n    permissions.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Webmin users should update to the latest stable version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All Usermin users should update to the latest stable version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --verbose --oneshot \">=app-admin/webmin-1.350\"",
+			"\n    # emerge --sync\n    # emerge --ask --verbose --oneshot \">=app-admin/usermin-1.280\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-3156",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3156"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-06-25T19:12:36Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-06-29T13:33:55Z"
+		}
+	]
 }

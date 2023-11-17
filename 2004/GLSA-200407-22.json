@@ -1,106 +1,106 @@
 {
-  "ID": "200407-22",
-  "Title": "phpMyAdmin: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities in phpMyAdmin may allow a remote attacker with a\n    valid user account to alter configuration variables and execute arbitrary\n    PHP code.\n  ",
-  "Product": {
-    "Text": "dev-db/phpmyadmin",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-07-29",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "02"
-  },
-  "Bug": [
-    "57890"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-db/phpmyadmin",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.5.7_p1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.5.7",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    phpMyAdmin is a popular, web-based MySQL administration tool written in\n    PHP. It allows users to administer a MySQL database from a web-browser.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Two serious vulnerabilities exist in phpMyAdmin. The first allows any\n    user to alter the server configuration variables (including host, name,\n    and password) by appending new settings to the array variables that\n    hold the configuration in a GET statement. The second allows users to\n    include arbitrary PHP code to be executed within an eval() statement in\n    table name configuration settings. This second vulnerability is only\n    exploitable if $cfg['LeftFrameLight'] is set to FALSE.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    Authenticated users can alter configuration variables for their running\n    copy of phpMyAdmin. The impact of this should be minimal. However, the\n    second vulnerability would allow an authenticated user to execute\n    arbitrary PHP code with the permissions of the webserver, potentially\n    allowing a serious Denial of Service or further remote compromise.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    The second, more serious vulnerability is only exploitable if\n    $cfg['LeftFrameLight'] is set to FALSE. In the default Gentoo\n    installation, this is set to TRUE. There is no known workaround for the\n    first.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All phpMyAdmin users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n    \n    # emerge -pv \">=dev-db/phpmyadmin-2.5.7_p1\"\n    # emerge \">=dev-db/phpmyadmin-2.5.7_p1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "BugTraq Announcement",
-        "Link": "http://www.securityfocus.com/archive/1/367486"
-      },
-      {
-        "Text": "CVE-2004-2631",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-2631"
-      },
-      {
-        "Text": "CVE-2004-2632",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-2632"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": ""
-    },
-    {
-      "Text": "\n    dmargoli\n  ",
-      "Tag": "submitter",
-      "Timestamp": ""
-    }
-  ]
+	"ID": "200407-22",
+	"Title": "phpMyAdmin: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities in phpMyAdmin may allow a remote attacker with a\n    valid user account to alter configuration variables and execute arbitrary\n    PHP code.\n  ",
+	"Product": {
+		"Text": "dev-db/phpmyadmin",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-07-29",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "02"
+	},
+	"Bug": [
+		"57890"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-db/phpmyadmin",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.5.7_p1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.5.7",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    phpMyAdmin is a popular, web-based MySQL administration tool written in\n    PHP. It allows users to administer a MySQL database from a web-browser.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Two serious vulnerabilities exist in phpMyAdmin. The first allows any\n    user to alter the server configuration variables (including host, name,\n    and password) by appending new settings to the array variables that\n    hold the configuration in a GET statement. The second allows users to\n    include arbitrary PHP code to be executed within an eval() statement in\n    table name configuration settings. This second vulnerability is only\n    exploitable if $cfg['LeftFrameLight'] is set to FALSE.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    Authenticated users can alter configuration variables for their running\n    copy of phpMyAdmin. The impact of this should be minimal. However, the\n    second vulnerability would allow an authenticated user to execute\n    arbitrary PHP code with the permissions of the webserver, potentially\n    allowing a serious Denial of Service or further remote compromise.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    The second, more serious vulnerability is only exploitable if\n    $cfg['LeftFrameLight'] is set to FALSE. In the default Gentoo\n    installation, this is set to TRUE. There is no known workaround for the\n    first.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All phpMyAdmin users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n    \n    # emerge -pv \">=dev-db/phpmyadmin-2.5.7_p1\"\n    # emerge \">=dev-db/phpmyadmin-2.5.7_p1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "BugTraq Announcement",
+				"Link": "http://www.securityfocus.com/archive/1/367486"
+			},
+			{
+				"Text": "CVE-2004-2631",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-2631"
+			},
+			{
+				"Text": "CVE-2004-2632",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-2632"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": ""
+		},
+		{
+			"Text": "\n    dmargoli\n  ",
+			"Tag": "submitter",
+			"Timestamp": ""
+		}
+	]
 }

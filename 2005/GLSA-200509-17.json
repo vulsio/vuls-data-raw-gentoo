@@ -1,133 +1,133 @@
 {
-  "ID": "200509-17",
-  "Title": "Webmin, Usermin: Remote code execution through PAM authentication",
-  "Synopsis": "\n    If Webmin or Usermin is configured to use full PAM conversations, it is\n    vulnerable to the remote execution of arbitrary code with root privileges.\n  ",
-  "Product": {
-    "Text": "Webmin Usermin",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-09-24",
-  "Revised": {
-    "Text": "2005-09-24",
-    "Count": "01"
-  },
-  "Bug": [
-    "106705"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-admin/webmin",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.230",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.230",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-admin/usermin",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.160",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.160",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Webmin and Usermin are web-based system administration consoles.\n    Webmin allows an administrator to easily configure servers and other\n    features. Usermin allows users to configure their own accounts, execute\n    commands, and read e-mails.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Keigo Yamazaki discovered that the miniserv.pl webserver, used in\n    both Webmin and Usermin, does not properly validate authentication\n    credentials before sending them to the PAM (Pluggable Authentication\n    Modules) authentication process. The default configuration shipped with\n    Gentoo does not enable the \"full PAM conversations\" option and is\n    therefore unaffected by this flaw.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker could bypass the authentication process and run\n    any command as the root user on the target server.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Do not enable \"full PAM conversations\" in the Authentication\n    options of Webmin and Usermin.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Webmin users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All Usermin users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-admin/webmin-1.230\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-admin/usermin-1.160\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2005-3042",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-3042"
-      },
-      {
-        "Text": "Original Advisory",
-        "Link": "http://www.lac.co.jp/business/sns/intelligence/SNSadvisory_e/83_e.html"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-09-23T12:50:05Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-09-23T12:50:25Z"
-    }
-  ]
+	"ID": "200509-17",
+	"Title": "Webmin, Usermin: Remote code execution through PAM authentication",
+	"Synopsis": "\n    If Webmin or Usermin is configured to use full PAM conversations, it is\n    vulnerable to the remote execution of arbitrary code with root privileges.\n  ",
+	"Product": {
+		"Text": "Webmin Usermin",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-09-24",
+	"Revised": {
+		"Text": "2005-09-24",
+		"Count": "01"
+	},
+	"Bug": [
+		"106705"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-admin/webmin",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.230",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.230",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-admin/usermin",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.160",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.160",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Webmin and Usermin are web-based system administration consoles.\n    Webmin allows an administrator to easily configure servers and other\n    features. Usermin allows users to configure their own accounts, execute\n    commands, and read e-mails.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Keigo Yamazaki discovered that the miniserv.pl webserver, used in\n    both Webmin and Usermin, does not properly validate authentication\n    credentials before sending them to the PAM (Pluggable Authentication\n    Modules) authentication process. The default configuration shipped with\n    Gentoo does not enable the \"full PAM conversations\" option and is\n    therefore unaffected by this flaw.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker could bypass the authentication process and run\n    any command as the root user on the target server.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Do not enable \"full PAM conversations\" in the Authentication\n    options of Webmin and Usermin.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Webmin users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All Usermin users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-admin/webmin-1.230\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-admin/usermin-1.160\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2005-3042",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-3042"
+			},
+			{
+				"Text": "Original Advisory",
+				"Link": "http://www.lac.co.jp/business/sns/intelligence/SNSadvisory_e/83_e.html"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-09-23T12:50:05Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-09-23T12:50:25Z"
+		}
+	]
 }

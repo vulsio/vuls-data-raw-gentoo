@@ -1,112 +1,112 @@
 {
-  "ID": "200601-04",
-  "Title": "VMware Workstation: Vulnerability in NAT networking",
-  "Synopsis": "\n    VMware guest operating systems can execute arbitrary code with elevated\n    privileges on the host operating system through a flaw in NAT networking.\n  ",
-  "Product": {
-    "Text": "VMware",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-01-07",
-  "Revised": {
-    "Text": "2006-05-25",
-    "Count": "02"
-  },
-  "Bug": [
-    "116238"
-  ],
-  "Access": "remote and local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-emulation/vmware-workstation",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "5.5.1.19175",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "4.5.3.19414",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "3.2.1.2242-r10",
-            "Range": "rge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "5.5.1.19175",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    VMware Workstation is a powerful virtual machine for developers and\n    system administrators.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Tim Shelton discovered that vmnet-natd, the host module providing\n    NAT-style networking for VMware guest operating systems, is unable to\n    process incorrect 'EPRT' and 'PORT' FTP requests.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    Malicious guest operating systems using the NAT networking feature or\n    local VMware Workstation users could exploit this vulnerability to\n    execute arbitrary code on the host system with elevated privileges.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Disable the NAT service by following the instructions at <uri link=\"http://www.vmware.com/support/kb\">http://www.vmware.com/support/k\n    b</uri>, Answer ID 2002.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All VMware Workstation users should upgrade to a fixed version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose app-emulation/vmware-workstation"
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2005-4459",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-4459"
-      },
-      {
-        "Text": "VMware Security Response",
-        "Link": "https://www.vmware.com/support/kb/enduser/std_adp.php?p_faqid=2000"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-01-04T10:03:43Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-01-05T15:09:42Z"
-    }
-  ]
+	"ID": "200601-04",
+	"Title": "VMware Workstation: Vulnerability in NAT networking",
+	"Synopsis": "\n    VMware guest operating systems can execute arbitrary code with elevated\n    privileges on the host operating system through a flaw in NAT networking.\n  ",
+	"Product": {
+		"Text": "VMware",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-01-07",
+	"Revised": {
+		"Text": "2006-05-25",
+		"Count": "02"
+	},
+	"Bug": [
+		"116238"
+	],
+	"Access": "remote and local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-emulation/vmware-workstation",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "5.5.1.19175",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "4.5.3.19414",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "3.2.1.2242-r10",
+						"Range": "rge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "5.5.1.19175",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    VMware Workstation is a powerful virtual machine for developers and\n    system administrators.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Tim Shelton discovered that vmnet-natd, the host module providing\n    NAT-style networking for VMware guest operating systems, is unable to\n    process incorrect 'EPRT' and 'PORT' FTP requests.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    Malicious guest operating systems using the NAT networking feature or\n    local VMware Workstation users could exploit this vulnerability to\n    execute arbitrary code on the host system with elevated privileges.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Disable the NAT service by following the instructions at <uri link=\"http://www.vmware.com/support/kb\">http://www.vmware.com/support/k\n    b</uri>, Answer ID 2002.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All VMware Workstation users should upgrade to a fixed version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose app-emulation/vmware-workstation"
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2005-4459",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-4459"
+			},
+			{
+				"Text": "VMware Security Response",
+				"Link": "https://www.vmware.com/support/kb/enduser/std_adp.php?p_faqid=2000"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-01-04T10:03:43Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-01-05T15:09:42Z"
+		}
+	]
 }

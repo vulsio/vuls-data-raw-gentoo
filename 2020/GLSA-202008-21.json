@@ -1,98 +1,98 @@
 {
-  "ID": "202008-21",
-  "Title": "Kleopatra: Remote code execution",
-  "Synopsis": "A vulnerability in Kleopatra allows arbitrary execution of code.",
-  "Product": {
-    "Text": "kleopatra",
-    "Type": "ebuild"
-  },
-  "Announced": "2020-08-30",
-  "Revised": {
-    "Text": "2020-08-30",
-    "Count": "1"
-  },
-  "Bug": [
-    "739556"
-  ],
-  "Access": "local, remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "kde-apps/kleopatra",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "20.04.3-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "20.04.3-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Kleopatra is a certificate manager and a universal crypto GUI. It\n      supports managing X.509 and OpenPGP certificates in the GpgSM keybox and\n      retrieving certificates from LDAP servers.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Kleopatra did not safely escape command line parameters provided by\n      URLs, which it configures itself to handle.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could entice a user to process a specially crafted URL\n      via openpgp4fpr handler, possibly resulting in execution of arbitrary\n      code with the privileges of the process, or cause a Denial of Service\n      condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All Kleopatra users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=kde-apps/kleopatra-20.04.3-r1\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2020-24972",
-        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-24972"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "sam_c",
-      "Tag": "requester",
-      "Timestamp": "2020-08-30T18:54:35Z"
-    },
-    {
-      "Text": "sam_c",
-      "Tag": "submitter",
-      "Timestamp": "2020-08-30T21:04:03Z"
-    }
-  ]
+	"ID": "202008-21",
+	"Title": "Kleopatra: Remote code execution",
+	"Synopsis": "A vulnerability in Kleopatra allows arbitrary execution of code.",
+	"Product": {
+		"Text": "kleopatra",
+		"Type": "ebuild"
+	},
+	"Announced": "2020-08-30",
+	"Revised": {
+		"Text": "2020-08-30",
+		"Count": "1"
+	},
+	"Bug": [
+		"739556"
+	],
+	"Access": "local, remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "kde-apps/kleopatra",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "20.04.3-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "20.04.3-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Kleopatra is a certificate manager and a universal crypto GUI. It\n      supports managing X.509 and OpenPGP certificates in the GpgSM keybox and\n      retrieving certificates from LDAP servers.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Kleopatra did not safely escape command line parameters provided by\n      URLs, which it configures itself to handle.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could entice a user to process a specially crafted URL\n      via openpgp4fpr handler, possibly resulting in execution of arbitrary\n      code with the privileges of the process, or cause a Denial of Service\n      condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All Kleopatra users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=kde-apps/kleopatra-20.04.3-r1\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2020-24972",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-24972"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "sam_c",
+			"Tag": "requester",
+			"Timestamp": "2020-08-30T18:54:35Z"
+		},
+		{
+			"Text": "sam_c",
+			"Tag": "submitter",
+			"Timestamp": "2020-08-30T21:04:03Z"
+		}
+	]
 }

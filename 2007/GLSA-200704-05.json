@@ -1,103 +1,103 @@
 {
-  "ID": "200704-05",
-  "Title": "zziplib: Buffer Overflow",
-  "Synopsis": "\n    The zziplib library contains a buffer overflow vulnerability that could\n    lead to user-assisted remote execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "zziplib",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-04-03",
-  "Revised": {
-    "Text": "2007-04-03",
-    "Count": "01"
-  },
-  "Bug": [
-    "171441"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-libs/zziplib",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.13.49",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.13.49",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    The zziplib library is a lightweight library for extracting data from\n    files archived in a single zip file.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    dmcox dmcox discovered a boundary error in the zzip_open_shared_io()\n    function from zzip/file.c .\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to run a zziplib function with an\n    overly long string as an argument which would trigger the buffer\n    overflow and may lead to the execution of arbitrary code.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All zziplib users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/zziplib-0.13.49\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-1614",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1614"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    aetius\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-03-24T20:39:36Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-03-26T21:59:00Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-03-29T21:14:54Z"
-    }
-  ]
+	"ID": "200704-05",
+	"Title": "zziplib: Buffer Overflow",
+	"Synopsis": "\n    The zziplib library contains a buffer overflow vulnerability that could\n    lead to user-assisted remote execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "zziplib",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-04-03",
+	"Revised": {
+		"Text": "2007-04-03",
+		"Count": "01"
+	},
+	"Bug": [
+		"171441"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-libs/zziplib",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.13.49",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.13.49",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    The zziplib library is a lightweight library for extracting data from\n    files archived in a single zip file.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    dmcox dmcox discovered a boundary error in the zzip_open_shared_io()\n    function from zzip/file.c .\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to run a zziplib function with an\n    overly long string as an argument which would trigger the buffer\n    overflow and may lead to the execution of arbitrary code.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All zziplib users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/zziplib-0.13.49\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-1614",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1614"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    aetius\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-03-24T20:39:36Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-03-26T21:59:00Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-03-29T21:14:54Z"
+		}
+	]
 }

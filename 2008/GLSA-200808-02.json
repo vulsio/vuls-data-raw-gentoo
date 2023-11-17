@@ -1,108 +1,108 @@
 {
-  "ID": "200808-02",
-  "Title": "Net-SNMP: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities in Net-SNMP allow for authentication bypass in\n    snmpd and execution of arbitrary code in Perl applications using Net-SMNP.\n  ",
-  "Product": {
-    "Text": "net-snmp",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-08-06",
-  "Revised": {
-    "Text": "2008-08-06",
-    "Count": "01"
-  },
-  "Bug": [
-    "222265",
-    "225105"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-analyzer/net-snmp",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "5.4.1.1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "5.4.1.1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Net-SNMP is a collection of tools for generating and retrieving SNMP\n    data. The SNMPv3 protocol uses a keyed-Hash Message Authentication Code\n    (HMAC) to verify data integrity and authenticity of SNMP messages.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Wes Hardaker reported that the SNMPv3 HMAC verification relies on the\n    client to specify the HMAC length (CVE-2008-0960). John Kortink\n    reported a buffer overflow in the Perl bindings of Net-SNMP when\n    processing the OCTETSTRING in an attribute value pair (AVP) received by\n    an SNMP agent (CVE-2008-2292).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker could send SNMPv3 packets to an instance of snmpd providing\n    a valid user name and an HMAC length value of 1, and easily conduct\n    brute-force attacks to bypass SNMP authentication. An attacker could\n    further entice a user to connect to a malicious SNMP agent with an SNMP\n    client using the Perl bindings, possibly resulting in the execution of\n    arbitrary code.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Net-SNMP users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/net-snmp-5.4.1.1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-0960",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0960"
-      },
-      {
-        "Text": "CVE-2008-2292",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2292"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-07-02T11:15:36Z"
-    },
-    {
-      "Text": "\n    vorlon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-07-04T13:09:07Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-07-07T08:46:03Z"
-    }
-  ]
+	"ID": "200808-02",
+	"Title": "Net-SNMP: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities in Net-SNMP allow for authentication bypass in\n    snmpd and execution of arbitrary code in Perl applications using Net-SMNP.\n  ",
+	"Product": {
+		"Text": "net-snmp",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-08-06",
+	"Revised": {
+		"Text": "2008-08-06",
+		"Count": "01"
+	},
+	"Bug": [
+		"222265",
+		"225105"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-analyzer/net-snmp",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "5.4.1.1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "5.4.1.1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Net-SNMP is a collection of tools for generating and retrieving SNMP\n    data. The SNMPv3 protocol uses a keyed-Hash Message Authentication Code\n    (HMAC) to verify data integrity and authenticity of SNMP messages.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Wes Hardaker reported that the SNMPv3 HMAC verification relies on the\n    client to specify the HMAC length (CVE-2008-0960). John Kortink\n    reported a buffer overflow in the Perl bindings of Net-SNMP when\n    processing the OCTETSTRING in an attribute value pair (AVP) received by\n    an SNMP agent (CVE-2008-2292).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker could send SNMPv3 packets to an instance of snmpd providing\n    a valid user name and an HMAC length value of 1, and easily conduct\n    brute-force attacks to bypass SNMP authentication. An attacker could\n    further entice a user to connect to a malicious SNMP agent with an SNMP\n    client using the Perl bindings, possibly resulting in the execution of\n    arbitrary code.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Net-SNMP users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/net-snmp-5.4.1.1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-0960",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0960"
+			},
+			{
+				"Text": "CVE-2008-2292",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2292"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-07-02T11:15:36Z"
+		},
+		{
+			"Text": "\n    vorlon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-07-04T13:09:07Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-07-07T08:46:03Z"
+		}
+	]
 }

@@ -1,127 +1,127 @@
 {
-  "ID": "200901-09",
-  "Title": "Adobe Reader: User-assisted execution of arbitrary code",
-  "Synopsis": "\n    Adobe Reader is vulnerable to execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "acroread",
-    "Type": "ebuild"
-  },
-  "Announced": "2009-01-13",
-  "Revised": {
-    "Text": "2009-01-13",
-    "Count": "01"
-  },
-  "Bug": [
-    "225483"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-text/acroread",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "8.1.3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "8.1.3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Adobe Reader (formerly Adobe Acrobat Reader) is a closed-source PDF\n    reader.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <ul>\n    <li>\n    An unspecified vulnerability can be triggered by a malformed PDF\n    document, as demonstrated by 2008-HI2.pdf (CVE-2008-2549).\n    </li>\n    <li>\n    Peter Vreugdenhil, Dyon Balding, Will Dormann, Damian Frizza, and Greg\n    MacManus reported a stack-based buffer overflow in the util.printf\n    JavaScript function that incorrectly handles the format string argument\n    (CVE-2008-2992).\n    </li>\n    <li>\n    Greg MacManus of iDefense Labs reported an array index error that can\n    be leveraged for an out-of-bounds write, related to parsing of Type 1\n    fonts (CVE-2008-4812).\n    </li>\n    <li>\n    Javier Vicente Vallejo and Peter Vregdenhil, via Zero Day Initiative,\n    reported multiple unspecified memory corruption vulnerabilities\n    (CVE-2008-4813).\n    </li>\n    <li>\n    Thomas Garnier of SkyRecon Systems reported an unspecified\n    vulnerability in a JavaScript method, related to an \"input validation\n    issue\" (CVE-2008-4814).\n    </li>\n    <li>\n    Josh Bressers of Red Hat reported an untrusted search path\n    vulnerability (CVE-2008-4815).\n    </li>\n    <li>\n    Peter Vreugdenhil reported through iDefense that the Download Manager\n    can trigger a heap corruption via calls to the AcroJS function\n    (CVE-2008-4817).\n    </li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted PDF\n    document, and local attackers could entice a user to run acroread from\n    an untrusted working directory. Both might result in the execution of\n    arbitrary code with the privileges of the user running the application,\n    or a Denial of Service.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Adobe Reader users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/acroread-8.1.3\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-2549",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2549"
-      },
-      {
-        "Text": "CVE-2008-2992",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2992"
-      },
-      {
-        "Text": "CVE-2008-4812",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4812"
-      },
-      {
-        "Text": "CVE-2008-4813",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4813"
-      },
-      {
-        "Text": "CVE-2008-4814",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4814"
-      },
-      {
-        "Text": "CVE-2008-4815",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4815"
-      },
-      {
-        "Text": "CVE-2008-4817",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4817"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-11-26T18:53:29Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-11-26T20:51:39Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-11-26T20:51:48Z"
-    }
-  ]
+	"ID": "200901-09",
+	"Title": "Adobe Reader: User-assisted execution of arbitrary code",
+	"Synopsis": "\n    Adobe Reader is vulnerable to execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "acroread",
+		"Type": "ebuild"
+	},
+	"Announced": "2009-01-13",
+	"Revised": {
+		"Text": "2009-01-13",
+		"Count": "01"
+	},
+	"Bug": [
+		"225483"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-text/acroread",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "8.1.3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "8.1.3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Adobe Reader (formerly Adobe Acrobat Reader) is a closed-source PDF\n    reader.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <ul>\n    <li>\n    An unspecified vulnerability can be triggered by a malformed PDF\n    document, as demonstrated by 2008-HI2.pdf (CVE-2008-2549).\n    </li>\n    <li>\n    Peter Vreugdenhil, Dyon Balding, Will Dormann, Damian Frizza, and Greg\n    MacManus reported a stack-based buffer overflow in the util.printf\n    JavaScript function that incorrectly handles the format string argument\n    (CVE-2008-2992).\n    </li>\n    <li>\n    Greg MacManus of iDefense Labs reported an array index error that can\n    be leveraged for an out-of-bounds write, related to parsing of Type 1\n    fonts (CVE-2008-4812).\n    </li>\n    <li>\n    Javier Vicente Vallejo and Peter Vregdenhil, via Zero Day Initiative,\n    reported multiple unspecified memory corruption vulnerabilities\n    (CVE-2008-4813).\n    </li>\n    <li>\n    Thomas Garnier of SkyRecon Systems reported an unspecified\n    vulnerability in a JavaScript method, related to an \"input validation\n    issue\" (CVE-2008-4814).\n    </li>\n    <li>\n    Josh Bressers of Red Hat reported an untrusted search path\n    vulnerability (CVE-2008-4815).\n    </li>\n    <li>\n    Peter Vreugdenhil reported through iDefense that the Download Manager\n    can trigger a heap corruption via calls to the AcroJS function\n    (CVE-2008-4817).\n    </li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted PDF\n    document, and local attackers could entice a user to run acroread from\n    an untrusted working directory. Both might result in the execution of\n    arbitrary code with the privileges of the user running the application,\n    or a Denial of Service.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Adobe Reader users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/acroread-8.1.3\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-2549",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2549"
+			},
+			{
+				"Text": "CVE-2008-2992",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2992"
+			},
+			{
+				"Text": "CVE-2008-4812",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4812"
+			},
+			{
+				"Text": "CVE-2008-4813",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4813"
+			},
+			{
+				"Text": "CVE-2008-4814",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4814"
+			},
+			{
+				"Text": "CVE-2008-4815",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4815"
+			},
+			{
+				"Text": "CVE-2008-4817",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4817"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-11-26T18:53:29Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-11-26T20:51:39Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-11-26T20:51:48Z"
+		}
+	]
 }

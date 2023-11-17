@@ -1,115 +1,115 @@
 {
-  "ID": "202105-38",
-  "Title": "nginx: Remote code execution",
-  "Synopsis": "A vulnerability in nginx could lead to remote code execution.",
-  "Product": {
-    "Text": "nginx",
-    "Type": "ebuild"
-  },
-  "Announced": "2021-05-26",
-  "Revised": {
-    "Text": "2021-05-26",
-    "Count": "1"
-  },
-  "Bug": [
-    "792087"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-servers/nginx",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.20.1",
-            "Range": "ge",
-            "Slot": "0"
-          },
-          {
-            "Text": "1.21.0",
-            "Range": "ge",
-            "Slot": "mainline"
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.21.0",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>nginx is a robust, small, and high performance HTTP and reverse proxy\n      server.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>It was discovered that nginx did not properly handle DNS responses when\n      “resolver” directive is used.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>A remote attacker, able to provide DNS responses to a nginx instance,\n      could cause the execution of arbitrary code with the privileges of the\n      process or a Denial of Service condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All nginx users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "All nginx mainline users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=www-servers/nginx-1.20.1\"\n    ",
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=www-servers/nginx-1.21.0:mainline\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2021-23017",
-        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-23017"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "whissi",
-      "Tag": "requester",
-      "Timestamp": "2021-05-26T17:05:23Z"
-    },
-    {
-      "Text": "whissi",
-      "Tag": "submitter",
-      "Timestamp": "2021-05-26T17:40:33Z"
-    }
-  ]
+	"ID": "202105-38",
+	"Title": "nginx: Remote code execution",
+	"Synopsis": "A vulnerability in nginx could lead to remote code execution.",
+	"Product": {
+		"Text": "nginx",
+		"Type": "ebuild"
+	},
+	"Announced": "2021-05-26",
+	"Revised": {
+		"Text": "2021-05-26",
+		"Count": "1"
+	},
+	"Bug": [
+		"792087"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-servers/nginx",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.20.1",
+						"Range": "ge",
+						"Slot": "0"
+					},
+					{
+						"Text": "1.21.0",
+						"Range": "ge",
+						"Slot": "mainline"
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.21.0",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>nginx is a robust, small, and high performance HTTP and reverse proxy\n      server.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>It was discovered that nginx did not properly handle DNS responses when\n      “resolver” directive is used.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>A remote attacker, able to provide DNS responses to a nginx instance,\n      could cause the execution of arbitrary code with the privileges of the\n      process or a Denial of Service condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All nginx users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "All nginx mainline users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=www-servers/nginx-1.20.1\"\n    ",
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=www-servers/nginx-1.21.0:mainline\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2021-23017",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-23017"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "whissi",
+			"Tag": "requester",
+			"Timestamp": "2021-05-26T17:05:23Z"
+		},
+		{
+			"Text": "whissi",
+			"Tag": "submitter",
+			"Timestamp": "2021-05-26T17:40:33Z"
+		}
+	]
 }

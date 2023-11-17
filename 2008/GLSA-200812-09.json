@@ -1,103 +1,103 @@
 {
-  "ID": "200812-09",
-  "Title": "OpenSC: Insufficient protection of smart card PIN",
-  "Synopsis": "\n    Smart cards formatted using OpenSC do not sufficiently protect the PIN,\n    allowing attackers to reset it.\n  ",
-  "Product": {
-    "Text": "opensc",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-12-10",
-  "Revised": {
-    "Text": "2008-12-10",
-    "Count": "01"
-  },
-  "Bug": [
-    "233543"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-libs/opensc",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.11.6",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.11.6",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    OpenSC is a smart card application that allows reading and writing via\n    PKCS#11.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Chaskiel M Grundman reported that OpenSC uses weak permissions (ADMIN\n    file control information of 00) for the 5015 directory on smart cards\n    and USB crypto tokens running Siemens CardOS M4.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A physically proximate attacker can exploit this vulnerability to\n    change the PIN on a smart card and use it for authentication, leading\n    to privilege escalation.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All OpenSC users should upgrade to the latest version, and then check\n    and update their smart cards:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/opensc-0.11.6\"\n    # pkcs15-tool --test-update\n    # pkcs15-tool --test-update --update"
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-2235",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2235"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-11-26T18:58:19Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-11-26T19:57:21Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-11-26T19:57:53Z"
-    }
-  ]
+	"ID": "200812-09",
+	"Title": "OpenSC: Insufficient protection of smart card PIN",
+	"Synopsis": "\n    Smart cards formatted using OpenSC do not sufficiently protect the PIN,\n    allowing attackers to reset it.\n  ",
+	"Product": {
+		"Text": "opensc",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-12-10",
+	"Revised": {
+		"Text": "2008-12-10",
+		"Count": "01"
+	},
+	"Bug": [
+		"233543"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-libs/opensc",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.11.6",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.11.6",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    OpenSC is a smart card application that allows reading and writing via\n    PKCS#11.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Chaskiel M Grundman reported that OpenSC uses weak permissions (ADMIN\n    file control information of 00) for the 5015 directory on smart cards\n    and USB crypto tokens running Siemens CardOS M4.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A physically proximate attacker can exploit this vulnerability to\n    change the PIN on a smart card and use it for authentication, leading\n    to privilege escalation.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All OpenSC users should upgrade to the latest version, and then check\n    and update their smart cards:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/opensc-0.11.6\"\n    # pkcs15-tool --test-update\n    # pkcs15-tool --test-update --update"
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-2235",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2235"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-11-26T18:58:19Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-11-26T19:57:21Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-11-26T19:57:53Z"
+		}
+	]
 }

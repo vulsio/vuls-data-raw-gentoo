@@ -1,103 +1,103 @@
 {
-  "ID": "200708-07",
-  "Title": "Xfce Terminal: Remote arbitrary code execution",
-  "Synopsis": "\n    A vulnerability has been discovered in the Xfce Terminal program, allowing\n    for the remote execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "terminal",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-08-11",
-  "Revised": {
-    "Text": "2008-07-12",
-    "Count": "02"
-  },
-  "Bug": [
-    "184886"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "x11-terms/terminal",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.2.6_p25931",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.2.6_p25931",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Xfce Terminal is a console tool for the Xfce desktop environment.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Lasse Karkkainen discovered that the function terminal_helper_execute()\n    in file terminal-helper.c does not properly escape the URIs before\n    processing.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted link,\n    possibly leading to the remote execution of arbitrary code with the\n    privileges of the user running Xfce Terminal. Note that the exploit\n    code depends on the browser used to open the crafted link.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Xfce Terminal users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-terms/terminal-0.2.6_p25931\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-3770",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3770"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-07-28T07:40:26Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-07-28T07:40:36Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-07-31T08:48:45Z"
-    }
-  ]
+	"ID": "200708-07",
+	"Title": "Xfce Terminal: Remote arbitrary code execution",
+	"Synopsis": "\n    A vulnerability has been discovered in the Xfce Terminal program, allowing\n    for the remote execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "terminal",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-08-11",
+	"Revised": {
+		"Text": "2008-07-12",
+		"Count": "02"
+	},
+	"Bug": [
+		"184886"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "x11-terms/terminal",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.2.6_p25931",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.2.6_p25931",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Xfce Terminal is a console tool for the Xfce desktop environment.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Lasse Karkkainen discovered that the function terminal_helper_execute()\n    in file terminal-helper.c does not properly escape the URIs before\n    processing.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted link,\n    possibly leading to the remote execution of arbitrary code with the\n    privileges of the user running Xfce Terminal. Note that the exploit\n    code depends on the browser used to open the crafted link.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Xfce Terminal users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-terms/terminal-0.2.6_p25931\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-3770",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3770"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-07-28T07:40:26Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-07-28T07:40:36Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-07-31T08:48:45Z"
+		}
+	]
 }

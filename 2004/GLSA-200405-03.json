@@ -1,93 +1,93 @@
 {
-  "ID": "200405-03",
-  "Title": "ClamAV VirusEvent parameter vulnerability",
-  "Synopsis": "\n    With a specific configuration (using %f in the VirusEvent parameter), Clam\n    AntiVirus is vulnerable to an attack allowing execution of arbitrary\n    commands.\n  ",
-  "Product": {
-    "Text": "ClamAV",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-05-11",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "02"
-  },
-  "Bug": [
-    "46264"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-antivirus/clamav",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.70",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.70",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    From <uri link=\"http://www.clamav.net/\">http://www.clamav.net/</uri> :\n    </p>\n    <p>\n    \"Clam AntiVirus is a GPL anti-virus toolkit for UNIX. The main purpose\n    of this software is the integration with mail servers (attachment\n    scanning). The package provides a flexible and scalable multi-threaded\n    daemon, a command line scanner, and a tool for automatic updating via\n    Internet. The programs are based on a shared library distributed with\n    the Clam AntiVirus package, which you can use with your own software.\n    Most importantly, the virus database is kept up to date.\"\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The VirusEvent parameter in the clamav.conf configuration file allows\n    to specify a system command to run whenever a virus is found. This\n    system command can make use of the \"%f\" parameter which is replaced by\n    the name of the file infected. The name of the file scanned is under\n    control of the attacker and is not sufficiently checked. Version 0.70\n    of clamav disables the use of the \"%f\" parameter.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    Sending a virus with a malicious file name can result in execution of\n    arbirary system commands with the rights of the antivirus process.\n    Since clamav is often associated to mail servers for email scanning,\n    this attack can be used remotely.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    You should not use the \"%f\" parameter in your VirusEvent configuration.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All users of Clam AntiVirus should upgrade to the latest stable\n    version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n    \n    # emerge -pv \">=app-antivirus/clamav-0.70\"\n    # emerge \">=app-antivirus/clamav-0.70\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2004-1876",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1876"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": ""
-    }
-  ]
+	"ID": "200405-03",
+	"Title": "ClamAV VirusEvent parameter vulnerability",
+	"Synopsis": "\n    With a specific configuration (using %f in the VirusEvent parameter), Clam\n    AntiVirus is vulnerable to an attack allowing execution of arbitrary\n    commands.\n  ",
+	"Product": {
+		"Text": "ClamAV",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-05-11",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "02"
+	},
+	"Bug": [
+		"46264"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-antivirus/clamav",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.70",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.70",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    From <uri link=\"http://www.clamav.net/\">http://www.clamav.net/</uri> :\n    </p>\n    <p>\n    \"Clam AntiVirus is a GPL anti-virus toolkit for UNIX. The main purpose\n    of this software is the integration with mail servers (attachment\n    scanning). The package provides a flexible and scalable multi-threaded\n    daemon, a command line scanner, and a tool for automatic updating via\n    Internet. The programs are based on a shared library distributed with\n    the Clam AntiVirus package, which you can use with your own software.\n    Most importantly, the virus database is kept up to date.\"\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The VirusEvent parameter in the clamav.conf configuration file allows\n    to specify a system command to run whenever a virus is found. This\n    system command can make use of the \"%f\" parameter which is replaced by\n    the name of the file infected. The name of the file scanned is under\n    control of the attacker and is not sufficiently checked. Version 0.70\n    of clamav disables the use of the \"%f\" parameter.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    Sending a virus with a malicious file name can result in execution of\n    arbirary system commands with the rights of the antivirus process.\n    Since clamav is often associated to mail servers for email scanning,\n    this attack can be used remotely.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    You should not use the \"%f\" parameter in your VirusEvent configuration.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All users of Clam AntiVirus should upgrade to the latest stable\n    version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n    \n    # emerge -pv \">=app-antivirus/clamav-0.70\"\n    # emerge \">=app-antivirus/clamav-0.70\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2004-1876",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1876"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": ""
+		}
+	]
 }

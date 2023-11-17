@@ -1,98 +1,98 @@
 {
-  "ID": "201611-10",
-  "Title": "libuv: Privilege escalation",
-  "Synopsis": "A vulnerability in libuv could lead to privilege escalation.",
-  "Product": {
-    "Text": "",
-    "Type": "ebuild"
-  },
-  "Announced": "2016-11-17",
-  "Revised": {
-    "Text": "2016-11-17",
-    "Count": "1"
-  },
-  "Bug": [
-    "540826"
-  ],
-  "Access": "local, remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-libs/libuv",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.4.2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.4.2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>libuv is a multi-platform support library with a focus on asynchronous\n      I/O.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>It was discovered that libuv does not call setgroups before calling\n      setuid/setgid.  If this is not called, then even though the uid has been\n      dropped, there may still be groups associated that permit superuser\n      privileges.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>Context-dependent attackers could escalate privileges via unspecified\n      vectors.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All libuv users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --verbose --oneshot \">=dev-libs/libuv-1.4.2\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2015-0278",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-0278"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "b-man",
-      "Tag": "requester",
-      "Timestamp": "2016-11-17T08:33:56Z"
-    },
-    {
-      "Text": "b-man",
-      "Tag": "submitter",
-      "Timestamp": "2016-11-17T10:08:59Z"
-    }
-  ]
+	"ID": "201611-10",
+	"Title": "libuv: Privilege escalation",
+	"Synopsis": "A vulnerability in libuv could lead to privilege escalation.",
+	"Product": {
+		"Text": "",
+		"Type": "ebuild"
+	},
+	"Announced": "2016-11-17",
+	"Revised": {
+		"Text": "2016-11-17",
+		"Count": "1"
+	},
+	"Bug": [
+		"540826"
+	],
+	"Access": "local, remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-libs/libuv",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.4.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.4.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>libuv is a multi-platform support library with a focus on asynchronous\n      I/O.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>It was discovered that libuv does not call setgroups before calling\n      setuid/setgid.  If this is not called, then even though the uid has been\n      dropped, there may still be groups associated that permit superuser\n      privileges.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>Context-dependent attackers could escalate privileges via unspecified\n      vectors.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All libuv users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --verbose --oneshot \">=dev-libs/libuv-1.4.2\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2015-0278",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-0278"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "b-man",
+			"Tag": "requester",
+			"Timestamp": "2016-11-17T08:33:56Z"
+		},
+		{
+			"Text": "b-man",
+			"Tag": "submitter",
+			"Timestamp": "2016-11-17T10:08:59Z"
+		}
+	]
 }

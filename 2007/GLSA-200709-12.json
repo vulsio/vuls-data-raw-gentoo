@@ -1,103 +1,103 @@
 {
-  "ID": "200709-12",
-  "Title": "Poppler: Two buffer overflow vulnerabilities",
-  "Synopsis": "\n    Poppler is vulnerable to an integer overflow and a stack overflow.\n  ",
-  "Product": {
-    "Text": "poppler",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-09-19",
-  "Revised": {
-    "Text": "2007-09-19",
-    "Count": "01"
-  },
-  "Bug": [
-    "188863"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-text/poppler",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.5.4-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.5.4-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Poppler is a cross-platform PDF rendering library originally based on\n    Xpdf.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Poppler and Xpdf are vulnerable to an integer overflow in the\n    StreamPredictor::StreamPredictor function, and a stack overflow in the\n    StreamPredictor::getNextLine function. The original vulnerability was\n    discovered by Maurycy Prodeus. Note: Gentoo's version of Xpdf is\n    patched to use the Poppler library, so the update to Poppler will also\n    fix Xpdf.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    By enticing a user to view a specially crafted program with a\n    Poppler-based PDF viewer such as Gentoo's Xpdf, Epdfview, or Evince, a\n    remote attacker could cause an overflow, potentially resulting in the\n    execution of arbitrary code with the privileges of the user running the\n    application.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Poppler users should upgrade to the latest version of Poppler:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/poppler-0.5.4-r2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-3387",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3387"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-08-29T12:44:56Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-08-29T12:45:03Z"
-    },
-    {
-      "Text": "\n    aetius\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-09-01T13:10:32Z"
-    }
-  ]
+	"ID": "200709-12",
+	"Title": "Poppler: Two buffer overflow vulnerabilities",
+	"Synopsis": "\n    Poppler is vulnerable to an integer overflow and a stack overflow.\n  ",
+	"Product": {
+		"Text": "poppler",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-09-19",
+	"Revised": {
+		"Text": "2007-09-19",
+		"Count": "01"
+	},
+	"Bug": [
+		"188863"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-text/poppler",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.5.4-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.5.4-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Poppler is a cross-platform PDF rendering library originally based on\n    Xpdf.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Poppler and Xpdf are vulnerable to an integer overflow in the\n    StreamPredictor::StreamPredictor function, and a stack overflow in the\n    StreamPredictor::getNextLine function. The original vulnerability was\n    discovered by Maurycy Prodeus. Note: Gentoo's version of Xpdf is\n    patched to use the Poppler library, so the update to Poppler will also\n    fix Xpdf.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    By enticing a user to view a specially crafted program with a\n    Poppler-based PDF viewer such as Gentoo's Xpdf, Epdfview, or Evince, a\n    remote attacker could cause an overflow, potentially resulting in the\n    execution of arbitrary code with the privileges of the user running the\n    application.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Poppler users should upgrade to the latest version of Poppler:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/poppler-0.5.4-r2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-3387",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3387"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-08-29T12:44:56Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-08-29T12:45:03Z"
+		},
+		{
+			"Text": "\n    aetius\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-09-01T13:10:32Z"
+		}
+	]
 }

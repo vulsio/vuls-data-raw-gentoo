@@ -1,98 +1,98 @@
 {
-  "ID": "201612-14",
-  "Title": "util-linux: Arbitrary code execution",
-  "Synopsis": "A vulnerability was discovered in util-linux, which could\n    potentially lead to the execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "util-linux",
-    "Type": "ebuild"
-  },
-  "Announced": "2016-12-06",
-  "Revised": {
-    "Text": "2016-12-06",
-    "Count": "1"
-  },
-  "Bug": [
-    "530844"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sys-apps/util-linux",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.26",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.26",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>util-linux is a suite of Linux programs including mount and umount,\n      programs used to mount and unmount filesystems.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>A command injection flaw was discovered in util-linux’s “blkid”\n      utility. It uses caching files (/dev/.blkid.tab or /run/blkid/blkid.tab)\n      to store info about the UUID, LABEL etc. it finds on certain devices.\n      However, it does not strip ‘”’ character, so it can be confused to\n      build variable names containing shell metacharacters, which it would\n      usually encode inside the value.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A local attacker could create a specially crafted partition label\n      containing arbitrary code which would get executed when the “blkid”\n      utility processes that value.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All util-linux users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-apps/util-linux-2.26\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2014-9114",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-9114"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "whissi",
-      "Tag": "requester",
-      "Timestamp": "2016-11-22T22:56:21Z"
-    },
-    {
-      "Text": "whissi",
-      "Tag": "submitter",
-      "Timestamp": "2016-12-06T03:44:24Z"
-    }
-  ]
+	"ID": "201612-14",
+	"Title": "util-linux: Arbitrary code execution",
+	"Synopsis": "A vulnerability was discovered in util-linux, which could\n    potentially lead to the execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "util-linux",
+		"Type": "ebuild"
+	},
+	"Announced": "2016-12-06",
+	"Revised": {
+		"Text": "2016-12-06",
+		"Count": "1"
+	},
+	"Bug": [
+		"530844"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-apps/util-linux",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.26",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.26",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>util-linux is a suite of Linux programs including mount and umount,\n      programs used to mount and unmount filesystems.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>A command injection flaw was discovered in util-linux’s “blkid”\n      utility. It uses caching files (/dev/.blkid.tab or /run/blkid/blkid.tab)\n      to store info about the UUID, LABEL etc. it finds on certain devices.\n      However, it does not strip ‘”’ character, so it can be confused to\n      build variable names containing shell metacharacters, which it would\n      usually encode inside the value.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A local attacker could create a specially crafted partition label\n      containing arbitrary code which would get executed when the “blkid”\n      utility processes that value.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All util-linux users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-apps/util-linux-2.26\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2014-9114",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-9114"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "whissi",
+			"Tag": "requester",
+			"Timestamp": "2016-11-22T22:56:21Z"
+		},
+		{
+			"Text": "whissi",
+			"Tag": "submitter",
+			"Timestamp": "2016-12-06T03:44:24Z"
+		}
+	]
 }

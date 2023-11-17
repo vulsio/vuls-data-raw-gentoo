@@ -1,87 +1,87 @@
 {
-  "ID": "200401-04",
-  "Title": "GAIM 0.75 Remote overflows",
-  "Synopsis": "\n    Various overflows in the handling of AIM DirectIM packets was revealed in\n    GAIM that could lead to a remote compromise of the IM client.\n  ",
-  "Product": {
-    "Text": "GAIM",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-01-26",
-  "Revised": {
-    "Text": "2004-01-26",
-    "Count": "01"
-  },
-  "Bug": [
-    "39470"
-  ],
-  "Access": "man-in-the-middle",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-im/gaim",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.75-r7",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.75-r7",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Gaim is a multi-platform and multi-protocol instant messaging\n    client.  It is compatible with AIM , ICQ, MSN Messenger, Yahoo,\n    IRC, Jabber, Gadu-Gadu, and the Zephyr networks.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Yahoo changed the authentication methods to their IM servers,\n    rendering GAIM useless. The GAIM team released a rushed release\n    solving this issue, however, at the same time a code audit\n    revealed 12 new vulnerabilities.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    Due to the nature of instant messaging many of these bugs require\n    man-in-the-middle attacks between the client and the server. But\n    the underlying protocols are easy to implement and attacking\n    ordinary TCP sessions is a fairly simple task. As a result, all\n    users are advised to upgrade their GAIM installation.\n    </p>\n    <ul>\n      <li>\n        Users of GAIM 0.74 or below are affected by 7 of the\n        vulnerabilities and are encouraged to upgrade.\n      </li>\n      <li>\n        Users of GAIM 0.75 are affected by 11 of the vulnerabilities\n        and are encouraged to upgrade to the patched version of GAIM\n        offered by Gentoo.\n      </li>\n      <li>\n        Users of GAIM 0.75-r6 are only affected by\n        4 of the vulnerabilities, but are still urged to upgrade to\n        maintain security.\n      </li>\n    </ul>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no immediate workaround; a software upgrade is required.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All users are recommended to upgrade GAIM to 0.75-r7.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    $> emerge sync\n    $> emerge -pv \">=net-im/gaim-0.75-r7\"\n    $> emerge \">=net-im/gaim-0.75-r7\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "Security advisory from Stefan Esser",
-        "Link": "http://www.securityfocus.com/archive/1/351235/2004-01-23/2004-01-29/0"
-      }
-    ]
-  },
-  "Metadata": null
+	"ID": "200401-04",
+	"Title": "GAIM 0.75 Remote overflows",
+	"Synopsis": "\n    Various overflows in the handling of AIM DirectIM packets was revealed in\n    GAIM that could lead to a remote compromise of the IM client.\n  ",
+	"Product": {
+		"Text": "GAIM",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-01-26",
+	"Revised": {
+		"Text": "2004-01-26",
+		"Count": "01"
+	},
+	"Bug": [
+		"39470"
+	],
+	"Access": "man-in-the-middle",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-im/gaim",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.75-r7",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.75-r7",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Gaim is a multi-platform and multi-protocol instant messaging\n    client.  It is compatible with AIM , ICQ, MSN Messenger, Yahoo,\n    IRC, Jabber, Gadu-Gadu, and the Zephyr networks.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Yahoo changed the authentication methods to their IM servers,\n    rendering GAIM useless. The GAIM team released a rushed release\n    solving this issue, however, at the same time a code audit\n    revealed 12 new vulnerabilities.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    Due to the nature of instant messaging many of these bugs require\n    man-in-the-middle attacks between the client and the server. But\n    the underlying protocols are easy to implement and attacking\n    ordinary TCP sessions is a fairly simple task. As a result, all\n    users are advised to upgrade their GAIM installation.\n    </p>\n    <ul>\n      <li>\n        Users of GAIM 0.74 or below are affected by 7 of the\n        vulnerabilities and are encouraged to upgrade.\n      </li>\n      <li>\n        Users of GAIM 0.75 are affected by 11 of the vulnerabilities\n        and are encouraged to upgrade to the patched version of GAIM\n        offered by Gentoo.\n      </li>\n      <li>\n        Users of GAIM 0.75-r6 are only affected by\n        4 of the vulnerabilities, but are still urged to upgrade to\n        maintain security.\n      </li>\n    </ul>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no immediate workaround; a software upgrade is required.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All users are recommended to upgrade GAIM to 0.75-r7.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    $> emerge sync\n    $> emerge -pv \">=net-im/gaim-0.75-r7\"\n    $> emerge \">=net-im/gaim-0.75-r7\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "Security advisory from Stefan Esser",
+				"Link": "http://www.securityfocus.com/archive/1/351235/2004-01-23/2004-01-29/0"
+			}
+		]
+	},
+	"Metadata": null
 }

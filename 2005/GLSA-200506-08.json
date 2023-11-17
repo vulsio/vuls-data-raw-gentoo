@@ -1,139 +1,139 @@
 {
-  "ID": "200506-08",
-  "Title": "GNU shtool, ocaml-mysql: Insecure temporary file creation",
-  "Synopsis": "\n    GNU shtool and ocaml-mysql are vulnerable to symlink attacks, potentially\n    allowing a local user to overwrite arbitrary files.\n  ",
-  "Product": {
-    "Text": "GNU shtool",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-06-11",
-  "Revised": {
-    "Text": "2005-06-11",
-    "Count": "01"
-  },
-  "Bug": [
-    "93782",
-    "93784"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-util/shtool",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.0.1-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.0.1-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "dev-ml/ocaml-mysql",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.0.3-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.0.3-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    GNU shtool is a compilation of small shell scripts into a single\n    shell tool. The ocaml-mysql package includes the GNU shtool code.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Eric Romang has discovered that GNU shtool insecurely creates\n    temporary files with predictable filenames (CAN-2005-1751). On closer\n    inspection, Gentoo Security discovered that the shtool temporary file,\n    once created, was being reused insecurely (CAN-2005-1759).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary\n    files directory, pointing to a valid file somewhere on the filesystem.\n    When a GNU shtool script is executed, this would result in the file\n    being overwritten with the rights of the user running the script, which\n    could be the root user.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All GNU shtool users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All ocaml-mysql users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-util/shtool-2.0.1-r2\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-ml/ocaml-mysql-1.0.3-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2005-1751",
-        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1751"
-      },
-      {
-        "Text": "CAN-2005-1759",
-        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1759"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    vorlon078\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-05-27T16:05:53Z"
-    },
-    {
-      "Text": "\n    formula7\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-05-28T21:16:10Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-06-10T15:51:35Z"
-    }
-  ]
+	"ID": "200506-08",
+	"Title": "GNU shtool, ocaml-mysql: Insecure temporary file creation",
+	"Synopsis": "\n    GNU shtool and ocaml-mysql are vulnerable to symlink attacks, potentially\n    allowing a local user to overwrite arbitrary files.\n  ",
+	"Product": {
+		"Text": "GNU shtool",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-06-11",
+	"Revised": {
+		"Text": "2005-06-11",
+		"Count": "01"
+	},
+	"Bug": [
+		"93782",
+		"93784"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-util/shtool",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.0.1-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.0.1-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "dev-ml/ocaml-mysql",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.0.3-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.0.3-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    GNU shtool is a compilation of small shell scripts into a single\n    shell tool. The ocaml-mysql package includes the GNU shtool code.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Eric Romang has discovered that GNU shtool insecurely creates\n    temporary files with predictable filenames (CAN-2005-1751). On closer\n    inspection, Gentoo Security discovered that the shtool temporary file,\n    once created, was being reused insecurely (CAN-2005-1759).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary\n    files directory, pointing to a valid file somewhere on the filesystem.\n    When a GNU shtool script is executed, this would result in the file\n    being overwritten with the rights of the user running the script, which\n    could be the root user.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All GNU shtool users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All ocaml-mysql users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-util/shtool-2.0.1-r2\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-ml/ocaml-mysql-1.0.3-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2005-1751",
+				"Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1751"
+			},
+			{
+				"Text": "CAN-2005-1759",
+				"Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1759"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    vorlon078\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-05-27T16:05:53Z"
+		},
+		{
+			"Text": "\n    formula7\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-05-28T21:16:10Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-06-10T15:51:35Z"
+		}
+	]
 }

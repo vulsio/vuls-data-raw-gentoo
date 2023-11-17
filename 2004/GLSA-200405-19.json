@@ -1,97 +1,97 @@
 {
-  "ID": "200405-19",
-  "Title": "Opera telnet URI handler file creation/truncation vulnerability",
-  "Synopsis": "\n    A vulnerability exists in Opera's telnet URI handler that may allow a\n    remote attacker to overwrite arbitrary files.\n  ",
-  "Product": {
-    "Text": "opera",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-05-25",
-  "Revised": {
-    "Text": "2007-12-30",
-    "Count": "03"
-  },
-  "Bug": [
-    "50857"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-client/opera",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "7.50_beta1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "7.50_beta1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Opera is a multi-platform web browser.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The telnet URI handler in Opera does not check for leading '-'\n    characters in the host name. Consequently, a maliciously-crafted\n    telnet:// link may be able to pass options to the telnet program\n    itself. One example would be the following:\n    </p>\n    <p>\n    telnet://-nMyFile\n    </p>\n    <p>\n    If MyFile exists in the user's home directory and the user clicking on\n    the link has write permissions to it, the contents of the file will be\n    overwritten with the output of the telnet trace information. If MyFile\n    does not exist, the file will be created in the user's home directory.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    This exploit has two possible impacts. First, it may create new files\n    in the user's home directory. Second, and far more serious, it may\n    overwrite existing files that the user has write permissions to. An\n    attacker with some knowledge of a user's home directory might be able\n    to destroy important files stored within.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Disable the telnet URI handler from within Opera.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Opera users are encouraged to upgrade to the latest version of the\n    program:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n    \n    # emerge -pv \">=www-client/opera-7.50_beta1\"\n    # emerge \">=www-client/opera-7.50_beta1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "iDEFENSE Security Advisory 05.12.04",
-        "Link": "http://www.idefense.com/application/poi/display?id=104&type=vulnerabilities&flashstatus=true"
-      },
-      {
-        "Text": "CVE-2004-0473",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0473"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    klieber\n  ",
-      "Tag": "submitter",
-      "Timestamp": ""
-    }
-  ]
+	"ID": "200405-19",
+	"Title": "Opera telnet URI handler file creation/truncation vulnerability",
+	"Synopsis": "\n    A vulnerability exists in Opera's telnet URI handler that may allow a\n    remote attacker to overwrite arbitrary files.\n  ",
+	"Product": {
+		"Text": "opera",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-05-25",
+	"Revised": {
+		"Text": "2007-12-30",
+		"Count": "03"
+	},
+	"Bug": [
+		"50857"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-client/opera",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "7.50_beta1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "7.50_beta1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Opera is a multi-platform web browser.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The telnet URI handler in Opera does not check for leading '-'\n    characters in the host name. Consequently, a maliciously-crafted\n    telnet:// link may be able to pass options to the telnet program\n    itself. One example would be the following:\n    </p>\n    <p>\n    telnet://-nMyFile\n    </p>\n    <p>\n    If MyFile exists in the user's home directory and the user clicking on\n    the link has write permissions to it, the contents of the file will be\n    overwritten with the output of the telnet trace information. If MyFile\n    does not exist, the file will be created in the user's home directory.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    This exploit has two possible impacts. First, it may create new files\n    in the user's home directory. Second, and far more serious, it may\n    overwrite existing files that the user has write permissions to. An\n    attacker with some knowledge of a user's home directory might be able\n    to destroy important files stored within.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Disable the telnet URI handler from within Opera.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Opera users are encouraged to upgrade to the latest version of the\n    program:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n    \n    # emerge -pv \">=www-client/opera-7.50_beta1\"\n    # emerge \">=www-client/opera-7.50_beta1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "iDEFENSE Security Advisory 05.12.04",
+				"Link": "http://www.idefense.com/application/poi/display?id=104&type=vulnerabilities&flashstatus=true"
+			},
+			{
+				"Text": "CVE-2004-0473",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0473"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    klieber\n  ",
+			"Tag": "submitter",
+			"Timestamp": ""
+		}
+	]
 }

@@ -1,241 +1,241 @@
 {
-  "ID": "200711-22",
-  "Title": "Poppler, KDE: User-assisted execution of arbitrary code",
-  "Synopsis": "\n    Poppler and various KDE components are vulnerable to multiple memory\n    management issues possibly resulting in the execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "poppler koffice kword kdegraphics kpdf",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-11-18",
-  "Revised": {
-    "Text": "2007-11-18",
-    "Count": "01"
-  },
-  "Bug": [
-    "196735",
-    "198409"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-text/poppler",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.6.1-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.6.1-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "kde-base/kpdf",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.5.7-r3",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "3.5.8-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.5.8-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "kde-base/kdegraphics",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.5.7-r3",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "3.5.8-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.5.8-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-office/kword",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.6.3-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.6.3-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-office/koffice",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.6.3-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.6.3-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Poppler is a cross-platform PDF rendering library originally based on\n    Xpdf. KOffice is an integrated office suite for KDE. KWord is the\n    KOffice word processor. KPDF is a KDE-based PDF viewer included in the\n    kdegraphics package.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Alin Rad Pop (Secunia Research) discovered several vulnerabilities in\n    the \"Stream.cc\" file of Xpdf: An integer overflow in the\n    DCTStream::reset() method and a boundary error in the\n    CCITTFaxStream::lookChar() method, both leading to heap-based buffer\n    overflows (CVE-2007-5392, CVE-2007-5393). He also discovered a boundary\n    checking error in the DCTStream::readProgressiveDataUnit() method\n    causing memory corruption (CVE-2007-4352). Note: Gentoo's version of\n    Xpdf is patched to use the Poppler library, so the update to Poppler\n    will also fix Xpdf.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    By enticing a user to view or process a specially crafted PDF file with\n    KWord or KPDF or a Poppler-based program such as Gentoo's viewers Xpdf,\n    ePDFView, and Evince or the CUPS printing system, a remote attacker\n    could cause an overflow, potentially resulting in the execution of\n    arbitrary code with the privileges of the user running the application.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Poppler users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All KPDF users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All KDE Graphics Libraries users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All KWord users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All KOffice users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/poppler-0.6.1-r1\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=kde-base/kpdf-3.5.7-r3\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=kde-base/kdegraphics-3.5.7-r3\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-office/kword-1.6.3-r2\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-office/koffice-1.6.3-r2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-4352",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4352"
-      },
-      {
-        "Text": "CVE-2007-5392",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5392"
-      },
-      {
-        "Text": "CVE-2007-5393",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5393"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-11-13T00:47:07Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-11-18T00:30:13Z"
-    }
-  ]
+	"ID": "200711-22",
+	"Title": "Poppler, KDE: User-assisted execution of arbitrary code",
+	"Synopsis": "\n    Poppler and various KDE components are vulnerable to multiple memory\n    management issues possibly resulting in the execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "poppler koffice kword kdegraphics kpdf",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-11-18",
+	"Revised": {
+		"Text": "2007-11-18",
+		"Count": "01"
+	},
+	"Bug": [
+		"196735",
+		"198409"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-text/poppler",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.6.1-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.6.1-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "kde-base/kpdf",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.5.7-r3",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "3.5.8-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.5.8-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "kde-base/kdegraphics",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.5.7-r3",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "3.5.8-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.5.8-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-office/kword",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.6.3-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.6.3-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-office/koffice",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.6.3-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.6.3-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Poppler is a cross-platform PDF rendering library originally based on\n    Xpdf. KOffice is an integrated office suite for KDE. KWord is the\n    KOffice word processor. KPDF is a KDE-based PDF viewer included in the\n    kdegraphics package.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Alin Rad Pop (Secunia Research) discovered several vulnerabilities in\n    the \"Stream.cc\" file of Xpdf: An integer overflow in the\n    DCTStream::reset() method and a boundary error in the\n    CCITTFaxStream::lookChar() method, both leading to heap-based buffer\n    overflows (CVE-2007-5392, CVE-2007-5393). He also discovered a boundary\n    checking error in the DCTStream::readProgressiveDataUnit() method\n    causing memory corruption (CVE-2007-4352). Note: Gentoo's version of\n    Xpdf is patched to use the Poppler library, so the update to Poppler\n    will also fix Xpdf.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    By enticing a user to view or process a specially crafted PDF file with\n    KWord or KPDF or a Poppler-based program such as Gentoo's viewers Xpdf,\n    ePDFView, and Evince or the CUPS printing system, a remote attacker\n    could cause an overflow, potentially resulting in the execution of\n    arbitrary code with the privileges of the user running the application.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Poppler users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All KPDF users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All KDE Graphics Libraries users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All KWord users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All KOffice users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/poppler-0.6.1-r1\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=kde-base/kpdf-3.5.7-r3\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=kde-base/kdegraphics-3.5.7-r3\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-office/kword-1.6.3-r2\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-office/koffice-1.6.3-r2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-4352",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4352"
+			},
+			{
+				"Text": "CVE-2007-5392",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5392"
+			},
+			{
+				"Text": "CVE-2007-5393",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5393"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-11-13T00:47:07Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-11-18T00:30:13Z"
+		}
+	]
 }

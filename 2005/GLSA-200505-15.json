@@ -1,109 +1,109 @@
 {
-  "ID": "200505-15",
-  "Title": "gdb: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities have been discovered in the GNU debugger,\n    potentially allowing the execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "gdb",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-05-20",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "02"
-  },
-  "Bug": [
-    "88398",
-    "91398",
-    "91654"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sys-devel/gdb",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "6.3-r3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "6.3-r3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    gdb is the GNU project's debugger, facilitating the analysis and\n    debugging of applications. The BFD library provides a uniform method of\n    accessing a variety of object file formats.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Tavis Ormandy of the Gentoo Linux Security Audit Team discovered an\n    integer overflow in the BFD library, resulting in a heap overflow. A\n    review also showed that by default, gdb insecurely sources\n    initialisation files from the working directory.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    Successful exploitation would result in the execution of arbitrary code\n    on loading a specially crafted object file or the execution of\n    arbitrary commands.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All gdb users should upgrade to the latest stable version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-devel/gdb-6.3-r3\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2005-1704",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1704"
-      },
-      {
-        "Text": "CVE-2005-1705",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1705"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-05-06T21:52:10Z"
-    },
-    {
-      "Text": "\n    r2d2\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-05-07T04:11:43Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-05-20T12:36:18Z"
-    }
-  ]
+	"ID": "200505-15",
+	"Title": "gdb: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities have been discovered in the GNU debugger,\n    potentially allowing the execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "gdb",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-05-20",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "02"
+	},
+	"Bug": [
+		"88398",
+		"91398",
+		"91654"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-devel/gdb",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "6.3-r3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "6.3-r3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    gdb is the GNU project's debugger, facilitating the analysis and\n    debugging of applications. The BFD library provides a uniform method of\n    accessing a variety of object file formats.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Tavis Ormandy of the Gentoo Linux Security Audit Team discovered an\n    integer overflow in the BFD library, resulting in a heap overflow. A\n    review also showed that by default, gdb insecurely sources\n    initialisation files from the working directory.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    Successful exploitation would result in the execution of arbitrary code\n    on loading a specially crafted object file or the execution of\n    arbitrary commands.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All gdb users should upgrade to the latest stable version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-devel/gdb-6.3-r3\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2005-1704",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1704"
+			},
+			{
+				"Text": "CVE-2005-1705",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1705"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-05-06T21:52:10Z"
+		},
+		{
+			"Text": "\n    r2d2\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-05-07T04:11:43Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-05-20T12:36:18Z"
+		}
+	]
 }

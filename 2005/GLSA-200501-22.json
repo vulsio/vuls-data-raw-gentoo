@@ -1,127 +1,127 @@
 {
-  "ID": "200501-22",
-  "Title": "poppassd_pam: Unauthorized password changing",
-  "Synopsis": "\n    poppassd_pam allows anyone to change any user's password without\n    authenticating the user first.\n  ",
-  "Product": {
-    "Text": "poppassd_pam",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-01-11",
-  "Revised": {
-    "Text": "2005-01-11",
-    "Count": "01"
-  },
-  "Bug": [
-    "75820"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-mail/poppassd_ceti",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.8.4",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.0",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "net-mail/poppassd_pam",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": null,
-        "Vulnerable": [
-          {
-            "Text": "1.0",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    poppassd_pam is a PAM-enabled server for changing system passwords\n    that can be used to change POP server passwords.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Gentoo Linux developer Marcus Hanwell discovered that poppassd_pam\n    did not check that the old password was valid before changing\n    passwords. Our investigation revealed that poppassd_pam did not call\n    pam_authenticate before calling pam_chauthtok.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker could change the system password of any user,\n    including root. This leads to a complete compromise of the POP\n    accounts, and may also lead to a complete root compromise of the\n    affected server, if it also provides shell access authenticated using\n    system passwords.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All poppassd_pam users should migrate to the new package called\n    poppassd_ceti:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    Note: Portage will automatically replace the poppassd_pam\n    package by the poppassd_ceti package.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-mail/poppassd_ceti-1.8.4\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2005-0002",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0002"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-01-11T08:56:45Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-01-11T12:12:22Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-01-11T19:52:14Z"
-    }
-  ]
+	"ID": "200501-22",
+	"Title": "poppassd_pam: Unauthorized password changing",
+	"Synopsis": "\n    poppassd_pam allows anyone to change any user's password without\n    authenticating the user first.\n  ",
+	"Product": {
+		"Text": "poppassd_pam",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-01-11",
+	"Revised": {
+		"Text": "2005-01-11",
+		"Count": "01"
+	},
+	"Bug": [
+		"75820"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-mail/poppassd_ceti",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.8.4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.0",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "net-mail/poppassd_pam",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": null,
+				"Vulnerable": [
+					{
+						"Text": "1.0",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    poppassd_pam is a PAM-enabled server for changing system passwords\n    that can be used to change POP server passwords.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Gentoo Linux developer Marcus Hanwell discovered that poppassd_pam\n    did not check that the old password was valid before changing\n    passwords. Our investigation revealed that poppassd_pam did not call\n    pam_authenticate before calling pam_chauthtok.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker could change the system password of any user,\n    including root. This leads to a complete compromise of the POP\n    accounts, and may also lead to a complete root compromise of the\n    affected server, if it also provides shell access authenticated using\n    system passwords.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All poppassd_pam users should migrate to the new package called\n    poppassd_ceti:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    Note: Portage will automatically replace the poppassd_pam\n    package by the poppassd_ceti package.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-mail/poppassd_ceti-1.8.4\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2005-0002",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0002"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-01-11T08:56:45Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-01-11T12:12:22Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-01-11T19:52:14Z"
+		}
+	]
 }

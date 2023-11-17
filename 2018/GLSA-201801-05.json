@@ -1,98 +1,98 @@
 {
-  "ID": "201801-05",
-  "Title": "OpenSSH: Permission issue",
-  "Synopsis": "A flaw has been discovered in OpenSSH which could allow a remote\n    attacker to create zero-length files.\n  ",
-  "Product": {
-    "Text": "OpenSSH",
-    "Type": "ebuild"
-  },
-  "Announced": "2018-01-07",
-  "Revised": {
-    "Text": "2018-01-07",
-    "Count": "1"
-  },
-  "Bug": [
-    "633428"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-misc/openssh",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "7.5_p1-r3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "7.5_p1-r3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>OpenSSH is a complete SSH protocol implementation that includes SFTP\n      client and server support.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>The process_open function in sftp-server.c in OpenSSH did not properly\n      prevent write operations in readonly mode.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could cause the creation of zero-length files.</p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All OpenSSH users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/openssh-7.5_p1-r3\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "\n      CVE-2017-15906\n    ",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-15906"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "jmbailey",
-      "Tag": "requester",
-      "Timestamp": "2018-01-05T05:55:47Z"
-    },
-    {
-      "Text": "jmbailey",
-      "Tag": "submitter",
-      "Timestamp": "2018-01-07T23:36:33Z"
-    }
-  ]
+	"ID": "201801-05",
+	"Title": "OpenSSH: Permission issue",
+	"Synopsis": "A flaw has been discovered in OpenSSH which could allow a remote\n    attacker to create zero-length files.\n  ",
+	"Product": {
+		"Text": "OpenSSH",
+		"Type": "ebuild"
+	},
+	"Announced": "2018-01-07",
+	"Revised": {
+		"Text": "2018-01-07",
+		"Count": "1"
+	},
+	"Bug": [
+		"633428"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-misc/openssh",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "7.5_p1-r3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "7.5_p1-r3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>OpenSSH is a complete SSH protocol implementation that includes SFTP\n      client and server support.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>The process_open function in sftp-server.c in OpenSSH did not properly\n      prevent write operations in readonly mode.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could cause the creation of zero-length files.</p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All OpenSSH users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/openssh-7.5_p1-r3\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "\n      CVE-2017-15906\n    ",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-15906"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "jmbailey",
+			"Tag": "requester",
+			"Timestamp": "2018-01-05T05:55:47Z"
+		},
+		{
+			"Text": "jmbailey",
+			"Tag": "submitter",
+			"Timestamp": "2018-01-07T23:36:33Z"
+		}
+	]
 }

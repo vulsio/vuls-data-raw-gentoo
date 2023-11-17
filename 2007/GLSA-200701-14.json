@@ -1,103 +1,103 @@
 {
-  "ID": "200701-14",
-  "Title": "Mod_auth_kerb: Denial of service",
-  "Synopsis": "\n    Mod_auth_kerb is vulnerable to a buffer overflow possibly allowing a Denial\n    of Service.\n  ",
-  "Product": {
-    "Text": "mod_auth_kerb",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-01-22",
-  "Revised": {
-    "Text": "2007-12-30",
-    "Count": "02"
-  },
-  "Bug": [
-    "155782"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-apache/mod_auth_kerb",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "5.0_rc7-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "5.0_rc7-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Mod_auth_kerb is an Apache authentication module using Kerberos.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Mod_auth_kerb improperly handles component byte encoding in the\n    der_get_oid() function, allowing for a buffer overflow to occur if\n    there are no components which require more than one byte for encoding.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker could try to access a Kerberos protected resource on an\n    Apache server with an incorrectly configured service principal and\n    crash the server process. It is important to note that this buffer\n    overflow is not known to allow for the execution of code.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All mod_auth_kerb users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apache/mod_auth_kerb-5.0_rc7-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-5989",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5989"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-01-17T22:33:24Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-01-17T22:40:53Z"
-    },
-    {
-      "Text": "\n    shellsage\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-01-18T01:47:32Z"
-    }
-  ]
+	"ID": "200701-14",
+	"Title": "Mod_auth_kerb: Denial of service",
+	"Synopsis": "\n    Mod_auth_kerb is vulnerable to a buffer overflow possibly allowing a Denial\n    of Service.\n  ",
+	"Product": {
+		"Text": "mod_auth_kerb",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-01-22",
+	"Revised": {
+		"Text": "2007-12-30",
+		"Count": "02"
+	},
+	"Bug": [
+		"155782"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-apache/mod_auth_kerb",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "5.0_rc7-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "5.0_rc7-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Mod_auth_kerb is an Apache authentication module using Kerberos.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Mod_auth_kerb improperly handles component byte encoding in the\n    der_get_oid() function, allowing for a buffer overflow to occur if\n    there are no components which require more than one byte for encoding.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker could try to access a Kerberos protected resource on an\n    Apache server with an incorrectly configured service principal and\n    crash the server process. It is important to note that this buffer\n    overflow is not known to allow for the execution of code.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All mod_auth_kerb users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apache/mod_auth_kerb-5.0_rc7-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-5989",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5989"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-01-17T22:33:24Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-01-17T22:40:53Z"
+		},
+		{
+			"Text": "\n    shellsage\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-01-18T01:47:32Z"
+		}
+	]
 }

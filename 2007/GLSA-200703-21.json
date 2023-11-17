@@ -1,179 +1,179 @@
 {
-  "ID": "200703-21",
-  "Title": "PHP: Multiple vulnerabilities",
-  "Synopsis": "\n    PHP contains several vulnerabilities including a heap buffer overflow,\n    potentially leading to the remote execution of arbitrary code under certain\n    conditions.\n  ",
-  "Product": {
-    "Text": "php",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-03-20",
-  "Revised": {
-    "Text": "2008-03-29",
-    "Count": "03"
-  },
-  "Bug": [
-    "153911"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-lang/php",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "5.2.1-r3",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "5.1.6-r11",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "4.4.6",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "4.4.7",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "4.4.8_pre20070816",
-            "Range": "rge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "5.2.1-r3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    PHP is a widely-used general-purpose scripting language that is\n    especially suited for Web development and can be embedded into HTML.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Several vulnerabilities were found in PHP by the Hardened-PHP Project\n    and other researchers. These vulnerabilities include a heap-based\n    buffer overflow in htmlentities() and htmlspecialchars() if called with\n    UTF-8 parameters, and an off-by-one error in str_ireplace(). Other\n    vulnerabilities were also found in the PHP4 branch, including possible\n    overflows, stack corruptions and a format string vulnerability in the\n    *print() functions on 64 bit systems.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    Remote attackers might be able to exploit these issues in PHP\n    applications making use of the affected functions, potentially\n    resulting in the execution of arbitrary code, Denial of Service,\n    execution of scripted contents in the context of the affected site,\n    security bypass or information leak.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All PHP users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \"dev-lang/php\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-5465",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5465"
-      },
-      {
-        "Text": "CVE-2007-0906",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0906"
-      },
-      {
-        "Text": "CVE-2007-0907",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0907"
-      },
-      {
-        "Text": "CVE-2007-0908",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0908"
-      },
-      {
-        "Text": "CVE-2007-0909",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0909"
-      },
-      {
-        "Text": "CVE-2007-0910",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0910"
-      },
-      {
-        "Text": "CVE-2007-0911",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0911"
-      },
-      {
-        "Text": "CVE-2007-0988",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0988"
-      },
-      {
-        "Text": "CVE-2007-1286",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1286"
-      },
-      {
-        "Text": "CVE-2007-1375",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1375"
-      },
-      {
-        "Text": "CVE-2007-1376",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1376"
-      },
-      {
-        "Text": "CVE-2007-1380",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1380"
-      },
-      {
-        "Text": "CVE-2007-1383",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1383"
-      },
-      {
-        "Text": "PHP 4.4.5 Release Announcement",
-        "Link": "https://www.php.net/releases/4_4_5.php"
-      },
-      {
-        "Text": "PHP 5.2.1 Release Announcement",
-        "Link": "https://www.php.net/releases/5_2_1.php"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-03-14T13:36:33Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-03-16T10:54:22Z"
-    },
-    {
-      "Text": "\n    vorlon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-03-16T11:47:58Z"
-    }
-  ]
+	"ID": "200703-21",
+	"Title": "PHP: Multiple vulnerabilities",
+	"Synopsis": "\n    PHP contains several vulnerabilities including a heap buffer overflow,\n    potentially leading to the remote execution of arbitrary code under certain\n    conditions.\n  ",
+	"Product": {
+		"Text": "php",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-03-20",
+	"Revised": {
+		"Text": "2008-03-29",
+		"Count": "03"
+	},
+	"Bug": [
+		"153911"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-lang/php",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "5.2.1-r3",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "5.1.6-r11",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "4.4.6",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "4.4.7",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "4.4.8_pre20070816",
+						"Range": "rge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "5.2.1-r3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    PHP is a widely-used general-purpose scripting language that is\n    especially suited for Web development and can be embedded into HTML.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Several vulnerabilities were found in PHP by the Hardened-PHP Project\n    and other researchers. These vulnerabilities include a heap-based\n    buffer overflow in htmlentities() and htmlspecialchars() if called with\n    UTF-8 parameters, and an off-by-one error in str_ireplace(). Other\n    vulnerabilities were also found in the PHP4 branch, including possible\n    overflows, stack corruptions and a format string vulnerability in the\n    *print() functions on 64 bit systems.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    Remote attackers might be able to exploit these issues in PHP\n    applications making use of the affected functions, potentially\n    resulting in the execution of arbitrary code, Denial of Service,\n    execution of scripted contents in the context of the affected site,\n    security bypass or information leak.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All PHP users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \"dev-lang/php\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-5465",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5465"
+			},
+			{
+				"Text": "CVE-2007-0906",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0906"
+			},
+			{
+				"Text": "CVE-2007-0907",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0907"
+			},
+			{
+				"Text": "CVE-2007-0908",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0908"
+			},
+			{
+				"Text": "CVE-2007-0909",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0909"
+			},
+			{
+				"Text": "CVE-2007-0910",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0910"
+			},
+			{
+				"Text": "CVE-2007-0911",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0911"
+			},
+			{
+				"Text": "CVE-2007-0988",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0988"
+			},
+			{
+				"Text": "CVE-2007-1286",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1286"
+			},
+			{
+				"Text": "CVE-2007-1375",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1375"
+			},
+			{
+				"Text": "CVE-2007-1376",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1376"
+			},
+			{
+				"Text": "CVE-2007-1380",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1380"
+			},
+			{
+				"Text": "CVE-2007-1383",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1383"
+			},
+			{
+				"Text": "PHP 4.4.5 Release Announcement",
+				"Link": "https://www.php.net/releases/4_4_5.php"
+			},
+			{
+				"Text": "PHP 5.2.1 Release Announcement",
+				"Link": "https://www.php.net/releases/5_2_1.php"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-03-14T13:36:33Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-03-16T10:54:22Z"
+		},
+		{
+			"Text": "\n    vorlon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-03-16T11:47:58Z"
+		}
+	]
 }

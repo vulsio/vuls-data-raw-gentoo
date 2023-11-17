@@ -1,101 +1,101 @@
 {
-  "ID": "200405-14",
-  "Title": "Buffer overflow in Subversion",
-  "Synopsis": "\n    There is a vulnerability in the Subversion date parsing code which may lead\n    to denial of service attacks, or execution of arbitrary code. Both the\n    client and server are vulnerable.\n  ",
-  "Product": {
-    "Text": "subversion",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-05-20",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "02"
-  },
-  "Bug": [
-    "51462"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-util/subversion",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.0.3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.0.2",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Subversion is a version control system intended to eventually replace\n    CVS. Like CVS, it has an optional client-server architecture (where the\n    server can be an Apache server running mod_svn, or an ssh program as in\n    CVS's :ext: method). In addition to supporting the features found in\n    CVS, Subversion also provides support for moving and copying files and\n    directories.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    All releases of Subversion prior to 1.0.3 have a vulnerability in the\n    date-parsing code. This vulnerability may allow denial of service or\n    arbitrary code execution as the Subversion user. Both the client and\n    server are vulnerable, and write access is NOT required to the server's\n    repository.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    All servers and clients are vulnerable. Specifically, clients that\n    allow other users to write to administrative files in a working copy\n    may be exploited. Additionally all servers (whether they are httpd/DAV\n    or svnserve) are vulnerable. Write access to the server is not\n    required; public read-only Subversion servers are also exploitable.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time. All users are encouraged to\n    upgrade to the latest available version.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Subversion users should upgrade to the latest stable version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n    \n    # emerge -pv \">=dev-util/subversion-1.0.3\"\n    # emerge \">=dev-util/subversion-1.0.3\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "Subversion Announcement",
-        "Link": "http://subversion.tigris.org/servlets/ReadMsg?list=announce&msgNo=125"
-      },
-      {
-        "Text": "E-Matters Advisory",
-        "Link": "http://security.e-matters.de/advisories/082004.html"
-      },
-      {
-        "Text": "CVE-2004-0397",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0397"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    condordes\n  ",
-      "Tag": "submitter",
-      "Timestamp": ""
-    }
-  ]
+	"ID": "200405-14",
+	"Title": "Buffer overflow in Subversion",
+	"Synopsis": "\n    There is a vulnerability in the Subversion date parsing code which may lead\n    to denial of service attacks, or execution of arbitrary code. Both the\n    client and server are vulnerable.\n  ",
+	"Product": {
+		"Text": "subversion",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-05-20",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "02"
+	},
+	"Bug": [
+		"51462"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-util/subversion",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.0.3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.0.2",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Subversion is a version control system intended to eventually replace\n    CVS. Like CVS, it has an optional client-server architecture (where the\n    server can be an Apache server running mod_svn, or an ssh program as in\n    CVS's :ext: method). In addition to supporting the features found in\n    CVS, Subversion also provides support for moving and copying files and\n    directories.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    All releases of Subversion prior to 1.0.3 have a vulnerability in the\n    date-parsing code. This vulnerability may allow denial of service or\n    arbitrary code execution as the Subversion user. Both the client and\n    server are vulnerable, and write access is NOT required to the server's\n    repository.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    All servers and clients are vulnerable. Specifically, clients that\n    allow other users to write to administrative files in a working copy\n    may be exploited. Additionally all servers (whether they are httpd/DAV\n    or svnserve) are vulnerable. Write access to the server is not\n    required; public read-only Subversion servers are also exploitable.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time. All users are encouraged to\n    upgrade to the latest available version.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Subversion users should upgrade to the latest stable version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n    \n    # emerge -pv \">=dev-util/subversion-1.0.3\"\n    # emerge \">=dev-util/subversion-1.0.3\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "Subversion Announcement",
+				"Link": "http://subversion.tigris.org/servlets/ReadMsg?list=announce&msgNo=125"
+			},
+			{
+				"Text": "E-Matters Advisory",
+				"Link": "http://security.e-matters.de/advisories/082004.html"
+			},
+			{
+				"Text": "CVE-2004-0397",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0397"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    condordes\n  ",
+			"Tag": "submitter",
+			"Timestamp": ""
+		}
+	]
 }

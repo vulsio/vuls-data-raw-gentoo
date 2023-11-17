@@ -1,107 +1,107 @@
 {
-  "ID": "200603-05",
-  "Title": "zoo: Stack-based buffer overflow",
-  "Synopsis": "\n    A stack-based buffer overflow in zoo may be exploited to execute arbitrary\n    code through malicious ZOO archives.\n  ",
-  "Product": {
-    "Text": "zoo",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-03-06",
-  "Revised": {
-    "Text": "2006-03-06",
-    "Count": "01"
-  },
-  "Bug": [
-    "123782"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-arch/zoo",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.10-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.10-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    zoo is a file archiving utility for maintaining collections of\n    files, written by Rahul Dhesi.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Jean-Sebastien Guay-Leroux discovered a boundary error in the\n    fullpath() function in misc.c when processing overly long file and\n    directory names in ZOO archives.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker could craft a malicious ZOO archive and entice someone\n    to open it using zoo. This would trigger a stack-based buffer overflow\n    and potentially allow execution of arbitrary code with the rights of\n    the victim user.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All zoo users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-arch/zoo-2.10-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-0855",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0855"
-      },
-      {
-        "Text": "Original Advisory",
-        "Link": "http://www.guay-leroux.com/projects/zoo-advisory.txt"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-02-26T17:26:29Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-03-03T17:54:01Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-03-04T16:06:52Z"
-    }
-  ]
+	"ID": "200603-05",
+	"Title": "zoo: Stack-based buffer overflow",
+	"Synopsis": "\n    A stack-based buffer overflow in zoo may be exploited to execute arbitrary\n    code through malicious ZOO archives.\n  ",
+	"Product": {
+		"Text": "zoo",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-03-06",
+	"Revised": {
+		"Text": "2006-03-06",
+		"Count": "01"
+	},
+	"Bug": [
+		"123782"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-arch/zoo",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.10-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.10-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    zoo is a file archiving utility for maintaining collections of\n    files, written by Rahul Dhesi.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Jean-Sebastien Guay-Leroux discovered a boundary error in the\n    fullpath() function in misc.c when processing overly long file and\n    directory names in ZOO archives.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker could craft a malicious ZOO archive and entice someone\n    to open it using zoo. This would trigger a stack-based buffer overflow\n    and potentially allow execution of arbitrary code with the rights of\n    the victim user.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All zoo users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-arch/zoo-2.10-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-0855",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0855"
+			},
+			{
+				"Text": "Original Advisory",
+				"Link": "http://www.guay-leroux.com/projects/zoo-advisory.txt"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-02-26T17:26:29Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-03-03T17:54:01Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-03-04T16:06:52Z"
+		}
+	]
 }

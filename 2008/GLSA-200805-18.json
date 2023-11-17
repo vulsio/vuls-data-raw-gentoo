@@ -1,389 +1,389 @@
 {
-  "ID": "200805-18",
-  "Title": "Mozilla products: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities have been reported in Mozilla Firefox,\n    Thunderbird, SeaMonkey and XULRunner, some of which may allow user-assisted\n    execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "mozilla-firefox mozilla-firefox-bin seamonkey seamonkey-bin mozilla-thunderbird mozilla-thunderbird-bin xulrunner",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-05-20",
-  "Revised": {
-    "Text": "2008-05-20",
-    "Count": "01"
-  },
-  "Bug": [
-    "208128",
-    "214816",
-    "218065"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-client/mozilla-firefox",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.0.0.14",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.0.0.14",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "www-client/mozilla-firefox-bin",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.0.0.14",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.0.0.14",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "mail-client/mozilla-thunderbird",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.0.0.14",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.0.0.14",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "mail-client/mozilla-thunderbird-bin",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.0.0.14",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.0.0.14",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "www-client/seamonkey",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.1.9-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.1.9-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "www-client/seamonkey-bin",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.1.9",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.1.9",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "net-libs/xulrunner",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.8.1.14",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.8.1.14",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Mozilla Firefox is an open-source web browser and Mozilla Thunderbird\n    an open-source email client, both from the Mozilla Project. The\n    SeaMonkey project is a community effort to deliver production-quality\n    releases of code derived from the application formerly known as the\n    'Mozilla Application Suite'. XULRunner is a Mozilla runtime package\n    that can be used to bootstrap XUL+XPCOM applications like Firefox and\n    Thunderbird.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The following vulnerabilities were reported in all mentioned Mozilla\n    products:\n    </p>\n    <ul>\n    <li>\n    Jesse Ruderman, Kai Engert, Martijn Wargers, Mats Palmgren, and Paul\n    Nickerson reported browser crashes related to JavaScript methods,\n    possibly triggering memory corruption (CVE-2008-0412).\n    </li>\n    <li>\n    Carsten Book, Wesley Garland, Igor Bukanov, moz_bug_r_a4, shutdown,\n    Philip Taylor, and tgirmann reported crashes in the JavaScript engine,\n    possibly triggering memory corruption (CVE-2008-0413).\n    </li>\n    <li>\n    David Bloom discovered a vulnerability in the way images are treated by\n    the browser when a user leaves a page, possibly triggering memory\n    corruption (CVE-2008-0419).\n    </li>\n    <li>\n    moz_bug_r_a4, Boris Zbarsky, and Johnny Stenback reported a series of\n    privilege escalation vulnerabilities related to JavaScript\n    (CVE-2008-1233, CVE-2008-1234, CVE-2008-1235).\n    </li>\n    <li>\n    Mozilla developers identified browser crashes caused by the layout and\n    JavaScript engines, possibly triggering memory corruption\n    (CVE-2008-1236, CVE-2008-1237).\n    </li>\n    <li>\n    moz_bug_r_a4 and Boris Zbarsky discovered that pages could escape from\n    its sandboxed context and run with chrome privileges, and inject script\n    content into another site, violating the browser's same origin policy\n    (CVE-2008-0415).\n    </li>\n    <li>\n    Gerry Eisenhaur discovered a directory traversal vulnerability when\n    using \"flat\" addons (CVE-2008-0418).\n    </li>\n    <li>\n    Alexey Proskuryakov, Yosuke Hasegawa and Simon Montagu reported\n    multiple character handling flaws related to the backspace character,\n    the \"0x80\" character, involving zero-length non-ASCII sequences in\n    multiple character sets, that could facilitate Cross-Site Scripting\n    attacks (CVE-2008-0416).\n    </li>\n    </ul> <p>\n    The following vulnerability was reported in Thunderbird and SeaMonkey:\n    </p>\n    <ul>\n    <li>\n    regenrecht (via iDefense) reported a heap-based buffer overflow when\n    rendering an email message with an external MIME body (CVE-2008-0304).\n    </li>\n    </ul> <p>\n    The following vulnerabilities were reported in Firefox, SeaMonkey and\n    XULRunner:\n    </p>\n    <ul>\n    <li>The fix for CVE-2008-1237 in Firefox 2.0.0.13\n    and SeaMonkey 1.1.9 introduced a new crash vulnerability\n    (CVE-2008-1380).</li>\n    <li>hong and Gregory Fleischer each reported a\n    variant on earlier reported bugs regarding focus shifting in file input\n    controls (CVE-2008-0414).\n    </li>\n    <li>\n    Gynvael Coldwind (Vexillium) discovered that BMP images could be used\n    to reveal uninitialized memory, and that this data could be extracted\n    using a \"canvas\" feature (CVE-2008-0420).\n    </li>\n    <li>\n    Chris Thomas reported that background tabs could create a borderless\n    XUL pop-up in front of pages in other tabs (CVE-2008-1241).\n    </li>\n    <li>\n    oo.rio.oo discovered that a plain text file with a\n    \"Content-Disposition: attachment\" prevents Firefox from rendering\n    future plain text files within the browser (CVE-2008-0592).\n    </li>\n    <li>\n    Martin Straka reported that the \".href\" property of stylesheet DOM\n    nodes is modified to the final URI of a 302 redirect, bypassing the\n    same origin policy (CVE-2008-0593).\n    </li>\n    <li>\n    Gregory Fleischer discovered that under certain circumstances, leading\n    characters from the hostname part of the \"Referer:\" HTTP header are\n    removed (CVE-2008-1238).\n    </li>\n    <li>\n    Peter Brodersen and Alexander Klink reported that the browser\n    automatically selected and sent a client certificate when SSL Client\n    Authentication is requested by a server (CVE-2007-4879).\n    </li>\n    <li>\n    Gregory Fleischer reported that web content fetched via the \"jar:\"\n    protocol was not subject to network access restrictions\n    (CVE-2008-1240).\n    </li>\n    </ul> <p>\n    The following vulnerabilities were reported in Firefox:\n    </p>\n    <ul>\n    <li>\n    Justin Dolske discovered a CRLF injection vulnerability when storing\n    passwords (CVE-2008-0417).\n    </li>\n    <li>\n    Michal Zalewski discovered that Firefox does not properly manage a\n    delay timer used in confirmation dialogs (CVE-2008-0591).\n    </li>\n    <li>\n    Emil Ljungdahl and Lars-Olof Moilanen discovered that a web forgery\n    warning dialog is not displayed if the entire contents of a web page\n    are in a DIV tag that uses absolute positioning (CVE-2008-0594).\n    </li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to view a specially crafted web\n    page or email that will trigger one of the vulnerabilities, possibly\n    leading to the execution of arbitrary code or a Denial of Service. It\n    is also possible for an attacker to trick a user to upload arbitrary\n    files when submitting a form, to corrupt saved passwords for other\n    sites, to steal login credentials, or to conduct Cross-Site Scripting\n    and Cross-Site Request Forgery attacks.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Mozilla Firefox users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All Mozilla Firefox binary users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All Mozilla Thunderbird users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All Mozilla Thunderbird binary users should upgrade to the latest\n    version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All SeaMonkey users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All SeaMonkey binary users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All XULRunner users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    NOTE: The crash vulnerability (CVE-2008-1380) is currently unfixed in\n    the SeaMonkey binary ebuild, as no precompiled packages have been\n    released. Until an update is available, we recommend all SeaMonkey\n    users to disable JavaScript, use Firefox for JavaScript-enabled\n    browsing, or switch to the SeaMonkey source ebuild.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/mozilla-firefox-2.0.0.14\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/mozilla-firefox-bin-2.0.0.14\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-client/mozilla-thunderbird-2.0.0.14\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-client/mozilla-thunderbird-bin-2.0.0.14\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/seamonkey-1.1.9-r1\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/seamonkey-bin-1.1.9\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-libs/xulrunner-1.8.1.14\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-4879",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4879"
-      },
-      {
-        "Text": "CVE-2008-0304",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0304"
-      },
-      {
-        "Text": "CVE-2008-0412",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0412"
-      },
-      {
-        "Text": "CVE-2008-0413",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0413"
-      },
-      {
-        "Text": "CVE-2008-0414",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0414"
-      },
-      {
-        "Text": "CVE-2008-0415",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0415"
-      },
-      {
-        "Text": "CVE-2008-0416",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0416"
-      },
-      {
-        "Text": "CVE-2008-0417",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0417"
-      },
-      {
-        "Text": "CVE-2008-0418",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0418"
-      },
-      {
-        "Text": "CVE-2008-0419",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0419"
-      },
-      {
-        "Text": "CVE-2008-0420",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0420"
-      },
-      {
-        "Text": "CVE-2008-0591",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0591"
-      },
-      {
-        "Text": "CVE-2008-0592",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0592"
-      },
-      {
-        "Text": "CVE-2008-0593",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0593"
-      },
-      {
-        "Text": "CVE-2008-0594",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0594"
-      },
-      {
-        "Text": "CVE-2008-1233",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1233"
-      },
-      {
-        "Text": "CVE-2008-1234",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1234"
-      },
-      {
-        "Text": "CVE-2008-1235",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1235"
-      },
-      {
-        "Text": "CVE-2008-1236",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1236"
-      },
-      {
-        "Text": "CVE-2008-1237",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1237"
-      },
-      {
-        "Text": "CVE-2008-1238",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1238"
-      },
-      {
-        "Text": "CVE-2008-1240",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1240"
-      },
-      {
-        "Text": "CVE-2008-1241",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1241"
-      },
-      {
-        "Text": "CVE-2008-1380",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1380"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-03-27T03:40:04Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-05-20T21:13:08Z"
-    }
-  ]
+	"ID": "200805-18",
+	"Title": "Mozilla products: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities have been reported in Mozilla Firefox,\n    Thunderbird, SeaMonkey and XULRunner, some of which may allow user-assisted\n    execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "mozilla-firefox mozilla-firefox-bin seamonkey seamonkey-bin mozilla-thunderbird mozilla-thunderbird-bin xulrunner",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-05-20",
+	"Revised": {
+		"Text": "2008-05-20",
+		"Count": "01"
+	},
+	"Bug": [
+		"208128",
+		"214816",
+		"218065"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-client/mozilla-firefox",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.0.0.14",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.0.0.14",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "www-client/mozilla-firefox-bin",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.0.0.14",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.0.0.14",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "mail-client/mozilla-thunderbird",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.0.0.14",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.0.0.14",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "mail-client/mozilla-thunderbird-bin",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.0.0.14",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.0.0.14",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "www-client/seamonkey",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.1.9-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.1.9-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "www-client/seamonkey-bin",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.1.9",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.1.9",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "net-libs/xulrunner",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.8.1.14",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.8.1.14",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Mozilla Firefox is an open-source web browser and Mozilla Thunderbird\n    an open-source email client, both from the Mozilla Project. The\n    SeaMonkey project is a community effort to deliver production-quality\n    releases of code derived from the application formerly known as the\n    'Mozilla Application Suite'. XULRunner is a Mozilla runtime package\n    that can be used to bootstrap XUL+XPCOM applications like Firefox and\n    Thunderbird.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The following vulnerabilities were reported in all mentioned Mozilla\n    products:\n    </p>\n    <ul>\n    <li>\n    Jesse Ruderman, Kai Engert, Martijn Wargers, Mats Palmgren, and Paul\n    Nickerson reported browser crashes related to JavaScript methods,\n    possibly triggering memory corruption (CVE-2008-0412).\n    </li>\n    <li>\n    Carsten Book, Wesley Garland, Igor Bukanov, moz_bug_r_a4, shutdown,\n    Philip Taylor, and tgirmann reported crashes in the JavaScript engine,\n    possibly triggering memory corruption (CVE-2008-0413).\n    </li>\n    <li>\n    David Bloom discovered a vulnerability in the way images are treated by\n    the browser when a user leaves a page, possibly triggering memory\n    corruption (CVE-2008-0419).\n    </li>\n    <li>\n    moz_bug_r_a4, Boris Zbarsky, and Johnny Stenback reported a series of\n    privilege escalation vulnerabilities related to JavaScript\n    (CVE-2008-1233, CVE-2008-1234, CVE-2008-1235).\n    </li>\n    <li>\n    Mozilla developers identified browser crashes caused by the layout and\n    JavaScript engines, possibly triggering memory corruption\n    (CVE-2008-1236, CVE-2008-1237).\n    </li>\n    <li>\n    moz_bug_r_a4 and Boris Zbarsky discovered that pages could escape from\n    its sandboxed context and run with chrome privileges, and inject script\n    content into another site, violating the browser's same origin policy\n    (CVE-2008-0415).\n    </li>\n    <li>\n    Gerry Eisenhaur discovered a directory traversal vulnerability when\n    using \"flat\" addons (CVE-2008-0418).\n    </li>\n    <li>\n    Alexey Proskuryakov, Yosuke Hasegawa and Simon Montagu reported\n    multiple character handling flaws related to the backspace character,\n    the \"0x80\" character, involving zero-length non-ASCII sequences in\n    multiple character sets, that could facilitate Cross-Site Scripting\n    attacks (CVE-2008-0416).\n    </li>\n    </ul> <p>\n    The following vulnerability was reported in Thunderbird and SeaMonkey:\n    </p>\n    <ul>\n    <li>\n    regenrecht (via iDefense) reported a heap-based buffer overflow when\n    rendering an email message with an external MIME body (CVE-2008-0304).\n    </li>\n    </ul> <p>\n    The following vulnerabilities were reported in Firefox, SeaMonkey and\n    XULRunner:\n    </p>\n    <ul>\n    <li>The fix for CVE-2008-1237 in Firefox 2.0.0.13\n    and SeaMonkey 1.1.9 introduced a new crash vulnerability\n    (CVE-2008-1380).</li>\n    <li>hong and Gregory Fleischer each reported a\n    variant on earlier reported bugs regarding focus shifting in file input\n    controls (CVE-2008-0414).\n    </li>\n    <li>\n    Gynvael Coldwind (Vexillium) discovered that BMP images could be used\n    to reveal uninitialized memory, and that this data could be extracted\n    using a \"canvas\" feature (CVE-2008-0420).\n    </li>\n    <li>\n    Chris Thomas reported that background tabs could create a borderless\n    XUL pop-up in front of pages in other tabs (CVE-2008-1241).\n    </li>\n    <li>\n    oo.rio.oo discovered that a plain text file with a\n    \"Content-Disposition: attachment\" prevents Firefox from rendering\n    future plain text files within the browser (CVE-2008-0592).\n    </li>\n    <li>\n    Martin Straka reported that the \".href\" property of stylesheet DOM\n    nodes is modified to the final URI of a 302 redirect, bypassing the\n    same origin policy (CVE-2008-0593).\n    </li>\n    <li>\n    Gregory Fleischer discovered that under certain circumstances, leading\n    characters from the hostname part of the \"Referer:\" HTTP header are\n    removed (CVE-2008-1238).\n    </li>\n    <li>\n    Peter Brodersen and Alexander Klink reported that the browser\n    automatically selected and sent a client certificate when SSL Client\n    Authentication is requested by a server (CVE-2007-4879).\n    </li>\n    <li>\n    Gregory Fleischer reported that web content fetched via the \"jar:\"\n    protocol was not subject to network access restrictions\n    (CVE-2008-1240).\n    </li>\n    </ul> <p>\n    The following vulnerabilities were reported in Firefox:\n    </p>\n    <ul>\n    <li>\n    Justin Dolske discovered a CRLF injection vulnerability when storing\n    passwords (CVE-2008-0417).\n    </li>\n    <li>\n    Michal Zalewski discovered that Firefox does not properly manage a\n    delay timer used in confirmation dialogs (CVE-2008-0591).\n    </li>\n    <li>\n    Emil Ljungdahl and Lars-Olof Moilanen discovered that a web forgery\n    warning dialog is not displayed if the entire contents of a web page\n    are in a DIV tag that uses absolute positioning (CVE-2008-0594).\n    </li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to view a specially crafted web\n    page or email that will trigger one of the vulnerabilities, possibly\n    leading to the execution of arbitrary code or a Denial of Service. It\n    is also possible for an attacker to trick a user to upload arbitrary\n    files when submitting a form, to corrupt saved passwords for other\n    sites, to steal login credentials, or to conduct Cross-Site Scripting\n    and Cross-Site Request Forgery attacks.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Mozilla Firefox users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All Mozilla Firefox binary users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All Mozilla Thunderbird users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All Mozilla Thunderbird binary users should upgrade to the latest\n    version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All SeaMonkey users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All SeaMonkey binary users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All XULRunner users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    NOTE: The crash vulnerability (CVE-2008-1380) is currently unfixed in\n    the SeaMonkey binary ebuild, as no precompiled packages have been\n    released. Until an update is available, we recommend all SeaMonkey\n    users to disable JavaScript, use Firefox for JavaScript-enabled\n    browsing, or switch to the SeaMonkey source ebuild.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/mozilla-firefox-2.0.0.14\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/mozilla-firefox-bin-2.0.0.14\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-client/mozilla-thunderbird-2.0.0.14\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-client/mozilla-thunderbird-bin-2.0.0.14\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/seamonkey-1.1.9-r1\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/seamonkey-bin-1.1.9\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-libs/xulrunner-1.8.1.14\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-4879",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4879"
+			},
+			{
+				"Text": "CVE-2008-0304",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0304"
+			},
+			{
+				"Text": "CVE-2008-0412",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0412"
+			},
+			{
+				"Text": "CVE-2008-0413",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0413"
+			},
+			{
+				"Text": "CVE-2008-0414",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0414"
+			},
+			{
+				"Text": "CVE-2008-0415",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0415"
+			},
+			{
+				"Text": "CVE-2008-0416",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0416"
+			},
+			{
+				"Text": "CVE-2008-0417",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0417"
+			},
+			{
+				"Text": "CVE-2008-0418",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0418"
+			},
+			{
+				"Text": "CVE-2008-0419",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0419"
+			},
+			{
+				"Text": "CVE-2008-0420",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0420"
+			},
+			{
+				"Text": "CVE-2008-0591",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0591"
+			},
+			{
+				"Text": "CVE-2008-0592",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0592"
+			},
+			{
+				"Text": "CVE-2008-0593",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0593"
+			},
+			{
+				"Text": "CVE-2008-0594",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0594"
+			},
+			{
+				"Text": "CVE-2008-1233",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1233"
+			},
+			{
+				"Text": "CVE-2008-1234",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1234"
+			},
+			{
+				"Text": "CVE-2008-1235",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1235"
+			},
+			{
+				"Text": "CVE-2008-1236",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1236"
+			},
+			{
+				"Text": "CVE-2008-1237",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1237"
+			},
+			{
+				"Text": "CVE-2008-1238",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1238"
+			},
+			{
+				"Text": "CVE-2008-1240",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1240"
+			},
+			{
+				"Text": "CVE-2008-1241",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1241"
+			},
+			{
+				"Text": "CVE-2008-1380",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1380"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-03-27T03:40:04Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-05-20T21:13:08Z"
+		}
+	]
 }

@@ -1,116 +1,116 @@
 {
-  "ID": "200806-10",
-  "Title": "FreeType: User-assisted execution of arbitrary code",
-  "Synopsis": "\n    Font parsing vulnerabilities in FreeType might lead to user-assisted\n    execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "freetype",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-06-23",
-  "Revised": {
-    "Text": "2009-05-28",
-    "Count": "03"
-  },
-  "Bug": [
-    "225851"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-libs/freetype",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.3.6",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "1.4_pre20080316-r1",
-            "Range": "rge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.3.6",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    FreeType is a font rendering library for TrueType Font (TTF) and\n    Printer Font Binary (PFB).\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Regenrecht reported multiple vulnerabilities in FreeType via iDefense:\n    </p>\n    <ul>\n    <li>\n    An integer overflow when parsing values in the Private dictionary table\n    in a PFB file, leading to a heap-based buffer overflow\n    (CVE-2008-1806).\n    </li>\n    <li>\n    An invalid free() call related to parsing an invalid \"number of axes\"\n    field in a PFB file (CVE-2008-1807).\n    </li>\n    <li>\n    Multiple off-by-one errors when parsing PBF and TTF files, leading to\n    heap-based buffer overflows (CVE-2008-1808).\n    </li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted TTF\n    or PBF file, possibly resulting in the execution of arbitrary code with\n    the privileges of the user running an application linked against\n    FreeType (such as the X.org X server, running as root).\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All FreeType users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/freetype-2.3.6\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-1806",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1806"
-      },
-      {
-        "Text": "CVE-2008-1807",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1807"
-      },
-      {
-        "Text": "CVE-2008-1808",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1808"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    vorlon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-06-12T09:20:25Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-06-17T00:04:48Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-06-17T00:04:59Z"
-    }
-  ]
+	"ID": "200806-10",
+	"Title": "FreeType: User-assisted execution of arbitrary code",
+	"Synopsis": "\n    Font parsing vulnerabilities in FreeType might lead to user-assisted\n    execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "freetype",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-06-23",
+	"Revised": {
+		"Text": "2009-05-28",
+		"Count": "03"
+	},
+	"Bug": [
+		"225851"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-libs/freetype",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.3.6",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "1.4_pre20080316-r1",
+						"Range": "rge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.3.6",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    FreeType is a font rendering library for TrueType Font (TTF) and\n    Printer Font Binary (PFB).\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Regenrecht reported multiple vulnerabilities in FreeType via iDefense:\n    </p>\n    <ul>\n    <li>\n    An integer overflow when parsing values in the Private dictionary table\n    in a PFB file, leading to a heap-based buffer overflow\n    (CVE-2008-1806).\n    </li>\n    <li>\n    An invalid free() call related to parsing an invalid \"number of axes\"\n    field in a PFB file (CVE-2008-1807).\n    </li>\n    <li>\n    Multiple off-by-one errors when parsing PBF and TTF files, leading to\n    heap-based buffer overflows (CVE-2008-1808).\n    </li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted TTF\n    or PBF file, possibly resulting in the execution of arbitrary code with\n    the privileges of the user running an application linked against\n    FreeType (such as the X.org X server, running as root).\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All FreeType users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/freetype-2.3.6\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-1806",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1806"
+			},
+			{
+				"Text": "CVE-2008-1807",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1807"
+			},
+			{
+				"Text": "CVE-2008-1808",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1808"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    vorlon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-06-12T09:20:25Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-06-17T00:04:48Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-06-17T00:04:59Z"
+		}
+	]
 }

@@ -1,114 +1,114 @@
 {
-  "ID": "201101-03",
-  "Title": "libvpx: User-assisted execution of arbitrary code",
-  "Synopsis": "\n    Timothy B. Terriberry discovered that libvpx contains an integer overflow\n    vulnerability in the processing of video streams that may allow\n    user-assisted execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "libvpx",
-    "Type": "ebuild"
-  },
-  "Announced": "2011-01-15",
-  "Revised": {
-    "Text": "2011-01-15",
-    "Count": "01"
-  },
-  "Bug": [
-    "345559"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-libs/libvpx",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.9.5",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.9.5",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    libvpx is the VP8 codec SDK used to encode and decode video streams,\n    typically within a WebM format media file.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    libvpx is vulnerable to an integer overflow vulnerability when\n    processing crafted VP8 video streams.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted media\n    file, possibly resulting in the execution of arbitrary code with the\n    privileges of the user running the application, or a Denial of Service.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All libvpx users should upgrade to the latest stable version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    Packages which depend on this library may need to be recompiled. Tools\n    such as revdep-rebuild may assist in identifying some of these\n    packages.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/libvpx-0.9.5\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2010-4203",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4203"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    underling\n  ",
-      "Tag": "requester",
-      "Timestamp": "2010-12-13T01:15:02Z"
-    },
-    {
-      "Text": "\n    underling\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2011-01-05T05:26:31Z"
-    },
-    {
-      "Text": "\n    underling\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2011-01-07T16:42:00Z"
-    }
-  ]
+	"ID": "201101-03",
+	"Title": "libvpx: User-assisted execution of arbitrary code",
+	"Synopsis": "\n    Timothy B. Terriberry discovered that libvpx contains an integer overflow\n    vulnerability in the processing of video streams that may allow\n    user-assisted execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "libvpx",
+		"Type": "ebuild"
+	},
+	"Announced": "2011-01-15",
+	"Revised": {
+		"Text": "2011-01-15",
+		"Count": "01"
+	},
+	"Bug": [
+		"345559"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-libs/libvpx",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.9.5",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.9.5",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    libvpx is the VP8 codec SDK used to encode and decode video streams,\n    typically within a WebM format media file.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    libvpx is vulnerable to an integer overflow vulnerability when\n    processing crafted VP8 video streams.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted media\n    file, possibly resulting in the execution of arbitrary code with the\n    privileges of the user running the application, or a Denial of Service.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All libvpx users should upgrade to the latest stable version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    Packages which depend on this library may need to be recompiled. Tools\n    such as revdep-rebuild may assist in identifying some of these\n    packages.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/libvpx-0.9.5\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2010-4203",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4203"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    underling\n  ",
+			"Tag": "requester",
+			"Timestamp": "2010-12-13T01:15:02Z"
+		},
+		{
+			"Text": "\n    underling\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2011-01-05T05:26:31Z"
+		},
+		{
+			"Text": "\n    underling\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2011-01-07T16:42:00Z"
+		}
+	]
 }

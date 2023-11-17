@@ -1,443 +1,443 @@
 {
-  "ID": "201111-01",
-  "Title": "Chromium, V8: Multiple vulnerabilities",
-  "Synopsis": "Multiple vulnerabilities have been reported in Chromium and V8,\n    some of which may allow execution of arbitrary code and local root\n    privilege escalation.\n  ",
-  "Product": {
-    "Text": "chromium v8",
-    "Type": "ebuild"
-  },
-  "Announced": "2011-11-01",
-  "Revised": {
-    "Text": "2011-11-01",
-    "Count": "1"
-  },
-  "Bug": [
-    "351525",
-    "353626",
-    "354121",
-    "356933",
-    "357963",
-    "358581",
-    "360399",
-    "363629",
-    "365125",
-    "366335",
-    "367013",
-    "368649",
-    "370481",
-    "373451",
-    "373469",
-    "377475",
-    "377629",
-    "380311",
-    "380897",
-    "381713",
-    "383251",
-    "385649",
-    "388461"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-client/chromium",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "15.0.874.102",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "15.0.874.102",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "dev-lang/v8",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.5.10.22",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.5.10.22",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Chromium is an open-source web browser project. V8 is Google's open\n      source JavaScript engine.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Multiple vulnerabilities have been discovered in Chromium and V8. Please\n      review the CVE identifiers and release notes referenced below for\n      details.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>A local attacker could gain root privileges (CVE-2011-1444, fixed in\n      chromium-11.0.696.57).\n    </p>\n    \n    <p>A context-dependent attacker could entice a user to open a specially\n      crafted web site or JavaScript program using Chromium or V8, possibly\n      resulting in the execution of arbitrary code with the privileges of the\n      process, or a Denial of Service condition. The attacker also could obtain\n      cookies and other sensitive information, conduct man-in-the-middle\n      attacks, perform address bar spoofing, bypass the same origin policy,\n      perform Cross-Site Scripting attacks, or bypass pop-up blocks.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All Chromium users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "All V8 users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=www-client/chromium-15.0.874.102\"\n    ",
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-lang/v8-3.5.10.22\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2011-2345",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2345"
-      },
-      {
-        "Text": "CVE-2011-2346",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2346"
-      },
-      {
-        "Text": "CVE-2011-2347",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2347"
-      },
-      {
-        "Text": "CVE-2011-2348",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2348"
-      },
-      {
-        "Text": "CVE-2011-2349",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2349"
-      },
-      {
-        "Text": "CVE-2011-2350",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2350"
-      },
-      {
-        "Text": "CVE-2011-2351",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2351"
-      },
-      {
-        "Text": "CVE-2011-2834",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2834"
-      },
-      {
-        "Text": "CVE-2011-2835",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2835"
-      },
-      {
-        "Text": "CVE-2011-2837",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2837"
-      },
-      {
-        "Text": "CVE-2011-2838",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2838"
-      },
-      {
-        "Text": "CVE-2011-2839",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2839"
-      },
-      {
-        "Text": "CVE-2011-2840",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2840"
-      },
-      {
-        "Text": "CVE-2011-2841",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2841"
-      },
-      {
-        "Text": "CVE-2011-2843",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2843"
-      },
-      {
-        "Text": "CVE-2011-2844",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2844"
-      },
-      {
-        "Text": "CVE-2011-2845",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2845"
-      },
-      {
-        "Text": "CVE-2011-2846",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2846"
-      },
-      {
-        "Text": "CVE-2011-2847",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2847"
-      },
-      {
-        "Text": "CVE-2011-2848",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2848"
-      },
-      {
-        "Text": "CVE-2011-2849",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2849"
-      },
-      {
-        "Text": "CVE-2011-2850",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2850"
-      },
-      {
-        "Text": "CVE-2011-2851",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2851"
-      },
-      {
-        "Text": "CVE-2011-2852",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2852"
-      },
-      {
-        "Text": "CVE-2011-2853",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2853"
-      },
-      {
-        "Text": "CVE-2011-2854",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2854"
-      },
-      {
-        "Text": "CVE-2011-2855",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2855"
-      },
-      {
-        "Text": "CVE-2011-2856",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2856"
-      },
-      {
-        "Text": "CVE-2011-2857",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2857"
-      },
-      {
-        "Text": "CVE-2011-2858",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2858"
-      },
-      {
-        "Text": "CVE-2011-2859",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2859"
-      },
-      {
-        "Text": "CVE-2011-2860",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2860"
-      },
-      {
-        "Text": "CVE-2011-2861",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2861"
-      },
-      {
-        "Text": "CVE-2011-2862",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2862"
-      },
-      {
-        "Text": "CVE-2011-2864",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2864"
-      },
-      {
-        "Text": "CVE-2011-2874",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2874"
-      },
-      {
-        "Text": "CVE-2011-3234",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3234"
-      },
-      {
-        "Text": "CVE-2011-3873",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3873"
-      },
-      {
-        "Text": "CVE-2011-3875",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3875"
-      },
-      {
-        "Text": "CVE-2011-3876",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3876"
-      },
-      {
-        "Text": "CVE-2011-3877",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3877"
-      },
-      {
-        "Text": "CVE-2011-3878",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3878"
-      },
-      {
-        "Text": "CVE-2011-3879",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3879"
-      },
-      {
-        "Text": "CVE-2011-3880",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3880"
-      },
-      {
-        "Text": "CVE-2011-3881",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3881"
-      },
-      {
-        "Text": "CVE-2011-3882",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3882"
-      },
-      {
-        "Text": "CVE-2011-3883",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3883"
-      },
-      {
-        "Text": "CVE-2011-3884",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3884"
-      },
-      {
-        "Text": "CVE-2011-3885",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3885"
-      },
-      {
-        "Text": "CVE-2011-3886",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3886"
-      },
-      {
-        "Text": "CVE-2011-3887",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3887"
-      },
-      {
-        "Text": "CVE-2011-3888",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3888"
-      },
-      {
-        "Text": "CVE-2011-3889",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3889"
-      },
-      {
-        "Text": "CVE-2011-3890",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3890"
-      },
-      {
-        "Text": "CVE-2011-3891",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3891"
-      },
-      {
-        "Text": "\n      Release Notes 10.0.648.127\n    ",
-        "Link": "https://googlechromereleases.blogspot.com/2011/03/chrome-stable-release.html"
-      },
-      {
-        "Text": "\n      Release Notes 10.0.648.133\n    ",
-        "Link": "https://googlechromereleases.blogspot.com/2011/03/stable-and-beta-channel-updates.html"
-      },
-      {
-        "Text": "\n      Release Notes 10.0.648.205\n    ",
-        "Link": "https://googlechromereleases.blogspot.com/2011/04/stable-channel-update.html"
-      },
-      {
-        "Text": "\n      Release Notes 11.0.696.57\n    ",
-        "Link": "https://googlechromereleases.blogspot.com/2011/04/chrome-stable-update.html"
-      },
-      {
-        "Text": "\n      Release Notes 11.0.696.65\n    ",
-        "Link": "https://googlechromereleases.blogspot.com/2011/05/beta-and-stable-channel-update.html"
-      },
-      {
-        "Text": "\n      Release Notes 11.0.696.68\n    ",
-        "Link": "https://googlechromereleases.blogspot.com/2011/05/stable-channel-update.html"
-      },
-      {
-        "Text": "\n      Release Notes 11.0.696.71\n    ",
-        "Link": "https://googlechromereleases.blogspot.com/2011/05/stable-channel-update_24.html"
-      },
-      {
-        "Text": "\n      Release Notes 12.0.742.112\n    ",
-        "Link": "https://googlechromereleases.blogspot.com/2011/06/stable-channel-update_28.html"
-      },
-      {
-        "Text": "\n      Release Notes 12.0.742.91\n    ",
-        "Link": "https://googlechromereleases.blogspot.com/2011/06/chrome-stable-release.html"
-      },
-      {
-        "Text": "\n      Release Notes 13.0.782.107\n    ",
-        "Link": "https://googlechromereleases.blogspot.com/2011/08/stable-channel-update.html"
-      },
-      {
-        "Text": "\n      Release Notes 13.0.782.215\n    ",
-        "Link": "https://googlechromereleases.blogspot.com/2011/08/stable-channel-update_22.html"
-      },
-      {
-        "Text": "\n      Release Notes 13.0.782.220\n    ",
-        "Link": "https://googlechromereleases.blogspot.com/2011/09/stable-channel-update.html"
-      },
-      {
-        "Text": "\n      Release Notes 14.0.835.163\n    ",
-        "Link": "https://googlechromereleases.blogspot.com/2011/09/stable-channel-update_16.html"
-      },
-      {
-        "Text": "\n      Release Notes 14.0.835.202\n    ",
-        "Link": "https://googlechromereleases.blogspot.com/2011/10/stable-channel-update.html"
-      },
-      {
-        "Text": "\n      Release Notes 15.0.874.102\n    ",
-        "Link": "https://googlechromereleases.blogspot.com/2011/10/chrome-stable-release.html"
-      },
-      {
-        "Text": "\n      Release Notes 8.0.552.237\n    ",
-        "Link": "https://googlechromereleases.blogspot.com/2011/01/chrome-stable-release.html"
-      },
-      {
-        "Text": "\n      Release Notes 9.0.597.107\n    ",
-        "Link": "https://googlechromereleases.blogspot.com/2011/02/stable-channel-update_28.html"
-      },
-      {
-        "Text": "\n      Release Notes 9.0.597.84\n    ",
-        "Link": "https://googlechromereleases.blogspot.com/2011/02/stable-channel-update.html"
-      },
-      {
-        "Text": "\n      Release Notes 9.0.597.94\n    ",
-        "Link": "https://googlechromereleases.blogspot.com/2011/02/stable-channel-update_08.html"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    phajdan.jr\n  ",
-      "Tag": "requester",
-      "Timestamp": "2011-10-26T07:38:36Z"
-    },
-    {
-      "Text": "\n    phajdan.jr\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2011-11-01T09:59:26Z"
-    }
-  ]
+	"ID": "201111-01",
+	"Title": "Chromium, V8: Multiple vulnerabilities",
+	"Synopsis": "Multiple vulnerabilities have been reported in Chromium and V8,\n    some of which may allow execution of arbitrary code and local root\n    privilege escalation.\n  ",
+	"Product": {
+		"Text": "chromium v8",
+		"Type": "ebuild"
+	},
+	"Announced": "2011-11-01",
+	"Revised": {
+		"Text": "2011-11-01",
+		"Count": "1"
+	},
+	"Bug": [
+		"351525",
+		"353626",
+		"354121",
+		"356933",
+		"357963",
+		"358581",
+		"360399",
+		"363629",
+		"365125",
+		"366335",
+		"367013",
+		"368649",
+		"370481",
+		"373451",
+		"373469",
+		"377475",
+		"377629",
+		"380311",
+		"380897",
+		"381713",
+		"383251",
+		"385649",
+		"388461"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-client/chromium",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "15.0.874.102",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "15.0.874.102",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "dev-lang/v8",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.5.10.22",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.5.10.22",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Chromium is an open-source web browser project. V8 is Google's open\n      source JavaScript engine.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Multiple vulnerabilities have been discovered in Chromium and V8. Please\n      review the CVE identifiers and release notes referenced below for\n      details.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>A local attacker could gain root privileges (CVE-2011-1444, fixed in\n      chromium-11.0.696.57).\n    </p>\n    \n    <p>A context-dependent attacker could entice a user to open a specially\n      crafted web site or JavaScript program using Chromium or V8, possibly\n      resulting in the execution of arbitrary code with the privileges of the\n      process, or a Denial of Service condition. The attacker also could obtain\n      cookies and other sensitive information, conduct man-in-the-middle\n      attacks, perform address bar spoofing, bypass the same origin policy,\n      perform Cross-Site Scripting attacks, or bypass pop-up blocks.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All Chromium users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "All V8 users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=www-client/chromium-15.0.874.102\"\n    ",
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-lang/v8-3.5.10.22\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2011-2345",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2345"
+			},
+			{
+				"Text": "CVE-2011-2346",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2346"
+			},
+			{
+				"Text": "CVE-2011-2347",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2347"
+			},
+			{
+				"Text": "CVE-2011-2348",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2348"
+			},
+			{
+				"Text": "CVE-2011-2349",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2349"
+			},
+			{
+				"Text": "CVE-2011-2350",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2350"
+			},
+			{
+				"Text": "CVE-2011-2351",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2351"
+			},
+			{
+				"Text": "CVE-2011-2834",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2834"
+			},
+			{
+				"Text": "CVE-2011-2835",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2835"
+			},
+			{
+				"Text": "CVE-2011-2837",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2837"
+			},
+			{
+				"Text": "CVE-2011-2838",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2838"
+			},
+			{
+				"Text": "CVE-2011-2839",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2839"
+			},
+			{
+				"Text": "CVE-2011-2840",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2840"
+			},
+			{
+				"Text": "CVE-2011-2841",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2841"
+			},
+			{
+				"Text": "CVE-2011-2843",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2843"
+			},
+			{
+				"Text": "CVE-2011-2844",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2844"
+			},
+			{
+				"Text": "CVE-2011-2845",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2845"
+			},
+			{
+				"Text": "CVE-2011-2846",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2846"
+			},
+			{
+				"Text": "CVE-2011-2847",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2847"
+			},
+			{
+				"Text": "CVE-2011-2848",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2848"
+			},
+			{
+				"Text": "CVE-2011-2849",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2849"
+			},
+			{
+				"Text": "CVE-2011-2850",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2850"
+			},
+			{
+				"Text": "CVE-2011-2851",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2851"
+			},
+			{
+				"Text": "CVE-2011-2852",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2852"
+			},
+			{
+				"Text": "CVE-2011-2853",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2853"
+			},
+			{
+				"Text": "CVE-2011-2854",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2854"
+			},
+			{
+				"Text": "CVE-2011-2855",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2855"
+			},
+			{
+				"Text": "CVE-2011-2856",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2856"
+			},
+			{
+				"Text": "CVE-2011-2857",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2857"
+			},
+			{
+				"Text": "CVE-2011-2858",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2858"
+			},
+			{
+				"Text": "CVE-2011-2859",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2859"
+			},
+			{
+				"Text": "CVE-2011-2860",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2860"
+			},
+			{
+				"Text": "CVE-2011-2861",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2861"
+			},
+			{
+				"Text": "CVE-2011-2862",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2862"
+			},
+			{
+				"Text": "CVE-2011-2864",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2864"
+			},
+			{
+				"Text": "CVE-2011-2874",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2874"
+			},
+			{
+				"Text": "CVE-2011-3234",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3234"
+			},
+			{
+				"Text": "CVE-2011-3873",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3873"
+			},
+			{
+				"Text": "CVE-2011-3875",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3875"
+			},
+			{
+				"Text": "CVE-2011-3876",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3876"
+			},
+			{
+				"Text": "CVE-2011-3877",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3877"
+			},
+			{
+				"Text": "CVE-2011-3878",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3878"
+			},
+			{
+				"Text": "CVE-2011-3879",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3879"
+			},
+			{
+				"Text": "CVE-2011-3880",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3880"
+			},
+			{
+				"Text": "CVE-2011-3881",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3881"
+			},
+			{
+				"Text": "CVE-2011-3882",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3882"
+			},
+			{
+				"Text": "CVE-2011-3883",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3883"
+			},
+			{
+				"Text": "CVE-2011-3884",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3884"
+			},
+			{
+				"Text": "CVE-2011-3885",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3885"
+			},
+			{
+				"Text": "CVE-2011-3886",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3886"
+			},
+			{
+				"Text": "CVE-2011-3887",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3887"
+			},
+			{
+				"Text": "CVE-2011-3888",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3888"
+			},
+			{
+				"Text": "CVE-2011-3889",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3889"
+			},
+			{
+				"Text": "CVE-2011-3890",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3890"
+			},
+			{
+				"Text": "CVE-2011-3891",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3891"
+			},
+			{
+				"Text": "\n      Release Notes 10.0.648.127\n    ",
+				"Link": "https://googlechromereleases.blogspot.com/2011/03/chrome-stable-release.html"
+			},
+			{
+				"Text": "\n      Release Notes 10.0.648.133\n    ",
+				"Link": "https://googlechromereleases.blogspot.com/2011/03/stable-and-beta-channel-updates.html"
+			},
+			{
+				"Text": "\n      Release Notes 10.0.648.205\n    ",
+				"Link": "https://googlechromereleases.blogspot.com/2011/04/stable-channel-update.html"
+			},
+			{
+				"Text": "\n      Release Notes 11.0.696.57\n    ",
+				"Link": "https://googlechromereleases.blogspot.com/2011/04/chrome-stable-update.html"
+			},
+			{
+				"Text": "\n      Release Notes 11.0.696.65\n    ",
+				"Link": "https://googlechromereleases.blogspot.com/2011/05/beta-and-stable-channel-update.html"
+			},
+			{
+				"Text": "\n      Release Notes 11.0.696.68\n    ",
+				"Link": "https://googlechromereleases.blogspot.com/2011/05/stable-channel-update.html"
+			},
+			{
+				"Text": "\n      Release Notes 11.0.696.71\n    ",
+				"Link": "https://googlechromereleases.blogspot.com/2011/05/stable-channel-update_24.html"
+			},
+			{
+				"Text": "\n      Release Notes 12.0.742.112\n    ",
+				"Link": "https://googlechromereleases.blogspot.com/2011/06/stable-channel-update_28.html"
+			},
+			{
+				"Text": "\n      Release Notes 12.0.742.91\n    ",
+				"Link": "https://googlechromereleases.blogspot.com/2011/06/chrome-stable-release.html"
+			},
+			{
+				"Text": "\n      Release Notes 13.0.782.107\n    ",
+				"Link": "https://googlechromereleases.blogspot.com/2011/08/stable-channel-update.html"
+			},
+			{
+				"Text": "\n      Release Notes 13.0.782.215\n    ",
+				"Link": "https://googlechromereleases.blogspot.com/2011/08/stable-channel-update_22.html"
+			},
+			{
+				"Text": "\n      Release Notes 13.0.782.220\n    ",
+				"Link": "https://googlechromereleases.blogspot.com/2011/09/stable-channel-update.html"
+			},
+			{
+				"Text": "\n      Release Notes 14.0.835.163\n    ",
+				"Link": "https://googlechromereleases.blogspot.com/2011/09/stable-channel-update_16.html"
+			},
+			{
+				"Text": "\n      Release Notes 14.0.835.202\n    ",
+				"Link": "https://googlechromereleases.blogspot.com/2011/10/stable-channel-update.html"
+			},
+			{
+				"Text": "\n      Release Notes 15.0.874.102\n    ",
+				"Link": "https://googlechromereleases.blogspot.com/2011/10/chrome-stable-release.html"
+			},
+			{
+				"Text": "\n      Release Notes 8.0.552.237\n    ",
+				"Link": "https://googlechromereleases.blogspot.com/2011/01/chrome-stable-release.html"
+			},
+			{
+				"Text": "\n      Release Notes 9.0.597.107\n    ",
+				"Link": "https://googlechromereleases.blogspot.com/2011/02/stable-channel-update_28.html"
+			},
+			{
+				"Text": "\n      Release Notes 9.0.597.84\n    ",
+				"Link": "https://googlechromereleases.blogspot.com/2011/02/stable-channel-update.html"
+			},
+			{
+				"Text": "\n      Release Notes 9.0.597.94\n    ",
+				"Link": "https://googlechromereleases.blogspot.com/2011/02/stable-channel-update_08.html"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    phajdan.jr\n  ",
+			"Tag": "requester",
+			"Timestamp": "2011-10-26T07:38:36Z"
+		},
+		{
+			"Text": "\n    phajdan.jr\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2011-11-01T09:59:26Z"
+		}
+	]
 }

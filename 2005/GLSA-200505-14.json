@@ -1,103 +1,103 @@
 {
-  "ID": "200505-14",
-  "Title": "Cheetah: Untrusted module search path",
-  "Synopsis": "\n    Cheetah contains a vulnerability in the module importing code that can\n    allow a local user to gain escalated privileges.\n  ",
-  "Product": {
-    "Text": "Cheetah",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-05-19",
-  "Revised": {
-    "Text": "2006-05-17",
-    "Count": "02"
-  },
-  "Bug": [
-    "92926"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-python/cheetah",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.9.17_rc1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.9.17_rc1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Cheetah is a Python powered template engine and code generator.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Brian Bird discovered that Cheetah searches for modules in the\n    world-writable /tmp directory.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A malicious local user could place a module containing arbitrary code\n    in /tmp, which when imported would run with escalated privileges.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There are no known workarounds at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Cheetah users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-python/cheetah-0.9.17_rc1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "Secunia Advisory SA15386",
-        "Link": "https://secunia.com/advisories/15386/"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-05-17T21:18:59Z"
-    },
-    {
-      "Text": "\n    r2d2\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-05-17T21:38:15Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-05-18T11:47:34Z"
-    }
-  ]
+	"ID": "200505-14",
+	"Title": "Cheetah: Untrusted module search path",
+	"Synopsis": "\n    Cheetah contains a vulnerability in the module importing code that can\n    allow a local user to gain escalated privileges.\n  ",
+	"Product": {
+		"Text": "Cheetah",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-05-19",
+	"Revised": {
+		"Text": "2006-05-17",
+		"Count": "02"
+	},
+	"Bug": [
+		"92926"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-python/cheetah",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.9.17_rc1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.9.17_rc1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Cheetah is a Python powered template engine and code generator.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Brian Bird discovered that Cheetah searches for modules in the\n    world-writable /tmp directory.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A malicious local user could place a module containing arbitrary code\n    in /tmp, which when imported would run with escalated privileges.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There are no known workarounds at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Cheetah users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-python/cheetah-0.9.17_rc1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "Secunia Advisory SA15386",
+				"Link": "https://secunia.com/advisories/15386/"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-05-17T21:18:59Z"
+		},
+		{
+			"Text": "\n    r2d2\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-05-17T21:38:15Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-05-18T11:47:34Z"
+		}
+	]
 }

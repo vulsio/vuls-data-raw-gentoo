@@ -1,112 +1,112 @@
 {
-  "ID": "201006-02",
-  "Title": "CamlImages: User-assisted execution of arbitrary code",
-  "Synopsis": "\n    Multiple integer overflows in CamlImages might result in the remote\n    execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "camlimages",
-    "Type": "ebuild"
-  },
-  "Announced": "2010-06-01",
-  "Revised": {
-    "Text": "2010-06-01",
-    "Count": "01"
-  },
-  "Bug": [
-    "276235",
-    "290222"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-ml/camlimages",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.0.2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.0.2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    CamlImages is an image processing library for Objective Caml.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Tielei Wang reported multiple integer overflows, possibly leading to\n    heap-based buffer overflows in the (1) read_png_file() and\n    read_png_file_as_rgb24() functions, when processing a PNG image\n    (CVE-2009-2295) and (2) gifread.c and jpegread.c files when processing\n    GIF or JPEG images (CVE-2009-2660).\n    </p>\n    <p>\n    Other integer overflows were also found in tiffread.c (CVE-2009-3296).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted,\n    overly large PNG, GIF, TIFF, or JPEG image using an application that\n    uses the CamlImages library, possibly resulting in the execution of\n    arbitrary code with the privileges of the user running the application.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All CamlImages users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose =dev-ml/camlimages-3.0.2"
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2009-2295",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2295"
-      },
-      {
-        "Text": "CVE-2009-2660",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2660"
-      },
-      {
-        "Text": "CVE-2009-3296",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3296"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2009-08-09T15:21:06Z"
-    },
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-08-14T12:48:53Z"
-    },
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2010-06-01T09:26:19Z"
-    }
-  ]
+	"ID": "201006-02",
+	"Title": "CamlImages: User-assisted execution of arbitrary code",
+	"Synopsis": "\n    Multiple integer overflows in CamlImages might result in the remote\n    execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "camlimages",
+		"Type": "ebuild"
+	},
+	"Announced": "2010-06-01",
+	"Revised": {
+		"Text": "2010-06-01",
+		"Count": "01"
+	},
+	"Bug": [
+		"276235",
+		"290222"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-ml/camlimages",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.0.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.0.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    CamlImages is an image processing library for Objective Caml.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Tielei Wang reported multiple integer overflows, possibly leading to\n    heap-based buffer overflows in the (1) read_png_file() and\n    read_png_file_as_rgb24() functions, when processing a PNG image\n    (CVE-2009-2295) and (2) gifread.c and jpegread.c files when processing\n    GIF or JPEG images (CVE-2009-2660).\n    </p>\n    <p>\n    Other integer overflows were also found in tiffread.c (CVE-2009-3296).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted,\n    overly large PNG, GIF, TIFF, or JPEG image using an application that\n    uses the CamlImages library, possibly resulting in the execution of\n    arbitrary code with the privileges of the user running the application.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All CamlImages users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose =dev-ml/camlimages-3.0.2"
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2009-2295",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2295"
+			},
+			{
+				"Text": "CVE-2009-2660",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2660"
+			},
+			{
+				"Text": "CVE-2009-3296",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3296"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2009-08-09T15:21:06Z"
+		},
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-08-14T12:48:53Z"
+		},
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2010-06-01T09:26:19Z"
+		}
+	]
 }

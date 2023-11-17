@@ -1,93 +1,93 @@
 {
-  "ID": "200407-10",
-  "Title": "rsync: Directory traversal in rsync daemon",
-  "Synopsis": "\n    Under specific conditions, the rsync daemon is vulnerable to a directory\n    traversal allowing to write files outside a sync module.\n  ",
-  "Product": {
-    "Text": "rsync",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-07-12",
-  "Revised": {
-    "Text": "2004-07-12",
-    "Count": "01"
-  },
-  "Bug": [
-    "49534"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-misc/rsync",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.6.0-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.6.0-r1",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    rsync is a utility that provides fast incremental file transfers. It is\n    used to efficiently synchronize files between hosts and is used by emerge\n    to fetch Gentoo's Portage tree. rsyncd is the rsync daemon, which listens\n    to connections from rsync clients.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    When rsyncd is used without chroot (\"use chroot = false\" in the rsyncd.conf\n    file), the paths sent by the client are not checked thoroughly enough. If\n    rsyncd is used with read-write permissions (\"read only = false\"), this\n    vulnerability can be used to write files anywhere with the rights of the\n    rsyncd daemon. With default Gentoo installations, rsyncd runs in a chroot,\n    without write permissions and with the rights of the \"nobody\" user.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    On affected configurations and if the rsync daemon runs under a privileged\n    user, a remote client can exploit this vulnerability to completely\n    compromise the host.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    You should never set the rsync daemon to run with \"use chroot = false\". If\n    for some reason you have to run rsyncd without a chroot, then you should\n    not set \"read only = false\".\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All users should update to the latest version of the rsync package.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n\n    # emerge -pv \">=net-misc/rsync-2.6.0-r2\"\n    # emerge \">=net-misc/rsync-2.6.0-r2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2004-0426",
-        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0426"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": ""
-    }
-  ]
+	"ID": "200407-10",
+	"Title": "rsync: Directory traversal in rsync daemon",
+	"Synopsis": "\n    Under specific conditions, the rsync daemon is vulnerable to a directory\n    traversal allowing to write files outside a sync module.\n  ",
+	"Product": {
+		"Text": "rsync",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-07-12",
+	"Revised": {
+		"Text": "2004-07-12",
+		"Count": "01"
+	},
+	"Bug": [
+		"49534"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-misc/rsync",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.6.0-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.6.0-r1",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    rsync is a utility that provides fast incremental file transfers. It is\n    used to efficiently synchronize files between hosts and is used by emerge\n    to fetch Gentoo's Portage tree. rsyncd is the rsync daemon, which listens\n    to connections from rsync clients.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    When rsyncd is used without chroot (\"use chroot = false\" in the rsyncd.conf\n    file), the paths sent by the client are not checked thoroughly enough. If\n    rsyncd is used with read-write permissions (\"read only = false\"), this\n    vulnerability can be used to write files anywhere with the rights of the\n    rsyncd daemon. With default Gentoo installations, rsyncd runs in a chroot,\n    without write permissions and with the rights of the \"nobody\" user.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    On affected configurations and if the rsync daemon runs under a privileged\n    user, a remote client can exploit this vulnerability to completely\n    compromise the host.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    You should never set the rsync daemon to run with \"use chroot = false\". If\n    for some reason you have to run rsyncd without a chroot, then you should\n    not set \"read only = false\".\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All users should update to the latest version of the rsync package.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n\n    # emerge -pv \">=net-misc/rsync-2.6.0-r2\"\n    # emerge \">=net-misc/rsync-2.6.0-r2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2004-0426",
+				"Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0426"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": ""
+		}
+	]
 }

@@ -1,107 +1,107 @@
 {
-  "ID": "200606-16",
-  "Title": "DokuWiki: PHP code injection",
-  "Synopsis": "\n    A flaw in DokuWiki's spell checker allows for the execution of arbitrary\n    PHP commands, even without proper authentication.\n  ",
-  "Product": {
-    "Text": "DokuWiki",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-06-14",
-  "Revised": {
-    "Text": "2006-06-14",
-    "Count": "01"
-  },
-  "Bug": [
-    "135623"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-apps/dokuwiki",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "20060309-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "20060309-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    DokuWiki is a simple to use wiki targeted at developer teams,\n    workgroups and small companies.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Stefan Esser discovered that the DokuWiki spell checker fails to\n    properly sanitize PHP's \"complex curly syntax\".\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A unauthenticated remote attacker may execute arbitrary PHP commands -\n    and thus possibly arbitrary system commands - with the permissions of\n    the user running the webserver that serves DokuWiki pages.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All DokuWiki users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/dokuwiki-20060309-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "Hardened-PHP advisory",
-        "Link": "https://www.hardened-php.net/advisory_042006.119.html"
-      },
-      {
-        "Text": "CVE-2006-2878",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2878"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-06-11T22:03:16Z"
-    },
-    {
-      "Text": "\n    frilled\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-06-12T18:33:06Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-06-13T21:28:32Z"
-    }
-  ]
+	"ID": "200606-16",
+	"Title": "DokuWiki: PHP code injection",
+	"Synopsis": "\n    A flaw in DokuWiki's spell checker allows for the execution of arbitrary\n    PHP commands, even without proper authentication.\n  ",
+	"Product": {
+		"Text": "DokuWiki",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-06-14",
+	"Revised": {
+		"Text": "2006-06-14",
+		"Count": "01"
+	},
+	"Bug": [
+		"135623"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-apps/dokuwiki",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "20060309-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "20060309-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    DokuWiki is a simple to use wiki targeted at developer teams,\n    workgroups and small companies.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Stefan Esser discovered that the DokuWiki spell checker fails to\n    properly sanitize PHP's \"complex curly syntax\".\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A unauthenticated remote attacker may execute arbitrary PHP commands -\n    and thus possibly arbitrary system commands - with the permissions of\n    the user running the webserver that serves DokuWiki pages.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All DokuWiki users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/dokuwiki-20060309-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "Hardened-PHP advisory",
+				"Link": "https://www.hardened-php.net/advisory_042006.119.html"
+			},
+			{
+				"Text": "CVE-2006-2878",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2878"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-06-11T22:03:16Z"
+		},
+		{
+			"Text": "\n    frilled\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-06-12T18:33:06Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-06-13T21:28:32Z"
+		}
+	]
 }

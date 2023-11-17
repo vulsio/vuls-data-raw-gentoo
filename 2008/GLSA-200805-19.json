@@ -1,122 +1,122 @@
 {
-  "ID": "200805-19",
-  "Title": "ClamAV: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities in ClamAV may result in the remote execution of\n    arbitrary code.\n  ",
-  "Product": {
-    "Text": "clamav",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-05-20",
-  "Revised": {
-    "Text": "2008-05-20",
-    "Count": "01"
-  },
-  "Bug": [
-    "213762"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-antivirus/clamav",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.93",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.93",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Clam AntiVirus is a free anti-virus toolkit for UNIX, designed\n    especially for e-mail scanning on mail gateways.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Multiple vulnerabilities have been reported:\n    </p>\n    <ul>\n    <li>\n    Damian Put reported a heap-based buffer overflow when processing PeSpin\n    packed PE binaries (CVE-2008-0314).\n    </li>\n    <li>\n    Alin Rad Pop of Secunia Research reported a buffer overflow in the\n    cli_scanpe() function when processing Upack PE binaries\n    (CVE-2008-1100).\n    </li>\n    <li>\n    Hanno Boeck reported an infinite loop when processing ARJ archives\n    (CVE-2008-1387).\n    </li>\n    <li>\n    Damian Put and Thomas Pollet reported a heap-based buffer overflow when\n    processing WWPack compressed PE binaries (CVE-2008-1833).\n    </li>\n    <li>\n    A buffer over-read was discovered in the rfc2231() function when\n    producing a string that is not NULL terminated (CVE-2008-1836).\n    </li>\n    <li>\n    An unspecified vulnerability leading to \"memory problems\" when scanning\n    RAR files was reported (CVE-2008-1837).\n    </li>\n    <li>\n    Thierry Zoller reported that scanning of RAR files could be\n    circumvented (CVE-2008-1835).\n    </li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker could entice a user or automated system to scan a\n    specially crafted file, possibly leading to the execution of arbitrary\n    code with the privileges of the user running ClamAV (either a system\n    user or the \"clamav\" user if clamd is compromised), or a Denial of\n    Service.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All ClamAV users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-antivirus/clamav-0.93\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-0314",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0314"
-      },
-      {
-        "Text": "CVE-2008-1100",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1100"
-      },
-      {
-        "Text": "CVE-2008-1387",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1387"
-      },
-      {
-        "Text": "CVE-2008-1833",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1833"
-      },
-      {
-        "Text": "CVE-2008-1835",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1835"
-      },
-      {
-        "Text": "CVE-2008-1836",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1836"
-      },
-      {
-        "Text": "CVE-2008-1837",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1837"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-05-14T18:45:19Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-05-14T18:56:12Z"
-    }
-  ]
+	"ID": "200805-19",
+	"Title": "ClamAV: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities in ClamAV may result in the remote execution of\n    arbitrary code.\n  ",
+	"Product": {
+		"Text": "clamav",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-05-20",
+	"Revised": {
+		"Text": "2008-05-20",
+		"Count": "01"
+	},
+	"Bug": [
+		"213762"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-antivirus/clamav",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.93",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.93",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Clam AntiVirus is a free anti-virus toolkit for UNIX, designed\n    especially for e-mail scanning on mail gateways.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Multiple vulnerabilities have been reported:\n    </p>\n    <ul>\n    <li>\n    Damian Put reported a heap-based buffer overflow when processing PeSpin\n    packed PE binaries (CVE-2008-0314).\n    </li>\n    <li>\n    Alin Rad Pop of Secunia Research reported a buffer overflow in the\n    cli_scanpe() function when processing Upack PE binaries\n    (CVE-2008-1100).\n    </li>\n    <li>\n    Hanno Boeck reported an infinite loop when processing ARJ archives\n    (CVE-2008-1387).\n    </li>\n    <li>\n    Damian Put and Thomas Pollet reported a heap-based buffer overflow when\n    processing WWPack compressed PE binaries (CVE-2008-1833).\n    </li>\n    <li>\n    A buffer over-read was discovered in the rfc2231() function when\n    producing a string that is not NULL terminated (CVE-2008-1836).\n    </li>\n    <li>\n    An unspecified vulnerability leading to \"memory problems\" when scanning\n    RAR files was reported (CVE-2008-1837).\n    </li>\n    <li>\n    Thierry Zoller reported that scanning of RAR files could be\n    circumvented (CVE-2008-1835).\n    </li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker could entice a user or automated system to scan a\n    specially crafted file, possibly leading to the execution of arbitrary\n    code with the privileges of the user running ClamAV (either a system\n    user or the \"clamav\" user if clamd is compromised), or a Denial of\n    Service.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All ClamAV users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-antivirus/clamav-0.93\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-0314",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0314"
+			},
+			{
+				"Text": "CVE-2008-1100",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1100"
+			},
+			{
+				"Text": "CVE-2008-1387",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1387"
+			},
+			{
+				"Text": "CVE-2008-1833",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1833"
+			},
+			{
+				"Text": "CVE-2008-1835",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1835"
+			},
+			{
+				"Text": "CVE-2008-1836",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1836"
+			},
+			{
+				"Text": "CVE-2008-1837",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1837"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-05-14T18:45:19Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-05-14T18:56:12Z"
+		}
+	]
 }

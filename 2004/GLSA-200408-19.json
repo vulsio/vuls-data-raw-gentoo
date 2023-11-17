@@ -1,97 +1,97 @@
 {
-  "ID": "200408-19",
-  "Title": "courier-imap: Remote Format String Vulnerability",
-  "Synopsis": "\n    There is a format string vulnerability in non-standard configurations of\n    courier-imapd which may be exploited remotely. An attacker may be able to\n    execute arbitrary code as the user running courier-imapd (oftentimes root).\n  ",
-  "Product": {
-    "Text": "courier-imap",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-08-19",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "02"
-  },
-  "Bug": [
-    "60865"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-mail/courier-imap",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.0.5",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.0.2-r1",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Courier-IMAP is an IMAP server which is part of the Courier mail\n    system. It provides access only to maildirs.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    There is a format string vulnerability in the auth_debug() function\n    which can be exploited remotely, potentially leading to arbitrary code\n    execution as the user running the IMAP daemon (oftentimes root). A\n    remote attacker may send username or password information containing\n    printf() format tokens (such as \"%s\"), which will crash the server or\n    cause it to execute arbitrary code.\n    </p>\n    <p>\n    This vulnerability can only be exploited if DEBUG_LOGIN is set to\n    something other than 0 in the imapd config file.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    If DEBUG_LOGIN is enabled in the imapd configuration, a remote attacker\n    may execute arbitrary code as the root user.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Set the DEBUG_LOGIN option in /etc/courier-imap/imapd to 0. (This is\n    the default value.)\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All courier-imap users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n    \n    # emerge -pv \">=net-mail/courier-imap-3.0.5\"\n    # emerge \">=net-mail/courier-imap-3.0.5\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "iDEFENSE Advisory",
-        "Link": "http://www.idefense.com/application/poi/display?id=131&type=vulnerabilities&flashstatus=true"
-      },
-      {
-        "Text": "CVE-2004-0777",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0777"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    condordes\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-08-19T18:47:27Z"
-    }
-  ]
+	"ID": "200408-19",
+	"Title": "courier-imap: Remote Format String Vulnerability",
+	"Synopsis": "\n    There is a format string vulnerability in non-standard configurations of\n    courier-imapd which may be exploited remotely. An attacker may be able to\n    execute arbitrary code as the user running courier-imapd (oftentimes root).\n  ",
+	"Product": {
+		"Text": "courier-imap",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-08-19",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "02"
+	},
+	"Bug": [
+		"60865"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-mail/courier-imap",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.0.5",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.0.2-r1",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Courier-IMAP is an IMAP server which is part of the Courier mail\n    system. It provides access only to maildirs.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    There is a format string vulnerability in the auth_debug() function\n    which can be exploited remotely, potentially leading to arbitrary code\n    execution as the user running the IMAP daemon (oftentimes root). A\n    remote attacker may send username or password information containing\n    printf() format tokens (such as \"%s\"), which will crash the server or\n    cause it to execute arbitrary code.\n    </p>\n    <p>\n    This vulnerability can only be exploited if DEBUG_LOGIN is set to\n    something other than 0 in the imapd config file.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    If DEBUG_LOGIN is enabled in the imapd configuration, a remote attacker\n    may execute arbitrary code as the root user.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Set the DEBUG_LOGIN option in /etc/courier-imap/imapd to 0. (This is\n    the default value.)\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All courier-imap users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n    \n    # emerge -pv \">=net-mail/courier-imap-3.0.5\"\n    # emerge \">=net-mail/courier-imap-3.0.5\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "iDEFENSE Advisory",
+				"Link": "http://www.idefense.com/application/poi/display?id=131&type=vulnerabilities&flashstatus=true"
+			},
+			{
+				"Text": "CVE-2004-0777",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0777"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    condordes\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-08-19T18:47:27Z"
+		}
+	]
 }

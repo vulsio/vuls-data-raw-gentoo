@@ -1,102 +1,102 @@
 {
-  "ID": "200703-22",
-  "Title": "Mozilla Network Security Service: Remote execution of arbitrary code",
-  "Synopsis": "\n    The Mozilla Network Security Services libraries are vulnerable to two\n    buffer overflows that could result in the remote execution of arbitrary\n    code.\n  ",
-  "Product": {
-    "Text": "nss",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-03-20",
-  "Revised": {
-    "Text": "2007-03-20",
-    "Count": "01"
-  },
-  "Bug": [
-    "165555"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-libs/nss",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.11.5",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.11.5",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    The Mozilla Network Security Service is a library implementing security\n    features like SSL v2/v3, TLS, PKCS #5, PKCS #7, PKCS #11, PKCS #12,\n    S/MIME and X.509 certificates.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    iDefense has reported two potential buffer overflow vulnerabilities\n    found by researcher \"regenrecht\" in the code implementing the SSLv2\n    protocol.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could send a specially crafted SSL master key to a\n    server using NSS for the SSLv2 protocol, or entice a user to connect to\n    a malicious server with a client-side application using NSS like one of\n    the Mozilla products. This could trigger the vulnerabilities and result\n    in the possible execution of arbitrary code with the rights of the\n    vulnerable application.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Disable the SSLv2 protocol in the applications using NSS.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All NSS users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/nss-3.11.5\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-0008",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0008"
-      },
-      {
-        "Text": "CVE-2007-0009",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0009"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-03-13T23:41:07Z"
-    },
-    {
-      "Text": "\n    vorlon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-03-16T11:51:35Z"
-    }
-  ]
+	"ID": "200703-22",
+	"Title": "Mozilla Network Security Service: Remote execution of arbitrary code",
+	"Synopsis": "\n    The Mozilla Network Security Services libraries are vulnerable to two\n    buffer overflows that could result in the remote execution of arbitrary\n    code.\n  ",
+	"Product": {
+		"Text": "nss",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-03-20",
+	"Revised": {
+		"Text": "2007-03-20",
+		"Count": "01"
+	},
+	"Bug": [
+		"165555"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-libs/nss",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.11.5",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.11.5",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    The Mozilla Network Security Service is a library implementing security\n    features like SSL v2/v3, TLS, PKCS #5, PKCS #7, PKCS #11, PKCS #12,\n    S/MIME and X.509 certificates.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    iDefense has reported two potential buffer overflow vulnerabilities\n    found by researcher \"regenrecht\" in the code implementing the SSLv2\n    protocol.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could send a specially crafted SSL master key to a\n    server using NSS for the SSLv2 protocol, or entice a user to connect to\n    a malicious server with a client-side application using NSS like one of\n    the Mozilla products. This could trigger the vulnerabilities and result\n    in the possible execution of arbitrary code with the rights of the\n    vulnerable application.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Disable the SSLv2 protocol in the applications using NSS.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All NSS users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/nss-3.11.5\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-0008",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0008"
+			},
+			{
+				"Text": "CVE-2007-0009",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0009"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-03-13T23:41:07Z"
+		},
+		{
+			"Text": "\n    vorlon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-03-16T11:51:35Z"
+		}
+	]
 }

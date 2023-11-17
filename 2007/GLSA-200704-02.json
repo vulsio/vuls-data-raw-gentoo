@@ -1,106 +1,106 @@
 {
-  "ID": "200704-02",
-  "Title": "MIT Kerberos 5: Arbitrary remote code execution",
-  "Synopsis": "\n    Multiple vulnerabilities in MIT Kerberos 5 could potentially result in\n    unauthenticated remote root code execution.\n  ",
-  "Product": {
-    "Text": "mit-krb5",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-04-03",
-  "Revised": {
-    "Text": "2007-04-03",
-    "Count": "01"
-  },
-  "Bug": [
-    "171889"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-crypt/mit-krb5",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.5.2-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.5.2-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    MIT Kerberos 5 is a suite of applications that implement the Kerberos\n    network protocol.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The Kerberos telnet daemon fails to properly handle usernames allowing\n    unauthorized access to any account (CVE-2007-0956). The Kerberos\n    administration daemon, the KDC and possibly other applications using\n    the MIT Kerberos libraries are vulnerable to the following issues. The\n    krb5_klog_syslog function from the kadm5 library fails to properly\n    validate input leading to a stack overflow (CVE-2007-0957). The GSS-API\n    library is vulnerable to a double-free attack (CVE-2007-1216).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    By exploiting the telnet vulnerability a remote attacker may obtain\n    access with root privileges. The remaining vulnerabilities may allow an\n    authenticated remote attacker to execute arbitrary code with root\n    privileges.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All MIT Kerberos 5 users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-crypt/mit-krb5-1.5.2-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-0956",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0956"
-      },
-      {
-        "Text": "CVE-2007-0957",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0957"
-      },
-      {
-        "Text": "CVE-2007-1216",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1216"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-04-02T16:29:27Z"
-    },
-    {
-      "Text": "\n    vorlon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-04-03T20:30:58Z"
-    }
-  ]
+	"ID": "200704-02",
+	"Title": "MIT Kerberos 5: Arbitrary remote code execution",
+	"Synopsis": "\n    Multiple vulnerabilities in MIT Kerberos 5 could potentially result in\n    unauthenticated remote root code execution.\n  ",
+	"Product": {
+		"Text": "mit-krb5",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-04-03",
+	"Revised": {
+		"Text": "2007-04-03",
+		"Count": "01"
+	},
+	"Bug": [
+		"171889"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-crypt/mit-krb5",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.5.2-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.5.2-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    MIT Kerberos 5 is a suite of applications that implement the Kerberos\n    network protocol.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The Kerberos telnet daemon fails to properly handle usernames allowing\n    unauthorized access to any account (CVE-2007-0956). The Kerberos\n    administration daemon, the KDC and possibly other applications using\n    the MIT Kerberos libraries are vulnerable to the following issues. The\n    krb5_klog_syslog function from the kadm5 library fails to properly\n    validate input leading to a stack overflow (CVE-2007-0957). The GSS-API\n    library is vulnerable to a double-free attack (CVE-2007-1216).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    By exploiting the telnet vulnerability a remote attacker may obtain\n    access with root privileges. The remaining vulnerabilities may allow an\n    authenticated remote attacker to execute arbitrary code with root\n    privileges.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All MIT Kerberos 5 users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-crypt/mit-krb5-1.5.2-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-0956",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0956"
+			},
+			{
+				"Text": "CVE-2007-0957",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0957"
+			},
+			{
+				"Text": "CVE-2007-1216",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1216"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-04-02T16:29:27Z"
+		},
+		{
+			"Text": "\n    vorlon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-04-03T20:30:58Z"
+		}
+	]
 }

@@ -1,114 +1,114 @@
 {
-  "ID": "200804-11",
-  "Title": "policyd-weight: Insecure temporary file creation",
-  "Synopsis": "\n    policyd-weight uses temporary files in an insecure manner, allowing for a\n    symlink attack.\n  ",
-  "Product": {
-    "Text": "policyd-weight",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-04-11",
-  "Revised": {
-    "Text": "2008-04-11",
-    "Count": "01"
-  },
-  "Bug": [
-    "214403"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "mail-filter/policyd-weight",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.1.14.17",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.1.14.17",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    policyd-weight is a Perl policy daemon for the Postfix MTA intended to\n    eliminate forged envelope senders and HELOs.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Chris Howells reported that policyd-weight creates and uses the\n    \"/tmp/.policyd-weight/\" directory in an insecure manner.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local attacker could exploit this vulnerability to delete arbitrary\n    files or change the ownership to the \"polw\" user via symlink attacks.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Set \"<i>$LOCKPATH = '/var/run/policyd-weight/'</i>\" manually in\n    \"/etc/policyd-weight.conf\".\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All policyd-weight users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    This version changes the default path for sockets to\n    \"/var/run/policyd-weight\", which is only writable by a privileged user.\n    Users need to restart policyd-weight immediately after the upgrade due\n    to this change.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-filter/policyd-weight-0.1.14.17\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-1569",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1569"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-03-29T20:06:42Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-04-07T07:47:13Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-04-07T07:47:40Z"
-    }
-  ]
+	"ID": "200804-11",
+	"Title": "policyd-weight: Insecure temporary file creation",
+	"Synopsis": "\n    policyd-weight uses temporary files in an insecure manner, allowing for a\n    symlink attack.\n  ",
+	"Product": {
+		"Text": "policyd-weight",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-04-11",
+	"Revised": {
+		"Text": "2008-04-11",
+		"Count": "01"
+	},
+	"Bug": [
+		"214403"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "mail-filter/policyd-weight",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.1.14.17",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.1.14.17",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    policyd-weight is a Perl policy daemon for the Postfix MTA intended to\n    eliminate forged envelope senders and HELOs.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Chris Howells reported that policyd-weight creates and uses the\n    \"/tmp/.policyd-weight/\" directory in an insecure manner.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local attacker could exploit this vulnerability to delete arbitrary\n    files or change the ownership to the \"polw\" user via symlink attacks.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Set \"<i>$LOCKPATH = '/var/run/policyd-weight/'</i>\" manually in\n    \"/etc/policyd-weight.conf\".\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All policyd-weight users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    This version changes the default path for sockets to\n    \"/var/run/policyd-weight\", which is only writable by a privileged user.\n    Users need to restart policyd-weight immediately after the upgrade due\n    to this change.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-filter/policyd-weight-0.1.14.17\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-1569",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1569"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-03-29T20:06:42Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-04-07T07:47:13Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-04-07T07:47:40Z"
+		}
+	]
 }

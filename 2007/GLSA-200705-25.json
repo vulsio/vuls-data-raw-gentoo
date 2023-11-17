@@ -1,98 +1,98 @@
 {
-  "ID": "200705-25",
-  "Title": "file: Integer overflow",
-  "Synopsis": "\n    An integer overflow vulnerability has been reported in file allowing for\n    the user-assisted execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "file",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-05-31",
-  "Revised": {
-    "Text": "2007-06-01",
-    "Count": "02"
-  },
-  "Bug": [
-    "179583"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sys-apps/file",
-        "Auto": "yes",
-        "Arch": "x86 ppc hppa",
-        "Unaffected": [
-          {
-            "Text": "4.21",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.21",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    file is a utility that guesses a file format by scanning binary data\n    for patterns.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Colin Percival from FreeBSD reported that the previous fix for the\n    file_printf() buffer overflow introduced a new integer overflow.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to run the file program on an\n    overly large file (more than 1Gb) that would trigger an integer\n    overflow on 32-bit systems, possibly leading to the execution of\n    arbitrary code with the rights of the user running file.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    Since file is a system package, all Gentoo users should upgrade to the\n    latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-apps/file-4.21\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-2799",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2799"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-05-28T10:04:58Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-05-31T06:59:45Z"
-    }
-  ]
+	"ID": "200705-25",
+	"Title": "file: Integer overflow",
+	"Synopsis": "\n    An integer overflow vulnerability has been reported in file allowing for\n    the user-assisted execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "file",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-05-31",
+	"Revised": {
+		"Text": "2007-06-01",
+		"Count": "02"
+	},
+	"Bug": [
+		"179583"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-apps/file",
+				"Auto": "yes",
+				"Arch": "x86 ppc hppa",
+				"Unaffected": [
+					{
+						"Text": "4.21",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.21",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    file is a utility that guesses a file format by scanning binary data\n    for patterns.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Colin Percival from FreeBSD reported that the previous fix for the\n    file_printf() buffer overflow introduced a new integer overflow.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to run the file program on an\n    overly large file (more than 1Gb) that would trigger an integer\n    overflow on 32-bit systems, possibly leading to the execution of\n    arbitrary code with the rights of the user running file.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    Since file is a system package, all Gentoo users should upgrade to the\n    latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-apps/file-4.21\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-2799",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2799"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-05-28T10:04:58Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-05-31T06:59:45Z"
+		}
+	]
 }

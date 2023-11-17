@@ -1,103 +1,103 @@
 {
-  "ID": "200509-09",
-  "Title": "Py2Play: Remote execution of arbitrary Python code",
-  "Synopsis": "\n    A design error in Py2Play allows attackers to execute arbitrary code.\n  ",
-  "Product": {
-    "Text": "py2play",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-09-17",
-  "Revised": {
-    "Text": "2006-09-05",
-    "Count": "02"
-  },
-  "Bug": [
-    "103524"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-python/py2play",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.1.8",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.1.7",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Py2Play is a peer-to-peer network game engine written in Python.\n    Pickling is a Python feature allowing to serialize Python objects into\n    string representations (called pickles) that can be sent over the\n    network.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Arc Riley discovered that Py2Play uses Python pickles to send objects\n    over a peer-to-peer game network, and that clients accept without\n    restriction the objects and code sent by peers.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker participating in a Py2Play-powered game can send\n    malicious Python pickles, resulting in the execution of arbitrary\n    Python code on the targeted game client.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All py2play users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-python/py2play-0.1.8\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2005-2875",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2875"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-09-13T14:02:17Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-09-14T11:59:59Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-09-14T20:47:34Z"
-    }
-  ]
+	"ID": "200509-09",
+	"Title": "Py2Play: Remote execution of arbitrary Python code",
+	"Synopsis": "\n    A design error in Py2Play allows attackers to execute arbitrary code.\n  ",
+	"Product": {
+		"Text": "py2play",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-09-17",
+	"Revised": {
+		"Text": "2006-09-05",
+		"Count": "02"
+	},
+	"Bug": [
+		"103524"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-python/py2play",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.1.8",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.1.7",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Py2Play is a peer-to-peer network game engine written in Python.\n    Pickling is a Python feature allowing to serialize Python objects into\n    string representations (called pickles) that can be sent over the\n    network.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Arc Riley discovered that Py2Play uses Python pickles to send objects\n    over a peer-to-peer game network, and that clients accept without\n    restriction the objects and code sent by peers.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker participating in a Py2Play-powered game can send\n    malicious Python pickles, resulting in the execution of arbitrary\n    Python code on the targeted game client.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All py2play users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-python/py2play-0.1.8\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2005-2875",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2875"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-09-13T14:02:17Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-09-14T11:59:59Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-09-14T20:47:34Z"
+		}
+	]
 }

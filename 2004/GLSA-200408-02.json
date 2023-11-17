@@ -1,102 +1,102 @@
 {
-  "ID": "200408-02",
-  "Title": "Courier: Cross-site scripting vulnerability in SqWebMail",
-  "Synopsis": "\n    The SqWebMail web application, included in the Courier suite, is vulnerable\n    to cross-site scripting attacks.\n  ",
-  "Product": {
-    "Text": "Courier",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-08-04",
-  "Revised": {
-    "Text": "2004-08-04",
-    "Count": "01"
-  },
-  "Bug": [
-    "58020"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "mail-mta/courier",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.45.6.20040618",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.45.6",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Courier is an integrated mail and groupware server based on open protocols.\n    It provides ESMTP, IMAP, POP3, webmail, and mailing list services within a\n    single framework. The webmail functionality included in Courier called\n    SqWebMail allows you to access mailboxes from a web browser.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Luca Legato found that SqWebMail is vulnerable to a cross-site scripting\n    (XSS) attack. An XSS attack allows an attacker to insert malicious code\n    into a web-based application. SqWebMail doesn't filter appropriately data\n    coming from message headers before displaying them.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    By sending a carefully crafted message, an attacker can inject and execute\n    script code in the victim's browser window. This allows to modify the\n    behaviour of the SqWebMail application, and/or leak session information\n    such as cookies to the attacker.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time. All users are encouraged to\n    upgrade to the latest available version of Courier.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Courier users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n\n    # emerge -pv \">=mail-mta/courier-0.45.6.20040618\"\n    # emerge \">=mail-mta/courier-0.45.6.20040618\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2004-0591",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0591"
-      },
-      {
-        "Text": "XSS definition",
-        "Link": "https://www.cert.org/advisories/CA-2000-02.html"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": ""
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-08-03T15:23:08Z"
-    }
-  ]
+	"ID": "200408-02",
+	"Title": "Courier: Cross-site scripting vulnerability in SqWebMail",
+	"Synopsis": "\n    The SqWebMail web application, included in the Courier suite, is vulnerable\n    to cross-site scripting attacks.\n  ",
+	"Product": {
+		"Text": "Courier",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-08-04",
+	"Revised": {
+		"Text": "2004-08-04",
+		"Count": "01"
+	},
+	"Bug": [
+		"58020"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "mail-mta/courier",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.45.6.20040618",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.45.6",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Courier is an integrated mail and groupware server based on open protocols.\n    It provides ESMTP, IMAP, POP3, webmail, and mailing list services within a\n    single framework. The webmail functionality included in Courier called\n    SqWebMail allows you to access mailboxes from a web browser.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Luca Legato found that SqWebMail is vulnerable to a cross-site scripting\n    (XSS) attack. An XSS attack allows an attacker to insert malicious code\n    into a web-based application. SqWebMail doesn't filter appropriately data\n    coming from message headers before displaying them.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    By sending a carefully crafted message, an attacker can inject and execute\n    script code in the victim's browser window. This allows to modify the\n    behaviour of the SqWebMail application, and/or leak session information\n    such as cookies to the attacker.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time. All users are encouraged to\n    upgrade to the latest available version of Courier.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Courier users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n\n    # emerge -pv \">=mail-mta/courier-0.45.6.20040618\"\n    # emerge \">=mail-mta/courier-0.45.6.20040618\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2004-0591",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0591"
+			},
+			{
+				"Text": "XSS definition",
+				"Link": "https://www.cert.org/advisories/CA-2000-02.html"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": ""
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-08-03T15:23:08Z"
+		}
+	]
 }

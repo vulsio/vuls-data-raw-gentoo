@@ -1,98 +1,98 @@
 {
-  "ID": "201710-02",
-  "Title": "file: Stack-based buffer overflow",
-  "Synopsis": "A stack-based buffer overflow was found in file, possibly resulting\n    in the execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "file",
-    "Type": "ebuild"
-  },
-  "Announced": "2017-10-08",
-  "Revised": {
-    "Text": "2017-10-08",
-    "Count": "1"
-  },
-  "Bug": [
-    "629872"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sys-apps/file",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "5.32",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "5.32",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>file is a utility that guesses a file format by scanning binary data for\n      patterns.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>An issue discovered in file allows attackers to write 20 bytes to the\n      stack buffer via a specially crafted .notes section.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker, by using a specially crafted .notes section in an ELF\n      binary, could execute arbitrary code or cause a Denial of Service\n      condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All file users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-apps/file-5.32\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "\n      CVE-2017-1000249\n    ",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-1000249"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "chrisadr",
-      "Tag": "requester",
-      "Timestamp": "2017-09-29T23:38:45Z"
-    },
-    {
-      "Text": "chrisadr",
-      "Tag": "submitter",
-      "Timestamp": "2017-10-08T13:26:24Z"
-    }
-  ]
+	"ID": "201710-02",
+	"Title": "file: Stack-based buffer overflow",
+	"Synopsis": "A stack-based buffer overflow was found in file, possibly resulting\n    in the execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "file",
+		"Type": "ebuild"
+	},
+	"Announced": "2017-10-08",
+	"Revised": {
+		"Text": "2017-10-08",
+		"Count": "1"
+	},
+	"Bug": [
+		"629872"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-apps/file",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "5.32",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "5.32",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>file is a utility that guesses a file format by scanning binary data for\n      patterns.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>An issue discovered in file allows attackers to write 20 bytes to the\n      stack buffer via a specially crafted .notes section.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker, by using a specially crafted .notes section in an ELF\n      binary, could execute arbitrary code or cause a Denial of Service\n      condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All file users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-apps/file-5.32\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "\n      CVE-2017-1000249\n    ",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-1000249"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "chrisadr",
+			"Tag": "requester",
+			"Timestamp": "2017-09-29T23:38:45Z"
+		},
+		{
+			"Text": "chrisadr",
+			"Tag": "submitter",
+			"Timestamp": "2017-10-08T13:26:24Z"
+		}
+	]
 }

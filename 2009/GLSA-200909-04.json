@@ -1,116 +1,116 @@
 {
-  "ID": "200909-04",
-  "Title": "Clam AntiVirus: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities in ClamAV allow for the remote execution of\n    arbitrary code or Denial of Service.\n  ",
-  "Product": {
-    "Text": "clamav",
-    "Type": "ebuild"
-  },
-  "Announced": "2009-09-09",
-  "Revised": {
-    "Text": "2009-09-09",
-    "Count": "01"
-  },
-  "Bug": [
-    "264834",
-    "265545"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-antivirus/clamav",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.95.2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.95.2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Clam AntiVirus (short: ClamAV) is an anti-virus toolkit for UNIX,\n    designed especially for e-mail scanning on mail gateways.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Multiple vulnerabilities have been found in ClamAV:\n    </p>\n    <ul>\n    <li>The\n    vendor reported a Divide-by-zero error in the PE (\"Portable\n    Executable\"; Windows .exe) file handling of ClamAV\n    (CVE-2008-6680).</li>\n    <li>Jeffrey Thomas Peckham found a flaw in\n    libclamav/untar.c, possibly resulting in an infinite loop when\n    processing TAR archives in clamd and clamscan (CVE-2009-1270).</li>\n    <li>Martin Olsen reported a vulnerability in the CLI_ISCONTAINED macro\n    in libclamav/others.h, when processing UPack archives\n    (CVE-2009-1371).</li>\n    <li>Nigel disclosed a stack-based buffer overflow\n    in the \"cli_url_canon()\" function in libclamav/phishcheck.c when\n    processing URLs (CVE-2009-1372).</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user or automated system to process a\n    specially crafted UPack archive or a file containing a specially\n    crafted URL, possibly resulting in the remote execution of arbitrary\n    code with the privileges of the user running the application, or a\n    Denial of Service. Furthermore, a remote attacker could cause a Denial\n    of Service by supplying a specially crafted TAR archive or PE\n    executable to a Clam AntiVirus instance.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Clam AntiVirus users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-antivirus/clamav-0.95.2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-6680",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-6680"
-      },
-      {
-        "Text": "CVE-2009-1270",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1270"
-      },
-      {
-        "Text": "CVE-2009-1371",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1371"
-      },
-      {
-        "Text": "CVE-2009-1372",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1372"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "requester",
-      "Timestamp": "2009-06-01T22:30:28Z"
-    },
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-08-28T09:13:38Z"
-    },
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2009-08-31T03:38:38Z"
-    }
-  ]
+	"ID": "200909-04",
+	"Title": "Clam AntiVirus: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities in ClamAV allow for the remote execution of\n    arbitrary code or Denial of Service.\n  ",
+	"Product": {
+		"Text": "clamav",
+		"Type": "ebuild"
+	},
+	"Announced": "2009-09-09",
+	"Revised": {
+		"Text": "2009-09-09",
+		"Count": "01"
+	},
+	"Bug": [
+		"264834",
+		"265545"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-antivirus/clamav",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.95.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.95.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Clam AntiVirus (short: ClamAV) is an anti-virus toolkit for UNIX,\n    designed especially for e-mail scanning on mail gateways.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Multiple vulnerabilities have been found in ClamAV:\n    </p>\n    <ul>\n    <li>The\n    vendor reported a Divide-by-zero error in the PE (\"Portable\n    Executable\"; Windows .exe) file handling of ClamAV\n    (CVE-2008-6680).</li>\n    <li>Jeffrey Thomas Peckham found a flaw in\n    libclamav/untar.c, possibly resulting in an infinite loop when\n    processing TAR archives in clamd and clamscan (CVE-2009-1270).</li>\n    <li>Martin Olsen reported a vulnerability in the CLI_ISCONTAINED macro\n    in libclamav/others.h, when processing UPack archives\n    (CVE-2009-1371).</li>\n    <li>Nigel disclosed a stack-based buffer overflow\n    in the \"cli_url_canon()\" function in libclamav/phishcheck.c when\n    processing URLs (CVE-2009-1372).</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user or automated system to process a\n    specially crafted UPack archive or a file containing a specially\n    crafted URL, possibly resulting in the remote execution of arbitrary\n    code with the privileges of the user running the application, or a\n    Denial of Service. Furthermore, a remote attacker could cause a Denial\n    of Service by supplying a specially crafted TAR archive or PE\n    executable to a Clam AntiVirus instance.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Clam AntiVirus users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-antivirus/clamav-0.95.2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-6680",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-6680"
+			},
+			{
+				"Text": "CVE-2009-1270",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1270"
+			},
+			{
+				"Text": "CVE-2009-1371",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1371"
+			},
+			{
+				"Text": "CVE-2009-1372",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1372"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "requester",
+			"Timestamp": "2009-06-01T22:30:28Z"
+		},
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-08-28T09:13:38Z"
+		},
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2009-08-31T03:38:38Z"
+		}
+	]
 }

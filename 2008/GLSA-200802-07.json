@@ -1,103 +1,103 @@
 {
-  "ID": "200802-07",
-  "Title": "Pulseaudio: Privilege escalation",
-  "Synopsis": "\n    A vulnerability in pulseaudio may allow a local user to execute actions\n    with escalated privileges.\n  ",
-  "Product": {
-    "Text": "pulseaudio",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-02-13",
-  "Revised": {
-    "Text": "2008-02-13",
-    "Count": "01"
-  },
-  "Bug": [
-    "207214"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-sound/pulseaudio",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.9.9",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.9.9",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Pulseaudio is a networked sound server with an advanced plugin system.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Marcus Meissner from SUSE reported that the pa_drop_root() function\n    does not properly check the return value of the system calls setuid(),\n    seteuid(), setresuid() and setreuid() when dropping its privileges.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A local attacker could cause a resource exhaustion to make the system\n    calls fail, which would cause Pulseaudio to run as root. The attacker\n    could then perform actions with root privileges.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Pulseaudio users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-sound/pulseaudio-0.9.9\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-0008",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0008"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-02-11T18:33:13Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-02-11T18:33:32Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-02-13T20:35:58Z"
-    }
-  ]
+	"ID": "200802-07",
+	"Title": "Pulseaudio: Privilege escalation",
+	"Synopsis": "\n    A vulnerability in pulseaudio may allow a local user to execute actions\n    with escalated privileges.\n  ",
+	"Product": {
+		"Text": "pulseaudio",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-02-13",
+	"Revised": {
+		"Text": "2008-02-13",
+		"Count": "01"
+	},
+	"Bug": [
+		"207214"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-sound/pulseaudio",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.9.9",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.9.9",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Pulseaudio is a networked sound server with an advanced plugin system.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Marcus Meissner from SUSE reported that the pa_drop_root() function\n    does not properly check the return value of the system calls setuid(),\n    seteuid(), setresuid() and setreuid() when dropping its privileges.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A local attacker could cause a resource exhaustion to make the system\n    calls fail, which would cause Pulseaudio to run as root. The attacker\n    could then perform actions with root privileges.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Pulseaudio users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-sound/pulseaudio-0.9.9\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-0008",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0008"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-02-11T18:33:13Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-02-11T18:33:32Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-02-13T20:35:58Z"
+		}
+	]
 }

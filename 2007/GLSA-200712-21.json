@@ -1,205 +1,205 @@
 {
-  "ID": "200712-21",
-  "Title": "Mozilla Firefox, SeaMonkey: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities have been discovered in Mozilla Firefox and\n    Mozilla Seamonkey.\n  ",
-  "Product": {
-    "Text": "firefox seamonkey",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-12-29",
-  "Revised": {
-    "Text": "2007-12-29",
-    "Count": "01"
-  },
-  "Bug": [
-    "198965",
-    "200909"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-client/mozilla-firefox",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.0.0.11",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.0.0.11",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "www-client/mozilla-firefox-bin",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.0.0.11",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.0.0.11",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "www-client/seamonkey",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.1.7",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.1.7",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "www-client/seamonkey-bin",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.1.7",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.1.7",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Mozilla Firefox is a cross-platform web browser from Mozilla. SeaMonkey\n    is a free, cross-platform Internet suite.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Jesse Ruderman and Petko D. Petkov reported that the jar protocol\n    handler in Mozilla Firefox and Seamonkey does not properly check MIME\n    types (CVE-2007-5947). Gregory Fleischer reported that the\n    window.location property can be used to generate a fake HTTP Referer\n    (CVE-2007-5960). Multiple memory errors have also been reported\n    (CVE-2007-5959).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could possibly exploit these vulnerabilities to\n    execute arbitrary code in the context of the browser and conduct\n    Cross-Site-Scripting or Cross-Site Request Forgery attacks.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Mozilla Firefox users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All Mozilla Firefox binary users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All SeaMonkey users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All SeaMonkey binary users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/mozilla-firefox-2.0.0.11\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/mozilla-firefox-bin-2.0.0.11\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/seamonkey-1.1.7\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/seamonkey-bin-1.1.7\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-5947",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5947"
-      },
-      {
-        "Text": "CVE-2007-5959",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5959"
-      },
-      {
-        "Text": "CVE-2007-5960",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5960"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-12-08T23:32:55Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-12-12T16:56:13Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-12-24T11:43:38Z"
-    }
-  ]
+	"ID": "200712-21",
+	"Title": "Mozilla Firefox, SeaMonkey: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities have been discovered in Mozilla Firefox and\n    Mozilla Seamonkey.\n  ",
+	"Product": {
+		"Text": "firefox seamonkey",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-12-29",
+	"Revised": {
+		"Text": "2007-12-29",
+		"Count": "01"
+	},
+	"Bug": [
+		"198965",
+		"200909"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-client/mozilla-firefox",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.0.0.11",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.0.0.11",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "www-client/mozilla-firefox-bin",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.0.0.11",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.0.0.11",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "www-client/seamonkey",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.1.7",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.1.7",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "www-client/seamonkey-bin",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.1.7",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.1.7",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Mozilla Firefox is a cross-platform web browser from Mozilla. SeaMonkey\n    is a free, cross-platform Internet suite.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Jesse Ruderman and Petko D. Petkov reported that the jar protocol\n    handler in Mozilla Firefox and Seamonkey does not properly check MIME\n    types (CVE-2007-5947). Gregory Fleischer reported that the\n    window.location property can be used to generate a fake HTTP Referer\n    (CVE-2007-5960). Multiple memory errors have also been reported\n    (CVE-2007-5959).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could possibly exploit these vulnerabilities to\n    execute arbitrary code in the context of the browser and conduct\n    Cross-Site-Scripting or Cross-Site Request Forgery attacks.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Mozilla Firefox users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All Mozilla Firefox binary users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All SeaMonkey users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All SeaMonkey binary users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/mozilla-firefox-2.0.0.11\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/mozilla-firefox-bin-2.0.0.11\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/seamonkey-1.1.7\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/seamonkey-bin-1.1.7\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-5947",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5947"
+			},
+			{
+				"Text": "CVE-2007-5959",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5959"
+			},
+			{
+				"Text": "CVE-2007-5960",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5960"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-12-08T23:32:55Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-12-12T16:56:13Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-12-24T11:43:38Z"
+		}
+	]
 }

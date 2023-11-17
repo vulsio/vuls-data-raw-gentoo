@@ -1,106 +1,106 @@
 {
-  "ID": "200403-04",
-  "Title": "Multiple security vulnerabilities in Apache 2",
-  "Synopsis": "\n    A memory leak in mod_ssl allows a remote denial of service attack against\n    an SSL-enabled server via plain HTTP requests. Another flaw was found when\n    arbitrary client-supplied strings can be written to the error log, allowing\n    the exploit of certain terminal emulators. A third flaw exists with the\n    mod_disk_cache module.\n  ",
-  "Product": {
-    "Text": "Apache",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-03-22",
-  "Revised": {
-    "Text": "2007-12-30",
-    "Count": "03"
-  },
-  "Bug": [
-    "45206"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-servers/apache",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.3*",
-            "Range": "eq",
-            "Slot": ""
-          },
-          {
-            "Text": "2.0.49",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.0.48",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    The Apache HTTP Server Project is an effort to develop and maintain an\n    open-source HTTP server for modern operating systems. The goal of this\n    project is to provide a secure, efficient and extensible server that\n    provides services in tune with the current HTTP standards.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Three vulnerabilities were found:\n    </p>\n    <ol>\n    <li>\n    A memory leak in ssl_engine_io.c for mod_ssl in Apache 2.0.48 and below\n    allows remote attackers to cause a denial of service attack via plain\n    HTTP requests to the SSL port of an SSL-enabled server.\n    </li>\n    <li>\n    Apache fails to filter terminal escape sequences from error logs that\n    begin with the ASCII (0x1B) sequence and are followed by a  series of\n    arguments. If a remote attacker could inject escape sequences into an\n    Apache error log, the attacker could take advantages of weaknesses in\n    various terminal emulators, launching attacks against remote users\n    including further denial of service attacks, file modification, and the\n    execution of arbitrary commands.\n    </li>\n    <li>\n    The Apache mod_disk_cache has been found to be vulnerable to a weakness\n    that allows attackers to gain access to authentication credentials\n    through the issue of caching HTTP hop-by-hop headers which would\n    contain plaintext user passwords. There is no available resolution for\n    this issue yet.\n    </li>\n    </ol>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    No special privileges are required for these vulnerabilities. As a\n    result, all users are recommended to upgrade their Apache\n    installations.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no immediate workaround; a software upgrade is required. There\n    is no workaround for the mod_disk_cache issue; users are recommended to\n    disable the feature on their servers until a patched version is\n    released.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    Users are urged to upgrade to Apache 2.0.49:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n    # emerge -pv \">=www-servers/apache-2.0.49\"\n    # emerge \">=www-servers/apache-2.0.49\"\n    \n    # ** IMPORTANT **\n    \n    # If you are migrating from Apache 2.0.48-r1 or earlier versions,\n    # it is important that the following directories are removed.\n    \n    # The following commands should cause no data loss since these\n    # are symbolic links.\n    \n    # rm /etc/apache2/lib /etc/apache2/logs /etc/apache2/modules\n    # rm /etc/apache2/modules\n    \n    # ** ** ** ** **\n    \n    # ** ALSO NOTE **\n    \n    # Users who use mod_disk_cache should edit their Apache\n    # configuration and disable mod_disk_cache."
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "Apache mod_disk_cache authentication storage weakness vulnerability",
-        "Link": "http://www.securityfocus.com/bid/9933/info/"
-      },
-      {
-        "Text": "Apache HTTP Server 2.0.49 Announcement",
-        "Link": "https://www.apache.org/dist/httpd/Announcement2.html"
-      },
-      {
-        "Text": "CVE-2004-0113",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0113"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-05-22T05:52:59Z"
-    }
-  ]
+	"ID": "200403-04",
+	"Title": "Multiple security vulnerabilities in Apache 2",
+	"Synopsis": "\n    A memory leak in mod_ssl allows a remote denial of service attack against\n    an SSL-enabled server via plain HTTP requests. Another flaw was found when\n    arbitrary client-supplied strings can be written to the error log, allowing\n    the exploit of certain terminal emulators. A third flaw exists with the\n    mod_disk_cache module.\n  ",
+	"Product": {
+		"Text": "Apache",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-03-22",
+	"Revised": {
+		"Text": "2007-12-30",
+		"Count": "03"
+	},
+	"Bug": [
+		"45206"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-servers/apache",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.3*",
+						"Range": "eq",
+						"Slot": ""
+					},
+					{
+						"Text": "2.0.49",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.0.48",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    The Apache HTTP Server Project is an effort to develop and maintain an\n    open-source HTTP server for modern operating systems. The goal of this\n    project is to provide a secure, efficient and extensible server that\n    provides services in tune with the current HTTP standards.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Three vulnerabilities were found:\n    </p>\n    <ol>\n    <li>\n    A memory leak in ssl_engine_io.c for mod_ssl in Apache 2.0.48 and below\n    allows remote attackers to cause a denial of service attack via plain\n    HTTP requests to the SSL port of an SSL-enabled server.\n    </li>\n    <li>\n    Apache fails to filter terminal escape sequences from error logs that\n    begin with the ASCII (0x1B) sequence and are followed by a  series of\n    arguments. If a remote attacker could inject escape sequences into an\n    Apache error log, the attacker could take advantages of weaknesses in\n    various terminal emulators, launching attacks against remote users\n    including further denial of service attacks, file modification, and the\n    execution of arbitrary commands.\n    </li>\n    <li>\n    The Apache mod_disk_cache has been found to be vulnerable to a weakness\n    that allows attackers to gain access to authentication credentials\n    through the issue of caching HTTP hop-by-hop headers which would\n    contain plaintext user passwords. There is no available resolution for\n    this issue yet.\n    </li>\n    </ol>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    No special privileges are required for these vulnerabilities. As a\n    result, all users are recommended to upgrade their Apache\n    installations.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no immediate workaround; a software upgrade is required. There\n    is no workaround for the mod_disk_cache issue; users are recommended to\n    disable the feature on their servers until a patched version is\n    released.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    Users are urged to upgrade to Apache 2.0.49:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n    # emerge -pv \">=www-servers/apache-2.0.49\"\n    # emerge \">=www-servers/apache-2.0.49\"\n    \n    # ** IMPORTANT **\n    \n    # If you are migrating from Apache 2.0.48-r1 or earlier versions,\n    # it is important that the following directories are removed.\n    \n    # The following commands should cause no data loss since these\n    # are symbolic links.\n    \n    # rm /etc/apache2/lib /etc/apache2/logs /etc/apache2/modules\n    # rm /etc/apache2/modules\n    \n    # ** ** ** ** **\n    \n    # ** ALSO NOTE **\n    \n    # Users who use mod_disk_cache should edit their Apache\n    # configuration and disable mod_disk_cache."
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "Apache mod_disk_cache authentication storage weakness vulnerability",
+				"Link": "http://www.securityfocus.com/bid/9933/info/"
+			},
+			{
+				"Text": "Apache HTTP Server 2.0.49 Announcement",
+				"Link": "https://www.apache.org/dist/httpd/Announcement2.html"
+			},
+			{
+				"Text": "CVE-2004-0113",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0113"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-05-22T05:52:59Z"
+		}
+	]
 }

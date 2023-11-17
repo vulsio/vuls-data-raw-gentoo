@@ -1,103 +1,103 @@
 {
-  "ID": "200809-08",
-  "Title": "Amarok: Insecure temporary file creation",
-  "Synopsis": "\n    Amarok uses temporary files in an insecure manner, allowing for a symlink\n    attack.\n  ",
-  "Product": {
-    "Text": "amarok",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-09-08",
-  "Revised": {
-    "Text": "2008-09-08",
-    "Count": "01"
-  },
-  "Bug": [
-    "234689"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-sound/amarok",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.4.10",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.4.10",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Amarok is an advanced music player.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Dwayne Litzenberger reported that the\n    MagnatuneBrowser::listDownloadComplete() function in\n    magnatunebrowser/magnatunebrowser.cpp uses the album_info.xml temporary\n    file in an insecure manner.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local attacker could perform a symlink attack to overwrite arbitrary\n    files on the system with the privileges of the user running the\n    application.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Amarok users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-sound/amarok-1.4.10\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-3699",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3699"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-09-02T17:05:46Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-09-05T21:54:43Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-09-05T21:54:55Z"
-    }
-  ]
+	"ID": "200809-08",
+	"Title": "Amarok: Insecure temporary file creation",
+	"Synopsis": "\n    Amarok uses temporary files in an insecure manner, allowing for a symlink\n    attack.\n  ",
+	"Product": {
+		"Text": "amarok",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-09-08",
+	"Revised": {
+		"Text": "2008-09-08",
+		"Count": "01"
+	},
+	"Bug": [
+		"234689"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-sound/amarok",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.4.10",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.4.10",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Amarok is an advanced music player.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Dwayne Litzenberger reported that the\n    MagnatuneBrowser::listDownloadComplete() function in\n    magnatunebrowser/magnatunebrowser.cpp uses the album_info.xml temporary\n    file in an insecure manner.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local attacker could perform a symlink attack to overwrite arbitrary\n    files on the system with the privileges of the user running the\n    application.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Amarok users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-sound/amarok-1.4.10\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-3699",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3699"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-09-02T17:05:46Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-09-05T21:54:43Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-09-05T21:54:55Z"
+		}
+	]
 }

@@ -1,103 +1,103 @@
 {
-  "ID": "200606-17",
-  "Title": "OpenLDAP: Buffer overflow",
-  "Synopsis": "\n    The OpenLDAP replication server slurpd contains a buffer overflow that\n    could result in arbitrary code execution.\n  ",
-  "Product": {
-    "Text": "net-nds/openldap",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-06-15",
-  "Revised": {
-    "Text": "2006-06-15",
-    "Count": "01"
-  },
-  "Bug": [
-    "134010"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-nsd/openldap",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.3.22",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.3.22",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    OpenLDAP is a suite of LDAP-related applications and development tools.\n    It includes slapd (the standalone LDAP server), slurpd (the standalone\n    LDAP replication server), various LDAP libraries, utilities and example\n    clients.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    slurpd contains a buffer overflow when reading very long hostnames from\n    the status file.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    By injecting an overly long hostname in the status file, an attacker\n    could possibly cause the execution of arbitrary code with the\n    permissions of the user running slurpd.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All openLDAP users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-nds/openldap-2.3.22\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-2754",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2754"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-06-08T10:43:24Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-06-11T20:44:06Z"
-    },
-    {
-      "Text": "\n    SeJo\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-06-12T07:06:11Z"
-    }
-  ]
+	"ID": "200606-17",
+	"Title": "OpenLDAP: Buffer overflow",
+	"Synopsis": "\n    The OpenLDAP replication server slurpd contains a buffer overflow that\n    could result in arbitrary code execution.\n  ",
+	"Product": {
+		"Text": "net-nds/openldap",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-06-15",
+	"Revised": {
+		"Text": "2006-06-15",
+		"Count": "01"
+	},
+	"Bug": [
+		"134010"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-nsd/openldap",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.3.22",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.3.22",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    OpenLDAP is a suite of LDAP-related applications and development tools.\n    It includes slapd (the standalone LDAP server), slurpd (the standalone\n    LDAP replication server), various LDAP libraries, utilities and example\n    clients.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    slurpd contains a buffer overflow when reading very long hostnames from\n    the status file.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    By injecting an overly long hostname in the status file, an attacker\n    could possibly cause the execution of arbitrary code with the\n    permissions of the user running slurpd.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All openLDAP users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-nds/openldap-2.3.22\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-2754",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2754"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-06-08T10:43:24Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-06-11T20:44:06Z"
+		},
+		{
+			"Text": "\n    SeJo\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-06-12T07:06:11Z"
+		}
+	]
 }

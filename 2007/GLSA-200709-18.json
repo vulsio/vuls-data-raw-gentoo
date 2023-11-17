@@ -1,131 +1,131 @@
 {
-  "ID": "200709-18",
-  "Title": "Bugzilla: Multiple vulnerabilities",
-  "Synopsis": "\n    Bugzilla contains several vulnerabilities, some of them possibly leading to\n    the remote execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "bugzilla",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-09-30",
-  "Revised": {
-    "Text": "2009-05-28",
-    "Count": "03"
-  },
-  "Bug": [
-    "190112"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-apps/bugzilla",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.20.5",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "2.22.3",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "3.0.1",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "2.22.5",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "2.20.6",
-            "Range": "rge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.0.1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Bugzilla is a web application designed to help with managing software\n    development.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Masahiro Yamada found that from the 2.17.1 version, Bugzilla does not\n    properly sanitize the content of the \"buildid\" parameter when filing\n    bugs (CVE-2007-4543). The next two vulnerabilities only affect Bugzilla\n    2.23.3 or later, hence the stable Gentoo Portage tree does not contain\n    these two vulnerabilities: Loic Minier reported that the\n    \"Email::Send::Sendmail()\" function does not properly sanitise \"from\"\n    email information before sending it to the \"-f\" parameter of\n    /usr/sbin/sendmail (CVE-2007-4538), and Frederic Buclin discovered that\n    the XML-RPC interface does not correctly check permissions in the\n    time-tracking fields (CVE-2007-4539).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker could trigger the \"buildid\" vulnerability by sending\n    a specially crafted form to Bugzilla, leading to a persistent XSS, thus\n    allowing for theft of credentials. With Bugzilla 2.23.3 or later, an\n    attacker could also execute arbitrary code with the permissions of the\n    web server by injecting a specially crafted \"from\" email address and\n    gain access to normally restricted time-tracking information through\n    the XML-RPC service.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Bugzilla users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose www-apps/bugzilla"
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-4538",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4538"
-      },
-      {
-        "Text": "CVE-2007-4539",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4539"
-      },
-      {
-        "Text": "CVE-2007-4543",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4543"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-09-12T09:19:32Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-09-13T16:25:04Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-09-14T08:36:10Z"
-    }
-  ]
+	"ID": "200709-18",
+	"Title": "Bugzilla: Multiple vulnerabilities",
+	"Synopsis": "\n    Bugzilla contains several vulnerabilities, some of them possibly leading to\n    the remote execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "bugzilla",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-09-30",
+	"Revised": {
+		"Text": "2009-05-28",
+		"Count": "03"
+	},
+	"Bug": [
+		"190112"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-apps/bugzilla",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.20.5",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "2.22.3",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "3.0.1",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "2.22.5",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "2.20.6",
+						"Range": "rge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.0.1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Bugzilla is a web application designed to help with managing software\n    development.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Masahiro Yamada found that from the 2.17.1 version, Bugzilla does not\n    properly sanitize the content of the \"buildid\" parameter when filing\n    bugs (CVE-2007-4543). The next two vulnerabilities only affect Bugzilla\n    2.23.3 or later, hence the stable Gentoo Portage tree does not contain\n    these two vulnerabilities: Loic Minier reported that the\n    \"Email::Send::Sendmail()\" function does not properly sanitise \"from\"\n    email information before sending it to the \"-f\" parameter of\n    /usr/sbin/sendmail (CVE-2007-4538), and Frederic Buclin discovered that\n    the XML-RPC interface does not correctly check permissions in the\n    time-tracking fields (CVE-2007-4539).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker could trigger the \"buildid\" vulnerability by sending\n    a specially crafted form to Bugzilla, leading to a persistent XSS, thus\n    allowing for theft of credentials. With Bugzilla 2.23.3 or later, an\n    attacker could also execute arbitrary code with the permissions of the\n    web server by injecting a specially crafted \"from\" email address and\n    gain access to normally restricted time-tracking information through\n    the XML-RPC service.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Bugzilla users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose www-apps/bugzilla"
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-4538",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4538"
+			},
+			{
+				"Text": "CVE-2007-4539",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4539"
+			},
+			{
+				"Text": "CVE-2007-4543",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4543"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-09-12T09:19:32Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-09-13T16:25:04Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-09-14T08:36:10Z"
+		}
+	]
 }

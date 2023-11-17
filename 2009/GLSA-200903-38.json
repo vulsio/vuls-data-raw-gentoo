@@ -1,116 +1,116 @@
 {
-  "ID": "200903-38",
-  "Title": "Squid: Multiple Denial of Service vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities have been found in Squid which allow for remote\n    Denial of Service attacks.\n  ",
-  "Product": {
-    "Text": "Squid",
-    "Type": "ebuild"
-  },
-  "Announced": "2009-03-24",
-  "Revised": {
-    "Text": "2009-03-24",
-    "Count": "01"
-  },
-  "Bug": [
-    "216319",
-    "257585"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-proxy/squid",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.7.6",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.7.6",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Squid is a full-featured web proxy cache.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <ul>\n    <li>The arrayShrink function in lib/Array.c can cause an array to\n    shrink to 0 entries, which triggers an assert error. NOTE: this issue\n    is due to an incorrect fix for CVE-2007-6239 (CVE-2008-1612).</li>\n    <li>An invalid version number in a HTTP request may trigger an\n    assertion in HttpMsg.c and HttpStatusLine.c (CVE-2009-0478).</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    The issues allows for Denial of Service attacks against the service via\n    an HTTP request with an invalid version number and other specially\n    crafted requests.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Squid users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-proxy/squid-2.7.6\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-6239",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6239"
-      },
-      {
-        "Text": "CVE-2008-1612",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1612"
-      },
-      {
-        "Text": "CVE-2009-0478",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0478"
-      },
-      {
-        "Text": "GLSA-200801-05",
-        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200801-05.xml"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2009-03-09T14:14:34Z"
-    },
-    {
-      "Text": "\n    craig\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-03-16T14:25:11Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2009-03-24T16:45:49Z"
-    }
-  ]
+	"ID": "200903-38",
+	"Title": "Squid: Multiple Denial of Service vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities have been found in Squid which allow for remote\n    Denial of Service attacks.\n  ",
+	"Product": {
+		"Text": "Squid",
+		"Type": "ebuild"
+	},
+	"Announced": "2009-03-24",
+	"Revised": {
+		"Text": "2009-03-24",
+		"Count": "01"
+	},
+	"Bug": [
+		"216319",
+		"257585"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-proxy/squid",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.7.6",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.7.6",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Squid is a full-featured web proxy cache.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <ul>\n    <li>The arrayShrink function in lib/Array.c can cause an array to\n    shrink to 0 entries, which triggers an assert error. NOTE: this issue\n    is due to an incorrect fix for CVE-2007-6239 (CVE-2008-1612).</li>\n    <li>An invalid version number in a HTTP request may trigger an\n    assertion in HttpMsg.c and HttpStatusLine.c (CVE-2009-0478).</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    The issues allows for Denial of Service attacks against the service via\n    an HTTP request with an invalid version number and other specially\n    crafted requests.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Squid users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-proxy/squid-2.7.6\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-6239",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6239"
+			},
+			{
+				"Text": "CVE-2008-1612",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1612"
+			},
+			{
+				"Text": "CVE-2009-0478",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0478"
+			},
+			{
+				"Text": "GLSA-200801-05",
+				"Link": "https://www.gentoo.org/security/en/glsa/glsa-200801-05.xml"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2009-03-09T14:14:34Z"
+		},
+		{
+			"Text": "\n    craig\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-03-16T14:25:11Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2009-03-24T16:45:49Z"
+		}
+	]
 }

@@ -1,162 +1,162 @@
 {
-  "ID": "200906-05",
-  "Title": "Wireshark: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities have been discovered in Wireshark which allow for\n    Denial of Service or remote code execution.\n  ",
-  "Product": {
-    "Text": "wireshark",
-    "Type": "ebuild"
-  },
-  "Announced": "2009-06-30",
-  "Revised": {
-    "Text": "2009-06-30",
-    "Count": "02"
-  },
-  "Bug": [
-    "242996",
-    "248425",
-    "258013",
-    "264571",
-    "271062"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-analyzer/wireshark",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.0.8",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.0.8",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Wireshark is a versatile network protocol analyzer.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Multiple vulnerabilities have been discovered in Wireshark:\n    </p>\n    <ul>\n    <li>\n    David Maciejak discovered a vulnerability in packet-usb.c in the USB\n    dissector via a malformed USB Request Block (URB) (CVE-2008-4680).\n    </li>\n    <li>\n    Florent Drouin and David Maciejak reported an unspecified vulnerability\n    in the Bluetooth RFCOMM dissector (CVE-2008-4681).\n    </li>\n    <li>\n    A malformed Tamos CommView capture file (aka .ncf file) with an\n    \"unknown/unexpected packet type\" triggers a failed assertion in wtap.c\n    (CVE-2008-4682).\n    </li>\n    <li>\n    An unchecked packet length parameter in the dissect_btacl() function in\n    packet-bthci_acl.c in the Bluetooth ACL dissector causes an erroneous\n    tvb_memcpy() call (CVE-2008-4683).\n    </li>\n    <li>\n    A vulnerability where packet-frame does not properly handle exceptions\n    thrown by post dissectors caused by a certain series of packets\n    (CVE-2008-4684).\n    </li>\n    <li>\n    Mike Davies reported a use-after-free vulnerability in the\n    dissect_q931_cause_ie() function in packet-q931.c in the Q.931\n    dissector via certain packets that trigger an exception\n    (CVE-2008-4685).\n    </li>\n    <li>\n    The Security Vulnerability Research Team of Bkis reported that the SMTP\n    dissector could consume excessive amounts of CPU and memory\n    (CVE-2008-5285).\n    </li>\n    <li>\n    The vendor reported that the WLCCP dissector could go into an infinite\n    loop (CVE-2008-6472).\n    </li>\n    <li>\n    babi discovered a buffer overflow in wiretap/netscreen.c via a\n    malformed NetScreen snoop file (CVE-2009-0599).\n    </li>\n    <li>\n    A specially crafted Tektronix K12 text capture file can cause an\n    application crash (CVE-2009-0600).\n    </li>\n    <li>\n    A format string vulnerability via format string specifiers in the HOME\n    environment variable (CVE-2009-0601).\n    </li>\n    <li>THCX Labs reported a format string vulnerability in the\n    PROFINET/DCP (PN-DCP) dissector via a PN-DCP packet with format string\n    specifiers in the station name (CVE-2009-1210).\n    </li>\n    <li>An unspecified vulnerability with unknown impact and attack vectors\n    (CVE-2009-1266).\n    </li>\n    <li>\n    Marty Adkins and Chris Maynard discovered a parsing error in the\n    dissector for the Check Point High-Availability Protocol (CPHAP)\n    (CVE-2009-1268).\n    </li>\n    <li>\n    Magnus Homann discovered a parsing error when loading a Tektronix .rf5\n    file (CVE-2009-1269).\n    </li>\n    <li>The vendor reported that the PCNFSD dissector could crash\n    (CVE-2009-1829).</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker could exploit these vulnerabilities by sending\n    specially crafted packets on a network being monitored by Wireshark or\n    by enticing a user to read a malformed packet trace file which can\n    trigger a Denial of Service (application crash or excessive CPU and\n    memory usage) and possibly allow for the execution of arbitrary code\n    with the privileges of the user running Wireshark.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Wireshark users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/wireshark-1.0.8\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-4680",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4680"
-      },
-      {
-        "Text": "CVE-2008-4681",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4681"
-      },
-      {
-        "Text": "CVE-2008-4682",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4682"
-      },
-      {
-        "Text": "CVE-2008-4683",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4683"
-      },
-      {
-        "Text": "CVE-2008-4684",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4684"
-      },
-      {
-        "Text": "CVE-2008-4685",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4685"
-      },
-      {
-        "Text": "CVE-2008-5285",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5285"
-      },
-      {
-        "Text": "CVE-2008-6472",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-6472"
-      },
-      {
-        "Text": "CVE-2009-0599",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0599"
-      },
-      {
-        "Text": "CVE-2009-0600",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0600"
-      },
-      {
-        "Text": "CVE-2009-0601",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0601"
-      },
-      {
-        "Text": "CVE-2009-1210",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1210"
-      },
-      {
-        "Text": "CVE-2009-1266",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1266"
-      },
-      {
-        "Text": "CVE-2009-1268",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1268"
-      },
-      {
-        "Text": "CVE-2009-1269",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1269"
-      },
-      {
-        "Text": "CVE-2009-1829",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1829"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    craig\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-05-22T11:33:22Z"
-    },
-    {
-      "Text": "\n    craig\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2009-06-29T22:09:27Z"
-    }
-  ]
+	"ID": "200906-05",
+	"Title": "Wireshark: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities have been discovered in Wireshark which allow for\n    Denial of Service or remote code execution.\n  ",
+	"Product": {
+		"Text": "wireshark",
+		"Type": "ebuild"
+	},
+	"Announced": "2009-06-30",
+	"Revised": {
+		"Text": "2009-06-30",
+		"Count": "02"
+	},
+	"Bug": [
+		"242996",
+		"248425",
+		"258013",
+		"264571",
+		"271062"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-analyzer/wireshark",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.0.8",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.0.8",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Wireshark is a versatile network protocol analyzer.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Multiple vulnerabilities have been discovered in Wireshark:\n    </p>\n    <ul>\n    <li>\n    David Maciejak discovered a vulnerability in packet-usb.c in the USB\n    dissector via a malformed USB Request Block (URB) (CVE-2008-4680).\n    </li>\n    <li>\n    Florent Drouin and David Maciejak reported an unspecified vulnerability\n    in the Bluetooth RFCOMM dissector (CVE-2008-4681).\n    </li>\n    <li>\n    A malformed Tamos CommView capture file (aka .ncf file) with an\n    \"unknown/unexpected packet type\" triggers a failed assertion in wtap.c\n    (CVE-2008-4682).\n    </li>\n    <li>\n    An unchecked packet length parameter in the dissect_btacl() function in\n    packet-bthci_acl.c in the Bluetooth ACL dissector causes an erroneous\n    tvb_memcpy() call (CVE-2008-4683).\n    </li>\n    <li>\n    A vulnerability where packet-frame does not properly handle exceptions\n    thrown by post dissectors caused by a certain series of packets\n    (CVE-2008-4684).\n    </li>\n    <li>\n    Mike Davies reported a use-after-free vulnerability in the\n    dissect_q931_cause_ie() function in packet-q931.c in the Q.931\n    dissector via certain packets that trigger an exception\n    (CVE-2008-4685).\n    </li>\n    <li>\n    The Security Vulnerability Research Team of Bkis reported that the SMTP\n    dissector could consume excessive amounts of CPU and memory\n    (CVE-2008-5285).\n    </li>\n    <li>\n    The vendor reported that the WLCCP dissector could go into an infinite\n    loop (CVE-2008-6472).\n    </li>\n    <li>\n    babi discovered a buffer overflow in wiretap/netscreen.c via a\n    malformed NetScreen snoop file (CVE-2009-0599).\n    </li>\n    <li>\n    A specially crafted Tektronix K12 text capture file can cause an\n    application crash (CVE-2009-0600).\n    </li>\n    <li>\n    A format string vulnerability via format string specifiers in the HOME\n    environment variable (CVE-2009-0601).\n    </li>\n    <li>THCX Labs reported a format string vulnerability in the\n    PROFINET/DCP (PN-DCP) dissector via a PN-DCP packet with format string\n    specifiers in the station name (CVE-2009-1210).\n    </li>\n    <li>An unspecified vulnerability with unknown impact and attack vectors\n    (CVE-2009-1266).\n    </li>\n    <li>\n    Marty Adkins and Chris Maynard discovered a parsing error in the\n    dissector for the Check Point High-Availability Protocol (CPHAP)\n    (CVE-2009-1268).\n    </li>\n    <li>\n    Magnus Homann discovered a parsing error when loading a Tektronix .rf5\n    file (CVE-2009-1269).\n    </li>\n    <li>The vendor reported that the PCNFSD dissector could crash\n    (CVE-2009-1829).</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker could exploit these vulnerabilities by sending\n    specially crafted packets on a network being monitored by Wireshark or\n    by enticing a user to read a malformed packet trace file which can\n    trigger a Denial of Service (application crash or excessive CPU and\n    memory usage) and possibly allow for the execution of arbitrary code\n    with the privileges of the user running Wireshark.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Wireshark users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/wireshark-1.0.8\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-4680",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4680"
+			},
+			{
+				"Text": "CVE-2008-4681",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4681"
+			},
+			{
+				"Text": "CVE-2008-4682",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4682"
+			},
+			{
+				"Text": "CVE-2008-4683",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4683"
+			},
+			{
+				"Text": "CVE-2008-4684",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4684"
+			},
+			{
+				"Text": "CVE-2008-4685",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4685"
+			},
+			{
+				"Text": "CVE-2008-5285",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5285"
+			},
+			{
+				"Text": "CVE-2008-6472",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-6472"
+			},
+			{
+				"Text": "CVE-2009-0599",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0599"
+			},
+			{
+				"Text": "CVE-2009-0600",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0600"
+			},
+			{
+				"Text": "CVE-2009-0601",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0601"
+			},
+			{
+				"Text": "CVE-2009-1210",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1210"
+			},
+			{
+				"Text": "CVE-2009-1266",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1266"
+			},
+			{
+				"Text": "CVE-2009-1268",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1268"
+			},
+			{
+				"Text": "CVE-2009-1269",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1269"
+			},
+			{
+				"Text": "CVE-2009-1829",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1829"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    craig\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-05-22T11:33:22Z"
+		},
+		{
+			"Text": "\n    craig\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2009-06-29T22:09:27Z"
+		}
+	]
 }

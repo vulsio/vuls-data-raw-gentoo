@@ -1,103 +1,103 @@
 {
-  "ID": "200908-09",
-  "Title": "DokuWiki: Local file inclusion",
-  "Synopsis": "\n    An input sanitation error in DokuWiki might lead to the dislosure of local\n    files or even the remote execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "dokuwiki",
-    "Type": "ebuild"
-  },
-  "Announced": "2009-08-18",
-  "Revised": {
-    "Text": "2009-08-19",
-    "Count": "02"
-  },
-  "Bug": [
-    "272431"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-apps/dokuwiki",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "20090214b",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "20090214b",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    DokuWiki is a standards compliant Wiki system written in PHP.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    girex reported that data from the \"config_cascade\" parameter in\n    inc/init.php is not properly sanitized before being used.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker could exploit this vulnerability to execute PHP code\n    from arbitrary local, or, when the used PHP version supports ftp://\n    URLs, also from remote files via FTP. Furthermore, it is possible to\n    disclose the contents of local files. NOTE: Successful exploitation\n    requires the PHP option \"register_globals\" to be enabled.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Disable \"register_globals\" in php.ini.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All DokuWiki users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/dokuwiki-2009-02-14b\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2009-1960",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1960"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "requester",
-      "Timestamp": "2009-07-19T18:47:33Z"
-    },
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-08-04T19:07:45Z"
-    },
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2009-08-05T13:32:43Z"
-    }
-  ]
+	"ID": "200908-09",
+	"Title": "DokuWiki: Local file inclusion",
+	"Synopsis": "\n    An input sanitation error in DokuWiki might lead to the dislosure of local\n    files or even the remote execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "dokuwiki",
+		"Type": "ebuild"
+	},
+	"Announced": "2009-08-18",
+	"Revised": {
+		"Text": "2009-08-19",
+		"Count": "02"
+	},
+	"Bug": [
+		"272431"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-apps/dokuwiki",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "20090214b",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "20090214b",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    DokuWiki is a standards compliant Wiki system written in PHP.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    girex reported that data from the \"config_cascade\" parameter in\n    inc/init.php is not properly sanitized before being used.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker could exploit this vulnerability to execute PHP code\n    from arbitrary local, or, when the used PHP version supports ftp://\n    URLs, also from remote files via FTP. Furthermore, it is possible to\n    disclose the contents of local files. NOTE: Successful exploitation\n    requires the PHP option \"register_globals\" to be enabled.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Disable \"register_globals\" in php.ini.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All DokuWiki users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/dokuwiki-2009-02-14b\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2009-1960",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1960"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "requester",
+			"Timestamp": "2009-07-19T18:47:33Z"
+		},
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-08-04T19:07:45Z"
+		},
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2009-08-05T13:32:43Z"
+		}
+	]
 }

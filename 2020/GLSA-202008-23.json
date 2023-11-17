@@ -1,102 +1,102 @@
 {
-  "ID": "202008-23",
-  "Title": "chrony: Symlink vulnerability",
-  "Synopsis": "A vulnerability in chrony may allow a privileged attacker to cause\n    data loss via a symlink.\n  ",
-  "Product": {
-    "Text": "chrony",
-    "Type": "ebuild"
-  },
-  "Announced": "2020-08-30",
-  "Revised": {
-    "Text": "2020-08-30",
-    "Count": "1"
-  },
-  "Bug": [
-    "738154"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-misc/chrony",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.5.1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.5.1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>chrony is a versatile implementation of the Network Time Protocol (NTP).</p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>It was found that chrony did not check whether its PID file was a\n      symlink.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A local attacker could perform symlink attack(s) to overwrite arbitrary\n      files with root privileges.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All chrony users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/chrony-3.5.1\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2020-14367",
-        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-14367"
-      },
-      {
-        "Text": "\n      chrony-3.5.1 release announcement\n    ",
-        "Link": "https://listengine.tuxfamily.org/chrony.tuxfamily.org/chrony-announce/2020/08/msg00000.html"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "sam_c",
-      "Tag": "requester",
-      "Timestamp": "2020-08-25T23:32:37Z"
-    },
-    {
-      "Text": "sam_c",
-      "Tag": "submitter",
-      "Timestamp": "2020-08-30T21:09:20Z"
-    }
-  ]
+	"ID": "202008-23",
+	"Title": "chrony: Symlink vulnerability",
+	"Synopsis": "A vulnerability in chrony may allow a privileged attacker to cause\n    data loss via a symlink.\n  ",
+	"Product": {
+		"Text": "chrony",
+		"Type": "ebuild"
+	},
+	"Announced": "2020-08-30",
+	"Revised": {
+		"Text": "2020-08-30",
+		"Count": "1"
+	},
+	"Bug": [
+		"738154"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-misc/chrony",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.5.1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.5.1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>chrony is a versatile implementation of the Network Time Protocol (NTP).</p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>It was found that chrony did not check whether its PID file was a\n      symlink.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A local attacker could perform symlink attack(s) to overwrite arbitrary\n      files with root privileges.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All chrony users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/chrony-3.5.1\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2020-14367",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-14367"
+			},
+			{
+				"Text": "\n      chrony-3.5.1 release announcement\n    ",
+				"Link": "https://listengine.tuxfamily.org/chrony.tuxfamily.org/chrony-announce/2020/08/msg00000.html"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "sam_c",
+			"Tag": "requester",
+			"Timestamp": "2020-08-25T23:32:37Z"
+		},
+		{
+			"Text": "sam_c",
+			"Tag": "submitter",
+			"Timestamp": "2020-08-30T21:09:20Z"
+		}
+	]
 }

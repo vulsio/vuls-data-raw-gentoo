@@ -1,123 +1,123 @@
 {
-  "ID": "202305-19",
-  "Title": "Firejail: Local Privilege Escalation",
-  "Synopsis": "A vulnerability has been discovered in Firejail which could result in local root privilege escalation.",
-  "Product": {
-    "Text": "firejail,firejail-lts",
-    "Type": "ebuild"
-  },
-  "Announced": "2023-05-03",
-  "Revised": {
-    "Text": "2023-05-03",
-    "Count": "1"
-  },
-  "Bug": [
-    "850748"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sys-apps/firejail",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.9.70",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.9.70",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "sys-apps/firejail-lts",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": null,
-        "Vulnerable": [
-          {
-            "Text": "0.9.56.2-r1",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n        <p>A SUID program that reduces the risk of security breaches by restricting the running environment of untrusted applications using Linux namespaces and seccomp-bpf.</p>\n    "
-  },
-  "Description": {
-    "Text": "\n        <p>Firejail does not sufficiently validate the user&#39;s environment prior to using it as the root user when using the --join command line option.</p>\n    "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n        <p>An unprivileged user can exploit this vulnerability to achieve local root privileges.</p>\n    "
-  },
-  "Workaround": {
-    "Text": "\n        <p>System administrators can mitigate this vulnerability via adding either &#34;force-nonewprivs yes&#34; or &#34;join no&#34; to the Firejail configuration file in /etc/firejail/firejail.config.</p>\n    "
-  },
-  "Resolution": {
-    "Text": "\n        \n        \n        \n        \n        \n        \n        \n    ",
-    "P": [
-      {
-        "Text": "Gentoo has discontinued support for sys-apps/firejail-lts. Users should unmerge it in favor of sys-apps/firejail:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "All Firejail users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n          # emerge --ask --depclean --verbose \"sys-apps/firejail-lts\"\n          # emerge --ask --verbose \"sys-apps/firejail\"\n        ",
-      "\n          # emerge --ask --oneshot --verbose \">=sys-apps/firejail-0.9.70\"\n        "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2022-31214",
-        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-31214"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "ajak",
-      "Tag": "requester",
-      "Timestamp": "2023-05-03T10:04:36.994181Z"
-    },
-    {
-      "Text": "sam",
-      "Tag": "submitter",
-      "Timestamp": "2023-05-03T10:04:36.999752Z"
-    }
-  ]
+	"ID": "202305-19",
+	"Title": "Firejail: Local Privilege Escalation",
+	"Synopsis": "A vulnerability has been discovered in Firejail which could result in local root privilege escalation.",
+	"Product": {
+		"Text": "firejail,firejail-lts",
+		"Type": "ebuild"
+	},
+	"Announced": "2023-05-03",
+	"Revised": {
+		"Text": "2023-05-03",
+		"Count": "1"
+	},
+	"Bug": [
+		"850748"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-apps/firejail",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.9.70",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.9.70",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "sys-apps/firejail-lts",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": null,
+				"Vulnerable": [
+					{
+						"Text": "0.9.56.2-r1",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>A SUID program that reduces the risk of security breaches by restricting the running environment of untrusted applications using Linux namespaces and seccomp-bpf.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>Firejail does not sufficiently validate the user&#39;s environment prior to using it as the root user when using the --join command line option.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>An unprivileged user can exploit this vulnerability to achieve local root privileges.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>System administrators can mitigate this vulnerability via adding either &#34;force-nonewprivs yes&#34; or &#34;join no&#34; to the Firejail configuration file in /etc/firejail/firejail.config.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n        \n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "Gentoo has discontinued support for sys-apps/firejail-lts. Users should unmerge it in favor of sys-apps/firejail:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "All Firejail users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --ask --depclean --verbose \"sys-apps/firejail-lts\"\n          # emerge --ask --verbose \"sys-apps/firejail\"\n        ",
+			"\n          # emerge --ask --oneshot --verbose \">=sys-apps/firejail-0.9.70\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2022-31214",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-31214"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "ajak",
+			"Tag": "requester",
+			"Timestamp": "2023-05-03T10:04:36.994181Z"
+		},
+		{
+			"Text": "sam",
+			"Tag": "submitter",
+			"Timestamp": "2023-05-03T10:04:36.999752Z"
+		}
+	]
 }

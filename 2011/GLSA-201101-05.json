@@ -1,102 +1,102 @@
 {
-  "ID": "201101-05",
-  "Title": "OpenAFS: Arbitrary code execution",
-  "Synopsis": "\n    The cache manager of OpenAFS contains several bugs resulting in remote\n    execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "OpenAFS",
-    "Type": "ebuild"
-  },
-  "Announced": "2011-01-16",
-  "Revised": {
-    "Text": "2011-01-16",
-    "Count": "01"
-  },
-  "Bug": [
-    "265538"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-fs/openafs",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.4.9",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.4.9",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    OpenAFS is a distributed file system.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Two vulnerabilities were discovered:\n    </p>\n    <ul><li>\n    Simon Wilkinson discovered from a bug report by Toby Blake that the\n    cache manager of OpenAFS contains a heap-based buffer overflow which is\n    related to the use of the ERR_PTR macro (CVE-2009-1250).</li>\n    <li>A\n    pointer dereference bug when using XDR arrays was discovered by Simon\n    Wilkinson, with assistance from Derrick Brashear and Jeffrey Altman.\n    (CVE-2009-1251).</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    The vulnerabilities might allow remote unauthenticated attackers to\n    cause a Denial of Service (system crash) and possibly execute arbitrary\n    code.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All OpenAFS users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-fs/openafs-1.4.9\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2009-1250",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1250"
-      },
-      {
-        "Text": "CVE-2009-1251",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1251"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    craig\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2010-06-01T20:56:43Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2010-09-21T20:07:41Z"
-    }
-  ]
+	"ID": "201101-05",
+	"Title": "OpenAFS: Arbitrary code execution",
+	"Synopsis": "\n    The cache manager of OpenAFS contains several bugs resulting in remote\n    execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "OpenAFS",
+		"Type": "ebuild"
+	},
+	"Announced": "2011-01-16",
+	"Revised": {
+		"Text": "2011-01-16",
+		"Count": "01"
+	},
+	"Bug": [
+		"265538"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-fs/openafs",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.4.9",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.4.9",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    OpenAFS is a distributed file system.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Two vulnerabilities were discovered:\n    </p>\n    <ul><li>\n    Simon Wilkinson discovered from a bug report by Toby Blake that the\n    cache manager of OpenAFS contains a heap-based buffer overflow which is\n    related to the use of the ERR_PTR macro (CVE-2009-1250).</li>\n    <li>A\n    pointer dereference bug when using XDR arrays was discovered by Simon\n    Wilkinson, with assistance from Derrick Brashear and Jeffrey Altman.\n    (CVE-2009-1251).</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    The vulnerabilities might allow remote unauthenticated attackers to\n    cause a Denial of Service (system crash) and possibly execute arbitrary\n    code.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All OpenAFS users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-fs/openafs-1.4.9\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2009-1250",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1250"
+			},
+			{
+				"Text": "CVE-2009-1251",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1251"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    craig\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2010-06-01T20:56:43Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2010-09-21T20:07:41Z"
+		}
+	]
 }

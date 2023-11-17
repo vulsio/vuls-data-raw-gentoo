@@ -1,106 +1,106 @@
 {
-  "ID": "201702-21",
-  "Title": "Opus: User-assisted execution of arbitrary code",
-  "Synopsis": "A vulnerability in Opus could cause memory corruption.",
-  "Product": {
-    "Text": "opus",
-    "Type": "ebuild"
-  },
-  "Announced": "2017-02-20",
-  "Revised": {
-    "Text": "2017-02-20",
-    "Count": "1"
-  },
-  "Bug": [
-    "605894"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-libs/opus",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.1.3-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.1.3-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Opus is a totally open, royalty-free, highly versatile audio codec.</p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>A large NLSF values could cause the stabilization code in\n      silk/NLSF_stabilize.c to wrap-around and have the last value in\n      NLSF_Q15[] to be negative, close to -32768.\n    </p>\n    \n    <p>Under normal circumstances, the code will simply read from the wrong\n      table resulting in an unstable LPC filter. The filter would then go\n      through the LPC stabilization code at the end of silk_NLSF2A().\n    </p>\n    \n    <p>Ultimately, the output audio would be garbage, but no worse than with\n      any other harmless bad packet.\n    </p>\n    \n    <p>Please see the referenced upstream patch and Debian bug report below for\n      a detailed analysis.\n    </p>\n    \n    <p>However, the original report was about a successful exploitation of\n      Android’s Mediaserver in conjunction with this vulnerability.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted media\n      stream, possibly resulting in execution of arbitrary code with the\n      privileges of the process, or a Denial of Service condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All Opus users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/opus-1.1.3-r1\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2017-0381",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-0381"
-      },
-      {
-        "Text": "\n      Debian Bug 851612\n    ",
-        "Link": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=851612#10"
-      },
-      {
-        "Text": "\n      Upstream patch\n    ",
-        "Link": "https://git.xiph.org/?p=opus.git;a=commitdiff;h=70a3d641b"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "whissi",
-      "Tag": "requester",
-      "Timestamp": "2017-02-16T12:24:20Z"
-    },
-    {
-      "Text": "whissi",
-      "Tag": "submitter",
-      "Timestamp": "2017-02-20T23:45:02Z"
-    }
-  ]
+	"ID": "201702-21",
+	"Title": "Opus: User-assisted execution of arbitrary code",
+	"Synopsis": "A vulnerability in Opus could cause memory corruption.",
+	"Product": {
+		"Text": "opus",
+		"Type": "ebuild"
+	},
+	"Announced": "2017-02-20",
+	"Revised": {
+		"Text": "2017-02-20",
+		"Count": "1"
+	},
+	"Bug": [
+		"605894"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-libs/opus",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.1.3-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.1.3-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Opus is a totally open, royalty-free, highly versatile audio codec.</p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>A large NLSF values could cause the stabilization code in\n      silk/NLSF_stabilize.c to wrap-around and have the last value in\n      NLSF_Q15[] to be negative, close to -32768.\n    </p>\n    \n    <p>Under normal circumstances, the code will simply read from the wrong\n      table resulting in an unstable LPC filter. The filter would then go\n      through the LPC stabilization code at the end of silk_NLSF2A().\n    </p>\n    \n    <p>Ultimately, the output audio would be garbage, but no worse than with\n      any other harmless bad packet.\n    </p>\n    \n    <p>Please see the referenced upstream patch and Debian bug report below for\n      a detailed analysis.\n    </p>\n    \n    <p>However, the original report was about a successful exploitation of\n      Android’s Mediaserver in conjunction with this vulnerability.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could entice a user to open a specially crafted media\n      stream, possibly resulting in execution of arbitrary code with the\n      privileges of the process, or a Denial of Service condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All Opus users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/opus-1.1.3-r1\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2017-0381",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-0381"
+			},
+			{
+				"Text": "\n      Debian Bug 851612\n    ",
+				"Link": "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=851612#10"
+			},
+			{
+				"Text": "\n      Upstream patch\n    ",
+				"Link": "https://git.xiph.org/?p=opus.git;a=commitdiff;h=70a3d641b"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "whissi",
+			"Tag": "requester",
+			"Timestamp": "2017-02-16T12:24:20Z"
+		},
+		{
+			"Text": "whissi",
+			"Tag": "submitter",
+			"Timestamp": "2017-02-20T23:45:02Z"
+		}
+	]
 }

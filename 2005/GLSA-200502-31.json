@@ -1,107 +1,107 @@
 {
-  "ID": "200502-31",
-  "Title": "uim: Privilege escalation vulnerability",
-  "Synopsis": "\n    Under certain conditions, applications linked against uim suffer from a\n    privilege escalation vulnerability.\n  ",
-  "Product": {
-    "Text": "uim",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-02-28",
-  "Revised": {
-    "Text": "2005-02-28",
-    "Count": "01"
-  },
-  "Bug": [
-    "82678"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-i18n/uim",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.4.5.1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.4.5.1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    uim is a simple, secure and flexible input method library.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Takumi Asaki discovered that uim insufficiently checks environment\n    variables. setuid/setgid applications linked against libuim could end\n    up executing arbitrary code. This vulnerability only affects\n    immodule-enabled Qt (if you build Qt 3.3.2 or later versions with\n    USE=\"immqt\" or USE=\"immqt-bc\").\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A malicious local user could exploit this vulnerability to execute\n    arbitrary code with escalated privileges.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All uim users should upgrade to the latest available version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-i18n/uim-0.4.5.1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2005-0503",
-        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0503"
-      },
-      {
-        "Text": "uim announcement",
-        "Link": "https://lists.freedesktop.org/archives/uim/2005-February/000996.html"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-02-25T09:53:35Z"
-    },
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-02-27T12:40:49Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-02-28T08:59:25Z"
-    }
-  ]
+	"ID": "200502-31",
+	"Title": "uim: Privilege escalation vulnerability",
+	"Synopsis": "\n    Under certain conditions, applications linked against uim suffer from a\n    privilege escalation vulnerability.\n  ",
+	"Product": {
+		"Text": "uim",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-02-28",
+	"Revised": {
+		"Text": "2005-02-28",
+		"Count": "01"
+	},
+	"Bug": [
+		"82678"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-i18n/uim",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.4.5.1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.4.5.1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    uim is a simple, secure and flexible input method library.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Takumi Asaki discovered that uim insufficiently checks environment\n    variables. setuid/setgid applications linked against libuim could end\n    up executing arbitrary code. This vulnerability only affects\n    immodule-enabled Qt (if you build Qt 3.3.2 or later versions with\n    USE=\"immqt\" or USE=\"immqt-bc\").\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A malicious local user could exploit this vulnerability to execute\n    arbitrary code with escalated privileges.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All uim users should upgrade to the latest available version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-i18n/uim-0.4.5.1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2005-0503",
+				"Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0503"
+			},
+			{
+				"Text": "uim announcement",
+				"Link": "https://lists.freedesktop.org/archives/uim/2005-February/000996.html"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-02-25T09:53:35Z"
+		},
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-02-27T12:40:49Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-02-28T08:59:25Z"
+		}
+	]
 }

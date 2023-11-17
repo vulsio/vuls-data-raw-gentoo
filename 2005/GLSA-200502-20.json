@@ -1,139 +1,139 @@
 {
-  "ID": "200502-20",
-  "Title": "Emacs, XEmacs: Format string vulnerabilities in movemail",
-  "Synopsis": "\n    The movemail utility shipped with Emacs and XEmacs contains several format\n    string vulnerabilities, potentially leading to the execution of arbitrary\n    code.\n  ",
-  "Product": {
-    "Text": "Emacs",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-02-15",
-  "Revised": {
-    "Text": "2006-07-23",
-    "Count": "02"
-  },
-  "Bug": [
-    "79686"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-editors/emacs",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "21.4",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "19",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "21.4",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-editors/xemacs",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "21.4.15-r3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "21.4.15-r3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    GNU Emacs and XEmacs are highly extensible and customizable text\n    editors. movemail is an Emacs utility that can fetch mail on remote\n    mail servers.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Max Vozeler discovered that the movemail utility contains several\n    format string errors.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker could set up a malicious POP server and entice a user to\n    connect to it using movemail, resulting in the execution of arbitrary\n    code with the rights of the victim user.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Emacs users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All XEmacs users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-editors/emacs-21.4\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-editors/xemacs-21.4.15-r3\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2005-0100",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0100"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-02-11T15:36:27Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-02-15T16:06:08Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-02-15T16:06:17Z"
-    }
-  ]
+	"ID": "200502-20",
+	"Title": "Emacs, XEmacs: Format string vulnerabilities in movemail",
+	"Synopsis": "\n    The movemail utility shipped with Emacs and XEmacs contains several format\n    string vulnerabilities, potentially leading to the execution of arbitrary\n    code.\n  ",
+	"Product": {
+		"Text": "Emacs",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-02-15",
+	"Revised": {
+		"Text": "2006-07-23",
+		"Count": "02"
+	},
+	"Bug": [
+		"79686"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-editors/emacs",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "21.4",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "19",
+						"Range": "lt",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "21.4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-editors/xemacs",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "21.4.15-r3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "21.4.15-r3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    GNU Emacs and XEmacs are highly extensible and customizable text\n    editors. movemail is an Emacs utility that can fetch mail on remote\n    mail servers.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Max Vozeler discovered that the movemail utility contains several\n    format string errors.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker could set up a malicious POP server and entice a user to\n    connect to it using movemail, resulting in the execution of arbitrary\n    code with the rights of the victim user.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Emacs users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All XEmacs users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-editors/emacs-21.4\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-editors/xemacs-21.4.15-r3\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2005-0100",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0100"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-02-11T15:36:27Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-02-15T16:06:08Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-02-15T16:06:17Z"
+		}
+	]
 }

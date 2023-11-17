@@ -1,98 +1,98 @@
 {
-  "ID": "201511-01",
-  "Title": "MirBSD Korn Shell: Arbitrary code execution",
-  "Synopsis": "An attacker who already had access to the environment could so\n    append values to parameters passed through programs.\n  ",
-  "Product": {
-    "Text": "",
-    "Type": "ebuild"
-  },
-  "Announced": "2015-11-02",
-  "Revised": {
-    "Text": "2015-11-02",
-    "Count": "2"
-  },
-  "Bug": [
-    "524414"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-shells/mksh",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "50c",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "50c",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>MirBSD Korn Shell is an actively developed free implementation of the\n      Korn Shell programming language and a successor to the Public Domain Korn\n      Shell.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Improper sanitation of environment import allows for appending of values\n      to passed parameters. \n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>An attacker who already had access to the environment could so append\n      values to parameters passed through programs (including sudo(8) or\n      setuid) to shell scripts, including indirectly, after those programs\n      intended to sanitise the environment, e.g. invalidating the last $PATH\n      component.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All mksh users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-shells/mksh-50c\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "\n      mksh R50c released, security fix\n    ",
-        "Link": "https://www.mirbsd.org/permalinks/wlog-10_e20141003-tg.htm#e20141003-tg_wlog-10"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "K_F",
-      "Tag": "requester",
-      "Timestamp": "2014-12-12T08:13:43Z"
-    },
-    {
-      "Text": "mrueg",
-      "Tag": "submitter",
-      "Timestamp": "2015-11-02T15:33:07Z"
-    }
-  ]
+	"ID": "201511-01",
+	"Title": "MirBSD Korn Shell: Arbitrary code execution",
+	"Synopsis": "An attacker who already had access to the environment could so\n    append values to parameters passed through programs.\n  ",
+	"Product": {
+		"Text": "",
+		"Type": "ebuild"
+	},
+	"Announced": "2015-11-02",
+	"Revised": {
+		"Text": "2015-11-02",
+		"Count": "2"
+	},
+	"Bug": [
+		"524414"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-shells/mksh",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "50c",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "50c",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>MirBSD Korn Shell is an actively developed free implementation of the\n      Korn Shell programming language and a successor to the Public Domain Korn\n      Shell.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Improper sanitation of environment import allows for appending of values\n      to passed parameters. \n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>An attacker who already had access to the environment could so append\n      values to parameters passed through programs (including sudo(8) or\n      setuid) to shell scripts, including indirectly, after those programs\n      intended to sanitise the environment, e.g. invalidating the last $PATH\n      component.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All mksh users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-shells/mksh-50c\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "\n      mksh R50c released, security fix\n    ",
+				"Link": "https://www.mirbsd.org/permalinks/wlog-10_e20141003-tg.htm#e20141003-tg_wlog-10"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "K_F",
+			"Tag": "requester",
+			"Timestamp": "2014-12-12T08:13:43Z"
+		},
+		{
+			"Text": "mrueg",
+			"Tag": "submitter",
+			"Timestamp": "2015-11-02T15:33:07Z"
+		}
+	]
 }

@@ -1,138 +1,138 @@
 {
-  "ID": "200504-07",
-  "Title": "GnomeVFS, libcdaudio: CDDB response overflow",
-  "Synopsis": "\n    The GnomeVFS and libcdaudio libraries contain a buffer overflow that can be\n    triggered by a large CDDB response, potentially allowing the execution of\n    arbitrary code.\n  ",
-  "Product": {
-    "Text": "GnomeVFS",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-04-08",
-  "Revised": {
-    "Text": "2005-04-13",
-    "Count": "02"
-  },
-  "Bug": [
-    "84936"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "gnome-base/gnome-vfs",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.8.4-r1",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "1.0.5-r4",
-            "Range": "rge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.8.4-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "media-libs/libcdaudio",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.99.10-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.99.10-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    GnomeVFS is a filesystem abstraction library for the GNOME desktop\n    environment. libcdaudio is a multi-platform CD player development\n    library. They both include code to query CDDB servers to get Audio CD\n    track titles.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Joseph VanAndel has discovered a buffer overflow in Grip when\n    processing large CDDB results (see GLSA 200503-21). The same overflow\n    is present in GnomeVFS and libcdaudio code.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A malicious CDDB server could cause applications making use of GnomeVFS\n    or libcdaudio libraries to crash, potentially allowing the execution of\n    arbitrary code with the privileges of the user running the application.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All GnomeVFS users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All libcdaudio users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose gnome-base/gnome-vfs",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/libcdaudio-0.99.10-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2005-0706",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0706"
-      },
-      {
-        "Text": "GLSA 200503-21",
-        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200503-21.xml"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-04-05T09:35:13Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-04-08T11:17:13Z"
-    }
-  ]
+	"ID": "200504-07",
+	"Title": "GnomeVFS, libcdaudio: CDDB response overflow",
+	"Synopsis": "\n    The GnomeVFS and libcdaudio libraries contain a buffer overflow that can be\n    triggered by a large CDDB response, potentially allowing the execution of\n    arbitrary code.\n  ",
+	"Product": {
+		"Text": "GnomeVFS",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-04-08",
+	"Revised": {
+		"Text": "2005-04-13",
+		"Count": "02"
+	},
+	"Bug": [
+		"84936"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "gnome-base/gnome-vfs",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.8.4-r1",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "1.0.5-r4",
+						"Range": "rge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.8.4-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "media-libs/libcdaudio",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.99.10-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.99.10-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    GnomeVFS is a filesystem abstraction library for the GNOME desktop\n    environment. libcdaudio is a multi-platform CD player development\n    library. They both include code to query CDDB servers to get Audio CD\n    track titles.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Joseph VanAndel has discovered a buffer overflow in Grip when\n    processing large CDDB results (see GLSA 200503-21). The same overflow\n    is present in GnomeVFS and libcdaudio code.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A malicious CDDB server could cause applications making use of GnomeVFS\n    or libcdaudio libraries to crash, potentially allowing the execution of\n    arbitrary code with the privileges of the user running the application.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All GnomeVFS users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All libcdaudio users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose gnome-base/gnome-vfs",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/libcdaudio-0.99.10-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2005-0706",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0706"
+			},
+			{
+				"Text": "GLSA 200503-21",
+				"Link": "https://www.gentoo.org/security/en/glsa/glsa-200503-21.xml"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-04-05T09:35:13Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-04-08T11:17:13Z"
+		}
+	]
 }

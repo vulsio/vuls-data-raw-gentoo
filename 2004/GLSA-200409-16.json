@@ -1,105 +1,105 @@
 {
-  "ID": "200409-16",
-  "Title": "Samba: Denial of Service vulnerabilities",
-  "Synopsis": "\n    Two Denial of Service vulnerabilities have been found and fixed in Samba.\n  ",
-  "Product": {
-    "Text": "Samba",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-09-13",
-  "Revised": {
-    "Text": "2004-09-13",
-    "Count": "01"
-  },
-  "Bug": null,
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-fs/samba",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.0.7",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "3.0",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.0.7",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Samba is a freely available SMB/CIFS implementation which allows seamless\n    interoperability of file and print services to other SMB/CIFS clients. smbd\n    and nmbd are two daemons used by the Samba server.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    There is a defect in smbd's ASN.1 parsing. A bad packet received during the\n    authentication request could throw newly-spawned smbd processes into an\n    infinite loop (CAN-2004-0807). Another defect was found in nmbd's\n    processing of mailslot packets, where a bad NetBIOS request could crash the\n    nmbd process (CAN-2004-0808).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could send specially crafted packets to trigger both\n    defects. The ASN.1 parsing issue can be exploited to exhaust all available\n    memory on the Samba host, potentially denying all service to that server.\n    The nmbd issue can be exploited to crash the nmbd process, resulting in a\n    Denial of Service condition on the Samba server.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Samba 3.x users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n\n    # emerge -pv \">=net-fs/samba-3.0.7\"\n    # emerge \">=net-fs/samba-3.0.7\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2004-0807",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0807"
-      },
-      {
-        "Text": "CAN-2004-0808",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0808"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-09-11T15:16:21Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-09-13T12:15:40Z"
-    }
-  ]
+	"ID": "200409-16",
+	"Title": "Samba: Denial of Service vulnerabilities",
+	"Synopsis": "\n    Two Denial of Service vulnerabilities have been found and fixed in Samba.\n  ",
+	"Product": {
+		"Text": "Samba",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-09-13",
+	"Revised": {
+		"Text": "2004-09-13",
+		"Count": "01"
+	},
+	"Bug": null,
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-fs/samba",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.0.7",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "3.0",
+						"Range": "lt",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.0.7",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Samba is a freely available SMB/CIFS implementation which allows seamless\n    interoperability of file and print services to other SMB/CIFS clients. smbd\n    and nmbd are two daemons used by the Samba server.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    There is a defect in smbd's ASN.1 parsing. A bad packet received during the\n    authentication request could throw newly-spawned smbd processes into an\n    infinite loop (CAN-2004-0807). Another defect was found in nmbd's\n    processing of mailslot packets, where a bad NetBIOS request could crash the\n    nmbd process (CAN-2004-0808).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could send specially crafted packets to trigger both\n    defects. The ASN.1 parsing issue can be exploited to exhaust all available\n    memory on the Samba host, potentially denying all service to that server.\n    The nmbd issue can be exploited to crash the nmbd process, resulting in a\n    Denial of Service condition on the Samba server.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Samba 3.x users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n\n    # emerge -pv \">=net-fs/samba-3.0.7\"\n    # emerge \">=net-fs/samba-3.0.7\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2004-0807",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0807"
+			},
+			{
+				"Text": "CAN-2004-0808",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0808"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-09-11T15:16:21Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-09-13T12:15:40Z"
+		}
+	]
 }

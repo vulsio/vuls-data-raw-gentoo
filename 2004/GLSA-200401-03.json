@@ -1,87 +1,87 @@
 {
-  "ID": "200401-03",
-  "Title": "Apache mod_python Denial of Service vulnerability",
-  "Synopsis": "\n    Apache's mod_python module could crash the httpd process if a specific,\n    malformed query string was sent.\n  ",
-  "Product": {
-    "Text": "mod_python",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-01-27",
-  "Revised": {
-    "Text": "2007-12-30",
-    "Count": "02"
-  },
-  "Bug": [
-    "39154"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-apache/mod_python",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.7.10",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.7.10",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Mod_python is an Apache module that embeds the Python interpreter\n    within the server allowing Python-based web-applications to be\n    created.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The Apache Foundation has reported that mod_python may be prone to\n    Denial of Service attacks when handling a malformed\n    query. Mod_python 2.7.9 was released to fix the vulnerability,\n    however, because the vulnerability has not been fully fixed,\n    version 2.7.10 has been released.\n    </p>\n    <p>\n    Users of mod_python 3.0.4 are not affected by this vulnerability.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "low",
-    "Text": "\n    <p>\n    Although there are no known public exploits known for this\n    exploit, users are recommended to upgrade mod_python to ensure the\n    security of their infrastructure.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Mod_python 2.7.10 has been released to solve this issue; there is\n    no immediate workaround.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All users using mod_python 2.7.9 or below are recommended to\n    update their mod_python installation:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    $> emerge sync\n    $> emerge -pv \">=www-apache/mod_python-2.7.10\"\n    $> emerge \">=www-apache/mod_python-2.7.10\"\n    $> /etc/init.d/apache restart"
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "Mod_python 2.7.10 release announcement",
-        "Link": "https://www.modpython.org/pipermail/mod_python/2004-January/014879.html"
-      }
-    ]
-  },
-  "Metadata": null
+	"ID": "200401-03",
+	"Title": "Apache mod_python Denial of Service vulnerability",
+	"Synopsis": "\n    Apache's mod_python module could crash the httpd process if a specific,\n    malformed query string was sent.\n  ",
+	"Product": {
+		"Text": "mod_python",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-01-27",
+	"Revised": {
+		"Text": "2007-12-30",
+		"Count": "02"
+	},
+	"Bug": [
+		"39154"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-apache/mod_python",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.7.10",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.7.10",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Mod_python is an Apache module that embeds the Python interpreter\n    within the server allowing Python-based web-applications to be\n    created.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The Apache Foundation has reported that mod_python may be prone to\n    Denial of Service attacks when handling a malformed\n    query. Mod_python 2.7.9 was released to fix the vulnerability,\n    however, because the vulnerability has not been fully fixed,\n    version 2.7.10 has been released.\n    </p>\n    <p>\n    Users of mod_python 3.0.4 are not affected by this vulnerability.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "low",
+		"Text": "\n    <p>\n    Although there are no known public exploits known for this\n    exploit, users are recommended to upgrade mod_python to ensure the\n    security of their infrastructure.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Mod_python 2.7.10 has been released to solve this issue; there is\n    no immediate workaround.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All users using mod_python 2.7.9 or below are recommended to\n    update their mod_python installation:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    $> emerge sync\n    $> emerge -pv \">=www-apache/mod_python-2.7.10\"\n    $> emerge \">=www-apache/mod_python-2.7.10\"\n    $> /etc/init.d/apache restart"
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "Mod_python 2.7.10 release announcement",
+				"Link": "https://www.modpython.org/pipermail/mod_python/2004-January/014879.html"
+			}
+		]
+	},
+	"Metadata": null
 }

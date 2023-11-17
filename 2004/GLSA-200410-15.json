@@ -1,107 +1,107 @@
 {
-  "ID": "200410-15",
-  "Title": "Squid: Remote DoS vulnerability",
-  "Synopsis": "\n    Squid contains a vulnerability in the SNMP module which may lead to a\n    denial of service.\n  ",
-  "Product": {
-    "Text": "squid",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-10-18",
-  "Revised": {
-    "Text": "2007-12-30",
-    "Count": "03"
-  },
-  "Bug": [
-    "67167"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-proxy/squid",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.5.7",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.5.7",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Squid is a full-featured Web proxy cache designed to run on Unix\n    systems. It supports proxying and caching of HTTP, FTP, and other URLs,\n    as well as SSL support, cache hierarchies, transparent caching, access\n    control lists and many other features.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    A parsing error exists in the SNMP module of Squid where a\n    specially-crafted UDP packet can potentially cause the server to\n    restart, closing all current connections. This vulnerability only\n    exists in versions of Squid compiled with the 'snmp' USE flag.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker can repeatedly send these malicious UDP packets to the\n    Squid server, leading to a denial of service.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Disable SNMP support or filter the port that has SNMP processing\n    (default is 3401) to allow only SNMP data from trusted hosts.\n    </p>\n    <p>\n    To disable SNMP support put the entry snmp_port 0 in the squid.conf\n    configuration file.\n    </p>\n    <p>\n    To allow only the local interface to process SNMP, add the entry\n    \"snmp_incoming_address 127.0.0.1\" in the squid.conf configuration file.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Squid users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n    \n    # emerge -pv \">=net-proxy/squid-2.5.7\"\n    # emerge \">=net-proxy/squid-2.5.7\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "iDEFENSE Advisory",
-        "Link": "http://www.idefense.com/application/poi/display?id=152&type=vulnerabilities&flashstatus=true"
-      },
-      {
-        "Text": "CVE-2004-0918",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0918"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2004-10-17T17:38:48Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-10-17T17:38:55Z"
-    },
-    {
-      "Text": "\n    lewk\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-10-17T18:44:11Z"
-    }
-  ]
+	"ID": "200410-15",
+	"Title": "Squid: Remote DoS vulnerability",
+	"Synopsis": "\n    Squid contains a vulnerability in the SNMP module which may lead to a\n    denial of service.\n  ",
+	"Product": {
+		"Text": "squid",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-10-18",
+	"Revised": {
+		"Text": "2007-12-30",
+		"Count": "03"
+	},
+	"Bug": [
+		"67167"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-proxy/squid",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.5.7",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.5.7",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Squid is a full-featured Web proxy cache designed to run on Unix\n    systems. It supports proxying and caching of HTTP, FTP, and other URLs,\n    as well as SSL support, cache hierarchies, transparent caching, access\n    control lists and many other features.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    A parsing error exists in the SNMP module of Squid where a\n    specially-crafted UDP packet can potentially cause the server to\n    restart, closing all current connections. This vulnerability only\n    exists in versions of Squid compiled with the 'snmp' USE flag.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker can repeatedly send these malicious UDP packets to the\n    Squid server, leading to a denial of service.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Disable SNMP support or filter the port that has SNMP processing\n    (default is 3401) to allow only SNMP data from trusted hosts.\n    </p>\n    <p>\n    To disable SNMP support put the entry snmp_port 0 in the squid.conf\n    configuration file.\n    </p>\n    <p>\n    To allow only the local interface to process SNMP, add the entry\n    \"snmp_incoming_address 127.0.0.1\" in the squid.conf configuration file.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Squid users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n    \n    # emerge -pv \">=net-proxy/squid-2.5.7\"\n    # emerge \">=net-proxy/squid-2.5.7\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "iDEFENSE Advisory",
+				"Link": "http://www.idefense.com/application/poi/display?id=152&type=vulnerabilities&flashstatus=true"
+			},
+			{
+				"Text": "CVE-2004-0918",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0918"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2004-10-17T17:38:48Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-10-17T17:38:55Z"
+		},
+		{
+			"Text": "\n    lewk\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-10-17T18:44:11Z"
+		}
+	]
 }

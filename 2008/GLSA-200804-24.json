@@ -1,103 +1,103 @@
 {
-  "ID": "200804-24",
-  "Title": "DBmail: Data disclosure",
-  "Synopsis": "\n    A vulnerability in DBMail could allow for passwordless login to any account\n    under certain configurations.\n  ",
-  "Product": {
-    "Text": "dbmail",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-04-18",
-  "Revised": {
-    "Text": "2008-04-18",
-    "Count": "01"
-  },
-  "Bug": [
-    "218154"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-mail/dbmail",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.2.9",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.2.9",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    DBMail is a mail storage and retrieval daemon that uses SQL databases\n    as its data store. IMAP and POP3 can be used to retrieve mails from the\n    database.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    A vulnerability in DBMail's authldap module when used in conjunction\n    with an Active Directory server has been reported by vugluskr. When\n    passing a zero length password to the module, it tries to bind\n    anonymously to the LDAP server. If the LDAP server allows anonymous\n    binds, this bind succeeds and results in a successful authentication to\n    DBMail.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "low",
-    "Text": "\n    <p>\n    By passing an empty password string to the server, an attacker could be\n    able to log in to any account.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All DBMail users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-mail/dbmail-2.2.9\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-6714",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6714"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    vorlon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-04-18T08:54:02Z"
-    },
-    {
-      "Text": "\n    vorlon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-04-18T09:20:04Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-04-18T14:01:09Z"
-    }
-  ]
+	"ID": "200804-24",
+	"Title": "DBmail: Data disclosure",
+	"Synopsis": "\n    A vulnerability in DBMail could allow for passwordless login to any account\n    under certain configurations.\n  ",
+	"Product": {
+		"Text": "dbmail",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-04-18",
+	"Revised": {
+		"Text": "2008-04-18",
+		"Count": "01"
+	},
+	"Bug": [
+		"218154"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-mail/dbmail",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.2.9",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.2.9",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    DBMail is a mail storage and retrieval daemon that uses SQL databases\n    as its data store. IMAP and POP3 can be used to retrieve mails from the\n    database.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    A vulnerability in DBMail's authldap module when used in conjunction\n    with an Active Directory server has been reported by vugluskr. When\n    passing a zero length password to the module, it tries to bind\n    anonymously to the LDAP server. If the LDAP server allows anonymous\n    binds, this bind succeeds and results in a successful authentication to\n    DBMail.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "low",
+		"Text": "\n    <p>\n    By passing an empty password string to the server, an attacker could be\n    able to log in to any account.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All DBMail users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-mail/dbmail-2.2.9\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-6714",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6714"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    vorlon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-04-18T08:54:02Z"
+		},
+		{
+			"Text": "\n    vorlon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-04-18T09:20:04Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-04-18T14:01:09Z"
+		}
+	]
 }

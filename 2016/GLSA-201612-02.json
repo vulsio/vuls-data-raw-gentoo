@@ -1,98 +1,98 @@
 {
-  "ID": "201612-02",
-  "Title": "DavFS2: Local privilege escalation",
-  "Synopsis": "A vulnerability in DavFS2 allows local users to gain root\n    privileges.\n  ",
-  "Product": {
-    "Text": "davfs2",
-    "Type": "ebuild"
-  },
-  "Announced": "2016-12-02",
-  "Revised": {
-    "Text": "2016-12-02",
-    "Count": "1"
-  },
-  "Bug": [
-    "485232"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-fs/davfs2",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.5.2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.5.2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>DavFS2 is a file system driver that allows you to mount a WebDAV server\n      as a local disk drive.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>DavFS2 installs “/usr/sbin/mount.davfs” as setuid root. This utility\n      uses “system()” to call “/sbin/modprobe”.\n    </p>\n    \n    <p>While the call to “modprobe” itself cannot be manipulated, a local\n      authenticated user can set the “MODPROBE_OPTIONS” environment\n      variable to pass a user controlled path, allowing the loading of an\n      arbitrary kernel module.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A local user could gain root privileges.</p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>The system administrator should ensure that all modules the\n      “mount.davfs” utility tries to load are loaded upon system boot\n      before any local user can call the utility.\n    </p>\n    \n    <p>An additional defense measure can be implemented by enabling the Linux\n      kernel module signing feature. This assists in the prevention of\n      arbitrary modules being loaded.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All DavFS2 users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-fs/davfs2-1.5.2\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2013-4362",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4362"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    BlueKnight\n  ",
-      "Tag": "requester",
-      "Timestamp": "2015-12-07T21:54:18Z"
-    },
-    {
-      "Text": "whissi",
-      "Tag": "submitter",
-      "Timestamp": "2016-12-02T13:32:55Z"
-    }
-  ]
+	"ID": "201612-02",
+	"Title": "DavFS2: Local privilege escalation",
+	"Synopsis": "A vulnerability in DavFS2 allows local users to gain root\n    privileges.\n  ",
+	"Product": {
+		"Text": "davfs2",
+		"Type": "ebuild"
+	},
+	"Announced": "2016-12-02",
+	"Revised": {
+		"Text": "2016-12-02",
+		"Count": "1"
+	},
+	"Bug": [
+		"485232"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-fs/davfs2",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.5.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.5.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>DavFS2 is a file system driver that allows you to mount a WebDAV server\n      as a local disk drive.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>DavFS2 installs “/usr/sbin/mount.davfs” as setuid root. This utility\n      uses “system()” to call “/sbin/modprobe”.\n    </p>\n    \n    <p>While the call to “modprobe” itself cannot be manipulated, a local\n      authenticated user can set the “MODPROBE_OPTIONS” environment\n      variable to pass a user controlled path, allowing the loading of an\n      arbitrary kernel module.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A local user could gain root privileges.</p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>The system administrator should ensure that all modules the\n      “mount.davfs” utility tries to load are loaded upon system boot\n      before any local user can call the utility.\n    </p>\n    \n    <p>An additional defense measure can be implemented by enabling the Linux\n      kernel module signing feature. This assists in the prevention of\n      arbitrary modules being loaded.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All DavFS2 users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-fs/davfs2-1.5.2\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2013-4362",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4362"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    BlueKnight\n  ",
+			"Tag": "requester",
+			"Timestamp": "2015-12-07T21:54:18Z"
+		},
+		{
+			"Text": "whissi",
+			"Tag": "submitter",
+			"Timestamp": "2016-12-02T13:32:55Z"
+		}
+	]
 }

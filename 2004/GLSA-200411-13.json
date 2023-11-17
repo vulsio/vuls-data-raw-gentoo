@@ -1,144 +1,144 @@
 {
-  "ID": "200411-13",
-  "Title": "Portage, Gentoolkit: Temporary file vulnerabilities",
-  "Synopsis": "\n    dispatch-conf (included in Portage) and qpkg (included in Gentoolkit) are\n    vulnerable to symlink attacks, potentially allowing a local user to\n    overwrite arbitrary files with the rights of the user running the script.\n  ",
-  "Product": {
-    "Text": "portage gentoolkit",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-11-07",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "02"
-  },
-  "Bug": [
-    "68846",
-    "69147"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sys-apps/portage",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.0.51-r3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.0.51-r2",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-portage/gentoolkit",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.2.0_pre10-r1",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "0.2.0_pre8-r1",
-            "Range": "rge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.2.0_pre10",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Portage is Gentoo's package management tool. The dispatch-conf utility\n    allows for easy rollback of configuration file changes and automatic\n    updates of configurations files never modified by users. Gentoolkit is\n    a collection of Gentoo specific administration scripts, one of which is\n    the portage querying tool qpkg.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    dispatch-conf and qpkg use predictable filenames for temporary files.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary files\n    directory, pointing to a valid file somewhere on the filesystem. When\n    an affected script is called, this would result in the file to be\n    overwritten with the rights of the user running the dispatch-conf or\n    qpkg, which could be the root user.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Portage users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All Gentoolkit users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-apps/portage-2.0.51-r3\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-portage/gentoolkit-0.2.0_pre8-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2004-1107",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1107"
-      },
-      {
-        "Text": "CVE-2004-1108",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1108"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2004-11-02T14:02:06Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-11-02T17:41:31Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-11-07T11:16:08Z"
-    }
-  ]
+	"ID": "200411-13",
+	"Title": "Portage, Gentoolkit: Temporary file vulnerabilities",
+	"Synopsis": "\n    dispatch-conf (included in Portage) and qpkg (included in Gentoolkit) are\n    vulnerable to symlink attacks, potentially allowing a local user to\n    overwrite arbitrary files with the rights of the user running the script.\n  ",
+	"Product": {
+		"Text": "portage gentoolkit",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-11-07",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "02"
+	},
+	"Bug": [
+		"68846",
+		"69147"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-apps/portage",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.0.51-r3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.0.51-r2",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-portage/gentoolkit",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.2.0_pre10-r1",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "0.2.0_pre8-r1",
+						"Range": "rge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.2.0_pre10",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Portage is Gentoo's package management tool. The dispatch-conf utility\n    allows for easy rollback of configuration file changes and automatic\n    updates of configurations files never modified by users. Gentoolkit is\n    a collection of Gentoo specific administration scripts, one of which is\n    the portage querying tool qpkg.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    dispatch-conf and qpkg use predictable filenames for temporary files.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary files\n    directory, pointing to a valid file somewhere on the filesystem. When\n    an affected script is called, this would result in the file to be\n    overwritten with the rights of the user running the dispatch-conf or\n    qpkg, which could be the root user.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Portage users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All Gentoolkit users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-apps/portage-2.0.51-r3\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-portage/gentoolkit-0.2.0_pre8-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2004-1107",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1107"
+			},
+			{
+				"Text": "CVE-2004-1108",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1108"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2004-11-02T14:02:06Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-11-02T17:41:31Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-11-07T11:16:08Z"
+		}
+	]
 }

@@ -1,107 +1,107 @@
 {
-  "ID": "200704-21",
-  "Title": "ClamAV: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities have been discovered in ClamAV allowing for the\n    remote execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "ClamAV",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-04-24",
-  "Revised": {
-    "Text": "2007-04-24",
-    "Count": "01"
-  },
-  "Bug": [
-    "174375"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-antivirus/clamav",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.90.2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.90.2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    ClamAV is a GPL virus scanner.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    iDefense Labs have reported a stack-based buffer overflow in the\n    cab_unstore() function when processing negative values in .cab files.\n    Multiple file descriptor leaks have also been reported in chmunpack.c,\n    pdf.c and dblock.c when processing .chm files.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker could send a specially crafted CHM file to the\n    scanner, possibly resulting in the remote execution of arbitrary code\n    with the privileges of the user running ClamAV.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All ClamAV users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-antivirus/clamav-0.90.2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-1745",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1745"
-      },
-      {
-        "Text": "CVE-2007-1997",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1997"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-04-14T22:33:19Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-04-19T10:34:20Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-04-22T20:58:42Z"
-    }
-  ]
+	"ID": "200704-21",
+	"Title": "ClamAV: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities have been discovered in ClamAV allowing for the\n    remote execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "ClamAV",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-04-24",
+	"Revised": {
+		"Text": "2007-04-24",
+		"Count": "01"
+	},
+	"Bug": [
+		"174375"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-antivirus/clamav",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.90.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.90.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    ClamAV is a GPL virus scanner.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    iDefense Labs have reported a stack-based buffer overflow in the\n    cab_unstore() function when processing negative values in .cab files.\n    Multiple file descriptor leaks have also been reported in chmunpack.c,\n    pdf.c and dblock.c when processing .chm files.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker could send a specially crafted CHM file to the\n    scanner, possibly resulting in the remote execution of arbitrary code\n    with the privileges of the user running ClamAV.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All ClamAV users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-antivirus/clamav-0.90.2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-1745",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1745"
+			},
+			{
+				"Text": "CVE-2007-1997",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1997"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-04-14T22:33:19Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-04-19T10:34:20Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-04-22T20:58:42Z"
+		}
+	]
 }

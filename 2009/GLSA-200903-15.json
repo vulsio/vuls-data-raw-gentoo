@@ -1,111 +1,111 @@
 {
-  "ID": "200903-15",
-  "Title": "git: Multiple vulnerabilties",
-  "Synopsis": "\n    Multiple vulnerabilities in gitweb allow for remote execution of arbitrary\n    commands.\n  ",
-  "Product": {
-    "Text": "git",
-    "Type": "ebuild"
-  },
-  "Announced": "2009-03-09",
-  "Revised": {
-    "Text": "2009-03-09",
-    "Count": "01"
-  },
-  "Bug": [
-    "251343"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-util/git",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.6.0.6",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.6.0.6",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    GIT - the stupid content tracker, the revision control system used by\n    the Linux kernel team.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Multiple vulnerabilities have been reported in gitweb that is part of\n    the git package:\n    </p>\n    <ul>\n    <li>\n    Shell metacharacters related to git_search are not properly sanitized\n    (CVE-2008-5516).\n    </li>\n    <li>\n    Shell metacharacters related to git_snapshot and git_object are not\n    properly sanitized (CVE-2008-5517).\n    </li>\n    <li>\n    The diff.external configuration variable as set in a repository can be\n    executed by gitweb (CVE-2008-5916).\n    </li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote unauthenticated attacker can execute arbitrary commands via\n    shell metacharacters in a query, remote attackers with write access to\n    a git repository configuration can execute arbitrary commands with the\n    privileges of the user running gitweb by modifying the diff.external\n    configuration variable in the repository and sending a crafted query to\n    gitweb.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All git users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-util/git-1.6.0.6\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-5516",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5516"
-      },
-      {
-        "Text": "CVE-2008-5517",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5517"
-      },
-      {
-        "Text": "CVE-2008-5916",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5916"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "requester",
-      "Timestamp": "2009-01-11T18:26:05Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-02-12T18:42:55Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2009-02-12T18:43:18Z"
-    }
-  ]
+	"ID": "200903-15",
+	"Title": "git: Multiple vulnerabilties",
+	"Synopsis": "\n    Multiple vulnerabilities in gitweb allow for remote execution of arbitrary\n    commands.\n  ",
+	"Product": {
+		"Text": "git",
+		"Type": "ebuild"
+	},
+	"Announced": "2009-03-09",
+	"Revised": {
+		"Text": "2009-03-09",
+		"Count": "01"
+	},
+	"Bug": [
+		"251343"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-util/git",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.6.0.6",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.6.0.6",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    GIT - the stupid content tracker, the revision control system used by\n    the Linux kernel team.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Multiple vulnerabilities have been reported in gitweb that is part of\n    the git package:\n    </p>\n    <ul>\n    <li>\n    Shell metacharacters related to git_search are not properly sanitized\n    (CVE-2008-5516).\n    </li>\n    <li>\n    Shell metacharacters related to git_snapshot and git_object are not\n    properly sanitized (CVE-2008-5517).\n    </li>\n    <li>\n    The diff.external configuration variable as set in a repository can be\n    executed by gitweb (CVE-2008-5916).\n    </li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote unauthenticated attacker can execute arbitrary commands via\n    shell metacharacters in a query, remote attackers with write access to\n    a git repository configuration can execute arbitrary commands with the\n    privileges of the user running gitweb by modifying the diff.external\n    configuration variable in the repository and sending a crafted query to\n    gitweb.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All git users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-util/git-1.6.0.6\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-5516",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5516"
+			},
+			{
+				"Text": "CVE-2008-5517",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5517"
+			},
+			{
+				"Text": "CVE-2008-5916",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5916"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "requester",
+			"Timestamp": "2009-01-11T18:26:05Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-02-12T18:42:55Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2009-02-12T18:43:18Z"
+		}
+	]
 }

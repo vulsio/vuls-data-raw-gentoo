@@ -1,98 +1,98 @@
 {
-  "ID": "201406-20",
-  "Title": "nginx: Arbitrary code execution",
-  "Synopsis": "A vulnerability has been found in nginx which may allow execution\n    of arbitrary code. \n  ",
-  "Product": {
-    "Text": "nginx",
-    "Type": "ebuild"
-  },
-  "Announced": "2014-06-22",
-  "Revised": {
-    "Text": "2014-06-22",
-    "Count": "1"
-  },
-  "Bug": [
-    "505018"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-servers/nginx",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.4.7",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.4.7",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>nginx is a robust, small, and high performance HTTP and reverse proxy\n      server. \n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>A bug in the SPDY implementation in nginx was found which might cause a\n      heap memory buffer overflow in a worker process by using a specially\n      crafted request. The SPDY implementation is not enabled in default\n      configurations.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could cause execution of arbitrary code by using a\n      specially crafted request.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>Disable the spdy module in NGINX_MODULES_HTTP. </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All nginx users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=www-servers/nginx-1.4.7\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2014-0133",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0133"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    BlueKnight\n  ",
-      "Tag": "requester",
-      "Timestamp": "2014-06-18T23:50:11Z"
-    },
-    {
-      "Text": "K_F",
-      "Tag": "submitter",
-      "Timestamp": "2014-06-22T11:57:03Z"
-    }
-  ]
+	"ID": "201406-20",
+	"Title": "nginx: Arbitrary code execution",
+	"Synopsis": "A vulnerability has been found in nginx which may allow execution\n    of arbitrary code. \n  ",
+	"Product": {
+		"Text": "nginx",
+		"Type": "ebuild"
+	},
+	"Announced": "2014-06-22",
+	"Revised": {
+		"Text": "2014-06-22",
+		"Count": "1"
+	},
+	"Bug": [
+		"505018"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-servers/nginx",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.4.7",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.4.7",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>nginx is a robust, small, and high performance HTTP and reverse proxy\n      server. \n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>A bug in the SPDY implementation in nginx was found which might cause a\n      heap memory buffer overflow in a worker process by using a specially\n      crafted request. The SPDY implementation is not enabled in default\n      configurations.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could cause execution of arbitrary code by using a\n      specially crafted request.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>Disable the spdy module in NGINX_MODULES_HTTP. </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All nginx users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=www-servers/nginx-1.4.7\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2014-0133",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0133"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    BlueKnight\n  ",
+			"Tag": "requester",
+			"Timestamp": "2014-06-18T23:50:11Z"
+		},
+		{
+			"Text": "K_F",
+			"Tag": "submitter",
+			"Timestamp": "2014-06-22T11:57:03Z"
+		}
+	]
 }

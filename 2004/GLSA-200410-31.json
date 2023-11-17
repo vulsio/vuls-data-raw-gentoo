@@ -1,111 +1,111 @@
 {
-  "ID": "200410-31",
-  "Title": "Archive::Zip: Virus detection evasion",
-  "Synopsis": "\n    Email virus scanning software relying on Archive::Zip can be fooled into\n    thinking a ZIP attachment is empty while it contains a virus, allowing\n    detection evasion.\n  ",
-  "Product": {
-    "Text": "Archive::Zip",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-10-29",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "02"
-  },
-  "Bug": [
-    "68616"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-perl/Archive-Zip",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.14",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.14",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Archive::Zip is a Perl module containing functions to handle ZIP\n    archives.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Archive::Zip can be used by email scanning software (like amavisd-new)\n    to uncompress attachments before virus scanning. By modifying the\n    uncompressed size of archived files in the global header of the ZIP\n    file, it is possible to fool Archive::Zip into thinking some files\n    inside the archive have zero length.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "low",
-    "Text": "\n    <p>\n    An attacker could send a carefully crafted ZIP archive containing a\n    virus file and evade detection on some email virus-scanning software\n    relying on Archive::Zip for decompression.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Archive::Zip users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-perl/Archive-Zip-1.14\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "iDEFENSE Security Advisory 10.18.04",
-        "Link": "http://www.idefense.com/application/poi/display?id=153"
-      },
-      {
-        "Text": "rt.cpan.org bug #8077",
-        "Link": "https://rt.cpan.org/NoAuth/Bug.html?id=8077"
-      },
-      {
-        "Text": "CVE-2004-1096",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1096"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2004-10-27T12:10:39Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-10-27T12:10:53Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-10-29T12:32:54Z"
-    }
-  ]
+	"ID": "200410-31",
+	"Title": "Archive::Zip: Virus detection evasion",
+	"Synopsis": "\n    Email virus scanning software relying on Archive::Zip can be fooled into\n    thinking a ZIP attachment is empty while it contains a virus, allowing\n    detection evasion.\n  ",
+	"Product": {
+		"Text": "Archive::Zip",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-10-29",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "02"
+	},
+	"Bug": [
+		"68616"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-perl/Archive-Zip",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.14",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.14",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Archive::Zip is a Perl module containing functions to handle ZIP\n    archives.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Archive::Zip can be used by email scanning software (like amavisd-new)\n    to uncompress attachments before virus scanning. By modifying the\n    uncompressed size of archived files in the global header of the ZIP\n    file, it is possible to fool Archive::Zip into thinking some files\n    inside the archive have zero length.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "low",
+		"Text": "\n    <p>\n    An attacker could send a carefully crafted ZIP archive containing a\n    virus file and evade detection on some email virus-scanning software\n    relying on Archive::Zip for decompression.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Archive::Zip users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-perl/Archive-Zip-1.14\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "iDEFENSE Security Advisory 10.18.04",
+				"Link": "http://www.idefense.com/application/poi/display?id=153"
+			},
+			{
+				"Text": "rt.cpan.org bug #8077",
+				"Link": "https://rt.cpan.org/NoAuth/Bug.html?id=8077"
+			},
+			{
+				"Text": "CVE-2004-1096",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1096"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2004-10-27T12:10:39Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-10-27T12:10:53Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-10-29T12:32:54Z"
+		}
+	]
 }

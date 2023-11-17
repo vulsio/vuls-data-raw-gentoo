@@ -1,103 +1,103 @@
 {
-  "ID": "201110-15",
-  "Title": "GnuPG: User-assisted execution of arbitrary code",
-  "Synopsis": "The GPGSM utility included in GnuPG contains a use-after-free\n    vulnerability that may allow an unauthenticated remote attacker to execute\n    arbitrary code.\n  ",
-  "Product": {
-    "Text": "GnuPG",
-    "Type": "ebuild"
-  },
-  "Announced": "2011-10-22",
-  "Revised": {
-    "Text": "2011-10-22",
-    "Count": "1"
-  },
-  "Bug": [
-    "329583"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-crypt/gnupg",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.0.16-r1",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "2.0",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.0.16-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>The GNU Privacy Guard, GnuPG, is a free replacement for the PGP suite of\n      cryptographic software. The GPGSM utility in GnuPG is responsible for\n      processing X.509 certificates, signatures and encryption as well as\n      S/MIME messages. \n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>The GPGSM utility in GnuPG contains a use-after-free vulnerability that\n      may be exploited when importing a crafted X.509 certificate explicitly or\n      during the signature verification process. \n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>An unauthenticated remote attacker may execute arbitrary code with the\n      privileges of the user running GnuPG by enticing them to import a crafted\n      certificate.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All GnuPG 2.x users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-crypt/gnupg-2.0.16-r1\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2010-2547",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-2547"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "system",
-      "Tag": "requester",
-      "Timestamp": "2011-10-07T23:38:19Z"
-    },
-    {
-      "Text": "\n    underling\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2011-10-22T04:24:43Z"
-    }
-  ]
+	"ID": "201110-15",
+	"Title": "GnuPG: User-assisted execution of arbitrary code",
+	"Synopsis": "The GPGSM utility included in GnuPG contains a use-after-free\n    vulnerability that may allow an unauthenticated remote attacker to execute\n    arbitrary code.\n  ",
+	"Product": {
+		"Text": "GnuPG",
+		"Type": "ebuild"
+	},
+	"Announced": "2011-10-22",
+	"Revised": {
+		"Text": "2011-10-22",
+		"Count": "1"
+	},
+	"Bug": [
+		"329583"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-crypt/gnupg",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.0.16-r1",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "2.0",
+						"Range": "lt",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.0.16-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>The GNU Privacy Guard, GnuPG, is a free replacement for the PGP suite of\n      cryptographic software. The GPGSM utility in GnuPG is responsible for\n      processing X.509 certificates, signatures and encryption as well as\n      S/MIME messages. \n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>The GPGSM utility in GnuPG contains a use-after-free vulnerability that\n      may be exploited when importing a crafted X.509 certificate explicitly or\n      during the signature verification process. \n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>An unauthenticated remote attacker may execute arbitrary code with the\n      privileges of the user running GnuPG by enticing them to import a crafted\n      certificate.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All GnuPG 2.x users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-crypt/gnupg-2.0.16-r1\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2010-2547",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-2547"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "system",
+			"Tag": "requester",
+			"Timestamp": "2011-10-07T23:38:19Z"
+		},
+		{
+			"Text": "\n    underling\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2011-10-22T04:24:43Z"
+		}
+	]
 }

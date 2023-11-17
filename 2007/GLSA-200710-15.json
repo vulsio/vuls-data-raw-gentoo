@@ -1,134 +1,134 @@
 {
-  "ID": "200710-15",
-  "Title": "KDM: Local privilege escalation",
-  "Synopsis": "\n    KDM allows logins without password under certain circumstances allowing a\n    local user to gain elevated privileges.\n  ",
-  "Product": {
-    "Text": "KDM",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-10-14",
-  "Revised": {
-    "Text": "2007-10-14",
-    "Count": "01"
-  },
-  "Bug": [
-    "192373"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "kde-base/kdm",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.5.7-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.5.7-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "kde-base/kdebase",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.5.7-r4",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.5.7-r4",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    KDM is the Display Manager for the graphical desktop environment KDE.\n    It is part of the kdebase package.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Kees Huijgen discovered an error when checking the credentials which\n    can lead to a login without specifying a password. This only occurs\n    when auto login is configured for at least one user and a password is\n    required to shut down the machine.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A local attacker could gain root privileges and execute arbitrary\n    commands by logging in as root without specifying root's password.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All KDM users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All kdebase users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=kde-base/kdm-3.5.7-r2\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=kde-base/kdebase-3.5.7-r4\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-4569",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4569"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-10-08T00:34:30Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-10-08T00:49:35Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-10-08T02:58:05Z"
-    }
-  ]
+	"ID": "200710-15",
+	"Title": "KDM: Local privilege escalation",
+	"Synopsis": "\n    KDM allows logins without password under certain circumstances allowing a\n    local user to gain elevated privileges.\n  ",
+	"Product": {
+		"Text": "KDM",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-10-14",
+	"Revised": {
+		"Text": "2007-10-14",
+		"Count": "01"
+	},
+	"Bug": [
+		"192373"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "kde-base/kdm",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.5.7-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.5.7-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "kde-base/kdebase",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.5.7-r4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.5.7-r4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    KDM is the Display Manager for the graphical desktop environment KDE.\n    It is part of the kdebase package.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Kees Huijgen discovered an error when checking the credentials which\n    can lead to a login without specifying a password. This only occurs\n    when auto login is configured for at least one user and a password is\n    required to shut down the machine.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A local attacker could gain root privileges and execute arbitrary\n    commands by logging in as root without specifying root's password.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All KDM users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All kdebase users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=kde-base/kdm-3.5.7-r2\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=kde-base/kdebase-3.5.7-r4\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-4569",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4569"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-10-08T00:34:30Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-10-08T00:49:35Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-10-08T02:58:05Z"
+		}
+	]
 }

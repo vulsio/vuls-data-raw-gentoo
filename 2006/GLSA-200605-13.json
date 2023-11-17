@@ -1,116 +1,116 @@
 {
-  "ID": "200605-13",
-  "Title": "MySQL: Information leakage",
-  "Synopsis": "\n    A MySQL server may leak information to unauthorized users.\n  ",
-  "Product": {
-    "Text": "MySQL",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-05-11",
-  "Revised": {
-    "Text": "2006-05-15",
-    "Count": "04"
-  },
-  "Bug": [
-    "132146"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-db/mysql",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.1.19",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "4.0.27",
-            "Range": "rge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.1.19",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    MySQL is a popular multi-threaded, multi-user SQL database server.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The processing of the COM_TABLE_DUMP command by a MySQL server fails to\n    properly validate packets that arrive from the client via a network\n    socket.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "low",
-    "Text": "\n    <p>\n    By crafting specific malicious packets an attacker could gather\n    confidential information from the memory of a MySQL server process, for\n    example results of queries by other users or applications. By using PHP\n    code injection or similar techniques it would be possible to exploit\n    this flaw through web applications that use MySQL as a database\n    backend.\n    </p>\n    <p>\n    Note that on 5.x versions it is possible to overwrite the stack and\n    execute arbitrary code with this technique. Users of MySQL 5.x are\n    urged to upgrade to the latest available version.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All MySQL users should upgrade to the latest version.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-db/mysql-4.0.27\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "Original advisory",
-        "Link": "http://www.derkeiler.com/Mailing-Lists/securityfocus/bugtraq/2006-05/msg00041.html"
-      },
-      {
-        "Text": "CVE-2006-1516",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1516"
-      },
-      {
-        "Text": "CVE-2006-1517",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1517"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-05-06T16:33:38Z"
-    },
-    {
-      "Text": "\n    frilled\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-05-08T07:03:06Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-05-08T13:21:08Z"
-    }
-  ]
+	"ID": "200605-13",
+	"Title": "MySQL: Information leakage",
+	"Synopsis": "\n    A MySQL server may leak information to unauthorized users.\n  ",
+	"Product": {
+		"Text": "MySQL",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-05-11",
+	"Revised": {
+		"Text": "2006-05-15",
+		"Count": "04"
+	},
+	"Bug": [
+		"132146"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-db/mysql",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.1.19",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "4.0.27",
+						"Range": "rge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.1.19",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    MySQL is a popular multi-threaded, multi-user SQL database server.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The processing of the COM_TABLE_DUMP command by a MySQL server fails to\n    properly validate packets that arrive from the client via a network\n    socket.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "low",
+		"Text": "\n    <p>\n    By crafting specific malicious packets an attacker could gather\n    confidential information from the memory of a MySQL server process, for\n    example results of queries by other users or applications. By using PHP\n    code injection or similar techniques it would be possible to exploit\n    this flaw through web applications that use MySQL as a database\n    backend.\n    </p>\n    <p>\n    Note that on 5.x versions it is possible to overwrite the stack and\n    execute arbitrary code with this technique. Users of MySQL 5.x are\n    urged to upgrade to the latest available version.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All MySQL users should upgrade to the latest version.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-db/mysql-4.0.27\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "Original advisory",
+				"Link": "http://www.derkeiler.com/Mailing-Lists/securityfocus/bugtraq/2006-05/msg00041.html"
+			},
+			{
+				"Text": "CVE-2006-1516",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1516"
+			},
+			{
+				"Text": "CVE-2006-1517",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1517"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-05-06T16:33:38Z"
+		},
+		{
+			"Text": "\n    frilled\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-05-08T07:03:06Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-05-08T13:21:08Z"
+		}
+	]
 }

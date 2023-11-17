@@ -1,107 +1,107 @@
 {
-  "ID": "200501-18",
-  "Title": "KDE FTP KIOslave: Command injection",
-  "Synopsis": "\n    The FTP KIOslave contains a bug allowing users to execute arbitrary FTP\n    commands.\n  ",
-  "Product": {
-    "Text": "konqueror",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-01-11",
-  "Revised": {
-    "Text": "2005-01-12",
-    "Count": "02"
-  },
-  "Bug": [
-    "73759"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "kde-base/kdelibs",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.3.2-r2",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "3.2.3-r5",
-            "Range": "rge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.3.2-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    KDE is a feature-rich graphical desktop environment for Linux and\n    Unix-like Operating Systems. KDE provided KIOslaves for many protocols\n    in the kdelibs package, one of them being FTP. These are used by KDE\n    applications such as Konqueror.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The FTP KIOslave fails to properly parse URL-encoded newline\n    characters.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker could exploit this to execute arbitrary FTP commands on the\n    server and due to similiarities between the FTP and the SMTP protocol,\n    this vulnerability also allows an attacker to connect to a SMTP server\n    and issue arbitrary commands, for example sending an email.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All kdelibs users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose kde-base/kdelibs"
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "KDE Security Advisory: ftp kioslave command injection",
-        "Link": "https://www.kde.org/info/security/advisory-20050101-1.txt"
-      },
-      {
-        "Text": "CAN-2004-1165",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1165"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-01-05T16:56:23Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-01-11T12:39:06Z"
-    }
-  ]
+	"ID": "200501-18",
+	"Title": "KDE FTP KIOslave: Command injection",
+	"Synopsis": "\n    The FTP KIOslave contains a bug allowing users to execute arbitrary FTP\n    commands.\n  ",
+	"Product": {
+		"Text": "konqueror",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-01-11",
+	"Revised": {
+		"Text": "2005-01-12",
+		"Count": "02"
+	},
+	"Bug": [
+		"73759"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "kde-base/kdelibs",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.3.2-r2",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "3.2.3-r5",
+						"Range": "rge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.3.2-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    KDE is a feature-rich graphical desktop environment for Linux and\n    Unix-like Operating Systems. KDE provided KIOslaves for many protocols\n    in the kdelibs package, one of them being FTP. These are used by KDE\n    applications such as Konqueror.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The FTP KIOslave fails to properly parse URL-encoded newline\n    characters.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker could exploit this to execute arbitrary FTP commands on the\n    server and due to similiarities between the FTP and the SMTP protocol,\n    this vulnerability also allows an attacker to connect to a SMTP server\n    and issue arbitrary commands, for example sending an email.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All kdelibs users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose kde-base/kdelibs"
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "KDE Security Advisory: ftp kioslave command injection",
+				"Link": "https://www.kde.org/info/security/advisory-20050101-1.txt"
+			},
+			{
+				"Text": "CAN-2004-1165",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1165"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-01-05T16:56:23Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-01-11T12:39:06Z"
+		}
+	]
 }

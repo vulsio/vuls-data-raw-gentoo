@@ -1,109 +1,109 @@
 {
-  "ID": "200312-03",
-  "Title": "rsync: exploitable heap overflow",
-  "Synopsis": "\n    rsync contains a heap overflow vulnerability that can be used to execute\n    arbitrary code.\n  ",
-  "Product": {
-    "Text": "rsync",
-    "Type": "ebuild"
-  },
-  "Announced": "2003-12-04",
-  "Revised": {
-    "Text": "2003-12-04",
-    "Count": "01"
-  },
-  "Bug": null,
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-misc/rsync",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.5.7",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.5.7",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    rsync is a popular file transfer package used to synchronize the Portage\n    tree.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Rsync version 2.5.6 contains a vulnerability that can be used to run\n    arbitrary code.  The Gentoo infrastructure team has some reasonably good\n    forensic evidence that this exploit may have been used in combination with\n    the Linux kernel do_brk() vulnerability (see GLSA 200312-02) to exploit a\n    rsync.gentoo.org rotation server (see GLSA-200312-01.)\n    </p>\n    <p>\n    Please see http://lwn.net/Articles/61541/ for the security advisory released\n    by the rsync development team.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker could execute arbitrary code with the permissions of the\n    root user.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    To address this vulnerability, all Gentoo users should read GLSA-200312-02\n    and ensure that all systems are upgraded to a version of the Linux kernel\n    without the do_brk() vulnerability, and upgrade to version 2.5.7 of rsync:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    Review your /etc/rsync/rsyncd.conf configuration file; ensure that the use\n    chroot=\"no\" command is commented out or removed, or change use chroot=\"no\"\n    to use chroot=\"yes\".  Then, if necessary, restart rsyncd:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n    # emerge -pv '>=net-misc/rsync-2.5.7'\n    # emerge '>=net-misc/rsync-2.5.7'\n    # emerge clean",
-      "\n    # /etc/init.d/rsyncd restart"
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "Rsync Security Advisory",
-        "Link": "https://rsync.samba.org/#security_dec03"
-      },
-      {
-        "Text": "CAN-2003-0962",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2003-0962"
-      },
-      {
-        "Text": "GLSA-200312-02",
-        "Link": "https://security.gentoo.org/glsa/glsa-200312-02.xml"
-      },
-      {
-        "Text": "GLSA-200312-01",
-        "Link": "https://security.gentoo.org/glsa/glsa-200312-01.xml"
-      }
-    ]
-  },
-  "Metadata": null
+	"ID": "200312-03",
+	"Title": "rsync: exploitable heap overflow",
+	"Synopsis": "\n    rsync contains a heap overflow vulnerability that can be used to execute\n    arbitrary code.\n  ",
+	"Product": {
+		"Text": "rsync",
+		"Type": "ebuild"
+	},
+	"Announced": "2003-12-04",
+	"Revised": {
+		"Text": "2003-12-04",
+		"Count": "01"
+	},
+	"Bug": null,
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-misc/rsync",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.5.7",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.5.7",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    rsync is a popular file transfer package used to synchronize the Portage\n    tree.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Rsync version 2.5.6 contains a vulnerability that can be used to run\n    arbitrary code.  The Gentoo infrastructure team has some reasonably good\n    forensic evidence that this exploit may have been used in combination with\n    the Linux kernel do_brk() vulnerability (see GLSA 200312-02) to exploit a\n    rsync.gentoo.org rotation server (see GLSA-200312-01.)\n    </p>\n    <p>\n    Please see http://lwn.net/Articles/61541/ for the security advisory released\n    by the rsync development team.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker could execute arbitrary code with the permissions of the\n    root user.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    To address this vulnerability, all Gentoo users should read GLSA-200312-02\n    and ensure that all systems are upgraded to a version of the Linux kernel\n    without the do_brk() vulnerability, and upgrade to version 2.5.7 of rsync:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    Review your /etc/rsync/rsyncd.conf configuration file; ensure that the use\n    chroot=\"no\" command is commented out or removed, or change use chroot=\"no\"\n    to use chroot=\"yes\".  Then, if necessary, restart rsyncd:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n    # emerge -pv '>=net-misc/rsync-2.5.7'\n    # emerge '>=net-misc/rsync-2.5.7'\n    # emerge clean",
+			"\n    # /etc/init.d/rsyncd restart"
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "Rsync Security Advisory",
+				"Link": "https://rsync.samba.org/#security_dec03"
+			},
+			{
+				"Text": "CAN-2003-0962",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2003-0962"
+			},
+			{
+				"Text": "GLSA-200312-02",
+				"Link": "https://security.gentoo.org/glsa/glsa-200312-02.xml"
+			},
+			{
+				"Text": "GLSA-200312-01",
+				"Link": "https://security.gentoo.org/glsa/glsa-200312-01.xml"
+			}
+		]
+	},
+	"Metadata": null
 }

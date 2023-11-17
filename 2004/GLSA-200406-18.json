@@ -1,104 +1,104 @@
 {
-  "ID": "200406-18",
-  "Title": "gzip: Insecure creation of temporary files",
-  "Synopsis": "\n    gzip contain a bug potentially allowing an attacker to execute arbitrary\n    commands.\n  ",
-  "Product": {
-    "Text": "gzip",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-06-24",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "02"
-  },
-  "Bug": [
-    "54890"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-arch/gzip",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.3.3-r4",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.3.3-r3",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    gzip (GNU zip) is popular compression program. The included gzexe\n    utility allows you to compress executables in place and have them\n    automatically uncompress and execute when you run them.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The script gzexe included with gzip contains a bug in the code that\n    handles tempfile creation. If the creation of a temp file fails when\n    using gzexe fails instead of bailing out it executes the command given\n    as argument.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    This could lead to priviege escalation by running commands under the\n    rights of the user running the self extracting file.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time. All users are encouraged to\n    upgrade to the latest available version.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All gzip users should upgrade to the latest stable version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    Additionally, once the upgrade is complete, all self extracting files\n    created with earlier versions gzexe should be recreated, since the\n    vulnerability is actually embedded in those executables.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n    \n    # emerge -pv \">=app-arch/gzip-1.3.3-r4\"\n    # emerge \">=app-arch/gzip-1.3.3-r4\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2004-0603",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0603"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "submitter",
-      "Timestamp": ""
-    }
-  ]
+	"ID": "200406-18",
+	"Title": "gzip: Insecure creation of temporary files",
+	"Synopsis": "\n    gzip contain a bug potentially allowing an attacker to execute arbitrary\n    commands.\n  ",
+	"Product": {
+		"Text": "gzip",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-06-24",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "02"
+	},
+	"Bug": [
+		"54890"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-arch/gzip",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.3.3-r4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.3.3-r3",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    gzip (GNU zip) is popular compression program. The included gzexe\n    utility allows you to compress executables in place and have them\n    automatically uncompress and execute when you run them.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The script gzexe included with gzip contains a bug in the code that\n    handles tempfile creation. If the creation of a temp file fails when\n    using gzexe fails instead of bailing out it executes the command given\n    as argument.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    This could lead to priviege escalation by running commands under the\n    rights of the user running the self extracting file.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time. All users are encouraged to\n    upgrade to the latest available version.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All gzip users should upgrade to the latest stable version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    Additionally, once the upgrade is complete, all self extracting files\n    created with earlier versions gzexe should be recreated, since the\n    vulnerability is actually embedded in those executables.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n    \n    # emerge -pv \">=app-arch/gzip-1.3.3-r4\"\n    # emerge \">=app-arch/gzip-1.3.3-r4\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2004-0603",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0603"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "submitter",
+			"Timestamp": ""
+		}
+	]
 }

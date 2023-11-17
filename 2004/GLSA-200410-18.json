@@ -1,115 +1,115 @@
 {
-  "ID": "200410-18",
-  "Title": "Ghostscript: Insecure temporary file use in multiple scripts",
-  "Synopsis": "\n    Multiple scripts in the Ghostscript package are vulnerable to symlink\n    attacks, potentially allowing a local user to overwrite arbitrary files\n    with the rights of the user running the script.\n  ",
-  "Product": {
-    "Text": "Ghostscript",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-10-20",
-  "Revised": {
-    "Text": "2007-12-30",
-    "Count": "02"
-  },
-  "Bug": [
-    "66357"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-text/ghostscript-esp",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "7.07.1-r7",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "7.05.6-r2",
-            "Range": "rge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "7.07.1-r7",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Ghostscript is a software package providing an interpreter for the\n    PostScript language and the PDF file format. It also provides output\n    drivers for various file formats and printers.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The pj-gs.sh, ps2epsi, pv.sh and sysvlp.sh scripts create temporary files\n    in world-writeable directories with predictable names.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary files\n    directory, pointing to a valid file somewhere on the filesystem. When an\n    affected script is called, this would result in the file to be overwritten\n    with the rights of the user running the script, which could be the root\n    user.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    Ghostscript users on all architectures except PPC should upgrade to the\n    latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    Ghostscript users on the PPC architecture should upgrade to the latest\n    stable version on their architecture:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n\n    # emerge -pv \">=app-text/ghostscript-esp-7.07.1-r7\"\n    # emerge \">=app-text/ghostscript-esp-7.07.1-r7\"",
-      "\n    # emerge sync\n\n    # emerge -pv \">=app-text/ghostscript-esp-7.05.6-r2\"\n    # emerge \">=app-text/ghostscript-esp-7.05.6-r2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2004-0967",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0967"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-10-19T12:27:11Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-10-19T12:27:18Z"
-    }
-  ]
+	"ID": "200410-18",
+	"Title": "Ghostscript: Insecure temporary file use in multiple scripts",
+	"Synopsis": "\n    Multiple scripts in the Ghostscript package are vulnerable to symlink\n    attacks, potentially allowing a local user to overwrite arbitrary files\n    with the rights of the user running the script.\n  ",
+	"Product": {
+		"Text": "Ghostscript",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-10-20",
+	"Revised": {
+		"Text": "2007-12-30",
+		"Count": "02"
+	},
+	"Bug": [
+		"66357"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-text/ghostscript-esp",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "7.07.1-r7",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "7.05.6-r2",
+						"Range": "rge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "7.07.1-r7",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Ghostscript is a software package providing an interpreter for the\n    PostScript language and the PDF file format. It also provides output\n    drivers for various file formats and printers.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The pj-gs.sh, ps2epsi, pv.sh and sysvlp.sh scripts create temporary files\n    in world-writeable directories with predictable names.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary files\n    directory, pointing to a valid file somewhere on the filesystem. When an\n    affected script is called, this would result in the file to be overwritten\n    with the rights of the user running the script, which could be the root\n    user.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    Ghostscript users on all architectures except PPC should upgrade to the\n    latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    Ghostscript users on the PPC architecture should upgrade to the latest\n    stable version on their architecture:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n\n    # emerge -pv \">=app-text/ghostscript-esp-7.07.1-r7\"\n    # emerge \">=app-text/ghostscript-esp-7.07.1-r7\"",
+			"\n    # emerge sync\n\n    # emerge -pv \">=app-text/ghostscript-esp-7.05.6-r2\"\n    # emerge \">=app-text/ghostscript-esp-7.05.6-r2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2004-0967",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0967"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-10-19T12:27:11Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-10-19T12:27:18Z"
+		}
+	]
 }

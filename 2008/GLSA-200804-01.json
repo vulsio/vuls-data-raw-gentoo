@@ -1,117 +1,117 @@
 {
-  "ID": "200804-01",
-  "Title": "CUPS: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities have been discovered in CUPS, allowing for the\n    remote execution of arbitrary code and a Denial of Service.\n  ",
-  "Product": {
-    "Text": "cups",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-04-01",
-  "Revised": {
-    "Text": "2008-04-01",
-    "Count": "01"
-  },
-  "Bug": [
-    "211449",
-    "212364",
-    "214068"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-print/cups",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.2.12-r7",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.2.12-r7",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    CUPS provides a portable printing layer for UNIX-based operating\n    systems.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Multiple vulnerabilities have been reported in CUPS:\n    </p>\n    <ul>\n    <li>regenrecht (VeriSign iDefense) discovered that the\n    cgiCompileSearch() function used in several CGI scripts in CUPS'\n    administration interface does not correctly calculate boundaries when\n    processing a user-provided regular expression, leading to a heap-based\n    buffer overflow (CVE-2008-0047).</li>\n    <li>Helge Blischke reported a\n    double free() vulnerability in the process_browse_data() function when\n    adding or removing remote shared printers (CVE-2008-0882).</li>\n    <li>Tomas Hoger (Red Hat) reported that the gif_read_lzw() function\n    uses the code_size value from GIF images without properly checking it,\n    leading to a buffer overflow (CVE-2008-1373).</li>\n    <li>An unspecified\n    input validation error was discovered in the HP-GL/2 filter\n    (CVE-2008-0053).</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A local attacker could send specially crafted network packets or print\n    jobs and possibly execute arbitrary code with the privileges of the\n    user running CUPS (usually lp), or cause a Denial of Service. The\n    vulnerabilities are exploitable via the network when CUPS is sharing\n    printers remotely.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All CUPS users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-print/cups-1.2.12-r7\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-0047",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0047"
-      },
-      {
-        "Text": "CVE-2008-0053",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0053"
-      },
-      {
-        "Text": "CVE-2008-0882",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0882"
-      },
-      {
-        "Text": "CVE-2008-1373",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1373"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-03-08T16:37:44Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-03-18T13:25:31Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-04-01T19:15:08Z"
-    }
-  ]
+	"ID": "200804-01",
+	"Title": "CUPS: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities have been discovered in CUPS, allowing for the\n    remote execution of arbitrary code and a Denial of Service.\n  ",
+	"Product": {
+		"Text": "cups",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-04-01",
+	"Revised": {
+		"Text": "2008-04-01",
+		"Count": "01"
+	},
+	"Bug": [
+		"211449",
+		"212364",
+		"214068"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-print/cups",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.2.12-r7",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.2.12-r7",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    CUPS provides a portable printing layer for UNIX-based operating\n    systems.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Multiple vulnerabilities have been reported in CUPS:\n    </p>\n    <ul>\n    <li>regenrecht (VeriSign iDefense) discovered that the\n    cgiCompileSearch() function used in several CGI scripts in CUPS'\n    administration interface does not correctly calculate boundaries when\n    processing a user-provided regular expression, leading to a heap-based\n    buffer overflow (CVE-2008-0047).</li>\n    <li>Helge Blischke reported a\n    double free() vulnerability in the process_browse_data() function when\n    adding or removing remote shared printers (CVE-2008-0882).</li>\n    <li>Tomas Hoger (Red Hat) reported that the gif_read_lzw() function\n    uses the code_size value from GIF images without properly checking it,\n    leading to a buffer overflow (CVE-2008-1373).</li>\n    <li>An unspecified\n    input validation error was discovered in the HP-GL/2 filter\n    (CVE-2008-0053).</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A local attacker could send specially crafted network packets or print\n    jobs and possibly execute arbitrary code with the privileges of the\n    user running CUPS (usually lp), or cause a Denial of Service. The\n    vulnerabilities are exploitable via the network when CUPS is sharing\n    printers remotely.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All CUPS users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-print/cups-1.2.12-r7\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-0047",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0047"
+			},
+			{
+				"Text": "CVE-2008-0053",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0053"
+			},
+			{
+				"Text": "CVE-2008-0882",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0882"
+			},
+			{
+				"Text": "CVE-2008-1373",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1373"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-03-08T16:37:44Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-03-18T13:25:31Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-04-01T19:15:08Z"
+		}
+	]
 }

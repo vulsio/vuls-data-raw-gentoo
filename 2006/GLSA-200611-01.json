@@ -1,98 +1,98 @@
 {
-  "ID": "200611-01",
-  "Title": "Screen: UTF-8 character handling vulnerability",
-  "Synopsis": "\n    Screen contains an error in its UTF-8 character handling code that would\n    allow a remote Denial of Service or possibly the remote execution of\n    arbitrary code.\n  ",
-  "Product": {
-    "Text": "screen",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-11-03",
-  "Revised": {
-    "Text": "2006-11-03",
-    "Count": "01"
-  },
-  "Bug": [
-    "152770"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-misc/screen",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.0.3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.0.3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Screen is a full-screen window manager that multiplexes a physical\n    terminal between several processes, typically interactive shells.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    cstone and Richard Felker discovered a flaw in Screen's UTF-8 combining\n    character handling.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    The vulnerability can be exploited by writing a special string of\n    characters to a Screen window. A remote attacker could cause a Denial\n    of Service or possibly execute arbitrary code with the privileges of\n    the user running Screen through a program being run inside a Screen\n    session, such as an IRC client or a mail client.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Screen users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-misc/screen-4.0.3\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-4573",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4573"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    aetius\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-10-27T12:01:54Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-10-30T11:11:00Z"
-    }
-  ]
+	"ID": "200611-01",
+	"Title": "Screen: UTF-8 character handling vulnerability",
+	"Synopsis": "\n    Screen contains an error in its UTF-8 character handling code that would\n    allow a remote Denial of Service or possibly the remote execution of\n    arbitrary code.\n  ",
+	"Product": {
+		"Text": "screen",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-11-03",
+	"Revised": {
+		"Text": "2006-11-03",
+		"Count": "01"
+	},
+	"Bug": [
+		"152770"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-misc/screen",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.0.3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.0.3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Screen is a full-screen window manager that multiplexes a physical\n    terminal between several processes, typically interactive shells.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    cstone and Richard Felker discovered a flaw in Screen's UTF-8 combining\n    character handling.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    The vulnerability can be exploited by writing a special string of\n    characters to a Screen window. A remote attacker could cause a Denial\n    of Service or possibly execute arbitrary code with the privileges of\n    the user running Screen through a program being run inside a Screen\n    session, such as an IRC client or a mail client.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Screen users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-misc/screen-4.0.3\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-4573",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4573"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    aetius\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-10-27T12:01:54Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-10-30T11:11:00Z"
+		}
+	]
 }

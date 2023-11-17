@@ -1,170 +1,170 @@
 {
-  "ID": "201206-13",
-  "Title": "Mono: Multiple vulnerabilities",
-  "Synopsis": "Multiple vulnerabilities were found in Mono, the worst of which\n    allowing for the remote execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "mono mono-debugger",
-    "Type": "ebuild"
-  },
-  "Announced": "2012-06-21",
-  "Revised": {
-    "Text": "2012-06-21",
-    "Count": "1"
-  },
-  "Bug": [
-    "277878",
-    "342133",
-    "345561",
-    "346401",
-    "351087",
-    "372983"
-  ],
-  "Access": "local, remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-util/mono-debugger",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.8.1-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.8.1-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "dev-lang/mono",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.10.2-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.10.2-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Mono is an open source implementation of Microsoft's .NET Framework.</p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Multiple vulnerabilities have been discovered in Mono and Mono debugger.\n      Please review the CVE identifiers referenced below for details.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>A remote attacker could execute arbitrary code, bypass general\n      constraints, obtain the source code for .aspx applications, obtain other\n      sensitive information, cause a Denial of Service, modify internal data\n      structures, or corrupt the internal state of the security manager.\n    </p>\n    \n    <p>A local attacker could entice a user into running Mono debugger in a\n      directory containing a specially crafted library file to execute\n      arbitrary code with the privileges of the user running Mono debugger.\n    </p>\n    \n    <p>A context-dependant attacker could bypass the authentication mechanism\n      provided by the XML Signature specification.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All Mono debugger users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "All Mono users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-util/mono-debugger-2.8.1-r1\"\n    ",
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-lang/mono-2.10.2-r1\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2009-0217",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-0217"
-      },
-      {
-        "Text": "CVE-2010-3332",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-3332"
-      },
-      {
-        "Text": "CVE-2010-3369",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-3369"
-      },
-      {
-        "Text": "CVE-2010-4159",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-4159"
-      },
-      {
-        "Text": "CVE-2010-4225",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-4225"
-      },
-      {
-        "Text": "CVE-2010-4254",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-4254"
-      },
-      {
-        "Text": "CVE-2011-0989",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-0989"
-      },
-      {
-        "Text": "CVE-2011-0990",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-0990"
-      },
-      {
-        "Text": "CVE-2011-0991",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-0991"
-      },
-      {
-        "Text": "CVE-2011-0992",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-0992"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "craig",
-      "Tag": "requester",
-      "Timestamp": "2011-10-08T22:43:20Z"
-    },
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2012-06-21T20:40:21Z"
-    }
-  ]
+	"ID": "201206-13",
+	"Title": "Mono: Multiple vulnerabilities",
+	"Synopsis": "Multiple vulnerabilities were found in Mono, the worst of which\n    allowing for the remote execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "mono mono-debugger",
+		"Type": "ebuild"
+	},
+	"Announced": "2012-06-21",
+	"Revised": {
+		"Text": "2012-06-21",
+		"Count": "1"
+	},
+	"Bug": [
+		"277878",
+		"342133",
+		"345561",
+		"346401",
+		"351087",
+		"372983"
+	],
+	"Access": "local, remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-util/mono-debugger",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.8.1-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.8.1-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "dev-lang/mono",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.10.2-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.10.2-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Mono is an open source implementation of Microsoft's .NET Framework.</p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Multiple vulnerabilities have been discovered in Mono and Mono debugger.\n      Please review the CVE identifiers referenced below for details.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>A remote attacker could execute arbitrary code, bypass general\n      constraints, obtain the source code for .aspx applications, obtain other\n      sensitive information, cause a Denial of Service, modify internal data\n      structures, or corrupt the internal state of the security manager.\n    </p>\n    \n    <p>A local attacker could entice a user into running Mono debugger in a\n      directory containing a specially crafted library file to execute\n      arbitrary code with the privileges of the user running Mono debugger.\n    </p>\n    \n    <p>A context-dependant attacker could bypass the authentication mechanism\n      provided by the XML Signature specification.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All Mono debugger users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "All Mono users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-util/mono-debugger-2.8.1-r1\"\n    ",
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-lang/mono-2.10.2-r1\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2009-0217",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-0217"
+			},
+			{
+				"Text": "CVE-2010-3332",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-3332"
+			},
+			{
+				"Text": "CVE-2010-3369",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-3369"
+			},
+			{
+				"Text": "CVE-2010-4159",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-4159"
+			},
+			{
+				"Text": "CVE-2010-4225",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-4225"
+			},
+			{
+				"Text": "CVE-2010-4254",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-4254"
+			},
+			{
+				"Text": "CVE-2011-0989",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-0989"
+			},
+			{
+				"Text": "CVE-2011-0990",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-0990"
+			},
+			{
+				"Text": "CVE-2011-0991",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-0991"
+			},
+			{
+				"Text": "CVE-2011-0992",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-0992"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "craig",
+			"Tag": "requester",
+			"Timestamp": "2011-10-08T22:43:20Z"
+		},
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2012-06-21T20:40:21Z"
+		}
+	]
 }

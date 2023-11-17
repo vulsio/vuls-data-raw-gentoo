@@ -1,103 +1,103 @@
 {
-  "ID": "200709-16",
-  "Title": "Lighttpd: Buffer overflow",
-  "Synopsis": "\n    Lighttpd is vulnerable to the remote execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "lighttpd",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-09-27",
-  "Revised": {
-    "Text": "2007-09-27",
-    "Count": "01"
-  },
-  "Bug": [
-    "191912"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-servers/lighttpd",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.4.18",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.4.18",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Lighttpd is a lightweight HTTP web server.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Mattias Bengtsson and Philip Olausson have discovered a buffer overflow\n    vulnerability in the function fcgi_env_add() in the file mod_fastcgi.c\n    when processing overly long HTTP headers.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker could send a specially crafted request to the\n    vulnerable Lighttpd server, resulting in the remote execution of\n    arbitrary code with privileges of the user running the web server. Note\n    that mod_fastcgi is disabled in Gentoo's default configuration.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Edit the file /etc/lighttpd/lighttpd.conf and comment the following\n    line: \"include mod_fastcgi.conf\"\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Lighttpd users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-servers/lighttpd-1.4.18\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-4727",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4727"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-09-20T21:10:23Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-09-20T21:10:32Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-09-22T16:06:46Z"
-    }
-  ]
+	"ID": "200709-16",
+	"Title": "Lighttpd: Buffer overflow",
+	"Synopsis": "\n    Lighttpd is vulnerable to the remote execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "lighttpd",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-09-27",
+	"Revised": {
+		"Text": "2007-09-27",
+		"Count": "01"
+	},
+	"Bug": [
+		"191912"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-servers/lighttpd",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.4.18",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.4.18",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Lighttpd is a lightweight HTTP web server.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Mattias Bengtsson and Philip Olausson have discovered a buffer overflow\n    vulnerability in the function fcgi_env_add() in the file mod_fastcgi.c\n    when processing overly long HTTP headers.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker could send a specially crafted request to the\n    vulnerable Lighttpd server, resulting in the remote execution of\n    arbitrary code with privileges of the user running the web server. Note\n    that mod_fastcgi is disabled in Gentoo's default configuration.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Edit the file /etc/lighttpd/lighttpd.conf and comment the following\n    line: \"include mod_fastcgi.conf\"\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Lighttpd users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-servers/lighttpd-1.4.18\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-4727",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4727"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-09-20T21:10:23Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-09-20T21:10:32Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-09-22T16:06:46Z"
+		}
+	]
 }

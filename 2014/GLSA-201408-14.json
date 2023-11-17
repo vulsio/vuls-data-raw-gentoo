@@ -1,98 +1,98 @@
 {
-  "ID": "201408-14",
-  "Title": "stunnel: Information disclosure",
-  "Synopsis": "A vulnerability in stunnel might allow remote attackers to gain\n    access to private key information.\n  ",
-  "Product": {
-    "Text": "stunnel",
-    "Type": "ebuild"
-  },
-  "Announced": "2014-08-29",
-  "Revised": {
-    "Text": "2014-08-29",
-    "Count": "1"
-  },
-  "Bug": [
-    "503506"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-misc/stunnel",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "5.02",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "5.02",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>The stunnel program is designed to work as an SSL encryption wrapper\n      between a client and a local or remote server. \n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>stunnel does not properly update the state of the pseudo-random\n      generator after fork-threading which causes subsequent children with the\n      same process ID to use the same entropy pool. ECDSA and DSA keys, when\n      not used in deterministic mode (RFC6979), rely on random data for its k\n      parameter to not leak private key information.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker may gain access to private key information from ECDSA\n      or DSA keys.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All stunnel users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/stunnel-5.02\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2014-0016",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0016"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    BlueKnight\n  ",
-      "Tag": "requester",
-      "Timestamp": "2014-07-06T22:44:37Z"
-    },
-    {
-      "Text": "K_F",
-      "Tag": "submitter",
-      "Timestamp": "2014-08-29T18:54:29Z"
-    }
-  ]
+	"ID": "201408-14",
+	"Title": "stunnel: Information disclosure",
+	"Synopsis": "A vulnerability in stunnel might allow remote attackers to gain\n    access to private key information.\n  ",
+	"Product": {
+		"Text": "stunnel",
+		"Type": "ebuild"
+	},
+	"Announced": "2014-08-29",
+	"Revised": {
+		"Text": "2014-08-29",
+		"Count": "1"
+	},
+	"Bug": [
+		"503506"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-misc/stunnel",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "5.02",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "5.02",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>The stunnel program is designed to work as an SSL encryption wrapper\n      between a client and a local or remote server. \n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>stunnel does not properly update the state of the pseudo-random\n      generator after fork-threading which causes subsequent children with the\n      same process ID to use the same entropy pool. ECDSA and DSA keys, when\n      not used in deterministic mode (RFC6979), rely on random data for its k\n      parameter to not leak private key information.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker may gain access to private key information from ECDSA\n      or DSA keys.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All stunnel users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/stunnel-5.02\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2014-0016",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0016"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    BlueKnight\n  ",
+			"Tag": "requester",
+			"Timestamp": "2014-07-06T22:44:37Z"
+		},
+		{
+			"Text": "K_F",
+			"Tag": "submitter",
+			"Timestamp": "2014-08-29T18:54:29Z"
+		}
+	]
 }

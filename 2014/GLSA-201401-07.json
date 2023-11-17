@@ -1,124 +1,124 @@
 {
-  "ID": "201401-07",
-  "Title": "libxslt: Denial of service",
-  "Synopsis": "Multiple Denial of Service vulnerabilities have been found in\n    libxslt.\n  ",
-  "Product": {
-    "Text": "libxslt",
-    "Type": "ebuild"
-  },
-  "Announced": "2014-01-10",
-  "Revised": {
-    "Text": "2014-01-10",
-    "Count": "1"
-  },
-  "Bug": [
-    "433603",
-    "436284",
-    "463236",
-    "496114"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-libs/libxslt",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.1.28",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.1.28",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>libxslt is the XSLT C library developed for the GNOME project. XSLT is\n      an XML language to define transformations for XML.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Multiple vulnerabilities have been found in libxslt:</p>\n    \n    <ul>\n      <li>Multiple errors exist in pattern.c and functions.c (CVE-2012-2870,\n        CVE-2012-6139).\n      </li>\n      <li>A double-free error exists in templates.c (CVE-2012-2893).</li>\n      <li>A NULL pointer dereference in keys.c (CVE-2012-6139).</li>\n      <li>An error in handling stylesheets containing DTDs (CVE-2013-4520).</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could entice a user to process a specially crafted\n      file in an application linked against libxslt, possibly resulting in a\n      Denial of Service condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All libxslt users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "Packages which depend on this library may need to be recompiled. Tools\n      such as revdep-rebuild may assist in identifying some of these packages.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/libxslt-1.1.28\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2012-2870",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-2870"
-      },
-      {
-        "Text": "CVE-2012-2893",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-2893"
-      },
-      {
-        "Text": "CVE-2012-6139",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-6139"
-      },
-      {
-        "Text": "CVE-2013-4520",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4520"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "ackle",
-      "Tag": "requester",
-      "Timestamp": "2012-09-30T01:49:44Z"
-    },
-    {
-      "Text": "ackle",
-      "Tag": "submitter",
-      "Timestamp": "2014-01-10T14:13:14Z"
-    }
-  ]
+	"ID": "201401-07",
+	"Title": "libxslt: Denial of service",
+	"Synopsis": "Multiple Denial of Service vulnerabilities have been found in\n    libxslt.\n  ",
+	"Product": {
+		"Text": "libxslt",
+		"Type": "ebuild"
+	},
+	"Announced": "2014-01-10",
+	"Revised": {
+		"Text": "2014-01-10",
+		"Count": "1"
+	},
+	"Bug": [
+		"433603",
+		"436284",
+		"463236",
+		"496114"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-libs/libxslt",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.1.28",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.1.28",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>libxslt is the XSLT C library developed for the GNOME project. XSLT is\n      an XML language to define transformations for XML.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Multiple vulnerabilities have been found in libxslt:</p>\n    \n    <ul>\n      <li>Multiple errors exist in pattern.c and functions.c (CVE-2012-2870,\n        CVE-2012-6139).\n      </li>\n      <li>A double-free error exists in templates.c (CVE-2012-2893).</li>\n      <li>A NULL pointer dereference in keys.c (CVE-2012-6139).</li>\n      <li>An error in handling stylesheets containing DTDs (CVE-2013-4520).</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could entice a user to process a specially crafted\n      file in an application linked against libxslt, possibly resulting in a\n      Denial of Service condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All libxslt users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "Packages which depend on this library may need to be recompiled. Tools\n      such as revdep-rebuild may assist in identifying some of these packages.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/libxslt-1.1.28\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2012-2870",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-2870"
+			},
+			{
+				"Text": "CVE-2012-2893",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-2893"
+			},
+			{
+				"Text": "CVE-2012-6139",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-6139"
+			},
+			{
+				"Text": "CVE-2013-4520",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4520"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "ackle",
+			"Tag": "requester",
+			"Timestamp": "2012-09-30T01:49:44Z"
+		},
+		{
+			"Text": "ackle",
+			"Tag": "submitter",
+			"Timestamp": "2014-01-10T14:13:14Z"
+		}
+	]
 }

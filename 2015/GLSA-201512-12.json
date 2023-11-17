@@ -1,98 +1,98 @@
 {
-  "ID": "201512-12",
-  "Title": "KDE Systemsettings: Privilege escalation",
-  "Synopsis": "Data validation in KDE Systemsettings could lead to local privilege\n    escalation.\n  ",
-  "Product": {
-    "Text": "systemsettings",
-    "Type": "ebuild"
-  },
-  "Announced": "2015-12-30",
-  "Revised": {
-    "Text": "2015-12-30",
-    "Count": "1"
-  },
-  "Bug": [
-    "528468"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "kde-base/systemsettings",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.11.13-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.11.13-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>KDE workspace configuration module for setting the date and time has a\n      helper program\n      which runs as root for performing actions.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>KDE Systemsettings fails to properly validate user input before passing\n      it as argument in context of higher privilege.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A local attacker could gain privileges via a crafted ntpUtility (ntp\n      utility name) argument.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>Add a polkit rule to disable the org.kde.kcontrol.kcmclock.save action.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All KDE Systemsettings users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=kde-base/systemsettings-4.11.13-r1\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2014-8651",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-8651"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "Zlogene",
-      "Tag": "requester",
-      "Timestamp": "2015-06-03T07:50:15Z"
-    },
-    {
-      "Text": "mrueg",
-      "Tag": "submitter",
-      "Timestamp": "2015-12-30T20:52:40Z"
-    }
-  ]
+	"ID": "201512-12",
+	"Title": "KDE Systemsettings: Privilege escalation",
+	"Synopsis": "Data validation in KDE Systemsettings could lead to local privilege\n    escalation.\n  ",
+	"Product": {
+		"Text": "systemsettings",
+		"Type": "ebuild"
+	},
+	"Announced": "2015-12-30",
+	"Revised": {
+		"Text": "2015-12-30",
+		"Count": "1"
+	},
+	"Bug": [
+		"528468"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "kde-base/systemsettings",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.11.13-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.11.13-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>KDE workspace configuration module for setting the date and time has a\n      helper program\n      which runs as root for performing actions.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>KDE Systemsettings fails to properly validate user input before passing\n      it as argument in context of higher privilege.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A local attacker could gain privileges via a crafted ntpUtility (ntp\n      utility name) argument.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>Add a polkit rule to disable the org.kde.kcontrol.kcmclock.save action.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All KDE Systemsettings users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=kde-base/systemsettings-4.11.13-r1\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2014-8651",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-8651"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "Zlogene",
+			"Tag": "requester",
+			"Timestamp": "2015-06-03T07:50:15Z"
+		},
+		{
+			"Text": "mrueg",
+			"Tag": "submitter",
+			"Timestamp": "2015-12-30T20:52:40Z"
+		}
+	]
 }

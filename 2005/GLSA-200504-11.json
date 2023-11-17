@@ -1,107 +1,107 @@
 {
-  "ID": "200504-11",
-  "Title": "JunkBuster: Multiple vulnerabilities",
-  "Synopsis": "\n    JunkBuster is vulnerable to a heap corruption vulnerability, and under\n    certain configurations may allow an attacker to modify settings.\n  ",
-  "Product": {
-    "Text": "junkbuster",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-04-13",
-  "Revised": {
-    "Text": "2005-04-21",
-    "Count": "02"
-  },
-  "Bug": [
-    "88537"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-proxy/junkbuster",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.0.2-r3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.0.2-r3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    JunkBuster is a filtering HTTP proxy, designed to enhance privacy and\n    remove unwanted content.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    James Ranson reported a vulnerability when JunkBuster is configured to\n    run in single-threaded mode, an attacker can modify the referrer\n    setting by getting a victim to request a specially crafted URL\n    (CAN-2005-1108). Tavis Ormandy of the Gentoo Linux Security Audit Team\n    identified a heap corruption issue in the filtering of URLs\n    (CAN-2005-1109).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    If JunkBuster has been configured to run in single-threaded mode, an\n    attacker can disable or modify the filtering of Referrer: HTTP headers,\n    potentially compromising the privacy of users. The heap corruption\n    vulnerability could crash or disrupt the operation of the proxy,\n    potentially executing arbitrary code.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All JunkBuster users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-proxy/junkbuster-2.0.2-r3\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2005-1108",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1108"
-      },
-      {
-        "Text": "CAN-2005-1109",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1109"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-04-12T20:24:12Z"
-    },
-    {
-      "Text": "\n    taviso\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-04-12T21:28:36Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-04-13T08:43:25Z"
-    }
-  ]
+	"ID": "200504-11",
+	"Title": "JunkBuster: Multiple vulnerabilities",
+	"Synopsis": "\n    JunkBuster is vulnerable to a heap corruption vulnerability, and under\n    certain configurations may allow an attacker to modify settings.\n  ",
+	"Product": {
+		"Text": "junkbuster",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-04-13",
+	"Revised": {
+		"Text": "2005-04-21",
+		"Count": "02"
+	},
+	"Bug": [
+		"88537"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-proxy/junkbuster",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.0.2-r3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.0.2-r3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    JunkBuster is a filtering HTTP proxy, designed to enhance privacy and\n    remove unwanted content.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    James Ranson reported a vulnerability when JunkBuster is configured to\n    run in single-threaded mode, an attacker can modify the referrer\n    setting by getting a victim to request a specially crafted URL\n    (CAN-2005-1108). Tavis Ormandy of the Gentoo Linux Security Audit Team\n    identified a heap corruption issue in the filtering of URLs\n    (CAN-2005-1109).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    If JunkBuster has been configured to run in single-threaded mode, an\n    attacker can disable or modify the filtering of Referrer: HTTP headers,\n    potentially compromising the privacy of users. The heap corruption\n    vulnerability could crash or disrupt the operation of the proxy,\n    potentially executing arbitrary code.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All JunkBuster users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-proxy/junkbuster-2.0.2-r3\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2005-1108",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1108"
+			},
+			{
+				"Text": "CAN-2005-1109",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1109"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-04-12T20:24:12Z"
+		},
+		{
+			"Text": "\n    taviso\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-04-12T21:28:36Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-04-13T08:43:25Z"
+		}
+	]
 }

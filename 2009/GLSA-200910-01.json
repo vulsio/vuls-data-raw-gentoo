@@ -1,103 +1,103 @@
 {
-  "ID": "200910-01",
-  "Title": "Wget: Certificate validation error",
-  "Synopsis": "\n    An error in the X.509 certificate handling of Wget might enable remote\n    attackers to conduct man-in-the-middle attacks.\n  ",
-  "Product": {
-    "Text": "wget",
-    "Type": "ebuild"
-  },
-  "Announced": "2009-10-20",
-  "Revised": {
-    "Text": "2009-10-20",
-    "Count": "01"
-  },
-  "Bug": [
-    "286058"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-misc/wget",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.12",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.12",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    GNU Wget is a free software package for retrieving files using HTTP,\n    HTTPS and FTP, the most widely-used Internet protocols.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The vendor reported that Wget does not properly handle Common Name (CN)\n    fields in X.509 certificates that contain an ASCII NUL (\\0) character.\n    Specifically, the processing of such fields is stopped at the first\n    occurrence of a NUL character. This type of vulnerability was recently\n    discovered by Dan Kaminsky and Moxie Marlinspike.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker might employ a specially crafted X.509 certificate,\n    containing a NUL character in the Common Name field to conduct\n    man-in-the-middle attacks on SSL connections made using Wget.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Wget users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/wget-1.12\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2009-3490",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3490"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "requester",
-      "Timestamp": "2009-10-07T19:10:37Z"
-    },
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-10-07T19:14:43Z"
-    },
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2009-10-20T19:38:52Z"
-    }
-  ]
+	"ID": "200910-01",
+	"Title": "Wget: Certificate validation error",
+	"Synopsis": "\n    An error in the X.509 certificate handling of Wget might enable remote\n    attackers to conduct man-in-the-middle attacks.\n  ",
+	"Product": {
+		"Text": "wget",
+		"Type": "ebuild"
+	},
+	"Announced": "2009-10-20",
+	"Revised": {
+		"Text": "2009-10-20",
+		"Count": "01"
+	},
+	"Bug": [
+		"286058"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-misc/wget",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.12",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.12",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    GNU Wget is a free software package for retrieving files using HTTP,\n    HTTPS and FTP, the most widely-used Internet protocols.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The vendor reported that Wget does not properly handle Common Name (CN)\n    fields in X.509 certificates that contain an ASCII NUL (\\0) character.\n    Specifically, the processing of such fields is stopped at the first\n    occurrence of a NUL character. This type of vulnerability was recently\n    discovered by Dan Kaminsky and Moxie Marlinspike.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker might employ a specially crafted X.509 certificate,\n    containing a NUL character in the Common Name field to conduct\n    man-in-the-middle attacks on SSL connections made using Wget.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Wget users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/wget-1.12\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2009-3490",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3490"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "requester",
+			"Timestamp": "2009-10-07T19:10:37Z"
+		},
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-10-07T19:14:43Z"
+		},
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2009-10-20T19:38:52Z"
+		}
+	]
 }

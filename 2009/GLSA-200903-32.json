@@ -1,126 +1,126 @@
 {
-  "ID": "200903-32",
-  "Title": "phpMyAdmin: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities have been discovered in phpMyAdmin, the worst of\n    which may allow for remote code execution.\n  ",
-  "Product": {
-    "Text": "phpmyadmin",
-    "Type": "ebuild"
-  },
-  "Announced": "2009-03-18",
-  "Revised": {
-    "Text": "2009-03-18",
-    "Count": "01"
-  },
-  "Bug": [
-    "237781",
-    "244914",
-    "246831",
-    "250752"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-db/phpmyadmin",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.11.9.4",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.11.9.4",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    phpMyAdmin is a web-based management tool for MySQL databases.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Multiple vulnerabilities have been reported in phpMyAdmin:\n    </p>\n    <ul>\n    <li>\n    libraries/database_interface.lib.php in phpMyAdmin allows remote\n    authenticated users to execute arbitrary code via a request to\n    server_databases.php with a sort_by parameter containing PHP sequences,\n    which are processed by create_function (CVE-2008-4096).\n    </li>\n    <li>\n    Cross-site scripting (XSS) vulnerability in pmd_pdf.php allows remote\n    attackers to inject arbitrary web script or HTML via the db parameter,\n    a different vector than CVE-2006-6942 and CVE-2007-5977\n    (CVE-2008-4775).\n    </li>\n    <li>\n    Cross-site request forgery (CSRF) vulnerability in phpMyAdmin allows\n    remote authenticated attackers to perform unauthorized actions as the\n    administrator via a link or IMG tag to tbl_structure.php with a\n    modified table parameter. NOTE: this can be leveraged to conduct SQL\n    injection attacks and execute arbitrary code (CVE-2008-5621).\n    </li>\n    <li>\n    Multiple cross-site request forgery (CSRF) vulnerabilities in\n    phpMyAdmin allow remote attackers to conduct SQL injection attacks via\n    unknown vectors related to the table parameter, a different vector than\n    CVE-2008-5621 (CVE-2008-5622).\n    </li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker may execute arbitrary code with the rights of the\n    webserver, inject and execute SQL with the rights of phpMyAdmin or\n    conduct XSS attacks against other users.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All phpMyAdmin users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-db/phpmyadmin-2.11.9.4\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-6942",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6942"
-      },
-      {
-        "Text": "CVE-2007-5977",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5977"
-      },
-      {
-        "Text": "CVE-2008-4096",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4096"
-      },
-      {
-        "Text": "CVE-2008-4775",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4775"
-      },
-      {
-        "Text": "CVE-2008-5621",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5621"
-      },
-      {
-        "Text": "CVE-2008-5622",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5622"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-09-23T18:59:26Z"
-    },
-    {
-      "Text": "\n    mabi\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-03-14T23:58:57Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2009-03-16T21:41:59Z"
-    }
-  ]
+	"ID": "200903-32",
+	"Title": "phpMyAdmin: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities have been discovered in phpMyAdmin, the worst of\n    which may allow for remote code execution.\n  ",
+	"Product": {
+		"Text": "phpmyadmin",
+		"Type": "ebuild"
+	},
+	"Announced": "2009-03-18",
+	"Revised": {
+		"Text": "2009-03-18",
+		"Count": "01"
+	},
+	"Bug": [
+		"237781",
+		"244914",
+		"246831",
+		"250752"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-db/phpmyadmin",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.11.9.4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.11.9.4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    phpMyAdmin is a web-based management tool for MySQL databases.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Multiple vulnerabilities have been reported in phpMyAdmin:\n    </p>\n    <ul>\n    <li>\n    libraries/database_interface.lib.php in phpMyAdmin allows remote\n    authenticated users to execute arbitrary code via a request to\n    server_databases.php with a sort_by parameter containing PHP sequences,\n    which are processed by create_function (CVE-2008-4096).\n    </li>\n    <li>\n    Cross-site scripting (XSS) vulnerability in pmd_pdf.php allows remote\n    attackers to inject arbitrary web script or HTML via the db parameter,\n    a different vector than CVE-2006-6942 and CVE-2007-5977\n    (CVE-2008-4775).\n    </li>\n    <li>\n    Cross-site request forgery (CSRF) vulnerability in phpMyAdmin allows\n    remote authenticated attackers to perform unauthorized actions as the\n    administrator via a link or IMG tag to tbl_structure.php with a\n    modified table parameter. NOTE: this can be leveraged to conduct SQL\n    injection attacks and execute arbitrary code (CVE-2008-5621).\n    </li>\n    <li>\n    Multiple cross-site request forgery (CSRF) vulnerabilities in\n    phpMyAdmin allow remote attackers to conduct SQL injection attacks via\n    unknown vectors related to the table parameter, a different vector than\n    CVE-2008-5621 (CVE-2008-5622).\n    </li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker may execute arbitrary code with the rights of the\n    webserver, inject and execute SQL with the rights of phpMyAdmin or\n    conduct XSS attacks against other users.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All phpMyAdmin users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-db/phpmyadmin-2.11.9.4\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-6942",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6942"
+			},
+			{
+				"Text": "CVE-2007-5977",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5977"
+			},
+			{
+				"Text": "CVE-2008-4096",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4096"
+			},
+			{
+				"Text": "CVE-2008-4775",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4775"
+			},
+			{
+				"Text": "CVE-2008-5621",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5621"
+			},
+			{
+				"Text": "CVE-2008-5622",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5622"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-09-23T18:59:26Z"
+		},
+		{
+			"Text": "\n    mabi\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-03-14T23:58:57Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2009-03-16T21:41:59Z"
+		}
+	]
 }

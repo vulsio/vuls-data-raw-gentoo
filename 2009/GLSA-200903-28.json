@@ -1,113 +1,113 @@
 {
-  "ID": "200903-28",
-  "Title": "libpng: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities were found in libpng, which might result in the\n    execution of arbitrary code\n  ",
-  "Product": {
-    "Text": "libpng",
-    "Type": "ebuild"
-  },
-  "Announced": "2009-03-15",
-  "Revised": {
-    "Text": "2009-03-15",
-    "Count": "01"
-  },
-  "Bug": [
-    "244808",
-    "255231",
-    "259578"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-libs/libpng",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.2.35",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.2.35",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    libpng is the official PNG reference library used to read, write and\n    manipulate PNG images.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Multiple vulnerabilities were discovered in libpng:\n    </p>\n    <ul>\n    <li>A\n    memory leak bug was reported in png_handle_tEXt(), a function that is\n    used while reading PNG images (CVE-2008-6218).</li>\n    <li>A memory\n    overwrite bug was reported by Jon Foster in png_check_keyword(), caused\n    by writing overlong keywords to a PNG file (CVE-2008-5907).</li>\n    <li>A\n    memory corruption issue, caused by an incorrect handling of an out of\n    memory condition has been reported by Tavis Ormandy of the Google\n    Security Team. That vulnerability affects direct uses of\n    png_read_png(), pCAL chunk and 16-bit gamma table handling\n    (CVE-2009-0040).</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker may execute arbitrary code with the privileges of the\n    user opening a specially crafted PNG file by exploiting the erroneous\n    out-of-memory handling. An attacker may also exploit the\n    png_check_keyword() error to set arbitrary memory locations to 0, if\n    the application allows overlong, user-controlled keywords when writing\n    PNG files. The png_handle_tEXT() vulnerability may be exploited by an\n    attacker to potentially consume all memory on a users system when a\n    specially crafted PNG file is opened.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All libpng users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/libpng-1.2.35\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-5907",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5907"
-      },
-      {
-        "Text": "CVE-2008-6218",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-6218"
-      },
-      {
-        "Text": "CVE-2009-0040",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0040"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    craig\n  ",
-      "Tag": "requester",
-      "Timestamp": "2009-01-11T18:45:00Z"
-    },
-    {
-      "Text": "\n    mabi\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-02-13T19:13:22Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2009-03-13T19:09:44Z"
-    }
-  ]
+	"ID": "200903-28",
+	"Title": "libpng: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities were found in libpng, which might result in the\n    execution of arbitrary code\n  ",
+	"Product": {
+		"Text": "libpng",
+		"Type": "ebuild"
+	},
+	"Announced": "2009-03-15",
+	"Revised": {
+		"Text": "2009-03-15",
+		"Count": "01"
+	},
+	"Bug": [
+		"244808",
+		"255231",
+		"259578"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-libs/libpng",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.2.35",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.2.35",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    libpng is the official PNG reference library used to read, write and\n    manipulate PNG images.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Multiple vulnerabilities were discovered in libpng:\n    </p>\n    <ul>\n    <li>A\n    memory leak bug was reported in png_handle_tEXt(), a function that is\n    used while reading PNG images (CVE-2008-6218).</li>\n    <li>A memory\n    overwrite bug was reported by Jon Foster in png_check_keyword(), caused\n    by writing overlong keywords to a PNG file (CVE-2008-5907).</li>\n    <li>A\n    memory corruption issue, caused by an incorrect handling of an out of\n    memory condition has been reported by Tavis Ormandy of the Google\n    Security Team. That vulnerability affects direct uses of\n    png_read_png(), pCAL chunk and 16-bit gamma table handling\n    (CVE-2009-0040).</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker may execute arbitrary code with the privileges of the\n    user opening a specially crafted PNG file by exploiting the erroneous\n    out-of-memory handling. An attacker may also exploit the\n    png_check_keyword() error to set arbitrary memory locations to 0, if\n    the application allows overlong, user-controlled keywords when writing\n    PNG files. The png_handle_tEXT() vulnerability may be exploited by an\n    attacker to potentially consume all memory on a users system when a\n    specially crafted PNG file is opened.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All libpng users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/libpng-1.2.35\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-5907",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5907"
+			},
+			{
+				"Text": "CVE-2008-6218",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-6218"
+			},
+			{
+				"Text": "CVE-2009-0040",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0040"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    craig\n  ",
+			"Tag": "requester",
+			"Timestamp": "2009-01-11T18:45:00Z"
+		},
+		{
+			"Text": "\n    mabi\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-02-13T19:13:22Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2009-03-13T19:09:44Z"
+		}
+	]
 }

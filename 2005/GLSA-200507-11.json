@@ -1,119 +1,119 @@
 {
-  "ID": "200507-11",
-  "Title": "MIT Kerberos 5: Multiple vulnerabilities",
-  "Synopsis": "\n    MIT Kerberos 5 is vulnerable to a Denial of Service attack and remote\n    execution of arbitrary code, possibly leading to the compromise of the\n    entire Kerberos realm.\n  ",
-  "Product": {
-    "Text": "mit-krb5",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-07-12",
-  "Revised": {
-    "Text": "2005-07-12",
-    "Count": "01"
-  },
-  "Bug": [
-    "98799"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-crypt/mit-krb5",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.4.1-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.4.1-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    MIT Kerberos 5 is the free implementation of the Kerberos network\n    authentication protocol by the Massachusetts Institute of Technology.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Daniel Wachdorf discovered that MIT Kerberos 5 could corrupt the\n    heap by freeing unallocated memory when receiving a special TCP request\n    (CAN-2005-1174). He also discovered that the same request could lead to\n    a single-byte heap overflow (CAN-2005-1175). Magnus Hagander discovered\n    that krb5_recvauth() function of MIT Kerberos 5 might try to\n    double-free memory (CAN-2005-1689).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    Although exploitation is considered difficult, a remote attacker\n    could exploit the single-byte heap overflow and the double-free\n    vulnerability to execute arbitrary code, which could lead to the\n    compromise of the whole Kerberos realm. A remote attacker could also\n    use the heap corruption to cause a Denial of Service.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There are no known workarounds at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All MIT Kerberos 5 users should upgrade to the latest available\n    version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-crypt/mit-krb5-1.4.1-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2005-1174",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1174"
-      },
-      {
-        "Text": "CAN-2005-1175",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1175"
-      },
-      {
-        "Text": "CAN-2005-1689",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1689"
-      },
-      {
-        "Text": "MITKRB5-SA-2005-002",
-        "Link": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2005-002-kdc.txt"
-      },
-      {
-        "Text": "MITKRB5-SA-2005-003",
-        "Link": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2005-003-recvauth.txt"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-07-08T08:49:39Z"
-    },
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-07-08T14:57:37Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-07-12T19:05:46Z"
-    }
-  ]
+	"ID": "200507-11",
+	"Title": "MIT Kerberos 5: Multiple vulnerabilities",
+	"Synopsis": "\n    MIT Kerberos 5 is vulnerable to a Denial of Service attack and remote\n    execution of arbitrary code, possibly leading to the compromise of the\n    entire Kerberos realm.\n  ",
+	"Product": {
+		"Text": "mit-krb5",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-07-12",
+	"Revised": {
+		"Text": "2005-07-12",
+		"Count": "01"
+	},
+	"Bug": [
+		"98799"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-crypt/mit-krb5",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.4.1-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.4.1-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    MIT Kerberos 5 is the free implementation of the Kerberos network\n    authentication protocol by the Massachusetts Institute of Technology.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Daniel Wachdorf discovered that MIT Kerberos 5 could corrupt the\n    heap by freeing unallocated memory when receiving a special TCP request\n    (CAN-2005-1174). He also discovered that the same request could lead to\n    a single-byte heap overflow (CAN-2005-1175). Magnus Hagander discovered\n    that krb5_recvauth() function of MIT Kerberos 5 might try to\n    double-free memory (CAN-2005-1689).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    Although exploitation is considered difficult, a remote attacker\n    could exploit the single-byte heap overflow and the double-free\n    vulnerability to execute arbitrary code, which could lead to the\n    compromise of the whole Kerberos realm. A remote attacker could also\n    use the heap corruption to cause a Denial of Service.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There are no known workarounds at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All MIT Kerberos 5 users should upgrade to the latest available\n    version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-crypt/mit-krb5-1.4.1-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2005-1174",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1174"
+			},
+			{
+				"Text": "CAN-2005-1175",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1175"
+			},
+			{
+				"Text": "CAN-2005-1689",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1689"
+			},
+			{
+				"Text": "MITKRB5-SA-2005-002",
+				"Link": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2005-002-kdc.txt"
+			},
+			{
+				"Text": "MITKRB5-SA-2005-003",
+				"Link": "http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2005-003-recvauth.txt"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-07-08T08:49:39Z"
+		},
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-07-08T14:57:37Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-07-12T19:05:46Z"
+		}
+	]
 }

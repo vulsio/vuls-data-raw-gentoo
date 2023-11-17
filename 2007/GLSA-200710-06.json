@@ -1,112 +1,112 @@
 {
-  "ID": "200710-06",
-  "Title": "OpenSSL: Multiple vulnerabilities",
-  "Synopsis": "\n    A buffer underflow vulnerability and an information disclosure\n    vulnerability have been discovered in OpenSSL.\n  ",
-  "Product": {
-    "Text": "openssl",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-10-07",
-  "Revised": {
-    "Text": "2007-10-07",
-    "Count": "01"
-  },
-  "Bug": [
-    "188799",
-    "194039"
-  ],
-  "Access": "local, remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-libs/openssl",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.9.8e-r3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.9.8e-r3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    OpenSSL is an implementation of the Secure Socket Layer and Transport\n    Layer Security protocols.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Moritz Jodeit reported an off-by-one error in the\n    SSL_get_shared_ciphers() function, resulting from an incomplete fix of\n    CVE-2006-3738. A flaw has also been reported in the\n    BN_from_montgomery() function in crypto/bn/bn_mont.c when performing\n    Montgomery multiplication.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker sending a specially crafted packet to an application\n    relying on OpenSSL could possibly execute arbitrary code with the\n    privileges of the user running the application. A local attacker could\n    perform a side channel attack to retrieve the RSA private keys.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All OpenSSL users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/openssl-0.9.8e-r3\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-3738",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3738"
-      },
-      {
-        "Text": "CVE-2007-3108",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3108"
-      },
-      {
-        "Text": "CVE-2007-5135",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5135"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-09-10T06:24:11Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-09-10T06:24:24Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-10-06T13:14:06Z"
-    }
-  ]
+	"ID": "200710-06",
+	"Title": "OpenSSL: Multiple vulnerabilities",
+	"Synopsis": "\n    A buffer underflow vulnerability and an information disclosure\n    vulnerability have been discovered in OpenSSL.\n  ",
+	"Product": {
+		"Text": "openssl",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-10-07",
+	"Revised": {
+		"Text": "2007-10-07",
+		"Count": "01"
+	},
+	"Bug": [
+		"188799",
+		"194039"
+	],
+	"Access": "local, remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-libs/openssl",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.9.8e-r3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.9.8e-r3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    OpenSSL is an implementation of the Secure Socket Layer and Transport\n    Layer Security protocols.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Moritz Jodeit reported an off-by-one error in the\n    SSL_get_shared_ciphers() function, resulting from an incomplete fix of\n    CVE-2006-3738. A flaw has also been reported in the\n    BN_from_montgomery() function in crypto/bn/bn_mont.c when performing\n    Montgomery multiplication.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker sending a specially crafted packet to an application\n    relying on OpenSSL could possibly execute arbitrary code with the\n    privileges of the user running the application. A local attacker could\n    perform a side channel attack to retrieve the RSA private keys.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All OpenSSL users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/openssl-0.9.8e-r3\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-3738",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3738"
+			},
+			{
+				"Text": "CVE-2007-3108",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3108"
+			},
+			{
+				"Text": "CVE-2007-5135",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5135"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-09-10T06:24:11Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-09-10T06:24:24Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-10-06T13:14:06Z"
+		}
+	]
 }

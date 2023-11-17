@@ -1,103 +1,103 @@
 {
-  "ID": "200812-10",
-  "Title": "Archive::Tar: Directory traversal vulnerability",
-  "Synopsis": "\n    A directory traversal vulnerability has been discovered in Archive::Tar.\n  ",
-  "Product": {
-    "Text": "Archive-Tar",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-12-10",
-  "Revised": {
-    "Text": "2008-12-10",
-    "Count": "01"
-  },
-  "Bug": [
-    "192989"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "perl-core/Archive-Tar",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.40",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.40",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Archive::Tar is a Perl module for creation and manipulation of tar\n    files.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Jonathan Smith of rPath reported that Archive::Tar does not check for\n    \"..\" in file names.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user or automated system to extract a\n    specially crafted tar archive, overwriting files at arbitrary locations\n    outside of the specified directory.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Archive::Tar users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=perl-core/Archive-Tar-1.40\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-4829",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4829"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-11-26T18:55:42Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-11-26T20:31:02Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-11-26T20:31:20Z"
-    }
-  ]
+	"ID": "200812-10",
+	"Title": "Archive::Tar: Directory traversal vulnerability",
+	"Synopsis": "\n    A directory traversal vulnerability has been discovered in Archive::Tar.\n  ",
+	"Product": {
+		"Text": "Archive-Tar",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-12-10",
+	"Revised": {
+		"Text": "2008-12-10",
+		"Count": "01"
+	},
+	"Bug": [
+		"192989"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "perl-core/Archive-Tar",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.40",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.40",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Archive::Tar is a Perl module for creation and manipulation of tar\n    files.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Jonathan Smith of rPath reported that Archive::Tar does not check for\n    \"..\" in file names.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user or automated system to extract a\n    specially crafted tar archive, overwriting files at arbitrary locations\n    outside of the specified directory.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Archive::Tar users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=perl-core/Archive-Tar-1.40\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-4829",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4829"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-11-26T18:55:42Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-11-26T20:31:02Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-11-26T20:31:20Z"
+		}
+	]
 }

@@ -1,120 +1,120 @@
 {
-  "ID": "200607-05",
-  "Title": "SHOUTcast server: Multiple vulnerabilities",
-  "Synopsis": "\n    The SHOUTcast server is vulnerable to a file disclosure vulnerability and\n    multiple XSS vulnerabilities.\n  ",
-  "Product": {
-    "Text": "shoutcast",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-07-09",
-  "Revised": {
-    "Text": "2006-07-29",
-    "Count": "03"
-  },
-  "Bug": [
-    "136721",
-    "136221"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-sound/shoutcast-server-bin",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.9.7",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.9.7",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    SHOUTcast server is a streaming audio server.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The SHOUTcast server is vulnerable to a file disclosure when the server\n    receives a specially crafted GET request. Furthermore it also fails to\n    sanitize the input passed to the \"Description\", \"URL\", \"Genre\", \"AIM\",\n    and \"ICQ\" fields.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    By sending a specially crafted GET request to the SHOUTcast server, the\n    attacker can read any file that can be read by the SHOUTcast process.\n    Furthermore it is possible that various request variables could also be\n    exploited to execute arbitrary scripts in the context of a victim's\n    browser.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All SHOUTcast server users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-sound/shoutcast-server-bin-1.9.7\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "Original advisory",
-        "Link": "http://people.ksp.sk/~goober/advisory/001-shoutcast.html"
-      },
-      {
-        "Text": "SA20524",
-        "Link": "https://secunia.com/advisories/20524/"
-      },
-      {
-        "Text": "CVE-2006-3007",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3007"
-      },
-      {
-        "Text": "CVE-2006-3534",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3534"
-      },
-      {
-        "Text": "CVE-2006-3535",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3535"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-06-30T16:19:23Z"
-    },
-    {
-      "Text": "\n    daxomatic\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-06-30T17:31:32Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-07-02T14:51:02Z"
-    }
-  ]
+	"ID": "200607-05",
+	"Title": "SHOUTcast server: Multiple vulnerabilities",
+	"Synopsis": "\n    The SHOUTcast server is vulnerable to a file disclosure vulnerability and\n    multiple XSS vulnerabilities.\n  ",
+	"Product": {
+		"Text": "shoutcast",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-07-09",
+	"Revised": {
+		"Text": "2006-07-29",
+		"Count": "03"
+	},
+	"Bug": [
+		"136721",
+		"136221"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-sound/shoutcast-server-bin",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.9.7",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.9.7",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    SHOUTcast server is a streaming audio server.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The SHOUTcast server is vulnerable to a file disclosure when the server\n    receives a specially crafted GET request. Furthermore it also fails to\n    sanitize the input passed to the \"Description\", \"URL\", \"Genre\", \"AIM\",\n    and \"ICQ\" fields.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    By sending a specially crafted GET request to the SHOUTcast server, the\n    attacker can read any file that can be read by the SHOUTcast process.\n    Furthermore it is possible that various request variables could also be\n    exploited to execute arbitrary scripts in the context of a victim's\n    browser.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All SHOUTcast server users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-sound/shoutcast-server-bin-1.9.7\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "Original advisory",
+				"Link": "http://people.ksp.sk/~goober/advisory/001-shoutcast.html"
+			},
+			{
+				"Text": "SA20524",
+				"Link": "https://secunia.com/advisories/20524/"
+			},
+			{
+				"Text": "CVE-2006-3007",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3007"
+			},
+			{
+				"Text": "CVE-2006-3534",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3534"
+			},
+			{
+				"Text": "CVE-2006-3535",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3535"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-06-30T16:19:23Z"
+		},
+		{
+			"Text": "\n    daxomatic\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-06-30T17:31:32Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-07-02T14:51:02Z"
+		}
+	]
 }

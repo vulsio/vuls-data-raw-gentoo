@@ -1,98 +1,98 @@
 {
-  "ID": "202009-16",
-  "Title": "LinuxCIFS: Shell injection",
-  "Synopsis": "A vulnerability in LinuxCIFS may allow a remote code execution via\n    a command line option.\n  ",
-  "Product": {
-    "Text": "LinuxCIFS",
-    "Type": "ebuild"
-  },
-  "Announced": "2020-09-29",
-  "Revised": {
-    "Text": "2020-09-29",
-    "Count": "1"
-  },
-  "Bug": [
-    "743211"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-fs/cifs-utils",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "6.11",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "6.11",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>The LinuxCIFS utils are a collection of tools for managing Linux CIFS\n      Client Filesystems.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>The mount.cifs utility had a shell injection issue where one can embed\n      shell commands via the username mount option. Those commands will be run\n      via popen() in the context of the user calling mount.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could entice a user to use a specially crafted\n      argument using mount.cifs, possibly resulting in execution of arbitrary\n      code with the privileges of the process or a Denial of Service condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All LinuxCIFS users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-fs/cifs-utils-6.11\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2020-14342",
-        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-14342"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "sam_c",
-      "Tag": "requester",
-      "Timestamp": "2020-09-20T13:02:21Z"
-    },
-    {
-      "Text": "sam_c",
-      "Tag": "submitter",
-      "Timestamp": "2020-09-29T18:06:06Z"
-    }
-  ]
+	"ID": "202009-16",
+	"Title": "LinuxCIFS: Shell injection",
+	"Synopsis": "A vulnerability in LinuxCIFS may allow a remote code execution via\n    a command line option.\n  ",
+	"Product": {
+		"Text": "LinuxCIFS",
+		"Type": "ebuild"
+	},
+	"Announced": "2020-09-29",
+	"Revised": {
+		"Text": "2020-09-29",
+		"Count": "1"
+	},
+	"Bug": [
+		"743211"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-fs/cifs-utils",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "6.11",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "6.11",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>The LinuxCIFS utils are a collection of tools for managing Linux CIFS\n      Client Filesystems.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>The mount.cifs utility had a shell injection issue where one can embed\n      shell commands via the username mount option. Those commands will be run\n      via popen() in the context of the user calling mount.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could entice a user to use a specially crafted\n      argument using mount.cifs, possibly resulting in execution of arbitrary\n      code with the privileges of the process or a Denial of Service condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All LinuxCIFS users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-fs/cifs-utils-6.11\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2020-14342",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-14342"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "sam_c",
+			"Tag": "requester",
+			"Timestamp": "2020-09-20T13:02:21Z"
+		},
+		{
+			"Text": "sam_c",
+			"Tag": "submitter",
+			"Timestamp": "2020-09-29T18:06:06Z"
+		}
+	]
 }

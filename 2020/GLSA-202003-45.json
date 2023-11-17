@@ -1,98 +1,98 @@
 {
-  "ID": "202003-45",
-  "Title": "PyYAML: Arbitrary code execution",
-  "Synopsis": "A flaw in PyYAML might allow attackers to execute arbitrary code.",
-  "Product": {
-    "Text": "pyyaml",
-    "Type": "ebuild"
-  },
-  "Announced": "2020-03-19",
-  "Revised": {
-    "Text": "2020-03-19",
-    "Count": "1"
-  },
-  "Bug": [
-    "659348"
-  ],
-  "Access": "local, remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-python/pyyaml",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "5.1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "5.1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>PyYAML is a YAML parser and emitter for Python.</p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>It was found that using yaml.load() API on untrusted input could lead to\n      arbitrary code execution.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>A remote attacker could entice a user to process specially crafted input\n      in an application using yaml.load() from PyYAML, possibly resulting in\n      execution of arbitrary code with the privileges of the process or a\n      Denial of Service condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All PyYAML users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-python/pyyaml-5.1\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2017-18342",
-        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2017-18342"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "whissi",
-      "Tag": "requester",
-      "Timestamp": "2020-03-19T18:50:48Z"
-    },
-    {
-      "Text": "whissi",
-      "Tag": "submitter",
-      "Timestamp": "2020-03-19T18:55:38Z"
-    }
-  ]
+	"ID": "202003-45",
+	"Title": "PyYAML: Arbitrary code execution",
+	"Synopsis": "A flaw in PyYAML might allow attackers to execute arbitrary code.",
+	"Product": {
+		"Text": "pyyaml",
+		"Type": "ebuild"
+	},
+	"Announced": "2020-03-19",
+	"Revised": {
+		"Text": "2020-03-19",
+		"Count": "1"
+	},
+	"Bug": [
+		"659348"
+	],
+	"Access": "local, remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-python/pyyaml",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "5.1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "5.1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>PyYAML is a YAML parser and emitter for Python.</p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>It was found that using yaml.load() API on untrusted input could lead to\n      arbitrary code execution.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>A remote attacker could entice a user to process specially crafted input\n      in an application using yaml.load() from PyYAML, possibly resulting in\n      execution of arbitrary code with the privileges of the process or a\n      Denial of Service condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All PyYAML users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-python/pyyaml-5.1\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2017-18342",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2017-18342"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "whissi",
+			"Tag": "requester",
+			"Timestamp": "2020-03-19T18:50:48Z"
+		},
+		{
+			"Text": "whissi",
+			"Tag": "submitter",
+			"Timestamp": "2020-03-19T18:55:38Z"
+		}
+	]
 }

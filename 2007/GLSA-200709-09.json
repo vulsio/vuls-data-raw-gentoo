@@ -1,98 +1,98 @@
 {
-  "ID": "200709-09",
-  "Title": "GNU Tar: Directory traversal vulnerability",
-  "Synopsis": "\n    A directory traversal vulnerability has been discovered in GNU Tar.\n  ",
-  "Product": {
-    "Text": "tar",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-09-15",
-  "Revised": {
-    "Text": "2007-09-15",
-    "Count": "01"
-  },
-  "Bug": [
-    "189682"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-arch/tar",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.18-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.18-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    The GNU Tar program provides the ability to create tar archives, as\n    well as various other kinds of manipulation.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Dmitry V. Levin discovered a directory traversal vulnerability in the\n    contains_dot_dot() function in file src/names.c.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    By enticing a user to extract a specially crafted tar archive, a remote\n    attacker could extract files to arbitrary locations outside of the\n    specified directory with the permissions of the user running GNU Tar.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All GNU Tar users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-arch/tar-1.18-r2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-4131",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4131"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    mfleming\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-09-13T18:11:35Z"
-    },
-    {
-      "Text": "\n    mfleming\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-09-13T18:49:13Z"
-    }
-  ]
+	"ID": "200709-09",
+	"Title": "GNU Tar: Directory traversal vulnerability",
+	"Synopsis": "\n    A directory traversal vulnerability has been discovered in GNU Tar.\n  ",
+	"Product": {
+		"Text": "tar",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-09-15",
+	"Revised": {
+		"Text": "2007-09-15",
+		"Count": "01"
+	},
+	"Bug": [
+		"189682"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-arch/tar",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.18-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.18-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    The GNU Tar program provides the ability to create tar archives, as\n    well as various other kinds of manipulation.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Dmitry V. Levin discovered a directory traversal vulnerability in the\n    contains_dot_dot() function in file src/names.c.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    By enticing a user to extract a specially crafted tar archive, a remote\n    attacker could extract files to arbitrary locations outside of the\n    specified directory with the permissions of the user running GNU Tar.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All GNU Tar users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-arch/tar-1.18-r2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-4131",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4131"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    mfleming\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-09-13T18:11:35Z"
+		},
+		{
+			"Text": "\n    mfleming\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-09-13T18:49:13Z"
+		}
+	]
 }

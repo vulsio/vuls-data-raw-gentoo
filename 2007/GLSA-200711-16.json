@@ -1,98 +1,98 @@
 {
-  "ID": "200711-16",
-  "Title": "CUPS: Memory corruption",
-  "Synopsis": "\n    CUPS contains a boundary checking error that might lead to the execution of\n    arbitrary code.\n  ",
-  "Product": {
-    "Text": "cups",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-11-12",
-  "Revised": {
-    "Text": "2007-11-12",
-    "Count": "01"
-  },
-  "Bug": [
-    "196736"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-print/cups",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.2.12-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.2.12-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    CUPS provides a portable printing layer for UNIX-based operating\n    systems.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Alin Rad Pop (Secunia Research) discovered an off-by-one error in the\n    ippReadIO() function when handling Internet Printing Protocol (IPP)\n    tags that might allow to overwrite one byte on the stack.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A local attacker could send a specially crafted IPP request containing\n    \"textWithLanguage\" or \"nameWithLanguage\" tags, leading to a Denial of\n    Service or the execution of arbitrary code with the privileges of the\n    \"lp\" user. If CUPS is configured to allow network printing, this\n    vulnerability might be remotely exploitable.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    To avoid remote exploitation, network access to CUPS servers on port\n    631/udp should be restricted. In order to do this, update the \"Listen\"\n    setting in cupsd.conf to \"<i>Listen localhost:631</i>\" or add a rule to\n    the system's firewall. However, this will not avoid local users from\n    exploiting this vulnerability.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All CUPS users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-print/cups-1.2.12-r2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-4351",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4351"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-11-04T00:16:24Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-11-11T08:38:00Z"
-    }
-  ]
+	"ID": "200711-16",
+	"Title": "CUPS: Memory corruption",
+	"Synopsis": "\n    CUPS contains a boundary checking error that might lead to the execution of\n    arbitrary code.\n  ",
+	"Product": {
+		"Text": "cups",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-11-12",
+	"Revised": {
+		"Text": "2007-11-12",
+		"Count": "01"
+	},
+	"Bug": [
+		"196736"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-print/cups",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.2.12-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.2.12-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    CUPS provides a portable printing layer for UNIX-based operating\n    systems.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Alin Rad Pop (Secunia Research) discovered an off-by-one error in the\n    ippReadIO() function when handling Internet Printing Protocol (IPP)\n    tags that might allow to overwrite one byte on the stack.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A local attacker could send a specially crafted IPP request containing\n    \"textWithLanguage\" or \"nameWithLanguage\" tags, leading to a Denial of\n    Service or the execution of arbitrary code with the privileges of the\n    \"lp\" user. If CUPS is configured to allow network printing, this\n    vulnerability might be remotely exploitable.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    To avoid remote exploitation, network access to CUPS servers on port\n    631/udp should be restricted. In order to do this, update the \"Listen\"\n    setting in cupsd.conf to \"<i>Listen localhost:631</i>\" or add a rule to\n    the system's firewall. However, this will not avoid local users from\n    exploiting this vulnerability.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All CUPS users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-print/cups-1.2.12-r2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-4351",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4351"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-11-04T00:16:24Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-11-11T08:38:00Z"
+		}
+	]
 }

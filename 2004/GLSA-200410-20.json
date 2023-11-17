@@ -1,133 +1,133 @@
 {
-  "ID": "200410-20",
-  "Title": "Xpdf, CUPS: Multiple integer overflows",
-  "Synopsis": "\n    Multiple integer overflows were discovered in Xpdf, potentially resulting\n    in execution of arbitrary code upon viewing a malicious PDF file. CUPS\n    includes Xpdf code and therefore is vulnerable to the same issues.\n  ",
-  "Product": {
-    "Text": "Xpdf",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-10-21",
-  "Revised": {
-    "Text": "2004-11-06",
-    "Count": "02"
-  },
-  "Bug": [
-    "69662"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-text/xpdf",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.00-r5",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.00-r4",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "net-print/cups",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.1.20-r5",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.1.20-r4",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Xpdf is an open source viewer for Portable Document Format (PDF) files. The\n    Common UNIX Printing System (CUPS) is a cross-platform print spooler that\n    includes some Xpdf code.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Chris Evans discovered multiple integer overflow issues in Xpdf.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker could entice an user to open a specially-crafted PDF file,\n    potentially resulting in execution of arbitrary code with the rights of the\n    user running Xpdf. By enticing an user to directly print the PDF file to a\n    CUPS printer, an attacker could also crash the CUPS spooler or execute\n    arbitrary code with the rights of the CUPS spooler, which is usually the\n    \"lp\" user.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Xpdf users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All CUPS users should also upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/xpdf-3.00-r5\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-print/cups-1.1.20-r5\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2004-0888",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0888"
-      },
-      {
-        "Text": "CAN-2004-0889",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0889"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-10-21T10:10:18Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-10-21T14:18:53Z"
-    }
-  ]
+	"ID": "200410-20",
+	"Title": "Xpdf, CUPS: Multiple integer overflows",
+	"Synopsis": "\n    Multiple integer overflows were discovered in Xpdf, potentially resulting\n    in execution of arbitrary code upon viewing a malicious PDF file. CUPS\n    includes Xpdf code and therefore is vulnerable to the same issues.\n  ",
+	"Product": {
+		"Text": "Xpdf",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-10-21",
+	"Revised": {
+		"Text": "2004-11-06",
+		"Count": "02"
+	},
+	"Bug": [
+		"69662"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-text/xpdf",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.00-r5",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.00-r4",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "net-print/cups",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.1.20-r5",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.1.20-r4",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Xpdf is an open source viewer for Portable Document Format (PDF) files. The\n    Common UNIX Printing System (CUPS) is a cross-platform print spooler that\n    includes some Xpdf code.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Chris Evans discovered multiple integer overflow issues in Xpdf.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker could entice an user to open a specially-crafted PDF file,\n    potentially resulting in execution of arbitrary code with the rights of the\n    user running Xpdf. By enticing an user to directly print the PDF file to a\n    CUPS printer, an attacker could also crash the CUPS spooler or execute\n    arbitrary code with the rights of the CUPS spooler, which is usually the\n    \"lp\" user.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Xpdf users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All CUPS users should also upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/xpdf-3.00-r5\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-print/cups-1.1.20-r5\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2004-0888",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0888"
+			},
+			{
+				"Text": "CAN-2004-0889",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0889"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-10-21T10:10:18Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-10-21T14:18:53Z"
+		}
+	]
 }

@@ -1,196 +1,196 @@
 {
-  "ID": "200710-08",
-  "Title": "KOffice, KWord, KPDF, KDE Graphics Libraries: Stack-based buffer overflow",
-  "Synopsis": "\n    KPDF includes code from xpdf that is vulnerable to a stack-based buffer\n    overflow.\n  ",
-  "Product": {
-    "Text": "koffice, kword, kdegraphics, kpdf",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-10-09",
-  "Revised": {
-    "Text": "2007-10-09",
-    "Count": "01"
-  },
-  "Bug": [
-    "187139"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-office/koffice",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.6.3-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.6.3-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-office/kword",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.6.3-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.6.3-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "kde-base/kdegraphics",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.5.7-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.5.7-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "kde-base/kpdf",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.5.7-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.5.7-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    KOffice is an integrated office suite for KDE. KWord is the KOffice\n    word processor. KPDF is a KDE-based PDF viewer included in the\n    kdegraphics package.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    KPDF includes code from xpdf that is vulnerable to an integer overflow\n    in the StreamPredictor::StreamPredictor() function.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted PDF\n    file in KWord or KPDF that would exploit the integer overflow to cause\n    a stack-based buffer overflow in the StreamPredictor::getNextLine()\n    function, possibly resulting in the execution of arbitrary code with\n    the privileges of the user running the application.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All KOffice users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All KWord users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All KDE Graphics Libraries users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All KPDF users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-office/koffice-1.6.3-r1\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-office/kword-1.6.3-r1\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=kde-base/kdegraphics-3.5.7-r1\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=kde-base/kpdf-3.5.7-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-3387",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3387"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-09-08T22:26:21Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-09-08T23:59:58Z"
-    },
-    {
-      "Text": "\n    aetius\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-10-07T16:13:55Z"
-    }
-  ]
+	"ID": "200710-08",
+	"Title": "KOffice, KWord, KPDF, KDE Graphics Libraries: Stack-based buffer overflow",
+	"Synopsis": "\n    KPDF includes code from xpdf that is vulnerable to a stack-based buffer\n    overflow.\n  ",
+	"Product": {
+		"Text": "koffice, kword, kdegraphics, kpdf",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-10-09",
+	"Revised": {
+		"Text": "2007-10-09",
+		"Count": "01"
+	},
+	"Bug": [
+		"187139"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-office/koffice",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.6.3-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.6.3-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-office/kword",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.6.3-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.6.3-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "kde-base/kdegraphics",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.5.7-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.5.7-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "kde-base/kpdf",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.5.7-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.5.7-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    KOffice is an integrated office suite for KDE. KWord is the KOffice\n    word processor. KPDF is a KDE-based PDF viewer included in the\n    kdegraphics package.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    KPDF includes code from xpdf that is vulnerable to an integer overflow\n    in the StreamPredictor::StreamPredictor() function.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted PDF\n    file in KWord or KPDF that would exploit the integer overflow to cause\n    a stack-based buffer overflow in the StreamPredictor::getNextLine()\n    function, possibly resulting in the execution of arbitrary code with\n    the privileges of the user running the application.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All KOffice users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All KWord users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All KDE Graphics Libraries users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All KPDF users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-office/koffice-1.6.3-r1\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-office/kword-1.6.3-r1\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=kde-base/kdegraphics-3.5.7-r1\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=kde-base/kpdf-3.5.7-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-3387",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3387"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-09-08T22:26:21Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-09-08T23:59:58Z"
+		},
+		{
+			"Text": "\n    aetius\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-10-07T16:13:55Z"
+		}
+	]
 }

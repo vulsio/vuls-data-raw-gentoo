@@ -1,143 +1,143 @@
 {
-  "ID": "200407-13",
-  "Title": "PHP: Multiple security vulnerabilities",
-  "Synopsis": "\n    Multiple security vulnerabilities, potentially allowing remote code\n    execution, were found and fixed in PHP.\n  ",
-  "Product": {
-    "Text": "PHP",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-07-15",
-  "Revised": {
-    "Text": "2004-07-15",
-    "Count": "01"
-  },
-  "Bug": [
-    "56985"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-php/php",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.3.8",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.3.7-r1",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "dev-php/mod_php",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.3.8",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.3.7-r1",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "dev-php/php-cgi",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.3.8",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.3.7-r1",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    PHP is a general-purpose scripting language widely used to develop\n    web-based applications. It can run inside a web server using the mod_php\n    module or the CGI version of PHP, or can run stand-alone in a CLI.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Several security vulnerabilities were found and fixed in version 4.3.8 of\n    PHP. The strip_tags() function, used to sanitize user input, could in\n    certain cases allow tags containing \\0 characters (CAN-2004-0595). When\n    memory_limit is used, PHP might unsafely interrupt other functions\n    (CAN-2004-0594). The ftok and itpc functions were missing safe_mode checks.\n    It was possible to bypass open_basedir restrictions using MySQL's LOAD DATA\n    LOCAL function. Furthermore, the IMAP extension was incorrectly allocating\n    memory and alloca() calls were replaced with emalloc() for better stack\n    protection.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    Successfully exploited, the memory_limit problem could allow remote\n    excution of arbitrary code. By exploiting the strip_tags vulnerability, it\n    is possible to pass HTML code that would be considered as valid tags by the\n    Microsoft Internet Explorer and Safari browsers. Using ftok, itpc or\n    MySQL's LOAD DATA LOCAL, it is possible to bypass PHP configuration\n    restrictions.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround that would solve all these problems. All users\n    are encouraged to upgrade to the latest available versions.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All PHP, mod_php and php-cgi users should upgrade to the latest stable\n    version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n\n    # emerge -pv \">=dev-php/php-4.3.8\"\n    # emerge \">=dev-php/php-4.3.8\"\n\n    # emerge -pv \">=dev-php/mod_php-4.3.8\"\n    # emerge \">=dev-php/mod_php-4.3.8\"\n\n    # emerge -pv \">=dev-php/php-cgi-4.3.8\"\n    # emerge \">=dev-php/php-cgi-4.3.8\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2004-0594",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0594"
-      },
-      {
-        "Text": "CAN-2004-0595",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0595"
-      },
-      {
-        "Text": "E-Matters Advisory 11/2004",
-        "Link": "http://security.e-matters.de/advisories/112004.html"
-      },
-      {
-        "Text": "E-Matters Advisory 12/2004",
-        "Link": "http://security.e-matters.de/advisories/122004.html"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": ""
-    }
-  ]
+	"ID": "200407-13",
+	"Title": "PHP: Multiple security vulnerabilities",
+	"Synopsis": "\n    Multiple security vulnerabilities, potentially allowing remote code\n    execution, were found and fixed in PHP.\n  ",
+	"Product": {
+		"Text": "PHP",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-07-15",
+	"Revised": {
+		"Text": "2004-07-15",
+		"Count": "01"
+	},
+	"Bug": [
+		"56985"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-php/php",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.3.8",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.3.7-r1",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "dev-php/mod_php",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.3.8",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.3.7-r1",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "dev-php/php-cgi",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.3.8",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.3.7-r1",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    PHP is a general-purpose scripting language widely used to develop\n    web-based applications. It can run inside a web server using the mod_php\n    module or the CGI version of PHP, or can run stand-alone in a CLI.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Several security vulnerabilities were found and fixed in version 4.3.8 of\n    PHP. The strip_tags() function, used to sanitize user input, could in\n    certain cases allow tags containing \\0 characters (CAN-2004-0595). When\n    memory_limit is used, PHP might unsafely interrupt other functions\n    (CAN-2004-0594). The ftok and itpc functions were missing safe_mode checks.\n    It was possible to bypass open_basedir restrictions using MySQL's LOAD DATA\n    LOCAL function. Furthermore, the IMAP extension was incorrectly allocating\n    memory and alloca() calls were replaced with emalloc() for better stack\n    protection.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    Successfully exploited, the memory_limit problem could allow remote\n    excution of arbitrary code. By exploiting the strip_tags vulnerability, it\n    is possible to pass HTML code that would be considered as valid tags by the\n    Microsoft Internet Explorer and Safari browsers. Using ftok, itpc or\n    MySQL's LOAD DATA LOCAL, it is possible to bypass PHP configuration\n    restrictions.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround that would solve all these problems. All users\n    are encouraged to upgrade to the latest available versions.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All PHP, mod_php and php-cgi users should upgrade to the latest stable\n    version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n\n    # emerge -pv \">=dev-php/php-4.3.8\"\n    # emerge \">=dev-php/php-4.3.8\"\n\n    # emerge -pv \">=dev-php/mod_php-4.3.8\"\n    # emerge \">=dev-php/mod_php-4.3.8\"\n\n    # emerge -pv \">=dev-php/php-cgi-4.3.8\"\n    # emerge \">=dev-php/php-cgi-4.3.8\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2004-0594",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0594"
+			},
+			{
+				"Text": "CAN-2004-0595",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0595"
+			},
+			{
+				"Text": "E-Matters Advisory 11/2004",
+				"Link": "http://security.e-matters.de/advisories/112004.html"
+			},
+			{
+				"Text": "E-Matters Advisory 12/2004",
+				"Link": "http://security.e-matters.de/advisories/122004.html"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": ""
+		}
+	]
 }

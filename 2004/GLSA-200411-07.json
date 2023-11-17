@@ -1,107 +1,107 @@
 {
-  "ID": "200411-07",
-  "Title": "Proxytunnel: Format string vulnerability",
-  "Synopsis": "\n    Proxytunnel is vulnerable to a format string vulnerability, potentially\n    allowing a remote server to execute arbitrary code with the rights of the\n    Proxytunnel process.\n  ",
-  "Product": {
-    "Text": "Proxytunnel",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-11-03",
-  "Revised": {
-    "Text": "2004-11-03",
-    "Count": "01"
-  },
-  "Bug": [
-    "69379"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-misc/proxytunnel",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.2.3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.2.3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Proxytunnel is a program that tunnels connections to a remote server\n    through a standard HTTPS proxy.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Florian Schilhabel of the Gentoo Linux Security Audit project found a\n    format string vulnerability in Proxytunnel. When the program is started in\n    daemon mode (-a [port]), it improperly logs invalid proxy answers to\n    syslog.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A malicious remote server could send specially-crafted invalid answers to\n    exploit the format string vulnerability, potentially allowing the execution\n    of arbitrary code on the tunnelling host with the rights of the Proxytunnel\n    process.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    You can mitigate the issue by only allowing connections to trusted remote\n    servers.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Proxytunnel users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/proxytunnel-1.2.3\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2004-0992",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0992"
-      },
-      {
-        "Text": "Proxytunnel News",
-        "Link": "https://proxytunnel.sourceforge.net/news.html"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2004-11-02T21:56:56Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-11-03T09:32:39Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-11-03T14:02:21Z"
-    }
-  ]
+	"ID": "200411-07",
+	"Title": "Proxytunnel: Format string vulnerability",
+	"Synopsis": "\n    Proxytunnel is vulnerable to a format string vulnerability, potentially\n    allowing a remote server to execute arbitrary code with the rights of the\n    Proxytunnel process.\n  ",
+	"Product": {
+		"Text": "Proxytunnel",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-11-03",
+	"Revised": {
+		"Text": "2004-11-03",
+		"Count": "01"
+	},
+	"Bug": [
+		"69379"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-misc/proxytunnel",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.2.3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.2.3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Proxytunnel is a program that tunnels connections to a remote server\n    through a standard HTTPS proxy.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Florian Schilhabel of the Gentoo Linux Security Audit project found a\n    format string vulnerability in Proxytunnel. When the program is started in\n    daemon mode (-a [port]), it improperly logs invalid proxy answers to\n    syslog.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A malicious remote server could send specially-crafted invalid answers to\n    exploit the format string vulnerability, potentially allowing the execution\n    of arbitrary code on the tunnelling host with the rights of the Proxytunnel\n    process.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    You can mitigate the issue by only allowing connections to trusted remote\n    servers.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Proxytunnel users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/proxytunnel-1.2.3\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2004-0992",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0992"
+			},
+			{
+				"Text": "Proxytunnel News",
+				"Link": "https://proxytunnel.sourceforge.net/news.html"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2004-11-02T21:56:56Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-11-03T09:32:39Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-11-03T14:02:21Z"
+		}
+	]
 }

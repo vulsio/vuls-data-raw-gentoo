@@ -1,103 +1,103 @@
 {
-  "ID": "200608-17",
-  "Title": "libwmf: Buffer overflow vulnerability",
-  "Synopsis": "\n    libwmf is vulnerable to an integer overflow potentially resulting in the\n    execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "libwmf",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-08-10",
-  "Revised": {
-    "Text": "2006-08-10",
-    "Count": "01"
-  },
-  "Bug": [
-    "139325"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-libs/libwmf",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.2.8.4",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.2.8.4",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    libwmf is a library for reading and converting vector images in\n    Microsoft's native Windows Metafile Format (WMF).\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    infamous41md discovered that libwmf fails to do proper bounds checking\n    on the MaxRecordSize variable in the WMF file header. This could lead\n    to an head-based buffer overflow.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    By enticing a user to open a specially crafted WMF file, a remote\n    attacker could cause a heap-based buffer overflow and execute arbitrary\n    code with the permissions of the user running the application that uses\n    libwmf.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround for this issue.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All libwmf users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/libwmf-0.2.8.4\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-3376",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3376"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-08-07T08:01:55Z"
-    },
-    {
-      "Text": "\n    dizzutch\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-08-07T12:39:07Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-08-08T11:33:41Z"
-    }
-  ]
+	"ID": "200608-17",
+	"Title": "libwmf: Buffer overflow vulnerability",
+	"Synopsis": "\n    libwmf is vulnerable to an integer overflow potentially resulting in the\n    execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "libwmf",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-08-10",
+	"Revised": {
+		"Text": "2006-08-10",
+		"Count": "01"
+	},
+	"Bug": [
+		"139325"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-libs/libwmf",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.2.8.4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.2.8.4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    libwmf is a library for reading and converting vector images in\n    Microsoft's native Windows Metafile Format (WMF).\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    infamous41md discovered that libwmf fails to do proper bounds checking\n    on the MaxRecordSize variable in the WMF file header. This could lead\n    to an head-based buffer overflow.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    By enticing a user to open a specially crafted WMF file, a remote\n    attacker could cause a heap-based buffer overflow and execute arbitrary\n    code with the permissions of the user running the application that uses\n    libwmf.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround for this issue.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All libwmf users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/libwmf-0.2.8.4\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-3376",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3376"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-08-07T08:01:55Z"
+		},
+		{
+			"Text": "\n    dizzutch\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-08-07T12:39:07Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-08-08T11:33:41Z"
+		}
+	]
 }

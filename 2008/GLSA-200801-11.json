@@ -1,120 +1,120 @@
 {
-  "ID": "200801-11",
-  "Title": "CherryPy: Directory traversal vulnerability",
-  "Synopsis": "\n    CherryPy is vulnerable to a directory traversal that could allow attackers\n    to read and write arbitrary files.\n  ",
-  "Product": {
-    "Text": "cherrypy",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-01-27",
-  "Revised": {
-    "Text": "2008-01-27",
-    "Count": "01"
-  },
-  "Bug": [
-    "204829"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-python/cherrypy",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.2.1-r2",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "3.0.2-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.0.2-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    CherryPy is a Python-based, object-oriented web development framework.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    CherryPy does not sanitize the session id, provided as a cookie value,\n    in the FileSession._get_file_path() function before using it as part of\n    the file name.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could exploit this vulnerability to read and possibly\n    write arbitrary files on the web server, or to hijack valid sessions,\n    by providing a specially crafted session id. This only affects\n    applications using file-based sessions.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Disable the \"FileSession\" functionality by using \"PostgresqlSession\" or\n    \"RamSession\" session management in your CherryPy application.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All CherryPy 2.2 users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All CherryPy 3.0 users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-python/cherrypy-2.2.1-r2\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-python/cherrypy-3.0.2-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-0252",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0252"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-01-10T20:11:50Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-01-20T02:16:18Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-01-26T19:16:48Z"
-    }
-  ]
+	"ID": "200801-11",
+	"Title": "CherryPy: Directory traversal vulnerability",
+	"Synopsis": "\n    CherryPy is vulnerable to a directory traversal that could allow attackers\n    to read and write arbitrary files.\n  ",
+	"Product": {
+		"Text": "cherrypy",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-01-27",
+	"Revised": {
+		"Text": "2008-01-27",
+		"Count": "01"
+	},
+	"Bug": [
+		"204829"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-python/cherrypy",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.2.1-r2",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "3.0.2-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.0.2-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    CherryPy is a Python-based, object-oriented web development framework.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    CherryPy does not sanitize the session id, provided as a cookie value,\n    in the FileSession._get_file_path() function before using it as part of\n    the file name.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could exploit this vulnerability to read and possibly\n    write arbitrary files on the web server, or to hijack valid sessions,\n    by providing a specially crafted session id. This only affects\n    applications using file-based sessions.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Disable the \"FileSession\" functionality by using \"PostgresqlSession\" or\n    \"RamSession\" session management in your CherryPy application.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All CherryPy 2.2 users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All CherryPy 3.0 users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-python/cherrypy-2.2.1-r2\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-python/cherrypy-3.0.2-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-0252",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0252"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-01-10T20:11:50Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-01-20T02:16:18Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-01-26T19:16:48Z"
+		}
+	]
 }

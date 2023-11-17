@@ -1,103 +1,103 @@
 {
-  "ID": "200710-18",
-  "Title": "util-linux: Local privilege escalation",
-  "Synopsis": "\n    The mount and umount programs might allow local attackers to gain root\n    privileges.\n  ",
-  "Product": {
-    "Text": "util-linux",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-10-18",
-  "Revised": {
-    "Text": "2007-10-18",
-    "Count": "01"
-  },
-  "Bug": [
-    "195390"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sys-apps/util-linux",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.12r-r8",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.12r-r8",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    util-linux is a suite of Linux programs including mount and umount,\n    programs used to mount and unmount filesystems.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Ludwig Nussel discovered that the check_special_mountprog() and\n    check_special_umountprog() functions call setuid() and setgid() in the\n    wrong order and do not check the return values, which can lead to\n    privileges being dropped improperly.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A local attacker may be able to exploit this vulnerability by using\n    mount helpers such as the mount.nfs program to gain root privileges and\n    run arbitrary commands.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All util-linux users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-apps/util-linux-2.12r-r8\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-5191",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5191"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-10-12T17:17:12Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-10-12T17:18:23Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-10-15T00:47:53Z"
-    }
-  ]
+	"ID": "200710-18",
+	"Title": "util-linux: Local privilege escalation",
+	"Synopsis": "\n    The mount and umount programs might allow local attackers to gain root\n    privileges.\n  ",
+	"Product": {
+		"Text": "util-linux",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-10-18",
+	"Revised": {
+		"Text": "2007-10-18",
+		"Count": "01"
+	},
+	"Bug": [
+		"195390"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-apps/util-linux",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.12r-r8",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.12r-r8",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    util-linux is a suite of Linux programs including mount and umount,\n    programs used to mount and unmount filesystems.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Ludwig Nussel discovered that the check_special_mountprog() and\n    check_special_umountprog() functions call setuid() and setgid() in the\n    wrong order and do not check the return values, which can lead to\n    privileges being dropped improperly.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A local attacker may be able to exploit this vulnerability by using\n    mount helpers such as the mount.nfs program to gain root privileges and\n    run arbitrary commands.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All util-linux users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-apps/util-linux-2.12r-r8\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-5191",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5191"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-10-12T17:17:12Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-10-12T17:18:23Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-10-15T00:47:53Z"
+		}
+	]
 }

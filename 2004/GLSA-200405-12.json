@@ -1,97 +1,97 @@
 {
-  "ID": "200405-12",
-  "Title": "CVS heap overflow vulnerability",
-  "Synopsis": "\n    CVS is subject to a heap overflow vulnerability allowing source repository\n    compromise.\n  ",
-  "Product": {
-    "Text": "cvs",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-05-20",
-  "Revised": {
-    "Text": "2004-05-20",
-    "Count": "01"
-  },
-  "Bug": [
-    "51460"
-  ],
-  "Access": "remote ",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-util/cvs",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.11.16",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.11.15",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    CVS (Concurrent Versions System) is an open-source network-transparent\n    version control system. It contains both a client utility and a server.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Stefan Esser discovered a heap overflow in the CVS server, which can be\n    triggered by sending malicious \"Entry\" lines and manipulating the flags\n    related to that Entry. This vulnerability was proven to be exploitable.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker can execute arbitrary code on the CVS server, with the\n    rights of the CVS server. By default, Gentoo uses the \"cvs\" user to run the\n    CVS server. In particular, this flaw allows a complete compromise of CVS\n    source repositories. If you're not running a server, then you are not\n    vulnerable.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time. All users are advised to upgrade\n    to the latest available version of CVS.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All users running a CVS server should upgrade to the latest stable version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n\n    # emerge -pv \">=dev-util/cvs-1.11.16\"\n    # emerge \">=dev-util/cvs-1.11.16\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "E-matters advisory 07/2004",
-        "Link": "http://security.e-matters.de/advisories/072004.html"
-      },
-      {
-        "Text": "CAN-2004-0396",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0396"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": ""
-    }
-  ]
+	"ID": "200405-12",
+	"Title": "CVS heap overflow vulnerability",
+	"Synopsis": "\n    CVS is subject to a heap overflow vulnerability allowing source repository\n    compromise.\n  ",
+	"Product": {
+		"Text": "cvs",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-05-20",
+	"Revised": {
+		"Text": "2004-05-20",
+		"Count": "01"
+	},
+	"Bug": [
+		"51460"
+	],
+	"Access": "remote ",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-util/cvs",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.11.16",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.11.15",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    CVS (Concurrent Versions System) is an open-source network-transparent\n    version control system. It contains both a client utility and a server.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Stefan Esser discovered a heap overflow in the CVS server, which can be\n    triggered by sending malicious \"Entry\" lines and manipulating the flags\n    related to that Entry. This vulnerability was proven to be exploitable.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker can execute arbitrary code on the CVS server, with the\n    rights of the CVS server. By default, Gentoo uses the \"cvs\" user to run the\n    CVS server. In particular, this flaw allows a complete compromise of CVS\n    source repositories. If you're not running a server, then you are not\n    vulnerable.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time. All users are advised to upgrade\n    to the latest available version of CVS.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All users running a CVS server should upgrade to the latest stable version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n\n    # emerge -pv \">=dev-util/cvs-1.11.16\"\n    # emerge \">=dev-util/cvs-1.11.16\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "E-matters advisory 07/2004",
+				"Link": "http://security.e-matters.de/advisories/072004.html"
+			},
+			{
+				"Text": "CAN-2004-0396",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0396"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": ""
+		}
+	]
 }

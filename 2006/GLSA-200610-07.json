@@ -1,113 +1,113 @@
 {
-  "ID": "200610-07",
-  "Title": "Python: Buffer Overflow",
-  "Synopsis": "\n    A buffer overflow in Python's \"repr()\" function can be exploited to cause a\n    Denial of Service and potentially allows the execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "python",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-10-17",
-  "Revised": {
-    "Text": "2007-02-26",
-    "Count": "03"
-  },
-  "Bug": [
-    "149065"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-lang/python",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.4.3-r4",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "2.3.5-r3",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "2.3.6",
-            "Range": "rge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.4.3-r4",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Python is an interpreted, interactive, object-oriented, cross-platform\n    programming language.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Benjamin C. Wiley Sittler discovered a buffer overflow in Python's\n    \"repr()\" function when handling UTF-32/UCS-4 encoded strings.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    If a Python application processes attacker-supplied data with the\n    \"repr()\" function, this could potentially lead to the execution of\n    arbitrary code with the privileges of the affected application or a\n    Denial of Service.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Python users should update to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/python-2.4.3-r4\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-4980",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4980"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-09-27T19:59:22Z"
-    },
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-10-13T14:44:47Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-10-16T09:21:34Z"
-    }
-  ]
+	"ID": "200610-07",
+	"Title": "Python: Buffer Overflow",
+	"Synopsis": "\n    A buffer overflow in Python's \"repr()\" function can be exploited to cause a\n    Denial of Service and potentially allows the execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "python",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-10-17",
+	"Revised": {
+		"Text": "2007-02-26",
+		"Count": "03"
+	},
+	"Bug": [
+		"149065"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-lang/python",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.4.3-r4",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "2.3.5-r3",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "2.3.6",
+						"Range": "rge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.4.3-r4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Python is an interpreted, interactive, object-oriented, cross-platform\n    programming language.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Benjamin C. Wiley Sittler discovered a buffer overflow in Python's\n    \"repr()\" function when handling UTF-32/UCS-4 encoded strings.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    If a Python application processes attacker-supplied data with the\n    \"repr()\" function, this could potentially lead to the execution of\n    arbitrary code with the privileges of the affected application or a\n    Denial of Service.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Python users should update to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/python-2.4.3-r4\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-4980",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4980"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-09-27T19:59:22Z"
+		},
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-10-13T14:44:47Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-10-16T09:21:34Z"
+		}
+	]
 }

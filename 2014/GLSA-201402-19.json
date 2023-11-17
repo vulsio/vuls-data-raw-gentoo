@@ -1,98 +1,98 @@
 {
-  "ID": "201402-19",
-  "Title": "libtar: Arbitraty code execution",
-  "Synopsis": "A buffer overflow in libtar might allow remote attackers to execute\n    arbitrary code or cause a Denial of Service condition.\n  ",
-  "Product": {
-    "Text": "libtar",
-    "Type": "ebuild"
-  },
-  "Announced": "2014-02-21",
-  "Revised": {
-    "Text": "2014-02-21",
-    "Count": "1"
-  },
-  "Bug": [
-    "487420"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-libs/libtar",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.2.20-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.2.20-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>libtar is a C library for manipulating POSIX tar files.</p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>An integer overflow error within the “th_read()” function when\n      processing long names or link extensions can be exploited to cause a\n      heap-based buffer overflow via a specially crafted archive.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted file\n      using a program linked against libtar, possibly resulting in execution of\n      arbitrary code with the privileges of the process or a Denial of Service\n      condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All libtar users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/libtar-1.2.20-r2\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2013-4397",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4397"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    pinkbyte\n  ",
-      "Tag": "requester",
-      "Timestamp": "2013-10-28T17:33:28Z"
-    },
-    {
-      "Text": "\n    pinkbyte\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2014-02-21T07:32:05Z"
-    }
-  ]
+	"ID": "201402-19",
+	"Title": "libtar: Arbitraty code execution",
+	"Synopsis": "A buffer overflow in libtar might allow remote attackers to execute\n    arbitrary code or cause a Denial of Service condition.\n  ",
+	"Product": {
+		"Text": "libtar",
+		"Type": "ebuild"
+	},
+	"Announced": "2014-02-21",
+	"Revised": {
+		"Text": "2014-02-21",
+		"Count": "1"
+	},
+	"Bug": [
+		"487420"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-libs/libtar",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.2.20-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.2.20-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>libtar is a C library for manipulating POSIX tar files.</p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>An integer overflow error within the “th_read()” function when\n      processing long names or link extensions can be exploited to cause a\n      heap-based buffer overflow via a specially crafted archive.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could entice a user to open a specially crafted file\n      using a program linked against libtar, possibly resulting in execution of\n      arbitrary code with the privileges of the process or a Denial of Service\n      condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All libtar users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/libtar-1.2.20-r2\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2013-4397",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4397"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    pinkbyte\n  ",
+			"Tag": "requester",
+			"Timestamp": "2013-10-28T17:33:28Z"
+		},
+		{
+			"Text": "\n    pinkbyte\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2014-02-21T07:32:05Z"
+		}
+	]
 }

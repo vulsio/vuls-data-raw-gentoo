@@ -1,98 +1,98 @@
 {
-  "ID": "202007-50",
-  "Title": "GLib Networking: Improper certificate validation",
-  "Synopsis": "GLib Networking was not properly verifying TLS certificates in all\n    circumstances, possibly allowing an integrity/confidentiality compromise.\n  ",
-  "Product": {
-    "Text": "glib-networking",
-    "Type": "ebuild"
-  },
-  "Announced": "2020-07-27",
-  "Revised": {
-    "Text": "2020-07-27",
-    "Count": "1"
-  },
-  "Bug": [
-    "725880"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-libs/glib-networking",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.62.4",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.62.4",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Network-related giomodules for glib</p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>GTlsClientConnection skips hostname verification of the server’s TLS\n      certificate if the application fails to specify the expected server\n      identity.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>There may be a breach of integrity or confidentiality in connections\n      made using GLib Networking.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All GLib Networking users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-libs/glib-networking-2.62.4\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2020-13645",
-        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-13645"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "sam_c",
-      "Tag": "requester",
-      "Timestamp": "2020-07-26T05:58:10Z"
-    },
-    {
-      "Text": "sam_c",
-      "Tag": "submitter",
-      "Timestamp": "2020-07-27T01:34:12Z"
-    }
-  ]
+	"ID": "202007-50",
+	"Title": "GLib Networking: Improper certificate validation",
+	"Synopsis": "GLib Networking was not properly verifying TLS certificates in all\n    circumstances, possibly allowing an integrity/confidentiality compromise.\n  ",
+	"Product": {
+		"Text": "glib-networking",
+		"Type": "ebuild"
+	},
+	"Announced": "2020-07-27",
+	"Revised": {
+		"Text": "2020-07-27",
+		"Count": "1"
+	},
+	"Bug": [
+		"725880"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-libs/glib-networking",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.62.4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.62.4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Network-related giomodules for glib</p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>GTlsClientConnection skips hostname verification of the server’s TLS\n      certificate if the application fails to specify the expected server\n      identity.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>There may be a breach of integrity or confidentiality in connections\n      made using GLib Networking.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All GLib Networking users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-libs/glib-networking-2.62.4\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2020-13645",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-13645"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "sam_c",
+			"Tag": "requester",
+			"Timestamp": "2020-07-26T05:58:10Z"
+		},
+		{
+			"Text": "sam_c",
+			"Tag": "submitter",
+			"Timestamp": "2020-07-27T01:34:12Z"
+		}
+	]
 }

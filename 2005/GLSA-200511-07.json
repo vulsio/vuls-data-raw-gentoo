@@ -1,111 +1,111 @@
 {
-  "ID": "200511-07",
-  "Title": "OpenVPN: Multiple vulnerabilities",
-  "Synopsis": "\n    The OpenVPN client is potentially vulnerable to the execution of arbitrary\n    code and the OpenVPN server is vulnerable to a Denial of Service issue.\n  ",
-  "Product": {
-    "Text": "OpenVPN",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-11-06",
-  "Revised": {
-    "Text": "2005-11-06",
-    "Count": "01"
-  },
-  "Bug": [
-    "111116"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-misc/openvpn",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.0.4",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.0.4",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    OpenVPN is a multi-platform, full-featured SSL VPN solution.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The OpenVPN client contains a format string bug in the handling of\n    the foreign_option in options.c. Furthermore, when the OpenVPN server\n    runs in TCP mode, it may dereference a NULL pointer under specific\n    error conditions.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could setup a malicious OpenVPN server and trick\n    the user into connecting to it, potentially executing arbitrary code on\n    the client's computer. A remote attacker could also exploit the NULL\n    dereference issue by sending specific packets to an OpenVPN server\n    running in TCP mode, resulting in a Denial of Service condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Do not use \"pull\" or \"client\" options in the OpenVPN client\n    configuration file, and use UDP mode for the OpenVPN server.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All OpenVPN users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/openvpn-2.0.4\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2005-3393",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3393"
-      },
-      {
-        "Text": "CVE-2005-3409",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3409"
-      },
-      {
-        "Text": "OpenVPN changelog",
-        "Link": "https://openvpn.net/changelog.html"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-11-02T12:34:18Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-11-04T13:01:51Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-11-06T14:23:34Z"
-    }
-  ]
+	"ID": "200511-07",
+	"Title": "OpenVPN: Multiple vulnerabilities",
+	"Synopsis": "\n    The OpenVPN client is potentially vulnerable to the execution of arbitrary\n    code and the OpenVPN server is vulnerable to a Denial of Service issue.\n  ",
+	"Product": {
+		"Text": "OpenVPN",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-11-06",
+	"Revised": {
+		"Text": "2005-11-06",
+		"Count": "01"
+	},
+	"Bug": [
+		"111116"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-misc/openvpn",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.0.4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.0.4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    OpenVPN is a multi-platform, full-featured SSL VPN solution.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The OpenVPN client contains a format string bug in the handling of\n    the foreign_option in options.c. Furthermore, when the OpenVPN server\n    runs in TCP mode, it may dereference a NULL pointer under specific\n    error conditions.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could setup a malicious OpenVPN server and trick\n    the user into connecting to it, potentially executing arbitrary code on\n    the client's computer. A remote attacker could also exploit the NULL\n    dereference issue by sending specific packets to an OpenVPN server\n    running in TCP mode, resulting in a Denial of Service condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Do not use \"pull\" or \"client\" options in the OpenVPN client\n    configuration file, and use UDP mode for the OpenVPN server.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All OpenVPN users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/openvpn-2.0.4\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2005-3393",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3393"
+			},
+			{
+				"Text": "CVE-2005-3409",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3409"
+			},
+			{
+				"Text": "OpenVPN changelog",
+				"Link": "https://openvpn.net/changelog.html"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-11-02T12:34:18Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-11-04T13:01:51Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-11-06T14:23:34Z"
+		}
+	]
 }

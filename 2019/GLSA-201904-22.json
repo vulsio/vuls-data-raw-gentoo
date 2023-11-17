@@ -1,93 +1,93 @@
 {
-  "ID": "201904-22",
-  "Title": "OpenDKIM: Root privilege escalation",
-  "Synopsis": "A vulnerability was discovered in Gentoo's ebuild for OpenDKIM\n    which could lead to root privilege escalation.\n  ",
-  "Product": {
-    "Text": "opendkim",
-    "Type": "ebuild"
-  },
-  "Announced": "2019-04-22",
-  "Revised": {
-    "Text": "2019-04-22",
-    "Count": "1"
-  },
-  "Bug": [
-    "629914"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "mail-filter/opendkim",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.10.3-r8",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.10.3-r8",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>A community effort to develop and maintain a C library for producing\n      DKIM-aware applications and an open source milter for providing DKIM\n      service.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>It was discovered that Gentoo’s OpenDKIM ebuild does not properly set\n      permissions or place the pid file in a safe directory.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A local attacker could escalate privileges.</p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>Users should ensure the proper permissions are set as discussed in the\n      referenced bugs.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All OpenDKIM users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=mail-filter/opendkim-2.10.3-r8\"\n    "
-    ]
-  },
-  "References": {
-    "URI": null
-  },
-  "Metadata": [
-    {
-      "Text": "BlueKnight",
-      "Tag": "requester",
-      "Timestamp": "2019-04-02T07:15:45Z"
-    },
-    {
-      "Text": "b-man",
-      "Tag": "submitter",
-      "Timestamp": "2019-04-22T23:34:15Z"
-    }
-  ]
+	"ID": "201904-22",
+	"Title": "OpenDKIM: Root privilege escalation",
+	"Synopsis": "A vulnerability was discovered in Gentoo's ebuild for OpenDKIM\n    which could lead to root privilege escalation.\n  ",
+	"Product": {
+		"Text": "opendkim",
+		"Type": "ebuild"
+	},
+	"Announced": "2019-04-22",
+	"Revised": {
+		"Text": "2019-04-22",
+		"Count": "1"
+	},
+	"Bug": [
+		"629914"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "mail-filter/opendkim",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.10.3-r8",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.10.3-r8",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>A community effort to develop and maintain a C library for producing\n      DKIM-aware applications and an open source milter for providing DKIM\n      service.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>It was discovered that Gentoo’s OpenDKIM ebuild does not properly set\n      permissions or place the pid file in a safe directory.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A local attacker could escalate privileges.</p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>Users should ensure the proper permissions are set as discussed in the\n      referenced bugs.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All OpenDKIM users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=mail-filter/opendkim-2.10.3-r8\"\n    "
+		]
+	},
+	"References": {
+		"URI": null
+	},
+	"Metadata": [
+		{
+			"Text": "BlueKnight",
+			"Tag": "requester",
+			"Timestamp": "2019-04-02T07:15:45Z"
+		},
+		{
+			"Text": "b-man",
+			"Tag": "submitter",
+			"Timestamp": "2019-04-22T23:34:15Z"
+		}
+	]
 }

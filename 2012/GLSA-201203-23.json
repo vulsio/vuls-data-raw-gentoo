@@ -1,102 +1,102 @@
 {
-  "ID": "201203-23",
-  "Title": "libzip: Multiple vulnerabilities",
-  "Synopsis": "Multiple vulnerabilities have been found in libzip, the worst of\n    which might allow execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "libzip",
-    "Type": "ebuild"
-  },
-  "Announced": "2012-03-29",
-  "Revised": {
-    "Text": "2012-03-29",
-    "Count": "1"
-  },
-  "Bug": [
-    "409117"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-libs/libzip",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.10.1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.10.1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>libzip is a library for manipulating zip archives.</p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Two vulnerabilities have been found in the \"_zip_readcdir()\" function in\n      zip_open.c of libzip:\n    </p>\n    \n    <ul>\n      <li>An incorrect loop construct, which could cause a heap-based buffer\n        overflow (CVE-2012-1162).\n      </li>\n      <li>An integer overflow, which may not restrict operations within the\n        memory buffer (CVE-2012-1163).\n      </li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted ZIP\n      file, possibly resulting in execution of arbitrary code with the\n      privileges of the process, a Denial of Service condition, or information\n      leaks.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All libzip users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/libzip-0.10.1\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2012-1162",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1162"
-      },
-      {
-        "Text": "CVE-2012-1163",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1163"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "ackle",
-      "Tag": "requester",
-      "Timestamp": "2012-03-23T11:20:26Z"
-    },
-    {
-      "Text": "ackle",
-      "Tag": "submitter",
-      "Timestamp": "2012-03-29T11:18:55Z"
-    }
-  ]
+	"ID": "201203-23",
+	"Title": "libzip: Multiple vulnerabilities",
+	"Synopsis": "Multiple vulnerabilities have been found in libzip, the worst of\n    which might allow execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "libzip",
+		"Type": "ebuild"
+	},
+	"Announced": "2012-03-29",
+	"Revised": {
+		"Text": "2012-03-29",
+		"Count": "1"
+	},
+	"Bug": [
+		"409117"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-libs/libzip",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.10.1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.10.1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>libzip is a library for manipulating zip archives.</p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Two vulnerabilities have been found in the \"_zip_readcdir()\" function in\n      zip_open.c of libzip:\n    </p>\n    \n    <ul>\n      <li>An incorrect loop construct, which could cause a heap-based buffer\n        overflow (CVE-2012-1162).\n      </li>\n      <li>An integer overflow, which may not restrict operations within the\n        memory buffer (CVE-2012-1163).\n      </li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could entice a user to open a specially crafted ZIP\n      file, possibly resulting in execution of arbitrary code with the\n      privileges of the process, a Denial of Service condition, or information\n      leaks.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All libzip users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/libzip-0.10.1\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2012-1162",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1162"
+			},
+			{
+				"Text": "CVE-2012-1163",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1163"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "ackle",
+			"Tag": "requester",
+			"Timestamp": "2012-03-23T11:20:26Z"
+		},
+		{
+			"Text": "ackle",
+			"Tag": "submitter",
+			"Timestamp": "2012-03-29T11:18:55Z"
+		}
+	]
 }

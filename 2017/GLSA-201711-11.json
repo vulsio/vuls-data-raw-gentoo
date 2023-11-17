@@ -1,98 +1,98 @@
 {
-  "ID": "201711-11",
-  "Title": "VDE: Privilege escalation",
-  "Synopsis": "A vulnerability was discovered in VDE which may allow local users\n    to gain root privileges.\n  ",
-  "Product": {
-    "Text": "vde",
-    "Type": "ebuild"
-  },
-  "Announced": "2017-11-12",
-  "Revised": {
-    "Text": "2017-11-12",
-    "Count": "1"
-  },
-  "Bug": [
-    "603382"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-misc/vde",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.3.2-r4",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.3.2-r4",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>VDE is an ethernet compliant virtual network that can be spawned over a\n      set of physical computer over the Internet.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>It was discovered that Gentoo’s default VDE installation suffered from\n      a privilege escalation vulnerability in the init script. This script\n      calls an unsafe ‘chown’ command which gives members from “qemu”\n      group root privileges.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A local attacker could escalate privileges to root.</p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All VDE users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/vde-2.3.2-r4\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "\n      CVE-2017-16638\n    ",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-16638"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "chrisadr",
-      "Tag": "requester",
-      "Timestamp": "2017-11-07T14:12:38Z"
-    },
-    {
-      "Text": "chrisadr",
-      "Tag": "submitter",
-      "Timestamp": "2017-11-12T22:28:58Z"
-    }
-  ]
+	"ID": "201711-11",
+	"Title": "VDE: Privilege escalation",
+	"Synopsis": "A vulnerability was discovered in VDE which may allow local users\n    to gain root privileges.\n  ",
+	"Product": {
+		"Text": "vde",
+		"Type": "ebuild"
+	},
+	"Announced": "2017-11-12",
+	"Revised": {
+		"Text": "2017-11-12",
+		"Count": "1"
+	},
+	"Bug": [
+		"603382"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-misc/vde",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.3.2-r4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.3.2-r4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>VDE is an ethernet compliant virtual network that can be spawned over a\n      set of physical computer over the Internet.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>It was discovered that Gentoo’s default VDE installation suffered from\n      a privilege escalation vulnerability in the init script. This script\n      calls an unsafe ‘chown’ command which gives members from “qemu”\n      group root privileges.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A local attacker could escalate privileges to root.</p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All VDE users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/vde-2.3.2-r4\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "\n      CVE-2017-16638\n    ",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-16638"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "chrisadr",
+			"Tag": "requester",
+			"Timestamp": "2017-11-07T14:12:38Z"
+		},
+		{
+			"Text": "chrisadr",
+			"Tag": "submitter",
+			"Timestamp": "2017-11-12T22:28:58Z"
+		}
+	]
 }

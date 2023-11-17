@@ -1,130 +1,130 @@
 {
-  "ID": "200611-02",
-  "Title": "Qt: Integer overflow",
-  "Synopsis": "\n    An integer overflow flaw in the Qt pixmap handling could possibly lead to a\n    Denial of Service or the remote execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "qt",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-11-06",
-  "Revised": {
-    "Text": "2009-01-09",
-    "Count": "03"
-  },
-  "Bug": [
-    "151838"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "x11-libs/qt",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.1.4-r2",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "3.3.6-r4",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "3.3.8",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "3.3.8b",
-            "Range": "rge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.1.4-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Qt is a cross-platform GUI toolkit, which is used e.g. by KDE.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    An integer overflow flaw has been found in the pixmap handling of Qt.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    By enticing a user to open a specially crafted pixmap image in an\n    application using Qt, e.g. Konqueror, a remote attacker could be able\n    to cause an application crash or the execution of arbitrary code with\n    the rights of the user running the application.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Qt 3.x users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All Qt 4.x users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-libs/qt-3.3.6-r4\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-libs/qt-4.1.4-r2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-4811",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4811"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    vorlon078\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-11-01T16:27:07Z"
-    },
-    {
-      "Text": "\n    vorlon078\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-11-02T14:09:09Z"
-    },
-    {
-      "Text": "\n    vorlon078\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-11-06T11:05:20Z"
-    }
-  ]
+	"ID": "200611-02",
+	"Title": "Qt: Integer overflow",
+	"Synopsis": "\n    An integer overflow flaw in the Qt pixmap handling could possibly lead to a\n    Denial of Service or the remote execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "qt",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-11-06",
+	"Revised": {
+		"Text": "2009-01-09",
+		"Count": "03"
+	},
+	"Bug": [
+		"151838"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "x11-libs/qt",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.1.4-r2",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "3.3.6-r4",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "3.3.8",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "3.3.8b",
+						"Range": "rge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.1.4-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Qt is a cross-platform GUI toolkit, which is used e.g. by KDE.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    An integer overflow flaw has been found in the pixmap handling of Qt.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    By enticing a user to open a specially crafted pixmap image in an\n    application using Qt, e.g. Konqueror, a remote attacker could be able\n    to cause an application crash or the execution of arbitrary code with\n    the rights of the user running the application.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Qt 3.x users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All Qt 4.x users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-libs/qt-3.3.6-r4\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-libs/qt-4.1.4-r2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-4811",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4811"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    vorlon078\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-11-01T16:27:07Z"
+		},
+		{
+			"Text": "\n    vorlon078\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-11-02T14:09:09Z"
+		},
+		{
+			"Text": "\n    vorlon078\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-11-06T11:05:20Z"
+		}
+	]
 }

@@ -1,213 +1,213 @@
 {
-  "ID": "200710-02",
-  "Title": "PHP: Multiple vulnerabilities",
-  "Synopsis": "\n    PHP contains several vulnerabilities including buffer and integer overflows\n    which could lead to the remote execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "php",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-10-07",
-  "Revised": {
-    "Text": "2007-10-07",
-    "Count": "01"
-  },
-  "Bug": [
-    "179158",
-    "180556",
-    "191034"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-lang/php",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "5.2.4_p20070914-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "5.2.4_p20070914-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    PHP is a widely-used general-purpose scripting language that is\n    especially suited for Web development and can be embedded into HTML.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Several vulnerabilities were found in PHP. Mattias Bengtsson and Philip\n    Olausson reported integer overflows in the gdImageCreate() and\n    gdImageCreateTrueColor() functions of the GD library which can cause\n    heap-based buffer overflows (CVE-2007-3996). Gerhard Wagner discovered\n    an integer overflow in the chunk_split() function that can lead to a\n    heap-based buffer overflow (CVE-2007-2872). Its incomplete fix caused\n    incorrect buffer size calculation due to precision loss, also resulting\n    in a possible heap-based buffer overflow (CVE-2007-4661 and\n    CVE-2007-4660). A buffer overflow in the sqlite_decode_binary() of the\n    SQLite extension found by Stefan Esser that was addressed in PHP 5.2.1\n    was not fixed correctly (CVE-2007-1887).\n    </p>\n    <p>\n    Stefan Esser discovered an error in the zend_alter_ini_entry() function\n    handling a memory_limit violation (CVE-2007-4659). Stefan Esser also\n    discovered a flaw when handling interruptions with userspace error\n    handlers that can be exploited to read arbitrary heap memory\n    (CVE-2007-1883). Disclosure of sensitive memory can also be triggered\n    due to insufficient boundary checks in the strspn() and strcspn()\n    functions, an issue discovered by Mattias Bengtsson and Philip Olausson\n    (CVE-2007-4657)\n    </p>\n    <p>\n    Stefan Esser reported incorrect validation in the FILTER_VALIDATE_EMAIL\n    filter of the Filter extension allowing arbitrary email header\n    injection (CVE-2007-1900). NOTE: This CVE was referenced, but not fixed\n    in GLSA 200705-19.\n    </p>\n    <p>\n    Stanislav Malyshev found an error with unknown impact in the\n    money_format() function when processing \"%i\" and \"%n\" tokens\n    (CVE-2007-4658). zatanzlatan reported a buffer overflow in the\n    php_openssl_make_REQ() function with unknown impact when providing a\n    manipulated SSL configuration file (CVE-2007-4662). Possible memory\n    corruption when trying to read EXIF data in exif_read_data() and\n    exif_thumbnail() occurred with unknown impact.\n    </p>\n    <p>\n    Several vulnerabilities that allow bypassing of open_basedir and other\n    restrictions were reported, including the glob() function\n    (CVE-2007-4663), the session_save_path(), ini_set(), and error_log()\n    functions which can allow local command execution (CVE-2007-3378),\n    involving the readfile() function (CVE-2007-3007), via the Session\n    extension (CVE-2007-4652), via the MySQL extension (CVE-2007-3997) and\n    in the dl() function which allows loading extensions outside of the\n    specified directory (CVE-2007-4825).\n    </p>\n    <p>\n    Multiple Denial of Service vulnerabilities were discovered, including a\n    long \"library\" parameter in the dl() function (CVE-2007-4887), in\n    several iconv and xmlrpc functions (CVE-2007-4840 and CVE-2007-4783),\n    in the setlocale() function (CVE-2007-4784), in the glob() and\n    fnmatch() function (CVE-2007-4782 and CVE-2007-3806), a floating point\n    exception in the wordwrap() function (CVE-2007-3998), a stack\n    exhaustion via deeply nested arrays (CVE-2007-4670), an infinite loop\n    caused by a specially crafted PNG image in the png_read_info() function\n    of libpng (CVE-2007-2756) and several issues related to array\n    conversion.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    Remote attackers might be able to exploit these issues in PHP\n    applications making use of the affected functions, potentially\n    resulting in the execution of arbitrary code, Denial of Service,\n    execution of scripted contents in the context of the affected site,\n    security bypass or information leak.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All PHP users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/php-5.2.4_p20070914-r2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-1883",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1883"
-      },
-      {
-        "Text": "CVE-2007-1887",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1887"
-      },
-      {
-        "Text": "CVE-2007-1900",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1900"
-      },
-      {
-        "Text": "CVE-2007-2756",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2756"
-      },
-      {
-        "Text": "CVE-2007-2872",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2872"
-      },
-      {
-        "Text": "CVE-2007-3007",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3007"
-      },
-      {
-        "Text": "CVE-2007-3378",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3378"
-      },
-      {
-        "Text": "CVE-2007-3806",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3806"
-      },
-      {
-        "Text": "CVE-2007-3996",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3996"
-      },
-      {
-        "Text": "CVE-2007-3997",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3997"
-      },
-      {
-        "Text": "CVE-2007-3998",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3998"
-      },
-      {
-        "Text": "CVE-2007-4652",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4652"
-      },
-      {
-        "Text": "CVE-2007-4657",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4657"
-      },
-      {
-        "Text": "CVE-2007-4658",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4658"
-      },
-      {
-        "Text": "CVE-2007-4659",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4659"
-      },
-      {
-        "Text": "CVE-2007-4660",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4660"
-      },
-      {
-        "Text": "CVE-2007-4661",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4661"
-      },
-      {
-        "Text": "CVE-2007-4662",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4662"
-      },
-      {
-        "Text": "CVE-2007-4663",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4663"
-      },
-      {
-        "Text": "CVE-2007-4670",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4670"
-      },
-      {
-        "Text": "CVE-2007-4727",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4727"
-      },
-      {
-        "Text": "CVE-2007-4782",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4782"
-      },
-      {
-        "Text": "CVE-2007-4783",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4783"
-      },
-      {
-        "Text": "CVE-2007-4784",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4784"
-      },
-      {
-        "Text": "CVE-2007-4825",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4825"
-      },
-      {
-        "Text": "CVE-2007-4840",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4840"
-      },
-      {
-        "Text": "CVE-2007-4887",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4887"
-      },
-      {
-        "Text": "GLSA 200705-19",
-        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200705-19.xml"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-08-19T18:58:47Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-08-19T18:58:59Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-09-27T00:18:38Z"
-    }
-  ]
+	"ID": "200710-02",
+	"Title": "PHP: Multiple vulnerabilities",
+	"Synopsis": "\n    PHP contains several vulnerabilities including buffer and integer overflows\n    which could lead to the remote execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "php",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-10-07",
+	"Revised": {
+		"Text": "2007-10-07",
+		"Count": "01"
+	},
+	"Bug": [
+		"179158",
+		"180556",
+		"191034"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-lang/php",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "5.2.4_p20070914-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "5.2.4_p20070914-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    PHP is a widely-used general-purpose scripting language that is\n    especially suited for Web development and can be embedded into HTML.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Several vulnerabilities were found in PHP. Mattias Bengtsson and Philip\n    Olausson reported integer overflows in the gdImageCreate() and\n    gdImageCreateTrueColor() functions of the GD library which can cause\n    heap-based buffer overflows (CVE-2007-3996). Gerhard Wagner discovered\n    an integer overflow in the chunk_split() function that can lead to a\n    heap-based buffer overflow (CVE-2007-2872). Its incomplete fix caused\n    incorrect buffer size calculation due to precision loss, also resulting\n    in a possible heap-based buffer overflow (CVE-2007-4661 and\n    CVE-2007-4660). A buffer overflow in the sqlite_decode_binary() of the\n    SQLite extension found by Stefan Esser that was addressed in PHP 5.2.1\n    was not fixed correctly (CVE-2007-1887).\n    </p>\n    <p>\n    Stefan Esser discovered an error in the zend_alter_ini_entry() function\n    handling a memory_limit violation (CVE-2007-4659). Stefan Esser also\n    discovered a flaw when handling interruptions with userspace error\n    handlers that can be exploited to read arbitrary heap memory\n    (CVE-2007-1883). Disclosure of sensitive memory can also be triggered\n    due to insufficient boundary checks in the strspn() and strcspn()\n    functions, an issue discovered by Mattias Bengtsson and Philip Olausson\n    (CVE-2007-4657)\n    </p>\n    <p>\n    Stefan Esser reported incorrect validation in the FILTER_VALIDATE_EMAIL\n    filter of the Filter extension allowing arbitrary email header\n    injection (CVE-2007-1900). NOTE: This CVE was referenced, but not fixed\n    in GLSA 200705-19.\n    </p>\n    <p>\n    Stanislav Malyshev found an error with unknown impact in the\n    money_format() function when processing \"%i\" and \"%n\" tokens\n    (CVE-2007-4658). zatanzlatan reported a buffer overflow in the\n    php_openssl_make_REQ() function with unknown impact when providing a\n    manipulated SSL configuration file (CVE-2007-4662). Possible memory\n    corruption when trying to read EXIF data in exif_read_data() and\n    exif_thumbnail() occurred with unknown impact.\n    </p>\n    <p>\n    Several vulnerabilities that allow bypassing of open_basedir and other\n    restrictions were reported, including the glob() function\n    (CVE-2007-4663), the session_save_path(), ini_set(), and error_log()\n    functions which can allow local command execution (CVE-2007-3378),\n    involving the readfile() function (CVE-2007-3007), via the Session\n    extension (CVE-2007-4652), via the MySQL extension (CVE-2007-3997) and\n    in the dl() function which allows loading extensions outside of the\n    specified directory (CVE-2007-4825).\n    </p>\n    <p>\n    Multiple Denial of Service vulnerabilities were discovered, including a\n    long \"library\" parameter in the dl() function (CVE-2007-4887), in\n    several iconv and xmlrpc functions (CVE-2007-4840 and CVE-2007-4783),\n    in the setlocale() function (CVE-2007-4784), in the glob() and\n    fnmatch() function (CVE-2007-4782 and CVE-2007-3806), a floating point\n    exception in the wordwrap() function (CVE-2007-3998), a stack\n    exhaustion via deeply nested arrays (CVE-2007-4670), an infinite loop\n    caused by a specially crafted PNG image in the png_read_info() function\n    of libpng (CVE-2007-2756) and several issues related to array\n    conversion.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    Remote attackers might be able to exploit these issues in PHP\n    applications making use of the affected functions, potentially\n    resulting in the execution of arbitrary code, Denial of Service,\n    execution of scripted contents in the context of the affected site,\n    security bypass or information leak.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All PHP users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/php-5.2.4_p20070914-r2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-1883",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1883"
+			},
+			{
+				"Text": "CVE-2007-1887",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1887"
+			},
+			{
+				"Text": "CVE-2007-1900",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1900"
+			},
+			{
+				"Text": "CVE-2007-2756",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2756"
+			},
+			{
+				"Text": "CVE-2007-2872",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2872"
+			},
+			{
+				"Text": "CVE-2007-3007",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3007"
+			},
+			{
+				"Text": "CVE-2007-3378",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3378"
+			},
+			{
+				"Text": "CVE-2007-3806",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3806"
+			},
+			{
+				"Text": "CVE-2007-3996",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3996"
+			},
+			{
+				"Text": "CVE-2007-3997",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3997"
+			},
+			{
+				"Text": "CVE-2007-3998",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3998"
+			},
+			{
+				"Text": "CVE-2007-4652",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4652"
+			},
+			{
+				"Text": "CVE-2007-4657",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4657"
+			},
+			{
+				"Text": "CVE-2007-4658",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4658"
+			},
+			{
+				"Text": "CVE-2007-4659",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4659"
+			},
+			{
+				"Text": "CVE-2007-4660",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4660"
+			},
+			{
+				"Text": "CVE-2007-4661",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4661"
+			},
+			{
+				"Text": "CVE-2007-4662",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4662"
+			},
+			{
+				"Text": "CVE-2007-4663",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4663"
+			},
+			{
+				"Text": "CVE-2007-4670",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4670"
+			},
+			{
+				"Text": "CVE-2007-4727",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4727"
+			},
+			{
+				"Text": "CVE-2007-4782",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4782"
+			},
+			{
+				"Text": "CVE-2007-4783",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4783"
+			},
+			{
+				"Text": "CVE-2007-4784",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4784"
+			},
+			{
+				"Text": "CVE-2007-4825",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4825"
+			},
+			{
+				"Text": "CVE-2007-4840",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4840"
+			},
+			{
+				"Text": "CVE-2007-4887",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4887"
+			},
+			{
+				"Text": "GLSA 200705-19",
+				"Link": "https://www.gentoo.org/security/en/glsa/glsa-200705-19.xml"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-08-19T18:58:47Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-08-19T18:58:59Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-09-27T00:18:38Z"
+		}
+	]
 }

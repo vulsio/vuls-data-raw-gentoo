@@ -1,131 +1,131 @@
 {
-  "ID": "200501-36",
-  "Title": "AWStats: Remote code execution",
-  "Synopsis": "\n    AWStats fails to validate certain input, which could lead to the remote\n    execution of arbitrary code or to the leak of information.\n  ",
-  "Product": {
-    "Text": "awstats",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-01-25",
-  "Revised": {
-    "Text": "2009-05-28",
-    "Count": "04"
-  },
-  "Bug": [
-    "77963",
-    "81775"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-misc/awstats",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "6.3-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "6.3-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    AWStats is an advanced log file analyzer and statistics generator.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    When 'awstats.pl' is run as a CGI script, it fails to validate specific\n    inputs which are used in a Perl open() function call. Furthermore, a\n    user could read log file content even when plugin rawlog was not\n    enabled.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker could supply AWStats malicious input, potentially\n    allowing the execution of arbitrary code with the rights of the web\n    server. He could also access raw log contents.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Making sure that AWStats does not run as a CGI script will avoid the\n    issue, but we recommend that users upgrade to the latest version, which\n    fixes these bugs.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All AWStats users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    Note: Users with the vhosts USE flag set should manually use\n    webapp-config to finalize the update.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-misc/awstats-6.3-r2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "AWStats ChangeLog",
-        "Link": "https://awstats.sourceforge.net/docs/awstats_changelog.txt"
-      },
-      {
-        "Text": "iDEFENSE Advisory",
-        "Link": "http://www.idefense.com/application/poi/display?id=185"
-      },
-      {
-        "Text": "CAN-2005-0116",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0116"
-      },
-      {
-        "Text": "CAN-2005-0362",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0362"
-      },
-      {
-        "Text": "CAN-2005-0363",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0363"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-01-18T13:51:20Z"
-    },
-    {
-      "Text": "\n    lewk\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-01-22T01:15:21Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-01-25T18:48:59Z"
-    }
-  ]
+	"ID": "200501-36",
+	"Title": "AWStats: Remote code execution",
+	"Synopsis": "\n    AWStats fails to validate certain input, which could lead to the remote\n    execution of arbitrary code or to the leak of information.\n  ",
+	"Product": {
+		"Text": "awstats",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-01-25",
+	"Revised": {
+		"Text": "2009-05-28",
+		"Count": "04"
+	},
+	"Bug": [
+		"77963",
+		"81775"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-misc/awstats",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "6.3-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "6.3-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    AWStats is an advanced log file analyzer and statistics generator.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    When 'awstats.pl' is run as a CGI script, it fails to validate specific\n    inputs which are used in a Perl open() function call. Furthermore, a\n    user could read log file content even when plugin rawlog was not\n    enabled.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker could supply AWStats malicious input, potentially\n    allowing the execution of arbitrary code with the rights of the web\n    server. He could also access raw log contents.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Making sure that AWStats does not run as a CGI script will avoid the\n    issue, but we recommend that users upgrade to the latest version, which\n    fixes these bugs.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All AWStats users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    Note: Users with the vhosts USE flag set should manually use\n    webapp-config to finalize the update.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-misc/awstats-6.3-r2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "AWStats ChangeLog",
+				"Link": "https://awstats.sourceforge.net/docs/awstats_changelog.txt"
+			},
+			{
+				"Text": "iDEFENSE Advisory",
+				"Link": "http://www.idefense.com/application/poi/display?id=185"
+			},
+			{
+				"Text": "CAN-2005-0116",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0116"
+			},
+			{
+				"Text": "CAN-2005-0362",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0362"
+			},
+			{
+				"Text": "CAN-2005-0363",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0363"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-01-18T13:51:20Z"
+		},
+		{
+			"Text": "\n    lewk\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-01-22T01:15:21Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-01-25T18:48:59Z"
+		}
+	]
 }

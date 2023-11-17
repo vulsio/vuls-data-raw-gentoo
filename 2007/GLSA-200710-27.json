@@ -1,115 +1,115 @@
 {
-  "ID": "200710-27",
-  "Title": "ImageMagick: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities have been discovered in ImageMagick, possibly\n    resulting in arbitrary code execution or a Denial of Service.\n  ",
-  "Product": {
-    "Text": "imagemagick",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-10-24",
-  "Revised": {
-    "Text": "2007-10-24",
-    "Count": "01"
-  },
-  "Bug": [
-    "186030"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-gfx/imagemagick",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "6.3.5.10",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "6.3.5.10",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    ImageMagick is a collection of tools and libraries for manipulating\n    various image formats.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    regenrecht reported multiple infinite loops in functions ReadDCMImage()\n    and ReadXCFImage() (CVE-2007-4985), multiple integer overflows when\n    handling certain types of images (CVE-2007-4986, CVE-2007-4988), and an\n    off-by-one error in the ReadBlobString() function (CVE-2007-4987).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted\n    image, possibly resulting in the remote execution of arbitrary code\n    with the privileges of the user running the application, or an\n    excessive CPU consumption. Note that applications relying on\n    ImageMagick to process images can also trigger the vulnerability.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All ImageMagick users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/imagemagick-6.3.5.10\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-4985",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4985"
-      },
-      {
-        "Text": "CVE-2007-4986",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4986"
-      },
-      {
-        "Text": "CVE-2007-4987",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4987"
-      },
-      {
-        "Text": "CVE-2007-4988",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4988"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-09-30T09:56:31Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-10-06T12:45:56Z"
-    },
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-10-23T14:53:02Z"
-    }
-  ]
+	"ID": "200710-27",
+	"Title": "ImageMagick: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities have been discovered in ImageMagick, possibly\n    resulting in arbitrary code execution or a Denial of Service.\n  ",
+	"Product": {
+		"Text": "imagemagick",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-10-24",
+	"Revised": {
+		"Text": "2007-10-24",
+		"Count": "01"
+	},
+	"Bug": [
+		"186030"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-gfx/imagemagick",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "6.3.5.10",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "6.3.5.10",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    ImageMagick is a collection of tools and libraries for manipulating\n    various image formats.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    regenrecht reported multiple infinite loops in functions ReadDCMImage()\n    and ReadXCFImage() (CVE-2007-4985), multiple integer overflows when\n    handling certain types of images (CVE-2007-4986, CVE-2007-4988), and an\n    off-by-one error in the ReadBlobString() function (CVE-2007-4987).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted\n    image, possibly resulting in the remote execution of arbitrary code\n    with the privileges of the user running the application, or an\n    excessive CPU consumption. Note that applications relying on\n    ImageMagick to process images can also trigger the vulnerability.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All ImageMagick users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/imagemagick-6.3.5.10\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-4985",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4985"
+			},
+			{
+				"Text": "CVE-2007-4986",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4986"
+			},
+			{
+				"Text": "CVE-2007-4987",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4987"
+			},
+			{
+				"Text": "CVE-2007-4988",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4988"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-09-30T09:56:31Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-10-06T12:45:56Z"
+		},
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-10-23T14:53:02Z"
+		}
+	]
 }

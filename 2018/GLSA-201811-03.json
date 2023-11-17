@@ -1,98 +1,98 @@
 {
-  "ID": "201811-03",
-  "Title": "OpenSSL: Denial of service",
-  "Synopsis": "A vulnerability in OpenSSL might allow remote attackers to cause a\n    Denial of Service condition.\n  ",
-  "Product": {
-    "Text": "openssl",
-    "Type": "ebuild"
-  },
-  "Announced": "2018-11-09",
-  "Revised": {
-    "Text": "2018-11-09",
-    "Count": "1"
-  },
-  "Bug": [
-    "663654"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-libs/openssl",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.0.2o-r6",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.0.2o-r6",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>OpenSSL is an Open Source toolkit implementing the Secure Sockets Layer\n      (SSL v2/v3) and Transport Layer Security (TLS v1) as well as a general\n      purpose cryptography library.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>It was discovered that OpenSSL allow malicious servers to send very\n      large primes to a client during DH(E) based TLS handshakes.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker, by sending large prime to client during DH(E) TLS\n      handshake, could possibly cause a Denial of Service condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All OpenSSL users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/openssl-1.0.2o-r6\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2018-0732",
-        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2018-0732"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "BlueKnight",
-      "Tag": "requester",
-      "Timestamp": "2018-11-08T02:56:32Z"
-    },
-    {
-      "Text": "whissi",
-      "Tag": "submitter",
-      "Timestamp": "2018-11-09T00:24:28Z"
-    }
-  ]
+	"ID": "201811-03",
+	"Title": "OpenSSL: Denial of service",
+	"Synopsis": "A vulnerability in OpenSSL might allow remote attackers to cause a\n    Denial of Service condition.\n  ",
+	"Product": {
+		"Text": "openssl",
+		"Type": "ebuild"
+	},
+	"Announced": "2018-11-09",
+	"Revised": {
+		"Text": "2018-11-09",
+		"Count": "1"
+	},
+	"Bug": [
+		"663654"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-libs/openssl",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.0.2o-r6",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.0.2o-r6",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>OpenSSL is an Open Source toolkit implementing the Secure Sockets Layer\n      (SSL v2/v3) and Transport Layer Security (TLS v1) as well as a general\n      purpose cryptography library.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>It was discovered that OpenSSL allow malicious servers to send very\n      large primes to a client during DH(E) based TLS handshakes.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker, by sending large prime to client during DH(E) TLS\n      handshake, could possibly cause a Denial of Service condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All OpenSSL users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/openssl-1.0.2o-r6\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2018-0732",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2018-0732"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "BlueKnight",
+			"Tag": "requester",
+			"Timestamp": "2018-11-08T02:56:32Z"
+		},
+		{
+			"Text": "whissi",
+			"Tag": "submitter",
+			"Timestamp": "2018-11-09T00:24:28Z"
+		}
+	]
 }

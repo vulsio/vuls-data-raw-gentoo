@@ -1,102 +1,102 @@
 {
-  "ID": "200412-03",
-  "Title": "imlib: Buffer overflows in image decoding",
-  "Synopsis": "\n    Multiple overflows have been found in the imlib library image decoding\n    routines, potentially allowing execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "imlib",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-12-06",
-  "Revised": {
-    "Text": "2004-12-06",
-    "Count": "01"
-  },
-  "Bug": [
-    "72681"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-libs/imlib",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.9.14-r3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.9.14-r2",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    imlib is an advanced replacement library for image manipulation\n    libraries like libXpm. It is called by numerous programs, including\n    gkrellm and several window managers, to help in displaying images.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Pavel Kankovsky discovered that several overflows found in the\n    libXpm library (see GLSA 200409-34) also applied to imlib. He also\n    fixed a number of other potential flaws.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to view a carefully-crafted\n    image file, which would potentially lead to execution of arbitrary code\n    with the rights of the user viewing the image. This affects any program\n    that makes use of the imlib library.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All imlib users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/imlib-1.9.14-r3\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "GLSA 200409-34",
-        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200409-34.xml"
-      },
-      {
-        "Text": "CAN-2004-1026",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1026"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-12-06T09:59:18Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-12-06T09:59:29Z"
-    }
-  ]
+	"ID": "200412-03",
+	"Title": "imlib: Buffer overflows in image decoding",
+	"Synopsis": "\n    Multiple overflows have been found in the imlib library image decoding\n    routines, potentially allowing execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "imlib",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-12-06",
+	"Revised": {
+		"Text": "2004-12-06",
+		"Count": "01"
+	},
+	"Bug": [
+		"72681"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-libs/imlib",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.9.14-r3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.9.14-r2",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    imlib is an advanced replacement library for image manipulation\n    libraries like libXpm. It is called by numerous programs, including\n    gkrellm and several window managers, to help in displaying images.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Pavel Kankovsky discovered that several overflows found in the\n    libXpm library (see GLSA 200409-34) also applied to imlib. He also\n    fixed a number of other potential flaws.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to view a carefully-crafted\n    image file, which would potentially lead to execution of arbitrary code\n    with the rights of the user viewing the image. This affects any program\n    that makes use of the imlib library.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All imlib users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/imlib-1.9.14-r3\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "GLSA 200409-34",
+				"Link": "https://www.gentoo.org/security/en/glsa/glsa-200409-34.xml"
+			},
+			{
+				"Text": "CAN-2004-1026",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1026"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-12-06T09:59:18Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-12-06T09:59:29Z"
+		}
+	]
 }

@@ -1,103 +1,103 @@
 {
-  "ID": "200901-12",
-  "Title": "noip-updater: Execution of arbitrary code",
-  "Synopsis": "\n    A buffer overflow in noip-updater can lead to arbitrary code execution.\n  ",
-  "Product": {
-    "Text": "noip-updater",
-    "Type": "ebuild"
-  },
-  "Announced": "2009-01-18",
-  "Revised": {
-    "Text": "2009-01-18",
-    "Count": "01"
-  },
-  "Bug": [
-    "248709"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-dns/noip-updater",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.1.9",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.1.9",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    noip-updater is a tool used for updating IP addresses of dynamic DNS\n    records at no-ip.com.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    xenomuta found out that the GetNextLine() function in noip2.c misses a\n    length check, leading to a stack-based buffer overflow.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker could exploit this vulnerability to execute arbitrary\n    code by sending a specially crafted HTTP message to the client. NOTE:\n    Successful exploitation requires a man in the middle attack, a DNS\n    spoofing attack or a compromise of no-ip.com servers.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All noip-updater users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dns/noip-updater-2.1.9\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-5297",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5297"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-12-29T20:15:03Z"
-    },
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-01-02T11:49:22Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2009-01-11T18:28:39Z"
-    }
-  ]
+	"ID": "200901-12",
+	"Title": "noip-updater: Execution of arbitrary code",
+	"Synopsis": "\n    A buffer overflow in noip-updater can lead to arbitrary code execution.\n  ",
+	"Product": {
+		"Text": "noip-updater",
+		"Type": "ebuild"
+	},
+	"Announced": "2009-01-18",
+	"Revised": {
+		"Text": "2009-01-18",
+		"Count": "01"
+	},
+	"Bug": [
+		"248709"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-dns/noip-updater",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.1.9",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.1.9",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    noip-updater is a tool used for updating IP addresses of dynamic DNS\n    records at no-ip.com.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    xenomuta found out that the GetNextLine() function in noip2.c misses a\n    length check, leading to a stack-based buffer overflow.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker could exploit this vulnerability to execute arbitrary\n    code by sending a specially crafted HTTP message to the client. NOTE:\n    Successful exploitation requires a man in the middle attack, a DNS\n    spoofing attack or a compromise of no-ip.com servers.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All noip-updater users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dns/noip-updater-2.1.9\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-5297",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5297"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-12-29T20:15:03Z"
+		},
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-01-02T11:49:22Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2009-01-11T18:28:39Z"
+		}
+	]
 }

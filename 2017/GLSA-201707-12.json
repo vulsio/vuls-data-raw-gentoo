@@ -1,98 +1,98 @@
 {
-  "ID": "201707-12",
-  "Title": "MAN DB: Privilege escalation",
-  "Synopsis": "A vulnerability in MAN DB allows local users to gain root\n    privileges.\n  ",
-  "Product": {
-    "Text": "man-db",
-    "Type": "ebuild"
-  },
-  "Announced": "2017-07-09",
-  "Revised": {
-    "Text": "2017-08-06",
-    "Count": "2"
-  },
-  "Bug": [
-    "602588"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sys-apps/man-db",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.7.6.1-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.7.6.1-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>MAN DB is a man replacement that utilizes BerkelyDB instead of flat\n      files.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>The /var/cache/man directory as part of the MAN DB package has group\n      permissions set to root.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>A local user who does not belong to the root group, but has the ability\n      to modify the /var/cache/man directory can escalate privileges to the\n      group root.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All MAN DB users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-apps/man-db-2.7.6.1-r2:0\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2015-1336",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-1336"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "whissi",
-      "Tag": "requester",
-      "Timestamp": "2017-01-18T16:57:30Z"
-    },
-    {
-      "Text": "whissi",
-      "Tag": "submitter",
-      "Timestamp": "2017-08-06T11:10:41Z"
-    }
-  ]
+	"ID": "201707-12",
+	"Title": "MAN DB: Privilege escalation",
+	"Synopsis": "A vulnerability in MAN DB allows local users to gain root\n    privileges.\n  ",
+	"Product": {
+		"Text": "man-db",
+		"Type": "ebuild"
+	},
+	"Announced": "2017-07-09",
+	"Revised": {
+		"Text": "2017-08-06",
+		"Count": "2"
+	},
+	"Bug": [
+		"602588"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-apps/man-db",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.7.6.1-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.7.6.1-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>MAN DB is a man replacement that utilizes BerkelyDB instead of flat\n      files.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>The /var/cache/man directory as part of the MAN DB package has group\n      permissions set to root.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>A local user who does not belong to the root group, but has the ability\n      to modify the /var/cache/man directory can escalate privileges to the\n      group root.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All MAN DB users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-apps/man-db-2.7.6.1-r2:0\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2015-1336",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-1336"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "whissi",
+			"Tag": "requester",
+			"Timestamp": "2017-01-18T16:57:30Z"
+		},
+		{
+			"Text": "whissi",
+			"Tag": "submitter",
+			"Timestamp": "2017-08-06T11:10:41Z"
+		}
+	]
 }

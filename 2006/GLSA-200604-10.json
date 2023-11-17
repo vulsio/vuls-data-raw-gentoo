@@ -1,138 +1,138 @@
 {
-  "ID": "200604-10",
-  "Title": "zgv, xzgv: Heap overflow",
-  "Synopsis": "\n    xzgv and zgv attempt to decode JPEG images within the CMYK/YCCK colour\n    space incorrectly, potentially resulting in the execution of arbitrary\n    code.\n  ",
-  "Product": {
-    "Text": "xzgv",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-04-21",
-  "Revised": {
-    "Text": "2006-06-10",
-    "Count": "02"
-  },
-  "Bug": [
-    "127008"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-gfx/xzgv",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.8-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.8-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "media-gfx/zgv",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "5.9",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "5.9",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    xzgv and zgv are picture viewing utilities with a thumbnail based file\n    selector.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Andrea Barisani of Gentoo Linux discovered xzgv and zgv allocate\n    insufficient memory when rendering images with more than 3 output\n    components, such as images using the YCCK or CMYK colour space. When\n    xzgv or zgv attempt to render the image, data from the image overruns a\n    heap allocated buffer.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker may be able to construct a malicious image that executes\n    arbitrary code with the permissions of the xzgv or zgv user when\n    attempting to render the image.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All xzgv users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All zgv users should also upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/xzgv-0.8-r2\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/zgv-5.9\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-1060",
-        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1060"
-      },
-      {
-        "Text": "homepage plus Changelog",
-        "Link": "https://www.svgalib.org/rus/zgv/"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-04-07T14:45:12Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-04-14T20:39:46Z"
-    },
-    {
-      "Text": "\n    taviso\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-04-20T16:13:24Z"
-    }
-  ]
+	"ID": "200604-10",
+	"Title": "zgv, xzgv: Heap overflow",
+	"Synopsis": "\n    xzgv and zgv attempt to decode JPEG images within the CMYK/YCCK colour\n    space incorrectly, potentially resulting in the execution of arbitrary\n    code.\n  ",
+	"Product": {
+		"Text": "xzgv",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-04-21",
+	"Revised": {
+		"Text": "2006-06-10",
+		"Count": "02"
+	},
+	"Bug": [
+		"127008"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-gfx/xzgv",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.8-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.8-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "media-gfx/zgv",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "5.9",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "5.9",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    xzgv and zgv are picture viewing utilities with a thumbnail based file\n    selector.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Andrea Barisani of Gentoo Linux discovered xzgv and zgv allocate\n    insufficient memory when rendering images with more than 3 output\n    components, such as images using the YCCK or CMYK colour space. When\n    xzgv or zgv attempt to render the image, data from the image overruns a\n    heap allocated buffer.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker may be able to construct a malicious image that executes\n    arbitrary code with the permissions of the xzgv or zgv user when\n    attempting to render the image.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All xzgv users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All zgv users should also upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/xzgv-0.8-r2\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/zgv-5.9\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-1060",
+				"Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1060"
+			},
+			{
+				"Text": "homepage plus Changelog",
+				"Link": "https://www.svgalib.org/rus/zgv/"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-04-07T14:45:12Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-04-14T20:39:46Z"
+		},
+		{
+			"Text": "\n    taviso\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-04-20T16:13:24Z"
+		}
+	]
 }

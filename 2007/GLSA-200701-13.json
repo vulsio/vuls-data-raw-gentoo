@@ -1,107 +1,107 @@
 {
-  "ID": "200701-13",
-  "Title": "Fetchmail: Denial of Service and password disclosure",
-  "Synopsis": "\n    Fetchmail has been found to have numerous vulnerabilities allowing for\n    Denial of Service and password disclosure.\n  ",
-  "Product": {
-    "Text": "fetchmail",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-01-22",
-  "Revised": {
-    "Text": "2007-01-22",
-    "Count": "01"
-  },
-  "Bug": [
-    "160463"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-mail/fetchmail",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "6.3.6",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "6.3.6",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Fetchmail is a remote mail retrieval and forwarding utility.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Neil Hoggarth has discovered that when delivering messages to a message\n    delivery agent by means of the \"mda\" option, Fetchmail passes a NULL\n    pointer to the ferror() and fflush() functions when refusing a message.\n    Isaac Wilcox has discovered numerous means of plain-text password\n    disclosure due to errors in secure connection establishment.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker could deliver a message via Fetchmail to a message delivery\n    agent configured to refuse the message, and crash the Fetchmail\n    process. SMTP and LMTP delivery modes are not affected by this\n    vulnerability. An attacker could also perform a Man-in-the-Middle\n    attack, and obtain plain-text authentication credentials of users\n    connecting to a Fetchmail process.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All fetchmail users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-mail/fetchmail-6.3.6\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-5867",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5867"
-      },
-      {
-        "Text": "CVE-2006-5974",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5974"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-01-15T23:33:39Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-01-16T17:08:58Z"
-    },
-    {
-      "Text": "\n    shellsage\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-01-18T02:05:45Z"
-    }
-  ]
+	"ID": "200701-13",
+	"Title": "Fetchmail: Denial of Service and password disclosure",
+	"Synopsis": "\n    Fetchmail has been found to have numerous vulnerabilities allowing for\n    Denial of Service and password disclosure.\n  ",
+	"Product": {
+		"Text": "fetchmail",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-01-22",
+	"Revised": {
+		"Text": "2007-01-22",
+		"Count": "01"
+	},
+	"Bug": [
+		"160463"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-mail/fetchmail",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "6.3.6",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "6.3.6",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Fetchmail is a remote mail retrieval and forwarding utility.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Neil Hoggarth has discovered that when delivering messages to a message\n    delivery agent by means of the \"mda\" option, Fetchmail passes a NULL\n    pointer to the ferror() and fflush() functions when refusing a message.\n    Isaac Wilcox has discovered numerous means of plain-text password\n    disclosure due to errors in secure connection establishment.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker could deliver a message via Fetchmail to a message delivery\n    agent configured to refuse the message, and crash the Fetchmail\n    process. SMTP and LMTP delivery modes are not affected by this\n    vulnerability. An attacker could also perform a Man-in-the-Middle\n    attack, and obtain plain-text authentication credentials of users\n    connecting to a Fetchmail process.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All fetchmail users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-mail/fetchmail-6.3.6\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-5867",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5867"
+			},
+			{
+				"Text": "CVE-2006-5974",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5974"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-01-15T23:33:39Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-01-16T17:08:58Z"
+		},
+		{
+			"Text": "\n    shellsage\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-01-18T02:05:45Z"
+		}
+	]
 }

@@ -1,102 +1,102 @@
 {
-  "ID": "202007-63",
-  "Title": "SNMP Trap Translator: Multiple vulnerabilities",
-  "Synopsis": "Multiple vulnerabilities have been found in SNMP Trap Translator,\n    the worst of which could allow attackers to execute arbitrary shell code.\n  ",
-  "Product": {
-    "Text": "snmptt",
-    "Type": "ebuild"
-  },
-  "Announced": "2020-07-31",
-  "Revised": {
-    "Text": "2020-08-16",
-    "Count": "2"
-  },
-  "Bug": [
-    "733478"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-analyzer/snmptt",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.4.1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.4.1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>SNMP Trap Translator (SNMPTT) is an SNMP trap handler written in Perl.</p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>It was found that SNMP Trap Translator does not drop privileges as\n      configured and does not properly escape shell commands in certain\n      functions.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker, by sending a malicious crafted SNMP trap, could\n      possibly execute arbitrary shell code with the privileges of the process\n      or cause a Denial of Service condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All SNMP Trap Translator users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-analyzer/snmptt-1.4.1\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "\n      SNMPTT 1.4.1 ChangeLog\n    ",
-        "Link": "https://sourceforge.net/p/snmptt/git/ci/snmptt_1-4-1/tree/snmptt/ChangeLog"
-      },
-      {
-        "Text": "CVE-2020-24361",
-        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-24361"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "sam_c",
-      "Tag": "requester",
-      "Timestamp": "2020-07-26T15:27:28Z"
-    },
-    {
-      "Text": "sam_c",
-      "Tag": "submitter",
-      "Timestamp": "2020-08-16T05:36:38Z"
-    }
-  ]
+	"ID": "202007-63",
+	"Title": "SNMP Trap Translator: Multiple vulnerabilities",
+	"Synopsis": "Multiple vulnerabilities have been found in SNMP Trap Translator,\n    the worst of which could allow attackers to execute arbitrary shell code.\n  ",
+	"Product": {
+		"Text": "snmptt",
+		"Type": "ebuild"
+	},
+	"Announced": "2020-07-31",
+	"Revised": {
+		"Text": "2020-08-16",
+		"Count": "2"
+	},
+	"Bug": [
+		"733478"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-analyzer/snmptt",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.4.1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.4.1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>SNMP Trap Translator (SNMPTT) is an SNMP trap handler written in Perl.</p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>It was found that SNMP Trap Translator does not drop privileges as\n      configured and does not properly escape shell commands in certain\n      functions.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker, by sending a malicious crafted SNMP trap, could\n      possibly execute arbitrary shell code with the privileges of the process\n      or cause a Denial of Service condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All SNMP Trap Translator users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-analyzer/snmptt-1.4.1\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "\n      SNMPTT 1.4.1 ChangeLog\n    ",
+				"Link": "https://sourceforge.net/p/snmptt/git/ci/snmptt_1-4-1/tree/snmptt/ChangeLog"
+			},
+			{
+				"Text": "CVE-2020-24361",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-24361"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "sam_c",
+			"Tag": "requester",
+			"Timestamp": "2020-07-26T15:27:28Z"
+		},
+		{
+			"Text": "sam_c",
+			"Tag": "submitter",
+			"Timestamp": "2020-08-16T05:36:38Z"
+		}
+	]
 }

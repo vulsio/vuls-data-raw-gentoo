@@ -1,102 +1,102 @@
 {
-  "ID": "200906-03",
-  "Title": "phpMyAdmin: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple errors in phpMyAdmin might allow the remote execution of arbitrary\n    code or a Cross-Site Scripting attack.\n  ",
-  "Product": {
-    "Text": "phpmyadmin",
-    "Type": "ebuild"
-  },
-  "Announced": "2009-06-29",
-  "Revised": {
-    "Text": "2009-06-29",
-    "Count": "01"
-  },
-  "Bug": [
-    "263711"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-db/phpmyadmin",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.11.9.5",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.11.9.5",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    phpMyAdmin is a web-based management tool for MySQL databases.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Multiple vulnerabilities have been reported in phpMyAdmin:\n    </p>\n    <ul>\n    <li>Greg Ose discovered that the setup script does not sanitize input\n    properly, leading to the injection of arbitrary PHP code into the\n    configuration file (CVE-2009-1151).</li>\n    <li>Manuel Lopez Gallego and\n    Santiago Rodriguez Collazo reported that data from cookies used in the\n    \"Export\" page is not properly sanitized (CVE-2009-1150).</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote unauthorized attacker could exploit the first vulnerability to\n    execute arbitrary code with the privileges of the user running\n    phpMyAdmin and conduct Cross-Site Scripting attacks using the second\n    vulnerability.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Removing the \"scripts/setup.php\" file protects you from CVE-2009-1151.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All phpMyAdmin users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-db/phpmyadmin-2.11.9.5\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2009-1150",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1150"
-      },
-      {
-        "Text": "CVE-2009-1151",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1151"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-06-27T20:32:40Z"
-    },
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2009-06-29T22:35:56Z"
-    }
-  ]
+	"ID": "200906-03",
+	"Title": "phpMyAdmin: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple errors in phpMyAdmin might allow the remote execution of arbitrary\n    code or a Cross-Site Scripting attack.\n  ",
+	"Product": {
+		"Text": "phpmyadmin",
+		"Type": "ebuild"
+	},
+	"Announced": "2009-06-29",
+	"Revised": {
+		"Text": "2009-06-29",
+		"Count": "01"
+	},
+	"Bug": [
+		"263711"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-db/phpmyadmin",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.11.9.5",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.11.9.5",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    phpMyAdmin is a web-based management tool for MySQL databases.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Multiple vulnerabilities have been reported in phpMyAdmin:\n    </p>\n    <ul>\n    <li>Greg Ose discovered that the setup script does not sanitize input\n    properly, leading to the injection of arbitrary PHP code into the\n    configuration file (CVE-2009-1151).</li>\n    <li>Manuel Lopez Gallego and\n    Santiago Rodriguez Collazo reported that data from cookies used in the\n    \"Export\" page is not properly sanitized (CVE-2009-1150).</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote unauthorized attacker could exploit the first vulnerability to\n    execute arbitrary code with the privileges of the user running\n    phpMyAdmin and conduct Cross-Site Scripting attacks using the second\n    vulnerability.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Removing the \"scripts/setup.php\" file protects you from CVE-2009-1151.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All phpMyAdmin users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-db/phpmyadmin-2.11.9.5\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2009-1150",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1150"
+			},
+			{
+				"Text": "CVE-2009-1151",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1151"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-06-27T20:32:40Z"
+		},
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2009-06-29T22:35:56Z"
+		}
+	]
 }

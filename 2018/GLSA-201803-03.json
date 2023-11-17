@@ -1,98 +1,98 @@
 {
-  "ID": "201803-03",
-  "Title": "Go: User-assisted execution of arbitrary code",
-  "Synopsis": "A vulnerability in Go might allow remote attackers to execute\n    arbitrary commands during source code build.\n    \n  ",
-  "Product": {
-    "Text": "go",
-    "Type": "ebuild"
-  },
-  "Announced": "2018-03-07",
-  "Revised": {
-    "Text": "2018-03-07",
-    "Count": "1"
-  },
-  "Bug": [
-    "647250"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-lang/go",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.9.4",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.9.4",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Go is an open source programming language that makes it easy to build\n      simple, reliable, and efficient software.\n    </p>\n    \n  "
-  },
-  "Description": {
-    "Text": "\n    <p>A command injection flaw was discovered in the source code build phase\n      because of the “go get” command, which does not block -fplugin= and\n      -plugin arguments.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>A remote attacker could entice a user to process a repository containing\n      maliciously-crafted build instructions using “go get”, resulting in\n      the execution of arbitrary code with the privileges of the process.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All Go users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-lang/go-1.9.4\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2018-6574",
-        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2018-6574"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "chrisadr",
-      "Tag": "requester",
-      "Timestamp": "2018-03-06T19:46:03Z"
-    },
-    {
-      "Text": "chrisadr",
-      "Tag": "submitter",
-      "Timestamp": "2018-03-07T19:03:39Z"
-    }
-  ]
+	"ID": "201803-03",
+	"Title": "Go: User-assisted execution of arbitrary code",
+	"Synopsis": "A vulnerability in Go might allow remote attackers to execute\n    arbitrary commands during source code build.\n    \n  ",
+	"Product": {
+		"Text": "go",
+		"Type": "ebuild"
+	},
+	"Announced": "2018-03-07",
+	"Revised": {
+		"Text": "2018-03-07",
+		"Count": "1"
+	},
+	"Bug": [
+		"647250"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-lang/go",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.9.4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.9.4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Go is an open source programming language that makes it easy to build\n      simple, reliable, and efficient software.\n    </p>\n    \n  "
+	},
+	"Description": {
+		"Text": "\n    <p>A command injection flaw was discovered in the source code build phase\n      because of the “go get” command, which does not block -fplugin= and\n      -plugin arguments.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>A remote attacker could entice a user to process a repository containing\n      maliciously-crafted build instructions using “go get”, resulting in\n      the execution of arbitrary code with the privileges of the process.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All Go users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-lang/go-1.9.4\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2018-6574",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2018-6574"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "chrisadr",
+			"Tag": "requester",
+			"Timestamp": "2018-03-06T19:46:03Z"
+		},
+		{
+			"Text": "chrisadr",
+			"Tag": "submitter",
+			"Timestamp": "2018-03-07T19:03:39Z"
+		}
+	]
 }

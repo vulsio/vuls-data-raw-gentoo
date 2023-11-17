@@ -1,98 +1,98 @@
 {
-  "ID": "201603-04",
-  "Title": "FUSE: incorrect filtering of environment variables leading to\n    privilege escalation\n  ",
-  "Synopsis": "The fusermount binary in FUSE does not properly clear the\n    environment before invoking mount or umount as root that allows a local\n    user to overwrite arbitrary files.\n  ",
-  "Product": {
-    "Text": "fuse",
-    "Type": "ebuild"
-  },
-  "Announced": "2016-03-09",
-  "Revised": {
-    "Text": "2016-03-09",
-    "Count": "1"
-  },
-  "Bug": [
-    "550152"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sys-fs/fuse",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.9.4",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.9.4",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>FUSE provides an interface for filesystems implemented in userspace.</p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>The fusermount binary calls setuid(geteuid()) to reset the RUID when it\n      invokes /bin/mount so that it can use privileged mount options that are\n      normally restricted if RUID != EUID.  FUSE does not properly clear\n      environment variables before invoking mount or umount as root allowing\n      this to be passed to operations using elevated privileges such as\n      LIBMOUNT_MTAB that is used by the mount commands debugging feature.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>The FUSE vulnerability allows a local, unprivileged user to overwrite\n      arbitrary files on the system.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known work around at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All FUSE users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-fs/fuse-2.9.4\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "\n      CVE-2015-3202\n    ",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3202"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    BlueKnight\n  ",
-      "Tag": "requester",
-      "Timestamp": "2015-09-09T05:09:39Z"
-    },
-    {
-      "Text": "b-man",
-      "Tag": "submitter",
-      "Timestamp": "2016-03-09T17:59:40Z"
-    }
-  ]
+	"ID": "201603-04",
+	"Title": "FUSE: incorrect filtering of environment variables leading to\n    privilege escalation\n  ",
+	"Synopsis": "The fusermount binary in FUSE does not properly clear the\n    environment before invoking mount or umount as root that allows a local\n    user to overwrite arbitrary files.\n  ",
+	"Product": {
+		"Text": "fuse",
+		"Type": "ebuild"
+	},
+	"Announced": "2016-03-09",
+	"Revised": {
+		"Text": "2016-03-09",
+		"Count": "1"
+	},
+	"Bug": [
+		"550152"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-fs/fuse",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.9.4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.9.4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>FUSE provides an interface for filesystems implemented in userspace.</p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>The fusermount binary calls setuid(geteuid()) to reset the RUID when it\n      invokes /bin/mount so that it can use privileged mount options that are\n      normally restricted if RUID != EUID.  FUSE does not properly clear\n      environment variables before invoking mount or umount as root allowing\n      this to be passed to operations using elevated privileges such as\n      LIBMOUNT_MTAB that is used by the mount commands debugging feature.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>The FUSE vulnerability allows a local, unprivileged user to overwrite\n      arbitrary files on the system.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known work around at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All FUSE users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-fs/fuse-2.9.4\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "\n      CVE-2015-3202\n    ",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-3202"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    BlueKnight\n  ",
+			"Tag": "requester",
+			"Timestamp": "2015-09-09T05:09:39Z"
+		},
+		{
+			"Text": "b-man",
+			"Tag": "submitter",
+			"Timestamp": "2016-03-09T17:59:40Z"
+		}
+	]
 }

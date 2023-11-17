@@ -1,175 +1,175 @@
 {
-  "ID": "200602-03",
-  "Title": "Apache: Multiple vulnerabilities",
-  "Synopsis": "\n    Apache can be exploited for cross-site scripting attacks and is vulnerable\n    to a Denial of Service attack.\n  ",
-  "Product": {
-    "Text": "Apache",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-02-06",
-  "Revised": {
-    "Text": "2007-12-30",
-    "Count": "03"
-  },
-  "Bug": [
-    "115324",
-    "118875"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-servers/apache",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.0.55-r1",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "2.0.54-r16",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "1.3.34-r2",
-            "Range": "eq",
-            "Slot": ""
-          },
-          {
-            "Text": "1.3.34-r11",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "1.3.37",
-            "Range": "rge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.0.55-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    The Apache HTTP server is one of the most popular web servers on the\n    Internet. mod_imap provides support for server-side image maps; mod_ssl\n    provides secure HTTP connections.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Apache's mod_imap fails to properly sanitize the \"Referer\" directive of\n    imagemaps in some cases, leaving the HTTP Referer header unescaped. A\n    flaw in mod_ssl can lead to a NULL pointer dereference if the site uses\n    a custom \"Error 400\" document. These vulnerabilities were reported by\n    Marc Cox and Hartmut Keil, respectively.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could exploit mod_imap to inject arbitrary HTML or\n    JavaScript into a user's browser to gather sensitive information.\n    Attackers could also cause a Denial of Service on hosts using the SSL\n    module (Apache 2.0.x only).\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Apache users should upgrade to the latest version, depending on\n    whether they still use the old configuration style\n    (/etc/apache/conf/*.conf) or the new one (/etc/apache2/httpd.conf).\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    2.0.x users, new style config:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    2.0.x users, old style config:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    1.x users, new style config:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    1.x users, old style config:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-servers/apache-2.0.55-r1\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \"=www-servers/apache-2.0.54-r16\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \"=www-servers/apache-1.3.34-r11\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \"=www-servers/apache-1.3.34-r2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2005-3352",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3352"
-      },
-      {
-        "Text": "CVE-2005-3357",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3357"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-01-23T08:56:54Z"
-    },
-    {
-      "Text": "\n    frilled\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-01-27T06:31:39Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-02-06T06:26:14Z"
-    }
-  ]
+	"ID": "200602-03",
+	"Title": "Apache: Multiple vulnerabilities",
+	"Synopsis": "\n    Apache can be exploited for cross-site scripting attacks and is vulnerable\n    to a Denial of Service attack.\n  ",
+	"Product": {
+		"Text": "Apache",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-02-06",
+	"Revised": {
+		"Text": "2007-12-30",
+		"Count": "03"
+	},
+	"Bug": [
+		"115324",
+		"118875"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-servers/apache",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.0.55-r1",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "2.0.54-r16",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "1.3.34-r2",
+						"Range": "eq",
+						"Slot": ""
+					},
+					{
+						"Text": "1.3.34-r11",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "1.3.37",
+						"Range": "rge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.0.55-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    The Apache HTTP server is one of the most popular web servers on the\n    Internet. mod_imap provides support for server-side image maps; mod_ssl\n    provides secure HTTP connections.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Apache's mod_imap fails to properly sanitize the \"Referer\" directive of\n    imagemaps in some cases, leaving the HTTP Referer header unescaped. A\n    flaw in mod_ssl can lead to a NULL pointer dereference if the site uses\n    a custom \"Error 400\" document. These vulnerabilities were reported by\n    Marc Cox and Hartmut Keil, respectively.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could exploit mod_imap to inject arbitrary HTML or\n    JavaScript into a user's browser to gather sensitive information.\n    Attackers could also cause a Denial of Service on hosts using the SSL\n    module (Apache 2.0.x only).\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Apache users should upgrade to the latest version, depending on\n    whether they still use the old configuration style\n    (/etc/apache/conf/*.conf) or the new one (/etc/apache2/httpd.conf).\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    2.0.x users, new style config:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    2.0.x users, old style config:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    1.x users, new style config:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    1.x users, old style config:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-servers/apache-2.0.55-r1\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \"=www-servers/apache-2.0.54-r16\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \"=www-servers/apache-1.3.34-r11\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \"=www-servers/apache-1.3.34-r2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2005-3352",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3352"
+			},
+			{
+				"Text": "CVE-2005-3357",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3357"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-01-23T08:56:54Z"
+		},
+		{
+			"Text": "\n    frilled\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-01-27T06:31:39Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-02-06T06:26:14Z"
+		}
+	]
 }

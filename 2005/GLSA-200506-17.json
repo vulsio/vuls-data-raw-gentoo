@@ -1,148 +1,148 @@
 {
-  "ID": "200506-17",
-  "Title": "SpamAssassin 3, Vipul's Razor: Denial of Service vulnerability",
-  "Synopsis": "\n    SpamAssassin and Vipul's Razor are vulnerable to a Denial of Service attack\n    when handling certain malformed messages.\n  ",
-  "Product": {
-    "Text": "SpamAssassin, Vipul's Razor",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-06-21",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "03"
-  },
-  "Bug": [
-    "94722",
-    "95492",
-    "96776"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "mail-filter/spamassassin",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.0.4",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "3.0.1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.0.4",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "mail-filter/razor",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.74",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.74",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    SpamAssassin is an extensible email filter which is used to identify\n    junk email. Vipul's Razor is a client for a distributed, collaborative\n    spam detection and filtering network.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    SpamAssassin and Vipul's Razor contain a Denial of Service\n    vulnerability when handling special misformatted long message headers.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    By sending a specially crafted message an attacker could cause a Denial\n    of Service attack against the SpamAssassin/Vipul's Razor server.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All SpamAssassin users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All Vipul's Razor users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-filter/spamassassin-3.0.4\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-filter/razor-2.74\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2005-1266",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1266"
-      },
-      {
-        "Text": "CVE-2005-2024",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2024"
-      },
-      {
-        "Text": "SpamAssassin Announcement",
-        "Link": "https://mail-archives.apache.org/mod_mbox/spamassassin-announce/200506.mbox/%3c17072.35054.586017.822288@proton.pathname.com%3e"
-      },
-      {
-        "Text": "Vipul's Razor Announcement",
-        "Link": "https://sourceforge.net/mailarchive/forum.php?thread_id=7520323&forum_id=4259"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-06-08T05:05:05Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-06-20T04:49:42Z"
-    }
-  ]
+	"ID": "200506-17",
+	"Title": "SpamAssassin 3, Vipul's Razor: Denial of Service vulnerability",
+	"Synopsis": "\n    SpamAssassin and Vipul's Razor are vulnerable to a Denial of Service attack\n    when handling certain malformed messages.\n  ",
+	"Product": {
+		"Text": "SpamAssassin, Vipul's Razor",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-06-21",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "03"
+	},
+	"Bug": [
+		"94722",
+		"95492",
+		"96776"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "mail-filter/spamassassin",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.0.4",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "3.0.1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.0.4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "mail-filter/razor",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.74",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.74",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    SpamAssassin is an extensible email filter which is used to identify\n    junk email. Vipul's Razor is a client for a distributed, collaborative\n    spam detection and filtering network.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    SpamAssassin and Vipul's Razor contain a Denial of Service\n    vulnerability when handling special misformatted long message headers.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    By sending a specially crafted message an attacker could cause a Denial\n    of Service attack against the SpamAssassin/Vipul's Razor server.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All SpamAssassin users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All Vipul's Razor users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-filter/spamassassin-3.0.4\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-filter/razor-2.74\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2005-1266",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1266"
+			},
+			{
+				"Text": "CVE-2005-2024",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2024"
+			},
+			{
+				"Text": "SpamAssassin Announcement",
+				"Link": "https://mail-archives.apache.org/mod_mbox/spamassassin-announce/200506.mbox/%3c17072.35054.586017.822288@proton.pathname.com%3e"
+			},
+			{
+				"Text": "Vipul's Razor Announcement",
+				"Link": "https://sourceforge.net/mailarchive/forum.php?thread_id=7520323&forum_id=4259"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-06-08T05:05:05Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-06-20T04:49:42Z"
+		}
+	]
 }

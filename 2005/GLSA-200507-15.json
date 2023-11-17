@@ -1,103 +1,103 @@
 {
-  "ID": "200507-15",
-  "Title": "PHP: Script injection through XML-RPC",
-  "Synopsis": "\n    PHP includes an XML-RPC implementation which allows remote attackers to\n    execute arbitrary PHP script commands.\n  ",
-  "Product": {
-    "Text": "PHP",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-07-15",
-  "Revised": {
-    "Text": "2005-07-15",
-    "Count": "01"
-  },
-  "Bug": [
-    "97655"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-php/php",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.4.0",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.4.0",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    PHP is a general-purpose scripting language widely used to develop\n    web-based applications. It can run inside a web server using the\n    mod_php module or the CGI version of PHP, or can run stand-alone in a\n    CLI.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    James Bercegay has discovered that the XML-RPC implementation in\n    PHP fails to sanitize input passed in an XML document, which is used in\n    an \"eval()\" statement.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker could exploit the XML-RPC vulnerability to\n    execute arbitrary PHP script code by sending specially crafted XML data\n    to applications making use of this XML-RPC implementation.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All PHP users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-php/php-4.4.0\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2005-1921",
-        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1921"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-07-12T20:30:47Z"
-    },
-    {
-      "Text": "\n    formula7\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-07-12T22:51:12Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-07-15T13:35:35Z"
-    }
-  ]
+	"ID": "200507-15",
+	"Title": "PHP: Script injection through XML-RPC",
+	"Synopsis": "\n    PHP includes an XML-RPC implementation which allows remote attackers to\n    execute arbitrary PHP script commands.\n  ",
+	"Product": {
+		"Text": "PHP",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-07-15",
+	"Revised": {
+		"Text": "2005-07-15",
+		"Count": "01"
+	},
+	"Bug": [
+		"97655"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-php/php",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.4.0",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.4.0",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    PHP is a general-purpose scripting language widely used to develop\n    web-based applications. It can run inside a web server using the\n    mod_php module or the CGI version of PHP, or can run stand-alone in a\n    CLI.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    James Bercegay has discovered that the XML-RPC implementation in\n    PHP fails to sanitize input passed in an XML document, which is used in\n    an \"eval()\" statement.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker could exploit the XML-RPC vulnerability to\n    execute arbitrary PHP script code by sending specially crafted XML data\n    to applications making use of this XML-RPC implementation.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All PHP users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-php/php-4.4.0\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2005-1921",
+				"Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1921"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-07-12T20:30:47Z"
+		},
+		{
+			"Text": "\n    formula7\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-07-12T22:51:12Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-07-15T13:35:35Z"
+		}
+	]
 }

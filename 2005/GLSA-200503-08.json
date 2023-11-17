@@ -1,140 +1,140 @@
 {
-  "ID": "200503-08",
-  "Title": "OpenMotif, LessTif: New libXpm buffer overflows",
-  "Synopsis": "\n    A new vulnerability has been discovered in libXpm, which is included in\n    OpenMotif and LessTif, that can potentially lead to remote code execution.\n  ",
-  "Product": {
-    "Text": "openmotif",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-03-04",
-  "Revised": {
-    "Text": "2005-03-04",
-    "Count": "01"
-  },
-  "Bug": [
-    "83655",
-    "83656"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "x11-libs/openmotif",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.2.3-r3",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "2.1.30-r9",
-            "Range": "rge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.2.3-r3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "x11-libs/lesstif",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.94.0-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.94.0-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    LessTif is a clone of OSF/Motif, which is a standard user\n    interface toolkit available on Unix and Linux. OpenMotif also provides\n    a free version of the Motif toolkit for open source applications.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Chris Gilbert discovered potentially exploitable buffer overflow\n    cases in libXpm that weren't fixed in previous libXpm security\n    advisories.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A carefully-crafted XPM file could crash applications making use\n    of the OpenMotif or LessTif toolkits, potentially allowing the\n    execution of arbitrary code with the privileges of the user running the\n    application.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All OpenMotif users should upgrade to an unaffected version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All LessTif users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose x11-libs/openmotif",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-libs/lesstif-0.94.0-r2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2005-0605",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0605"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-03-02T21:43:36Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-03-03T09:21:40Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-03-03T21:47:17Z"
-    }
-  ]
+	"ID": "200503-08",
+	"Title": "OpenMotif, LessTif: New libXpm buffer overflows",
+	"Synopsis": "\n    A new vulnerability has been discovered in libXpm, which is included in\n    OpenMotif and LessTif, that can potentially lead to remote code execution.\n  ",
+	"Product": {
+		"Text": "openmotif",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-03-04",
+	"Revised": {
+		"Text": "2005-03-04",
+		"Count": "01"
+	},
+	"Bug": [
+		"83655",
+		"83656"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "x11-libs/openmotif",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.2.3-r3",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "2.1.30-r9",
+						"Range": "rge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.2.3-r3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "x11-libs/lesstif",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.94.0-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.94.0-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    LessTif is a clone of OSF/Motif, which is a standard user\n    interface toolkit available on Unix and Linux. OpenMotif also provides\n    a free version of the Motif toolkit for open source applications.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Chris Gilbert discovered potentially exploitable buffer overflow\n    cases in libXpm that weren't fixed in previous libXpm security\n    advisories.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A carefully-crafted XPM file could crash applications making use\n    of the OpenMotif or LessTif toolkits, potentially allowing the\n    execution of arbitrary code with the privileges of the user running the\n    application.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All OpenMotif users should upgrade to an unaffected version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All LessTif users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose x11-libs/openmotif",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-libs/lesstif-0.94.0-r2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2005-0605",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0605"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-03-02T21:43:36Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-03-03T09:21:40Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-03-03T21:47:17Z"
+		}
+	]
 }

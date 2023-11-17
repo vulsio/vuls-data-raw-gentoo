@@ -1,216 +1,216 @@
 {
-  "ID": "200411-38",
-  "Title": "Sun and Blackdown Java: Applet privilege escalation",
-  "Synopsis": "\n    The Java plug-in security in Sun and Blackdown Java environments can be\n    bypassed to access arbitrary packages, allowing untrusted Java applets to\n    perform unrestricted actions on the host system.\n  ",
-  "Product": {
-    "Text": "Java",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-11-29",
-  "Revised": {
-    "Text": "2006-05-31",
-    "Count": "02"
-  },
-  "Bug": [
-    "72172",
-    "72221"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-java/sun-jdk",
-        "Auto": "yes",
-        "Arch": "x86 amd64",
-        "Unaffected": [
-          {
-            "Text": "1.4.2.06",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.4.2.06",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "dev-java/sun-jre-bin",
-        "Auto": "yes",
-        "Arch": "x86 amd64",
-        "Unaffected": [
-          {
-            "Text": "1.4.2.06",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.4.2.06",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "dev-java/blackdown-jdk",
-        "Auto": "yes",
-        "Arch": "x86 amd64",
-        "Unaffected": [
-          {
-            "Text": "1.4.2.01",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.4.2.01",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "dev-java/blackdown-jre",
-        "Auto": "yes",
-        "Arch": "x86 amd64",
-        "Unaffected": [
-          {
-            "Text": "1.4.2.01",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.4.2.01",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Sun and Blackdown both provide implementations of Java Development Kits\n    (JDK) and Java Runtime Environments (JRE). All these implementations\n    provide a Java plug-in that can be used to execute Java applets in a\n    restricted environment for web browsers.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    All Java plug-ins are subject to a vulnerability allowing unrestricted\n    Java package access.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could embed a malicious Java applet in a web page and\n    entice a victim to view it. This applet can then bypass security\n    restrictions and execute any command or access any file with the rights\n    of the user running the web browser.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    As a workaround you could disable Java applets on your web browser.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Sun JDK users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All Sun JRE users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All Blackdown JDK users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All Blackdown JRE users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    Note: You should unmerge all vulnerable versions to be fully protected.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-java/sun-jdk-1.4.2.06\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-java/sun-jre-bin-1.4.2.06\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-java/blackdown-jdk-1.4.2.01\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-java/blackdown-jre-1.4.2.01\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "iDEFENSE Security Advisory 11.22.04",
-        "Link": "http://www.idefense.com/application/poi/display?id=158&type=vulnerabilities"
-      },
-      {
-        "Text": "CAN-2004-1029",
-        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1029"
-      },
-      {
-        "Text": "Blackdown Security Advisory 2004-01",
-        "Link": "http://www.blackdown.org/java-linux/java2-status/security/Blackdown-SA-2004-01.txt"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2004-11-25T09:46:01Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-11-26T21:58:36Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-11-29T21:15:47Z"
-    }
-  ]
+	"ID": "200411-38",
+	"Title": "Sun and Blackdown Java: Applet privilege escalation",
+	"Synopsis": "\n    The Java plug-in security in Sun and Blackdown Java environments can be\n    bypassed to access arbitrary packages, allowing untrusted Java applets to\n    perform unrestricted actions on the host system.\n  ",
+	"Product": {
+		"Text": "Java",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-11-29",
+	"Revised": {
+		"Text": "2006-05-31",
+		"Count": "02"
+	},
+	"Bug": [
+		"72172",
+		"72221"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-java/sun-jdk",
+				"Auto": "yes",
+				"Arch": "x86 amd64",
+				"Unaffected": [
+					{
+						"Text": "1.4.2.06",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.4.2.06",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "dev-java/sun-jre-bin",
+				"Auto": "yes",
+				"Arch": "x86 amd64",
+				"Unaffected": [
+					{
+						"Text": "1.4.2.06",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.4.2.06",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "dev-java/blackdown-jdk",
+				"Auto": "yes",
+				"Arch": "x86 amd64",
+				"Unaffected": [
+					{
+						"Text": "1.4.2.01",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.4.2.01",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "dev-java/blackdown-jre",
+				"Auto": "yes",
+				"Arch": "x86 amd64",
+				"Unaffected": [
+					{
+						"Text": "1.4.2.01",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.4.2.01",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Sun and Blackdown both provide implementations of Java Development Kits\n    (JDK) and Java Runtime Environments (JRE). All these implementations\n    provide a Java plug-in that can be used to execute Java applets in a\n    restricted environment for web browsers.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    All Java plug-ins are subject to a vulnerability allowing unrestricted\n    Java package access.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could embed a malicious Java applet in a web page and\n    entice a victim to view it. This applet can then bypass security\n    restrictions and execute any command or access any file with the rights\n    of the user running the web browser.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    As a workaround you could disable Java applets on your web browser.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Sun JDK users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All Sun JRE users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All Blackdown JDK users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All Blackdown JRE users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    Note: You should unmerge all vulnerable versions to be fully protected.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-java/sun-jdk-1.4.2.06\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-java/sun-jre-bin-1.4.2.06\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-java/blackdown-jdk-1.4.2.01\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-java/blackdown-jre-1.4.2.01\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "iDEFENSE Security Advisory 11.22.04",
+				"Link": "http://www.idefense.com/application/poi/display?id=158&type=vulnerabilities"
+			},
+			{
+				"Text": "CAN-2004-1029",
+				"Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1029"
+			},
+			{
+				"Text": "Blackdown Security Advisory 2004-01",
+				"Link": "http://www.blackdown.org/java-linux/java2-status/security/Blackdown-SA-2004-01.txt"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2004-11-25T09:46:01Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-11-26T21:58:36Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-11-29T21:15:47Z"
+		}
+	]
 }

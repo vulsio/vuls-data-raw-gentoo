@@ -1,103 +1,103 @@
 {
-  "ID": "200908-05",
-  "Title": "Subversion: Remote execution of arbitrary code",
-  "Synopsis": "\n    Multiple integer overflows, leading to heap-based buffer overflows in the\n    Subversion client and server might allow remote attackers to execute\n    arbitrary code.\n  ",
-  "Product": {
-    "Text": "subversion",
-    "Type": "ebuild"
-  },
-  "Announced": "2009-08-18",
-  "Revised": {
-    "Text": "2009-08-18",
-    "Count": "01"
-  },
-  "Bug": [
-    "280494"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-util/subversion",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.6.4",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.6.4",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Subversion is a versioning system designed to be a replacement for CVS.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Matt Lewis of Google reported multiple integer overflows in the\n    libsvn_delta library, possibly leading to heap-based buffer overflows.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker with commit access could exploit this vulnerability\n    by sending a specially crafted commit to a Subversion server, or a\n    remote attacker could entice a user to check out or update a repository\n    from a malicious Subversion server, possibly resulting in the execution\n    of arbitrary code with the privileges of the user running the server or\n    client.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Subversion users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-util/subversion-1.6.4\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2009-2411",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2411"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "requester",
-      "Timestamp": "2009-08-09T20:48:04Z"
-    },
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-08-18T19:08:11Z"
-    },
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2009-08-18T21:24:46Z"
-    }
-  ]
+	"ID": "200908-05",
+	"Title": "Subversion: Remote execution of arbitrary code",
+	"Synopsis": "\n    Multiple integer overflows, leading to heap-based buffer overflows in the\n    Subversion client and server might allow remote attackers to execute\n    arbitrary code.\n  ",
+	"Product": {
+		"Text": "subversion",
+		"Type": "ebuild"
+	},
+	"Announced": "2009-08-18",
+	"Revised": {
+		"Text": "2009-08-18",
+		"Count": "01"
+	},
+	"Bug": [
+		"280494"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-util/subversion",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.6.4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.6.4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Subversion is a versioning system designed to be a replacement for CVS.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Matt Lewis of Google reported multiple integer overflows in the\n    libsvn_delta library, possibly leading to heap-based buffer overflows.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker with commit access could exploit this vulnerability\n    by sending a specially crafted commit to a Subversion server, or a\n    remote attacker could entice a user to check out or update a repository\n    from a malicious Subversion server, possibly resulting in the execution\n    of arbitrary code with the privileges of the user running the server or\n    client.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Subversion users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-util/subversion-1.6.4\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2009-2411",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2411"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "requester",
+			"Timestamp": "2009-08-09T20:48:04Z"
+		},
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-08-18T19:08:11Z"
+		},
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2009-08-18T21:24:46Z"
+		}
+	]
 }

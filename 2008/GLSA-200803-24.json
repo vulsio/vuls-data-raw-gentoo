@@ -1,140 +1,140 @@
 {
-  "ID": "200803-24",
-  "Title": "PCRE: Buffer overflow",
-  "Synopsis": "\n    A buffer overflow vulnerability has been discovered in PCRE, allowing for\n    the execution of arbitrary code and Denial of Service.\n  ",
-  "Product": {
-    "Text": "libpcre glib",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-03-17",
-  "Revised": {
-    "Text": "2008-03-17",
-    "Count": "02"
-  },
-  "Bug": [
-    "209067",
-    "209293"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-libs/libpcre",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "7.6-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "7.6-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "dev-libs/glib",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.14.6",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "2.14.0",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.14.6",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    PCRE is a Perl-compatible regular expression library. GLib includes a\n    copy of PCRE.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    PCRE contains a buffer overflow vulnerability when processing a\n    character class containing a very large number of characters with\n    codepoints greater than 255.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker could exploit this vulnerability by sending a\n    specially crafted regular expression to an application making use of\n    the PCRE library, which could possibly lead to the execution of\n    arbitrary code or a Denial of Service.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All PCRE users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All GLib users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/libpcre-7.6-r1\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/glib-2.14.6\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-0674",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0674"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-02-26T20:45:26Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-03-01T06:12:22Z"
-    },
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-03-05T14:06:55Z"
-    }
-  ]
+	"ID": "200803-24",
+	"Title": "PCRE: Buffer overflow",
+	"Synopsis": "\n    A buffer overflow vulnerability has been discovered in PCRE, allowing for\n    the execution of arbitrary code and Denial of Service.\n  ",
+	"Product": {
+		"Text": "libpcre glib",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-03-17",
+	"Revised": {
+		"Text": "2008-03-17",
+		"Count": "02"
+	},
+	"Bug": [
+		"209067",
+		"209293"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-libs/libpcre",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "7.6-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "7.6-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "dev-libs/glib",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.14.6",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "2.14.0",
+						"Range": "lt",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.14.6",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    PCRE is a Perl-compatible regular expression library. GLib includes a\n    copy of PCRE.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    PCRE contains a buffer overflow vulnerability when processing a\n    character class containing a very large number of characters with\n    codepoints greater than 255.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker could exploit this vulnerability by sending a\n    specially crafted regular expression to an application making use of\n    the PCRE library, which could possibly lead to the execution of\n    arbitrary code or a Denial of Service.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All PCRE users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All GLib users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/libpcre-7.6-r1\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/glib-2.14.6\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-0674",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0674"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-02-26T20:45:26Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-03-01T06:12:22Z"
+		},
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-03-05T14:06:55Z"
+		}
+	]
 }

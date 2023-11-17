@@ -1,103 +1,103 @@
 {
-  "ID": "200610-09",
-  "Title": "libmusicbrainz: Multiple buffer overflows",
-  "Synopsis": "\n    Multiple buffer overflows have been found in libmusicbrainz, which could\n    lead to a Denial of Service or possibly the execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "libmusicbrainz",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-10-22",
-  "Revised": {
-    "Text": "2006-10-22",
-    "Count": "01"
-  },
-  "Bug": [
-    "144089"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-libs/musicbrainz",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.1.4",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.1.4",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    libmusicbrainz is a client library used to access MusicBrainz music\n    meta data.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Luigi Auriemma reported a possible buffer overflow in the\n    MBHttp::Download function of lib/http.cpp as well as several possible\n    buffer overflows in lib/rdfparse.c.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could be able to execute arbitrary code or cause\n    Denial of Service by making use of an overly long \"Location\" header in\n    an HTTP redirect message from a malicious server or a long URL in\n    malicious RDF feeds.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All libmusicbrainz users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/musicbrainz-2.1.4\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-4197",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4197"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-10-18T12:31:28Z"
-    },
-    {
-      "Text": "\n    vorlon078\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-10-19T20:02:01Z"
-    },
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-10-20T14:53:09Z"
-    }
-  ]
+	"ID": "200610-09",
+	"Title": "libmusicbrainz: Multiple buffer overflows",
+	"Synopsis": "\n    Multiple buffer overflows have been found in libmusicbrainz, which could\n    lead to a Denial of Service or possibly the execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "libmusicbrainz",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-10-22",
+	"Revised": {
+		"Text": "2006-10-22",
+		"Count": "01"
+	},
+	"Bug": [
+		"144089"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-libs/musicbrainz",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.1.4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.1.4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    libmusicbrainz is a client library used to access MusicBrainz music\n    meta data.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Luigi Auriemma reported a possible buffer overflow in the\n    MBHttp::Download function of lib/http.cpp as well as several possible\n    buffer overflows in lib/rdfparse.c.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could be able to execute arbitrary code or cause\n    Denial of Service by making use of an overly long \"Location\" header in\n    an HTTP redirect message from a malicious server or a long URL in\n    malicious RDF feeds.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All libmusicbrainz users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/musicbrainz-2.1.4\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-4197",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4197"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-10-18T12:31:28Z"
+		},
+		{
+			"Text": "\n    vorlon078\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-10-19T20:02:01Z"
+		},
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-10-20T14:53:09Z"
+		}
+	]
 }

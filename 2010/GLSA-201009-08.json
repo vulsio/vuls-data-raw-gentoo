@@ -1,98 +1,98 @@
 {
-  "ID": "201009-08",
-  "Title": "python-updater: Untrusted search path",
-  "Synopsis": "\n    An untrusted search path vulnerability in python-updater might result in\n    the execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "python-updater",
-    "Type": "ebuild"
-  },
-  "Announced": "2010-09-21",
-  "Revised": {
-    "Text": "2010-09-21",
-    "Count": "01"
-  },
-  "Bug": [
-    "288361"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-admin/python-updater",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.7-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.7-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    python-updater is a script used to remerge python packages when\n    changing Python version.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Robert Buchholz of the Gentoo Security Team reported that\n    python-updater includes the current working directory and\n    subdirectories in the Python module search path (sys.path) before\n    calling \"import\".\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A local attacker could entice the root user to run \"python-updater\"\n    from a directory containing a specially crafted Python module,\n    resulting in the execution of arbitrary code with root privileges.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Do not run \"python-updater\" from untrusted working directories.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All python-updater users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-admin/python-updater-0.7-r1\""
-    ]
-  },
-  "References": {
-    "URI": null
-  },
-  "Metadata": [
-    {
-      "Text": "\n    craig\n  ",
-      "Tag": "requester",
-      "Timestamp": "2010-03-18T00:20:22Z"
-    },
-    {
-      "Text": "\n    craig\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2010-04-09T16:48:48Z"
-    },
-    {
-      "Text": "\n    craig\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2010-09-03T20:36:47Z"
-    }
-  ]
+	"ID": "201009-08",
+	"Title": "python-updater: Untrusted search path",
+	"Synopsis": "\n    An untrusted search path vulnerability in python-updater might result in\n    the execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "python-updater",
+		"Type": "ebuild"
+	},
+	"Announced": "2010-09-21",
+	"Revised": {
+		"Text": "2010-09-21",
+		"Count": "01"
+	},
+	"Bug": [
+		"288361"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-admin/python-updater",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.7-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.7-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    python-updater is a script used to remerge python packages when\n    changing Python version.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Robert Buchholz of the Gentoo Security Team reported that\n    python-updater includes the current working directory and\n    subdirectories in the Python module search path (sys.path) before\n    calling \"import\".\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A local attacker could entice the root user to run \"python-updater\"\n    from a directory containing a specially crafted Python module,\n    resulting in the execution of arbitrary code with root privileges.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Do not run \"python-updater\" from untrusted working directories.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All python-updater users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-admin/python-updater-0.7-r1\""
+		]
+	},
+	"References": {
+		"URI": null
+	},
+	"Metadata": [
+		{
+			"Text": "\n    craig\n  ",
+			"Tag": "requester",
+			"Timestamp": "2010-03-18T00:20:22Z"
+		},
+		{
+			"Text": "\n    craig\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2010-04-09T16:48:48Z"
+		},
+		{
+			"Text": "\n    craig\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2010-09-03T20:36:47Z"
+		}
+	]
 }

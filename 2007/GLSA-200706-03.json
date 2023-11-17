@@ -1,103 +1,103 @@
 {
-  "ID": "200706-03",
-  "Title": "ELinks: User-assisted execution of arbitrary code",
-  "Synopsis": "\n    A vulnerability has been discovered in ELinks allowing for the\n    user-assisted execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "elinks",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-06-06",
-  "Revised": {
-    "Text": "2007-06-06",
-    "Count": "01"
-  },
-  "Bug": [
-    "177512"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-client/elinks",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.11.2-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.11.2-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    ELinks is a text-mode web browser.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Arnaud Giersch discovered that the \"add_filename_to_string()\" function\n    in file intl/gettext/loadmsgcat.c uses an untrusted relative path,\n    allowing for a format string attack with a malicious .po file.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local attacker could entice a user to run ELinks in a specially\n    crafted directory environment containing a malicious \".po\" file,\n    possibly resulting in the execution of arbitrary code with the\n    privileges of the user running ELinks.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All ELinks users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/elinks-0.11.2-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-2027",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2027"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-06-03T06:18:54Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-06-03T06:19:11Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-06-03T17:56:00Z"
-    }
-  ]
+	"ID": "200706-03",
+	"Title": "ELinks: User-assisted execution of arbitrary code",
+	"Synopsis": "\n    A vulnerability has been discovered in ELinks allowing for the\n    user-assisted execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "elinks",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-06-06",
+	"Revised": {
+		"Text": "2007-06-06",
+		"Count": "01"
+	},
+	"Bug": [
+		"177512"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-client/elinks",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.11.2-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.11.2-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    ELinks is a text-mode web browser.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Arnaud Giersch discovered that the \"add_filename_to_string()\" function\n    in file intl/gettext/loadmsgcat.c uses an untrusted relative path,\n    allowing for a format string attack with a malicious .po file.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local attacker could entice a user to run ELinks in a specially\n    crafted directory environment containing a malicious \".po\" file,\n    possibly resulting in the execution of arbitrary code with the\n    privileges of the user running ELinks.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All ELinks users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/elinks-0.11.2-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-2027",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2027"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-06-03T06:18:54Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-06-03T06:19:11Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-06-03T17:56:00Z"
+		}
+	]
 }

@@ -1,98 +1,98 @@
 {
-  "ID": "200801-14",
-  "Title": "Blam: User-assisted execution of arbitrary code",
-  "Synopsis": "\n    Blam doesn't properly handle environment variables, potentially allowing a\n    local attacker to execute arbitrary code.\n  ",
-  "Product": {
-    "Text": "blam",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-01-27",
-  "Revised": {
-    "Text": "2008-01-27",
-    "Count": "01"
-  },
-  "Bug": [
-    "199841"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-news/blam",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.8.4",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.8.4",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Blam is an RSS and Atom feed reader for GNOME written in C#.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The \"/usr/bin/blam\" script sets the \"LD_LIBRARY_PATH\" environment\n    variable incorrectly, which might result in the current working\n    directory (.) being included when searching for dynamically linked\n    libraries of the Mono Runtime application.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local attacker could entice a user to run Blam in a directory\n    containing a specially crafted library file which could result in the\n    execution of arbitrary code with the privileges of the user running\n    Blam.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Do not run Blam from an untrusted working directory.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Blam users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-news/blam-1.8.4\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2005-4790",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-4790"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-01-20T00:54:46Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-01-20T00:55:57Z"
-    }
-  ]
+	"ID": "200801-14",
+	"Title": "Blam: User-assisted execution of arbitrary code",
+	"Synopsis": "\n    Blam doesn't properly handle environment variables, potentially allowing a\n    local attacker to execute arbitrary code.\n  ",
+	"Product": {
+		"Text": "blam",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-01-27",
+	"Revised": {
+		"Text": "2008-01-27",
+		"Count": "01"
+	},
+	"Bug": [
+		"199841"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-news/blam",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.8.4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.8.4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Blam is an RSS and Atom feed reader for GNOME written in C#.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The \"/usr/bin/blam\" script sets the \"LD_LIBRARY_PATH\" environment\n    variable incorrectly, which might result in the current working\n    directory (.) being included when searching for dynamically linked\n    libraries of the Mono Runtime application.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local attacker could entice a user to run Blam in a directory\n    containing a specially crafted library file which could result in the\n    execution of arbitrary code with the privileges of the user running\n    Blam.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Do not run Blam from an untrusted working directory.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Blam users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-news/blam-1.8.4\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2005-4790",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-4790"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-01-20T00:54:46Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-01-20T00:55:57Z"
+		}
+	]
 }

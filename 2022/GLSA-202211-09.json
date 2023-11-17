@@ -1,98 +1,98 @@
 {
-  "ID": "202211-09",
-  "Title": "xterm: Arbitrary Code Execution",
-  "Synopsis": "A vulnerability has been found in xterm which could allow for arbitrary code execution.",
-  "Product": {
-    "Text": "xterm",
-    "Type": "ebuild"
-  },
-  "Announced": "2022-11-22",
-  "Revised": {
-    "Text": "2022-11-22",
-    "Count": "1"
-  },
-  "Bug": [
-    "880747"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "x11-terms/xterm",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "375",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "375",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n        <p>xterm is a terminal emulator for the X Window system.</p>\n    "
-  },
-  "Description": {
-    "Text": "\n        <p>xterm does not correctly handle control characters related to OSC 50 font ops sequence handling.</p>\n    "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n        <p>The vulnerability allows text written to the terminal to write text to the terminal&#39;s command line. If the terminal&#39;s shell is zsh running with vi line editing mode, text written to the terminal can also trigger the execution of arbitrary commands via writing ^G to the terminal.</p>\n    "
-  },
-  "Workaround": {
-    "Text": "\n        <p>As a workaround, users can disable xterm&#39;s usage of OSC 50 sequences by adding the following to the XResources configuration:\r\n\r\nXTerm*allowFontOps: false</p>\n    "
-  },
-  "Resolution": {
-    "Text": "\n        \n        \n        \n    ",
-    "P": [
-      {
-        "Text": "All xterm users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=x11-terms/xterm-375\"\n        "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2022-45063",
-        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-45063"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "ajak",
-      "Tag": "requester",
-      "Timestamp": "2022-11-22T03:53:08.351235Z"
-    },
-    {
-      "Text": "ajak",
-      "Tag": "submitter",
-      "Timestamp": "2022-11-22T03:53:08.356875Z"
-    }
-  ]
+	"ID": "202211-09",
+	"Title": "xterm: Arbitrary Code Execution",
+	"Synopsis": "A vulnerability has been found in xterm which could allow for arbitrary code execution.",
+	"Product": {
+		"Text": "xterm",
+		"Type": "ebuild"
+	},
+	"Announced": "2022-11-22",
+	"Revised": {
+		"Text": "2022-11-22",
+		"Count": "1"
+	},
+	"Bug": [
+		"880747"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "x11-terms/xterm",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "375",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "375",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>xterm is a terminal emulator for the X Window system.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>xterm does not correctly handle control characters related to OSC 50 font ops sequence handling.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>The vulnerability allows text written to the terminal to write text to the terminal&#39;s command line. If the terminal&#39;s shell is zsh running with vi line editing mode, text written to the terminal can also trigger the execution of arbitrary commands via writing ^G to the terminal.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>As a workaround, users can disable xterm&#39;s usage of OSC 50 sequences by adding the following to the XResources configuration:\r\n\r\nXTerm*allowFontOps: false</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All xterm users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=x11-terms/xterm-375\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2022-45063",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-45063"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "ajak",
+			"Tag": "requester",
+			"Timestamp": "2022-11-22T03:53:08.351235Z"
+		},
+		{
+			"Text": "ajak",
+			"Tag": "submitter",
+			"Timestamp": "2022-11-22T03:53:08.356875Z"
+		}
+	]
 }

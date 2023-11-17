@@ -1,98 +1,98 @@
 {
-  "ID": "201707-08",
-  "Title": "feh: Arbitrary remote code execution",
-  "Synopsis": "A vulnerability in feh might allow remote attackers to execute\n    arbitrary code.\n  ",
-  "Product": {
-    "Text": "feh",
-    "Type": "ebuild"
-  },
-  "Announced": "2017-07-08",
-  "Revised": {
-    "Text": "2017-08-06",
-    "Count": "2"
-  },
-  "Bug": [
-    "616470"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-gfx/feh",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.18.3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.18.3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>feh is an X11 image viewer aimed mostly at console users.</p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Tobias Stoeckmann discovered it was possible to trigger an\n      out-of-boundary heap write with the image viewer feh while receiving an\n      IPC message.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker, pretending to be the E17 window manager, could\n      possibly trigger an out-of-boundary heap write in feh while receiving an\n      IPC message.  This could result in execution of arbitrary code with the\n      privileges of the process or a Denial of Service condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All feh users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-gfx/feh-2.18.3\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2017-7875",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-7875"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "BlueKnight",
-      "Tag": "requester",
-      "Timestamp": "2017-05-05T00:04:28Z"
-    },
-    {
-      "Text": "whissi",
-      "Tag": "submitter",
-      "Timestamp": "2017-08-06T11:09:29Z"
-    }
-  ]
+	"ID": "201707-08",
+	"Title": "feh: Arbitrary remote code execution",
+	"Synopsis": "A vulnerability in feh might allow remote attackers to execute\n    arbitrary code.\n  ",
+	"Product": {
+		"Text": "feh",
+		"Type": "ebuild"
+	},
+	"Announced": "2017-07-08",
+	"Revised": {
+		"Text": "2017-08-06",
+		"Count": "2"
+	},
+	"Bug": [
+		"616470"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-gfx/feh",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.18.3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.18.3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>feh is an X11 image viewer aimed mostly at console users.</p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Tobias Stoeckmann discovered it was possible to trigger an\n      out-of-boundary heap write with the image viewer feh while receiving an\n      IPC message.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker, pretending to be the E17 window manager, could\n      possibly trigger an out-of-boundary heap write in feh while receiving an\n      IPC message.  This could result in execution of arbitrary code with the\n      privileges of the process or a Denial of Service condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All feh users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-gfx/feh-2.18.3\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2017-7875",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-7875"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "BlueKnight",
+			"Tag": "requester",
+			"Timestamp": "2017-05-05T00:04:28Z"
+		},
+		{
+			"Text": "whissi",
+			"Tag": "submitter",
+			"Timestamp": "2017-08-06T11:09:29Z"
+		}
+	]
 }

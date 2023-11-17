@@ -1,98 +1,98 @@
 {
-  "ID": "201711-15",
-  "Title": "PHPUnit: Remote code execution",
-  "Synopsis": "A vulnerability was discovered in PHPUnit which may allow an\n    unauthenticated remote attacker to execute arbitrary PHP code.\n  ",
-  "Product": {
-    "Text": "PHPUnit",
-    "Type": "ebuild"
-  },
-  "Announced": "2017-11-19",
-  "Revised": {
-    "Text": "2017-11-19",
-    "Count": "1"
-  },
-  "Bug": [
-    "635356"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-php/phpunit",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "5.7.15-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "5.7.15-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>PHPUnit is a programmer-oriented testing framework for PHP. It is an\n      instance of the xUnit architecture for unit testing frameworks.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>When PHPUnit is installed in a production environment via composer and\n      these modules are in a web accessible directory, the eval-stdin.php file\n      in PHPUnit contains vulnerable statements that trigger the vulnerability.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could possibly execute arbitrary PHP code or cause a\n      Denial of Service condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There are several ways to fix or mitigate this vulnerability:</p>\n    \n    <p>Remove PHPUnit from the production environment.</p>\n    \n    <p>Update PHPUnit.</p>\n    \n    <p>Manually apply the patch.</p>\n    \n    <p>Disable direct access to the composer packages by placing .htaccess file\n      to /vendor folder.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All PHPUnit users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-php/phpunit-5.7.15-r1\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "\n      CVE-2017-9841\n    ",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-9841"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "jmbailey",
-      "Tag": "requester",
-      "Timestamp": "2017-11-14T01:26:48Z"
-    },
-    {
-      "Text": "jmbailey",
-      "Tag": "submitter",
-      "Timestamp": "2017-11-19T20:43:04Z"
-    }
-  ]
+	"ID": "201711-15",
+	"Title": "PHPUnit: Remote code execution",
+	"Synopsis": "A vulnerability was discovered in PHPUnit which may allow an\n    unauthenticated remote attacker to execute arbitrary PHP code.\n  ",
+	"Product": {
+		"Text": "PHPUnit",
+		"Type": "ebuild"
+	},
+	"Announced": "2017-11-19",
+	"Revised": {
+		"Text": "2017-11-19",
+		"Count": "1"
+	},
+	"Bug": [
+		"635356"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-php/phpunit",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "5.7.15-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "5.7.15-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>PHPUnit is a programmer-oriented testing framework for PHP. It is an\n      instance of the xUnit architecture for unit testing frameworks.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>When PHPUnit is installed in a production environment via composer and\n      these modules are in a web accessible directory, the eval-stdin.php file\n      in PHPUnit contains vulnerable statements that trigger the vulnerability.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could possibly execute arbitrary PHP code or cause a\n      Denial of Service condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There are several ways to fix or mitigate this vulnerability:</p>\n    \n    <p>Remove PHPUnit from the production environment.</p>\n    \n    <p>Update PHPUnit.</p>\n    \n    <p>Manually apply the patch.</p>\n    \n    <p>Disable direct access to the composer packages by placing .htaccess file\n      to /vendor folder.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All PHPUnit users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-php/phpunit-5.7.15-r1\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "\n      CVE-2017-9841\n    ",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2017-9841"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "jmbailey",
+			"Tag": "requester",
+			"Timestamp": "2017-11-14T01:26:48Z"
+		},
+		{
+			"Text": "jmbailey",
+			"Tag": "submitter",
+			"Timestamp": "2017-11-19T20:43:04Z"
+		}
+	]
 }

@@ -1,98 +1,98 @@
 {
-  "ID": "201311-11",
-  "Title": "CTorrent: User-assisted arbitrary code execution",
-  "Synopsis": "A stack-based buffer overflow in CTorrent might allow a remote\n    attacker to execute arbitrary code or cause a Denial of Service condition.\n  ",
-  "Product": {
-    "Text": "ctorrent",
-    "Type": "ebuild"
-  },
-  "Announced": "2013-11-20",
-  "Revised": {
-    "Text": "2013-11-22",
-    "Count": "2"
-  },
-  "Bug": [
-    "266953"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-p2p/ctorrent",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.3.2-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.3.2-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>CTorrent is a BitTorrent client implemented in C++ to be lightweight and\n      quick.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>CTorrent contains a stack-based buffer overflow in the\n      btFiles::BuildFromMI function in trunk/btfiles.cpp. \n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted\n      torrent file using CTorrent, possibly resulting in execution of arbitrary\n      code with the privileges of the process or a Denial of Service condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All CTorrent users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-p2p/ctorrent-3.3.2-r1\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "\n      CVE-2009-1759\n    ",
-        "Link": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2009-1759"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    underling\n  ",
-      "Tag": "requester",
-      "Timestamp": "2011-10-07T23:37:38Z"
-    },
-    {
-      "Text": "Zlogene",
-      "Tag": "submitter",
-      "Timestamp": "2013-11-22T10:00:47Z"
-    }
-  ]
+	"ID": "201311-11",
+	"Title": "CTorrent: User-assisted arbitrary code execution",
+	"Synopsis": "A stack-based buffer overflow in CTorrent might allow a remote\n    attacker to execute arbitrary code or cause a Denial of Service condition.\n  ",
+	"Product": {
+		"Text": "ctorrent",
+		"Type": "ebuild"
+	},
+	"Announced": "2013-11-20",
+	"Revised": {
+		"Text": "2013-11-22",
+		"Count": "2"
+	},
+	"Bug": [
+		"266953"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-p2p/ctorrent",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.3.2-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.3.2-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>CTorrent is a BitTorrent client implemented in C++ to be lightweight and\n      quick.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>CTorrent contains a stack-based buffer overflow in the\n      btFiles::BuildFromMI function in trunk/btfiles.cpp. \n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could entice a user to open a specially crafted\n      torrent file using CTorrent, possibly resulting in execution of arbitrary\n      code with the privileges of the process or a Denial of Service condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All CTorrent users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-p2p/ctorrent-3.3.2-r1\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "\n      CVE-2009-1759\n    ",
+				"Link": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2009-1759"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    underling\n  ",
+			"Tag": "requester",
+			"Timestamp": "2011-10-07T23:37:38Z"
+		},
+		{
+			"Text": "Zlogene",
+			"Tag": "submitter",
+			"Timestamp": "2013-11-22T10:00:47Z"
+		}
+	]
 }

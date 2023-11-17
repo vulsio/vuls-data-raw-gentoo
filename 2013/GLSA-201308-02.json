@@ -1,98 +1,98 @@
 {
-  "ID": "201308-02",
-  "Title": "D-Bus: Denial of service",
-  "Synopsis": "A vulnerability has been found in D-Bus which allows a local user\n    to cause a Denial of Service.\n  ",
-  "Product": {
-    "Text": "d-bus",
-    "Type": "ebuild"
-  },
-  "Announced": "2013-08-22",
-  "Revised": {
-    "Text": "2013-08-22",
-    "Count": "1"
-  },
-  "Bug": [
-    "473190"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sys-apps/dbus",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.6.12",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.6.12",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>D-Bus is a message bus system which processes can use to talk to each\n      other.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>D-Bus’ _dbus_printf_string_upper_bound() function crashes if it\n      returns exactly 1024 bytes.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A local attacker could provide specially-crafted input to an application\n      using D-Bus which would cause _dbus_printf_string_upper_bound() to return\n      1024 bytes and crash, causing a Denial of Service condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All D-Bus users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-apps/dbus-1.6.12\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "\n      CVE-2013-2168\n    ",
-        "Link": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-2168"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    creffett\n  ",
-      "Tag": "requester",
-      "Timestamp": "2013-07-12T01:19:11Z"
-    },
-    {
-      "Text": "\n    creffett\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2013-08-22T15:34:55Z"
-    }
-  ]
+	"ID": "201308-02",
+	"Title": "D-Bus: Denial of service",
+	"Synopsis": "A vulnerability has been found in D-Bus which allows a local user\n    to cause a Denial of Service.\n  ",
+	"Product": {
+		"Text": "d-bus",
+		"Type": "ebuild"
+	},
+	"Announced": "2013-08-22",
+	"Revised": {
+		"Text": "2013-08-22",
+		"Count": "1"
+	},
+	"Bug": [
+		"473190"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-apps/dbus",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.6.12",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.6.12",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>D-Bus is a message bus system which processes can use to talk to each\n      other.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>D-Bus’ _dbus_printf_string_upper_bound() function crashes if it\n      returns exactly 1024 bytes.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A local attacker could provide specially-crafted input to an application\n      using D-Bus which would cause _dbus_printf_string_upper_bound() to return\n      1024 bytes and crash, causing a Denial of Service condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All D-Bus users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-apps/dbus-1.6.12\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "\n      CVE-2013-2168\n    ",
+				"Link": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2013-2168"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    creffett\n  ",
+			"Tag": "requester",
+			"Timestamp": "2013-07-12T01:19:11Z"
+		},
+		{
+			"Text": "\n    creffett\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2013-08-22T15:34:55Z"
+		}
+	]
 }

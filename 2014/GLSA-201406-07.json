@@ -1,98 +1,98 @@
 {
-  "ID": "201406-07",
-  "Title": "Echoping: Buffer Overflow Vulnerabilities",
-  "Synopsis": "A buffer overflow in Echoping might allow remote attackers to cause\n    a Denial of Service condition.\n  ",
-  "Product": {
-    "Text": "echoping",
-    "Type": "ebuild"
-  },
-  "Announced": "2014-06-06",
-  "Revised": {
-    "Text": "2014-06-06",
-    "Count": "1"
-  },
-  "Bug": [
-    "349569"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-analyzer/echoping",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "6.0.2_p434",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "6.0.2_p434",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Echoping is a small program to test performances of a\n      remote host by sending it TCP packets.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>A boundary error exists within the “TLS_readline()” function, which\n      can be exploited to overflow a global buffer by sending an overly long\n      encrypted HTTP reply to Echoping. Also, a similar boundary error exists\n      within the “SSL_readline()” function, which can be exploited in the\n      same manner.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could send a specially crafted HTTP reply, possibly\n      resulting in a Denial of Service condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All Echoping users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=net-analyzer/echoping-6.0.2_p434\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2010-5111",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-5111"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    pinkbyte\n  ",
-      "Tag": "requester",
-      "Timestamp": "2013-10-17T11:46:53Z"
-    },
-    {
-      "Text": "\n    pinkbyte\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2014-06-06T12:23:36Z"
-    }
-  ]
+	"ID": "201406-07",
+	"Title": "Echoping: Buffer Overflow Vulnerabilities",
+	"Synopsis": "A buffer overflow in Echoping might allow remote attackers to cause\n    a Denial of Service condition.\n  ",
+	"Product": {
+		"Text": "echoping",
+		"Type": "ebuild"
+	},
+	"Announced": "2014-06-06",
+	"Revised": {
+		"Text": "2014-06-06",
+		"Count": "1"
+	},
+	"Bug": [
+		"349569"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-analyzer/echoping",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "6.0.2_p434",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "6.0.2_p434",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Echoping is a small program to test performances of a\n      remote host by sending it TCP packets.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>A boundary error exists within the “TLS_readline()” function, which\n      can be exploited to overflow a global buffer by sending an overly long\n      encrypted HTTP reply to Echoping. Also, a similar boundary error exists\n      within the “SSL_readline()” function, which can be exploited in the\n      same manner.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could send a specially crafted HTTP reply, possibly\n      resulting in a Denial of Service condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All Echoping users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=net-analyzer/echoping-6.0.2_p434\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2010-5111",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-5111"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    pinkbyte\n  ",
+			"Tag": "requester",
+			"Timestamp": "2013-10-17T11:46:53Z"
+		},
+		{
+			"Text": "\n    pinkbyte\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2014-06-06T12:23:36Z"
+		}
+	]
 }

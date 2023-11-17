@@ -1,102 +1,102 @@
 {
-  "ID": "200605-10",
-  "Title": "pdnsd: Denial of Service and potential arbitrary code execution",
-  "Synopsis": "\n    pdnsd is vulnerable to a buffer overflow that may result in arbitrary code\n    execution.\n  ",
-  "Product": {
-    "Text": "pdnsd",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-05-10",
-  "Revised": {
-    "Text": "2006-05-10",
-    "Count": "01"
-  },
-  "Bug": [
-    "131341"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-dns/pdnsd",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.2.4",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.2.4",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    pdnsd is a proxy DNS server with permanent caching that is\n    designed to cope with unreachable DNS servers.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The pdnsd team has discovered an unspecified buffer overflow\n    vulnerability. The PROTOS DNS Test Suite, by the Oulu University Secure\n    Programming Group (OUSPG), has also revealed a memory leak error within\n    the handling of the QTYPE and QCLASS DNS queries, leading to\n    consumption of large amounts of memory.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    An attacker can craft malicious DNS queries leading to a Denial of\n    Service, and potentially the execution of arbitrary code.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All pdnsd users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dns/pdnsd-1.2.4-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-2076",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2076"
-      },
-      {
-        "Text": "CVE-2006-2077",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2077"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-05-06T16:17:08Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-05-07T10:55:02Z"
-    }
-  ]
+	"ID": "200605-10",
+	"Title": "pdnsd: Denial of Service and potential arbitrary code execution",
+	"Synopsis": "\n    pdnsd is vulnerable to a buffer overflow that may result in arbitrary code\n    execution.\n  ",
+	"Product": {
+		"Text": "pdnsd",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-05-10",
+	"Revised": {
+		"Text": "2006-05-10",
+		"Count": "01"
+	},
+	"Bug": [
+		"131341"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-dns/pdnsd",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.2.4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.2.4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    pdnsd is a proxy DNS server with permanent caching that is\n    designed to cope with unreachable DNS servers.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The pdnsd team has discovered an unspecified buffer overflow\n    vulnerability. The PROTOS DNS Test Suite, by the Oulu University Secure\n    Programming Group (OUSPG), has also revealed a memory leak error within\n    the handling of the QTYPE and QCLASS DNS queries, leading to\n    consumption of large amounts of memory.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    An attacker can craft malicious DNS queries leading to a Denial of\n    Service, and potentially the execution of arbitrary code.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All pdnsd users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dns/pdnsd-1.2.4-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-2076",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2076"
+			},
+			{
+				"Text": "CVE-2006-2077",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2077"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-05-06T16:17:08Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-05-07T10:55:02Z"
+		}
+	]
 }

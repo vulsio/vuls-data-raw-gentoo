@@ -1,98 +1,98 @@
 {
-  "ID": "201408-03",
-  "Title": "LibSSH: Information disclosure",
-  "Synopsis": "A vulnerability in LibSSH can result in leakage of private key\n    information. \n  ",
-  "Product": {
-    "Text": "libssh",
-    "Type": "ebuild"
-  },
-  "Announced": "2014-08-10",
-  "Revised": {
-    "Text": "2014-08-10",
-    "Count": "1"
-  },
-  "Bug": [
-    "503504"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-libs/libssh",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.6.3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.6.3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>LibSSH is a C library providing SSHv2 and SSHv1.</p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>A new connection inherits the state of the PRNG without re-seeding with\n      random data.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "low",
-    "Text": "\n    <p>Servers using ECC (ECDSA) or DSA certificates in non-deterministic mode\n      may under certain conditions leak their private key.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All LibSSH users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-libs/libssh-0.6.3\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2014-0017",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0017"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "requester",
-      "Timestamp": "2014-08-04T19:25:42Z"
-    },
-    {
-      "Text": "K_F",
-      "Tag": "submitter",
-      "Timestamp": "2014-08-10T16:35:47Z"
-    }
-  ]
+	"ID": "201408-03",
+	"Title": "LibSSH: Information disclosure",
+	"Synopsis": "A vulnerability in LibSSH can result in leakage of private key\n    information. \n  ",
+	"Product": {
+		"Text": "libssh",
+		"Type": "ebuild"
+	},
+	"Announced": "2014-08-10",
+	"Revised": {
+		"Text": "2014-08-10",
+		"Count": "1"
+	},
+	"Bug": [
+		"503504"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-libs/libssh",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.6.3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.6.3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>LibSSH is a C library providing SSHv2 and SSHv1.</p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>A new connection inherits the state of the PRNG without re-seeding with\n      random data.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "low",
+		"Text": "\n    <p>Servers using ECC (ECDSA) or DSA certificates in non-deterministic mode\n      may under certain conditions leak their private key.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All LibSSH users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-libs/libssh-0.6.3\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2014-0017",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0017"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "requester",
+			"Timestamp": "2014-08-04T19:25:42Z"
+		},
+		{
+			"Text": "K_F",
+			"Tag": "submitter",
+			"Timestamp": "2014-08-10T16:35:47Z"
+		}
+	]
 }

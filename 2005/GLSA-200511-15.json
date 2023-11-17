@@ -1,107 +1,107 @@
 {
-  "ID": "200511-15",
-  "Title": "Smb4k: Local unauthorized file access",
-  "Synopsis": "\n    A vulnerability has been identified that allows unauthorized access to the\n    contents of /etc/sudoers and /etc/super.tab files.\n  ",
-  "Product": {
-    "Text": "Smb4k",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-11-18",
-  "Revised": {
-    "Text": "2005-11-18",
-    "Count": "01"
-  },
-  "Bug": [
-    "111089"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-misc/smb4k",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.6.4",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.6.4",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Smb4K is a SMB/CIFS share browser for KDE.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    A vulnerability leading to unauthorized file access has been\n    found. A pre-existing symlink from /tmp/sudoers and /tmp/super.tab to a\n    textfile will cause Smb4k to write the contents of these files to the\n    target of the symlink, as Smb4k does not check for the existence of\n    these files before writing to them.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    An attacker could acquire local privilege escalation by adding\n    username(s) to the list of sudoers.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All smb4k users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/smb4k-0.6.4\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2005-2851",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2851"
-      },
-      {
-        "Text": "Smb4k Announcement",
-        "Link": "http://smb4k.berlios.de/"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-11-15T09:03:00Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-11-15T09:04:04Z"
-    },
-    {
-      "Text": "\n    shellsage\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-11-16T02:48:46Z"
-    }
-  ]
+	"ID": "200511-15",
+	"Title": "Smb4k: Local unauthorized file access",
+	"Synopsis": "\n    A vulnerability has been identified that allows unauthorized access to the\n    contents of /etc/sudoers and /etc/super.tab files.\n  ",
+	"Product": {
+		"Text": "Smb4k",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-11-18",
+	"Revised": {
+		"Text": "2005-11-18",
+		"Count": "01"
+	},
+	"Bug": [
+		"111089"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-misc/smb4k",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.6.4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.6.4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Smb4K is a SMB/CIFS share browser for KDE.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    A vulnerability leading to unauthorized file access has been\n    found. A pre-existing symlink from /tmp/sudoers and /tmp/super.tab to a\n    textfile will cause Smb4k to write the contents of these files to the\n    target of the symlink, as Smb4k does not check for the existence of\n    these files before writing to them.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    An attacker could acquire local privilege escalation by adding\n    username(s) to the list of sudoers.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All smb4k users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/smb4k-0.6.4\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2005-2851",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2851"
+			},
+			{
+				"Text": "Smb4k Announcement",
+				"Link": "http://smb4k.berlios.de/"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-11-15T09:03:00Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-11-15T09:04:04Z"
+		},
+		{
+			"Text": "\n    shellsage\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-11-16T02:48:46Z"
+		}
+	]
 }

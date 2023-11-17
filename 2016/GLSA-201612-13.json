@@ -1,98 +1,98 @@
 {
-  "ID": "201612-13",
-  "Title": "nghttp2: Denial of service",
-  "Synopsis": "Nghttp2 is vulnerable to a Denial of Service attack.",
-  "Product": {
-    "Text": "nghttp2",
-    "Type": "ebuild"
-  },
-  "Announced": "2016-12-05",
-  "Revised": {
-    "Text": "2016-12-05",
-    "Count": "1"
-  },
-  "Bug": [
-    "574780"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-libs/nghttp2",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.7.1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.7.1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Nghttp2 is an implementation of HTTP/2 and its header compression\n      algorithm HPACK in C.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Nghttpd, nghttp, and libnghttp2_asio applications do not limit the\n      memory usage for the incoming HTTP header field. If a peer sends a\n      specially crafted HTTP/2 HEADERS frame and CONTINUATION frame, they will\n      crash with an out of memory error.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could possibly cause a Denial of Service condition.</p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All nghttp2 users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-libs/nghttp2-1.7.1\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2016-1544",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-1544"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "whissi",
-      "Tag": "requester",
-      "Timestamp": "2016-11-22T13:39:02Z"
-    },
-    {
-      "Text": "whissi",
-      "Tag": "submitter",
-      "Timestamp": "2016-12-05T01:23:37Z"
-    }
-  ]
+	"ID": "201612-13",
+	"Title": "nghttp2: Denial of service",
+	"Synopsis": "Nghttp2 is vulnerable to a Denial of Service attack.",
+	"Product": {
+		"Text": "nghttp2",
+		"Type": "ebuild"
+	},
+	"Announced": "2016-12-05",
+	"Revised": {
+		"Text": "2016-12-05",
+		"Count": "1"
+	},
+	"Bug": [
+		"574780"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-libs/nghttp2",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.7.1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.7.1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Nghttp2 is an implementation of HTTP/2 and its header compression\n      algorithm HPACK in C.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Nghttpd, nghttp, and libnghttp2_asio applications do not limit the\n      memory usage for the incoming HTTP header field. If a peer sends a\n      specially crafted HTTP/2 HEADERS frame and CONTINUATION frame, they will\n      crash with an out of memory error.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could possibly cause a Denial of Service condition.</p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All nghttp2 users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-libs/nghttp2-1.7.1\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2016-1544",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-1544"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "whissi",
+			"Tag": "requester",
+			"Timestamp": "2016-11-22T13:39:02Z"
+		},
+		{
+			"Text": "whissi",
+			"Tag": "submitter",
+			"Timestamp": "2016-12-05T01:23:37Z"
+		}
+	]
 }

@@ -1,115 +1,115 @@
 {
-  "ID": "200505-13",
-  "Title": "FreeRADIUS: SQL injection and Denial of Service vulnerability",
-  "Synopsis": "\n    The FreeRADIUS server is vulnerable to an SQL injection attack and a buffer\n    overflow, possibly resulting in disclosure and modification of data and\n    Denial of Service.\n  ",
-  "Product": {
-    "Text": "freeradius",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-05-17",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "03"
-  },
-  "Bug": [
-    "91736"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-dialup/freeradius",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.0.2-r4",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.0.2-r4",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    FreeRADIUS is an open source RADIUS authentication server\n    implementation.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Primoz Bratanic discovered that the sql_escape_func function of\n    FreeRADIUS may be vulnerable to a buffer overflow (BID 13541). He also\n    discovered that FreeRADIUS fails to sanitize user-input before using it\n    in a SQL query, possibly allowing SQL command injection (BID 13540).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    By supplying carefully crafted input, a malicious user could cause an\n    SQL injection or a buffer overflow, possibly leading to the disclosure\n    and the modification of sensitive data or Denial of Service by crashing\n    the server.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There are no known workarounds at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All FreeRADIUS users should upgrade to the latest available version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dialup/freeradius-1.0.2-r4\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "BugTraq ID 13540",
-        "Link": "http://www.securityfocus.com/bid/13540/"
-      },
-      {
-        "Text": "BugTraq ID 13541",
-        "Link": "http://www.securityfocus.com/bid/13541/"
-      },
-      {
-        "Text": "CVE-2005-1454",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1454"
-      },
-      {
-        "Text": "CVE-2005-1455",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1455"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-05-12T12:54:33Z"
-    },
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-05-12T13:46:19Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-05-17T13:01:45Z"
-    }
-  ]
+	"ID": "200505-13",
+	"Title": "FreeRADIUS: SQL injection and Denial of Service vulnerability",
+	"Synopsis": "\n    The FreeRADIUS server is vulnerable to an SQL injection attack and a buffer\n    overflow, possibly resulting in disclosure and modification of data and\n    Denial of Service.\n  ",
+	"Product": {
+		"Text": "freeradius",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-05-17",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "03"
+	},
+	"Bug": [
+		"91736"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-dialup/freeradius",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.0.2-r4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.0.2-r4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    FreeRADIUS is an open source RADIUS authentication server\n    implementation.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Primoz Bratanic discovered that the sql_escape_func function of\n    FreeRADIUS may be vulnerable to a buffer overflow (BID 13541). He also\n    discovered that FreeRADIUS fails to sanitize user-input before using it\n    in a SQL query, possibly allowing SQL command injection (BID 13540).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    By supplying carefully crafted input, a malicious user could cause an\n    SQL injection or a buffer overflow, possibly leading to the disclosure\n    and the modification of sensitive data or Denial of Service by crashing\n    the server.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There are no known workarounds at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All FreeRADIUS users should upgrade to the latest available version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dialup/freeradius-1.0.2-r4\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "BugTraq ID 13540",
+				"Link": "http://www.securityfocus.com/bid/13540/"
+			},
+			{
+				"Text": "BugTraq ID 13541",
+				"Link": "http://www.securityfocus.com/bid/13541/"
+			},
+			{
+				"Text": "CVE-2005-1454",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1454"
+			},
+			{
+				"Text": "CVE-2005-1455",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1455"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-05-12T12:54:33Z"
+		},
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-05-12T13:46:19Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-05-17T13:01:45Z"
+		}
+	]
 }

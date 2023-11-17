@@ -1,111 +1,111 @@
 {
-  "ID": "200503-02",
-  "Title": "phpBB: Multiple vulnerabilities",
-  "Synopsis": "\n    Several vulnerabilities allow remote attackers to gain phpBB administrator\n    rights or expose and manipulate sensitive data.\n  ",
-  "Product": {
-    "Text": "phpbb",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-03-01",
-  "Revised": {
-    "Text": "2005-03-01",
-    "Count": "01"
-  },
-  "Bug": [
-    "82955"
-  ],
-  "Access": "local and remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-apps/phpBB",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.0.13",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.0.13",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    phpBB is an Open Source bulletin board package.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    It was discovered that phpBB contains a flaw in the session\n    handling code and a path disclosure bug. AnthraX101 discovered that\n    phpBB allows local users to read arbitrary files, if the \"Enable remote\n    avatars\" and \"Enable avatar uploading\" options are set (CAN-2005-0259).\n    He also found out that incorrect input validation in\n    \"usercp_avatar.php\" and \"usercp_register.php\" makes phpBB vulnerable to\n    directory traversal attacks, if the \"Gallery avatars\" setting is\n    enabled (CAN-2005-0258).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    Remote attackers can exploit the session handling flaw to gain\n    phpBB administrator rights. By providing a local and a remote location\n    for an avatar and setting the \"Upload Avatar from a URL:\" field to\n    point to the target file, a malicious local user can read arbitrary\n    local files. By inserting \"/../\" sequences into the \"avatarselect\"\n    parameter, a remote attacker can exploit the directory traversal\n    vulnerability to delete arbitrary files. A flaw in the \"viewtopic.php\"\n    script can be exploited to expose the full path of PHP scripts.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All phpBB users should upgrade to the latest available version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/phpBB-2.0.13\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2005-0258",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0258"
-      },
-      {
-        "Text": "CAN-2005-0259",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0259"
-      },
-      {
-        "Text": "phpBB announcement",
-        "Link": "https://www.phpbb.com/phpBB/viewtopic.php?f=14&t=267563"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-02-28T14:35:23Z"
-    },
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-02-28T15:10:08Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-03-01T18:22:22Z"
-    }
-  ]
+	"ID": "200503-02",
+	"Title": "phpBB: Multiple vulnerabilities",
+	"Synopsis": "\n    Several vulnerabilities allow remote attackers to gain phpBB administrator\n    rights or expose and manipulate sensitive data.\n  ",
+	"Product": {
+		"Text": "phpbb",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-03-01",
+	"Revised": {
+		"Text": "2005-03-01",
+		"Count": "01"
+	},
+	"Bug": [
+		"82955"
+	],
+	"Access": "local and remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-apps/phpBB",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.0.13",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.0.13",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    phpBB is an Open Source bulletin board package.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    It was discovered that phpBB contains a flaw in the session\n    handling code and a path disclosure bug. AnthraX101 discovered that\n    phpBB allows local users to read arbitrary files, if the \"Enable remote\n    avatars\" and \"Enable avatar uploading\" options are set (CAN-2005-0259).\n    He also found out that incorrect input validation in\n    \"usercp_avatar.php\" and \"usercp_register.php\" makes phpBB vulnerable to\n    directory traversal attacks, if the \"Gallery avatars\" setting is\n    enabled (CAN-2005-0258).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    Remote attackers can exploit the session handling flaw to gain\n    phpBB administrator rights. By providing a local and a remote location\n    for an avatar and setting the \"Upload Avatar from a URL:\" field to\n    point to the target file, a malicious local user can read arbitrary\n    local files. By inserting \"/../\" sequences into the \"avatarselect\"\n    parameter, a remote attacker can exploit the directory traversal\n    vulnerability to delete arbitrary files. A flaw in the \"viewtopic.php\"\n    script can be exploited to expose the full path of PHP scripts.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All phpBB users should upgrade to the latest available version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/phpBB-2.0.13\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2005-0258",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0258"
+			},
+			{
+				"Text": "CAN-2005-0259",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0259"
+			},
+			{
+				"Text": "phpBB announcement",
+				"Link": "https://www.phpbb.com/phpBB/viewtopic.php?f=14&t=267563"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-02-28T14:35:23Z"
+		},
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-02-28T15:10:08Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-03-01T18:22:22Z"
+		}
+	]
 }

@@ -1,103 +1,103 @@
 {
-  "ID": "200605-05",
-  "Title": "rsync: Potential integer overflow",
-  "Synopsis": "\n    An attacker having write access to an rsync module might be able to execute\n    arbitrary code on an rsync server.\n  ",
-  "Product": {
-    "Text": "rsync",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-05-06",
-  "Revised": {
-    "Text": "2006-05-06",
-    "Count": "01"
-  },
-  "Bug": [
-    "131631"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-misc/rsync",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.6.8",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.6.8",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    rsync is a server and client utility that provides fast\n    incremental file transfers. It is used to efficiently synchronize files\n    between hosts and is used by emerge to fetch Gentoo's Portage tree.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    An integer overflow was found in the receive_xattr function from\n    the extended attributes patch (xattr.c) for rsync. The vulnerable\n    function is only present when the \"acl\" USE flag is set.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker with write access to an rsync module could craft\n    malicious extended attributes which would trigger the integer overflow,\n    potentially resulting in the execution of arbitrary code with the\n    rights of the rsync daemon.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Do not provide write access to an rsync module to untrusted\n    parties.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All rsync users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/rsync-2.6.8\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-2083",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2083"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-05-02T15:25:29Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-05-02T16:18:28Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-05-04T20:00:28Z"
-    }
-  ]
+	"ID": "200605-05",
+	"Title": "rsync: Potential integer overflow",
+	"Synopsis": "\n    An attacker having write access to an rsync module might be able to execute\n    arbitrary code on an rsync server.\n  ",
+	"Product": {
+		"Text": "rsync",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-05-06",
+	"Revised": {
+		"Text": "2006-05-06",
+		"Count": "01"
+	},
+	"Bug": [
+		"131631"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-misc/rsync",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.6.8",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.6.8",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    rsync is a server and client utility that provides fast\n    incremental file transfers. It is used to efficiently synchronize files\n    between hosts and is used by emerge to fetch Gentoo's Portage tree.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    An integer overflow was found in the receive_xattr function from\n    the extended attributes patch (xattr.c) for rsync. The vulnerable\n    function is only present when the \"acl\" USE flag is set.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker with write access to an rsync module could craft\n    malicious extended attributes which would trigger the integer overflow,\n    potentially resulting in the execution of arbitrary code with the\n    rights of the rsync daemon.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Do not provide write access to an rsync module to untrusted\n    parties.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All rsync users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/rsync-2.6.8\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-2083",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2083"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-05-02T15:25:29Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-05-02T16:18:28Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-05-04T20:00:28Z"
+		}
+	]
 }

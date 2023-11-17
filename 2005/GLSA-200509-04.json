@@ -1,107 +1,107 @@
 {
-  "ID": "200509-04",
-  "Title": "phpLDAPadmin: Authentication bypass",
-  "Synopsis": "\n    A flaw in phpLDAPadmin may allow attackers to bypass security restrictions\n    and connect anonymously.\n  ",
-  "Product": {
-    "Text": "phpLDAPadmin",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-09-06",
-  "Revised": {
-    "Text": "2005-09-06",
-    "Count": "01"
-  },
-  "Bug": [
-    "104293"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-nds/phpldapadmin",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.9.7_alpha6",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.9.7_alpha6",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    phpLDAPadmin is a web-based LDAP client allowing to easily manage\n    LDAP servers.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Alexander Gerasiov discovered a flaw in login.php preventing the\n    application from validating whether anonymous bind has been disabled in\n    the target LDAP server configuration.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "low",
-    "Text": "\n    <p>\n    Anonymous users can access the LDAP server, even if the\n    \"disable_anon_bind\" parameter was explicitly set to avoid this.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All phpLDAPadmin users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-nds/phpldapadmin-0.9.7_alpha6\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2005-2654",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2654"
-      },
-      {
-        "Text": "Secunia Advisory SA16611",
-        "Link": "https://secunia.com/advisories/16611/"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-08-31T17:15:50Z"
-    },
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-08-31T17:15:59Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-09-02T18:39:01Z"
-    }
-  ]
+	"ID": "200509-04",
+	"Title": "phpLDAPadmin: Authentication bypass",
+	"Synopsis": "\n    A flaw in phpLDAPadmin may allow attackers to bypass security restrictions\n    and connect anonymously.\n  ",
+	"Product": {
+		"Text": "phpLDAPadmin",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-09-06",
+	"Revised": {
+		"Text": "2005-09-06",
+		"Count": "01"
+	},
+	"Bug": [
+		"104293"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-nds/phpldapadmin",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.9.7_alpha6",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.9.7_alpha6",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    phpLDAPadmin is a web-based LDAP client allowing to easily manage\n    LDAP servers.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Alexander Gerasiov discovered a flaw in login.php preventing the\n    application from validating whether anonymous bind has been disabled in\n    the target LDAP server configuration.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "low",
+		"Text": "\n    <p>\n    Anonymous users can access the LDAP server, even if the\n    \"disable_anon_bind\" parameter was explicitly set to avoid this.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All phpLDAPadmin users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-nds/phpldapadmin-0.9.7_alpha6\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2005-2654",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2654"
+			},
+			{
+				"Text": "Secunia Advisory SA16611",
+				"Link": "https://secunia.com/advisories/16611/"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-08-31T17:15:50Z"
+		},
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-08-31T17:15:59Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-09-02T18:39:01Z"
+		}
+	]
 }

@@ -1,103 +1,103 @@
 {
-  "ID": "200509-15",
-  "Title": "util-linux: umount command validation error",
-  "Synopsis": "\n    A command validation error in umount can lead to an escalation of\n    privileges.\n  ",
-  "Product": {
-    "Text": "util-linux",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-09-20",
-  "Revised": {
-    "Text": "2005-09-20",
-    "Count": "01"
-  },
-  "Bug": [
-    "105805"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sys-apps/util-linux",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.12q-r3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.12q-r3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    util-linux is a suite of useful Linux programs including umount, a\n    program used to unmount filesystems.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    When a regular user mounts a filesystem, they are subject to\n    restrictions in the /etc/fstab configuration file. David Watson\n    discovered that when unmounting a filesystem with the '-r' option, the\n    read-only bit is set, while other bits, such as nosuid or nodev, are\n    not set, even if they were previously.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    An unprivileged user facing nosuid or nodev restrictions can\n    umount -r a filesystem clearing those bits, allowing applications to be\n    executed suid, or have device nodes interpreted. In the case where the\n    user can freely modify the contents of the filesystem, privilege\n    escalation may occur as a custom program may execute with suid\n    permissions.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Two workarounds exist, first, the suid bit can be removed from the\n    umount utility, or users can be restricted from mounting and unmounting\n    filesystems in /etc/fstab.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All util-linux users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-apps/util-linux-2.12q-r3\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2005-2876",
-        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2005-2876"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-09-17T16:18:46Z"
-    },
-    {
-      "Text": "\n    r2d2\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-09-19T16:52:19Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-09-20T14:09:16Z"
-    }
-  ]
+	"ID": "200509-15",
+	"Title": "util-linux: umount command validation error",
+	"Synopsis": "\n    A command validation error in umount can lead to an escalation of\n    privileges.\n  ",
+	"Product": {
+		"Text": "util-linux",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-09-20",
+	"Revised": {
+		"Text": "2005-09-20",
+		"Count": "01"
+	},
+	"Bug": [
+		"105805"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-apps/util-linux",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.12q-r3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.12q-r3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    util-linux is a suite of useful Linux programs including umount, a\n    program used to unmount filesystems.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    When a regular user mounts a filesystem, they are subject to\n    restrictions in the /etc/fstab configuration file. David Watson\n    discovered that when unmounting a filesystem with the '-r' option, the\n    read-only bit is set, while other bits, such as nosuid or nodev, are\n    not set, even if they were previously.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    An unprivileged user facing nosuid or nodev restrictions can\n    umount -r a filesystem clearing those bits, allowing applications to be\n    executed suid, or have device nodes interpreted. In the case where the\n    user can freely modify the contents of the filesystem, privilege\n    escalation may occur as a custom program may execute with suid\n    permissions.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Two workarounds exist, first, the suid bit can be removed from the\n    umount utility, or users can be restricted from mounting and unmounting\n    filesystems in /etc/fstab.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All util-linux users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-apps/util-linux-2.12q-r3\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2005-2876",
+				"Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2005-2876"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-09-17T16:18:46Z"
+		},
+		{
+			"Text": "\n    r2d2\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-09-19T16:52:19Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-09-20T14:09:16Z"
+		}
+	]
 }

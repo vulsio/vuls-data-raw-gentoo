@@ -1,167 +1,167 @@
 {
-  "ID": "200908-04",
-  "Title": "Adobe products: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities in Adobe Reader and Adobe Flash Player allow for\n    attacks including the remote execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "adobe-flash acroread",
-    "Type": "ebuild"
-  },
-  "Announced": "2009-08-07",
-  "Revised": {
-    "Text": "2009-08-07",
-    "Count": "01"
-  },
-  "Bug": [
-    "278813",
-    "278819"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-plugins/adobe-flash",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "10.0.32.18",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "10.0.32.18",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-text/acroread",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "9.1.3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "9.1.3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Adobe Flash Player is a closed-source playback software for Flash SWF\n    files. Adobe Reader is a closed-source PDF reader that plays Flash\n    content as well.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Multiple vulnerabilities have been reported in Adobe Flash Player:\n    </p>\n    <ul>\n    <li>lakehu of Tencent Security Center reported an unspecified\n    memory corruption vulnerability (CVE-2009-1862).</li>\n    <li>Mike Wroe\n    reported an unspecified vulnerability, related to \"privilege\n    escalation\" (CVE-2009-1863).</li>\n    <li>An anonymous researcher through\n    iDefense reported an unspecified heap-based buffer overflow\n    (CVE-2009-1864).</li>\n    <li>Chen Chen of Venustech reported an\n    unspecified \"null pointer vulnerability\" (CVE-2009-1865).</li>\n    <li>Chen\n    Chen of Venustech reported an unspecified stack-based buffer overflow\n    (CVE-2009-1866).</li>\n    <li>Joran Benker reported that Adobe Flash Player\n    facilitates \"clickjacking\" attacks (CVE-2009-1867).</li>\n    <li>Jun Mao of\n    iDefense reported a heap-based buffer overflow, related to URL parsing\n    (CVE-2009-1868).</li>\n    <li>Roee Hay of IBM Rational Application Security\n    reported an unspecified integer overflow (CVE-2009-1869).</li>\n    <li>Gareth Heyes and Microsoft Vulnerability Research reported that the\n    sandbox in Adobe Flash Player allows for information disclosure, when\n    \"SWFs are saved to the hard drive\" (CVE-2009-1870).</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted PDF\n    file or web site containing Adobe Flash (SWF) contents, possibly\n    resulting in the execution of arbitrary code with the privileges of the\n    user running the application, or a Denial of Service (application\n    crash). Furthermore, a remote attacker could trick a user into clicking\n    a button on a dialog by supplying a specially crafted SWF file and\n    disclose sensitive information by exploiting a sandbox issue.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Adobe Flash Player users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All Adobe Reader users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-plugins/adobe-flash-10.0.32.18\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/acroread-9.1.3\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2009-1862",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1862"
-      },
-      {
-        "Text": "CVE-2009-1863",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1863"
-      },
-      {
-        "Text": "CVE-2009-1864",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1864"
-      },
-      {
-        "Text": "CVE-2009-1865",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1865"
-      },
-      {
-        "Text": "CVE-2009-1866",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1866"
-      },
-      {
-        "Text": "CVE-2009-1867",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1867"
-      },
-      {
-        "Text": "CVE-2009-1868",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1868"
-      },
-      {
-        "Text": "CVE-2009-1869",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1869"
-      },
-      {
-        "Text": "CVE-2009-1870",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1870"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "requester",
-      "Timestamp": "2009-08-01T14:34:28Z"
-    },
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-08-05T13:16:39Z"
-    },
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2009-08-05T13:32:24Z"
-    }
-  ]
+	"ID": "200908-04",
+	"Title": "Adobe products: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities in Adobe Reader and Adobe Flash Player allow for\n    attacks including the remote execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "adobe-flash acroread",
+		"Type": "ebuild"
+	},
+	"Announced": "2009-08-07",
+	"Revised": {
+		"Text": "2009-08-07",
+		"Count": "01"
+	},
+	"Bug": [
+		"278813",
+		"278819"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-plugins/adobe-flash",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "10.0.32.18",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "10.0.32.18",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-text/acroread",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "9.1.3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "9.1.3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Adobe Flash Player is a closed-source playback software for Flash SWF\n    files. Adobe Reader is a closed-source PDF reader that plays Flash\n    content as well.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Multiple vulnerabilities have been reported in Adobe Flash Player:\n    </p>\n    <ul>\n    <li>lakehu of Tencent Security Center reported an unspecified\n    memory corruption vulnerability (CVE-2009-1862).</li>\n    <li>Mike Wroe\n    reported an unspecified vulnerability, related to \"privilege\n    escalation\" (CVE-2009-1863).</li>\n    <li>An anonymous researcher through\n    iDefense reported an unspecified heap-based buffer overflow\n    (CVE-2009-1864).</li>\n    <li>Chen Chen of Venustech reported an\n    unspecified \"null pointer vulnerability\" (CVE-2009-1865).</li>\n    <li>Chen\n    Chen of Venustech reported an unspecified stack-based buffer overflow\n    (CVE-2009-1866).</li>\n    <li>Joran Benker reported that Adobe Flash Player\n    facilitates \"clickjacking\" attacks (CVE-2009-1867).</li>\n    <li>Jun Mao of\n    iDefense reported a heap-based buffer overflow, related to URL parsing\n    (CVE-2009-1868).</li>\n    <li>Roee Hay of IBM Rational Application Security\n    reported an unspecified integer overflow (CVE-2009-1869).</li>\n    <li>Gareth Heyes and Microsoft Vulnerability Research reported that the\n    sandbox in Adobe Flash Player allows for information disclosure, when\n    \"SWFs are saved to the hard drive\" (CVE-2009-1870).</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted PDF\n    file or web site containing Adobe Flash (SWF) contents, possibly\n    resulting in the execution of arbitrary code with the privileges of the\n    user running the application, or a Denial of Service (application\n    crash). Furthermore, a remote attacker could trick a user into clicking\n    a button on a dialog by supplying a specially crafted SWF file and\n    disclose sensitive information by exploiting a sandbox issue.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Adobe Flash Player users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All Adobe Reader users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-plugins/adobe-flash-10.0.32.18\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/acroread-9.1.3\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2009-1862",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1862"
+			},
+			{
+				"Text": "CVE-2009-1863",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1863"
+			},
+			{
+				"Text": "CVE-2009-1864",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1864"
+			},
+			{
+				"Text": "CVE-2009-1865",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1865"
+			},
+			{
+				"Text": "CVE-2009-1866",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1866"
+			},
+			{
+				"Text": "CVE-2009-1867",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1867"
+			},
+			{
+				"Text": "CVE-2009-1868",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1868"
+			},
+			{
+				"Text": "CVE-2009-1869",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1869"
+			},
+			{
+				"Text": "CVE-2009-1870",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1870"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "requester",
+			"Timestamp": "2009-08-01T14:34:28Z"
+		},
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-08-05T13:16:39Z"
+		},
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2009-08-05T13:32:24Z"
+		}
+	]
 }

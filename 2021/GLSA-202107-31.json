@@ -1,98 +1,98 @@
 {
-  "ID": "202107-31",
-  "Title": "polkit: Privilege escalation",
-  "Synopsis": "A vulnerability in polkit could lead to local root privilege\n    escalation.\n  ",
-  "Product": {
-    "Text": "polkit",
-    "Type": "ebuild"
-  },
-  "Announced": "2021-07-13",
-  "Revised": {
-    "Text": "2021-07-13",
-    "Count": "1"
-  },
-  "Bug": [
-    "794052"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sys-auth/polkit",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.119",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.119",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>polkit is a toolkit for managing policies related to unprivileged\n      processes communicating with privileged process.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>The function polkit_system_bus_name_get_creds_sync() was called without\n      checking for error, and as such temporarily treats the authentication\n      request as coming from root.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>Please review the referenced CVE identifiers for details.</p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All polkit users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-auth/polkit-0.119\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2021-3560",
-        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-3560"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "ajak",
-      "Tag": "requester",
-      "Timestamp": "2021-07-13T00:16:39Z"
-    },
-    {
-      "Text": "ajak",
-      "Tag": "submitter",
-      "Timestamp": "2021-07-13T02:29:59Z"
-    }
-  ]
+	"ID": "202107-31",
+	"Title": "polkit: Privilege escalation",
+	"Synopsis": "A vulnerability in polkit could lead to local root privilege\n    escalation.\n  ",
+	"Product": {
+		"Text": "polkit",
+		"Type": "ebuild"
+	},
+	"Announced": "2021-07-13",
+	"Revised": {
+		"Text": "2021-07-13",
+		"Count": "1"
+	},
+	"Bug": [
+		"794052"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-auth/polkit",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.119",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.119",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>polkit is a toolkit for managing policies related to unprivileged\n      processes communicating with privileged process.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>The function polkit_system_bus_name_get_creds_sync() was called without\n      checking for error, and as such temporarily treats the authentication\n      request as coming from root.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>Please review the referenced CVE identifiers for details.</p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All polkit users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-auth/polkit-0.119\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2021-3560",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-3560"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "ajak",
+			"Tag": "requester",
+			"Timestamp": "2021-07-13T00:16:39Z"
+		},
+		{
+			"Text": "ajak",
+			"Tag": "submitter",
+			"Timestamp": "2021-07-13T02:29:59Z"
+		}
+	]
 }

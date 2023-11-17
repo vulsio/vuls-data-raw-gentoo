@@ -1,98 +1,98 @@
 {
-  "ID": "202105-02",
-  "Title": "stunnel: Improper certificate validation",
-  "Synopsis": "Stunnel was not properly verifying TLS certificates, possibly\n    allowing an integrity/confidentiality compromise.\n  ",
-  "Product": {
-    "Text": "stunnel",
-    "Type": "ebuild"
-  },
-  "Announced": "2021-05-26",
-  "Revised": {
-    "Text": "2021-05-26",
-    "Count": "1"
-  },
-  "Bug": [
-    "772146"
-  ],
-  "Access": "local, remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-misc/stunnel",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "5.58",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "5.58",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>The stunnel program is designed to work as an SSL/TLS encryption wrapper\n      between a client and a local or remote server.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>It was discovered that stunnel did not correctly verified the client\n      certificate when options “redirect” and “verifyChain” are used.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "low",
-    "Text": "\n    <p>A remote attacker could send a specially crafted certificate, possibly\n      resulting in a breach of integrity or confidentiality.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All stunnel users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/stunnel-5.58\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2021-20230",
-        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-20230"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "whissi",
-      "Tag": "requester",
-      "Timestamp": "2021-05-25T22:51:07Z"
-    },
-    {
-      "Text": "whissi",
-      "Tag": "submitter",
-      "Timestamp": "2021-05-26T07:44:01Z"
-    }
-  ]
+	"ID": "202105-02",
+	"Title": "stunnel: Improper certificate validation",
+	"Synopsis": "Stunnel was not properly verifying TLS certificates, possibly\n    allowing an integrity/confidentiality compromise.\n  ",
+	"Product": {
+		"Text": "stunnel",
+		"Type": "ebuild"
+	},
+	"Announced": "2021-05-26",
+	"Revised": {
+		"Text": "2021-05-26",
+		"Count": "1"
+	},
+	"Bug": [
+		"772146"
+	],
+	"Access": "local, remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-misc/stunnel",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "5.58",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "5.58",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>The stunnel program is designed to work as an SSL/TLS encryption wrapper\n      between a client and a local or remote server.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>It was discovered that stunnel did not correctly verified the client\n      certificate when options “redirect” and “verifyChain” are used.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "low",
+		"Text": "\n    <p>A remote attacker could send a specially crafted certificate, possibly\n      resulting in a breach of integrity or confidentiality.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All stunnel users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/stunnel-5.58\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2021-20230",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-20230"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "whissi",
+			"Tag": "requester",
+			"Timestamp": "2021-05-25T22:51:07Z"
+		},
+		{
+			"Text": "whissi",
+			"Tag": "submitter",
+			"Timestamp": "2021-05-26T07:44:01Z"
+		}
+	]
 }

@@ -1,133 +1,133 @@
 {
-  "ID": "200801-15",
-  "Title": "PostgreSQL: Multiple vulnerabilities",
-  "Synopsis": "\n    PostgreSQL contains multiple vulnerabilities that could result in privilege\n    escalation or a Denial of Service.\n  ",
-  "Product": {
-    "Text": "postgresql",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-01-29",
-  "Revised": {
-    "Text": "2008-01-29",
-    "Count": "01"
-  },
-  "Bug": [
-    "204760"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-db/postgresql",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "8.0.15",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "7.4.19",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "7.3.21",
-            "Range": "rge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "8.0.15",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    PostgreSQL is an open source object-relational database management\n    system.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    If using the \"expression indexes\" feature, PostgreSQL executes index\n    functions as the superuser during VACUUM and ANALYZE instead of the\n    table owner, and allows SET ROLE and SET SESSION AUTHORIZATION in the\n    index functions (CVE-2007-6600). Additionally, several errors involving\n    regular expressions were found (CVE-2007-4769, CVE-2007-4772,\n    CVE-2007-6067). Eventually, a privilege escalation vulnerability via\n    unspecified vectors in the DBLink module was reported (CVE-2007-6601).\n    This vulnerability is exploitable when local trust or ident\n    authentication is used, and is due to an incomplete fix of\n    CVE-2007-3278.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote authenticated attacker could send specially crafted queries\n    containing complex regular expressions to the server that could result\n    in a Denial of Service by a server crash (CVE-2007-4769), an infinite\n    loop (CVE-2007-4772) or a memory exhaustion (CVE-2007-6067). The two\n    other vulnerabilities can be exploited to gain additional privileges.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround for all these issues at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All PostgreSQL users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \"dev-db/postgresql\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-3278",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3278"
-      },
-      {
-        "Text": "CVE-2007-4769",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4769"
-      },
-      {
-        "Text": "CVE-2007-4772",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4772"
-      },
-      {
-        "Text": "CVE-2007-6067",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6067"
-      },
-      {
-        "Text": "CVE-2007-6600",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6600"
-      },
-      {
-        "Text": "CVE-2007-6601",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6601"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-01-20T00:00:08Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-01-20T00:56:13Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-01-20T22:38:13Z"
-    }
-  ]
+	"ID": "200801-15",
+	"Title": "PostgreSQL: Multiple vulnerabilities",
+	"Synopsis": "\n    PostgreSQL contains multiple vulnerabilities that could result in privilege\n    escalation or a Denial of Service.\n  ",
+	"Product": {
+		"Text": "postgresql",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-01-29",
+	"Revised": {
+		"Text": "2008-01-29",
+		"Count": "01"
+	},
+	"Bug": [
+		"204760"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-db/postgresql",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "8.0.15",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "7.4.19",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "7.3.21",
+						"Range": "rge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "8.0.15",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    PostgreSQL is an open source object-relational database management\n    system.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    If using the \"expression indexes\" feature, PostgreSQL executes index\n    functions as the superuser during VACUUM and ANALYZE instead of the\n    table owner, and allows SET ROLE and SET SESSION AUTHORIZATION in the\n    index functions (CVE-2007-6600). Additionally, several errors involving\n    regular expressions were found (CVE-2007-4769, CVE-2007-4772,\n    CVE-2007-6067). Eventually, a privilege escalation vulnerability via\n    unspecified vectors in the DBLink module was reported (CVE-2007-6601).\n    This vulnerability is exploitable when local trust or ident\n    authentication is used, and is due to an incomplete fix of\n    CVE-2007-3278.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote authenticated attacker could send specially crafted queries\n    containing complex regular expressions to the server that could result\n    in a Denial of Service by a server crash (CVE-2007-4769), an infinite\n    loop (CVE-2007-4772) or a memory exhaustion (CVE-2007-6067). The two\n    other vulnerabilities can be exploited to gain additional privileges.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround for all these issues at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All PostgreSQL users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \"dev-db/postgresql\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-3278",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3278"
+			},
+			{
+				"Text": "CVE-2007-4769",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4769"
+			},
+			{
+				"Text": "CVE-2007-4772",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4772"
+			},
+			{
+				"Text": "CVE-2007-6067",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6067"
+			},
+			{
+				"Text": "CVE-2007-6600",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6600"
+			},
+			{
+				"Text": "CVE-2007-6601",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6601"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-01-20T00:00:08Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-01-20T00:56:13Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-01-20T22:38:13Z"
+		}
+	]
 }

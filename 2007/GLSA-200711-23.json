@@ -1,208 +1,208 @@
 {
-  "ID": "200711-23",
-  "Title": "VMware Workstation and Player: Multiple vulnerabilities",
-  "Synopsis": "\n    VMware guest operating systems might be able to execute arbitrary code with\n    elevated privileges on the host operating system through multiple flaws.\n  ",
-  "Product": {
-    "Text": "vmware-workstation vmware-player",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-11-18",
-  "Revised": {
-    "Text": "2008-04-16",
-    "Count": "03"
-  },
-  "Bug": [
-    "193196"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-emulation/vmware-workstation",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "5.5.5.56455",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "5.5.5.56455",
-            "Range": "lt",
-            "Slot": ""
-          },
-          {
-            "Text": "6.0.0.45731",
-            "Range": "eq",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-emulation/vmware-player",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.0.5.56455",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.0.5.56455",
-            "Range": "lt",
-            "Slot": ""
-          },
-          {
-            "Text": "2.0.0.45731",
-            "Range": "eq",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    VMware Workstation is a virtual machine for developers and system\n    administrators. VMware Player is a freeware virtualization software\n    that can run guests produced by other VMware products.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Multiple vulnerabilities have been discovered in several VMware\n    products. Neel Mehta and Ryan Smith (IBM ISS X-Force) discovered that\n    the DHCP server contains an integer overflow vulnerability\n    (CVE-2007-0062), an integer underflow vulnerability (CVE-2007-0063) and\n    another error when handling malformed packets (CVE-2007-0061), leading\n    to stack-based buffer overflows or stack corruption. Rafal Wojtczvk\n    (McAfee) discovered two unspecified errors that allow authenticated\n    users with administrative or login privileges on a guest operating\n    system to corrupt memory or cause a Denial of Service (CVE-2007-4496,\n    CVE-2007-4497). Another unspecified vulnerability related to untrusted\n    virtual machine images was discovered (CVE-2007-5617).\n    </p>\n    <p>\n    VMware products also shipped code copies of software with several\n    vulnerabilities: Samba (GLSA-200705-15), BIND (GLSA-200702-06), MIT\n    Kerberos 5 (GLSA-200707-11), Vixie Cron (GLSA-200704-11), shadow\n    (GLSA-200606-02), OpenLDAP (CVE-2006-4600), PAM (CVE-2004-0813,\n    CVE-2007-1716), GCC (CVE-2006-3619) and GDB (CVE-2006-4146).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    Remote attackers within a guest system could possibly exploit these\n    vulnerabilities to execute code on the host system with elevated\n    privileges or to cause a Denial of Service.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All VMware Workstation users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All VMware Player users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-emulation/vmware-workstation-5.5.5.56455\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-emulation/vmware-player-1.0.5.56455\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2004-0813",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0813"
-      },
-      {
-        "Text": "CVE-2006-3619",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3619"
-      },
-      {
-        "Text": "CVE-2006-4146",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4146"
-      },
-      {
-        "Text": "CVE-2006-4600",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4600"
-      },
-      {
-        "Text": "CVE-2007-0061",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0061"
-      },
-      {
-        "Text": "CVE-2007-0062",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0062"
-      },
-      {
-        "Text": "CVE-2007-0063",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0063"
-      },
-      {
-        "Text": "CVE-2007-1716",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1716"
-      },
-      {
-        "Text": "CVE-2007-4496",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4496"
-      },
-      {
-        "Text": "CVE-2007-4497",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4497"
-      },
-      {
-        "Text": "CVE-2007-5617",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5617"
-      },
-      {
-        "Text": "GLSA-200606-02",
-        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200606-02.xml"
-      },
-      {
-        "Text": "GLSA-200702-06",
-        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200702-06.xml"
-      },
-      {
-        "Text": "GLSA-200704-11",
-        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200704-11.xml"
-      },
-      {
-        "Text": "GLSA-200705-15",
-        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200705-15.xml"
-      },
-      {
-        "Text": "GLSA-200707-11",
-        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200707-11.xml"
-      },
-      {
-        "Text": "VMSA-2007-0006",
-        "Link": "https://lists.vmware.com/pipermail/security-announce/2007/000001.html"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-11-07T01:24:32Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-11-13T02:06:33Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-11-15T23:43:42Z"
-    }
-  ]
+	"ID": "200711-23",
+	"Title": "VMware Workstation and Player: Multiple vulnerabilities",
+	"Synopsis": "\n    VMware guest operating systems might be able to execute arbitrary code with\n    elevated privileges on the host operating system through multiple flaws.\n  ",
+	"Product": {
+		"Text": "vmware-workstation vmware-player",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-11-18",
+	"Revised": {
+		"Text": "2008-04-16",
+		"Count": "03"
+	},
+	"Bug": [
+		"193196"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-emulation/vmware-workstation",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "5.5.5.56455",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "5.5.5.56455",
+						"Range": "lt",
+						"Slot": ""
+					},
+					{
+						"Text": "6.0.0.45731",
+						"Range": "eq",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-emulation/vmware-player",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.0.5.56455",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.0.5.56455",
+						"Range": "lt",
+						"Slot": ""
+					},
+					{
+						"Text": "2.0.0.45731",
+						"Range": "eq",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    VMware Workstation is a virtual machine for developers and system\n    administrators. VMware Player is a freeware virtualization software\n    that can run guests produced by other VMware products.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Multiple vulnerabilities have been discovered in several VMware\n    products. Neel Mehta and Ryan Smith (IBM ISS X-Force) discovered that\n    the DHCP server contains an integer overflow vulnerability\n    (CVE-2007-0062), an integer underflow vulnerability (CVE-2007-0063) and\n    another error when handling malformed packets (CVE-2007-0061), leading\n    to stack-based buffer overflows or stack corruption. Rafal Wojtczvk\n    (McAfee) discovered two unspecified errors that allow authenticated\n    users with administrative or login privileges on a guest operating\n    system to corrupt memory or cause a Denial of Service (CVE-2007-4496,\n    CVE-2007-4497). Another unspecified vulnerability related to untrusted\n    virtual machine images was discovered (CVE-2007-5617).\n    </p>\n    <p>\n    VMware products also shipped code copies of software with several\n    vulnerabilities: Samba (GLSA-200705-15), BIND (GLSA-200702-06), MIT\n    Kerberos 5 (GLSA-200707-11), Vixie Cron (GLSA-200704-11), shadow\n    (GLSA-200606-02), OpenLDAP (CVE-2006-4600), PAM (CVE-2004-0813,\n    CVE-2007-1716), GCC (CVE-2006-3619) and GDB (CVE-2006-4146).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    Remote attackers within a guest system could possibly exploit these\n    vulnerabilities to execute code on the host system with elevated\n    privileges or to cause a Denial of Service.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All VMware Workstation users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All VMware Player users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-emulation/vmware-workstation-5.5.5.56455\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-emulation/vmware-player-1.0.5.56455\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2004-0813",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0813"
+			},
+			{
+				"Text": "CVE-2006-3619",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3619"
+			},
+			{
+				"Text": "CVE-2006-4146",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4146"
+			},
+			{
+				"Text": "CVE-2006-4600",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4600"
+			},
+			{
+				"Text": "CVE-2007-0061",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0061"
+			},
+			{
+				"Text": "CVE-2007-0062",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0062"
+			},
+			{
+				"Text": "CVE-2007-0063",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0063"
+			},
+			{
+				"Text": "CVE-2007-1716",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1716"
+			},
+			{
+				"Text": "CVE-2007-4496",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4496"
+			},
+			{
+				"Text": "CVE-2007-4497",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4497"
+			},
+			{
+				"Text": "CVE-2007-5617",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5617"
+			},
+			{
+				"Text": "GLSA-200606-02",
+				"Link": "https://www.gentoo.org/security/en/glsa/glsa-200606-02.xml"
+			},
+			{
+				"Text": "GLSA-200702-06",
+				"Link": "https://www.gentoo.org/security/en/glsa/glsa-200702-06.xml"
+			},
+			{
+				"Text": "GLSA-200704-11",
+				"Link": "https://www.gentoo.org/security/en/glsa/glsa-200704-11.xml"
+			},
+			{
+				"Text": "GLSA-200705-15",
+				"Link": "https://www.gentoo.org/security/en/glsa/glsa-200705-15.xml"
+			},
+			{
+				"Text": "GLSA-200707-11",
+				"Link": "https://www.gentoo.org/security/en/glsa/glsa-200707-11.xml"
+			},
+			{
+				"Text": "VMSA-2007-0006",
+				"Link": "https://lists.vmware.com/pipermail/security-announce/2007/000001.html"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-11-07T01:24:32Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-11-13T02:06:33Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-11-15T23:43:42Z"
+		}
+	]
 }

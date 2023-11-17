@@ -1,102 +1,102 @@
 {
-  "ID": "200512-06",
-  "Title": "Ethereal: Buffer overflow in OSPF protocol dissector",
-  "Synopsis": "\n    Ethereal is missing bounds checking in the OSPF protocol dissector that\n    could lead to abnormal program termination or the execution of arbitrary\n    code.\n  ",
-  "Product": {
-    "Text": "Ethereal",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-12-14",
-  "Revised": {
-    "Text": "2005-12-14",
-    "Count": "01"
-  },
-  "Bug": [
-    "115030"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-analyzer/ethereal",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.10.13-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.10.13-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Ethereal is a feature-rich network protocol analyzer. It provides\n    protocol analyzers for various network flows, including one for Open\n    Shortest Path First (OSPF) Interior Gateway Protocol.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    iDEFENSE reported a possible overflow due to the lack of bounds\n    checking in the dissect_ospf_v3_address_prefix() function, part of the\n    OSPF protocol dissector.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    An attacker might be able to craft a malicious network flow that\n    would crash Ethereal. It may be possible, though unlikely, to exploit\n    this flaw to execute arbitrary code with the permissions of the user\n    running Ethereal, which could be the root user.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Ethereal users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/ethereal-0.10.13-r2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2005-3651",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3651"
-      },
-      {
-        "Text": "iDEFENSE Advisory",
-        "Link": "http://www.idefense.com/application/poi/display?id=349&type=vulnerabilities"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-12-12T15:18:48Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-12-14T12:23:23Z"
-    }
-  ]
+	"ID": "200512-06",
+	"Title": "Ethereal: Buffer overflow in OSPF protocol dissector",
+	"Synopsis": "\n    Ethereal is missing bounds checking in the OSPF protocol dissector that\n    could lead to abnormal program termination or the execution of arbitrary\n    code.\n  ",
+	"Product": {
+		"Text": "Ethereal",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-12-14",
+	"Revised": {
+		"Text": "2005-12-14",
+		"Count": "01"
+	},
+	"Bug": [
+		"115030"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-analyzer/ethereal",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.10.13-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.10.13-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Ethereal is a feature-rich network protocol analyzer. It provides\n    protocol analyzers for various network flows, including one for Open\n    Shortest Path First (OSPF) Interior Gateway Protocol.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    iDEFENSE reported a possible overflow due to the lack of bounds\n    checking in the dissect_ospf_v3_address_prefix() function, part of the\n    OSPF protocol dissector.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    An attacker might be able to craft a malicious network flow that\n    would crash Ethereal. It may be possible, though unlikely, to exploit\n    this flaw to execute arbitrary code with the permissions of the user\n    running Ethereal, which could be the root user.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Ethereal users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/ethereal-0.10.13-r2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2005-3651",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3651"
+			},
+			{
+				"Text": "iDEFENSE Advisory",
+				"Link": "http://www.idefense.com/application/poi/display?id=349&type=vulnerabilities"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-12-12T15:18:48Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-12-14T12:23:23Z"
+		}
+	]
 }

@@ -1,114 +1,114 @@
 {
-  "ID": "201208-02",
-  "Title": "Puppet: Multiple vulnerabilities",
-  "Synopsis": "Multiple vulnerabilities have been found in Puppet, the worst of\n    which could lead to execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "Puppet",
-    "Type": "ebuild"
-  },
-  "Announced": "2012-08-14",
-  "Revised": {
-    "Text": "2012-08-14",
-    "Count": "1"
-  },
-  "Bug": [
-    "410857"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-admin/puppet",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.7.13",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.7.13",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Puppet is a system configuration management tool written in Ruby.</p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Multiple vulnerabilities have been found in Puppet:</p>\n    \n    <ul>\n      <li>Puppet uses predictable file names for temporary files\n        (CVE-2012-1906).\n      </li>\n      <li>REST requests for a file in a remote filebucket are not handled\n        properly by overriding filebucket storage locations (CVE-2012-1986).\n      </li>\n      <li>REST requests for a file in a remote filebucket are not handled\n        properly by reading streams or writing files on the Puppet master's\n        file system (CVE-2012-1987).\n      </li>\n      <li>File name paths are not properly sanitized from bucket requests\n        (CVE-2012-1988).\n      </li>\n      <li>The Telnet utility in Puppet does not handle temporary files securely\n        (CVE-2012-1989).\n      </li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>A local attacker with access to agent SSL keys could possibly execute\n      arbitrary code with the privileges of the process, cause a Denial of\n      Service condition, or perform symlink attacks to overwrite or read\n      arbitrary files on the Puppet master. \n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All Puppet users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-admin/puppet-2.7.13\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2012-1906",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1906"
-      },
-      {
-        "Text": "CVE-2012-1986",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1986"
-      },
-      {
-        "Text": "CVE-2012-1987",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1987"
-      },
-      {
-        "Text": "CVE-2012-1988",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1988"
-      },
-      {
-        "Text": "CVE-2012-1989",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1989"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "ackle",
-      "Tag": "requester",
-      "Timestamp": "2012-04-12T20:04:53Z"
-    },
-    {
-      "Text": "ackle",
-      "Tag": "submitter",
-      "Timestamp": "2012-08-14T20:30:25Z"
-    }
-  ]
+	"ID": "201208-02",
+	"Title": "Puppet: Multiple vulnerabilities",
+	"Synopsis": "Multiple vulnerabilities have been found in Puppet, the worst of\n    which could lead to execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "Puppet",
+		"Type": "ebuild"
+	},
+	"Announced": "2012-08-14",
+	"Revised": {
+		"Text": "2012-08-14",
+		"Count": "1"
+	},
+	"Bug": [
+		"410857"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-admin/puppet",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.7.13",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.7.13",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Puppet is a system configuration management tool written in Ruby.</p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Multiple vulnerabilities have been found in Puppet:</p>\n    \n    <ul>\n      <li>Puppet uses predictable file names for temporary files\n        (CVE-2012-1906).\n      </li>\n      <li>REST requests for a file in a remote filebucket are not handled\n        properly by overriding filebucket storage locations (CVE-2012-1986).\n      </li>\n      <li>REST requests for a file in a remote filebucket are not handled\n        properly by reading streams or writing files on the Puppet master's\n        file system (CVE-2012-1987).\n      </li>\n      <li>File name paths are not properly sanitized from bucket requests\n        (CVE-2012-1988).\n      </li>\n      <li>The Telnet utility in Puppet does not handle temporary files securely\n        (CVE-2012-1989).\n      </li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>A local attacker with access to agent SSL keys could possibly execute\n      arbitrary code with the privileges of the process, cause a Denial of\n      Service condition, or perform symlink attacks to overwrite or read\n      arbitrary files on the Puppet master. \n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All Puppet users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-admin/puppet-2.7.13\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2012-1906",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1906"
+			},
+			{
+				"Text": "CVE-2012-1986",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1986"
+			},
+			{
+				"Text": "CVE-2012-1987",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1987"
+			},
+			{
+				"Text": "CVE-2012-1988",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1988"
+			},
+			{
+				"Text": "CVE-2012-1989",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1989"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "ackle",
+			"Tag": "requester",
+			"Timestamp": "2012-04-12T20:04:53Z"
+		},
+		{
+			"Text": "ackle",
+			"Tag": "submitter",
+			"Timestamp": "2012-08-14T20:30:25Z"
+		}
+	]
 }

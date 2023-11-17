@@ -1,98 +1,98 @@
 {
-  "ID": "201611-17",
-  "Title": "RPCBind: Denial of service",
-  "Synopsis": "A buffer overflow in RPCBind might allow remote attackers to cause\n    a Denial of Service.\n  ",
-  "Product": {
-    "Text": "rpcbind",
-    "Type": "ebuild"
-  },
-  "Announced": "2016-11-22",
-  "Revised": {
-    "Text": "2016-11-22",
-    "Count": "2"
-  },
-  "Bug": [
-    "560990"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-nds/rpcbind",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.2.3-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.2.3-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>The RPCBind utility is a server that converts RPC program numbers into\n      universal addresses.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>A use-after-free vulnerability was discovered in RPCBind’s\n      svc_dodestroy function when trying to free a corrupted xprt-&gt;xp_netid\n      pointer.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could possibly cause a Denial of Service condition.</p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All RPCBind users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-nds/rpcbind-0.2.3-r1\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2015-7236",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-7236"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    BlueKnight\n  ",
-      "Tag": "requester",
-      "Timestamp": "2015-12-23T23:23:05Z"
-    },
-    {
-      "Text": "b-man",
-      "Tag": "submitter",
-      "Timestamp": "2016-11-22T11:58:44Z"
-    }
-  ]
+	"ID": "201611-17",
+	"Title": "RPCBind: Denial of service",
+	"Synopsis": "A buffer overflow in RPCBind might allow remote attackers to cause\n    a Denial of Service.\n  ",
+	"Product": {
+		"Text": "rpcbind",
+		"Type": "ebuild"
+	},
+	"Announced": "2016-11-22",
+	"Revised": {
+		"Text": "2016-11-22",
+		"Count": "2"
+	},
+	"Bug": [
+		"560990"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-nds/rpcbind",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.2.3-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.2.3-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>The RPCBind utility is a server that converts RPC program numbers into\n      universal addresses.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>A use-after-free vulnerability was discovered in RPCBind’s\n      svc_dodestroy function when trying to free a corrupted xprt-&gt;xp_netid\n      pointer.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could possibly cause a Denial of Service condition.</p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All RPCBind users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-nds/rpcbind-0.2.3-r1\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2015-7236",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-7236"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    BlueKnight\n  ",
+			"Tag": "requester",
+			"Timestamp": "2015-12-23T23:23:05Z"
+		},
+		{
+			"Text": "b-man",
+			"Tag": "submitter",
+			"Timestamp": "2016-11-22T11:58:44Z"
+		}
+	]
 }

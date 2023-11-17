@@ -1,111 +1,111 @@
 {
-  "ID": "200611-04",
-  "Title": "Bugzilla: Multiple Vulnerabilities",
-  "Synopsis": "\n    Bugzilla is vulnerable to cross-site scripting, script injection, and\n    request forgery.\n  ",
-  "Product": {
-    "Text": "bugzilla",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-11-09",
-  "Revised": {
-    "Text": "2006-11-09",
-    "Count": "01"
-  },
-  "Bug": [
-    "151563"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-apps/bugzilla",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.18.6",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.18.6",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Bugzilla is a bug tracking system used to allow developers to more\n    easily track outstanding bugs in products.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The vulnerabilities identified in Bugzilla are as follows:\n    </p>\n    <ul>\n    <li>Frederic Buclin and Gervase Markham discovered that input passed to\n    various fields throughout Bugzilla were not properly sanitized before\n    being sent back to users (CVE-2006-5453).</li>\n    <li>Frederic Buclin and Josh \"timeless\" Soref discovered a bug when\n    viewing attachments in diff mode that allows users not of the\n    \"insidergroup\" to read attachment descriptions. Additionally, it was\n    discovered that the \"deadline\" field is visible to users who do not\n    belong to the \"timetrackinggroup\" when bugs are exported to XML\n    (CVE-2006-5454).</li>\n    <li>Gavin Shelley reported that Bugzilla allows certain operations to\n    be performed via HTTP GET and HTTP POST requests without verifying\n    those requests properly (CVE-2006-5455).</li>\n    <li>Max Kanat-Alexander discovered that input passed to\n    showdependencygraph.cgi is not properly sanitized before being returned\n    to users (CVE-2006-5453).</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker could inject scripts into the content loaded by a user's\n    browser in order to have those scripts executed in a user's browser in\n    the context of the site currently being viewed. This could include\n    gaining access to privileged session information for the site being\n    viewed. Additionally, a user could forge an HTTP request in order to\n    create, modify, or delete bugs within a Bugzilla instance. Lastly, an\n    unauthorized user could view sensitive information about bugs or bug\n    attachments.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Bugzilla users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/bugzilla-2.18.6\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-5453",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5453"
-      },
-      {
-        "Text": "CVE-2006-5454",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5454"
-      },
-      {
-        "Text": "CVE-2006-5455",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5455"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    vorlon078\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-11-04T19:51:46Z"
-    },
-    {
-      "Text": "\n    shellsage\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-11-05T14:49:56Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-11-07T15:44:40Z"
-    }
-  ]
+	"ID": "200611-04",
+	"Title": "Bugzilla: Multiple Vulnerabilities",
+	"Synopsis": "\n    Bugzilla is vulnerable to cross-site scripting, script injection, and\n    request forgery.\n  ",
+	"Product": {
+		"Text": "bugzilla",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-11-09",
+	"Revised": {
+		"Text": "2006-11-09",
+		"Count": "01"
+	},
+	"Bug": [
+		"151563"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-apps/bugzilla",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.18.6",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.18.6",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Bugzilla is a bug tracking system used to allow developers to more\n    easily track outstanding bugs in products.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The vulnerabilities identified in Bugzilla are as follows:\n    </p>\n    <ul>\n    <li>Frederic Buclin and Gervase Markham discovered that input passed to\n    various fields throughout Bugzilla were not properly sanitized before\n    being sent back to users (CVE-2006-5453).</li>\n    <li>Frederic Buclin and Josh \"timeless\" Soref discovered a bug when\n    viewing attachments in diff mode that allows users not of the\n    \"insidergroup\" to read attachment descriptions. Additionally, it was\n    discovered that the \"deadline\" field is visible to users who do not\n    belong to the \"timetrackinggroup\" when bugs are exported to XML\n    (CVE-2006-5454).</li>\n    <li>Gavin Shelley reported that Bugzilla allows certain operations to\n    be performed via HTTP GET and HTTP POST requests without verifying\n    those requests properly (CVE-2006-5455).</li>\n    <li>Max Kanat-Alexander discovered that input passed to\n    showdependencygraph.cgi is not properly sanitized before being returned\n    to users (CVE-2006-5453).</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker could inject scripts into the content loaded by a user's\n    browser in order to have those scripts executed in a user's browser in\n    the context of the site currently being viewed. This could include\n    gaining access to privileged session information for the site being\n    viewed. Additionally, a user could forge an HTTP request in order to\n    create, modify, or delete bugs within a Bugzilla instance. Lastly, an\n    unauthorized user could view sensitive information about bugs or bug\n    attachments.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Bugzilla users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/bugzilla-2.18.6\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-5453",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5453"
+			},
+			{
+				"Text": "CVE-2006-5454",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5454"
+			},
+			{
+				"Text": "CVE-2006-5455",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5455"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    vorlon078\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-11-04T19:51:46Z"
+		},
+		{
+			"Text": "\n    shellsage\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-11-05T14:49:56Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-11-07T15:44:40Z"
+		}
+	]
 }

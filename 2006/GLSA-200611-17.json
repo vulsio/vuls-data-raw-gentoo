@@ -1,103 +1,103 @@
 {
-  "ID": "200611-17",
-  "Title": "fvwm: fvwm-menu-directory fvwm command injection",
-  "Synopsis": "\n    A flaw in fvwm-menu-directory may permit a local attacker to execute\n    arbitrary commands with the privileges of another user.\n  ",
-  "Product": {
-    "Text": "fvwm",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-11-23",
-  "Revised": {
-    "Text": "2006-11-23",
-    "Count": "01"
-  },
-  "Bug": [
-    "155078"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "x11-wm/fvwm",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.5.18-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.5.18-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    fvwm is a highly configurable virtual window manager for X11 desktops.\n    fvwm-menu-directory allows fvwm users to browse directories from within\n    fvwm.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Tavis Ormandy of the Gentoo Linux Security Audit Team discovered that\n    fvwm-menu-directory does not sufficiently sanitise directory names\n    prior to generating menus.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local attacker who can convince an fvwm-menu-directory user to browse\n    a directory they control could cause fvwm commands to be executed with\n    the privileges of the fvwm user. Fvwm commands can be used to execute\n    arbitrary shell commands.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All fvwm users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-wm/fvwm-2.5.18-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-5969",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5969"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-11-21T05:59:03Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-11-21T05:59:31Z"
-    },
-    {
-      "Text": "\n    taviso\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-11-21T11:10:22Z"
-    }
-  ]
+	"ID": "200611-17",
+	"Title": "fvwm: fvwm-menu-directory fvwm command injection",
+	"Synopsis": "\n    A flaw in fvwm-menu-directory may permit a local attacker to execute\n    arbitrary commands with the privileges of another user.\n  ",
+	"Product": {
+		"Text": "fvwm",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-11-23",
+	"Revised": {
+		"Text": "2006-11-23",
+		"Count": "01"
+	},
+	"Bug": [
+		"155078"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "x11-wm/fvwm",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.5.18-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.5.18-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    fvwm is a highly configurable virtual window manager for X11 desktops.\n    fvwm-menu-directory allows fvwm users to browse directories from within\n    fvwm.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Tavis Ormandy of the Gentoo Linux Security Audit Team discovered that\n    fvwm-menu-directory does not sufficiently sanitise directory names\n    prior to generating menus.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local attacker who can convince an fvwm-menu-directory user to browse\n    a directory they control could cause fvwm commands to be executed with\n    the privileges of the fvwm user. Fvwm commands can be used to execute\n    arbitrary shell commands.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All fvwm users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-wm/fvwm-2.5.18-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-5969",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5969"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-11-21T05:59:03Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-11-21T05:59:31Z"
+		},
+		{
+			"Text": "\n    taviso\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-11-21T11:10:22Z"
+		}
+	]
 }

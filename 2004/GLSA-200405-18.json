@@ -1,101 +1,101 @@
 {
-  "ID": "200405-18",
-  "Title": "Buffer Overflow in Firebird",
-  "Synopsis": "\n    A buffer overflow via environmental variables in Firebird may allow a local\n    user to manipulate or destroy local databases and trojan the Firebird\n    binaries.\n  ",
-  "Product": {
-    "Text": "firebird",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-05-23",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "02"
-  },
-  "Bug": [
-    "20837"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-db/firebird",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.5",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.5",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Firebird is an open source relational database that runs on Linux,\n    Windows, and various UNIX systems.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    A buffer overflow exists in three Firebird binaries (gds_inet_server,\n    gds_lock_mgr, and gds_drop) that is exploitable by setting a large\n    value to the INTERBASE environment variable.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    An attacker could control program execution, allowing privilege\n    escalation to the UID of Firebird, full access to Firebird databases,\n    and trojaning the Firebird binaries. An attacker could use this to\n    compromise other user or root accounts.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All users should upgrade to the latest version of Firebird:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n    \n    # emerge -pv \">=dev-db/firebird-1.5\"\n    # emerge \">=dev-db/firebird-1.5\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "Bugtraq Security Announcement",
-        "Link": "http://securityfocus.com/bid/7546/info/"
-      },
-      {
-        "Text": "Sourceforge BugTracker Announcement",
-        "Link": " https://sourceforge.net/tracker/?group_id=9028&atid=109028&func=detail&aid=739480"
-      },
-      {
-        "Text": "CVE-2003-0281",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0281"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    dmargoli\n  ",
-      "Tag": "submitter",
-      "Timestamp": ""
-    }
-  ]
+	"ID": "200405-18",
+	"Title": "Buffer Overflow in Firebird",
+	"Synopsis": "\n    A buffer overflow via environmental variables in Firebird may allow a local\n    user to manipulate or destroy local databases and trojan the Firebird\n    binaries.\n  ",
+	"Product": {
+		"Text": "firebird",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-05-23",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "02"
+	},
+	"Bug": [
+		"20837"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-db/firebird",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.5",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.5",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Firebird is an open source relational database that runs on Linux,\n    Windows, and various UNIX systems.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    A buffer overflow exists in three Firebird binaries (gds_inet_server,\n    gds_lock_mgr, and gds_drop) that is exploitable by setting a large\n    value to the INTERBASE environment variable.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    An attacker could control program execution, allowing privilege\n    escalation to the UID of Firebird, full access to Firebird databases,\n    and trojaning the Firebird binaries. An attacker could use this to\n    compromise other user or root accounts.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All users should upgrade to the latest version of Firebird:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n    \n    # emerge -pv \">=dev-db/firebird-1.5\"\n    # emerge \">=dev-db/firebird-1.5\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "Bugtraq Security Announcement",
+				"Link": "http://securityfocus.com/bid/7546/info/"
+			},
+			{
+				"Text": "Sourceforge BugTracker Announcement",
+				"Link": " https://sourceforge.net/tracker/?group_id=9028&atid=109028&func=detail&aid=739480"
+			},
+			{
+				"Text": "CVE-2003-0281",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0281"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    dmargoli\n  ",
+			"Tag": "submitter",
+			"Timestamp": ""
+		}
+	]
 }

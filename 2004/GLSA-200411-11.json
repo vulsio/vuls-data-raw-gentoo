@@ -1,111 +1,111 @@
 {
-  "ID": "200411-11",
-  "Title": "ImageMagick: EXIF buffer overflow",
-  "Synopsis": "\n    ImageMagick contains an error in boundary checks when handling EXIF\n    information, which could lead to arbitrary code execution.\n  ",
-  "Product": {
-    "Text": "imagemagick",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-11-06",
-  "Revised": {
-    "Text": "2004-11-06",
-    "Count": "01"
-  },
-  "Bug": [
-    "69825"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-gfx/imagemagick",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "6.1.3.2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "6.1.3.2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    ImageMagick is a collection of tools to read, write and manipulate images\n    in many formats.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    ImageMagick fails to do proper bounds checking when handling image files\n    with EXIF information.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker could use an image file with specially-crafted EXIF information\n    to cause arbitrary code execution with the permissions of the user running\n    ImageMagick.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All ImageMagick users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/imagemagick-6.1.3.2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2004-0981",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0981"
-      },
-      {
-        "Text": "ImageMagick ChangeLog",
-        "Link": "https://www.imagemagick.org/www/Changelog.html"
-      },
-      {
-        "Text": "SA 12995",
-        "Link": "https://secunia.com/advisories/12995/"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2004-11-05T13:21:51Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-11-06T13:00:12Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-11-06T18:34:28Z"
-    }
-  ]
+	"ID": "200411-11",
+	"Title": "ImageMagick: EXIF buffer overflow",
+	"Synopsis": "\n    ImageMagick contains an error in boundary checks when handling EXIF\n    information, which could lead to arbitrary code execution.\n  ",
+	"Product": {
+		"Text": "imagemagick",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-11-06",
+	"Revised": {
+		"Text": "2004-11-06",
+		"Count": "01"
+	},
+	"Bug": [
+		"69825"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-gfx/imagemagick",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "6.1.3.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "6.1.3.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    ImageMagick is a collection of tools to read, write and manipulate images\n    in many formats.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    ImageMagick fails to do proper bounds checking when handling image files\n    with EXIF information.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker could use an image file with specially-crafted EXIF information\n    to cause arbitrary code execution with the permissions of the user running\n    ImageMagick.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All ImageMagick users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/imagemagick-6.1.3.2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2004-0981",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0981"
+			},
+			{
+				"Text": "ImageMagick ChangeLog",
+				"Link": "https://www.imagemagick.org/www/Changelog.html"
+			},
+			{
+				"Text": "SA 12995",
+				"Link": "https://secunia.com/advisories/12995/"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2004-11-05T13:21:51Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-11-06T13:00:12Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-11-06T18:34:28Z"
+		}
+	]
 }

@@ -1,160 +1,160 @@
 {
-  "ID": "200811-05",
-  "Title": "PHP: Multiple vulnerabilities",
-  "Synopsis": "\n    PHP contains several vulnerabilities including buffer and integer overflows\n    which could lead to the remote execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "php",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-11-16",
-  "Revised": {
-    "Text": "2008-11-16",
-    "Count": "01"
-  },
-  "Bug": [
-    "209148",
-    "212211",
-    "215266",
-    "228369",
-    "230575",
-    "234102"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-lang/php",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "5.2.6-r6",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "5.2.6-r6",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    PHP is a widely-used general-purpose scripting language that is\n    especially suited for Web development and can be embedded into HTML.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Several vulnerabilitites were found in PHP:\n    </p>\n    <ul>\n    <li>PHP ships a\n    vulnerable version of the PCRE library which allows for the\n    circumvention of security restrictions or even for remote code\n    execution in case of an application which accepts user-supplied regular\n    expressions (CVE-2008-0674).</li>\n    <li>Multiple crash issues in several\n    PHP functions have been discovered.</li>\n    <li>Ryan Permeh reported that\n    the init_request_info() function in sapi/cgi/cgi_main.c does not\n    properly consider operator precedence when calculating the length of\n    PATH_TRANSLATED (CVE-2008-0599).</li>\n    <li>An off-by-one error in the\n    metaphone() function may lead to memory corruption.</li>\n    <li>Maksymilian Arciemowicz of SecurityReason Research reported an\n    integer overflow, which is triggerable using printf() and related\n    functions (CVE-2008-1384).</li>\n    <li>Andrei Nigmatulin reported a\n    stack-based buffer overflow in the FastCGI SAPI, which has unknown\n    attack vectors (CVE-2008-2050).</li>\n    <li>Stefan Esser reported that PHP\n    does not correctly handle multibyte characters inside the\n    escapeshellcmd() function, which is used to sanitize user input before\n    its usage in shell commands (CVE-2008-2051).</li>\n    <li>Stefan Esser\n    reported that a short-coming in PHP's algorithm of seeding the random\n    number generator might allow for predictible random numbers\n    (CVE-2008-2107, CVE-2008-2108).</li>\n    <li>The IMAP extension in PHP uses\n    obsolete c-client API calls making it vulnerable to buffer overflows as\n    no bounds checking can be done (CVE-2008-2829).</li>\n    <li>Tavis Ormandy\n    reported a heap-based buffer overflow in pcre_compile.c in the PCRE\n    version shipped by PHP when processing user-supplied regular\n    expressions (CVE-2008-2371).</li>\n    <li>CzechSec reported that specially\n    crafted font files can lead to an overflow in the imageloadfont()\n    function in ext/gd/gd.c, which is part of the GD extension\n    (CVE-2008-3658).</li>\n    <li>Maksymilian Arciemowicz of SecurityReason\n    Research reported that a design error in PHP's stream wrappers allows\n    to circumvent safe_mode checks in several filesystem-related PHP\n    functions (CVE-2008-2665, CVE-2008-2666).</li>\n    <li>Laurent Gaffie\n    discovered a buffer overflow in the internal memnstr() function, which\n    is used by the PHP function explode() (CVE-2008-3659).</li>\n    <li>An\n    error in the FastCGI SAPI when processing a request with multiple dots\n    preceding the extension (CVE-2008-3660).</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    These vulnerabilities might allow a remote attacker to execute\n    arbitrary code, to cause a Denial of Service, to circumvent security\n    restrictions, to disclose information, and to manipulate files.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All PHP users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/php-5.2.6-r6\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-0599",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0599"
-      },
-      {
-        "Text": "CVE-2008-0674",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0674"
-      },
-      {
-        "Text": "CVE-2008-1384",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1384"
-      },
-      {
-        "Text": "CVE-2008-2050",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2050"
-      },
-      {
-        "Text": "CVE-2008-2051",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2051"
-      },
-      {
-        "Text": "CVE-2008-2107",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2107"
-      },
-      {
-        "Text": "CVE-2008-2108",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2108"
-      },
-      {
-        "Text": "CVE-2008-2371",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2371"
-      },
-      {
-        "Text": "CVE-2008-2665",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2665"
-      },
-      {
-        "Text": "CVE-2008-2666",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2666"
-      },
-      {
-        "Text": "CVE-2008-2829",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2829"
-      },
-      {
-        "Text": "CVE-2008-3658",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3658"
-      },
-      {
-        "Text": "CVE-2008-3659",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3659"
-      },
-      {
-        "Text": "CVE-2008-3660",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3660"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-03-17T01:12:26Z"
-    },
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-11-10T18:29:08Z"
-    },
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-11-16T16:06:26Z"
-    }
-  ]
+	"ID": "200811-05",
+	"Title": "PHP: Multiple vulnerabilities",
+	"Synopsis": "\n    PHP contains several vulnerabilities including buffer and integer overflows\n    which could lead to the remote execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "php",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-11-16",
+	"Revised": {
+		"Text": "2008-11-16",
+		"Count": "01"
+	},
+	"Bug": [
+		"209148",
+		"212211",
+		"215266",
+		"228369",
+		"230575",
+		"234102"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-lang/php",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "5.2.6-r6",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "5.2.6-r6",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    PHP is a widely-used general-purpose scripting language that is\n    especially suited for Web development and can be embedded into HTML.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Several vulnerabilitites were found in PHP:\n    </p>\n    <ul>\n    <li>PHP ships a\n    vulnerable version of the PCRE library which allows for the\n    circumvention of security restrictions or even for remote code\n    execution in case of an application which accepts user-supplied regular\n    expressions (CVE-2008-0674).</li>\n    <li>Multiple crash issues in several\n    PHP functions have been discovered.</li>\n    <li>Ryan Permeh reported that\n    the init_request_info() function in sapi/cgi/cgi_main.c does not\n    properly consider operator precedence when calculating the length of\n    PATH_TRANSLATED (CVE-2008-0599).</li>\n    <li>An off-by-one error in the\n    metaphone() function may lead to memory corruption.</li>\n    <li>Maksymilian Arciemowicz of SecurityReason Research reported an\n    integer overflow, which is triggerable using printf() and related\n    functions (CVE-2008-1384).</li>\n    <li>Andrei Nigmatulin reported a\n    stack-based buffer overflow in the FastCGI SAPI, which has unknown\n    attack vectors (CVE-2008-2050).</li>\n    <li>Stefan Esser reported that PHP\n    does not correctly handle multibyte characters inside the\n    escapeshellcmd() function, which is used to sanitize user input before\n    its usage in shell commands (CVE-2008-2051).</li>\n    <li>Stefan Esser\n    reported that a short-coming in PHP's algorithm of seeding the random\n    number generator might allow for predictible random numbers\n    (CVE-2008-2107, CVE-2008-2108).</li>\n    <li>The IMAP extension in PHP uses\n    obsolete c-client API calls making it vulnerable to buffer overflows as\n    no bounds checking can be done (CVE-2008-2829).</li>\n    <li>Tavis Ormandy\n    reported a heap-based buffer overflow in pcre_compile.c in the PCRE\n    version shipped by PHP when processing user-supplied regular\n    expressions (CVE-2008-2371).</li>\n    <li>CzechSec reported that specially\n    crafted font files can lead to an overflow in the imageloadfont()\n    function in ext/gd/gd.c, which is part of the GD extension\n    (CVE-2008-3658).</li>\n    <li>Maksymilian Arciemowicz of SecurityReason\n    Research reported that a design error in PHP's stream wrappers allows\n    to circumvent safe_mode checks in several filesystem-related PHP\n    functions (CVE-2008-2665, CVE-2008-2666).</li>\n    <li>Laurent Gaffie\n    discovered a buffer overflow in the internal memnstr() function, which\n    is used by the PHP function explode() (CVE-2008-3659).</li>\n    <li>An\n    error in the FastCGI SAPI when processing a request with multiple dots\n    preceding the extension (CVE-2008-3660).</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    These vulnerabilities might allow a remote attacker to execute\n    arbitrary code, to cause a Denial of Service, to circumvent security\n    restrictions, to disclose information, and to manipulate files.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All PHP users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/php-5.2.6-r6\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-0599",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0599"
+			},
+			{
+				"Text": "CVE-2008-0674",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0674"
+			},
+			{
+				"Text": "CVE-2008-1384",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1384"
+			},
+			{
+				"Text": "CVE-2008-2050",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2050"
+			},
+			{
+				"Text": "CVE-2008-2051",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2051"
+			},
+			{
+				"Text": "CVE-2008-2107",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2107"
+			},
+			{
+				"Text": "CVE-2008-2108",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2108"
+			},
+			{
+				"Text": "CVE-2008-2371",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2371"
+			},
+			{
+				"Text": "CVE-2008-2665",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2665"
+			},
+			{
+				"Text": "CVE-2008-2666",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2666"
+			},
+			{
+				"Text": "CVE-2008-2829",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2829"
+			},
+			{
+				"Text": "CVE-2008-3658",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3658"
+			},
+			{
+				"Text": "CVE-2008-3659",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3659"
+			},
+			{
+				"Text": "CVE-2008-3660",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3660"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-03-17T01:12:26Z"
+		},
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-11-10T18:29:08Z"
+		},
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-11-16T16:06:26Z"
+		}
+	]
 }

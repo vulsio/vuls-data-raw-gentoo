@@ -1,98 +1,98 @@
 {
-  "ID": "201309-21",
-  "Title": "klibc: Command Injection",
-  "Synopsis": "A vulnerability in klibc could allow remote attackers to execute\n    arbitrary shell code.\n  ",
-  "Product": {
-    "Text": "klibc",
-    "Type": "ebuild"
-  },
-  "Announced": "2013-09-26",
-  "Revised": {
-    "Text": "2013-09-26",
-    "Count": "1"
-  },
-  "Bug": [
-    "369075"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-libs/klibc",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.5.25",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.5.25",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>klibc is a minimalistic libc used for making an initramfs.</p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>The ipconfig utility in klibc writes DHCP options to\n      /tmp/net-$DEVICE.conf, and this file is later sourced by other scripts to\n      get defined variables. The options written to this file are not properly\n      escaped.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could send a specially crafted DHCP reply, which could\n      execute arbitrary shell code with the privileges of any process which\n      sources DHCP options.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All klibc users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/klibc-1.5.25\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2011-1930",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-1930"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    pinkbyte\n  ",
-      "Tag": "requester",
-      "Timestamp": "2013-08-30T11:18:21Z"
-    },
-    {
-      "Text": "\n    creffett\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2013-09-26T23:52:30Z"
-    }
-  ]
+	"ID": "201309-21",
+	"Title": "klibc: Command Injection",
+	"Synopsis": "A vulnerability in klibc could allow remote attackers to execute\n    arbitrary shell code.\n  ",
+	"Product": {
+		"Text": "klibc",
+		"Type": "ebuild"
+	},
+	"Announced": "2013-09-26",
+	"Revised": {
+		"Text": "2013-09-26",
+		"Count": "1"
+	},
+	"Bug": [
+		"369075"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-libs/klibc",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.5.25",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.5.25",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>klibc is a minimalistic libc used for making an initramfs.</p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>The ipconfig utility in klibc writes DHCP options to\n      /tmp/net-$DEVICE.conf, and this file is later sourced by other scripts to\n      get defined variables. The options written to this file are not properly\n      escaped.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could send a specially crafted DHCP reply, which could\n      execute arbitrary shell code with the privileges of any process which\n      sources DHCP options.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All klibc users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/klibc-1.5.25\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2011-1930",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-1930"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    pinkbyte\n  ",
+			"Tag": "requester",
+			"Timestamp": "2013-08-30T11:18:21Z"
+		},
+		{
+			"Text": "\n    creffett\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2013-09-26T23:52:30Z"
+		}
+	]
 }

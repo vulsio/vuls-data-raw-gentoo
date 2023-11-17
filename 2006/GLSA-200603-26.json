@@ -1,103 +1,103 @@
 {
-  "ID": "200603-26",
-  "Title": "bsd-games: Local privilege escalation in tetris-bsd",
-  "Synopsis": "\n    tetris-bsd is prone to local privilege escalation vulnerabilities.\n  ",
-  "Product": {
-    "Text": "bsd-games",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-03-29",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "02"
-  },
-  "Bug": [
-    "122399"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "games-misc/bsd-games",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.17-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.17-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    bsd-games is a collection of NetBSD games ported to Linux.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Tavis Ormandy of the Gentoo Linux Security Audit Team discovered that\n    the checkscores() function in scores.c reads in the data from the\n    /var/games/tetris-bsd.scores file without validation, rendering it\n    vulnerable to buffer overflows and incompatible with the system used\n    for managing games on Gentoo Linux. As a result, it cannot be played\n    securely on systems with multiple users. Please note that this is\n    probably a Gentoo-specific issue.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local user who is a member of group \"games\" may be able to modify the\n    tetris-bsd.scores file to trigger the execution of arbitrary code with\n    the privileges of other players.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Do not add untrusted users to the \"games\" group.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All bsd-games users are advised to update to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=games-misc/bsd-games-2.17-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-1539",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1539"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-03-21T19:50:34Z"
-    },
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-03-27T15:36:51Z"
-    },
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-03-28T18:00:28Z"
-    }
-  ]
+	"ID": "200603-26",
+	"Title": "bsd-games: Local privilege escalation in tetris-bsd",
+	"Synopsis": "\n    tetris-bsd is prone to local privilege escalation vulnerabilities.\n  ",
+	"Product": {
+		"Text": "bsd-games",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-03-29",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "02"
+	},
+	"Bug": [
+		"122399"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "games-misc/bsd-games",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.17-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.17-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    bsd-games is a collection of NetBSD games ported to Linux.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Tavis Ormandy of the Gentoo Linux Security Audit Team discovered that\n    the checkscores() function in scores.c reads in the data from the\n    /var/games/tetris-bsd.scores file without validation, rendering it\n    vulnerable to buffer overflows and incompatible with the system used\n    for managing games on Gentoo Linux. As a result, it cannot be played\n    securely on systems with multiple users. Please note that this is\n    probably a Gentoo-specific issue.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local user who is a member of group \"games\" may be able to modify the\n    tetris-bsd.scores file to trigger the execution of arbitrary code with\n    the privileges of other players.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Do not add untrusted users to the \"games\" group.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All bsd-games users are advised to update to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=games-misc/bsd-games-2.17-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-1539",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1539"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-03-21T19:50:34Z"
+		},
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-03-27T15:36:51Z"
+		},
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-03-28T18:00:28Z"
+		}
+	]
 }

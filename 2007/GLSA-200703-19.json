@@ -1,107 +1,107 @@
 {
-  "ID": "200703-19",
-  "Title": "LTSP: Authentication bypass in included LibVNCServer code",
-  "Synopsis": "\n    LTSP includes a version of libVNCServer that is vulnerable to an\n    authentication bypass.\n  ",
-  "Product": {
-    "Text": "ltsp",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-03-18",
-  "Revised": {
-    "Text": "2007-03-18",
-    "Count": "01"
-  },
-  "Bug": [
-    "142661"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-misc/ltsp",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.2-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.2-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    The Linux Terminal Server Project adds thin-client support to Linux\n    servers.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The LTSP server includes vulnerable LibVNCServer code, which fails to\n    properly validate protocol types effectively letting users decide what\n    protocol to use, such as \"Type 1 - None\" (GLSA-200608-05). The LTSP VNC\n    server will accept this security type, even if it is not offered by the\n    server.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    An attacker could exploit this vulnerability to gain unauthorized\n    access with the privileges of the user running the VNC server.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All LTSP users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/ltsp-4.2-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-2450",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2450"
-      },
-      {
-        "Text": "GLSA 200608-05",
-        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200608-05.xml"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-02-10T19:11:34Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-02-10T23:53:14Z"
-    },
-    {
-      "Text": "\n    aetius\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-02-27T02:25:26Z"
-    }
-  ]
+	"ID": "200703-19",
+	"Title": "LTSP: Authentication bypass in included LibVNCServer code",
+	"Synopsis": "\n    LTSP includes a version of libVNCServer that is vulnerable to an\n    authentication bypass.\n  ",
+	"Product": {
+		"Text": "ltsp",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-03-18",
+	"Revised": {
+		"Text": "2007-03-18",
+		"Count": "01"
+	},
+	"Bug": [
+		"142661"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-misc/ltsp",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.2-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.2-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    The Linux Terminal Server Project adds thin-client support to Linux\n    servers.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The LTSP server includes vulnerable LibVNCServer code, which fails to\n    properly validate protocol types effectively letting users decide what\n    protocol to use, such as \"Type 1 - None\" (GLSA-200608-05). The LTSP VNC\n    server will accept this security type, even if it is not offered by the\n    server.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    An attacker could exploit this vulnerability to gain unauthorized\n    access with the privileges of the user running the VNC server.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All LTSP users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/ltsp-4.2-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-2450",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2450"
+			},
+			{
+				"Text": "GLSA 200608-05",
+				"Link": "https://www.gentoo.org/security/en/glsa/glsa-200608-05.xml"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-02-10T19:11:34Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-02-10T23:53:14Z"
+		},
+		{
+			"Text": "\n    aetius\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-02-27T02:25:26Z"
+		}
+	]
 }

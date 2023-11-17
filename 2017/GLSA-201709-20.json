@@ -1,98 +1,98 @@
 {
-  "ID": "201709-20",
-  "Title": "Postfix: Privilege escalation",
-  "Synopsis": "A vulnerability in Postfix may allow local users to gain root\n    privileges.\n    \n  ",
-  "Product": {
-    "Text": "postfix",
-    "Type": "ebuild"
-  },
-  "Announced": "2017-09-24",
-  "Revised": {
-    "Text": "2017-09-24",
-    "Count": "1"
-  },
-  "Bug": [
-    "621882"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "mail-mta/postfix",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.1.6",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.1.6",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Postfix is a mail server and an alternative to the widely-used Sendmail\n      program.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>By default, Berkeley DB reads a DB_CONFIG configuration file from the\n      current working directory. This is an undocumented behavior.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>A local attacker, by using a specially crafted DG_CONFIG file, could\n      possibly escalate privileges to the root group.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All Postfix users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=mail-mta/postfix-3.1.6\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "Postfix\n      Official Announce\n    ",
-        "Link": "https://www.postfix.org/announcements/postfix-3.2.2.html"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "chrisadr",
-      "Tag": "requester",
-      "Timestamp": "2017-09-21T15:43:52Z"
-    },
-    {
-      "Text": "chrisadr",
-      "Tag": "submitter",
-      "Timestamp": "2017-09-24T15:51:13Z"
-    }
-  ]
+	"ID": "201709-20",
+	"Title": "Postfix: Privilege escalation",
+	"Synopsis": "A vulnerability in Postfix may allow local users to gain root\n    privileges.\n    \n  ",
+	"Product": {
+		"Text": "postfix",
+		"Type": "ebuild"
+	},
+	"Announced": "2017-09-24",
+	"Revised": {
+		"Text": "2017-09-24",
+		"Count": "1"
+	},
+	"Bug": [
+		"621882"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "mail-mta/postfix",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.1.6",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.1.6",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Postfix is a mail server and an alternative to the widely-used Sendmail\n      program.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>By default, Berkeley DB reads a DB_CONFIG configuration file from the\n      current working directory. This is an undocumented behavior.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>A local attacker, by using a specially crafted DG_CONFIG file, could\n      possibly escalate privileges to the root group.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All Postfix users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=mail-mta/postfix-3.1.6\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "Postfix\n      Official Announce\n    ",
+				"Link": "https://www.postfix.org/announcements/postfix-3.2.2.html"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "chrisadr",
+			"Tag": "requester",
+			"Timestamp": "2017-09-21T15:43:52Z"
+		},
+		{
+			"Text": "chrisadr",
+			"Tag": "submitter",
+			"Timestamp": "2017-09-24T15:51:13Z"
+		}
+	]
 }

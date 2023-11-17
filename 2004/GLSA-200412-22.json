@@ -1,107 +1,107 @@
 {
-  "ID": "200412-22",
-  "Title": "mpg123: Playlist buffer overflow",
-  "Synopsis": "\n    mpg123 is vulnerable to a buffer overflow that allows an attacker to\n    execute arbitrary code through the use of a malicious playlist.\n  ",
-  "Product": {
-    "Text": "mpg123",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-12-21",
-  "Revised": {
-    "Text": "2004-12-21",
-    "Count": "01"
-  },
-  "Bug": [
-    "74692"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-sound/mpg123",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.59s-r8",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.59s-r8",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    mpg123 is a MPEG Audio Player.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Bartlomiej Sieka discovered that mpg123 contains an unsafe\n    strcat() to an array in playlist.c. This code vulnerability may lead to\n    a buffer overflow.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could craft a malicious playlist which, when\n    used, would result in the execution of arbitrary code with the rights\n    of the user running mpg123.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All mpg123 users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-sound/mpg123-0.59s-r8\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "Original Advisory",
-        "Link": "http://tigger.uic.edu/~jlongs2/holes/mpg123.txt"
-      },
-      {
-        "Text": "CAN-2004-1284",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1284"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2004-12-20T14:15:47Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-12-20T21:20:26Z"
-    },
-    {
-      "Text": "\n    SeJo\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-12-21T09:35:46Z"
-    }
-  ]
+	"ID": "200412-22",
+	"Title": "mpg123: Playlist buffer overflow",
+	"Synopsis": "\n    mpg123 is vulnerable to a buffer overflow that allows an attacker to\n    execute arbitrary code through the use of a malicious playlist.\n  ",
+	"Product": {
+		"Text": "mpg123",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-12-21",
+	"Revised": {
+		"Text": "2004-12-21",
+		"Count": "01"
+	},
+	"Bug": [
+		"74692"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-sound/mpg123",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.59s-r8",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.59s-r8",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    mpg123 is a MPEG Audio Player.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Bartlomiej Sieka discovered that mpg123 contains an unsafe\n    strcat() to an array in playlist.c. This code vulnerability may lead to\n    a buffer overflow.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could craft a malicious playlist which, when\n    used, would result in the execution of arbitrary code with the rights\n    of the user running mpg123.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All mpg123 users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-sound/mpg123-0.59s-r8\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "Original Advisory",
+				"Link": "http://tigger.uic.edu/~jlongs2/holes/mpg123.txt"
+			},
+			{
+				"Text": "CAN-2004-1284",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1284"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2004-12-20T14:15:47Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-12-20T21:20:26Z"
+		},
+		{
+			"Text": "\n    SeJo\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-12-21T09:35:46Z"
+		}
+	]
 }

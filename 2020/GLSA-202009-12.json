@@ -1,98 +1,98 @@
 {
-  "ID": "202009-12",
-  "Title": "ZeroMQ: Denial of service",
-  "Synopsis": "A vulnerability in ZeroMQ could lead to a Denial of Service\n    condition.\n  ",
-  "Product": {
-    "Text": "zeromq",
-    "Type": "ebuild"
-  },
-  "Announced": "2020-09-13",
-  "Revised": {
-    "Text": "2020-09-13",
-    "Count": "1"
-  },
-  "Bug": [
-    "740574"
-  ],
-  "Access": "local, remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-libs/zeromq",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.3.3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.3.3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Looks like an embeddable networking library but acts like a concurrency\n      framework.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>It was discovered that ZeroMQ does not properly handle connecting peers\n      before a handshake is completed.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>An unauthenticated remote attacker able to connect to a ZeroMQ endpoint,\n      even with CURVE encryption/authentication enabled, can cause a Denial of\n      Service condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All ZeroMQ users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-libs/zeromq-4.3.3\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2020-15166",
-        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-15166"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "whissi",
-      "Tag": "requester",
-      "Timestamp": "2020-09-12T19:44:05Z"
-    },
-    {
-      "Text": "whissi",
-      "Tag": "submitter",
-      "Timestamp": "2020-09-13T23:27:38Z"
-    }
-  ]
+	"ID": "202009-12",
+	"Title": "ZeroMQ: Denial of service",
+	"Synopsis": "A vulnerability in ZeroMQ could lead to a Denial of Service\n    condition.\n  ",
+	"Product": {
+		"Text": "zeromq",
+		"Type": "ebuild"
+	},
+	"Announced": "2020-09-13",
+	"Revised": {
+		"Text": "2020-09-13",
+		"Count": "1"
+	},
+	"Bug": [
+		"740574"
+	],
+	"Access": "local, remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-libs/zeromq",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.3.3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.3.3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Looks like an embeddable networking library but acts like a concurrency\n      framework.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>It was discovered that ZeroMQ does not properly handle connecting peers\n      before a handshake is completed.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>An unauthenticated remote attacker able to connect to a ZeroMQ endpoint,\n      even with CURVE encryption/authentication enabled, can cause a Denial of\n      Service condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All ZeroMQ users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-libs/zeromq-4.3.3\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2020-15166",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-15166"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "whissi",
+			"Tag": "requester",
+			"Timestamp": "2020-09-12T19:44:05Z"
+		},
+		{
+			"Text": "whissi",
+			"Tag": "submitter",
+			"Timestamp": "2020-09-13T23:27:38Z"
+		}
+	]
 }

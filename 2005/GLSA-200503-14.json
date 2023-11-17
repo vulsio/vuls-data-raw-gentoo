@@ -1,103 +1,103 @@
 {
-  "ID": "200503-14",
-  "Title": "KDE dcopidlng: Insecure temporary file creation",
-  "Synopsis": "\n    The dcopidlng script is vulnerable to symlink attacks, potentially allowing\n    a local user to overwrite arbitrary files.\n  ",
-  "Product": {
-    "Text": "dcopidlng",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-03-07",
-  "Revised": {
-    "Text": "2005-03-07",
-    "Count": "01"
-  },
-  "Bug": [
-    "81652"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "kde-base/kdelibs",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.3.2-r5",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "3.2.3-r7",
-            "Range": "rge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.3.2-r5",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    KDE is a feature-rich graphical desktop environment for Linux and\n    Unix-like Operating Systems. DCOP is KDE's simple IPC/RPC mechanism.\n    dcopidlng is a DCOP helper script.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Davide Madrisan has discovered that the dcopidlng script creates\n    temporary files in a world-writable directory with predictable names.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary\n    files directory, pointing to a valid file somewhere on the filesystem.\n    When dcopidlng is executed, this would result in the file being\n    overwritten with the rights of the user running the utility, which\n    could be the root user.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All kdelibs users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose kde-base/kdelibs"
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2005-0365",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0365"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-03-03T21:01:57Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-03-06T09:59:12Z"
-    }
-  ]
+	"ID": "200503-14",
+	"Title": "KDE dcopidlng: Insecure temporary file creation",
+	"Synopsis": "\n    The dcopidlng script is vulnerable to symlink attacks, potentially allowing\n    a local user to overwrite arbitrary files.\n  ",
+	"Product": {
+		"Text": "dcopidlng",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-03-07",
+	"Revised": {
+		"Text": "2005-03-07",
+		"Count": "01"
+	},
+	"Bug": [
+		"81652"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "kde-base/kdelibs",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.3.2-r5",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "3.2.3-r7",
+						"Range": "rge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.3.2-r5",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    KDE is a feature-rich graphical desktop environment for Linux and\n    Unix-like Operating Systems. DCOP is KDE's simple IPC/RPC mechanism.\n    dcopidlng is a DCOP helper script.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Davide Madrisan has discovered that the dcopidlng script creates\n    temporary files in a world-writable directory with predictable names.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary\n    files directory, pointing to a valid file somewhere on the filesystem.\n    When dcopidlng is executed, this would result in the file being\n    overwritten with the rights of the user running the utility, which\n    could be the root user.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All kdelibs users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose kde-base/kdelibs"
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2005-0365",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0365"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-03-03T21:01:57Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-03-06T09:59:12Z"
+		}
+	]
 }

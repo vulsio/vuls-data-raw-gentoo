@@ -1,108 +1,108 @@
 {
-  "ID": "201009-03",
-  "Title": "sudo: Privilege Escalation",
-  "Synopsis": "\n    The secure path feature and group handling in sudo allow local attackers to\n    escalate privileges.\n  ",
-  "Product": {
-    "Text": "sudo",
-    "Type": "ebuild"
-  },
-  "Announced": "2010-09-07",
-  "Revised": {
-    "Text": "2010-09-07",
-    "Count": "01"
-  },
-  "Bug": [
-    "322517",
-    "335381"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-admin/sudo",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.7.4_p3-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.7.4_p3-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    sudo allows a system administrator to give users the ability to run\n    commands as other users.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Multiple vulnerabilities have been reported in sudo:\n    </p>\n    <ul>\n    <li>Evan\n    Broder and Anders Kaseorg of Ksplice, Inc. reported that the sudo\n    'secure path' feature does not properly handle multiple PATH variables\n    (CVE-2010-1646).</li>\n    <li>Markus Wuethrich of Swiss Post reported that\n    sudo fails to restrict access when using Runas groups and the group\n    (-g) command line option (CVE-2010-2956).</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A local attacker could exploit these vulnerabilities to gain the\n    ability to run certain commands with the privileges of other users,\n    including root, depending on the configuration.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All sudo users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-admin/sudo-1.7.4_p3-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2010-1646",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-1646"
-      },
-      {
-        "Text": "CVE-2010-2956",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-2956"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    vorlon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2010-06-13T19:16:17Z"
-    },
-    {
-      "Text": "\n    vorlon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2010-06-13T19:16:52Z"
-    },
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2010-09-07T11:40:54Z"
-    }
-  ]
+	"ID": "201009-03",
+	"Title": "sudo: Privilege Escalation",
+	"Synopsis": "\n    The secure path feature and group handling in sudo allow local attackers to\n    escalate privileges.\n  ",
+	"Product": {
+		"Text": "sudo",
+		"Type": "ebuild"
+	},
+	"Announced": "2010-09-07",
+	"Revised": {
+		"Text": "2010-09-07",
+		"Count": "01"
+	},
+	"Bug": [
+		"322517",
+		"335381"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-admin/sudo",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.7.4_p3-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.7.4_p3-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    sudo allows a system administrator to give users the ability to run\n    commands as other users.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Multiple vulnerabilities have been reported in sudo:\n    </p>\n    <ul>\n    <li>Evan\n    Broder and Anders Kaseorg of Ksplice, Inc. reported that the sudo\n    'secure path' feature does not properly handle multiple PATH variables\n    (CVE-2010-1646).</li>\n    <li>Markus Wuethrich of Swiss Post reported that\n    sudo fails to restrict access when using Runas groups and the group\n    (-g) command line option (CVE-2010-2956).</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A local attacker could exploit these vulnerabilities to gain the\n    ability to run certain commands with the privileges of other users,\n    including root, depending on the configuration.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All sudo users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-admin/sudo-1.7.4_p3-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2010-1646",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-1646"
+			},
+			{
+				"Text": "CVE-2010-2956",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-2956"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    vorlon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2010-06-13T19:16:17Z"
+		},
+		{
+			"Text": "\n    vorlon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2010-06-13T19:16:52Z"
+		},
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2010-09-07T11:40:54Z"
+		}
+	]
 }

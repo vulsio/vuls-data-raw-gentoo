@@ -1,98 +1,98 @@
 {
-  "ID": "202208-21",
-  "Title": "libebml: Heap buffer overflow vulnerability",
-  "Synopsis": "A heap-based buffer overflow in libeml might allow attackers to execute arbitrary code.",
-  "Product": {
-    "Text": "libebml",
-    "Type": "ebuild"
-  },
-  "Announced": "2022-08-14",
-  "Revised": {
-    "Text": "2022-08-14",
-    "Count": "1"
-  },
-  "Bug": [
-    "772272"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-libs/libebml",
-        "Auto": "yes",
-        "Arch": "arm ppc sparc x86",
-        "Unaffected": [
-          {
-            "Text": "1.4.2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.4.2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n        <p>libebml is a C++ library to parse EBML files.</p>\n    "
-  },
-  "Description": {
-    "Text": "\n        <p>On 32bit builds of libebml, the length of a string is miscalculated, potentially leading to an exploitable heap overflow.</p>\n    "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n        <p>An attacker able to provide arbitrary input to libebml could achieve arbitrary code execution.</p>\n    "
-  },
-  "Workaround": {
-    "Text": "\n        <p>There is no known workaround at this time.</p>\n    "
-  },
-  "Resolution": {
-    "Text": "\n        \n        \n        \n    ",
-    "P": [
-      {
-        "Text": "Users of libebml on 32 bit architectures should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=dev-libs/libebml-1.4.2\"\n        "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2021-3405",
-        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-3405"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "ajak",
-      "Tag": "requester",
-      "Timestamp": "2022-08-14T00:09:54.090013Z"
-    },
-    {
-      "Text": "ajak",
-      "Tag": "submitter",
-      "Timestamp": "2022-08-14T00:09:54.093255Z"
-    }
-  ]
+	"ID": "202208-21",
+	"Title": "libebml: Heap buffer overflow vulnerability",
+	"Synopsis": "A heap-based buffer overflow in libeml might allow attackers to execute arbitrary code.",
+	"Product": {
+		"Text": "libebml",
+		"Type": "ebuild"
+	},
+	"Announced": "2022-08-14",
+	"Revised": {
+		"Text": "2022-08-14",
+		"Count": "1"
+	},
+	"Bug": [
+		"772272"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-libs/libebml",
+				"Auto": "yes",
+				"Arch": "arm ppc sparc x86",
+				"Unaffected": [
+					{
+						"Text": "1.4.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.4.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>libebml is a C++ library to parse EBML files.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>On 32bit builds of libebml, the length of a string is miscalculated, potentially leading to an exploitable heap overflow.</p>\n    "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n        <p>An attacker able to provide arbitrary input to libebml could achieve arbitrary code execution.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "Users of libebml on 32 bit architectures should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=dev-libs/libebml-1.4.2\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2021-3405",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-3405"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "ajak",
+			"Tag": "requester",
+			"Timestamp": "2022-08-14T00:09:54.090013Z"
+		},
+		{
+			"Text": "ajak",
+			"Tag": "submitter",
+			"Timestamp": "2022-08-14T00:09:54.093255Z"
+		}
+	]
 }

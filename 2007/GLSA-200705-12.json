@@ -1,134 +1,134 @@
 {
-  "ID": "200705-12",
-  "Title": "PostgreSQL: Privilege escalation",
-  "Synopsis": "\n    PostgreSQL contains a vulnerability that could result in SQL privilege\n    escalation.\n  ",
-  "Product": {
-    "Text": "postgresql",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-05-10",
-  "Revised": {
-    "Text": "2009-05-28",
-    "Count": "02"
-  },
-  "Bug": [
-    "175791"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-db/postgresql",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "8.0.13",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "7.4.17",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "7.3.19",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "7.3.21",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "7.4.19",
-            "Range": "rge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "8.0.13",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    PostgreSQL is an open source object-relational database management\n    system.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    An error involving insecure search_path settings in the SECURITY\n    DEFINER functions has been reported in PostgreSQL.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    If allowed to call a SECURITY DEFINER function, an attacker could gain\n    the SQL privileges of the owner of the called function.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All PostgreSQL users should upgrade to the latest version and fix their\n    SECURITY DEFINER functions:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    In order to fix the SECURITY DEFINER functions, PostgreSQL users are\n    advised to refer to the PostgreSQL documentation: \n    ",
-        "URI": {
-          "Text": "http://www.postgresql\n    .org/docs/techdocs.77",
-          "Link": "http://www.postgresql.org/docs/techdocs.77"
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \"dev-db/postgresql\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-2138",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2138"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    aetius\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-05-03T18:37:29Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-05-06T22:14:19Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-05-08T06:08:11Z"
-    }
-  ]
+	"ID": "200705-12",
+	"Title": "PostgreSQL: Privilege escalation",
+	"Synopsis": "\n    PostgreSQL contains a vulnerability that could result in SQL privilege\n    escalation.\n  ",
+	"Product": {
+		"Text": "postgresql",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-05-10",
+	"Revised": {
+		"Text": "2009-05-28",
+		"Count": "02"
+	},
+	"Bug": [
+		"175791"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-db/postgresql",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "8.0.13",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "7.4.17",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "7.3.19",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "7.3.21",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "7.4.19",
+						"Range": "rge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "8.0.13",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    PostgreSQL is an open source object-relational database management\n    system.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    An error involving insecure search_path settings in the SECURITY\n    DEFINER functions has been reported in PostgreSQL.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    If allowed to call a SECURITY DEFINER function, an attacker could gain\n    the SQL privileges of the owner of the called function.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All PostgreSQL users should upgrade to the latest version and fix their\n    SECURITY DEFINER functions:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    In order to fix the SECURITY DEFINER functions, PostgreSQL users are\n    advised to refer to the PostgreSQL documentation: \n    ",
+				"URI": {
+					"Text": "http://www.postgresql\n    .org/docs/techdocs.77",
+					"Link": "http://www.postgresql.org/docs/techdocs.77"
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \"dev-db/postgresql\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-2138",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2138"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    aetius\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-05-03T18:37:29Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-05-06T22:14:19Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-05-08T06:08:11Z"
+		}
+	]
 }

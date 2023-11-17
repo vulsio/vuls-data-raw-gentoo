@@ -1,118 +1,118 @@
 {
-  "ID": "201203-22",
-  "Title": "nginx: Multiple vulnerabilities",
-  "Synopsis": "Multiple vulnerabilities have been found in nginx, the worst of\n    which may allow execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "nginx",
-    "Type": "ebuild"
-  },
-  "Announced": "2012-03-28",
-  "Revised": {
-    "Text": "2012-03-28",
-    "Count": "1"
-  },
-  "Bug": [
-    "293785",
-    "293786",
-    "293788",
-    "389319",
-    "408367"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-servers/nginx",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.0.14",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.0.14",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>nginx is a robust, small, and high performance HTTP and reverse proxy\n      server.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Multiple vulnerabilities have been found in nginx:</p>\n    \n    <ul>\n      <li>The TLS protocol does not properly handle session renegotiation\n        requests (CVE-2009-3555).\n      </li>\n      <li>The \"ngx_http_process_request_headers()\" function in ngx_http_parse.c\n        could cause a NULL pointer dereference (CVE-2009-3896).\n      </li>\n      <li>nginx does not properly sanitize user input for the the WebDAV COPY\n        or MOVE methods (CVE-2009-3898).\n      </li>\n      <li>The \"ngx_resolver_copy()\" function in ngx_resolver.c contains a\n        boundary error which could cause a heap-based buffer overflow\n        (CVE-2011-4315).\n      </li>\n      <li>nginx does not properly parse HTTP header responses which could\n        expose sensitive information (CVE-2012-1180).\n      </li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>A remote attacker could possibly execute arbitrary code with the\n      privileges of the nginx process, cause a Denial of Service condition,\n      create or overwrite arbitrary files, or obtain sensitive information. \n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All nginx users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=www-servers/nginx-1.0.14\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2009-3555\n    ",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-3555"
-      },
-      {
-        "Text": "CVE-2009-3896\n    ",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-3896"
-      },
-      {
-        "Text": "CVE-2009-3898\n    ",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-3898"
-      },
-      {
-        "Text": "CVE-2011-4315\n    ",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-4315"
-      },
-      {
-        "Text": "CVE-2012-1180\n    ",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1180"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "craig",
-      "Tag": "requester",
-      "Timestamp": "2011-10-07T23:37:49Z"
-    },
-    {
-      "Text": "ackle",
-      "Tag": "submitter",
-      "Timestamp": "2012-03-28T10:35:47Z"
-    }
-  ]
+	"ID": "201203-22",
+	"Title": "nginx: Multiple vulnerabilities",
+	"Synopsis": "Multiple vulnerabilities have been found in nginx, the worst of\n    which may allow execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "nginx",
+		"Type": "ebuild"
+	},
+	"Announced": "2012-03-28",
+	"Revised": {
+		"Text": "2012-03-28",
+		"Count": "1"
+	},
+	"Bug": [
+		"293785",
+		"293786",
+		"293788",
+		"389319",
+		"408367"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-servers/nginx",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.0.14",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.0.14",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>nginx is a robust, small, and high performance HTTP and reverse proxy\n      server.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Multiple vulnerabilities have been found in nginx:</p>\n    \n    <ul>\n      <li>The TLS protocol does not properly handle session renegotiation\n        requests (CVE-2009-3555).\n      </li>\n      <li>The \"ngx_http_process_request_headers()\" function in ngx_http_parse.c\n        could cause a NULL pointer dereference (CVE-2009-3896).\n      </li>\n      <li>nginx does not properly sanitize user input for the the WebDAV COPY\n        or MOVE methods (CVE-2009-3898).\n      </li>\n      <li>The \"ngx_resolver_copy()\" function in ngx_resolver.c contains a\n        boundary error which could cause a heap-based buffer overflow\n        (CVE-2011-4315).\n      </li>\n      <li>nginx does not properly parse HTTP header responses which could\n        expose sensitive information (CVE-2012-1180).\n      </li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>A remote attacker could possibly execute arbitrary code with the\n      privileges of the nginx process, cause a Denial of Service condition,\n      create or overwrite arbitrary files, or obtain sensitive information. \n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All nginx users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=www-servers/nginx-1.0.14\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2009-3555\n    ",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-3555"
+			},
+			{
+				"Text": "CVE-2009-3896\n    ",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-3896"
+			},
+			{
+				"Text": "CVE-2009-3898\n    ",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-3898"
+			},
+			{
+				"Text": "CVE-2011-4315\n    ",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-4315"
+			},
+			{
+				"Text": "CVE-2012-1180\n    ",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1180"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "craig",
+			"Tag": "requester",
+			"Timestamp": "2011-10-07T23:37:49Z"
+		},
+		{
+			"Text": "ackle",
+			"Tag": "submitter",
+			"Timestamp": "2012-03-28T10:35:47Z"
+		}
+	]
 }

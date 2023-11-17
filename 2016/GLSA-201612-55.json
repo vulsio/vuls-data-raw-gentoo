@@ -1,102 +1,102 @@
 {
-  "ID": "201612-55",
-  "Title": "libjpeg-turbo: User-assisted execution of arbitrary code",
-  "Synopsis": "An out-of-bounds read in libjpeg-turbo might allow remote attackers\n    to execute arbitrary code.\n  ",
-  "Product": {
-    "Text": "libjpeg-turbo",
-    "Type": "ebuild"
-  },
-  "Announced": "2016-12-31",
-  "Revised": {
-    "Text": "2016-12-31",
-    "Count": "1"
-  },
-  "Bug": [
-    "585782"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-libs/libjpeg-turbo",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.5.0",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.5.0",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>libjpeg-turbo is a JPEG image codec that uses SIMD instructions (MMX,\n      SSE2, NEON, AltiVec) to accelerate baseline JPEG compression and\n      decompression.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>The accelerated Huffman decoder was previously invoked if there were 128\n      bytes in the input buffer. However, it is possible to construct a JPEG\n      image with Huffman blocks &gt; 430 bytes in length. This release simply\n      increases the minimum buffer size for the accelerated Huffman decoder to\n      512 bytes, which should accommodate any possible input.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could coerce the victim to run a specially crafted\n      image file resulting in the execution of arbitrary code.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All libjpeg-turbo users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/libjpeg-turbo-1.5.0\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "\n      LJT-01-005\n    ",
-        "Link": "https://wiki.mozilla.org/images/7/77/Libjpeg-turbo-report.pdf"
-      },
-      {
-        "Text": "\n      Prevent overread when decoding malformed JPEG\n    ",
-        "Link": "https://github.com/libjpeg-turbo/libjpeg-turbo/commit/0463f7c9aad060fcd56e98d025ce16185279e2bc"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "b-man",
-      "Tag": "requester",
-      "Timestamp": "2016-11-20T06:32:59Z"
-    },
-    {
-      "Text": "b-man",
-      "Tag": "submitter",
-      "Timestamp": "2016-12-31T15:38:15Z"
-    }
-  ]
+	"ID": "201612-55",
+	"Title": "libjpeg-turbo: User-assisted execution of arbitrary code",
+	"Synopsis": "An out-of-bounds read in libjpeg-turbo might allow remote attackers\n    to execute arbitrary code.\n  ",
+	"Product": {
+		"Text": "libjpeg-turbo",
+		"Type": "ebuild"
+	},
+	"Announced": "2016-12-31",
+	"Revised": {
+		"Text": "2016-12-31",
+		"Count": "1"
+	},
+	"Bug": [
+		"585782"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-libs/libjpeg-turbo",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.5.0",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.5.0",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>libjpeg-turbo is a JPEG image codec that uses SIMD instructions (MMX,\n      SSE2, NEON, AltiVec) to accelerate baseline JPEG compression and\n      decompression.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>The accelerated Huffman decoder was previously invoked if there were 128\n      bytes in the input buffer. However, it is possible to construct a JPEG\n      image with Huffman blocks &gt; 430 bytes in length. This release simply\n      increases the minimum buffer size for the accelerated Huffman decoder to\n      512 bytes, which should accommodate any possible input.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could coerce the victim to run a specially crafted\n      image file resulting in the execution of arbitrary code.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All libjpeg-turbo users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/libjpeg-turbo-1.5.0\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "\n      LJT-01-005\n    ",
+				"Link": "https://wiki.mozilla.org/images/7/77/Libjpeg-turbo-report.pdf"
+			},
+			{
+				"Text": "\n      Prevent overread when decoding malformed JPEG\n    ",
+				"Link": "https://github.com/libjpeg-turbo/libjpeg-turbo/commit/0463f7c9aad060fcd56e98d025ce16185279e2bc"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "b-man",
+			"Tag": "requester",
+			"Timestamp": "2016-11-20T06:32:59Z"
+		},
+		{
+			"Text": "b-man",
+			"Tag": "submitter",
+			"Timestamp": "2016-12-31T15:38:15Z"
+		}
+	]
 }

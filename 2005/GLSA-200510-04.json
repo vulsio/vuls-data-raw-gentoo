@@ -1,103 +1,103 @@
 {
-  "ID": "200510-04",
-  "Title": "Texinfo: Insecure temporary file creation",
-  "Synopsis": "\n    Texinfo is vulnerable to symlink attacks, potentially allowing a local user\n    to overwrite arbitrary files.\n  ",
-  "Product": {
-    "Text": "Texinfo",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-10-05",
-  "Revised": {
-    "Text": "2005-10-05",
-    "Count": "01"
-  },
-  "Bug": [
-    "106105"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sys-apps/texinfo",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.8-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.8-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Texinfo is the official documentation system created by the GNU\n    project.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Frank Lichtenheld has discovered that the \"sort_offline()\"\n    function in texindex insecurely creates temporary files with\n    predictable filenames.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary\n    files directory, pointing to a valid file somewhere on the filesystem.\n    When texindex is executed, this would result in the file being\n    overwritten with the rights of the user running the application.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Texinfo users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-apps/texinfo-4.8-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2005-3011",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-3011"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-09-29T14:54:06Z"
-    },
-    {
-      "Text": "\n    formula7\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-09-29T19:15:57Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-10-01T09:53:58Z"
-    }
-  ]
+	"ID": "200510-04",
+	"Title": "Texinfo: Insecure temporary file creation",
+	"Synopsis": "\n    Texinfo is vulnerable to symlink attacks, potentially allowing a local user\n    to overwrite arbitrary files.\n  ",
+	"Product": {
+		"Text": "Texinfo",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-10-05",
+	"Revised": {
+		"Text": "2005-10-05",
+		"Count": "01"
+	},
+	"Bug": [
+		"106105"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-apps/texinfo",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.8-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.8-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Texinfo is the official documentation system created by the GNU\n    project.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Frank Lichtenheld has discovered that the \"sort_offline()\"\n    function in texindex insecurely creates temporary files with\n    predictable filenames.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary\n    files directory, pointing to a valid file somewhere on the filesystem.\n    When texindex is executed, this would result in the file being\n    overwritten with the rights of the user running the application.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Texinfo users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-apps/texinfo-4.8-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2005-3011",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-3011"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-09-29T14:54:06Z"
+		},
+		{
+			"Text": "\n    formula7\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-09-29T19:15:57Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-10-01T09:53:58Z"
+		}
+	]
 }

@@ -1,103 +1,103 @@
 {
-  "ID": "200709-13",
-  "Title": "rsync: Two buffer overflows",
-  "Synopsis": "\n    Two user-assisted buffer overflow vulnerabilities have been discovered in\n    rsync.\n  ",
-  "Product": {
-    "Text": "rsync",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-09-20",
-  "Revised": {
-    "Text": "2007-09-20",
-    "Count": "01"
-  },
-  "Bug": [
-    "189132"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-misc/rsync",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.6.9-r3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.6.9-r3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    rsync is a file transfer program to keep remote directories\n    synchronized.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Sebastian Krahmer from the SUSE Security Team discovered two off-by-one\n    errors in the function \"f_name()\" in file sender.c when processing\n    overly long directory names.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to synchronize a repository\n    containing specially crafted directories, leading to the execution of\n    arbitrary code with the privileges of the user running the application.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All rsync users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/rsync-2.6.9-r3\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-4091",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4091"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-09-08T22:30:02Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-09-09T00:00:07Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-09-15T16:04:37Z"
-    }
-  ]
+	"ID": "200709-13",
+	"Title": "rsync: Two buffer overflows",
+	"Synopsis": "\n    Two user-assisted buffer overflow vulnerabilities have been discovered in\n    rsync.\n  ",
+	"Product": {
+		"Text": "rsync",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-09-20",
+	"Revised": {
+		"Text": "2007-09-20",
+		"Count": "01"
+	},
+	"Bug": [
+		"189132"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-misc/rsync",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.6.9-r3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.6.9-r3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    rsync is a file transfer program to keep remote directories\n    synchronized.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Sebastian Krahmer from the SUSE Security Team discovered two off-by-one\n    errors in the function \"f_name()\" in file sender.c when processing\n    overly long directory names.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to synchronize a repository\n    containing specially crafted directories, leading to the execution of\n    arbitrary code with the privileges of the user running the application.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All rsync users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/rsync-2.6.9-r3\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-4091",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4091"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-09-08T22:30:02Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-09-09T00:00:07Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-09-15T16:04:37Z"
+		}
+	]
 }

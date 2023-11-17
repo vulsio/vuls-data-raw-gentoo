@@ -1,103 +1,103 @@
 {
-  "ID": "200703-26",
-  "Title": "file: Integer underflow",
-  "Synopsis": "\n    A buffer underflow vulnerability has been reported in file allowing for the\n    user-assisted execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "file",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-03-30",
-  "Revised": {
-    "Text": "2007-03-30",
-    "Count": "01"
-  },
-  "Bug": [
-    "171452"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sys-apps/file",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.20",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.20",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    file is a utility that guesses a file format by scanning binary data\n    for patterns.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Jean-Sebastien Guay-Leroux reported an integer underflow in\n    file_printf function.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to run the \"file\" program on a\n    specially crafted file that would trigger a heap-based buffer overflow\n    possibly leading to the execution of arbitrary code with the rights of\n    the user running \"file\". Note that this vulnerability could be also\n    triggered through an automatic file scanner like amavisd-new.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    Since file is a system package, all Gentoo users should upgrade to the\n    latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-apps/file-4.20\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-1536",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1536"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-03-24T17:59:07Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-03-26T20:27:32Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-03-29T21:14:57Z"
-    }
-  ]
+	"ID": "200703-26",
+	"Title": "file: Integer underflow",
+	"Synopsis": "\n    A buffer underflow vulnerability has been reported in file allowing for the\n    user-assisted execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "file",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-03-30",
+	"Revised": {
+		"Text": "2007-03-30",
+		"Count": "01"
+	},
+	"Bug": [
+		"171452"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-apps/file",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.20",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.20",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    file is a utility that guesses a file format by scanning binary data\n    for patterns.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Jean-Sebastien Guay-Leroux reported an integer underflow in\n    file_printf function.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to run the \"file\" program on a\n    specially crafted file that would trigger a heap-based buffer overflow\n    possibly leading to the execution of arbitrary code with the rights of\n    the user running \"file\". Note that this vulnerability could be also\n    triggered through an automatic file scanner like amavisd-new.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    Since file is a system package, all Gentoo users should upgrade to the\n    latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-apps/file-4.20\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-1536",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1536"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-03-24T17:59:07Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-03-26T20:27:32Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-03-29T21:14:57Z"
+		}
+	]
 }

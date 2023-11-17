@@ -1,98 +1,98 @@
 {
-  "ID": "202104-01",
-  "Title": "Git: User-assisted execution of arbitrary code",
-  "Synopsis": "A vulnerability has been found in Git that could allow a remote\n    attacker to execute arbitrary code.\n  ",
-  "Product": {
-    "Text": "git",
-    "Type": "ebuild"
-  },
-  "Announced": "2021-04-30",
-  "Revised": {
-    "Text": "2021-04-30",
-    "Count": "1"
-  },
-  "Bug": [
-    "774678"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-vcs/git",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.26.3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.26.3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Git is a distributed version control system designed.</p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>It was discovered that Git could be fooled into running remote code\n      during a clone on case-insensitive file systems with support for symbolic\n      links, if Git is configured globally to apply delay-capable clean/smudge\n      filters (such as Git LFS).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could entice a user to clone a specially crafted\n      repository, possibly resulting in the remote execution of arbitrary code\n      with the privileges of the user running the application.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All Git users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-vcs/git-2.26.3\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2021-21300",
-        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-21300"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "whissi",
-      "Tag": "requester",
-      "Timestamp": "2021-04-30T22:21:04Z"
-    },
-    {
-      "Text": "whissi",
-      "Tag": "submitter",
-      "Timestamp": "2021-04-30T23:44:55Z"
-    }
-  ]
+	"ID": "202104-01",
+	"Title": "Git: User-assisted execution of arbitrary code",
+	"Synopsis": "A vulnerability has been found in Git that could allow a remote\n    attacker to execute arbitrary code.\n  ",
+	"Product": {
+		"Text": "git",
+		"Type": "ebuild"
+	},
+	"Announced": "2021-04-30",
+	"Revised": {
+		"Text": "2021-04-30",
+		"Count": "1"
+	},
+	"Bug": [
+		"774678"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-vcs/git",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.26.3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.26.3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Git is a distributed version control system designed.</p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>It was discovered that Git could be fooled into running remote code\n      during a clone on case-insensitive file systems with support for symbolic\n      links, if Git is configured globally to apply delay-capable clean/smudge\n      filters (such as Git LFS).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could entice a user to clone a specially crafted\n      repository, possibly resulting in the remote execution of arbitrary code\n      with the privileges of the user running the application.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All Git users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-vcs/git-2.26.3\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2021-21300",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-21300"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "whissi",
+			"Tag": "requester",
+			"Timestamp": "2021-04-30T22:21:04Z"
+		},
+		{
+			"Text": "whissi",
+			"Tag": "submitter",
+			"Timestamp": "2021-04-30T23:44:55Z"
+		}
+	]
 }

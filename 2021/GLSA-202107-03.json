@@ -1,98 +1,98 @@
 {
-  "ID": "202107-03",
-  "Title": "libqb: Insecure temporary file",
-  "Synopsis": "An insecure temporary file usage has been reported in libqb\n    possibly allowing local code execution.\n  ",
-  "Product": {
-    "Text": "libqb",
-    "Type": "ebuild"
-  },
-  "Announced": "2021-07-03",
-  "Revised": {
-    "Text": "2021-07-03",
-    "Count": "1"
-  },
-  "Bug": [
-    "699860"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sys-cluster/libqb",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.0.5",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.0.5",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>libqb is a library with the primary purpose of providing\n      high-performance, reusable features for client-server architecture, such\n      as logging, tracing, inter-process communication (IPC), and polling.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>It was discovered that libqb used predictable filenames (under /dev/shm\n      and /tmp) without O_EXCL.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>A local attacker could perform symlink attacks to overwrite arbitrary\n      files with the privileges of the user running the application linked\n      against libqb.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All libqb users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-cluster/libqb-1.0.5\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2019-12779",
-        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2019-12779"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "whissi",
-      "Tag": "requester",
-      "Timestamp": "2021-05-26T21:28:24Z"
-    },
-    {
-      "Text": "whissi",
-      "Tag": "submitter",
-      "Timestamp": "2021-07-03T03:11:34Z"
-    }
-  ]
+	"ID": "202107-03",
+	"Title": "libqb: Insecure temporary file",
+	"Synopsis": "An insecure temporary file usage has been reported in libqb\n    possibly allowing local code execution.\n  ",
+	"Product": {
+		"Text": "libqb",
+		"Type": "ebuild"
+	},
+	"Announced": "2021-07-03",
+	"Revised": {
+		"Text": "2021-07-03",
+		"Count": "1"
+	},
+	"Bug": [
+		"699860"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-cluster/libqb",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.0.5",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.0.5",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>libqb is a library with the primary purpose of providing\n      high-performance, reusable features for client-server architecture, such\n      as logging, tracing, inter-process communication (IPC), and polling.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>It was discovered that libqb used predictable filenames (under /dev/shm\n      and /tmp) without O_EXCL.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>A local attacker could perform symlink attacks to overwrite arbitrary\n      files with the privileges of the user running the application linked\n      against libqb.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All libqb users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-cluster/libqb-1.0.5\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2019-12779",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2019-12779"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "whissi",
+			"Tag": "requester",
+			"Timestamp": "2021-05-26T21:28:24Z"
+		},
+		{
+			"Text": "whissi",
+			"Tag": "submitter",
+			"Timestamp": "2021-07-03T03:11:34Z"
+		}
+	]
 }

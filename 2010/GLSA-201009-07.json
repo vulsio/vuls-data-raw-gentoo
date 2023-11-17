@@ -1,118 +1,118 @@
 {
-  "ID": "201009-07",
-  "Title": "libxml2: Denial of service",
-  "Synopsis": "\n    Multiple Denial of Services vulnerabilities were found in libxml2.\n  ",
-  "Product": {
-    "Text": "libxml2",
-    "Type": "ebuild"
-  },
-  "Announced": "2010-09-21",
-  "Revised": {
-    "Text": "2010-09-21",
-    "Count": "01"
-  },
-  "Bug": [
-    "280617"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-libs/libxml2",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.7.3-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.7.3-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    libxml2 is a library to manipulate XML files.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The following vulnerabilities were reported after a test with the\n    Codenomicon XML fuzzing framework:\n    </p>\n    <ul>\n    <li>\n    Two use-after-free vulnerabilities are possible when parsing a XML file\n    with Notation or Enumeration attribute types (CVE-2009-2416).\n    </li>\n    <li>\n    A stack consumption vulnerability can be triggered via a large depth of\n    element declarations in a DTD, related to a function recursion\n    (CVE-2009-2414).\n    </li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user or automated system to open a\n    specially crafted XML document with an application using libxml2\n    resulting in a Denial of Service condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All libxml2 users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    NOTE: This is a legacy GLSA. Updates for all affected architectures are\n    available since August 30, 2009. It is likely that your system is\n    already no longer affected by this issue.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/libxml2-2.7.3-r2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2009-2414",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2414"
-      },
-      {
-        "Text": "CVE-2009-2416",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2416"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "requester",
-      "Timestamp": "2009-08-31T02:15:14Z"
-    },
-    {
-      "Text": "\n    craig\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2010-04-11T13:13:48Z"
-    },
-    {
-      "Text": "\n    vorlon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2010-05-30T18:03:32Z"
-    }
-  ]
+	"ID": "201009-07",
+	"Title": "libxml2: Denial of service",
+	"Synopsis": "\n    Multiple Denial of Services vulnerabilities were found in libxml2.\n  ",
+	"Product": {
+		"Text": "libxml2",
+		"Type": "ebuild"
+	},
+	"Announced": "2010-09-21",
+	"Revised": {
+		"Text": "2010-09-21",
+		"Count": "01"
+	},
+	"Bug": [
+		"280617"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-libs/libxml2",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.7.3-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.7.3-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    libxml2 is a library to manipulate XML files.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The following vulnerabilities were reported after a test with the\n    Codenomicon XML fuzzing framework:\n    </p>\n    <ul>\n    <li>\n    Two use-after-free vulnerabilities are possible when parsing a XML file\n    with Notation or Enumeration attribute types (CVE-2009-2416).\n    </li>\n    <li>\n    A stack consumption vulnerability can be triggered via a large depth of\n    element declarations in a DTD, related to a function recursion\n    (CVE-2009-2414).\n    </li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user or automated system to open a\n    specially crafted XML document with an application using libxml2\n    resulting in a Denial of Service condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All libxml2 users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    NOTE: This is a legacy GLSA. Updates for all affected architectures are\n    available since August 30, 2009. It is likely that your system is\n    already no longer affected by this issue.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/libxml2-2.7.3-r2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2009-2414",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2414"
+			},
+			{
+				"Text": "CVE-2009-2416",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2416"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "requester",
+			"Timestamp": "2009-08-31T02:15:14Z"
+		},
+		{
+			"Text": "\n    craig\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2010-04-11T13:13:48Z"
+		},
+		{
+			"Text": "\n    vorlon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2010-05-30T18:03:32Z"
+		}
+	]
 }

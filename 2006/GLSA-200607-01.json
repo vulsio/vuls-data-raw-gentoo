@@ -1,103 +1,103 @@
 {
-  "ID": "200607-01",
-  "Title": "mpg123: Heap overflow",
-  "Synopsis": "\n    A heap overflow in mpg123 was discovered, which could result in the\n    execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "mpg123",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-07-03",
-  "Revised": {
-    "Text": "2006-07-29",
-    "Count": "02"
-  },
-  "Bug": [
-    "133988"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-sound/mpg123",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.59s-r11",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.59s-r11",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    mpg123 is a real time audio player designed for the MPEG format.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    In httpdget.c, a variable is assigned to the heap, and is supposed to\n    receive a smaller allocation. As this variable was not terminated\n    properly, strncpy() will overwrite the data assigned next in memory.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    By enticing a user to visit a malicious URL, an attacker could possibly\n    execute arbitrary code with the rights of the user running mpg123.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All mpg123 users should update to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-sound/mpg123-0.59s-r11\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-3355",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3355"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-06-30T16:01:33Z"
-    },
-    {
-      "Text": "\n    hlieberman\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-06-30T18:10:59Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-07-02T14:50:47Z"
-    }
-  ]
+	"ID": "200607-01",
+	"Title": "mpg123: Heap overflow",
+	"Synopsis": "\n    A heap overflow in mpg123 was discovered, which could result in the\n    execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "mpg123",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-07-03",
+	"Revised": {
+		"Text": "2006-07-29",
+		"Count": "02"
+	},
+	"Bug": [
+		"133988"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-sound/mpg123",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.59s-r11",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.59s-r11",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    mpg123 is a real time audio player designed for the MPEG format.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    In httpdget.c, a variable is assigned to the heap, and is supposed to\n    receive a smaller allocation. As this variable was not terminated\n    properly, strncpy() will overwrite the data assigned next in memory.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    By enticing a user to visit a malicious URL, an attacker could possibly\n    execute arbitrary code with the rights of the user running mpg123.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All mpg123 users should update to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-sound/mpg123-0.59s-r11\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-3355",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3355"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-06-30T16:01:33Z"
+		},
+		{
+			"Text": "\n    hlieberman\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-06-30T18:10:59Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-07-02T14:50:47Z"
+		}
+	]
 }

@@ -1,98 +1,98 @@
 {
-  "ID": "201401-22",
-  "Title": "Active Record: SQL injection",
-  "Synopsis": "A vulnerability in Active Record could allow a remote attacker to\n    inject SQL commands.\n  ",
-  "Product": {
-    "Text": "activerecord",
-    "Type": "ebuild"
-  },
-  "Announced": "2014-01-21",
-  "Revised": {
-    "Text": "2014-01-21",
-    "Count": "1"
-  },
-  "Bug": [
-    "449826"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-ruby/activerecord",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.3.14-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.3.14-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Active Record is a Ruby gem that allows database entries to be\n      manipulated as objects.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>An Active Record method parameter can mistakenly be used as a scope.</p>\n  "
-  },
-  "Impact": {
-    "Type": "low",
-    "Text": "\n    <p>A remote attacker could use specially crafted input to execute arbitrary\n      SQL statements.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>The vulnerability may be mitigated by converting the input to an\n      expected value. This is accomplished by changing instances of\n      ‘Post.find_by_id(params[:id])’ in code using Active Record to\n      ‘Post.find_by_id(params[:id].to_s)’\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All Active Record users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-ruby/activerecord-2.3.14-r1\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2012-6496",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-6496"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    creffett\n  ",
-      "Tag": "requester",
-      "Timestamp": "2013-12-11T02:08:41Z"
-    },
-    {
-      "Text": "\n    creffett\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2014-01-21T20:21:31Z"
-    }
-  ]
+	"ID": "201401-22",
+	"Title": "Active Record: SQL injection",
+	"Synopsis": "A vulnerability in Active Record could allow a remote attacker to\n    inject SQL commands.\n  ",
+	"Product": {
+		"Text": "activerecord",
+		"Type": "ebuild"
+	},
+	"Announced": "2014-01-21",
+	"Revised": {
+		"Text": "2014-01-21",
+		"Count": "1"
+	},
+	"Bug": [
+		"449826"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-ruby/activerecord",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.3.14-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.3.14-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Active Record is a Ruby gem that allows database entries to be\n      manipulated as objects.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>An Active Record method parameter can mistakenly be used as a scope.</p>\n  "
+	},
+	"Impact": {
+		"Type": "low",
+		"Text": "\n    <p>A remote attacker could use specially crafted input to execute arbitrary\n      SQL statements.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>The vulnerability may be mitigated by converting the input to an\n      expected value. This is accomplished by changing instances of\n      ‘Post.find_by_id(params[:id])’ in code using Active Record to\n      ‘Post.find_by_id(params[:id].to_s)’\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All Active Record users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-ruby/activerecord-2.3.14-r1\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2012-6496",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-6496"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    creffett\n  ",
+			"Tag": "requester",
+			"Timestamp": "2013-12-11T02:08:41Z"
+		},
+		{
+			"Text": "\n    creffett\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2014-01-21T20:21:31Z"
+		}
+	]
 }

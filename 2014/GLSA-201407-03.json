@@ -1,342 +1,342 @@
 {
-  "ID": "201407-03",
-  "Title": "Xen: Multiple Vunlerabilities",
-  "Synopsis": "Multiple vulnerabilities have been found in Xen, the worst of which\n    could lead to arbitrary code execution.\n  ",
-  "Product": {
-    "Text": "xen",
-    "Type": "ebuild"
-  },
-  "Announced": "2014-07-16",
-  "Revised": {
-    "Text": "2014-07-16",
-    "Count": "1"
-  },
-  "Bug": [
-    "440768",
-    "484478",
-    "486354",
-    "497082",
-    "497084",
-    "497086",
-    "499054",
-    "499124",
-    "500528",
-    "500530",
-    "500536",
-    "501080",
-    "501906",
-    "505714",
-    "509054",
-    "513824"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-emulations/xen",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.3.2-r4",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "4.2.4-r4",
-            "Range": "rge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.3.2-r4",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-emulations/xen-tools",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.3.2-r5",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "4.2.4-r6",
-            "Range": "rge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.3.2-r5",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-emulations/xen-pvgrub",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.3.2",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "4.2.4",
-            "Range": "rge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.3.2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Xen is a bare-metal hypervisor.</p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Multiple vulnerabilities have been discovered in Xen. Please review the\n      CVE identifiers referenced below for details.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>A remote attacker can utilize multiple vectors to execute arbitrary\n      code, cause Denial of Service, or gain access to data on the host.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All Xen 4.3 users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "All Xen 4.2 users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "All xen-tools 4.3 users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "All xen-tools 4.2 users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "All Xen PVGRUB 4.3 users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "All Xen PVGRUB 4.2 users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-emulations/xen-4.3.2-r2\"\n    ",
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-emulations/xen-4.2.4-r2\"\n    ",
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=app-emulations/xen-tools-4.3.2-r2\"\n    ",
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=app-emulations/xen-tools-4.2.4-r2\"\n    ",
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-emulations/xen-pvgrub-4.3.2\"\n    ",
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-emulations/xen-pvgrub-4.2.4\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2013-1442",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1442"
-      },
-      {
-        "Text": "CVE-2013-4329",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4329"
-      },
-      {
-        "Text": "CVE-2013-4355",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4355"
-      },
-      {
-        "Text": "CVE-2013-4356",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4356"
-      },
-      {
-        "Text": "CVE-2013-4361",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4361"
-      },
-      {
-        "Text": "CVE-2013-4368",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4368"
-      },
-      {
-        "Text": "CVE-2013-4369",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4369"
-      },
-      {
-        "Text": "CVE-2013-4370",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4370"
-      },
-      {
-        "Text": "CVE-2013-4371",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4371"
-      },
-      {
-        "Text": "CVE-2013-4375",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4375"
-      },
-      {
-        "Text": "CVE-2013-4416",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4416"
-      },
-      {
-        "Text": "CVE-2013-4494",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4494"
-      },
-      {
-        "Text": "CVE-2013-4551",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4551"
-      },
-      {
-        "Text": "CVE-2013-4553",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4553"
-      },
-      {
-        "Text": "CVE-2013-4554",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4554"
-      },
-      {
-        "Text": "CVE-2013-6375",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-6375"
-      },
-      {
-        "Text": "CVE-2013-6400",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-6400"
-      },
-      {
-        "Text": "CVE-2013-6885",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-6885"
-      },
-      {
-        "Text": "CVE-2013-6885",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-6885"
-      },
-      {
-        "Text": "CVE-2014-1642",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-1642"
-      },
-      {
-        "Text": "CVE-2014-1666",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-1666"
-      },
-      {
-        "Text": "CVE-2014-1891",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-1891"
-      },
-      {
-        "Text": "CVE-2014-1892",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-1892"
-      },
-      {
-        "Text": "CVE-2014-1893",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-1893"
-      },
-      {
-        "Text": "CVE-2014-1894",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-1894"
-      },
-      {
-        "Text": "CVE-2014-1895",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-1895"
-      },
-      {
-        "Text": "CVE-2014-1896",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-1896"
-      },
-      {
-        "Text": "CVE-2014-2599",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-2599"
-      },
-      {
-        "Text": "CVE-2014-3124",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-3124"
-      },
-      {
-        "Text": "CVE-2014-4021",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-4021"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    BlueKnight\n  ",
-      "Tag": "requester",
-      "Timestamp": "2014-05-21T02:43:17Z"
-    },
-    {
-      "Text": "\n    BlueKnight\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2014-07-16T16:10:46Z"
-    }
-  ]
+	"ID": "201407-03",
+	"Title": "Xen: Multiple Vunlerabilities",
+	"Synopsis": "Multiple vulnerabilities have been found in Xen, the worst of which\n    could lead to arbitrary code execution.\n  ",
+	"Product": {
+		"Text": "xen",
+		"Type": "ebuild"
+	},
+	"Announced": "2014-07-16",
+	"Revised": {
+		"Text": "2014-07-16",
+		"Count": "1"
+	},
+	"Bug": [
+		"440768",
+		"484478",
+		"486354",
+		"497082",
+		"497084",
+		"497086",
+		"499054",
+		"499124",
+		"500528",
+		"500530",
+		"500536",
+		"501080",
+		"501906",
+		"505714",
+		"509054",
+		"513824"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-emulations/xen",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.3.2-r4",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "4.2.4-r4",
+						"Range": "rge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.3.2-r4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-emulations/xen-tools",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.3.2-r5",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "4.2.4-r6",
+						"Range": "rge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.3.2-r5",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-emulations/xen-pvgrub",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.3.2",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "4.2.4",
+						"Range": "rge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.3.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Xen is a bare-metal hypervisor.</p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Multiple vulnerabilities have been discovered in Xen. Please review the\n      CVE identifiers referenced below for details.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>A remote attacker can utilize multiple vectors to execute arbitrary\n      code, cause Denial of Service, or gain access to data on the host.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All Xen 4.3 users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "All Xen 4.2 users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "All xen-tools 4.3 users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "All xen-tools 4.2 users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "All Xen PVGRUB 4.3 users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "All Xen PVGRUB 4.2 users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-emulations/xen-4.3.2-r2\"\n    ",
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-emulations/xen-4.2.4-r2\"\n    ",
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=app-emulations/xen-tools-4.3.2-r2\"\n    ",
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=app-emulations/xen-tools-4.2.4-r2\"\n    ",
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-emulations/xen-pvgrub-4.3.2\"\n    ",
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-emulations/xen-pvgrub-4.2.4\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2013-1442",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-1442"
+			},
+			{
+				"Text": "CVE-2013-4329",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4329"
+			},
+			{
+				"Text": "CVE-2013-4355",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4355"
+			},
+			{
+				"Text": "CVE-2013-4356",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4356"
+			},
+			{
+				"Text": "CVE-2013-4361",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4361"
+			},
+			{
+				"Text": "CVE-2013-4368",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4368"
+			},
+			{
+				"Text": "CVE-2013-4369",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4369"
+			},
+			{
+				"Text": "CVE-2013-4370",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4370"
+			},
+			{
+				"Text": "CVE-2013-4371",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4371"
+			},
+			{
+				"Text": "CVE-2013-4375",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4375"
+			},
+			{
+				"Text": "CVE-2013-4416",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4416"
+			},
+			{
+				"Text": "CVE-2013-4494",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4494"
+			},
+			{
+				"Text": "CVE-2013-4551",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4551"
+			},
+			{
+				"Text": "CVE-2013-4553",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4553"
+			},
+			{
+				"Text": "CVE-2013-4554",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4554"
+			},
+			{
+				"Text": "CVE-2013-6375",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-6375"
+			},
+			{
+				"Text": "CVE-2013-6400",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-6400"
+			},
+			{
+				"Text": "CVE-2013-6885",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-6885"
+			},
+			{
+				"Text": "CVE-2013-6885",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-6885"
+			},
+			{
+				"Text": "CVE-2014-1642",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-1642"
+			},
+			{
+				"Text": "CVE-2014-1666",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-1666"
+			},
+			{
+				"Text": "CVE-2014-1891",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-1891"
+			},
+			{
+				"Text": "CVE-2014-1892",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-1892"
+			},
+			{
+				"Text": "CVE-2014-1893",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-1893"
+			},
+			{
+				"Text": "CVE-2014-1894",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-1894"
+			},
+			{
+				"Text": "CVE-2014-1895",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-1895"
+			},
+			{
+				"Text": "CVE-2014-1896",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-1896"
+			},
+			{
+				"Text": "CVE-2014-2599",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-2599"
+			},
+			{
+				"Text": "CVE-2014-3124",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-3124"
+			},
+			{
+				"Text": "CVE-2014-4021",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-4021"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    BlueKnight\n  ",
+			"Tag": "requester",
+			"Timestamp": "2014-05-21T02:43:17Z"
+		},
+		{
+			"Text": "\n    BlueKnight\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2014-07-16T16:10:46Z"
+		}
+	]
 }

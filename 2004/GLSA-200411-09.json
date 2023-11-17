@@ -1,107 +1,107 @@
 {
-  "ID": "200411-09",
-  "Title": "shadow: Unauthorized modification of account information",
-  "Synopsis": "\n    A flaw in the chfn and chsh utilities might allow modification of account\n    properties by unauthorized users.\n  ",
-  "Product": {
-    "Text": "shadow",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-11-04",
-  "Revised": {
-    "Text": "2004-11-05",
-    "Count": "02"
-  },
-  "Bug": [
-    "69212"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sys-apps/shadow",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.0.5-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.0.5-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    shadow provides a set of utilities to deal with user accounts.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Martin Schulze reported a flaw in the passwd_check() function in\n    \"libmisc/pwdcheck.c\" which is used by chfn and chsh.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "low",
-    "Text": "\n    <p>\n    A logged-in local user with an expired password may be able to use chfn and\n    chsh to change his standard shell or GECOS information (full name, phone\n    number...) without being required to change his password.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All shadow users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-apps/shadow-4.0.5-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "shadow NEWS file",
-        "Link": "http://ftp.pld.org.pl/software/shadow/NEWS"
-      },
-      {
-        "Text": "CAN-2004-1001",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1001"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2004-11-03T20:36:10Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-11-03T20:36:17Z"
-    },
-    {
-      "Text": "\n    vorlon078\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-11-03T21:01:01Z"
-    }
-  ]
+	"ID": "200411-09",
+	"Title": "shadow: Unauthorized modification of account information",
+	"Synopsis": "\n    A flaw in the chfn and chsh utilities might allow modification of account\n    properties by unauthorized users.\n  ",
+	"Product": {
+		"Text": "shadow",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-11-04",
+	"Revised": {
+		"Text": "2004-11-05",
+		"Count": "02"
+	},
+	"Bug": [
+		"69212"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-apps/shadow",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.0.5-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.0.5-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    shadow provides a set of utilities to deal with user accounts.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Martin Schulze reported a flaw in the passwd_check() function in\n    \"libmisc/pwdcheck.c\" which is used by chfn and chsh.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "low",
+		"Text": "\n    <p>\n    A logged-in local user with an expired password may be able to use chfn and\n    chsh to change his standard shell or GECOS information (full name, phone\n    number...) without being required to change his password.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All shadow users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-apps/shadow-4.0.5-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "shadow NEWS file",
+				"Link": "http://ftp.pld.org.pl/software/shadow/NEWS"
+			},
+			{
+				"Text": "CAN-2004-1001",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1001"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2004-11-03T20:36:10Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-11-03T20:36:17Z"
+		},
+		{
+			"Text": "\n    vorlon078\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-11-03T21:01:01Z"
+		}
+	]
 }

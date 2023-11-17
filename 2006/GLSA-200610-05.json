@@ -1,103 +1,103 @@
 {
-  "ID": "200610-05",
-  "Title": "CAPI4Hylafax fax receiver: Execution of arbitrary code",
-  "Synopsis": "\n    CAPI4Hylafax allows remote attackers to execute arbitrary commands.\n  ",
-  "Product": {
-    "Text": "capi4hylafax",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-10-17",
-  "Revised": {
-    "Text": "2006-10-17",
-    "Count": "01"
-  },
-  "Bug": [
-    "145982"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-misc/capi4hylafax",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "01.03.00.99.300.3-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "01.03.00.99.300.3-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    CAPI4Hylafax makes it possible to send and receive faxes via CAPI and\n    AVM Fritz!Cards.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Lionel Elie Mamane discovered an error in c2faxrecv, which doesn't\n    properly sanitize TSI strings when handling incoming calls.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker can send null (\\0) and shell metacharacters in the\n    TSI string from an anonymous fax number, leading to the execution of\n    arbitrary code with the rights of the user running c2faxrecv.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All CAPI4Hylafax users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/capi4hylafax-01.03.00.99.300.3-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-3126",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3126"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    vorlon078\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-10-11T11:18:55Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-10-13T13:56:18Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-10-13T13:57:08Z"
-    }
-  ]
+	"ID": "200610-05",
+	"Title": "CAPI4Hylafax fax receiver: Execution of arbitrary code",
+	"Synopsis": "\n    CAPI4Hylafax allows remote attackers to execute arbitrary commands.\n  ",
+	"Product": {
+		"Text": "capi4hylafax",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-10-17",
+	"Revised": {
+		"Text": "2006-10-17",
+		"Count": "01"
+	},
+	"Bug": [
+		"145982"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-misc/capi4hylafax",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "01.03.00.99.300.3-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "01.03.00.99.300.3-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    CAPI4Hylafax makes it possible to send and receive faxes via CAPI and\n    AVM Fritz!Cards.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Lionel Elie Mamane discovered an error in c2faxrecv, which doesn't\n    properly sanitize TSI strings when handling incoming calls.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker can send null (\\0) and shell metacharacters in the\n    TSI string from an anonymous fax number, leading to the execution of\n    arbitrary code with the rights of the user running c2faxrecv.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All CAPI4Hylafax users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/capi4hylafax-01.03.00.99.300.3-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-3126",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3126"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    vorlon078\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-10-11T11:18:55Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-10-13T13:56:18Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-10-13T13:57:08Z"
+		}
+	]
 }

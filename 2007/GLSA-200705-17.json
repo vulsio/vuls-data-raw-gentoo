@@ -1,103 +1,103 @@
 {
-  "ID": "200705-17",
-  "Title": "Apache mod_security: Rule bypass",
-  "Synopsis": "\n    A vulnerability has been discovered in mod_security, allowing a remote\n    attacker to bypass rules.\n  ",
-  "Product": {
-    "Text": "mod_security",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-05-17",
-  "Revised": {
-    "Text": "2007-12-30",
-    "Count": "02"
-  },
-  "Bug": [
-    "169778"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-apache/mod_security",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.1.1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.1.1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    mod_security is an Apache module designed for enhancing the security of\n    the Apache web server.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Stefan Esser discovered that mod_security processes NULL characters as\n    terminators in POST requests using the\n    application/x-www-form-urlencoded encoding type, while other parsers\n    used in web applications do not.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "low",
-    "Text": "\n    <p>\n    A remote attacker could send a specially crafted POST request, possibly\n    bypassing the module ruleset and leading to the execution of arbitrary\n    code in the scope of the web server with the rights of the user running\n    the web server.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All mod_security users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apache/mod_security-2.1.1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-1359",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1359"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    shellsage\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-05-11T23:14:33Z"
-    },
-    {
-      "Text": "\n    shellsage\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-05-13T04:49:45Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-05-13T13:46:57Z"
-    }
-  ]
+	"ID": "200705-17",
+	"Title": "Apache mod_security: Rule bypass",
+	"Synopsis": "\n    A vulnerability has been discovered in mod_security, allowing a remote\n    attacker to bypass rules.\n  ",
+	"Product": {
+		"Text": "mod_security",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-05-17",
+	"Revised": {
+		"Text": "2007-12-30",
+		"Count": "02"
+	},
+	"Bug": [
+		"169778"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-apache/mod_security",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.1.1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.1.1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    mod_security is an Apache module designed for enhancing the security of\n    the Apache web server.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Stefan Esser discovered that mod_security processes NULL characters as\n    terminators in POST requests using the\n    application/x-www-form-urlencoded encoding type, while other parsers\n    used in web applications do not.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "low",
+		"Text": "\n    <p>\n    A remote attacker could send a specially crafted POST request, possibly\n    bypassing the module ruleset and leading to the execution of arbitrary\n    code in the scope of the web server with the rights of the user running\n    the web server.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All mod_security users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apache/mod_security-2.1.1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-1359",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1359"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    shellsage\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-05-11T23:14:33Z"
+		},
+		{
+			"Text": "\n    shellsage\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-05-13T04:49:45Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-05-13T13:46:57Z"
+		}
+	]
 }

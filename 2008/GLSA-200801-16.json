@@ -1,103 +1,103 @@
 {
-  "ID": "200801-16",
-  "Title": "MaraDNS: CNAME Denial of service",
-  "Synopsis": "\n    MaraDNS is prone to a Denial of Service vulnerability impacting CNAME\n    resolution.\n  ",
-  "Product": {
-    "Text": "maradns",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-01-29",
-  "Revised": {
-    "Text": "2008-01-29",
-    "Count": "01"
-  },
-  "Bug": [
-    "204351"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-dns/maradns",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.2.12.08",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.2.12.08",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    MaraDNS is a package that implements the Domain Name Service (DNS) with\n    resolver and caching ability.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Michael Krieger reported that a specially crafted DNS could prevent an\n    authoritative canonical name (CNAME) record from being resolved because\n    of an \"improper rotation of resource records\".\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could send specially crafted DNS packets to a\n    vulnerable server, making it unable to resolve CNAME records.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Add \"max_ar_chain = 2\" to the \"marac\" configuration file.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All MaraDNS users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dns/maradns-1.2.12.09\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-0061",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0061"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-01-27T19:19:02Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-01-28T17:41:20Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-01-28T18:03:45Z"
-    }
-  ]
+	"ID": "200801-16",
+	"Title": "MaraDNS: CNAME Denial of service",
+	"Synopsis": "\n    MaraDNS is prone to a Denial of Service vulnerability impacting CNAME\n    resolution.\n  ",
+	"Product": {
+		"Text": "maradns",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-01-29",
+	"Revised": {
+		"Text": "2008-01-29",
+		"Count": "01"
+	},
+	"Bug": [
+		"204351"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-dns/maradns",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.2.12.08",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.2.12.08",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    MaraDNS is a package that implements the Domain Name Service (DNS) with\n    resolver and caching ability.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Michael Krieger reported that a specially crafted DNS could prevent an\n    authoritative canonical name (CNAME) record from being resolved because\n    of an \"improper rotation of resource records\".\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could send specially crafted DNS packets to a\n    vulnerable server, making it unable to resolve CNAME records.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Add \"max_ar_chain = 2\" to the \"marac\" configuration file.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All MaraDNS users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dns/maradns-1.2.12.09\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-0061",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0061"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-01-27T19:19:02Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-01-28T17:41:20Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-01-28T18:03:45Z"
+		}
+	]
 }

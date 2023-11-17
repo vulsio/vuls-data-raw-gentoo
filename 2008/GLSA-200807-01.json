@@ -1,135 +1,135 @@
 {
-  "ID": "200807-01",
-  "Title": "Python: Multiple integer overflows",
-  "Synopsis": "\n    Multiple integer overflows may allow for Denial of Service.\n  ",
-  "Product": {
-    "Text": "python",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-07-01",
-  "Revised": {
-    "Text": "2008-07-01",
-    "Count": "01"
-  },
-  "Bug": [
-    "216673",
-    "217221"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-lang/python",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.3.6-r6",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "2.4.4-r13",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.4.4-r13",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Python is an interpreted, interactive, object-oriented programming\n    language.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Multiple vulnerabilities were discovered in Python:\n    </p>\n    <ul>\n    <li>David\n    Remahl reported multiple integer overflows in the file imageop.c,\n    leading to a heap-based buffer overflow (CVE-2008-1679). This issue is\n    due to an incomplete fix for CVE-2007-4965.</li>\n    <li>Justin Ferguson\n    discovered that an integer signedness error in the zlib extension\n    module might trigger insufficient memory allocation and a buffer\n    overflow via a negative signed integer (CVE-2008-1721).</li>\n    <li>Justin\n    Ferguson discovered that insufficient input validation in the\n    PyString_FromStringAndSize() function might lead to a buffer overflow\n    (CVE-2008-1887).</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could exploit these vulnerabilities to cause a Denial\n    of Service or possibly the remote execution of arbitrary code with the\n    privileges of the user running Python.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    The imageop module is no longer built in the unaffected versions.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All Python 2.3 users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All Python 2.4 users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/python-2.3.6-r6\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/python-2.4.4-r13\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-1679",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1679"
-      },
-      {
-        "Text": "CVE-2008-1721",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1721"
-      },
-      {
-        "Text": "CVE-2008-1887",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1887"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-06-27T08:54:25Z"
-    },
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-07-01T11:46:03Z"
-    }
-  ]
+	"ID": "200807-01",
+	"Title": "Python: Multiple integer overflows",
+	"Synopsis": "\n    Multiple integer overflows may allow for Denial of Service.\n  ",
+	"Product": {
+		"Text": "python",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-07-01",
+	"Revised": {
+		"Text": "2008-07-01",
+		"Count": "01"
+	},
+	"Bug": [
+		"216673",
+		"217221"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-lang/python",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.3.6-r6",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "2.4.4-r13",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.4.4-r13",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Python is an interpreted, interactive, object-oriented programming\n    language.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Multiple vulnerabilities were discovered in Python:\n    </p>\n    <ul>\n    <li>David\n    Remahl reported multiple integer overflows in the file imageop.c,\n    leading to a heap-based buffer overflow (CVE-2008-1679). This issue is\n    due to an incomplete fix for CVE-2007-4965.</li>\n    <li>Justin Ferguson\n    discovered that an integer signedness error in the zlib extension\n    module might trigger insufficient memory allocation and a buffer\n    overflow via a negative signed integer (CVE-2008-1721).</li>\n    <li>Justin\n    Ferguson discovered that insufficient input validation in the\n    PyString_FromStringAndSize() function might lead to a buffer overflow\n    (CVE-2008-1887).</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could exploit these vulnerabilities to cause a Denial\n    of Service or possibly the remote execution of arbitrary code with the\n    privileges of the user running Python.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    The imageop module is no longer built in the unaffected versions.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All Python 2.3 users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All Python 2.4 users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/python-2.3.6-r6\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/python-2.4.4-r13\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-1679",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1679"
+			},
+			{
+				"Text": "CVE-2008-1721",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1721"
+			},
+			{
+				"Text": "CVE-2008-1887",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1887"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-06-27T08:54:25Z"
+		},
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-07-01T11:46:03Z"
+		}
+	]
 }

@@ -1,102 +1,102 @@
 {
-  "ID": "200409-04",
-  "Title": "Squid: Denial of service when using NTLM authentication",
-  "Synopsis": "\n    Squid is vulnerable to a denial of service attack which could crash its\n    NTLM helpers.\n  ",
-  "Product": {
-    "Text": "squid",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-09-02",
-  "Revised": {
-    "Text": "2007-12-30",
-    "Count": "03"
-  },
-  "Bug": [
-    "61280"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-proxy/squid",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.5.6-r2",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "2.5",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.5.6-r1",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Squid is a full-featured Web Proxy Cache designed to run on Unix\n    systems. It supports proxying and caching of HTTP, FTP, and other URLs,\n    as well as SSL support, cache hierarchies, transparent caching, access\n    control lists and many other features.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Squid 2.5.x versions contain a bug in the functions ntlm_fetch_string()\n    and ntlm_get_string() which lack checking the int32_t offset \"o\" for\n    negative values.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could cause a denial of service situation by sending\n    certain malformed NTLMSSP packets if NTLM authentication is enabled.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Disable NTLM authentication by removing any \"auth_param ntlm program\n    ...\" directives from squid.conf or use ntlm_auth from Samba-3.x.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Squid users should upgrade to the latest stable version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n    \n    # emerge -pv \">=net-www/squid-2.5.6-r2\"\n    # emerge \">=net-www/squid-2.5.6-r2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "Squid-2.5 Patches",
-        "Link": "http://www1.uk.squid-cache.org/squid/Versions/v2/2.5/bugs/#squid-2.5.STABLE6-ntlm_fetch_string"
-      },
-      {
-        "Text": "CVE-2004-0832",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0832"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    vorlon078\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-09-02T10:25:32Z"
-    }
-  ]
+	"ID": "200409-04",
+	"Title": "Squid: Denial of service when using NTLM authentication",
+	"Synopsis": "\n    Squid is vulnerable to a denial of service attack which could crash its\n    NTLM helpers.\n  ",
+	"Product": {
+		"Text": "squid",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-09-02",
+	"Revised": {
+		"Text": "2007-12-30",
+		"Count": "03"
+	},
+	"Bug": [
+		"61280"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-proxy/squid",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.5.6-r2",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "2.5",
+						"Range": "lt",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.5.6-r1",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Squid is a full-featured Web Proxy Cache designed to run on Unix\n    systems. It supports proxying and caching of HTTP, FTP, and other URLs,\n    as well as SSL support, cache hierarchies, transparent caching, access\n    control lists and many other features.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Squid 2.5.x versions contain a bug in the functions ntlm_fetch_string()\n    and ntlm_get_string() which lack checking the int32_t offset \"o\" for\n    negative values.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could cause a denial of service situation by sending\n    certain malformed NTLMSSP packets if NTLM authentication is enabled.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Disable NTLM authentication by removing any \"auth_param ntlm program\n    ...\" directives from squid.conf or use ntlm_auth from Samba-3.x.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Squid users should upgrade to the latest stable version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n    \n    # emerge -pv \">=net-www/squid-2.5.6-r2\"\n    # emerge \">=net-www/squid-2.5.6-r2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "Squid-2.5 Patches",
+				"Link": "http://www1.uk.squid-cache.org/squid/Versions/v2/2.5/bugs/#squid-2.5.STABLE6-ntlm_fetch_string"
+			},
+			{
+				"Text": "CVE-2004-0832",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0832"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    vorlon078\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-09-02T10:25:32Z"
+		}
+	]
 }

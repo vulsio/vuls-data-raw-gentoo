@@ -1,98 +1,98 @@
 {
-  "ID": "200701-27",
-  "Title": "ELinks: Arbitrary Samba command execution",
-  "Synopsis": "\n    ELinks does not properly validate \"smb://\" URLs, making it vulnerable to\n    the execution of arbitrary Samba commands.\n  ",
-  "Product": {
-    "Text": "elinks",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-01-30",
-  "Revised": {
-    "Text": "2007-01-30",
-    "Count": "01"
-  },
-  "Bug": [
-    "155358"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-client/elinks",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.11.2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.11.2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    ELinks is a text mode web browser.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Teemu Salmela discovered an error in the validation code of \"smb://\"\n    URLs used by ELinks, the same issue as reported in GLSA 200612-16\n    concerning Links.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to browse to a specially crafted\n    \"smb://\" URL and execute arbitrary Samba commands, which would allow\n    the overwriting of arbitrary local files or the upload or download of\n    arbitrary files. This vulnerability can be exploited only if\n    \"smbclient\" is installed on the victim's computer, which is provided by\n    the \"samba\" Gentoo package.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All ELinks users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/elinks-0.11.2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-5925",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5925"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    hyakuhei\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-01-30T10:52:21Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-01-30T11:02:26Z"
-    }
-  ]
+	"ID": "200701-27",
+	"Title": "ELinks: Arbitrary Samba command execution",
+	"Synopsis": "\n    ELinks does not properly validate \"smb://\" URLs, making it vulnerable to\n    the execution of arbitrary Samba commands.\n  ",
+	"Product": {
+		"Text": "elinks",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-01-30",
+	"Revised": {
+		"Text": "2007-01-30",
+		"Count": "01"
+	},
+	"Bug": [
+		"155358"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-client/elinks",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.11.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.11.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    ELinks is a text mode web browser.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Teemu Salmela discovered an error in the validation code of \"smb://\"\n    URLs used by ELinks, the same issue as reported in GLSA 200612-16\n    concerning Links.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to browse to a specially crafted\n    \"smb://\" URL and execute arbitrary Samba commands, which would allow\n    the overwriting of arbitrary local files or the upload or download of\n    arbitrary files. This vulnerability can be exploited only if\n    \"smbclient\" is installed on the victim's computer, which is provided by\n    the \"samba\" Gentoo package.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All ELinks users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/elinks-0.11.2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-5925",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5925"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    hyakuhei\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-01-30T10:52:21Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-01-30T11:02:26Z"
+		}
+	]
 }

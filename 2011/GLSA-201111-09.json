@@ -1,140 +1,140 @@
 {
-  "ID": "201111-09",
-  "Title": "Perl Safe module: Arbitrary Perl code injection",
-  "Synopsis": "The Safe module for Perl does not properly restrict code, allowing\n    a remote attacker to execute arbitrary Perl code outside of a restricted\n    compartment.\n  ",
-  "Product": {
-    "Text": "Safe",
-    "Type": "ebuild"
-  },
-  "Announced": "2011-11-20",
-  "Revised": {
-    "Text": "2011-11-20",
-    "Count": "1"
-  },
-  "Bug": [
-    "325563"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "perl-core/Safe",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.27",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.27",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "virtual/perl-Safe",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.27",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.27",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Safe is a Perl module to compile and execute code in restricted\n      compartments.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Unsafe code evaluation prevents the Safe module from properly\n      restricting the code of implicitly called methods on implicitly blessed\n      objects.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could entice a user to load a specially crafted Perl\n      script, resulting in execution arbitrary Perl code outside of a\n      restricted compartment.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All users of the standalone Perl Safe module should upgrade to the\n      latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "All users of the Safe module bundled with Perl should upgrade to the\n      latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "NOTE: This is a legacy GLSA. Updates for all affected architectures are\n      available since July 18, 2010. It is likely that your system is already\n      no longer affected by this issue.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=perl-core/Safe-2.27\"\n    ",
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=virtual/perl-Safe-2.27\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2010-1168",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-1168"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    underling\n  ",
-      "Tag": "requester",
-      "Timestamp": "2011-10-07T23:37:03Z"
-    },
-    {
-      "Text": "ackle",
-      "Tag": "submitter",
-      "Timestamp": "2011-11-20T17:56:51Z"
-    }
-  ]
+	"ID": "201111-09",
+	"Title": "Perl Safe module: Arbitrary Perl code injection",
+	"Synopsis": "The Safe module for Perl does not properly restrict code, allowing\n    a remote attacker to execute arbitrary Perl code outside of a restricted\n    compartment.\n  ",
+	"Product": {
+		"Text": "Safe",
+		"Type": "ebuild"
+	},
+	"Announced": "2011-11-20",
+	"Revised": {
+		"Text": "2011-11-20",
+		"Count": "1"
+	},
+	"Bug": [
+		"325563"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "perl-core/Safe",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.27",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.27",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "virtual/perl-Safe",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.27",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.27",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Safe is a Perl module to compile and execute code in restricted\n      compartments.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Unsafe code evaluation prevents the Safe module from properly\n      restricting the code of implicitly called methods on implicitly blessed\n      objects.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could entice a user to load a specially crafted Perl\n      script, resulting in execution arbitrary Perl code outside of a\n      restricted compartment.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All users of the standalone Perl Safe module should upgrade to the\n      latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "All users of the Safe module bundled with Perl should upgrade to the\n      latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "NOTE: This is a legacy GLSA. Updates for all affected architectures are\n      available since July 18, 2010. It is likely that your system is already\n      no longer affected by this issue.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=perl-core/Safe-2.27\"\n    ",
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=virtual/perl-Safe-2.27\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2010-1168",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-1168"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    underling\n  ",
+			"Tag": "requester",
+			"Timestamp": "2011-10-07T23:37:03Z"
+		},
+		{
+			"Text": "ackle",
+			"Tag": "submitter",
+			"Timestamp": "2011-11-20T17:56:51Z"
+		}
+	]
 }

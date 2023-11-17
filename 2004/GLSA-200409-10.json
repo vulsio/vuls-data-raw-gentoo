@@ -1,98 +1,98 @@
 {
-  "ID": "200409-10",
-  "Title": "multi-gnome-terminal: Information leak",
-  "Synopsis": "\n    Active keystroke logging in multi-gnome-terminal has been discovered in\n    potentially world-readable files. This could allow any authorized user on\n    the system to read sensitive data, including passwords.\n  ",
-  "Product": {
-    "Text": "multi-gnome-terminal",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-09-06",
-  "Revised": {
-    "Text": "2004-09-06",
-    "Count": "01"
-  },
-  "Bug": [
-    "62322"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "x11-terms/multi-gnome-terminal",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.6.2-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.6.2-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    multi-gnome-terminal is an enhanced terminal emulator that is derived from\n    gnome-terminal.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    multi-gnome-terminal contains debugging code that has been known to output\n    active keystrokes to a potentially unsafe location. Output has been seen to\n    show up in the '.xsession-errors' file in the users home directory. Since\n    this file is world-readable on many machines, this bug has the potential to\n    leak sensitive information to anyone using the system.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    Any authorized user on the local machine has the ability to read any\n    critical data that has been entered into the terminal, including passwords.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All multi-gnome-terminal users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n\n    # emerge -pv \">=x11-terms/multi-gnome-terminal-1.6.2-r1\"\n    # emerge \">=x11-terms/multi-gnome-terminal-1.6.2-r1\""
-    ]
-  },
-  "References": {
-    "URI": null
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2004-09-05T20:51:40Z"
-    },
-    {
-      "Text": "\n    lewk\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-09-06T00:32:18Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-09-06T17:31:16Z"
-    }
-  ]
+	"ID": "200409-10",
+	"Title": "multi-gnome-terminal: Information leak",
+	"Synopsis": "\n    Active keystroke logging in multi-gnome-terminal has been discovered in\n    potentially world-readable files. This could allow any authorized user on\n    the system to read sensitive data, including passwords.\n  ",
+	"Product": {
+		"Text": "multi-gnome-terminal",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-09-06",
+	"Revised": {
+		"Text": "2004-09-06",
+		"Count": "01"
+	},
+	"Bug": [
+		"62322"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "x11-terms/multi-gnome-terminal",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.6.2-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.6.2-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    multi-gnome-terminal is an enhanced terminal emulator that is derived from\n    gnome-terminal.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    multi-gnome-terminal contains debugging code that has been known to output\n    active keystrokes to a potentially unsafe location. Output has been seen to\n    show up in the '.xsession-errors' file in the users home directory. Since\n    this file is world-readable on many machines, this bug has the potential to\n    leak sensitive information to anyone using the system.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    Any authorized user on the local machine has the ability to read any\n    critical data that has been entered into the terminal, including passwords.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All multi-gnome-terminal users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n\n    # emerge -pv \">=x11-terms/multi-gnome-terminal-1.6.2-r1\"\n    # emerge \">=x11-terms/multi-gnome-terminal-1.6.2-r1\""
+		]
+	},
+	"References": {
+		"URI": null
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2004-09-05T20:51:40Z"
+		},
+		{
+			"Text": "\n    lewk\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-09-06T00:32:18Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-09-06T17:31:16Z"
+		}
+	]
 }

@@ -1,214 +1,214 @@
 {
-  "ID": "200601-10",
-  "Title": "Sun and Blackdown Java: Applet privilege escalation",
-  "Synopsis": "\n    Sun's and Blackdown's JDK or JRE may allow untrusted applets to elevate\n    their privileges.\n  ",
-  "Product": {
-    "Text": "sun-jdk sun-jre-bin blackdown-jre blackdown-jdk",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-01-16",
-  "Revised": {
-    "Text": "2006-01-16",
-    "Count": "01"
-  },
-  "Bug": [
-    "118114"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-java/sun-jdk",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.4.2.09",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.4.2.09",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "dev-java/sun-jre-bin",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.4.2.09",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.4.2.09",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "dev-java/blackdown-jdk",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.4.2.03",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.4.2.03",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "dev-java/blackdown-jre",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.4.2.03",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.4.2.03",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Sun and Blackdown both provide implementations of the Java\n    Development Kit (JDK) and Java Runtime Environment (JRE).\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Adam Gowdiak discovered multiple vulnerabilities in the Java\n    Runtime Environment's Reflection APIs that may allow untrusted applets\n    to elevate privileges.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could embed a malicious Java applet in a web\n    page and entice a victim to view it. This applet can then bypass\n    security restrictions and execute any command or access any file with\n    the rights of the user running the web browser.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There are no known workarounds at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Sun JDK users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All Sun JRE users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All Blackdown JDK users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All Blackdown JRE users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    Note to SPARC and PPC users: There is no stable secure\n    Blackdown Java for the SPARC or PPC architectures. Affected users on\n    the PPC architecture should consider switching to the IBM Java packages\n    (ibm-jdk-bin and ibm-jre-bin). Affected users on the SPARC should\n    remove the package until a SPARC package is released.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-java/sun-jdk-1.4.2.09\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-java/sun-jre-bin-1.4.2.09\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-java/blackdown-jdk-1.4.2.03\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-java/blackdown-jre-1.4.2.03\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2005-3905",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3905"
-      },
-      {
-        "Text": "CVE-2005-3906",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3906"
-      },
-      {
-        "Text": "Sun Security Alert ID 102003",
-        "Link": "http://sunsolve.sun.com/searchproxy/document.do?assetkey=1-26-102003-1"
-      },
-      {
-        "Text": "Blackdown Java-Linux Security Advisory",
-        "Link": "http://www.blackdown.org/java-linux/java2-status/security/Blackdown-SA-2005-03.txt"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-01-13T09:49:14Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-01-13T09:55:18Z"
-    }
-  ]
+	"ID": "200601-10",
+	"Title": "Sun and Blackdown Java: Applet privilege escalation",
+	"Synopsis": "\n    Sun's and Blackdown's JDK or JRE may allow untrusted applets to elevate\n    their privileges.\n  ",
+	"Product": {
+		"Text": "sun-jdk sun-jre-bin blackdown-jre blackdown-jdk",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-01-16",
+	"Revised": {
+		"Text": "2006-01-16",
+		"Count": "01"
+	},
+	"Bug": [
+		"118114"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-java/sun-jdk",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.4.2.09",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.4.2.09",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "dev-java/sun-jre-bin",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.4.2.09",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.4.2.09",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "dev-java/blackdown-jdk",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.4.2.03",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.4.2.03",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "dev-java/blackdown-jre",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.4.2.03",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.4.2.03",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Sun and Blackdown both provide implementations of the Java\n    Development Kit (JDK) and Java Runtime Environment (JRE).\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Adam Gowdiak discovered multiple vulnerabilities in the Java\n    Runtime Environment's Reflection APIs that may allow untrusted applets\n    to elevate privileges.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could embed a malicious Java applet in a web\n    page and entice a victim to view it. This applet can then bypass\n    security restrictions and execute any command or access any file with\n    the rights of the user running the web browser.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There are no known workarounds at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Sun JDK users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All Sun JRE users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All Blackdown JDK users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All Blackdown JRE users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    Note to SPARC and PPC users: There is no stable secure\n    Blackdown Java for the SPARC or PPC architectures. Affected users on\n    the PPC architecture should consider switching to the IBM Java packages\n    (ibm-jdk-bin and ibm-jre-bin). Affected users on the SPARC should\n    remove the package until a SPARC package is released.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-java/sun-jdk-1.4.2.09\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-java/sun-jre-bin-1.4.2.09\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-java/blackdown-jdk-1.4.2.03\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-java/blackdown-jre-1.4.2.03\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2005-3905",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3905"
+			},
+			{
+				"Text": "CVE-2005-3906",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3906"
+			},
+			{
+				"Text": "Sun Security Alert ID 102003",
+				"Link": "http://sunsolve.sun.com/searchproxy/document.do?assetkey=1-26-102003-1"
+			},
+			{
+				"Text": "Blackdown Java-Linux Security Advisory",
+				"Link": "http://www.blackdown.org/java-linux/java2-status/security/Blackdown-SA-2005-03.txt"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-01-13T09:49:14Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-01-13T09:55:18Z"
+		}
+	]
 }

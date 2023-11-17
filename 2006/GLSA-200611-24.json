@@ -1,115 +1,115 @@
 {
-  "ID": "200611-24",
-  "Title": "LHa: Multiple vulnerabilities",
-  "Synopsis": "\n    LHa is affected by several vulnerabilities including the remote execution\n    of arbitrary code.\n  ",
-  "Product": {
-    "Text": "lha",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-11-28",
-  "Revised": {
-    "Text": "2006-11-28",
-    "Count": "01"
-  },
-  "Bug": [
-    "151252"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-arch/lha",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "114i-r6",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "114i-r6",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    LHa is a console-based program for packing and unpacking LHarc\n    archives.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Tavis Ormandy of the Google Security Team discovered several\n    vulnerabilities in the LZH decompression component used by LHa. The\n    make_table function of unlzh.c contains an array index error and a\n    buffer overflow vulnerability. The build_tree function of unpack.c\n    contains a buffer underflow vulnerability. Additionally, unlzh.c\n    contains a code that could run in an infinite loop.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    By enticing a user to uncompress a specially crafted archive, a remote\n    attacker could cause a Denial of Service by CPU consumption or execute\n    arbitrary code with the rights of the user running the application.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All LHa users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-arch/lha-114i-r6\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-4335",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4335"
-      },
-      {
-        "Text": "CVE-2006-4336",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4336"
-      },
-      {
-        "Text": "CVE-2006-4337",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4337"
-      },
-      {
-        "Text": "CVE-2006-4338",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4338"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-11-24T21:52:23Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-11-27T17:02:28Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-11-27T17:07:24Z"
-    }
-  ]
+	"ID": "200611-24",
+	"Title": "LHa: Multiple vulnerabilities",
+	"Synopsis": "\n    LHa is affected by several vulnerabilities including the remote execution\n    of arbitrary code.\n  ",
+	"Product": {
+		"Text": "lha",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-11-28",
+	"Revised": {
+		"Text": "2006-11-28",
+		"Count": "01"
+	},
+	"Bug": [
+		"151252"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-arch/lha",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "114i-r6",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "114i-r6",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    LHa is a console-based program for packing and unpacking LHarc\n    archives.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Tavis Ormandy of the Google Security Team discovered several\n    vulnerabilities in the LZH decompression component used by LHa. The\n    make_table function of unlzh.c contains an array index error and a\n    buffer overflow vulnerability. The build_tree function of unpack.c\n    contains a buffer underflow vulnerability. Additionally, unlzh.c\n    contains a code that could run in an infinite loop.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    By enticing a user to uncompress a specially crafted archive, a remote\n    attacker could cause a Denial of Service by CPU consumption or execute\n    arbitrary code with the rights of the user running the application.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All LHa users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-arch/lha-114i-r6\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-4335",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4335"
+			},
+			{
+				"Text": "CVE-2006-4336",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4336"
+			},
+			{
+				"Text": "CVE-2006-4337",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4337"
+			},
+			{
+				"Text": "CVE-2006-4338",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4338"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-11-24T21:52:23Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-11-27T17:02:28Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-11-27T17:07:24Z"
+		}
+	]
 }

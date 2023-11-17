@@ -1,103 +1,103 @@
 {
-  "ID": "200804-26",
-  "Title": "Openfire: Denial of service",
-  "Synopsis": "\n    A design error in Openfire might lead to a Denial of Service.\n  ",
-  "Product": {
-    "Text": "openfire",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-04-23",
-  "Revised": {
-    "Text": "2008-04-23",
-    "Count": "01"
-  },
-  "Bug": [
-    "217234"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-im/openfire",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.5.0",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.5.0",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Openfire (formerly Wildfire) is a Java implementation of a complete\n    Jabber server.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Openfire's connection manager in the file ConnectionManagerImpl.java\n    cannot handle clients that fail to read messages, and has no limit on\n    their session's send buffer.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    Remote authenticated attackers could trigger large outgoing queues\n    without reading messages, causing a Denial of Service.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Openfire users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-im/openfire-3.5.0\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-1728",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1728"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-04-17T20:09:13Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-04-18T01:33:23Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-04-18T01:33:32Z"
-    }
-  ]
+	"ID": "200804-26",
+	"Title": "Openfire: Denial of service",
+	"Synopsis": "\n    A design error in Openfire might lead to a Denial of Service.\n  ",
+	"Product": {
+		"Text": "openfire",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-04-23",
+	"Revised": {
+		"Text": "2008-04-23",
+		"Count": "01"
+	},
+	"Bug": [
+		"217234"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-im/openfire",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.5.0",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.5.0",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Openfire (formerly Wildfire) is a Java implementation of a complete\n    Jabber server.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Openfire's connection manager in the file ConnectionManagerImpl.java\n    cannot handle clients that fail to read messages, and has no limit on\n    their session's send buffer.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    Remote authenticated attackers could trigger large outgoing queues\n    without reading messages, causing a Denial of Service.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Openfire users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-im/openfire-3.5.0\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-1728",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1728"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-04-17T20:09:13Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-04-18T01:33:23Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-04-18T01:33:32Z"
+		}
+	]
 }

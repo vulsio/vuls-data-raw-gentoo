@@ -1,87 +1,87 @@
 {
-  "ID": "200403-01",
-  "Title": "Libxml2 URI Parsing Buffer Overflow Vulnerabilities",
-  "Synopsis": "\n    A buffer overflow has been discovered in libxml2 versions prior to\n    2.6.6 which may be exploited by an attacker allowing the execution of\n    arbitrary code.\n  ",
-  "Product": {
-    "Text": "libxml",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-03-05",
-  "Revised": {
-    "Text": "2004-03-05",
-    "Count": "01"
-  },
-  "Bug": [
-    "42735"
-  ],
-  "Access": "local and remote combination",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-libs/libxml2",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.6.6",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.6.6",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": ""
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Yuuichi Teranishi discovered a flaw in libxml2 versions prior to 2.6.6.\n    When the libxml2 library fetches a remote resource via FTP or HTTP, libxml2\n    uses parsing routines that can overflow a buffer caused by improper bounds\n    checking if they are passed a URL longer than 4096 bytes.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    If an attacker is able to exploit an application using libxml2 that parses\n    remote resources, then this flaw could be used to execute arbitrary code.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    No workaround is available; users are urged to upgrade libxml2 to 2.6.6.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All users are recommended to upgrade their libxml2 installation:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n    # emerge -pv \">=dev-libs/libxml2-2.6.6\"\n    # emerge \">=dev-libs/libxml2-2.6.6\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE 2004-0110",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0110"
-      }
-    ]
-  },
-  "Metadata": null
+	"ID": "200403-01",
+	"Title": "Libxml2 URI Parsing Buffer Overflow Vulnerabilities",
+	"Synopsis": "\n    A buffer overflow has been discovered in libxml2 versions prior to\n    2.6.6 which may be exploited by an attacker allowing the execution of\n    arbitrary code.\n  ",
+	"Product": {
+		"Text": "libxml",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-03-05",
+	"Revised": {
+		"Text": "2004-03-05",
+		"Count": "01"
+	},
+	"Bug": [
+		"42735"
+	],
+	"Access": "local and remote combination",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-libs/libxml2",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.6.6",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.6.6",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": ""
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Yuuichi Teranishi discovered a flaw in libxml2 versions prior to 2.6.6.\n    When the libxml2 library fetches a remote resource via FTP or HTTP, libxml2\n    uses parsing routines that can overflow a buffer caused by improper bounds\n    checking if they are passed a URL longer than 4096 bytes.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    If an attacker is able to exploit an application using libxml2 that parses\n    remote resources, then this flaw could be used to execute arbitrary code.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    No workaround is available; users are urged to upgrade libxml2 to 2.6.6.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All users are recommended to upgrade their libxml2 installation:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n    # emerge -pv \">=dev-libs/libxml2-2.6.6\"\n    # emerge \">=dev-libs/libxml2-2.6.6\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE 2004-0110",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0110"
+			}
+		]
+	},
+	"Metadata": null
 }

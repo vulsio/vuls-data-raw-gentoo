@@ -1,103 +1,103 @@
 {
-  "ID": "200612-17",
-  "Title": "GNU Radius: Format string vulnerability",
-  "Synopsis": "\n    A format string vulnerabilty has been found in GNU Radius, which could lead\n    to the remote execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "gnuradius",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-12-14",
-  "Revised": {
-    "Text": "2006-12-14",
-    "Count": "01"
-  },
-  "Bug": [
-    "156376"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-dialup/gnuradius",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.4",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.4",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    GNU Radius is a GNU version of Radius, a server for remote user\n    authentication and accounting.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    A format string vulnerability was found in the sqllog function from the\n    SQL accounting code for radiusd. That function is only used if one or\n    more of the \"postgresql\", \"mysql\" or \"odbc\" USE flags are enabled,\n    which is not the default, except for the \"server\" 2006.1 and 2007.0\n    profiles which enable the \"mysql\" USE flag.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    An unauthenticated remote attacker could execute arbitrary code with\n    the privileges of the user running radiusd, which may be the root user.\n    It is important to note that there is no default GNU Radius user for\n    Gentoo systems because no init script is provided with the package.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All GNU Radius users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dialup/gnuradius-1.4\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-4181",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4181"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-12-11T16:15:45Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-12-11T20:51:18Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-12-11T22:14:11Z"
-    }
-  ]
+	"ID": "200612-17",
+	"Title": "GNU Radius: Format string vulnerability",
+	"Synopsis": "\n    A format string vulnerabilty has been found in GNU Radius, which could lead\n    to the remote execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "gnuradius",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-12-14",
+	"Revised": {
+		"Text": "2006-12-14",
+		"Count": "01"
+	},
+	"Bug": [
+		"156376"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-dialup/gnuradius",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    GNU Radius is a GNU version of Radius, a server for remote user\n    authentication and accounting.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    A format string vulnerability was found in the sqllog function from the\n    SQL accounting code for radiusd. That function is only used if one or\n    more of the \"postgresql\", \"mysql\" or \"odbc\" USE flags are enabled,\n    which is not the default, except for the \"server\" 2006.1 and 2007.0\n    profiles which enable the \"mysql\" USE flag.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    An unauthenticated remote attacker could execute arbitrary code with\n    the privileges of the user running radiusd, which may be the root user.\n    It is important to note that there is no default GNU Radius user for\n    Gentoo systems because no init script is provided with the package.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All GNU Radius users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dialup/gnuradius-1.4\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-4181",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-4181"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-12-11T16:15:45Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-12-11T20:51:18Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-12-11T22:14:11Z"
+		}
+	]
 }

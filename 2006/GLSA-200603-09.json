@@ -1,122 +1,122 @@
 {
-  "ID": "200603-09",
-  "Title": "SquirrelMail: Cross-site scripting and IMAP command injection",
-  "Synopsis": "\n    SquirrelMail is vulnerable to several cross-site scripting vulnerabilities\n    and IMAP command injection.\n  ",
-  "Product": {
-    "Text": "squirrelmail",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-03-12",
-  "Revised": {
-    "Text": "2006-03-12",
-    "Count": "01"
-  },
-  "Bug": [
-    "123781"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "mail-client/squirrelmail",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.4.6",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.4.6",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    SquirrelMail is a webmail package written in PHP. It supports IMAP\n    and SMTP protocols.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    SquirrelMail does not validate the right_frame parameter in\n    webmail.php, possibly allowing frame replacement or cross-site\n    scripting (CVE-2006-0188). Martijn Brinkers and Scott Hughes discovered\n    that MagicHTML fails to handle certain input correctly, potentially\n    leading to cross-site scripting (only Internet Explorer,\n    CVE-2006-0195). Vicente Aguilera reported that the\n    sqimap_mailbox_select function did not strip newlines from the mailbox\n    or subject parameter, possibly allowing IMAP command injection\n    (CVE-2006-0377).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "low",
-    "Text": "\n    <p>\n    By exploiting the cross-site scripting vulnerabilities, an\n    attacker can execute arbitrary scripts running in the context of the\n    victim's browser. This could lead to a compromise of the user's webmail\n    account, cookie theft, etc. A remote attacker could exploit the IMAP\n    command injection to execute arbitrary IMAP commands on the configured\n    IMAP server.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All SquirrelMail users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    Note: Users with the vhosts USE flag set should manually use\n    webapp-config to finalize the update.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-client/squirrelmail-1.4.6\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-0188",
-        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0188"
-      },
-      {
-        "Text": "CVE-2006-0195",
-        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0195"
-      },
-      {
-        "Text": "CVE-2006-0377",
-        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0377"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n  ",
-      "Tag": "",
-      "Timestamp": ""
-    },
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-03-11T16:55:59Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-03-11T21:38:55Z"
-    }
-  ]
+	"ID": "200603-09",
+	"Title": "SquirrelMail: Cross-site scripting and IMAP command injection",
+	"Synopsis": "\n    SquirrelMail is vulnerable to several cross-site scripting vulnerabilities\n    and IMAP command injection.\n  ",
+	"Product": {
+		"Text": "squirrelmail",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-03-12",
+	"Revised": {
+		"Text": "2006-03-12",
+		"Count": "01"
+	},
+	"Bug": [
+		"123781"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "mail-client/squirrelmail",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.4.6",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.4.6",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    SquirrelMail is a webmail package written in PHP. It supports IMAP\n    and SMTP protocols.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    SquirrelMail does not validate the right_frame parameter in\n    webmail.php, possibly allowing frame replacement or cross-site\n    scripting (CVE-2006-0188). Martijn Brinkers and Scott Hughes discovered\n    that MagicHTML fails to handle certain input correctly, potentially\n    leading to cross-site scripting (only Internet Explorer,\n    CVE-2006-0195). Vicente Aguilera reported that the\n    sqimap_mailbox_select function did not strip newlines from the mailbox\n    or subject parameter, possibly allowing IMAP command injection\n    (CVE-2006-0377).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "low",
+		"Text": "\n    <p>\n    By exploiting the cross-site scripting vulnerabilities, an\n    attacker can execute arbitrary scripts running in the context of the\n    victim's browser. This could lead to a compromise of the user's webmail\n    account, cookie theft, etc. A remote attacker could exploit the IMAP\n    command injection to execute arbitrary IMAP commands on the configured\n    IMAP server.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All SquirrelMail users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    Note: Users with the vhosts USE flag set should manually use\n    webapp-config to finalize the update.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-client/squirrelmail-1.4.6\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-0188",
+				"Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0188"
+			},
+			{
+				"Text": "CVE-2006-0195",
+				"Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0195"
+			},
+			{
+				"Text": "CVE-2006-0377",
+				"Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0377"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n  ",
+			"Tag": "",
+			"Timestamp": ""
+		},
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-03-11T16:55:59Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-03-11T21:38:55Z"
+		}
+	]
 }

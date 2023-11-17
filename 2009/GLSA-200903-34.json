@@ -1,107 +1,107 @@
 {
-  "ID": "200903-34",
-  "Title": "Amarok: User-assisted execution of arbitrary code",
-  "Synopsis": "\n    Multiple vulnerabilities in Amarok might allow for user-assisted execution\n    of arbitrary code.\n  ",
-  "Product": {
-    "Text": "amarok",
-    "Type": "ebuild"
-  },
-  "Announced": "2009-03-20",
-  "Revised": {
-    "Text": "2009-03-20",
-    "Count": "01"
-  },
-  "Bug": [
-    "254896"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-sound/amarok",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.4.10-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.4.10-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Amarok is an advanced music player.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Tobias Klein has discovered multiple vulnerabilities in Amarok:\n    </p>\n    <ul>\n    <li>Multiple integer overflows in the Audible::Tag::readTag()\n    function in metadata/audible/audibletag.cpp trigger heap-based buffer\n    overflows (CVE-2009-0135).</li>\n    <li>Multiple array index errors in the\n    Audible::Tag::readTag() function in metadata/audible/audibletag.cpp can\n    lead to invalid pointer dereferences, or the writing of a 0x00 byte to\n    an arbitrary memory location after an allocation failure\n    (CVE-2009-0136).</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted\n    Audible Audio (.aa) file with a large \"nlen\" or \"vlen\" tag value to\n    execute arbitrary code or cause a Denial of Service.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Amarok users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-sound/amarok-1.4.10-r2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2009-0135",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0135"
-      },
-      {
-        "Text": "CVE-2009-0136",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0136"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "requester",
-      "Timestamp": "2009-03-19T13:02:32Z"
-    },
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-03-20T19:39:32Z"
-    },
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2009-03-20T19:54:30Z"
-    }
-  ]
+	"ID": "200903-34",
+	"Title": "Amarok: User-assisted execution of arbitrary code",
+	"Synopsis": "\n    Multiple vulnerabilities in Amarok might allow for user-assisted execution\n    of arbitrary code.\n  ",
+	"Product": {
+		"Text": "amarok",
+		"Type": "ebuild"
+	},
+	"Announced": "2009-03-20",
+	"Revised": {
+		"Text": "2009-03-20",
+		"Count": "01"
+	},
+	"Bug": [
+		"254896"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-sound/amarok",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.4.10-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.4.10-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Amarok is an advanced music player.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Tobias Klein has discovered multiple vulnerabilities in Amarok:\n    </p>\n    <ul>\n    <li>Multiple integer overflows in the Audible::Tag::readTag()\n    function in metadata/audible/audibletag.cpp trigger heap-based buffer\n    overflows (CVE-2009-0135).</li>\n    <li>Multiple array index errors in the\n    Audible::Tag::readTag() function in metadata/audible/audibletag.cpp can\n    lead to invalid pointer dereferences, or the writing of a 0x00 byte to\n    an arbitrary memory location after an allocation failure\n    (CVE-2009-0136).</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted\n    Audible Audio (.aa) file with a large \"nlen\" or \"vlen\" tag value to\n    execute arbitrary code or cause a Denial of Service.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Amarok users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-sound/amarok-1.4.10-r2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2009-0135",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0135"
+			},
+			{
+				"Text": "CVE-2009-0136",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0136"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "requester",
+			"Timestamp": "2009-03-19T13:02:32Z"
+		},
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-03-20T19:39:32Z"
+		},
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2009-03-20T19:54:30Z"
+		}
+	]
 }

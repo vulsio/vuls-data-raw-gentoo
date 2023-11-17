@@ -1,103 +1,103 @@
 {
-  "ID": "200705-09",
-  "Title": "IPsec-Tools: Denial of service",
-  "Synopsis": "\n    IPsec-Tools contains a vulnerability that allows a remote attacker to crash\n    the IPsec tunnel.\n  ",
-  "Product": {
-    "Text": "ipsec-tools",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-05-08",
-  "Revised": {
-    "Text": "2007-05-08",
-    "Count": "01"
-  },
-  "Bug": [
-    "173219"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-firewall/ipsec-tools",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.6.7",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.6.7",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    IPsec-Tools is a port of KAME's implementation of the IPsec utilities.\n    It contains a collection of network monitoring tools, including racoon,\n    ping, and ping6.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The isakmp_info_recv() function in src/racoon/isakmp_inf.c does not\n    always check that DELETE (ISAKMP_NPTYPE_D) and NOTIFY (ISAKMP_NPTYPE_N)\n    packets are encrypted.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could send a specially crafted IPsec message to one\n    of the two peers during the beginning of phase 1, resulting in the\n    termination of the IPsec exchange.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All IPsec-Tools users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-firewall/ipsec-tools-0.6.7\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-1841",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1841"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-05-03T18:53:19Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-05-06T12:07:13Z"
-    },
-    {
-      "Text": "\n    vorlon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-05-07T19:54:14Z"
-    }
-  ]
+	"ID": "200705-09",
+	"Title": "IPsec-Tools: Denial of service",
+	"Synopsis": "\n    IPsec-Tools contains a vulnerability that allows a remote attacker to crash\n    the IPsec tunnel.\n  ",
+	"Product": {
+		"Text": "ipsec-tools",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-05-08",
+	"Revised": {
+		"Text": "2007-05-08",
+		"Count": "01"
+	},
+	"Bug": [
+		"173219"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-firewall/ipsec-tools",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.6.7",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.6.7",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    IPsec-Tools is a port of KAME's implementation of the IPsec utilities.\n    It contains a collection of network monitoring tools, including racoon,\n    ping, and ping6.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The isakmp_info_recv() function in src/racoon/isakmp_inf.c does not\n    always check that DELETE (ISAKMP_NPTYPE_D) and NOTIFY (ISAKMP_NPTYPE_N)\n    packets are encrypted.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could send a specially crafted IPsec message to one\n    of the two peers during the beginning of phase 1, resulting in the\n    termination of the IPsec exchange.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All IPsec-Tools users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-firewall/ipsec-tools-0.6.7\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-1841",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1841"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-05-03T18:53:19Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-05-06T12:07:13Z"
+		},
+		{
+			"Text": "\n    vorlon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-05-07T19:54:14Z"
+		}
+	]
 }

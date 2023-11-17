@@ -1,109 +1,109 @@
 {
-  "ID": "200406-06",
-  "Title": "CVS: additional DoS and arbitrary code execution vulnerabilities",
-  "Synopsis": "\n    Several serious new vulnerabilities have been found in CVS, which may allow\n    an attacker to remotely compromise a CVS server.\n  ",
-  "Product": {
-    "Text": "CVS",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-06-10",
-  "Revised": {
-    "Text": "2004-06-10",
-    "Count": "01"
-  },
-  "Bug": [
-    "53408"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-util/cvs",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.11.17",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.11.16-r1",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    CVS (Concurrent Versions System) is an open-source network-transparent\n    version control system. It contains both a client utility and a server.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    A team audit of the CVS source code performed by Stefan Esser and Sebastian\n    Krahmer resulted in the discovery of several remotely exploitable\n    vulnerabilities including:\n    </p>\n    <ul>\n    <li>no-null-termination of \"Entry\" lines</li>\n    <li>error_prog_name \"double-free()\"</li>\n    <li>Argument integer overflow</li>\n    <li>serve_notify() out of bounds writes</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    An attacker could use these vulnerabilities to cause a Denial of Service or\n    execute arbitrary code with the permissions of the user running cvs.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time. All users are advised to upgrade\n    to the latest available version of CVS.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All CVS users should upgrade to the latest stable version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n\n    # emerge -pv \">=dev-util/cvs-1.11.17\"\n    # emerge \">=dev-util/cvs-1.11.17\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "E-matters Advisory 09/2004",
-        "Link": "http://security.e-matters.de/advisories/092004.html"
-      },
-      {
-        "Text": "CAN-2004-0414",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0414"
-      },
-      {
-        "Text": "CAN-2004-0416",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0416"
-      },
-      {
-        "Text": "CAN-2004-0417",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0417"
-      },
-      {
-        "Text": "CAN-2004-0418",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0418"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "submitter",
-      "Timestamp": ""
-    }
-  ]
+	"ID": "200406-06",
+	"Title": "CVS: additional DoS and arbitrary code execution vulnerabilities",
+	"Synopsis": "\n    Several serious new vulnerabilities have been found in CVS, which may allow\n    an attacker to remotely compromise a CVS server.\n  ",
+	"Product": {
+		"Text": "CVS",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-06-10",
+	"Revised": {
+		"Text": "2004-06-10",
+		"Count": "01"
+	},
+	"Bug": [
+		"53408"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-util/cvs",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.11.17",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.11.16-r1",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    CVS (Concurrent Versions System) is an open-source network-transparent\n    version control system. It contains both a client utility and a server.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    A team audit of the CVS source code performed by Stefan Esser and Sebastian\n    Krahmer resulted in the discovery of several remotely exploitable\n    vulnerabilities including:\n    </p>\n    <ul>\n    <li>no-null-termination of \"Entry\" lines</li>\n    <li>error_prog_name \"double-free()\"</li>\n    <li>Argument integer overflow</li>\n    <li>serve_notify() out of bounds writes</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    An attacker could use these vulnerabilities to cause a Denial of Service or\n    execute arbitrary code with the permissions of the user running cvs.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time. All users are advised to upgrade\n    to the latest available version of CVS.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All CVS users should upgrade to the latest stable version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n\n    # emerge -pv \">=dev-util/cvs-1.11.17\"\n    # emerge \">=dev-util/cvs-1.11.17\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "E-matters Advisory 09/2004",
+				"Link": "http://security.e-matters.de/advisories/092004.html"
+			},
+			{
+				"Text": "CAN-2004-0414",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0414"
+			},
+			{
+				"Text": "CAN-2004-0416",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0416"
+			},
+			{
+				"Text": "CAN-2004-0417",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0417"
+			},
+			{
+				"Text": "CAN-2004-0418",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0418"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "submitter",
+			"Timestamp": ""
+		}
+	]
 }

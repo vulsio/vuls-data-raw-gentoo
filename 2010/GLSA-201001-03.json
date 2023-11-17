@@ -1,201 +1,201 @@
 {
-  "ID": "201001-03",
-  "Title": "PHP: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities were found in PHP, the worst of which leading to\n    the remote execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "php",
-    "Type": "ebuild"
-  },
-  "Announced": "2010-01-05",
-  "Revised": {
-    "Text": "2010-01-05",
-    "Count": "01"
-  },
-  "Bug": [
-    "249875",
-    "255121",
-    "260576",
-    "261192",
-    "266125",
-    "274670",
-    "280602",
-    "285434",
-    "292132",
-    "293888",
-    "297369",
-    "297370"
-  ],
-  "Access": "local remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-lang/php",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "5.2.12",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "5.2.12",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    PHP is a widely-used general-purpose scripting language that is\n    especially suited for Web development and can be embedded into HTML.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Multiple vulnerabilities have been discovered in PHP. Please review the\n    CVE identifiers referenced below and the associated PHP release notes\n    for details.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A context-dependent attacker could execute arbitrary code via a\n    specially crafted string containing an HTML entity when the mbstring\n    extension is enabled. Furthermore a remote attacker could execute\n    arbitrary code via a specially crafted GD graphics file.\n    </p>\n    <p>\n    A remote attacker could also cause a Denial of Service via a malformed\n    string passed to the json_decode() function, via a specially crafted\n    ZIP file passed to the php_zip_make_relative_path() function, via a\n    malformed JPEG image passed to the exif_read_data() function, or via\n    temporary file exhaustion. It is also possible for an attacker to spoof\n    certificates, bypass various safe_mode and open_basedir restrictions\n    when certain criteria are met, perform Cross-site scripting attacks,\n    more easily perform SQL injection attacks, manipulate settings of other\n    virtual hosts on the same server via a malicious .htaccess entry when\n    running on Apache, disclose memory portions, and write arbitrary files\n    via a specially crafted ZIP archive. Some vulnerabilities with unknown\n    impact and attack vectors have been reported as well.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All PHP users should upgrade to the latest version. As PHP is\n    statically linked against a vulnerable version of the c-client library\n    when the imap or kolab USE flag is enabled (GLSA 200911-03), users\n    should upgrade net-libs/c-client beforehand:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-libs/c-client-2007e\"\n    # emerge --ask --oneshot --verbose \">=dev-lang/php-5.2.12\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-5498",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5498"
-      },
-      {
-        "Text": "CVE-2008-5514",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5514"
-      },
-      {
-        "Text": "CVE-2008-5557",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5557"
-      },
-      {
-        "Text": "CVE-2008-5624",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5624"
-      },
-      {
-        "Text": "CVE-2008-5625",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5625"
-      },
-      {
-        "Text": "CVE-2008-5658",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5658"
-      },
-      {
-        "Text": "CVE-2008-5814",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5814"
-      },
-      {
-        "Text": "CVE-2008-5844",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5844"
-      },
-      {
-        "Text": "CVE-2008-7002",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-7002"
-      },
-      {
-        "Text": "CVE-2009-0754",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0754"
-      },
-      {
-        "Text": "CVE-2009-1271",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1271"
-      },
-      {
-        "Text": "CVE-2009-1272",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1272"
-      },
-      {
-        "Text": "CVE-2009-2626",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2626"
-      },
-      {
-        "Text": "CVE-2009-2687",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2687"
-      },
-      {
-        "Text": "CVE-2009-3291",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3291"
-      },
-      {
-        "Text": "CVE-2009-3292",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3292"
-      },
-      {
-        "Text": "CVE-2009-3293",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3293"
-      },
-      {
-        "Text": "CVE-2009-3546",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3546"
-      },
-      {
-        "Text": "CVE-2009-3557",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3557"
-      },
-      {
-        "Text": "CVE-2009-3558",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3558"
-      },
-      {
-        "Text": "CVE-2009-4017",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4017"
-      },
-      {
-        "Text": "CVE-2009-4142",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4142"
-      },
-      {
-        "Text": "CVE-2009-4143",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4143"
-      },
-      {
-        "Text": "GLSA 200911-03",
-        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200911-03.xml"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-11-06T10:26:06Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2009-11-26T09:22:21Z"
-    }
-  ]
+	"ID": "201001-03",
+	"Title": "PHP: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities were found in PHP, the worst of which leading to\n    the remote execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "php",
+		"Type": "ebuild"
+	},
+	"Announced": "2010-01-05",
+	"Revised": {
+		"Text": "2010-01-05",
+		"Count": "01"
+	},
+	"Bug": [
+		"249875",
+		"255121",
+		"260576",
+		"261192",
+		"266125",
+		"274670",
+		"280602",
+		"285434",
+		"292132",
+		"293888",
+		"297369",
+		"297370"
+	],
+	"Access": "local remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-lang/php",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "5.2.12",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "5.2.12",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    PHP is a widely-used general-purpose scripting language that is\n    especially suited for Web development and can be embedded into HTML.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Multiple vulnerabilities have been discovered in PHP. Please review the\n    CVE identifiers referenced below and the associated PHP release notes\n    for details.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A context-dependent attacker could execute arbitrary code via a\n    specially crafted string containing an HTML entity when the mbstring\n    extension is enabled. Furthermore a remote attacker could execute\n    arbitrary code via a specially crafted GD graphics file.\n    </p>\n    <p>\n    A remote attacker could also cause a Denial of Service via a malformed\n    string passed to the json_decode() function, via a specially crafted\n    ZIP file passed to the php_zip_make_relative_path() function, via a\n    malformed JPEG image passed to the exif_read_data() function, or via\n    temporary file exhaustion. It is also possible for an attacker to spoof\n    certificates, bypass various safe_mode and open_basedir restrictions\n    when certain criteria are met, perform Cross-site scripting attacks,\n    more easily perform SQL injection attacks, manipulate settings of other\n    virtual hosts on the same server via a malicious .htaccess entry when\n    running on Apache, disclose memory portions, and write arbitrary files\n    via a specially crafted ZIP archive. Some vulnerabilities with unknown\n    impact and attack vectors have been reported as well.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All PHP users should upgrade to the latest version. As PHP is\n    statically linked against a vulnerable version of the c-client library\n    when the imap or kolab USE flag is enabled (GLSA 200911-03), users\n    should upgrade net-libs/c-client beforehand:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-libs/c-client-2007e\"\n    # emerge --ask --oneshot --verbose \">=dev-lang/php-5.2.12\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-5498",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5498"
+			},
+			{
+				"Text": "CVE-2008-5514",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5514"
+			},
+			{
+				"Text": "CVE-2008-5557",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5557"
+			},
+			{
+				"Text": "CVE-2008-5624",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5624"
+			},
+			{
+				"Text": "CVE-2008-5625",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5625"
+			},
+			{
+				"Text": "CVE-2008-5658",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5658"
+			},
+			{
+				"Text": "CVE-2008-5814",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5814"
+			},
+			{
+				"Text": "CVE-2008-5844",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5844"
+			},
+			{
+				"Text": "CVE-2008-7002",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-7002"
+			},
+			{
+				"Text": "CVE-2009-0754",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0754"
+			},
+			{
+				"Text": "CVE-2009-1271",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1271"
+			},
+			{
+				"Text": "CVE-2009-1272",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1272"
+			},
+			{
+				"Text": "CVE-2009-2626",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2626"
+			},
+			{
+				"Text": "CVE-2009-2687",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2687"
+			},
+			{
+				"Text": "CVE-2009-3291",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3291"
+			},
+			{
+				"Text": "CVE-2009-3292",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3292"
+			},
+			{
+				"Text": "CVE-2009-3293",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3293"
+			},
+			{
+				"Text": "CVE-2009-3546",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3546"
+			},
+			{
+				"Text": "CVE-2009-3557",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3557"
+			},
+			{
+				"Text": "CVE-2009-3558",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3558"
+			},
+			{
+				"Text": "CVE-2009-4017",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4017"
+			},
+			{
+				"Text": "CVE-2009-4142",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4142"
+			},
+			{
+				"Text": "CVE-2009-4143",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4143"
+			},
+			{
+				"Text": "GLSA 200911-03",
+				"Link": "https://www.gentoo.org/security/en/glsa/glsa-200911-03.xml"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-11-06T10:26:06Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2009-11-26T09:22:21Z"
+		}
+	]
 }

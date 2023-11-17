@@ -1,135 +1,135 @@
 {
-  "ID": "202309-04",
-  "Title": "RAR, UnRAR: Arbitrary File Overwrite",
-  "Synopsis": "An arbitrary file overwrite vulnerability has been discovered in RAR and UnRAR, potentially resulting in arbitrary code execution.",
-  "Product": {
-    "Text": "rar,unrar",
-    "Type": "ebuild"
-  },
-  "Announced": "2023-09-17",
-  "Revised": {
-    "Text": "2023-09-17",
-    "Count": "1"
-  },
-  "Bug": [
-    "843611",
-    "849686",
-    "912652"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-arch/rar",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "6.23",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "6.23",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-arch/unrar",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "6.2.10",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "6.2.10",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n        <p>RAR and UnRAR provide command line interfaces for compressing and decompressing RAR files.</p>\n    "
-  },
-  "Description": {
-    "Text": "\n        <p>Due to an error in the validation of symbolic links within archives, RAR and UnRAR can potentially write files to a directory which is outside of the intended unpack directory.</p>\n    "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n        <p>If the user running RAR or UnRAR extracts a malicious archive, the archive could overwrite a file such as the user&#39;s shell initialization scripts, potentially resulting in arbitrary code execution in the context of that user.</p>\n    "
-  },
-  "Workaround": {
-    "Text": "\n        <p>There is no known workaround at this time.</p>\n    "
-  },
-  "Resolution": {
-    "Text": "\n        \n        \n        \n        \n        \n        \n        \n    ",
-    "P": [
-      {
-        "Text": "All RAR users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "All UnRAR users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=app-arch/rar-6.23\"\n        ",
-      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=app-arch/unrar-6.2.10\"\n        "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2022-30333",
-        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-30333"
-      },
-      {
-        "Text": "CVE-2023-40477",
-        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2023-40477"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "ajak",
-      "Tag": "requester",
-      "Timestamp": "2023-09-17T05:24:38.613653Z"
-    },
-    {
-      "Text": "sam",
-      "Tag": "submitter",
-      "Timestamp": "2023-09-17T05:24:38.615853Z"
-    }
-  ]
+	"ID": "202309-04",
+	"Title": "RAR, UnRAR: Arbitrary File Overwrite",
+	"Synopsis": "An arbitrary file overwrite vulnerability has been discovered in RAR and UnRAR, potentially resulting in arbitrary code execution.",
+	"Product": {
+		"Text": "rar,unrar",
+		"Type": "ebuild"
+	},
+	"Announced": "2023-09-17",
+	"Revised": {
+		"Text": "2023-09-17",
+		"Count": "1"
+	},
+	"Bug": [
+		"843611",
+		"849686",
+		"912652"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-arch/rar",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "6.23",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "6.23",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-arch/unrar",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "6.2.10",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "6.2.10",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>RAR and UnRAR provide command line interfaces for compressing and decompressing RAR files.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>Due to an error in the validation of symbolic links within archives, RAR and UnRAR can potentially write files to a directory which is outside of the intended unpack directory.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>If the user running RAR or UnRAR extracts a malicious archive, the archive could overwrite a file such as the user&#39;s shell initialization scripts, potentially resulting in arbitrary code execution in the context of that user.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n        \n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All RAR users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "All UnRAR users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=app-arch/rar-6.23\"\n        ",
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=app-arch/unrar-6.2.10\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2022-30333",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-30333"
+			},
+			{
+				"Text": "CVE-2023-40477",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2023-40477"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "ajak",
+			"Tag": "requester",
+			"Timestamp": "2023-09-17T05:24:38.613653Z"
+		},
+		{
+			"Text": "sam",
+			"Tag": "submitter",
+			"Timestamp": "2023-09-17T05:24:38.615853Z"
+		}
+	]
 }

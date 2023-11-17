@@ -1,128 +1,128 @@
 {
-  "ID": "200804-25",
-  "Title": "VLC: User-assisted execution of arbitrary code",
-  "Synopsis": "\n    Multiple vulnerabilities were found in VLC, allowing for the execution of\n    arbitrary code.\n  ",
-  "Product": {
-    "Text": "vlc",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-04-23",
-  "Revised": {
-    "Text": "2008-04-23",
-    "Count": "01"
-  },
-  "Bug": [
-    "214277",
-    "214627"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-video/vlc",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.8.6f",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.8.6f",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    VLC is a cross-platform media player and streaming server.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Multiple vulnerabilities were found in VLC:\n    </p>\n    <ul>\n    <li>\n    Luigi Auriemma discovered that the stack-based buffer overflow when\n    reading subtitles, which has been reported as CVE-2007-6681 in GLSA\n    200803-13, was not properly fixed (CVE-2008-1881).\n    </li>\n    <li>\n    Alin Rad Pop of Secunia reported an array indexing vulnerability in the\n    sdpplin_parse() function when processing streams from RTSP servers in\n    Xine code, which is also used in VLC (CVE-2008-0073).\n    </li>\n    <li>\n    Drew Yao and Nico Golde reported an integer overflow in the\n    MP4_ReadBox_rdrf() function in the file libmp4.c leading to a\n    heap-based buffer overflow when reading MP4 files (CVE-2008-1489).\n    </li>\n    <li>Drew Yao also reported integer overflows in the MP4 demuxer,\n    the Real demuxer and in the Cinepak codec, which might lead to buffer\n    overflows (CVE-2008-1768).</li>\n    <li>Drew Yao finally discovered and a\n    boundary error in Cinepak, which might lead to memory corruption\n    (CVE-2008-1769).</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted media\n    file or stream, possibly resulting in the remote execution of arbitrary\n    code.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All VLC users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-video/vlc-0.8.6f\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-6681",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6681"
-      },
-      {
-        "Text": "CVE-2008-0073",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0073"
-      },
-      {
-        "Text": "CVE-2008-1489",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1489"
-      },
-      {
-        "Text": "CVE-2008-1768",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1768"
-      },
-      {
-        "Text": "CVE-2008-1769",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1769"
-      },
-      {
-        "Text": "CVE-2008-1881",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1881"
-      },
-      {
-        "Text": "GLSA 200803-13",
-        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200803-13.xml"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-03-24T19:42:45Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-04-14T00:49:24Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-04-14T00:56:14Z"
-    }
-  ]
+	"ID": "200804-25",
+	"Title": "VLC: User-assisted execution of arbitrary code",
+	"Synopsis": "\n    Multiple vulnerabilities were found in VLC, allowing for the execution of\n    arbitrary code.\n  ",
+	"Product": {
+		"Text": "vlc",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-04-23",
+	"Revised": {
+		"Text": "2008-04-23",
+		"Count": "01"
+	},
+	"Bug": [
+		"214277",
+		"214627"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-video/vlc",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.8.6f",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.8.6f",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    VLC is a cross-platform media player and streaming server.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Multiple vulnerabilities were found in VLC:\n    </p>\n    <ul>\n    <li>\n    Luigi Auriemma discovered that the stack-based buffer overflow when\n    reading subtitles, which has been reported as CVE-2007-6681 in GLSA\n    200803-13, was not properly fixed (CVE-2008-1881).\n    </li>\n    <li>\n    Alin Rad Pop of Secunia reported an array indexing vulnerability in the\n    sdpplin_parse() function when processing streams from RTSP servers in\n    Xine code, which is also used in VLC (CVE-2008-0073).\n    </li>\n    <li>\n    Drew Yao and Nico Golde reported an integer overflow in the\n    MP4_ReadBox_rdrf() function in the file libmp4.c leading to a\n    heap-based buffer overflow when reading MP4 files (CVE-2008-1489).\n    </li>\n    <li>Drew Yao also reported integer overflows in the MP4 demuxer,\n    the Real demuxer and in the Cinepak codec, which might lead to buffer\n    overflows (CVE-2008-1768).</li>\n    <li>Drew Yao finally discovered and a\n    boundary error in Cinepak, which might lead to memory corruption\n    (CVE-2008-1769).</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted media\n    file or stream, possibly resulting in the remote execution of arbitrary\n    code.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All VLC users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-video/vlc-0.8.6f\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-6681",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6681"
+			},
+			{
+				"Text": "CVE-2008-0073",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0073"
+			},
+			{
+				"Text": "CVE-2008-1489",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1489"
+			},
+			{
+				"Text": "CVE-2008-1768",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1768"
+			},
+			{
+				"Text": "CVE-2008-1769",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1769"
+			},
+			{
+				"Text": "CVE-2008-1881",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1881"
+			},
+			{
+				"Text": "GLSA 200803-13",
+				"Link": "https://www.gentoo.org/security/en/glsa/glsa-200803-13.xml"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-03-24T19:42:45Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-04-14T00:49:24Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-04-14T00:56:14Z"
+		}
+	]
 }

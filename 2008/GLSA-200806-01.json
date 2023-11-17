@@ -1,103 +1,103 @@
 {
-  "ID": "200806-01",
-  "Title": "mtr: Stack-based buffer overflow",
-  "Synopsis": "\n    A stack-based buffer overflow was found in mtr, possibly resulting in the\n    execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "mtr",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-06-03",
-  "Revised": {
-    "Text": "2008-06-03",
-    "Count": "01"
-  },
-  "Bug": [
-    "223017"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-analyzer/mtr",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.73-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.73-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    mtr combines the functionality of the 'traceroute' and 'ping' programs\n    in a single network diagnostic tool.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Adam Zabrocki reported a boundary error within the split_redraw()\n    function in the file split.c, possibly leading to a stack-based buffer\n    overflow.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker could use a specially crafted resolved hostname to\n    execute arbitrary code with root privileges. However, it is required\n    that the attacker controls the DNS server used by the victim, and that\n    the \"-p\" (or \"--split\") command line option is used.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All mtr users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/mtr-0.73-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-2357",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2357"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-05-26T19:29:01Z"
-    },
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-05-27T21:17:06Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-06-02T21:28:08Z"
-    }
-  ]
+	"ID": "200806-01",
+	"Title": "mtr: Stack-based buffer overflow",
+	"Synopsis": "\n    A stack-based buffer overflow was found in mtr, possibly resulting in the\n    execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "mtr",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-06-03",
+	"Revised": {
+		"Text": "2008-06-03",
+		"Count": "01"
+	},
+	"Bug": [
+		"223017"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-analyzer/mtr",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.73-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.73-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    mtr combines the functionality of the 'traceroute' and 'ping' programs\n    in a single network diagnostic tool.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Adam Zabrocki reported a boundary error within the split_redraw()\n    function in the file split.c, possibly leading to a stack-based buffer\n    overflow.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker could use a specially crafted resolved hostname to\n    execute arbitrary code with root privileges. However, it is required\n    that the attacker controls the DNS server used by the victim, and that\n    the \"-p\" (or \"--split\") command line option is used.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All mtr users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/mtr-0.73-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-2357",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2357"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-05-26T19:29:01Z"
+		},
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-05-27T21:17:06Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-06-02T21:28:08Z"
+		}
+	]
 }

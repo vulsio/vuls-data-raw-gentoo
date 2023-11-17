@@ -1,99 +1,99 @@
 {
-  "ID": "201607-12",
-  "Title": "Exim: Arbitrary code execution",
-  "Synopsis": "A local attacker could execute arbitrary code by providing\n    unsanitized data to a data source or escalate privileges.\n  ",
-  "Product": {
-    "Text": "exim",
-    "Type": "ebuild"
-  },
-  "Announced": "2016-07-20",
-  "Revised": {
-    "Text": "2016-07-20",
-    "Count": "1"
-  },
-  "Bug": [
-    "517934",
-    "576582"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "mail-mta/exim",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.87",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.87",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Exim is a message transfer agent (MTA) designed to be a a highly\n      configurable, drop-in replacement for sendmail.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Vulnerabilities have been discovered in Exim’s implementation of\n      set-uid root and when using ‘perl_startup’. These vulnerabilities\n      require a user account on the Exim server and a configuration that does\n      lookups against files to which the user has edit access.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A local attacker could possibly execute arbitrary code with the\n      privileges of the process, or escalate privileges.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All Exim users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=mail-mta/exim-4.87\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2014-2972",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-2972"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "requester",
-      "Timestamp": "2015-03-28T20:38:10Z"
-    },
-    {
-      "Text": "b-man",
-      "Tag": "submitter",
-      "Timestamp": "2016-07-20T11:18:46Z"
-    }
-  ]
+	"ID": "201607-12",
+	"Title": "Exim: Arbitrary code execution",
+	"Synopsis": "A local attacker could execute arbitrary code by providing\n    unsanitized data to a data source or escalate privileges.\n  ",
+	"Product": {
+		"Text": "exim",
+		"Type": "ebuild"
+	},
+	"Announced": "2016-07-20",
+	"Revised": {
+		"Text": "2016-07-20",
+		"Count": "1"
+	},
+	"Bug": [
+		"517934",
+		"576582"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "mail-mta/exim",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.87",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.87",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Exim is a message transfer agent (MTA) designed to be a a highly\n      configurable, drop-in replacement for sendmail.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Vulnerabilities have been discovered in Exim’s implementation of\n      set-uid root and when using ‘perl_startup’. These vulnerabilities\n      require a user account on the Exim server and a configuration that does\n      lookups against files to which the user has edit access.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A local attacker could possibly execute arbitrary code with the\n      privileges of the process, or escalate privileges.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All Exim users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=mail-mta/exim-4.87\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2014-2972",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-2972"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "requester",
+			"Timestamp": "2015-03-28T20:38:10Z"
+		},
+		{
+			"Text": "b-man",
+			"Tag": "submitter",
+			"Timestamp": "2016-07-20T11:18:46Z"
+		}
+	]
 }

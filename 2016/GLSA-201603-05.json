@@ -1,205 +1,205 @@
 {
-  "ID": "201603-05",
-  "Title": "LibreOffice, OpenOffice: Multiple vulnerabilities",
-  "Synopsis": "Multiple vulnerabilities have been found in both LibreOffice and\n    OpenOffice allowing remote attackers to execute arbitrary code or cause\n    Denial of Service.\n  ",
-  "Product": {
-    "Text": "",
-    "Type": "ebuild"
-  },
-  "Announced": "2016-03-09",
-  "Revised": {
-    "Text": "2016-03-09",
-    "Count": "1"
-  },
-  "Bug": [
-    "521136",
-    "522060",
-    "528438",
-    "534684",
-    "547880",
-    "547900",
-    "565028"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-office/libreoffice",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.4.2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.4.2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-office/libreoffice-bin",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.4.2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.4.2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-office/libreoffice-bin-debug",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.4.2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.4.2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-office/openoffice-bin",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.1.2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.1.2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Apache OpenOffice is the leading open-source office software suite for\n      word processing, spreadsheets, presentations, graphics, databases and\n      more.\n    </p>\n    \n    <p>LibreOffice is a powerful office suite; its clean interface and powerful\n      tools let you unleash your creativity and grow your productivity.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Multiple vulnerabilities were found in both LibreOffice and OpenOffice\n      that allow the remote execution of arbitrary code and potential Denial of\n      Service.  These vulnerabilities may be exploited through multiple vectors\n      including crafted documents, link handling, printer setup in ODF document\n      types, DOC file formats, and Calc spreadsheets.  Please review the\n      referenced CVE’s for specific information regarding each.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted file\n      using the LibreOffice or OpenOffice suite of software.  Execution of\n      these attacks could possibly result in the execution of arbitrary code\n      with the privileges of the process or a Denial of Service condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known work around at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All LibreOffice users should upgrade their respective packages to the\n      latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "All OpenOffice users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-office/libreoffice-4.4.2\"\n      # emerge --ask --oneshot --verbose\n      \">=app-office/libreoffice-bin-4.4.2\"# emerge --ask --oneshot --verbose\n      \">=app-office/libreoffice-bin-debug-4.4.2\"\n    ",
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-office/openoffice-bin-4.1.2\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2014-3524",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-3524"
-      },
-      {
-        "Text": "CVE-2014-3575",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-3575"
-      },
-      {
-        "Text": "CVE-2014-3693",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-3693"
-      },
-      {
-        "Text": "CVE-2014-9093",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-9093"
-      },
-      {
-        "Text": "CVE-2015-1774",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-1774"
-      },
-      {
-        "Text": "CVE-2015-4551",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-4551"
-      },
-      {
-        "Text": "CVE-2015-5212",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-5212"
-      },
-      {
-        "Text": "CVE-2015-5213",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-5213"
-      },
-      {
-        "Text": "CVE-2015-5214",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-5214"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "K_F",
-      "Tag": "requester",
-      "Timestamp": "2015-02-15T17:50:17Z"
-    },
-    {
-      "Text": "b-man",
-      "Tag": "submitter",
-      "Timestamp": "2016-03-09T18:08:54Z"
-    }
-  ]
+	"ID": "201603-05",
+	"Title": "LibreOffice, OpenOffice: Multiple vulnerabilities",
+	"Synopsis": "Multiple vulnerabilities have been found in both LibreOffice and\n    OpenOffice allowing remote attackers to execute arbitrary code or cause\n    Denial of Service.\n  ",
+	"Product": {
+		"Text": "",
+		"Type": "ebuild"
+	},
+	"Announced": "2016-03-09",
+	"Revised": {
+		"Text": "2016-03-09",
+		"Count": "1"
+	},
+	"Bug": [
+		"521136",
+		"522060",
+		"528438",
+		"534684",
+		"547880",
+		"547900",
+		"565028"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-office/libreoffice",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.4.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.4.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-office/libreoffice-bin",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.4.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.4.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-office/libreoffice-bin-debug",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.4.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.4.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-office/openoffice-bin",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.1.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.1.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Apache OpenOffice is the leading open-source office software suite for\n      word processing, spreadsheets, presentations, graphics, databases and\n      more.\n    </p>\n    \n    <p>LibreOffice is a powerful office suite; its clean interface and powerful\n      tools let you unleash your creativity and grow your productivity.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Multiple vulnerabilities were found in both LibreOffice and OpenOffice\n      that allow the remote execution of arbitrary code and potential Denial of\n      Service.  These vulnerabilities may be exploited through multiple vectors\n      including crafted documents, link handling, printer setup in ODF document\n      types, DOC file formats, and Calc spreadsheets.  Please review the\n      referenced CVE’s for specific information regarding each.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could entice a user to open a specially crafted file\n      using the LibreOffice or OpenOffice suite of software.  Execution of\n      these attacks could possibly result in the execution of arbitrary code\n      with the privileges of the process or a Denial of Service condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known work around at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All LibreOffice users should upgrade their respective packages to the\n      latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "All OpenOffice users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-office/libreoffice-4.4.2\"\n      # emerge --ask --oneshot --verbose\n      \">=app-office/libreoffice-bin-4.4.2\"# emerge --ask --oneshot --verbose\n      \">=app-office/libreoffice-bin-debug-4.4.2\"\n    ",
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-office/openoffice-bin-4.1.2\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2014-3524",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-3524"
+			},
+			{
+				"Text": "CVE-2014-3575",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-3575"
+			},
+			{
+				"Text": "CVE-2014-3693",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-3693"
+			},
+			{
+				"Text": "CVE-2014-9093",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-9093"
+			},
+			{
+				"Text": "CVE-2015-1774",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-1774"
+			},
+			{
+				"Text": "CVE-2015-4551",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-4551"
+			},
+			{
+				"Text": "CVE-2015-5212",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-5212"
+			},
+			{
+				"Text": "CVE-2015-5213",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-5213"
+			},
+			{
+				"Text": "CVE-2015-5214",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-5214"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "K_F",
+			"Tag": "requester",
+			"Timestamp": "2015-02-15T17:50:17Z"
+		},
+		{
+			"Text": "b-man",
+			"Tag": "submitter",
+			"Timestamp": "2016-03-09T18:08:54Z"
+		}
+	]
 }

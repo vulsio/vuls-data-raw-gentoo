@@ -1,117 +1,117 @@
 {
-  "ID": "200501-45",
-  "Title": "Gallery: Cross-site scripting vulnerability",
-  "Synopsis": "\n    Gallery is vulnerable to cross-site scripting attacks.\n  ",
-  "Product": {
-    "Text": "gallery",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-01-30",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "04"
-  },
-  "Bug": [
-    "78522"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-apps/gallery",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.4.4_p6",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.4.4_p6",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Gallery is a web application written in PHP which is used to organize\n    and publish photo albums. It allows multiple users to build and\n    maintain their own albums. It also supports the mirroring of images on\n    other servers.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Rafel Ivgi has discovered a cross-site scripting vulnerability where\n    the 'username' parameter is not properly sanitized in 'login.php'.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "low",
-    "Text": "\n    <p>\n    By sending a carefully crafted URL, an attacker can inject and execute\n    script code in the victim's browser window, and potentially compromise\n    the user's gallery.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Gallery users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    Note: Users with the vhosts USE flag set should manually use\n    webapp-config to finalize the update.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/gallery-1.4.4_p6\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "Gallery Announcement",
-        "Link": "http://gallery.menalto.com/modules.php?op=modload&name=News&file=article&sid=149"
-      },
-      {
-        "Text": "Secunia Advisory SA13887",
-        "Link": "https://secunia.com/advisories/13887/"
-      },
-      {
-        "Text": "CVE-2005-0220",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0220"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-01-22T13:17:09Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-01-30T18:58:59Z"
-    }
-  ]
+	"ID": "200501-45",
+	"Title": "Gallery: Cross-site scripting vulnerability",
+	"Synopsis": "\n    Gallery is vulnerable to cross-site scripting attacks.\n  ",
+	"Product": {
+		"Text": "gallery",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-01-30",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "04"
+	},
+	"Bug": [
+		"78522"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-apps/gallery",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.4.4_p6",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.4.4_p6",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Gallery is a web application written in PHP which is used to organize\n    and publish photo albums. It allows multiple users to build and\n    maintain their own albums. It also supports the mirroring of images on\n    other servers.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Rafel Ivgi has discovered a cross-site scripting vulnerability where\n    the 'username' parameter is not properly sanitized in 'login.php'.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "low",
+		"Text": "\n    <p>\n    By sending a carefully crafted URL, an attacker can inject and execute\n    script code in the victim's browser window, and potentially compromise\n    the user's gallery.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Gallery users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    Note: Users with the vhosts USE flag set should manually use\n    webapp-config to finalize the update.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/gallery-1.4.4_p6\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "Gallery Announcement",
+				"Link": "http://gallery.menalto.com/modules.php?op=modload&name=News&file=article&sid=149"
+			},
+			{
+				"Text": "Secunia Advisory SA13887",
+				"Link": "https://secunia.com/advisories/13887/"
+			},
+			{
+				"Text": "CVE-2005-0220",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0220"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-01-22T13:17:09Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-01-30T18:58:59Z"
+		}
+	]
 }

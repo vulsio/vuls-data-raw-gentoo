@@ -1,98 +1,98 @@
 {
-  "ID": "200503-01",
-  "Title": "Qt: Untrusted library search path",
-  "Synopsis": "\n    Qt may load shared libraries from an untrusted, world-writable directory,\n    resulting in the execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "qt",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-03-01",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "02"
-  },
-  "Bug": [
-    "75181"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "x11-libs/qt",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.3.4-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.3.4-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Qt is a cross-platform GUI toolkit used by KDE.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Tavis Ormandy of the Gentoo Linux Security Audit Team has discovered\n    that Qt searches for shared libraries in an untrusted, world-writable\n    directory.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local attacker could create a malicious shared object that would be\n    loaded by Qt, resulting in the execution of arbitrary code with the\n    privileges of the Qt application.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Qt users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-libs/qt-3.3.4-r2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2005-0627",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0627"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-02-15T06:13:07Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-03-01T12:59:58Z"
-    }
-  ]
+	"ID": "200503-01",
+	"Title": "Qt: Untrusted library search path",
+	"Synopsis": "\n    Qt may load shared libraries from an untrusted, world-writable directory,\n    resulting in the execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "qt",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-03-01",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "02"
+	},
+	"Bug": [
+		"75181"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "x11-libs/qt",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.3.4-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.3.4-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Qt is a cross-platform GUI toolkit used by KDE.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Tavis Ormandy of the Gentoo Linux Security Audit Team has discovered\n    that Qt searches for shared libraries in an untrusted, world-writable\n    directory.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local attacker could create a malicious shared object that would be\n    loaded by Qt, resulting in the execution of arbitrary code with the\n    privileges of the Qt application.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Qt users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-libs/qt-3.3.4-r2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2005-0627",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0627"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-02-15T06:13:07Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-03-01T12:59:58Z"
+		}
+	]
 }

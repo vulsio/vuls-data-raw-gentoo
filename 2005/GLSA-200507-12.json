@@ -1,111 +1,111 @@
 {
-  "ID": "200507-12",
-  "Title": "Bugzilla: Unauthorized access and information disclosure",
-  "Synopsis": "\n    Multiple vulnerabilities in Bugzilla could allow remote users to modify bug\n    flags or gain sensitive information.\n  ",
-  "Product": {
-    "Text": "bugzilla",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-07-13",
-  "Revised": {
-    "Text": "2005-07-13",
-    "Count": "01"
-  },
-  "Bug": [
-    "98348"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-apps/bugzilla",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.18.3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.18.3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Bugzilla is a web-based bug-tracking system used by many projects.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Bugzilla allows any user to modify the flags of any bug\n    (CAN-2005-2173). Bugzilla inserts bugs into the database before marking\n    them as private, in connection with MySQL replication this could lead\n    to a race condition (CAN-2005-2174).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "low",
-    "Text": "\n    <p>\n    By manually changing the URL to process_bug.cgi, a remote attacker\n    could modify the flags of any given bug, which could trigger an email\n    including the bug summary to be sent to the attacker. The race\n    condition when using Bugzilla with MySQL replication could lead to a\n    short timespan (usually less than a second) where the summary of\n    private bugs is exposed to all users.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There are no known workarounds at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Bugzilla users should upgrade to the latest available version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/bugzilla-2.18.3\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2005-2173",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2173"
-      },
-      {
-        "Text": "CAN-2005-2174",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2174"
-      },
-      {
-        "Text": "Bugzilla Security Advisory",
-        "Link": "https://www.bugzilla.org/security/2.18.1/"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    vorlon078\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-07-12T07:49:18Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-07-12T08:01:09Z"
-    },
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-07-12T08:53:54Z"
-    }
-  ]
+	"ID": "200507-12",
+	"Title": "Bugzilla: Unauthorized access and information disclosure",
+	"Synopsis": "\n    Multiple vulnerabilities in Bugzilla could allow remote users to modify bug\n    flags or gain sensitive information.\n  ",
+	"Product": {
+		"Text": "bugzilla",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-07-13",
+	"Revised": {
+		"Text": "2005-07-13",
+		"Count": "01"
+	},
+	"Bug": [
+		"98348"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-apps/bugzilla",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.18.3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.18.3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Bugzilla is a web-based bug-tracking system used by many projects.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Bugzilla allows any user to modify the flags of any bug\n    (CAN-2005-2173). Bugzilla inserts bugs into the database before marking\n    them as private, in connection with MySQL replication this could lead\n    to a race condition (CAN-2005-2174).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "low",
+		"Text": "\n    <p>\n    By manually changing the URL to process_bug.cgi, a remote attacker\n    could modify the flags of any given bug, which could trigger an email\n    including the bug summary to be sent to the attacker. The race\n    condition when using Bugzilla with MySQL replication could lead to a\n    short timespan (usually less than a second) where the summary of\n    private bugs is exposed to all users.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There are no known workarounds at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Bugzilla users should upgrade to the latest available version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/bugzilla-2.18.3\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2005-2173",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2173"
+			},
+			{
+				"Text": "CAN-2005-2174",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2174"
+			},
+			{
+				"Text": "Bugzilla Security Advisory",
+				"Link": "https://www.bugzilla.org/security/2.18.1/"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    vorlon078\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-07-12T07:49:18Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-07-12T08:01:09Z"
+		},
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-07-12T08:53:54Z"
+		}
+	]
 }

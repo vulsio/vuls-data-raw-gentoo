@@ -1,107 +1,107 @@
 {
-  "ID": "200708-13",
-  "Title": "BIND: Weak random number generation",
-  "Synopsis": "\n    The ISC BIND random number generator uses a weak algorithm, making it\n    easier to guess the next query ID and perform a DNS cache poisoning attack.\n  ",
-  "Product": {
-    "Text": "bind",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-08-18",
-  "Revised": {
-    "Text": "2007-08-18",
-    "Count": "01"
-  },
-  "Bug": [
-    "186556"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-dns/bind",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "9.4.1_p1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "9.4.1_p1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    ISC BIND is the Internet Systems Consortium implementation of the\n    Domain Name System (DNS) protocol.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Amit Klein from Trusteer reported that the random number generator of\n    ISC BIND leads, half the time, to predictable (1 chance to 8) query IDs\n    in the resolver routine or in zone transfer queries (CVE-2007-2926).\n    Additionally, the default configuration file has been strengthen with\n    respect to the allow-recursion{} and the allow-query{} options\n    (CVE-2007-2925).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker can use this weakness by sending queries for a domain\n    he handles to a resolver (directly to a recursive server, or through\n    another process like an email processing) and then observing the\n    resulting IDs of the iterative queries. The attacker will half the time\n    be able to guess the next query ID, then perform cache poisoning by\n    answering with those guessed IDs, while spoofing the UDP source address\n    of the reply. Furthermore, with empty allow-recursion{} and\n    allow-query{} options, the default configuration allowed anybody to\n    make recursive queries and query the cache.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time for the random generator\n    weakness. The allow-recursion{} and allow-query{} options should be set\n    to trusted hosts only in /etc/bind/named.conf, thus preventing several\n    security risks.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All ISC BIND users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dns/bind-9.4.1_p1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-2925",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2925"
-      },
-      {
-        "Text": "CVE-2007-2926",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2926"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    aetius\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-08-05T10:40:49Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-08-13T23:06:16Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-08-14T23:00:40Z"
-    }
-  ]
+	"ID": "200708-13",
+	"Title": "BIND: Weak random number generation",
+	"Synopsis": "\n    The ISC BIND random number generator uses a weak algorithm, making it\n    easier to guess the next query ID and perform a DNS cache poisoning attack.\n  ",
+	"Product": {
+		"Text": "bind",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-08-18",
+	"Revised": {
+		"Text": "2007-08-18",
+		"Count": "01"
+	},
+	"Bug": [
+		"186556"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-dns/bind",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "9.4.1_p1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "9.4.1_p1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    ISC BIND is the Internet Systems Consortium implementation of the\n    Domain Name System (DNS) protocol.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Amit Klein from Trusteer reported that the random number generator of\n    ISC BIND leads, half the time, to predictable (1 chance to 8) query IDs\n    in the resolver routine or in zone transfer queries (CVE-2007-2926).\n    Additionally, the default configuration file has been strengthen with\n    respect to the allow-recursion{} and the allow-query{} options\n    (CVE-2007-2925).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker can use this weakness by sending queries for a domain\n    he handles to a resolver (directly to a recursive server, or through\n    another process like an email processing) and then observing the\n    resulting IDs of the iterative queries. The attacker will half the time\n    be able to guess the next query ID, then perform cache poisoning by\n    answering with those guessed IDs, while spoofing the UDP source address\n    of the reply. Furthermore, with empty allow-recursion{} and\n    allow-query{} options, the default configuration allowed anybody to\n    make recursive queries and query the cache.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time for the random generator\n    weakness. The allow-recursion{} and allow-query{} options should be set\n    to trusted hosts only in /etc/bind/named.conf, thus preventing several\n    security risks.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All ISC BIND users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dns/bind-9.4.1_p1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-2925",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2925"
+			},
+			{
+				"Text": "CVE-2007-2926",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2926"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    aetius\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-08-05T10:40:49Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-08-13T23:06:16Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-08-14T23:00:40Z"
+		}
+	]
 }

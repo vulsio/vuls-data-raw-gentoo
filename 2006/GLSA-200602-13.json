@@ -1,107 +1,107 @@
 {
-  "ID": "200602-13",
-  "Title": "GraphicsMagick: Format string vulnerability",
-  "Synopsis": "\n    A vulnerability in GraphicsMagick allows attackers to crash the application\n    and potentially execute arbitrary code.\n  ",
-  "Product": {
-    "Text": "graphicsmagick",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-02-26",
-  "Revised": {
-    "Text": "2006-02-26",
-    "Count": "01"
-  },
-  "Bug": [
-    "119476"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-gfx/graphicsmagick",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.1.7",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.1.7",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    GraphicsMagick is a collection of tools to read, write and\n    manipulate images in many formats.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The SetImageInfo function was found vulnerable to a format string\n    mishandling. Daniel Kobras discovered that the handling of \"%\"-escaped\n    sequences in filenames passed to the function is inadequate in\n    ImageMagick GLSA 200602-06 and the same vulnerability exists in\n    GraphicsMagick.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    By feeding specially crafted file names to GraphicsMagick an\n    attacker can crash the program and possibly execute arbitrary code with\n    the privileges of the user running GraphicsMagick.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All GraphicsMagick users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/graphicsmagick-1.1.7\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "GLSA 200602-06",
-        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200602-06.xml"
-      },
-      {
-        "Text": "CVE-2006-0082",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0082"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-02-21T18:24:37Z"
-    },
-    {
-      "Text": "\n    dragonheart\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-02-22T11:24:17Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-02-22T21:18:32Z"
-    }
-  ]
+	"ID": "200602-13",
+	"Title": "GraphicsMagick: Format string vulnerability",
+	"Synopsis": "\n    A vulnerability in GraphicsMagick allows attackers to crash the application\n    and potentially execute arbitrary code.\n  ",
+	"Product": {
+		"Text": "graphicsmagick",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-02-26",
+	"Revised": {
+		"Text": "2006-02-26",
+		"Count": "01"
+	},
+	"Bug": [
+		"119476"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-gfx/graphicsmagick",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.1.7",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.1.7",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    GraphicsMagick is a collection of tools to read, write and\n    manipulate images in many formats.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The SetImageInfo function was found vulnerable to a format string\n    mishandling. Daniel Kobras discovered that the handling of \"%\"-escaped\n    sequences in filenames passed to the function is inadequate in\n    ImageMagick GLSA 200602-06 and the same vulnerability exists in\n    GraphicsMagick.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    By feeding specially crafted file names to GraphicsMagick an\n    attacker can crash the program and possibly execute arbitrary code with\n    the privileges of the user running GraphicsMagick.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All GraphicsMagick users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/graphicsmagick-1.1.7\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "GLSA 200602-06",
+				"Link": "https://www.gentoo.org/security/en/glsa/glsa-200602-06.xml"
+			},
+			{
+				"Text": "CVE-2006-0082",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0082"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-02-21T18:24:37Z"
+		},
+		{
+			"Text": "\n    dragonheart\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-02-22T11:24:17Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-02-22T21:18:32Z"
+		}
+	]
 }

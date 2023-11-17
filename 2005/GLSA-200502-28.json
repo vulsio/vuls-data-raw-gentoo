@@ -1,115 +1,115 @@
 {
-  "ID": "200502-28",
-  "Title": "PuTTY: Remote code execution",
-  "Synopsis": "\n    PuTTY was found to contain vulnerabilities that can allow a malicious SFTP\n    server to execute arbitrary code on unsuspecting PSCP and PSFTP clients.\n  ",
-  "Product": {
-    "Text": "Putty",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-02-21",
-  "Revised": {
-    "Text": "2005-02-21",
-    "Count": "01"
-  },
-  "Bug": [
-    "82753"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-misc/putty",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.57",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.57",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    PuTTY is a popular SSH client, PSCP is a secure copy\n    implementation, and PSFTP is a SSH File Transfer Protocol client.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Two vulnerabilities have been discovered in the PSCP and PSFTP\n    clients, which can be triggered by the SFTP server itself. These issues\n    are caused by the improper handling of the FXP_READDIR response, along\n    with other string fields.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker can setup a malicious SFTP server that would send\n    these malformed responses to a client, potentially allowing the\n    execution of arbitrary code on their system.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All PuTTY users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/putty-0.57\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "PuTTY vulnerability vuln-sftp-readdir",
-        "Link": "https://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/vuln-sftp-readdir.html"
-      },
-      {
-        "Text": "PuTTY vulnerability vuln-sftp-string",
-        "Link": "https://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/vuln-sftp-string.html"
-      },
-      {
-        "Text": "CAN-2005-0467",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0467"
-      },
-      {
-        "Text": "iDEFENSE Advisory",
-        "Link": "http://www.idefense.com/application/poi/display?id=201&type=vulnerabilities"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    vorlon078\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-02-21T09:51:17Z"
-    },
-    {
-      "Text": "\n    vorlon078\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-02-21T09:52:44Z"
-    },
-    {
-      "Text": "\n    lewk\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-02-21T13:42:55Z"
-    }
-  ]
+	"ID": "200502-28",
+	"Title": "PuTTY: Remote code execution",
+	"Synopsis": "\n    PuTTY was found to contain vulnerabilities that can allow a malicious SFTP\n    server to execute arbitrary code on unsuspecting PSCP and PSFTP clients.\n  ",
+	"Product": {
+		"Text": "Putty",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-02-21",
+	"Revised": {
+		"Text": "2005-02-21",
+		"Count": "01"
+	},
+	"Bug": [
+		"82753"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-misc/putty",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.57",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.57",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    PuTTY is a popular SSH client, PSCP is a secure copy\n    implementation, and PSFTP is a SSH File Transfer Protocol client.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Two vulnerabilities have been discovered in the PSCP and PSFTP\n    clients, which can be triggered by the SFTP server itself. These issues\n    are caused by the improper handling of the FXP_READDIR response, along\n    with other string fields.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker can setup a malicious SFTP server that would send\n    these malformed responses to a client, potentially allowing the\n    execution of arbitrary code on their system.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All PuTTY users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/putty-0.57\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "PuTTY vulnerability vuln-sftp-readdir",
+				"Link": "https://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/vuln-sftp-readdir.html"
+			},
+			{
+				"Text": "PuTTY vulnerability vuln-sftp-string",
+				"Link": "https://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/vuln-sftp-string.html"
+			},
+			{
+				"Text": "CAN-2005-0467",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0467"
+			},
+			{
+				"Text": "iDEFENSE Advisory",
+				"Link": "http://www.idefense.com/application/poi/display?id=201&type=vulnerabilities"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    vorlon078\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-02-21T09:51:17Z"
+		},
+		{
+			"Text": "\n    vorlon078\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-02-21T09:52:44Z"
+		},
+		{
+			"Text": "\n    lewk\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-02-21T13:42:55Z"
+		}
+	]
 }

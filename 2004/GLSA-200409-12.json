@@ -1,182 +1,182 @@
 {
-  "ID": "200409-12",
-  "Title": "ImageMagick, imlib, imlib2: BMP decoding buffer overflows",
-  "Synopsis": "\n    ImageMagick, imlib and imlib2 contain exploitable buffer overflow\n    vulnerabilities in the BMP image processing code.\n  ",
-  "Product": {
-    "Text": "imagemagick imlib",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-09-08",
-  "Revised": {
-    "Text": "2004-09-08",
-    "Count": "01"
-  },
-  "Bug": [
-    "62309",
-    "62487"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-gfx/imagemagick",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "6.0.7.1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "6.0.7.1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "media-libs/imlib",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.9.14-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.9.14-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "media-libs/imlib2",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.1.2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.1.2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    ImageMagick is a suite of image manipulation utilities and libraries used\n    for a wide variety of image formats. imlib is a general image loading and\n    rendering library.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Due to improper bounds checking, ImageMagick and imlib are vulnerable to a\n    buffer overflow when decoding runlength-encoded bitmaps. This bug can be\n    exploited using a specially-crafted BMP image and could potentially allow\n    remote code execution when this image is decoded by the user.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A specially-crafted runlength-encoded BMP could lead ImageMagick and imlib\n    to crash or potentially execute arbitrary code.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All ImageMagick users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All imlib users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All imlib2 users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n\n    # emerge -pv \">=media-gfx/imagemagick-6.0.7.1\"\n    # emerge \">=media-gfx/imagemagick-6.0.7.1\"",
-      "\n    # emerge sync\n\n    # emerge -pv \">=media-libs/imlib-1.9.14-r2\"\n    # emerge \">=media-libs/imlib-1.9.14-r2\"",
-      "\n    # emerge sync\n\n    # emerge -pv \">=media-libs/imlib2-1.1.2\"\n    # emerge \">=media-libs/imlib2-1.1.2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2004-0817",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0817"
-      },
-      {
-        "Text": "CAN-2004-0802",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0802"
-      },
-      {
-        "Text": "ImageMagick Mailing List",
-        "Link": "https://studio.imagemagick.org/pipermail/magick-developers/2004-August/002011.html"
-      },
-      {
-        "Text": "SecurityTracker #1011104",
-        "Link": "http://securitytracker.com/alerts/2004/Aug/1011104.html"
-      },
-      {
-        "Text": "SecurityTracker #1011105",
-        "Link": "http://securitytracker.com/alerts/2004/Aug/1011105.html"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2004-09-06T16:14:33Z"
-    },
-    {
-      "Text": "\n    lewk\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-09-06T23:42:01Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-09-08T07:22:02Z"
-    }
-  ]
+	"ID": "200409-12",
+	"Title": "ImageMagick, imlib, imlib2: BMP decoding buffer overflows",
+	"Synopsis": "\n    ImageMagick, imlib and imlib2 contain exploitable buffer overflow\n    vulnerabilities in the BMP image processing code.\n  ",
+	"Product": {
+		"Text": "imagemagick imlib",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-09-08",
+	"Revised": {
+		"Text": "2004-09-08",
+		"Count": "01"
+	},
+	"Bug": [
+		"62309",
+		"62487"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-gfx/imagemagick",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "6.0.7.1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "6.0.7.1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "media-libs/imlib",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.9.14-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.9.14-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "media-libs/imlib2",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.1.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.1.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    ImageMagick is a suite of image manipulation utilities and libraries used\n    for a wide variety of image formats. imlib is a general image loading and\n    rendering library.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Due to improper bounds checking, ImageMagick and imlib are vulnerable to a\n    buffer overflow when decoding runlength-encoded bitmaps. This bug can be\n    exploited using a specially-crafted BMP image and could potentially allow\n    remote code execution when this image is decoded by the user.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A specially-crafted runlength-encoded BMP could lead ImageMagick and imlib\n    to crash or potentially execute arbitrary code.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All ImageMagick users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All imlib users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All imlib2 users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n\n    # emerge -pv \">=media-gfx/imagemagick-6.0.7.1\"\n    # emerge \">=media-gfx/imagemagick-6.0.7.1\"",
+			"\n    # emerge sync\n\n    # emerge -pv \">=media-libs/imlib-1.9.14-r2\"\n    # emerge \">=media-libs/imlib-1.9.14-r2\"",
+			"\n    # emerge sync\n\n    # emerge -pv \">=media-libs/imlib2-1.1.2\"\n    # emerge \">=media-libs/imlib2-1.1.2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2004-0817",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0817"
+			},
+			{
+				"Text": "CAN-2004-0802",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0802"
+			},
+			{
+				"Text": "ImageMagick Mailing List",
+				"Link": "https://studio.imagemagick.org/pipermail/magick-developers/2004-August/002011.html"
+			},
+			{
+				"Text": "SecurityTracker #1011104",
+				"Link": "http://securitytracker.com/alerts/2004/Aug/1011104.html"
+			},
+			{
+				"Text": "SecurityTracker #1011105",
+				"Link": "http://securitytracker.com/alerts/2004/Aug/1011105.html"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2004-09-06T16:14:33Z"
+		},
+		{
+			"Text": "\n    lewk\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-09-06T23:42:01Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-09-08T07:22:02Z"
+		}
+	]
 }

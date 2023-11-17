@@ -1,155 +1,155 @@
 {
-  "ID": "200506-01",
-  "Title": "Binutils, elfutils: Buffer overflow",
-  "Synopsis": "\n    Various utilities from the GNU Binutils and elfutils packages are\n    vulnerable to a heap based buffer overflow, potentially resulting in the\n    execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "binutils",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-06-01",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "02"
-  },
-  "Bug": [
-    "91398",
-    "91817"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-libs/elfutils",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.108",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.108",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "sys-devel/binutils",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.14.90.0.8-r3",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "2.15.90.0.1.1-r5",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "2.15.90.0.3-r5",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "2.15.91.0.2-r2",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "2.15.92.0.2-r10",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "2.16-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.16-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    The GNU Binutils are a collection of tools to create, modify and\n    analyse binary files. Many of the files use BFD, the Binary File\n    Descriptor library, to do low-level manipulation. Elfutils provides a\n    library and utilities to access, modify and analyse ELF objects.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Tavis Ormandy and Ned Ludd of the Gentoo Linux Security Audit Team\n    discovered an integer overflow in the BFD library and elfutils,\n    resulting in a heap based buffer overflow.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    Successful exploitation would require a user to access a specially\n    crafted binary file, resulting in the execution of arbitrary code.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All GNU Binutils users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All elfutils users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose sys-devel/binutils",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/elfutils-0.108\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2005-1704",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1704"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    taviso\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-05-12T20:12:23Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-06-01T15:04:54Z"
-    }
-  ]
+	"ID": "200506-01",
+	"Title": "Binutils, elfutils: Buffer overflow",
+	"Synopsis": "\n    Various utilities from the GNU Binutils and elfutils packages are\n    vulnerable to a heap based buffer overflow, potentially resulting in the\n    execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "binutils",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-06-01",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "02"
+	},
+	"Bug": [
+		"91398",
+		"91817"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-libs/elfutils",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.108",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.108",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "sys-devel/binutils",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.14.90.0.8-r3",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "2.15.90.0.1.1-r5",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "2.15.90.0.3-r5",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "2.15.91.0.2-r2",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "2.15.92.0.2-r10",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "2.16-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.16-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    The GNU Binutils are a collection of tools to create, modify and\n    analyse binary files. Many of the files use BFD, the Binary File\n    Descriptor library, to do low-level manipulation. Elfutils provides a\n    library and utilities to access, modify and analyse ELF objects.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Tavis Ormandy and Ned Ludd of the Gentoo Linux Security Audit Team\n    discovered an integer overflow in the BFD library and elfutils,\n    resulting in a heap based buffer overflow.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    Successful exploitation would require a user to access a specially\n    crafted binary file, resulting in the execution of arbitrary code.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All GNU Binutils users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All elfutils users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose sys-devel/binutils",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/elfutils-0.108\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2005-1704",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1704"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    taviso\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-05-12T20:12:23Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-06-01T15:04:54Z"
+		}
+	]
 }

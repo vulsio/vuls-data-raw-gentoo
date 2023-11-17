@@ -1,98 +1,98 @@
 {
-  "ID": "202008-15",
-  "Title": "Docker: Information disclosure",
-  "Synopsis": "A flaw in Docker allowed possible information leakage.",
-  "Product": {
-    "Text": "docker",
-    "Type": "ebuild"
-  },
-  "Announced": "2020-08-26",
-  "Revised": {
-    "Text": "2020-08-26",
-    "Count": "1"
-  },
-  "Bug": [
-    "729208"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-emulation/docker",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "19.03.12",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "19.03.12",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Docker is the world’s leading software containerization platform.</p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>It was found that Docker created network bridges which by default accept\n      IPv6 router advertisements.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>An attacker who gained access to a container with CAP_NET_RAW capability\n      may be able to to spoof router advertisements, resulting in information\n      disclosure or denial of service.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All Docker users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-emulation/docker-19.03.12\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2020-13401",
-        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-13401"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "sam_c",
-      "Tag": "requester",
-      "Timestamp": "2020-08-26T14:40:16Z"
-    },
-    {
-      "Text": "sam_c",
-      "Tag": "submitter",
-      "Timestamp": "2020-08-26T21:33:28Z"
-    }
-  ]
+	"ID": "202008-15",
+	"Title": "Docker: Information disclosure",
+	"Synopsis": "A flaw in Docker allowed possible information leakage.",
+	"Product": {
+		"Text": "docker",
+		"Type": "ebuild"
+	},
+	"Announced": "2020-08-26",
+	"Revised": {
+		"Text": "2020-08-26",
+		"Count": "1"
+	},
+	"Bug": [
+		"729208"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-emulation/docker",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "19.03.12",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "19.03.12",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Docker is the world’s leading software containerization platform.</p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>It was found that Docker created network bridges which by default accept\n      IPv6 router advertisements.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>An attacker who gained access to a container with CAP_NET_RAW capability\n      may be able to to spoof router advertisements, resulting in information\n      disclosure or denial of service.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All Docker users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-emulation/docker-19.03.12\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2020-13401",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-13401"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "sam_c",
+			"Tag": "requester",
+			"Timestamp": "2020-08-26T14:40:16Z"
+		},
+		{
+			"Text": "sam_c",
+			"Tag": "submitter",
+			"Timestamp": "2020-08-26T21:33:28Z"
+		}
+	]
 }

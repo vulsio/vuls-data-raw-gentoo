@@ -1,98 +1,98 @@
 {
-  "ID": "202310-15",
-  "Title": "USBView: root privilege escalation via insecure polkit settings",
-  "Synopsis": "A vulnerability has been discovered in usbview where certain users can trigger a privilege escalation.",
-  "Product": {
-    "Text": "usbview",
-    "Type": "ebuild"
-  },
-  "Announced": "2023-10-26",
-  "Revised": {
-    "Text": "2023-10-26",
-    "Count": "1"
-  },
-  "Bug": [
-    "831756"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-admin/usbview",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n        <p>USBView is a tool to display the topology of devices on the USB bus.</p>\n    "
-  },
-  "Description": {
-    "Text": "\n        <p>A vulnerability has been discovered in usbview. Please review the CVE identifier referenced below for details.</p>\n    "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n        <p>USBView allows some local users (e.g., ones logged in via SSH) to execute arbitrary code as root because certain Polkit settings (e.g., allow_any=yes) for pkexec disable the authentication requirement. Code execution can, for example, use the --gtk-module option.</p>\n    "
-  },
-  "Workaround": {
-    "Text": "\n        <p>There is no known workaround at this time.</p>\n    "
-  },
-  "Resolution": {
-    "Text": "\n        \n        \n        \n    ",
-    "P": [
-      {
-        "Text": "All USBView users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=app-admin/usbview-2.2\"\n        "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2022-23220",
-        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-23220"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "graaff",
-      "Tag": "requester",
-      "Timestamp": "2023-10-26T04:41:42.430938Z"
-    },
-    {
-      "Text": "graaff",
-      "Tag": "submitter",
-      "Timestamp": "2023-10-26T04:41:42.434826Z"
-    }
-  ]
+	"ID": "202310-15",
+	"Title": "USBView: root privilege escalation via insecure polkit settings",
+	"Synopsis": "A vulnerability has been discovered in usbview where certain users can trigger a privilege escalation.",
+	"Product": {
+		"Text": "usbview",
+		"Type": "ebuild"
+	},
+	"Announced": "2023-10-26",
+	"Revised": {
+		"Text": "2023-10-26",
+		"Count": "1"
+	},
+	"Bug": [
+		"831756"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-admin/usbview",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>USBView is a tool to display the topology of devices on the USB bus.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>A vulnerability has been discovered in usbview. Please review the CVE identifier referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n        <p>USBView allows some local users (e.g., ones logged in via SSH) to execute arbitrary code as root because certain Polkit settings (e.g., allow_any=yes) for pkexec disable the authentication requirement. Code execution can, for example, use the --gtk-module option.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All USBView users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=app-admin/usbview-2.2\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2022-23220",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-23220"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2023-10-26T04:41:42.430938Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2023-10-26T04:41:42.434826Z"
+		}
+	]
 }

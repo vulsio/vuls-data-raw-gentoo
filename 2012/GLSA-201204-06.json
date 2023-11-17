@@ -1,108 +1,108 @@
 {
-  "ID": "201204-06",
-  "Title": "PolicyKit: Multiple vulnerabilities",
-  "Synopsis": "Multiple vulnerabilities have been found in PolicyKit, the worst of\n    which may allow a local attacker to gain root privileges.\n  ",
-  "Product": {
-    "Text": "polkit",
-    "Type": "ebuild"
-  },
-  "Announced": "2012-04-17",
-  "Revised": {
-    "Text": "2012-04-17",
-    "Count": "1"
-  },
-  "Bug": [
-    "314535",
-    "364973",
-    "401513"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sys-auth/polkit",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.104-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.104-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>PolicyKit is a toolkit for controlling privileges for system-wide\n      services.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Multiple vulnerabilities have been found in PolicyKit:</p>\n    \n    <ul>\n      <li>Error messages in the pkexec utility disclose the existence of local\n        files (CVE-2010-0750).\n      </li>\n      <li>The pkexec utility initially checks the effective user ID of its\n        parent process for authorization, instead of checking the real user ID\n        (CVE-2011-1485).\n      </li>\n      <li>Members of the \"wheel\" group are able to execute commands as an\n        administrator without a password (CVE-2011-4945).\n      </li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>A local attacker could gain elevated privileges or sensitive\n      information.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All PolicyKit users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-auth/polkit-0.104-r1\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2010-0750",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-0750"
-      },
-      {
-        "Text": "CVE-2011-1485",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-1485"
-      },
-      {
-        "Text": "CVE-2011-4945",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-4945"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    underling\n  ",
-      "Tag": "requester",
-      "Timestamp": "2011-10-07T23:37:57Z"
-    },
-    {
-      "Text": "ackle",
-      "Tag": "submitter",
-      "Timestamp": "2012-04-17T22:43:48Z"
-    }
-  ]
+	"ID": "201204-06",
+	"Title": "PolicyKit: Multiple vulnerabilities",
+	"Synopsis": "Multiple vulnerabilities have been found in PolicyKit, the worst of\n    which may allow a local attacker to gain root privileges.\n  ",
+	"Product": {
+		"Text": "polkit",
+		"Type": "ebuild"
+	},
+	"Announced": "2012-04-17",
+	"Revised": {
+		"Text": "2012-04-17",
+		"Count": "1"
+	},
+	"Bug": [
+		"314535",
+		"364973",
+		"401513"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-auth/polkit",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.104-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.104-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>PolicyKit is a toolkit for controlling privileges for system-wide\n      services.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Multiple vulnerabilities have been found in PolicyKit:</p>\n    \n    <ul>\n      <li>Error messages in the pkexec utility disclose the existence of local\n        files (CVE-2010-0750).\n      </li>\n      <li>The pkexec utility initially checks the effective user ID of its\n        parent process for authorization, instead of checking the real user ID\n        (CVE-2011-1485).\n      </li>\n      <li>Members of the \"wheel\" group are able to execute commands as an\n        administrator without a password (CVE-2011-4945).\n      </li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>A local attacker could gain elevated privileges or sensitive\n      information.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All PolicyKit users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-auth/polkit-0.104-r1\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2010-0750",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-0750"
+			},
+			{
+				"Text": "CVE-2011-1485",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-1485"
+			},
+			{
+				"Text": "CVE-2011-4945",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-4945"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    underling\n  ",
+			"Tag": "requester",
+			"Timestamp": "2011-10-07T23:37:57Z"
+		},
+		{
+			"Text": "ackle",
+			"Tag": "submitter",
+			"Timestamp": "2012-04-17T22:43:48Z"
+		}
+	]
 }

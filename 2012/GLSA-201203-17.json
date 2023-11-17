@@ -1,103 +1,103 @@
 {
-  "ID": "201203-17",
-  "Title": "HPLIP: Multiple vulnerabilities",
-  "Synopsis": "Multiple vulnerabilities have been found in HPLIP, the worst of\n    which may allow execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "hplip",
-    "Type": "ebuild"
-  },
-  "Announced": "2012-03-16",
-  "Revised": {
-    "Text": "2012-03-16",
-    "Count": "1"
-  },
-  "Bug": [
-    "352085",
-    "388655"
-  ],
-  "Access": "local, remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-print/hplip",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.11.10",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.11.10",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>The Hewlett-Packard Linux Imaging and Printing system (HPLIP) provides\n      drivers for HP's inkjet and laser printers, scanners and fax machines. \n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Two vulnerabilities have been found in HPLIP:</p>\n    \n    <ul>\n      <li>The \"hpmud_get_pml()\" function in pml.c contains a boundary error\n        which could cause a stack-based buffer overflow (CVE-2010-4267).\n      </li>\n      <li>The \"send_data_to_stdout()\" function in hpcupsfax.cpp creates\n        insecure temporary files (CVE-2011-2722).\n      </li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>A remote attacker might send specially crafted SNMP reponses, possibly\n      resulting in execution of arbitrary code or a Denial of Service\n      condition. Furthermore, a local attacker could perform symlink attacks to\n      overwrite arbitrary files.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All HPLIP users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-print/hplip-3.11.10\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2010-4267",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-4267"
-      },
-      {
-        "Text": "CVE-2011-2722",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2722"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    underling\n  ",
-      "Tag": "requester",
-      "Timestamp": "2011-10-07T23:38:15Z"
-    },
-    {
-      "Text": "ackle",
-      "Tag": "submitter",
-      "Timestamp": "2012-03-16T11:04:44Z"
-    }
-  ]
+	"ID": "201203-17",
+	"Title": "HPLIP: Multiple vulnerabilities",
+	"Synopsis": "Multiple vulnerabilities have been found in HPLIP, the worst of\n    which may allow execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "hplip",
+		"Type": "ebuild"
+	},
+	"Announced": "2012-03-16",
+	"Revised": {
+		"Text": "2012-03-16",
+		"Count": "1"
+	},
+	"Bug": [
+		"352085",
+		"388655"
+	],
+	"Access": "local, remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-print/hplip",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.11.10",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.11.10",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>The Hewlett-Packard Linux Imaging and Printing system (HPLIP) provides\n      drivers for HP's inkjet and laser printers, scanners and fax machines. \n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Two vulnerabilities have been found in HPLIP:</p>\n    \n    <ul>\n      <li>The \"hpmud_get_pml()\" function in pml.c contains a boundary error\n        which could cause a stack-based buffer overflow (CVE-2010-4267).\n      </li>\n      <li>The \"send_data_to_stdout()\" function in hpcupsfax.cpp creates\n        insecure temporary files (CVE-2011-2722).\n      </li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>A remote attacker might send specially crafted SNMP reponses, possibly\n      resulting in execution of arbitrary code or a Denial of Service\n      condition. Furthermore, a local attacker could perform symlink attacks to\n      overwrite arbitrary files.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All HPLIP users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-print/hplip-3.11.10\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2010-4267",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-4267"
+			},
+			{
+				"Text": "CVE-2011-2722",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2722"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    underling\n  ",
+			"Tag": "requester",
+			"Timestamp": "2011-10-07T23:38:15Z"
+		},
+		{
+			"Text": "ackle",
+			"Tag": "submitter",
+			"Timestamp": "2012-03-16T11:04:44Z"
+		}
+	]
 }

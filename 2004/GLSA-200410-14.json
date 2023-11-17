@@ -1,111 +1,111 @@
 {
-  "ID": "200410-14",
-  "Title": "phpMyAdmin: Vulnerability in MIME-based transformation system",
-  "Synopsis": "\n    A vulnerability has been found in the MIME-based transformation system of\n    phpMyAdmin, which may allow remote execution of arbitrary commands if PHP's\n    \"safe mode\" is disabled.\n  ",
-  "Product": {
-    "Text": "phpMyAdmin",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-10-18",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "02"
-  },
-  "Bug": [
-    "67409"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-db/phpmyadmin",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.6.0_p2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.6.0_p2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    phpMyAdmin is a popular web-based MySQL administration tool written in\n    PHP. It allows users to browse and administer a MySQL database from a\n    web-browser. Transformations are a phpMyAdmin feature allowing plug-ins\n    to rewrite the contents of any column seen in phpMyAdmin's Browsing\n    mode, including using insertion of PHP or JavaScript code.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    A defect was found in phpMyAdmin's MIME-based transformation system,\n    when used with \"external\" transformations.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker could exploit this vulnerability to execute arbitrary\n    commands on the server with the rights of the HTTP server user.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Enabling PHP safe mode (\"safe_mode = On\" in php.ini) may serve as a\n    temporary workaround.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All phpMyAdmin users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n    \n    # emerge -pv \">=dev-db/phpmyadmin-2.6.0_p2\"\n    # emerge \">=dev-db/phpmyadmin-2.6.0_p2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "phpMyAdmin 2.6.0_pl2 Release Announcement",
-        "Link": "https://sourceforge.net/forum/forum.php?forum_id=414281"
-      },
-      {
-        "Text": "Secunia Advisory SA12813",
-        "Link": "https://secunia.com/advisories/12813/"
-      },
-      {
-        "Text": "CVE-2004-2630",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-2630"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    vorlon078\n  ",
-      "Tag": "requester",
-      "Timestamp": "2004-10-14T19:19:23Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-10-16T10:34:28Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-10-17T17:40:28Z"
-    }
-  ]
+	"ID": "200410-14",
+	"Title": "phpMyAdmin: Vulnerability in MIME-based transformation system",
+	"Synopsis": "\n    A vulnerability has been found in the MIME-based transformation system of\n    phpMyAdmin, which may allow remote execution of arbitrary commands if PHP's\n    \"safe mode\" is disabled.\n  ",
+	"Product": {
+		"Text": "phpMyAdmin",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-10-18",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "02"
+	},
+	"Bug": [
+		"67409"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-db/phpmyadmin",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.6.0_p2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.6.0_p2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    phpMyAdmin is a popular web-based MySQL administration tool written in\n    PHP. It allows users to browse and administer a MySQL database from a\n    web-browser. Transformations are a phpMyAdmin feature allowing plug-ins\n    to rewrite the contents of any column seen in phpMyAdmin's Browsing\n    mode, including using insertion of PHP or JavaScript code.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    A defect was found in phpMyAdmin's MIME-based transformation system,\n    when used with \"external\" transformations.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker could exploit this vulnerability to execute arbitrary\n    commands on the server with the rights of the HTTP server user.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Enabling PHP safe mode (\"safe_mode = On\" in php.ini) may serve as a\n    temporary workaround.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All phpMyAdmin users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n    \n    # emerge -pv \">=dev-db/phpmyadmin-2.6.0_p2\"\n    # emerge \">=dev-db/phpmyadmin-2.6.0_p2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "phpMyAdmin 2.6.0_pl2 Release Announcement",
+				"Link": "https://sourceforge.net/forum/forum.php?forum_id=414281"
+			},
+			{
+				"Text": "Secunia Advisory SA12813",
+				"Link": "https://secunia.com/advisories/12813/"
+			},
+			{
+				"Text": "CVE-2004-2630",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-2630"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    vorlon078\n  ",
+			"Tag": "requester",
+			"Timestamp": "2004-10-14T19:19:23Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-10-16T10:34:28Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-10-17T17:40:28Z"
+		}
+	]
 }

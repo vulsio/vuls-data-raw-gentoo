@@ -1,82 +1,82 @@
 {
-  "ID": "200402-07",
-  "Title": "Clam Antivirus DoS vulnerability",
-  "Synopsis": "\n    Oliver Eikemeier has reported a vulnerability in Clam AV, which can be\n    exploited by a malformed uuencoded message causing a denial of service for\n    programs that rely on the clamav daemon, such as SMTP daemons.\n  ",
-  "Product": {
-    "Text": "clamav",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-02-17",
-  "Revised": {
-    "Text": "2004-02-17",
-    "Count": "01"
-  },
-  "Bug": [
-    "41248"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-antivirus/clamav",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.67",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.67",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Clam AntiVirus is a GPLed anti-virus toolkit, designed for integration with\n    mail servers to perform attachment scanning. Clam AV also provides a\n    command line scanner and a tool for fetching updates of the virus database.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Oliver Eikemeier of Fillmore Labs discovered the overflow in Clam AV 0.65\n    when it handled malformed UUEncoded messages, causing the daemon to shut\n    down.\n    </p>\n    <p>\n    The problem originated in libclamav which calculates the line length of an\n    uuencoded message by taking the ASCII value of the first character minus 64\n    while doing an assertion if the length is not in the allowed range,\n    effectively terminating the calling program as clamav would not be\n    available.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A malformed message would cause a denial of service,\n    and depending on the server configuration this may impact other daemons\n    relying on Clam AV in a fatal manner.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no immediate workaround, a software upgrade is required.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All users are urged to upgrade their Clam AV installations to Clam AV 0.67:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n    # emerge -pv \">=app-antivirus/clamav-0.6.7\"\n    # emerge \">=app-antivirus/clamav-0.6.7\""
-    ]
-  },
-  "References": {
-    "URI": null
-  },
-  "Metadata": null
+	"ID": "200402-07",
+	"Title": "Clam Antivirus DoS vulnerability",
+	"Synopsis": "\n    Oliver Eikemeier has reported a vulnerability in Clam AV, which can be\n    exploited by a malformed uuencoded message causing a denial of service for\n    programs that rely on the clamav daemon, such as SMTP daemons.\n  ",
+	"Product": {
+		"Text": "clamav",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-02-17",
+	"Revised": {
+		"Text": "2004-02-17",
+		"Count": "01"
+	},
+	"Bug": [
+		"41248"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-antivirus/clamav",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.67",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.67",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Clam AntiVirus is a GPLed anti-virus toolkit, designed for integration with\n    mail servers to perform attachment scanning. Clam AV also provides a\n    command line scanner and a tool for fetching updates of the virus database.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Oliver Eikemeier of Fillmore Labs discovered the overflow in Clam AV 0.65\n    when it handled malformed UUEncoded messages, causing the daemon to shut\n    down.\n    </p>\n    <p>\n    The problem originated in libclamav which calculates the line length of an\n    uuencoded message by taking the ASCII value of the first character minus 64\n    while doing an assertion if the length is not in the allowed range,\n    effectively terminating the calling program as clamav would not be\n    available.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A malformed message would cause a denial of service,\n    and depending on the server configuration this may impact other daemons\n    relying on Clam AV in a fatal manner.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no immediate workaround, a software upgrade is required.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All users are urged to upgrade their Clam AV installations to Clam AV 0.67:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n    # emerge -pv \">=app-antivirus/clamav-0.6.7\"\n    # emerge \">=app-antivirus/clamav-0.6.7\""
+		]
+	},
+	"References": {
+		"URI": null
+	},
+	"Metadata": null
 }

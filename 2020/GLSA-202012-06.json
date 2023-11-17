@@ -1,98 +1,98 @@
 {
-  "ID": "202012-06",
-  "Title": "Linux-PAM: Authentication bypass",
-  "Synopsis": "A vulnerability has been found in Linux-PAM, allowing attackers to\n    bypass the authentication process.\n  ",
-  "Product": {
-    "Text": "pam",
-    "Type": "ebuild"
-  },
-  "Announced": "2020-12-07",
-  "Revised": {
-    "Text": "2020-12-07",
-    "Count": "1"
-  },
-  "Bug": [
-    "756361"
-  ],
-  "Access": "local, remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sys-libs/pam",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.5.1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.5.1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Linux-PAM (Pluggable Authentication Modules) is an architecture allowing\n      the separation of the development of privilege granting software from the\n      development of secure and appropriate authentication schemes.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>A flaw was found in Linux-Pam in the way it handle empty passwords for\n      non-existing users.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker, who only needs to know a non-existing username, could\n      bypass security restrictions and authenticate as root user.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>Ensure that root account is protected by a non-empty password.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All Linux-PAM users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-libs/pam-1.5.1\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2020-27780",
-        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-27780"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "sam_c",
-      "Tag": "requester",
-      "Timestamp": "2020-11-26T02:08:08Z"
-    },
-    {
-      "Text": "whissi",
-      "Tag": "submitter",
-      "Timestamp": "2020-12-07T00:19:35Z"
-    }
-  ]
+	"ID": "202012-06",
+	"Title": "Linux-PAM: Authentication bypass",
+	"Synopsis": "A vulnerability has been found in Linux-PAM, allowing attackers to\n    bypass the authentication process.\n  ",
+	"Product": {
+		"Text": "pam",
+		"Type": "ebuild"
+	},
+	"Announced": "2020-12-07",
+	"Revised": {
+		"Text": "2020-12-07",
+		"Count": "1"
+	},
+	"Bug": [
+		"756361"
+	],
+	"Access": "local, remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-libs/pam",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.5.1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.5.1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Linux-PAM (Pluggable Authentication Modules) is an architecture allowing\n      the separation of the development of privilege granting software from the\n      development of secure and appropriate authentication schemes.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>A flaw was found in Linux-Pam in the way it handle empty passwords for\n      non-existing users.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker, who only needs to know a non-existing username, could\n      bypass security restrictions and authenticate as root user.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>Ensure that root account is protected by a non-empty password.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All Linux-PAM users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-libs/pam-1.5.1\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2020-27780",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-27780"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "sam_c",
+			"Tag": "requester",
+			"Timestamp": "2020-11-26T02:08:08Z"
+		},
+		{
+			"Text": "whissi",
+			"Tag": "submitter",
+			"Timestamp": "2020-12-07T00:19:35Z"
+		}
+	]
 }

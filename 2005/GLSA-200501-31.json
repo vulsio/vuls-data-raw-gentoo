@@ -1,177 +1,177 @@
 {
-  "ID": "200501-31",
-  "Title": "teTeX, pTeX, CSTeX: Multiple vulnerabilities",
-  "Synopsis": "\n    teTeX, pTeX and CSTeX make use of vulnerable Xpdf code which may allow the\n    remote execution of arbitrary code. Furthermore, the xdvizilla script is\n    vulnerable to temporary file handling issues.\n  ",
-  "Product": {
-    "Text": "teTeX",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-01-23",
-  "Revised": {
-    "Text": "2005-01-23",
-    "Count": "01"
-  },
-  "Bug": [
-    "75801"
-  ],
-  "Access": "remote and local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-text/tetex",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.0.2-r5",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.0.2-r5",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-text/cstetex",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.0.2-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.0.2-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-text/ptex",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.1.4-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.1.4-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    teTeX is a complete and open source TeX distribution. CSTeX is\n    another TeX distribution including Czech and Slovak support. pTeX is\n    another alternative that allows Japanese publishing with TeX. xdvizilla\n    is an auxiliary script used to integrate DVI file viewing in\n    Mozilla-based browsers.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    teTeX, pTeX and CSTeX all make use of Xpdf code and may therefore\n    be vulnerable to the various overflows that were discovered in Xpdf\n    code (CAN-2004-0888, CAN-2004-0889, CAN-2004-1125 and CAN-2005-0064).\n    Furthermore, Javier Fernandez-Sanguino Pena discovered that the\n    xdvizilla script does not handle temporary files correctly.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker could design a malicious input file which, when\n    processed using one of the TeX distributions, could lead to the\n    execution of arbitrary code. Furthermore, a local attacker could create\n    symbolic links in the temporary files directory, pointing to a valid\n    file somewhere on the filesystem. When xdvizilla is called, this would\n    result in the file being overwritten with the rights of the user\n    running the script.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All teTeX users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All CSTeX users should also upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    Finally, all pTeX users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/tetex-2.0.2-r5\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/cstetex-2.0.2-r1\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/ptex-3.1.4-r2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2004-0888",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0888"
-      },
-      {
-        "Text": "CAN-2004-0889",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0889"
-      },
-      {
-        "Text": "CAN-2004-1125",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1125"
-      },
-      {
-        "Text": "CAN-2005-0064",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0064"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-01-21T10:36:38Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-01-21T22:41:12Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-01-23T12:09:17Z"
-    }
-  ]
+	"ID": "200501-31",
+	"Title": "teTeX, pTeX, CSTeX: Multiple vulnerabilities",
+	"Synopsis": "\n    teTeX, pTeX and CSTeX make use of vulnerable Xpdf code which may allow the\n    remote execution of arbitrary code. Furthermore, the xdvizilla script is\n    vulnerable to temporary file handling issues.\n  ",
+	"Product": {
+		"Text": "teTeX",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-01-23",
+	"Revised": {
+		"Text": "2005-01-23",
+		"Count": "01"
+	},
+	"Bug": [
+		"75801"
+	],
+	"Access": "remote and local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-text/tetex",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.0.2-r5",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.0.2-r5",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-text/cstetex",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.0.2-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.0.2-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-text/ptex",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.1.4-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.1.4-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    teTeX is a complete and open source TeX distribution. CSTeX is\n    another TeX distribution including Czech and Slovak support. pTeX is\n    another alternative that allows Japanese publishing with TeX. xdvizilla\n    is an auxiliary script used to integrate DVI file viewing in\n    Mozilla-based browsers.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    teTeX, pTeX and CSTeX all make use of Xpdf code and may therefore\n    be vulnerable to the various overflows that were discovered in Xpdf\n    code (CAN-2004-0888, CAN-2004-0889, CAN-2004-1125 and CAN-2005-0064).\n    Furthermore, Javier Fernandez-Sanguino Pena discovered that the\n    xdvizilla script does not handle temporary files correctly.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker could design a malicious input file which, when\n    processed using one of the TeX distributions, could lead to the\n    execution of arbitrary code. Furthermore, a local attacker could create\n    symbolic links in the temporary files directory, pointing to a valid\n    file somewhere on the filesystem. When xdvizilla is called, this would\n    result in the file being overwritten with the rights of the user\n    running the script.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All teTeX users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All CSTeX users should also upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    Finally, all pTeX users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/tetex-2.0.2-r5\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/cstetex-2.0.2-r1\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/ptex-3.1.4-r2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2004-0888",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0888"
+			},
+			{
+				"Text": "CAN-2004-0889",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0889"
+			},
+			{
+				"Text": "CAN-2004-1125",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1125"
+			},
+			{
+				"Text": "CAN-2005-0064",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0064"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-01-21T10:36:38Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-01-21T22:41:12Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-01-23T12:09:17Z"
+		}
+	]
 }

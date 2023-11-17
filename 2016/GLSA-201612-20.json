@@ -1,98 +1,98 @@
 {
-  "ID": "201612-20",
-  "Title": "jq: Buffer overflow",
-  "Synopsis": "A buffer overflow in jq might allow remote attackers to execute\n    arbitrary code.\n  ",
-  "Product": {
-    "Text": "jq",
-    "Type": "ebuild"
-  },
-  "Announced": "2016-12-08",
-  "Revised": {
-    "Text": "2016-12-08",
-    "Count": "1"
-  },
-  "Bug": [
-    "580606"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-misc/jq",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.5-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.5-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>jq is a lightweight and flexible command-line JSON processor.</p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>An off-by-one error was discovered in the tokenadd function in\n      jv_parse.c which triggers a heap-based buffer overflow.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could trick a victim into processing a specially\n      crafted JSON file, possibly resulting in the execution of arbitrary code\n      with the privileges of the process.  Additionally, a remote attacker\n      could cause a Denial of Service condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All jq users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-misc/jq-1.5-r2\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "\n      CVE-2015-8863\n    ",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8863"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "whissi",
-      "Tag": "requester",
-      "Timestamp": "2016-11-29T20:07:39Z"
-    },
-    {
-      "Text": "whissi",
-      "Tag": "submitter",
-      "Timestamp": "2016-12-08T13:09:23Z"
-    }
-  ]
+	"ID": "201612-20",
+	"Title": "jq: Buffer overflow",
+	"Synopsis": "A buffer overflow in jq might allow remote attackers to execute\n    arbitrary code.\n  ",
+	"Product": {
+		"Text": "jq",
+		"Type": "ebuild"
+	},
+	"Announced": "2016-12-08",
+	"Revised": {
+		"Text": "2016-12-08",
+		"Count": "1"
+	},
+	"Bug": [
+		"580606"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-misc/jq",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.5-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.5-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>jq is a lightweight and flexible command-line JSON processor.</p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>An off-by-one error was discovered in the tokenadd function in\n      jv_parse.c which triggers a heap-based buffer overflow.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could trick a victim into processing a specially\n      crafted JSON file, possibly resulting in the execution of arbitrary code\n      with the privileges of the process.  Additionally, a remote attacker\n      could cause a Denial of Service condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All jq users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-misc/jq-1.5-r2\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "\n      CVE-2015-8863\n    ",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8863"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "whissi",
+			"Tag": "requester",
+			"Timestamp": "2016-11-29T20:07:39Z"
+		},
+		{
+			"Text": "whissi",
+			"Tag": "submitter",
+			"Timestamp": "2016-12-08T13:09:23Z"
+		}
+	]
 }

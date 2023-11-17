@@ -1,133 +1,133 @@
 {
-  "ID": "200602-05",
-  "Title": "KPdf: Heap based overflow",
-  "Synopsis": "\n    KPdf includes vulnerable Xpdf code to handle PDF files, making it\n    vulnerable to the execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "kdegraphics, kpdf",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-02-12",
-  "Revised": {
-    "Text": "2006-02-12",
-    "Count": "01"
-  },
-  "Bug": [
-    "121375"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "kde-base/kdegraphics",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.4.3-r4",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.4.3-r4",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "kde-base/kpdf",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.4.3-r4",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.4.3-r4",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    KPdf is a KDE-based PDF viewer included in the kdegraphics\n    package.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    KPdf includes Xpdf code to handle PDF files. Dirk Mueller\n    discovered that the Xpdf code is vulnerable a heap based overflow in\n    the splash rasterizer engine.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker could entice a user to open a specially crafted PDF\n    file with Kpdf, potentially resulting in the execution of arbitrary\n    code with the rights of the user running the affected application.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All kdegraphics users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All Kpdf users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=kde-base/kdegraphics-3.4.3-r4\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=kde-base/kpdf-3.4.3-r4\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-0301",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0301"
-      },
-      {
-        "Text": "KDE Security Advisory: kpdf/xpdf heap based buffer overflow",
-        "Link": "https://www.kde.org/info/security/advisory-20060202-1.txt"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-02-10T17:37:49Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-02-11T21:32:42Z"
-    }
-  ]
+	"ID": "200602-05",
+	"Title": "KPdf: Heap based overflow",
+	"Synopsis": "\n    KPdf includes vulnerable Xpdf code to handle PDF files, making it\n    vulnerable to the execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "kdegraphics, kpdf",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-02-12",
+	"Revised": {
+		"Text": "2006-02-12",
+		"Count": "01"
+	},
+	"Bug": [
+		"121375"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "kde-base/kdegraphics",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.4.3-r4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.4.3-r4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "kde-base/kpdf",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.4.3-r4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.4.3-r4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    KPdf is a KDE-based PDF viewer included in the kdegraphics\n    package.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    KPdf includes Xpdf code to handle PDF files. Dirk Mueller\n    discovered that the Xpdf code is vulnerable a heap based overflow in\n    the splash rasterizer engine.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker could entice a user to open a specially crafted PDF\n    file with Kpdf, potentially resulting in the execution of arbitrary\n    code with the rights of the user running the affected application.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All kdegraphics users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All Kpdf users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=kde-base/kdegraphics-3.4.3-r4\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=kde-base/kpdf-3.4.3-r4\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-0301",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0301"
+			},
+			{
+				"Text": "KDE Security Advisory: kpdf/xpdf heap based buffer overflow",
+				"Link": "https://www.kde.org/info/security/advisory-20060202-1.txt"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-02-10T17:37:49Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-02-11T21:32:42Z"
+		}
+	]
 }

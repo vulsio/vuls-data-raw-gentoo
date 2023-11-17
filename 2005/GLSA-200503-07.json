@@ -1,124 +1,124 @@
 {
-  "ID": "200503-07",
-  "Title": "phpMyAdmin: Multiple vulnerabilities",
-  "Synopsis": "\n    phpMyAdmin contains multiple vulnerabilities that could lead to command\n    execution, XSS issues and bypass of security restrictions.\n  ",
-  "Product": {
-    "Text": "phpMyAdmin",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-03-03",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "02"
-  },
-  "Bug": [
-    "83190",
-    "83792"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-db/phpmyadmin",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.6.1_p2-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.6.1_p2-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    phpMyAdmin is a tool written in PHP intended to handle the\n    administration of MySQL databases from a web-browser.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    phpMyAdmin contains several security issues:\n    </p>\n    <ul>\n    <li>Maksymilian Arciemowicz has discovered multiple variable injection\n    vulnerabilities that can be exploited through \"$cfg\" and \"GLOBALS\"\n    variables and localized strings</li>\n    <li>It is possible to force phpMyAdmin to disclose information in error\n    messages</li>\n    <li>Failure to correctly escape special characters</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    By sending a specially-crafted request, an attacker can include and\n    execute arbitrary PHP code or cause path information disclosure.\n    Furthermore the XSS issue allows an attacker to inject malicious script\n    code, potentially compromising the victim's browser. Lastly the\n    improper escaping of special characters results in unintended privilege\n    settings for MySQL.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All phpMyAdmin users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-db/phpmyadmin-2.6.1_p2-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "PMASA-2005-1",
-        "Link": "https://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2005-1"
-      },
-      {
-        "Text": "PMASA-2005-2",
-        "Link": "https://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2005-2"
-      },
-      {
-        "Text": "phpMyAdmin bug 1113788",
-        "Link": "https://sourceforge.net/tracker/index.php?func=detail&aid=1113788&group_id=23067&atid=377408"
-      },
-      {
-        "Text": "CVE-2005-0543",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0543"
-      },
-      {
-        "Text": "CVE-2005-0544",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0544"
-      },
-      {
-        "Text": "CVE-2005-0653",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0653"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-03-02T21:38:30Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-03-02T22:39:01Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-03-03T15:44:32Z"
-    }
-  ]
+	"ID": "200503-07",
+	"Title": "phpMyAdmin: Multiple vulnerabilities",
+	"Synopsis": "\n    phpMyAdmin contains multiple vulnerabilities that could lead to command\n    execution, XSS issues and bypass of security restrictions.\n  ",
+	"Product": {
+		"Text": "phpMyAdmin",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-03-03",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "02"
+	},
+	"Bug": [
+		"83190",
+		"83792"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-db/phpmyadmin",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.6.1_p2-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.6.1_p2-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    phpMyAdmin is a tool written in PHP intended to handle the\n    administration of MySQL databases from a web-browser.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    phpMyAdmin contains several security issues:\n    </p>\n    <ul>\n    <li>Maksymilian Arciemowicz has discovered multiple variable injection\n    vulnerabilities that can be exploited through \"$cfg\" and \"GLOBALS\"\n    variables and localized strings</li>\n    <li>It is possible to force phpMyAdmin to disclose information in error\n    messages</li>\n    <li>Failure to correctly escape special characters</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    By sending a specially-crafted request, an attacker can include and\n    execute arbitrary PHP code or cause path information disclosure.\n    Furthermore the XSS issue allows an attacker to inject malicious script\n    code, potentially compromising the victim's browser. Lastly the\n    improper escaping of special characters results in unintended privilege\n    settings for MySQL.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All phpMyAdmin users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-db/phpmyadmin-2.6.1_p2-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "PMASA-2005-1",
+				"Link": "https://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2005-1"
+			},
+			{
+				"Text": "PMASA-2005-2",
+				"Link": "https://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2005-2"
+			},
+			{
+				"Text": "phpMyAdmin bug 1113788",
+				"Link": "https://sourceforge.net/tracker/index.php?func=detail&aid=1113788&group_id=23067&atid=377408"
+			},
+			{
+				"Text": "CVE-2005-0543",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0543"
+			},
+			{
+				"Text": "CVE-2005-0544",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0544"
+			},
+			{
+				"Text": "CVE-2005-0653",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0653"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-03-02T21:38:30Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-03-02T22:39:01Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-03-03T15:44:32Z"
+		}
+	]
 }

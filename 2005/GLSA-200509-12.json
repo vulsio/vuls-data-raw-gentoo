@@ -1,144 +1,144 @@
 {
-  "ID": "200509-12",
-  "Title": "Apache, mod_ssl: Multiple vulnerabilities",
-  "Synopsis": "\n    mod_ssl and Apache are vulnerable to a restriction bypass and a potential\n    local privilege escalation.\n  ",
-  "Product": {
-    "Text": "Apache",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-09-19",
-  "Revised": {
-    "Text": "2007-12-30",
-    "Count": "03"
-  },
-  "Bug": [
-    "103554",
-    "104807"
-  ],
-  "Access": "remote and local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-www/mod_ssl",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.8.24",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.8.24",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "www-servers/apache",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.0.54-r15",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.0.54-r15",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    The Apache HTTP server is one of the most popular web servers on the\n    Internet. mod_ssl provides SSL v2/v3 and TLS v1 support for Apache 1.3\n    and is also included in Apache 2.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    mod_ssl contains a security issue when \"SSLVerifyClient optional\" is\n    configured in the global virtual host configuration (CAN-2005-2700).\n    Also, Apache's httpd includes a PCRE library, which makes it vulnerable\n    to an integer overflow (CAN-2005-2491).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    Under a specific configuration, mod_ssl does not properly enforce the\n    client-based certificate authentication directive, \"SSLVerifyClient\n    require\", in a per-location context, which could be potentially used by\n    a remote attacker to bypass some restrictions. By creating a specially\n    crafted \".htaccess\" file, a local attacker could possibly exploit\n    Apache's vulnerability, which would result in a local privilege\n    escalation.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All mod_ssl users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All Apache 2 users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-www/mod_ssl-2.8.24\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-servers/apache-2.0.54-r15\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2005-2491",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2491"
-      },
-      {
-        "Text": "CAN-2005-2700",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2700"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-09-11T10:15:26Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-09-16T16:41:43Z"
-    },
-    {
-      "Text": "\n    formula7\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-09-17T14:36:28Z"
-    }
-  ]
+	"ID": "200509-12",
+	"Title": "Apache, mod_ssl: Multiple vulnerabilities",
+	"Synopsis": "\n    mod_ssl and Apache are vulnerable to a restriction bypass and a potential\n    local privilege escalation.\n  ",
+	"Product": {
+		"Text": "Apache",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-09-19",
+	"Revised": {
+		"Text": "2007-12-30",
+		"Count": "03"
+	},
+	"Bug": [
+		"103554",
+		"104807"
+	],
+	"Access": "remote and local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-www/mod_ssl",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.8.24",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.8.24",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "www-servers/apache",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.0.54-r15",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.0.54-r15",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    The Apache HTTP server is one of the most popular web servers on the\n    Internet. mod_ssl provides SSL v2/v3 and TLS v1 support for Apache 1.3\n    and is also included in Apache 2.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    mod_ssl contains a security issue when \"SSLVerifyClient optional\" is\n    configured in the global virtual host configuration (CAN-2005-2700).\n    Also, Apache's httpd includes a PCRE library, which makes it vulnerable\n    to an integer overflow (CAN-2005-2491).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    Under a specific configuration, mod_ssl does not properly enforce the\n    client-based certificate authentication directive, \"SSLVerifyClient\n    require\", in a per-location context, which could be potentially used by\n    a remote attacker to bypass some restrictions. By creating a specially\n    crafted \".htaccess\" file, a local attacker could possibly exploit\n    Apache's vulnerability, which would result in a local privilege\n    escalation.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All mod_ssl users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All Apache 2 users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-www/mod_ssl-2.8.24\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-servers/apache-2.0.54-r15\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2005-2491",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2491"
+			},
+			{
+				"Text": "CAN-2005-2700",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2700"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-09-11T10:15:26Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-09-16T16:41:43Z"
+		},
+		{
+			"Text": "\n    formula7\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-09-17T14:36:28Z"
+		}
+	]
 }

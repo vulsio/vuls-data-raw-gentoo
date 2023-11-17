@@ -1,102 +1,102 @@
 {
-  "ID": "201601-01",
-  "Title": "OpenSSH: Multiple vulnerabilities",
-  "Synopsis": "Multiple vulnerabilities have been found in OpenSSH, allowing\n    attackers to leak client memory to a server, including private keys.\n  ",
-  "Product": {
-    "Text": "openssh",
-    "Type": "ebuild"
-  },
-  "Announced": "2016-01-16",
-  "Revised": {
-    "Text": "2016-01-16",
-    "Count": "1"
-  },
-  "Bug": [
-    "571892"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-misc/openssh",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "7.1_p2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "7.1_p2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>OpenSSH is a complete SSH protocol implementation that includes SFTP\n      client and server support.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Qualys have reported two issues in the “roaming” code included in\n      the OpenSSH client, which provides undocumented, experimental support for\n      resuming SSH connections. An OpenSSH client could be tricked into leaking\n      parts of its memory to a malicious server. Furthermore, a buffer overflow\n      can be exploited by a malicious server, but its exploitation requires\n      non-default options and is mitigated due to another bug.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could entice a user to connect to a specially crafted\n      OpenSSH server, possibly resulting in the disclosure of the user’s\n      private keys. Users with private keys that are not protected by a\n      passphrase are advised to generate new keys if they have connected to an\n      SSH server they don’t fully trust.\n    </p>\n    \n    <p>Note that no special configuration is required to be vulnerable as the\n      roaming feature is enabled by default on the client.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>The issues can be worked around by disabling the roaming code. To do so,\n      add “UseRoaming no” to the SSH client configuration, or specify “-o\n      ‘UseRoaming no’” on the command line.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All OpenSSH users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/openssh-7.1_p2\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2016-0777",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-0777"
-      },
-      {
-        "Text": "CVE-2016-0778",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-0778"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "a3li",
-      "Tag": "requester",
-      "Timestamp": "2016-01-14T09:15:59Z"
-    },
-    {
-      "Text": "a3li",
-      "Tag": "submitter",
-      "Timestamp": "2016-01-16T18:56:11Z"
-    }
-  ]
+	"ID": "201601-01",
+	"Title": "OpenSSH: Multiple vulnerabilities",
+	"Synopsis": "Multiple vulnerabilities have been found in OpenSSH, allowing\n    attackers to leak client memory to a server, including private keys.\n  ",
+	"Product": {
+		"Text": "openssh",
+		"Type": "ebuild"
+	},
+	"Announced": "2016-01-16",
+	"Revised": {
+		"Text": "2016-01-16",
+		"Count": "1"
+	},
+	"Bug": [
+		"571892"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-misc/openssh",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "7.1_p2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "7.1_p2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>OpenSSH is a complete SSH protocol implementation that includes SFTP\n      client and server support.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Qualys have reported two issues in the “roaming” code included in\n      the OpenSSH client, which provides undocumented, experimental support for\n      resuming SSH connections. An OpenSSH client could be tricked into leaking\n      parts of its memory to a malicious server. Furthermore, a buffer overflow\n      can be exploited by a malicious server, but its exploitation requires\n      non-default options and is mitigated due to another bug.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could entice a user to connect to a specially crafted\n      OpenSSH server, possibly resulting in the disclosure of the user’s\n      private keys. Users with private keys that are not protected by a\n      passphrase are advised to generate new keys if they have connected to an\n      SSH server they don’t fully trust.\n    </p>\n    \n    <p>Note that no special configuration is required to be vulnerable as the\n      roaming feature is enabled by default on the client.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>The issues can be worked around by disabling the roaming code. To do so,\n      add “UseRoaming no” to the SSH client configuration, or specify “-o\n      ‘UseRoaming no’” on the command line.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All OpenSSH users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/openssh-7.1_p2\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2016-0777",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-0777"
+			},
+			{
+				"Text": "CVE-2016-0778",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-0778"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "a3li",
+			"Tag": "requester",
+			"Timestamp": "2016-01-14T09:15:59Z"
+		},
+		{
+			"Text": "a3li",
+			"Tag": "submitter",
+			"Timestamp": "2016-01-16T18:56:11Z"
+		}
+	]
 }

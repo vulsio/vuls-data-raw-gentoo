@@ -1,130 +1,130 @@
 {
-  "ID": "201010-01",
-  "Title": "Libpng: Multiple vulnerabilities",
-  "Synopsis": "Multiple vulnerabilities in libpng might lead to privilege\n    escalation or a Denial of Service.\n  ",
-  "Product": {
-    "Text": "libpng",
-    "Type": "ebuild"
-  },
-  "Announced": "2010-10-05",
-  "Revised": {
-    "Text": "2017-01-03",
-    "Count": "9"
-  },
-  "Bug": [
-    "307637",
-    "324153",
-    "335887"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-libs/libpng",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.4.3",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "1.2.46",
-            "Range": "ge",
-            "Slot": "1.2"
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.4.3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>libpng is a standard library used to process PNG (Portable Network\n      Graphics) images. It is used by several programs, including web browsers\n      and potentially server processes.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Multiple vulnerabilities were found in libpng:</p>\n    \n    <ul>\n      <li>The png_decompress_chunk() function in pngrutil.c does not properly\n        handle certain type of compressed data (CVE-2010-0205)\n      </li>\n      <li>A buffer overflow in pngread.c when using progressive applications\n        (CVE-2010-1205)\n      </li>\n      <li>A memory leak in pngrutil.c when dealing with a certain type of\n        chunks (CVE-2010-2249)\n      </li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>An attacker could exploit these vulnerabilities to cause programs linked\n      against the library to crash or execute arbitrary code with the\n      permissions of the user running the vulnerable program, which could be\n      the root user.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n    \n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All libpng 1.4 users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "All libpng 1.2 users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/libpng-1.4.3\"\n    ",
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/libpng-1.2.46\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "\n      CVE-2010-0205\n    ",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0205"
-      },
-      {
-        "Text": "\n      CVE-2010-1205\n    ",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-1205"
-      },
-      {
-        "Text": "\n      CVE-2010-2249\n    ",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-2249"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "craig",
-      "Tag": "requester",
-      "Timestamp": "2011-10-07T22:32:46Z"
-    },
-    {
-      "Text": "system",
-      "Tag": "submitter",
-      "Timestamp": "2017-01-03T04:37:30Z"
-    },
-    {
-      "Text": "system",
-      "Tag": "bugReady",
-      "Timestamp": "2017-01-03T04:37:31Z"
-    }
-  ]
+	"ID": "201010-01",
+	"Title": "Libpng: Multiple vulnerabilities",
+	"Synopsis": "Multiple vulnerabilities in libpng might lead to privilege\n    escalation or a Denial of Service.\n  ",
+	"Product": {
+		"Text": "libpng",
+		"Type": "ebuild"
+	},
+	"Announced": "2010-10-05",
+	"Revised": {
+		"Text": "2017-01-03",
+		"Count": "9"
+	},
+	"Bug": [
+		"307637",
+		"324153",
+		"335887"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-libs/libpng",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.4.3",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "1.2.46",
+						"Range": "ge",
+						"Slot": "1.2"
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.4.3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>libpng is a standard library used to process PNG (Portable Network\n      Graphics) images. It is used by several programs, including web browsers\n      and potentially server processes.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Multiple vulnerabilities were found in libpng:</p>\n    \n    <ul>\n      <li>The png_decompress_chunk() function in pngrutil.c does not properly\n        handle certain type of compressed data (CVE-2010-0205)\n      </li>\n      <li>A buffer overflow in pngread.c when using progressive applications\n        (CVE-2010-1205)\n      </li>\n      <li>A memory leak in pngrutil.c when dealing with a certain type of\n        chunks (CVE-2010-2249)\n      </li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>An attacker could exploit these vulnerabilities to cause programs linked\n      against the library to crash or execute arbitrary code with the\n      permissions of the user running the vulnerable program, which could be\n      the root user.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n    \n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All libpng 1.4 users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "All libpng 1.2 users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/libpng-1.4.3\"\n    ",
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/libpng-1.2.46\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "\n      CVE-2010-0205\n    ",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-0205"
+			},
+			{
+				"Text": "\n      CVE-2010-1205\n    ",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-1205"
+			},
+			{
+				"Text": "\n      CVE-2010-2249\n    ",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-2249"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "craig",
+			"Tag": "requester",
+			"Timestamp": "2011-10-07T22:32:46Z"
+		},
+		{
+			"Text": "system",
+			"Tag": "submitter",
+			"Timestamp": "2017-01-03T04:37:30Z"
+		},
+		{
+			"Text": "system",
+			"Tag": "bugReady",
+			"Timestamp": "2017-01-03T04:37:31Z"
+		}
+	]
 }

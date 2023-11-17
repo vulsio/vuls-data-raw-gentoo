@@ -1,108 +1,108 @@
 {
-  "ID": "200409-18",
-  "Title": "cdrtools: Local root vulnerability in cdrecord if set SUID root",
-  "Synopsis": "\n    cdrecord, if manually set SUID root, is vulnerable to a local root exploit\n    allowing users to escalate privileges.\n  ",
-  "Product": {
-    "Text": "cdrtools",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-09-14",
-  "Revised": {
-    "Text": "2004-09-14",
-    "Count": "01"
-  },
-  "Bug": [
-    "63187"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-cdr/cdrtools",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.01_alpha37-r1",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "2.01_alpha28-r2",
-            "Range": "rge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.01_alpha37",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    The cdrtools package is a set of tools for CD recording, including the\n    popular cdrecord command-line utility.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Max Vozeler discovered that the cdrecord utility, when set to SUID root,\n    fails to drop root privileges before executing a user-supplied RSH program.\n    By default, Gentoo does not ship the cdrecord utility as SUID root and\n    therefore is not vulnerable. However, many users (and CD-burning\n    front-ends) set this manually after installation.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A local attacker could specify a malicious program using the $RSH\n    environment variable and have it executed by the SUID cdrecord, resulting\n    in root privileges escalation.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    As a workaround, you could remove the SUID rights from your cdrecord\n    utility :\n    </p>\n    <code>\n    # chmod a-s /usr/bin/cdrecord</code>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All cdrtools users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n\n    # emerge -pv \">=app-cdr/cdrtools-2.01_alpha37-r1\"\n    # emerge \">=app-cdr/cdrtools-2.01_alpha37-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2004-0806",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0806"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2004-09-14T07:01:02Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-09-14T15:13:17Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-09-14T20:25:30Z"
-    }
-  ]
+	"ID": "200409-18",
+	"Title": "cdrtools: Local root vulnerability in cdrecord if set SUID root",
+	"Synopsis": "\n    cdrecord, if manually set SUID root, is vulnerable to a local root exploit\n    allowing users to escalate privileges.\n  ",
+	"Product": {
+		"Text": "cdrtools",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-09-14",
+	"Revised": {
+		"Text": "2004-09-14",
+		"Count": "01"
+	},
+	"Bug": [
+		"63187"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-cdr/cdrtools",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.01_alpha37-r1",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "2.01_alpha28-r2",
+						"Range": "rge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.01_alpha37",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    The cdrtools package is a set of tools for CD recording, including the\n    popular cdrecord command-line utility.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Max Vozeler discovered that the cdrecord utility, when set to SUID root,\n    fails to drop root privileges before executing a user-supplied RSH program.\n    By default, Gentoo does not ship the cdrecord utility as SUID root and\n    therefore is not vulnerable. However, many users (and CD-burning\n    front-ends) set this manually after installation.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A local attacker could specify a malicious program using the $RSH\n    environment variable and have it executed by the SUID cdrecord, resulting\n    in root privileges escalation.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    As a workaround, you could remove the SUID rights from your cdrecord\n    utility :\n    </p>\n    <code>\n    # chmod a-s /usr/bin/cdrecord</code>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All cdrtools users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n\n    # emerge -pv \">=app-cdr/cdrtools-2.01_alpha37-r1\"\n    # emerge \">=app-cdr/cdrtools-2.01_alpha37-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2004-0806",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0806"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2004-09-14T07:01:02Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-09-14T15:13:17Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-09-14T20:25:30Z"
+		}
+	]
 }

@@ -1,98 +1,98 @@
 {
-  "ID": "202101-21",
-  "Title": "Flatpak: Sandbox escape",
-  "Synopsis": "A vulnerability was discovered in Flatpak which could allow a\n    remote attacker to execute arbitrary code.\n  ",
-  "Product": {
-    "Text": "flatpak",
-    "Type": "ebuild"
-  },
-  "Announced": "2021-01-25",
-  "Revised": {
-    "Text": "2021-01-25",
-    "Count": "1"
-  },
-  "Bug": [
-    "765457"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sys-apps/flatpak",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.10.0",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.10.0",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Flatpak is a Linux application sandboxing and distribution framework.</p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>A bug was discovered in the flatpak-portal service that can allow\n      sandboxed applications to execute arbitrary code on the host system (a\n      sandbox escape).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted\n      Flatpak app possibly resulting in execution of arbitrary code with the\n      privileges of the process or a Denial of Service condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>As a workaround, this vulnerability can be mitigated by preventing the\n      flatpak-portal service from starting, but that mitigation will prevent\n      many Flatpak apps from working correctly. It is highly recommended to\n      upgrade.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All Flatpak users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-apps/flatpak-1.10.0\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2021-21261",
-        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-21261"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "sam_c",
-      "Tag": "requester",
-      "Timestamp": "2021-01-22T00:26:55Z"
-    },
-    {
-      "Text": "b-man",
-      "Tag": "submitter",
-      "Timestamp": "2021-01-25T00:07:24Z"
-    }
-  ]
+	"ID": "202101-21",
+	"Title": "Flatpak: Sandbox escape",
+	"Synopsis": "A vulnerability was discovered in Flatpak which could allow a\n    remote attacker to execute arbitrary code.\n  ",
+	"Product": {
+		"Text": "flatpak",
+		"Type": "ebuild"
+	},
+	"Announced": "2021-01-25",
+	"Revised": {
+		"Text": "2021-01-25",
+		"Count": "1"
+	},
+	"Bug": [
+		"765457"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-apps/flatpak",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.10.0",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.10.0",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Flatpak is a Linux application sandboxing and distribution framework.</p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>A bug was discovered in the flatpak-portal service that can allow\n      sandboxed applications to execute arbitrary code on the host system (a\n      sandbox escape).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could entice a user to open a specially crafted\n      Flatpak app possibly resulting in execution of arbitrary code with the\n      privileges of the process or a Denial of Service condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>As a workaround, this vulnerability can be mitigated by preventing the\n      flatpak-portal service from starting, but that mitigation will prevent\n      many Flatpak apps from working correctly. It is highly recommended to\n      upgrade.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All Flatpak users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-apps/flatpak-1.10.0\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2021-21261",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-21261"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "sam_c",
+			"Tag": "requester",
+			"Timestamp": "2021-01-22T00:26:55Z"
+		},
+		{
+			"Text": "b-man",
+			"Tag": "submitter",
+			"Timestamp": "2021-01-25T00:07:24Z"
+		}
+	]
 }

@@ -1,129 +1,129 @@
 {
-  "ID": "200412-25",
-  "Title": "CUPS: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities have been found in CUPS, ranging from local Denial\n    of Service attacks to the remote execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "CUPS",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-12-28",
-  "Revised": {
-    "Text": "2005-01-12",
-    "Count": "02"
-  },
-  "Bug": [
-    "74479",
-    "75197",
-    "77023"
-  ],
-  "Access": "remote and local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-print/cups",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.1.23",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.1.23",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    The Common UNIX Printing System (CUPS) is a cross-platform print\n    spooler, hpgltops is a CUPS filter handling printing of HPGL files and\n    lppasswd is a program used locally to manage spooler passwords.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    CUPS makes use of vulnerable Xpdf code to handle PDF files\n    (CAN-2004-1125). Furthermore, Ariel Berkman discovered a buffer\n    overflow in the ParseCommand function in hpgl-input.c in the hpgltops\n    program (CAN-2004-1267). Finally, Bartlomiej Sieka discovered several\n    problems in the lppasswd program: it ignores some write errors\n    (CAN-2004-1268), it can leave the passwd.new file in place\n    (CAN-2004-1269) and it does not verify that passwd.new file is\n    different from STDERR (CAN-2004-1270).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    The Xpdf and hpgltops vulnerabilities may be exploited by a remote\n    attacker to execute arbitrary code by sending specific print jobs to a\n    CUPS spooler. The lppasswd vulnerabilities may be exploited by a local\n    attacker to write data to the CUPS password file or deny further\n    password modifications.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All CUPS users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-print/cups-1.1.23\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2004-1125",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1125"
-      },
-      {
-        "Text": "CAN-2004-1267",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1267"
-      },
-      {
-        "Text": "CAN-2004-1268",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1268"
-      },
-      {
-        "Text": "CAN-2004-1269",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1269"
-      },
-      {
-        "Text": "CAN-2004-1270",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1270"
-      },
-      {
-        "Text": "Ariel Berkman Advisory",
-        "Link": "http://tigger.uic.edu/~jlongs2/holes/cups.txt"
-      },
-      {
-        "Text": "Bartlomiej Sieka Advisory",
-        "Link": "http://tigger.uic.edu/~jlongs2/holes/cups2.txt"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2004-12-27T17:52:31Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-12-28T09:42:46Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-12-28T12:52:03Z"
-    }
-  ]
+	"ID": "200412-25",
+	"Title": "CUPS: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities have been found in CUPS, ranging from local Denial\n    of Service attacks to the remote execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "CUPS",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-12-28",
+	"Revised": {
+		"Text": "2005-01-12",
+		"Count": "02"
+	},
+	"Bug": [
+		"74479",
+		"75197",
+		"77023"
+	],
+	"Access": "remote and local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-print/cups",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.1.23",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.1.23",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    The Common UNIX Printing System (CUPS) is a cross-platform print\n    spooler, hpgltops is a CUPS filter handling printing of HPGL files and\n    lppasswd is a program used locally to manage spooler passwords.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    CUPS makes use of vulnerable Xpdf code to handle PDF files\n    (CAN-2004-1125). Furthermore, Ariel Berkman discovered a buffer\n    overflow in the ParseCommand function in hpgl-input.c in the hpgltops\n    program (CAN-2004-1267). Finally, Bartlomiej Sieka discovered several\n    problems in the lppasswd program: it ignores some write errors\n    (CAN-2004-1268), it can leave the passwd.new file in place\n    (CAN-2004-1269) and it does not verify that passwd.new file is\n    different from STDERR (CAN-2004-1270).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    The Xpdf and hpgltops vulnerabilities may be exploited by a remote\n    attacker to execute arbitrary code by sending specific print jobs to a\n    CUPS spooler. The lppasswd vulnerabilities may be exploited by a local\n    attacker to write data to the CUPS password file or deny further\n    password modifications.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All CUPS users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-print/cups-1.1.23\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2004-1125",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1125"
+			},
+			{
+				"Text": "CAN-2004-1267",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1267"
+			},
+			{
+				"Text": "CAN-2004-1268",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1268"
+			},
+			{
+				"Text": "CAN-2004-1269",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1269"
+			},
+			{
+				"Text": "CAN-2004-1270",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1270"
+			},
+			{
+				"Text": "Ariel Berkman Advisory",
+				"Link": "http://tigger.uic.edu/~jlongs2/holes/cups.txt"
+			},
+			{
+				"Text": "Bartlomiej Sieka Advisory",
+				"Link": "http://tigger.uic.edu/~jlongs2/holes/cups2.txt"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2004-12-27T17:52:31Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-12-28T09:42:46Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-12-28T12:52:03Z"
+		}
+	]
 }

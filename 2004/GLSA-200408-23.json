@@ -1,102 +1,102 @@
 {
-  "ID": "200408-23",
-  "Title": "kdelibs: Cross-domain cookie injection vulnerability",
-  "Synopsis": "\n    The cookie manager component in kdelibs contains a vulnerability allowing\n    an attacker to potentially gain access to a user's session on a legitimate\n    web server.\n  ",
-  "Product": {
-    "Text": "kdelibs",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-08-24",
-  "Revised": {
-    "Text": "2004-08-24",
-    "Count": "01"
-  },
-  "Bug": [
-    "61389"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "kde-base/kdelibs",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.2.3-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.2.3-r1",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    KDE is a widely-used desktop environment based on the Qt toolkit.\n    kcookiejar in kdelibs is responsible for storing and managing HTTP cookies.\n    Konqueror uses kcookiejar for storing and managing cookies.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    kcookiejar contains a vulnerability which may allow a malicious website to\n    set cookies for other websites under the same second-level domain.\n    </p>\n    <p>\n    This vulnerability applies to country-specific secondary top level domains\n    that use more than 2 characters in the secondary part of the domain name,\n    and that use a secondary part other than com, net, mil, org, gov, edu or\n    int. However, certain popular domains, such as co.uk, are not affected.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "low",
-    "Text": "\n    <p>\n    Users visiting a malicious website using the Konqueror browser may have a\n    session cookie set for them by that site. Later, when the user visits\n    another website under the same domain, the attacker's session cookie will\n    be used instead of the cookie issued by the legitimate site. Depending on\n    the design of the legitimate site, this may allow an attacker to gain\n    access to the user's session. For further explanation on this type of\n    attack, see the paper titled \"Session Fixation Vulnerability in\n    Web-based Applications\" (reference 2).\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time. All users are encouraged to\n    upgrade to the latest available version of kdelibs.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All kdelibs users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n\n    # emerge -pv \">=kde-base/kdelibs-3.2.3-r2\"\n    # emerge \">=kde-base/kdelibs-3.2.3-r2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "KDE Advisory",
-        "Link": "https://www.kde.org/info/security/advisory-20040823-1.txt"
-      },
-      {
-        "Text": "Session Fixation Vulnerability in Web-based Applications",
-        "Link": "http://www.acros.si/papers/session_fixation.pdf"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2004-08-23T20:45:47Z"
-    },
-    {
-      "Text": "\n    condordes\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-08-24T19:26:35Z"
-    }
-  ]
+	"ID": "200408-23",
+	"Title": "kdelibs: Cross-domain cookie injection vulnerability",
+	"Synopsis": "\n    The cookie manager component in kdelibs contains a vulnerability allowing\n    an attacker to potentially gain access to a user's session on a legitimate\n    web server.\n  ",
+	"Product": {
+		"Text": "kdelibs",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-08-24",
+	"Revised": {
+		"Text": "2004-08-24",
+		"Count": "01"
+	},
+	"Bug": [
+		"61389"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "kde-base/kdelibs",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.2.3-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.2.3-r1",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    KDE is a widely-used desktop environment based on the Qt toolkit.\n    kcookiejar in kdelibs is responsible for storing and managing HTTP cookies.\n    Konqueror uses kcookiejar for storing and managing cookies.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    kcookiejar contains a vulnerability which may allow a malicious website to\n    set cookies for other websites under the same second-level domain.\n    </p>\n    <p>\n    This vulnerability applies to country-specific secondary top level domains\n    that use more than 2 characters in the secondary part of the domain name,\n    and that use a secondary part other than com, net, mil, org, gov, edu or\n    int. However, certain popular domains, such as co.uk, are not affected.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "low",
+		"Text": "\n    <p>\n    Users visiting a malicious website using the Konqueror browser may have a\n    session cookie set for them by that site. Later, when the user visits\n    another website under the same domain, the attacker's session cookie will\n    be used instead of the cookie issued by the legitimate site. Depending on\n    the design of the legitimate site, this may allow an attacker to gain\n    access to the user's session. For further explanation on this type of\n    attack, see the paper titled \"Session Fixation Vulnerability in\n    Web-based Applications\" (reference 2).\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time. All users are encouraged to\n    upgrade to the latest available version of kdelibs.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All kdelibs users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n\n    # emerge -pv \">=kde-base/kdelibs-3.2.3-r2\"\n    # emerge \">=kde-base/kdelibs-3.2.3-r2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "KDE Advisory",
+				"Link": "https://www.kde.org/info/security/advisory-20040823-1.txt"
+			},
+			{
+				"Text": "Session Fixation Vulnerability in Web-based Applications",
+				"Link": "http://www.acros.si/papers/session_fixation.pdf"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2004-08-23T20:45:47Z"
+		},
+		{
+			"Text": "\n    condordes\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-08-24T19:26:35Z"
+		}
+	]
 }

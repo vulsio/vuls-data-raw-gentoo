@@ -1,122 +1,122 @@
 {
-  "ID": "200803-19",
-  "Title": "Apache: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities have been discovered in Apache.\n  ",
-  "Product": {
-    "Text": "apache",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-03-11",
-  "Revised": {
-    "Text": "2008-03-12",
-    "Count": "02"
-  },
-  "Bug": [
-    "201163",
-    "204410",
-    "205195",
-    "209899"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-servers/apache",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.2.8",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.2.8",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    The Apache HTTP server is one of the most popular web servers on the\n    Internet.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Adrian Pastor and Amir Azam (ProCheckUp) reported that the HTTP Method\n    specifier header is not properly sanitized when the HTTP return code is\n    \"413 Request Entity too large\" (CVE-2007-6203). The mod_proxy_balancer\n    module does not properly check the balancer name before using it\n    (CVE-2007-6422). The mod_proxy_ftp does not define a charset in its\n    answers (CVE-2008-0005). Stefano Di Paola (Minded Security) reported\n    that filenames are not properly sanitized within the mod_negotiation\n    module (CVE-2008-0455, CVE-2008-0456).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to visit a malicious URL or send\n    specially crafted HTTP requests (i.e using Adobe Flash) to perform\n    Cross-Site Scripting and HTTP response splitting attacks, or conduct a\n    Denial of Service attack on the vulnerable web server.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Apache users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-servers/apache-2.2.8\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-6203",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6203"
-      },
-      {
-        "Text": "CVE-2007-6422",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6422"
-      },
-      {
-        "Text": "CVE-2008-0005",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0005"
-      },
-      {
-        "Text": "CVE-2008-0455",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0455"
-      },
-      {
-        "Text": "CVE-2008-0456",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0456"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-01-13T14:04:58Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-03-10T12:30:36Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-03-10T12:31:50Z"
-    }
-  ]
+	"ID": "200803-19",
+	"Title": "Apache: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities have been discovered in Apache.\n  ",
+	"Product": {
+		"Text": "apache",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-03-11",
+	"Revised": {
+		"Text": "2008-03-12",
+		"Count": "02"
+	},
+	"Bug": [
+		"201163",
+		"204410",
+		"205195",
+		"209899"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-servers/apache",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.2.8",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.2.8",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    The Apache HTTP server is one of the most popular web servers on the\n    Internet.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Adrian Pastor and Amir Azam (ProCheckUp) reported that the HTTP Method\n    specifier header is not properly sanitized when the HTTP return code is\n    \"413 Request Entity too large\" (CVE-2007-6203). The mod_proxy_balancer\n    module does not properly check the balancer name before using it\n    (CVE-2007-6422). The mod_proxy_ftp does not define a charset in its\n    answers (CVE-2008-0005). Stefano Di Paola (Minded Security) reported\n    that filenames are not properly sanitized within the mod_negotiation\n    module (CVE-2008-0455, CVE-2008-0456).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to visit a malicious URL or send\n    specially crafted HTTP requests (i.e using Adobe Flash) to perform\n    Cross-Site Scripting and HTTP response splitting attacks, or conduct a\n    Denial of Service attack on the vulnerable web server.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Apache users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-servers/apache-2.2.8\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-6203",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6203"
+			},
+			{
+				"Text": "CVE-2007-6422",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6422"
+			},
+			{
+				"Text": "CVE-2008-0005",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0005"
+			},
+			{
+				"Text": "CVE-2008-0455",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0455"
+			},
+			{
+				"Text": "CVE-2008-0456",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0456"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-01-13T14:04:58Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-03-10T12:30:36Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-03-10T12:31:50Z"
+		}
+	]
 }

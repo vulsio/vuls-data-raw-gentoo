@@ -1,143 +1,143 @@
 {
-  "ID": "200606-23",
-  "Title": "KDM: Symlink vulnerability",
-  "Synopsis": "\n    KDM is vulnerable to a symlink vulnerability that can lead to disclosure of\n    information.\n  ",
-  "Product": {
-    "Text": "kdebase, KDM",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-06-22",
-  "Revised": {
-    "Text": "2006-06-24",
-    "Count": "02"
-  },
-  "Bug": [
-    "136201"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "kde-base/kdebase",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.5.2-r2",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "3.4.3-r2",
-            "Range": "rge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.5.2-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "kde-base/kdm",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.5.2-r1",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "3.4.3-r2",
-            "Range": "rge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.5.2-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    KDE is a feature-rich graphical desktop environment for Linux and\n    Unix-like Operating Systems. KDM is the KDE Display Manager and is part\n    of the kdebase package.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Ludwig Nussel discovered that KDM could be tricked into allowing users\n    to read files that would otherwise not be readable.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local attacker could exploit this issue to obtain potentially\n    sensitive information that is usually not accessable to the local user\n    such as shadow files or other user's files. The default Gentoo user\n    running KDM is root and, as a result, the local attacker can read any\n    file.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All kdebase users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All KDE split ebuild users should upgrade to the latest KDM version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose kde-base/kdebase",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose kde-base/kdm"
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "KDE Security Advisory: KDM symlink attack vulnerability",
-        "Link": "https://www.kde.org/info/security/advisory-20060614-1.txt"
-      },
-      {
-        "Text": "CVE-2006-2449",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2449"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-06-14T19:50:34Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-06-18T09:50:44Z"
-    }
-  ]
+	"ID": "200606-23",
+	"Title": "KDM: Symlink vulnerability",
+	"Synopsis": "\n    KDM is vulnerable to a symlink vulnerability that can lead to disclosure of\n    information.\n  ",
+	"Product": {
+		"Text": "kdebase, KDM",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-06-22",
+	"Revised": {
+		"Text": "2006-06-24",
+		"Count": "02"
+	},
+	"Bug": [
+		"136201"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "kde-base/kdebase",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.5.2-r2",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "3.4.3-r2",
+						"Range": "rge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.5.2-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "kde-base/kdm",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.5.2-r1",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "3.4.3-r2",
+						"Range": "rge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.5.2-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    KDE is a feature-rich graphical desktop environment for Linux and\n    Unix-like Operating Systems. KDM is the KDE Display Manager and is part\n    of the kdebase package.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Ludwig Nussel discovered that KDM could be tricked into allowing users\n    to read files that would otherwise not be readable.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local attacker could exploit this issue to obtain potentially\n    sensitive information that is usually not accessable to the local user\n    such as shadow files or other user's files. The default Gentoo user\n    running KDM is root and, as a result, the local attacker can read any\n    file.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All kdebase users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All KDE split ebuild users should upgrade to the latest KDM version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose kde-base/kdebase",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose kde-base/kdm"
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "KDE Security Advisory: KDM symlink attack vulnerability",
+				"Link": "https://www.kde.org/info/security/advisory-20060614-1.txt"
+			},
+			{
+				"Text": "CVE-2006-2449",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2449"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-06-14T19:50:34Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-06-18T09:50:44Z"
+		}
+	]
 }

@@ -1,98 +1,98 @@
 {
-  "ID": "200711-10",
-  "Title": "Mono: Buffer overflow",
-  "Synopsis": "\n    Mono's BigInteger implementation contains a buffer overflow vulnerability\n    that might lead to the execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "mono",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-11-07",
-  "Revised": {
-    "Text": "2007-11-07",
-    "Count": "01"
-  },
-  "Bug": [
-    "197067"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-lang/mono",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.2.5.1-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.2.5.1-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Mono provides the necessary software to develop and run .NET client and\n    server applications on various platforms.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    IOActive discovered an error in the Mono.Math.BigInteger class, in the\n    reduction step of the Montgomery-based Pow methods, that could lead to\n    a buffer overflow.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker could exploit this vulnerability by sending specially\n    crafted data to Mono applications using the BigInteger class, which\n    might lead to the execution of arbitrary code with the privileges of\n    the user running the application (possibly root) or a Denial of\n    Service.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Mono users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/mono-1.2.5.1-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-5197",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5197"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-11-03T23:52:57Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-11-07T22:49:37Z"
-    }
-  ]
+	"ID": "200711-10",
+	"Title": "Mono: Buffer overflow",
+	"Synopsis": "\n    Mono's BigInteger implementation contains a buffer overflow vulnerability\n    that might lead to the execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "mono",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-11-07",
+	"Revised": {
+		"Text": "2007-11-07",
+		"Count": "01"
+	},
+	"Bug": [
+		"197067"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-lang/mono",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.2.5.1-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.2.5.1-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Mono provides the necessary software to develop and run .NET client and\n    server applications on various platforms.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    IOActive discovered an error in the Mono.Math.BigInteger class, in the\n    reduction step of the Montgomery-based Pow methods, that could lead to\n    a buffer overflow.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker could exploit this vulnerability by sending specially\n    crafted data to Mono applications using the BigInteger class, which\n    might lead to the execution of arbitrary code with the privileges of\n    the user running the application (possibly root) or a Denial of\n    Service.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Mono users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/mono-1.2.5.1-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-5197",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5197"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-11-03T23:52:57Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-11-07T22:49:37Z"
+		}
+	]
 }

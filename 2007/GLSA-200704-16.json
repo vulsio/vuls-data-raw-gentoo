@@ -1,103 +1,103 @@
 {
-  "ID": "200704-16",
-  "Title": "Aircrack-ng: Remote execution of arbitrary code",
-  "Synopsis": "\n    Aircrack-ng contains a buffer overflow that could lead to the remote\n    execution of arbitrary code with root privileges.\n  ",
-  "Product": {
-    "Text": "aircrack-ng",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-04-22",
-  "Revised": {
-    "Text": "2007-04-22",
-    "Count": "01"
-  },
-  "Bug": [
-    "174340"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-wireless/aircrack-ng",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.7-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.7-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Aircrack-ng is an 802.11 WEP and WPA-PSK keys cracking program that can\n    recover keys once enough data packets have been captured.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Jonathan So reported that the airodump-ng module does not correctly\n    check the size of 802.11 authentication packets before copying them\n    into a buffer.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker could trigger a stack-based buffer overflow by\n    sending a specially crafted 802.11 authentication packet to a user\n    running airodump-ng with the -w (--write) option. This could lead to\n    the remote execution of arbitrary code with the permissions of the user\n    running airodump-ng, which is typically the root user.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Aircrack-ng users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-wireless/aircrack-ng-0.7-r2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-2057",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2057"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    shellsage\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-04-13T21:21:54Z"
-    },
-    {
-      "Text": "\n    shellsage\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-04-13T21:24:05Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-04-14T22:00:25Z"
-    }
-  ]
+	"ID": "200704-16",
+	"Title": "Aircrack-ng: Remote execution of arbitrary code",
+	"Synopsis": "\n    Aircrack-ng contains a buffer overflow that could lead to the remote\n    execution of arbitrary code with root privileges.\n  ",
+	"Product": {
+		"Text": "aircrack-ng",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-04-22",
+	"Revised": {
+		"Text": "2007-04-22",
+		"Count": "01"
+	},
+	"Bug": [
+		"174340"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-wireless/aircrack-ng",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.7-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.7-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Aircrack-ng is an 802.11 WEP and WPA-PSK keys cracking program that can\n    recover keys once enough data packets have been captured.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Jonathan So reported that the airodump-ng module does not correctly\n    check the size of 802.11 authentication packets before copying them\n    into a buffer.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker could trigger a stack-based buffer overflow by\n    sending a specially crafted 802.11 authentication packet to a user\n    running airodump-ng with the -w (--write) option. This could lead to\n    the remote execution of arbitrary code with the permissions of the user\n    running airodump-ng, which is typically the root user.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Aircrack-ng users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-wireless/aircrack-ng-0.7-r2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-2057",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2057"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    shellsage\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-04-13T21:21:54Z"
+		},
+		{
+			"Text": "\n    shellsage\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-04-13T21:24:05Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-04-14T22:00:25Z"
+		}
+	]
 }

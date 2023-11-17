@@ -1,107 +1,107 @@
 {
-  "ID": "200506-16",
-  "Title": "cpio: Directory traversal vulnerability",
-  "Synopsis": "\n    cpio contains a flaw which may allow a specially crafted cpio archive to\n    extract files to an arbitrary directory.\n  ",
-  "Product": {
-    "Text": "cpio",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-06-20",
-  "Revised": {
-    "Text": "2005-06-20",
-    "Count": "01"
-  },
-  "Bug": [
-    "90619"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-arch/cpio",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.6-r3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.6-r3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    cpio is a file archival tool which can also read and write tar\n    files.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    A vulnerability has been found in cpio that can potentially allow\n    a cpio archive to extract its files to an arbitrary directory of the\n    creator's choice.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker could create a malicious cpio archive which would\n    create files in arbitrary locations on the victim's system. This issue\n    could also be used in conjunction with a previous race condition\n    vulnerability (CAN-2005-1111) to change permissions on files owned by\n    the victim.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All cpio users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-arch/cpio-2.6-r3\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "Original Advisory",
-        "Link": "http://www.securityfocus.com/archive/1/396429"
-      },
-      {
-        "Text": "CAN-2005-1111",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1111"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-05-03T21:22:45Z"
-    },
-    {
-      "Text": "\n    lewk\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-05-05T15:24:08Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-06-19T20:39:43Z"
-    }
-  ]
+	"ID": "200506-16",
+	"Title": "cpio: Directory traversal vulnerability",
+	"Synopsis": "\n    cpio contains a flaw which may allow a specially crafted cpio archive to\n    extract files to an arbitrary directory.\n  ",
+	"Product": {
+		"Text": "cpio",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-06-20",
+	"Revised": {
+		"Text": "2005-06-20",
+		"Count": "01"
+	},
+	"Bug": [
+		"90619"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-arch/cpio",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.6-r3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.6-r3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    cpio is a file archival tool which can also read and write tar\n    files.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    A vulnerability has been found in cpio that can potentially allow\n    a cpio archive to extract its files to an arbitrary directory of the\n    creator's choice.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker could create a malicious cpio archive which would\n    create files in arbitrary locations on the victim's system. This issue\n    could also be used in conjunction with a previous race condition\n    vulnerability (CAN-2005-1111) to change permissions on files owned by\n    the victim.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All cpio users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-arch/cpio-2.6-r3\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "Original Advisory",
+				"Link": "http://www.securityfocus.com/archive/1/396429"
+			},
+			{
+				"Text": "CAN-2005-1111",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1111"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-05-03T21:22:45Z"
+		},
+		{
+			"Text": "\n    lewk\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-05-05T15:24:08Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-06-19T20:39:43Z"
+		}
+	]
 }

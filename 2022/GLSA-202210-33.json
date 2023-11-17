@@ -1,98 +1,98 @@
 {
-  "ID": "202210-33",
-  "Title": "Libtirpc: Denial of Service",
-  "Synopsis": "A vulnerability has been discovered in Libtirpc which could result in denial of service.",
-  "Product": {
-    "Text": "libtirpc",
-    "Type": "ebuild"
-  },
-  "Announced": "2022-10-31",
-  "Revised": {
-    "Text": "2022-10-31",
-    "Count": "1"
-  },
-  "Bug": [
-    "859634"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-libs/libtirpc",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.3.2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.3.2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n        <p>Libtirpc is a port of Sun&#39;s Transport-Independent RPC library to Linux.</p>\n    "
-  },
-  "Description": {
-    "Text": "\n        <p>Currently svc_run does not handle poll timeout and rendezvous_request\r\ndoes not handle EMFILE error returned from accept(2 as it used to.\r\nThese two missing functionality were removed by commit b2c9430f46c4.\r\n\r\nThe effect of not handling poll timeout allows idle TCP conections\r\nto remain ESTABLISHED indefinitely. When the number of connections\r\nreaches the limit of the open file descriptors (ulimit -n) then\r\naccept(2) fails with EMFILE. Since there is no handling of EMFILE\r\nerror this causes svc_run() to get in a tight loop calling accept(2).\r\nThis resulting in the RPC service of svc_run is being down, it&#39;s\r\nno longer able to service any requests.\r\n\r\nDue to a lack of handling of certain error cases, connections to Libtirpc could remain ESTABLISHED indefinitely.</p>\n    "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n        <p>Denial of service can be achieved via establishing enough connections to Libtirpc to reach the limit of open file descriptors for the process.</p>\n    "
-  },
-  "Workaround": {
-    "Text": "\n        <p>There is no known workaround at this time.</p>\n    "
-  },
-  "Resolution": {
-    "Text": "\n        \n        \n        \n    ",
-    "P": [
-      {
-        "Text": "All Libtirpc users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=net-libs/libtirpc-1.3.2\"\n        "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2021-46828",
-        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-46828"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "ajak",
-      "Tag": "requester",
-      "Timestamp": "2022-10-31T01:30:06.446859Z"
-    },
-    {
-      "Text": "ajak",
-      "Tag": "submitter",
-      "Timestamp": "2022-10-31T01:30:06.456481Z"
-    }
-  ]
+	"ID": "202210-33",
+	"Title": "Libtirpc: Denial of Service",
+	"Synopsis": "A vulnerability has been discovered in Libtirpc which could result in denial of service.",
+	"Product": {
+		"Text": "libtirpc",
+		"Type": "ebuild"
+	},
+	"Announced": "2022-10-31",
+	"Revised": {
+		"Text": "2022-10-31",
+		"Count": "1"
+	},
+	"Bug": [
+		"859634"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-libs/libtirpc",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.3.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.3.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>Libtirpc is a port of Sun&#39;s Transport-Independent RPC library to Linux.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>Currently svc_run does not handle poll timeout and rendezvous_request\r\ndoes not handle EMFILE error returned from accept(2 as it used to.\r\nThese two missing functionality were removed by commit b2c9430f46c4.\r\n\r\nThe effect of not handling poll timeout allows idle TCP conections\r\nto remain ESTABLISHED indefinitely. When the number of connections\r\nreaches the limit of the open file descriptors (ulimit -n) then\r\naccept(2) fails with EMFILE. Since there is no handling of EMFILE\r\nerror this causes svc_run() to get in a tight loop calling accept(2).\r\nThis resulting in the RPC service of svc_run is being down, it&#39;s\r\nno longer able to service any requests.\r\n\r\nDue to a lack of handling of certain error cases, connections to Libtirpc could remain ESTABLISHED indefinitely.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>Denial of service can be achieved via establishing enough connections to Libtirpc to reach the limit of open file descriptors for the process.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All Libtirpc users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=net-libs/libtirpc-1.3.2\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2021-46828",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-46828"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "ajak",
+			"Tag": "requester",
+			"Timestamp": "2022-10-31T01:30:06.446859Z"
+		},
+		{
+			"Text": "ajak",
+			"Tag": "submitter",
+			"Timestamp": "2022-10-31T01:30:06.456481Z"
+		}
+	]
 }

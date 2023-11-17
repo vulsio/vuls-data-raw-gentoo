@@ -1,103 +1,103 @@
 {
-  "ID": "200611-15",
-  "Title": "qmailAdmin: Buffer overflow",
-  "Synopsis": "\n    qmailAdmin is vulnerable to a buffer overflow that could lead to the remote\n    execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "qmailadmin",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-11-21",
-  "Revised": {
-    "Text": "2006-11-21",
-    "Count": "01"
-  },
-  "Bug": [
-    "153896"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-mail/qmailadmin",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.2.10",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.2.10",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    qmailAdmin is a free software package that provides a web interface for\n    managing a qmail system with virtual domains.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    qmailAdmin fails to properly handle the \"PATH_INFO\" variable in\n    qmailadmin.c. The PATH_INFO is a standard CGI environment variable\n    filled with user supplied data.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker could exploit this vulnerability by sending\n    qmailAdmin a maliciously crafted URL that could lead to the execution\n    of arbitrary code with the permissions of the user running qmailAdmin.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All qmailAdmin users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-mail/qmailadmin-1.2.10\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-1141",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1141"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    vorlon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-11-15T21:38:39Z"
-    },
-    {
-      "Text": "\n    vorlon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-11-15T21:39:01Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-11-20T08:53:09Z"
-    }
-  ]
+	"ID": "200611-15",
+	"Title": "qmailAdmin: Buffer overflow",
+	"Synopsis": "\n    qmailAdmin is vulnerable to a buffer overflow that could lead to the remote\n    execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "qmailadmin",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-11-21",
+	"Revised": {
+		"Text": "2006-11-21",
+		"Count": "01"
+	},
+	"Bug": [
+		"153896"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-mail/qmailadmin",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.2.10",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.2.10",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    qmailAdmin is a free software package that provides a web interface for\n    managing a qmail system with virtual domains.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    qmailAdmin fails to properly handle the \"PATH_INFO\" variable in\n    qmailadmin.c. The PATH_INFO is a standard CGI environment variable\n    filled with user supplied data.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker could exploit this vulnerability by sending\n    qmailAdmin a maliciously crafted URL that could lead to the execution\n    of arbitrary code with the permissions of the user running qmailAdmin.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All qmailAdmin users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-mail/qmailadmin-1.2.10\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-1141",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1141"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    vorlon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-11-15T21:38:39Z"
+		},
+		{
+			"Text": "\n    vorlon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-11-15T21:39:01Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-11-20T08:53:09Z"
+		}
+	]
 }

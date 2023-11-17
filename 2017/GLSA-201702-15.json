@@ -1,110 +1,110 @@
 {
-  "ID": "201702-15",
-  "Title": "OCaml: Buffer overflow and information disclosure",
-  "Synopsis": "A buffer overflow in OCaml might allow remote attackers to obtain\n    sensitive information or crash an OCaml-based application.\n  ",
-  "Product": {
-    "Text": "ocaml",
-    "Type": "ebuild"
-  },
-  "Announced": "2017-02-20",
-  "Revised": {
-    "Text": "2017-02-20",
-    "Count": "1"
-  },
-  "Bug": [
-    "581946"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-lang/ocaml",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.04.0",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.04.0",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>OCaml is a high-level, strongly-typed, functional, and object-oriented\n      programming language from the ML family of languages.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>It was discovered that OCaml was vulnerable to a runtime bug that, on\n      64-bit platforms, causes size arguments to internal memmove calls to be\n      sign-extended from 32- to 64-bits before being passed to the memmove\n      function. This leads to arguments between 2GiB and 4GiB being interpreted\n      as larger than they are (specifically, a bit below 2^64), causing a\n      buffer overflow. Further, arguments between 4GiB and 6GiB are interpreted\n      as 4GiB smaller than they should be causing a possible information leak.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker, able to interact with an OCaml-based application,\n      could possibly obtain sensitive information or cause a Denial of Service\n      condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All OCaml users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "Packages which depend on OCaml may need to be recompiled. Tools such as\n      qdepends (included in app-portage/portage-utils) may assist in\n      identifying these packages:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-lang/ocam-4.04.0\"\n    ",
-      "\n      # emerge --oneshot --ask --verbose $(qdepends -CQ dev-lang/ocaml | sed\n      's/^/=/')\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2015-8869",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-8869"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "whissi",
-      "Tag": "requester",
-      "Timestamp": "2017-02-13T00:59:45Z"
-    },
-    {
-      "Text": "whissi",
-      "Tag": "submitter",
-      "Timestamp": "2017-02-20T23:19:06Z"
-    }
-  ]
+	"ID": "201702-15",
+	"Title": "OCaml: Buffer overflow and information disclosure",
+	"Synopsis": "A buffer overflow in OCaml might allow remote attackers to obtain\n    sensitive information or crash an OCaml-based application.\n  ",
+	"Product": {
+		"Text": "ocaml",
+		"Type": "ebuild"
+	},
+	"Announced": "2017-02-20",
+	"Revised": {
+		"Text": "2017-02-20",
+		"Count": "1"
+	},
+	"Bug": [
+		"581946"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-lang/ocaml",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.04.0",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.04.0",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>OCaml is a high-level, strongly-typed, functional, and object-oriented\n      programming language from the ML family of languages.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>It was discovered that OCaml was vulnerable to a runtime bug that, on\n      64-bit platforms, causes size arguments to internal memmove calls to be\n      sign-extended from 32- to 64-bits before being passed to the memmove\n      function. This leads to arguments between 2GiB and 4GiB being interpreted\n      as larger than they are (specifically, a bit below 2^64), causing a\n      buffer overflow. Further, arguments between 4GiB and 6GiB are interpreted\n      as 4GiB smaller than they should be causing a possible information leak.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker, able to interact with an OCaml-based application,\n      could possibly obtain sensitive information or cause a Denial of Service\n      condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All OCaml users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "Packages which depend on OCaml may need to be recompiled. Tools such as\n      qdepends (included in app-portage/portage-utils) may assist in\n      identifying these packages:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-lang/ocam-4.04.0\"\n    ",
+			"\n      # emerge --oneshot --ask --verbose $(qdepends -CQ dev-lang/ocaml | sed\n      's/^/=/')\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2015-8869",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-8869"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "whissi",
+			"Tag": "requester",
+			"Timestamp": "2017-02-13T00:59:45Z"
+		},
+		{
+			"Text": "whissi",
+			"Tag": "submitter",
+			"Timestamp": "2017-02-20T23:19:06Z"
+		}
+	]
 }

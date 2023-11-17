@@ -1,125 +1,125 @@
 {
-  "ID": "200809-09",
-  "Title": "Postfix: Denial of service",
-  "Synopsis": "\n    A memory leak in Postfix might allow local users to cause a Denial of\n    Service.\n  ",
-  "Product": {
-    "Text": "postfix",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-09-19",
-  "Revised": {
-    "Text": "2008-09-19",
-    "Count": "01"
-  },
-  "Bug": [
-    "236453"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "mail-mta/postfix",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.4.9",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "2.5.5",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.4.9",
-            "Range": "lt",
-            "Slot": ""
-          },
-          {
-            "Text": "2.5.5",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Postfix is Wietse Venema's mailer that attempts to be fast, easy to\n    administer, and secure, as an alternative to the widely-used Sendmail\n    program.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    It has been discovered than Postfix leaks an epoll file descriptor when\n    executing external commands, e.g. user-controlled $HOME/.forward or\n    $HOME/.procmailrc files. NOTE: This vulnerability only concerns Postfix\n    instances running on Linux 2.6 kernels.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local attacker could exploit this vulnerability to reduce the\n    performance of Postfix, and possibly trigger an assertion, resulting in\n    a Denial of Service.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Allow only trusted users to control delivery to non-Postfix commands.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Postfix 2.4 users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All Postfix 2.5 users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-mta/postfix-2.4.9\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-mta/postfix-2.5.5\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-3889",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3889"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-09-03T20:58:07Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-09-08T18:33:40Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-09-08T18:33:49Z"
-    }
-  ]
+	"ID": "200809-09",
+	"Title": "Postfix: Denial of service",
+	"Synopsis": "\n    A memory leak in Postfix might allow local users to cause a Denial of\n    Service.\n  ",
+	"Product": {
+		"Text": "postfix",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-09-19",
+	"Revised": {
+		"Text": "2008-09-19",
+		"Count": "01"
+	},
+	"Bug": [
+		"236453"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "mail-mta/postfix",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.4.9",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "2.5.5",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.4.9",
+						"Range": "lt",
+						"Slot": ""
+					},
+					{
+						"Text": "2.5.5",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Postfix is Wietse Venema's mailer that attempts to be fast, easy to\n    administer, and secure, as an alternative to the widely-used Sendmail\n    program.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    It has been discovered than Postfix leaks an epoll file descriptor when\n    executing external commands, e.g. user-controlled $HOME/.forward or\n    $HOME/.procmailrc files. NOTE: This vulnerability only concerns Postfix\n    instances running on Linux 2.6 kernels.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local attacker could exploit this vulnerability to reduce the\n    performance of Postfix, and possibly trigger an assertion, resulting in\n    a Denial of Service.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Allow only trusted users to control delivery to non-Postfix commands.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Postfix 2.4 users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All Postfix 2.5 users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-mta/postfix-2.4.9\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-mta/postfix-2.5.5\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-3889",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3889"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-09-03T20:58:07Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-09-08T18:33:40Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-09-08T18:33:49Z"
+		}
+	]
 }

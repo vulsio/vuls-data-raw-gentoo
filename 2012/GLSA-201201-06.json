@@ -1,109 +1,109 @@
 {
-  "ID": "201201-06",
-  "Title": "iSCSI Enterprise Target: Arbitrary code execution",
-  "Synopsis": "Format string vulnerabilities in iSCSI Enterprise Target could\n    result in execution of arbitrary code or a Denial of Service.\n  ",
-  "Product": {
-    "Text": "iscsitarget",
-    "Type": "ebuild"
-  },
-  "Announced": "2012-01-23",
-  "Revised": {
-    "Text": "2012-01-23",
-    "Count": "1"
-  },
-  "Bug": [
-    "314187"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sys-block/iscsitarget",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.4.19",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.4.19",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>iSCSI Enterprise Target is an open source iSCSI target with professional\n      features.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Multiple functions in usr/iscsi/isns.c of iSCSI Enterprise Target\n      contain format string errors.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>A remote attacker could send a specially-crafted Internet Storage Name\n      Service (iSNS) request, possibly resulting in the execution of arbitrary\n      code with root privileges or cause a Denial of Service.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All iSCSI Enterprise Target users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "NOTE: This is a legacy GLSA. Updates for all affected architectures are\n      available since August 11, 2010. It is likely that your system is already\n      no longer affected by this issue.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-block/iscsitarget-1.4.19\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2010-0743",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-0743"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "craig",
-      "Tag": "requester",
-      "Timestamp": "2011-10-07T23:37:07Z"
-    },
-    {
-      "Text": "ackle",
-      "Tag": "submitter",
-      "Timestamp": "2012-01-23T11:50:37Z"
-    }
-  ]
+	"ID": "201201-06",
+	"Title": "iSCSI Enterprise Target: Arbitrary code execution",
+	"Synopsis": "Format string vulnerabilities in iSCSI Enterprise Target could\n    result in execution of arbitrary code or a Denial of Service.\n  ",
+	"Product": {
+		"Text": "iscsitarget",
+		"Type": "ebuild"
+	},
+	"Announced": "2012-01-23",
+	"Revised": {
+		"Text": "2012-01-23",
+		"Count": "1"
+	},
+	"Bug": [
+		"314187"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-block/iscsitarget",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.4.19",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.4.19",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>iSCSI Enterprise Target is an open source iSCSI target with professional\n      features.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Multiple functions in usr/iscsi/isns.c of iSCSI Enterprise Target\n      contain format string errors.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>A remote attacker could send a specially-crafted Internet Storage Name\n      Service (iSNS) request, possibly resulting in the execution of arbitrary\n      code with root privileges or cause a Denial of Service.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All iSCSI Enterprise Target users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "NOTE: This is a legacy GLSA. Updates for all affected architectures are\n      available since August 11, 2010. It is likely that your system is already\n      no longer affected by this issue.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-block/iscsitarget-1.4.19\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2010-0743",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-0743"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "craig",
+			"Tag": "requester",
+			"Timestamp": "2011-10-07T23:37:07Z"
+		},
+		{
+			"Text": "ackle",
+			"Tag": "submitter",
+			"Timestamp": "2012-01-23T11:50:37Z"
+		}
+	]
 }

@@ -1,120 +1,120 @@
 {
-  "ID": "200803-18",
-  "Title": "Cacti: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities were discovered in Cacti.\n  ",
-  "Product": {
-    "Text": "cacti",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-03-10",
-  "Revised": {
-    "Text": "2009-05-28",
-    "Count": "02"
-  },
-  "Bug": [
-    "209918"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-analyzer/cacti",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.8.7b",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "0.8.6j-r8",
-            "Range": "rge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.8.7b",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Cacti is a web-based network graphing and reporting tool.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The following inputs are not properly sanitized before being processed:\n    </p>\n    <ul><li>\"view_type\" parameter in the file graph.php, \"filter\" parameter\n    in the file graph_view.php, \"action\" and \"login_username\" parameters in\n    the file index.php (CVE-2008-0783).</li>\n    <li>\"local_graph_id\" parameter in the file graph.php\n    (CVE-2008-0784).</li>\n    <li>\"graph_list\" parameter in the file graph_view.php, \"leaf_id\" and\n    \"id\" parameters in the file tree.php, \"local_graph_id\" in the file\n    graph_xport.php (CVE-2008-0785).</li>\n    </ul>\n    <p>\n    Furthermore, CRLF injection attack are possible via unspecified vectors\n    (CVE-2008-0786).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could exploit these vulnerabilities, leading to path\n    disclosure, Cross-Site Scripting attacks, SQL injection, and HTTP\n    response splitting.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Cacti users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/cacti-0.8.7b\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-0783",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0783"
-      },
-      {
-        "Text": "CVE-2008-0784",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0784"
-      },
-      {
-        "Text": "CVE-2008-0785",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0785"
-      },
-      {
-        "Text": "CVE-2008-0786",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0786"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-02-25T22:16:20Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-03-07T23:16:40Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-03-07T23:16:51Z"
-    }
-  ]
+	"ID": "200803-18",
+	"Title": "Cacti: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities were discovered in Cacti.\n  ",
+	"Product": {
+		"Text": "cacti",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-03-10",
+	"Revised": {
+		"Text": "2009-05-28",
+		"Count": "02"
+	},
+	"Bug": [
+		"209918"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-analyzer/cacti",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.8.7b",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "0.8.6j-r8",
+						"Range": "rge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.8.7b",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Cacti is a web-based network graphing and reporting tool.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The following inputs are not properly sanitized before being processed:\n    </p>\n    <ul><li>\"view_type\" parameter in the file graph.php, \"filter\" parameter\n    in the file graph_view.php, \"action\" and \"login_username\" parameters in\n    the file index.php (CVE-2008-0783).</li>\n    <li>\"local_graph_id\" parameter in the file graph.php\n    (CVE-2008-0784).</li>\n    <li>\"graph_list\" parameter in the file graph_view.php, \"leaf_id\" and\n    \"id\" parameters in the file tree.php, \"local_graph_id\" in the file\n    graph_xport.php (CVE-2008-0785).</li>\n    </ul>\n    <p>\n    Furthermore, CRLF injection attack are possible via unspecified vectors\n    (CVE-2008-0786).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could exploit these vulnerabilities, leading to path\n    disclosure, Cross-Site Scripting attacks, SQL injection, and HTTP\n    response splitting.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Cacti users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/cacti-0.8.7b\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-0783",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0783"
+			},
+			{
+				"Text": "CVE-2008-0784",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0784"
+			},
+			{
+				"Text": "CVE-2008-0785",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0785"
+			},
+			{
+				"Text": "CVE-2008-0786",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0786"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-02-25T22:16:20Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-03-07T23:16:40Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-03-07T23:16:51Z"
+		}
+	]
 }

@@ -1,125 +1,125 @@
 {
-  "ID": "200912-01",
-  "Title": "OpenSSL: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities in OpenSSL might allow remote attackers to conduct\n    multiple attacks, including the injection of arbitrary data into encrypted\n    byte streams.\n  ",
-  "Product": {
-    "Text": "openssl",
-    "Type": "ebuild"
-  },
-  "Announced": "2009-12-01",
-  "Revised": {
-    "Text": "2009-12-02",
-    "Count": "02"
-  },
-  "Bug": [
-    "270305",
-    "280591",
-    "292022"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-libs/openssl",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.9.8l-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.9.8l-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    OpenSSL is an Open Source toolkit implementing the Secure Sockets Layer\n    (SSL v2/v3) and Transport Layer Security (TLS v1) as well as a general\n    purpose cryptography library.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Multiple vulnerabilities have been reported in OpenSSL:\n    </p>\n    <ul>\n    <li>Marsh Ray of PhoneFactor and Martin Rex of SAP independently\n    reported that the TLS protocol does not properly handle session\n    renegotiation requests (CVE-2009-3555).</li>\n    <li>The MD2 hash algorithm is no longer considered to be\n    cryptographically strong, as demonstrated by Dan Kaminsky. Certificates\n    using this algorithm are no longer accepted (CVE-2009-2409).</li>\n    <li>Daniel Mentz and Robin Seggelmann reported the following\n    vulnerabilities related to DTLS: A use-after-free flaw (CVE-2009-1379)\n    and a NULL pointer dereference (CVE-2009-1387) in the\n    dtls1_retrieve_buffered_fragment() function in src/d1_both.c, multiple\n    memory leaks in the dtls1_process_out_of_seq_message() function in\n    src/d1_both.c (CVE-2009-1378), and a processing error related to a\n    large amount of DTLS records with a future epoch in the\n    dtls1_buffer_record() function in ssl/d1_pkt.c\n    (CVE-2009-1377).</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote unauthenticated attacker, acting as a Man in the Middle, could\n    inject arbitrary plain text into a TLS session, possibly leading to the\n    ability to send requests as if authenticated as the victim. A remote\n    attacker could furthermore send specially crafted DTLS packages to a\n    service using OpenSSL for DTLS support, possibly resulting in a Denial\n    of Service. Also, a remote attacker might be able to create rogue\n    certificates, facilitated by a MD2 collision. NOTE: The amount of\n    computation needed for this attack is still very large.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All OpenSSL users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/openssl-0.9.8l-r2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2009-1377",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1377"
-      },
-      {
-        "Text": "CVE-2009-1378",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1378"
-      },
-      {
-        "Text": "CVE-2009-1379",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1379"
-      },
-      {
-        "Text": "CVE-2009-1387",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1387"
-      },
-      {
-        "Text": "CVE-2009-2409",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2409"
-      },
-      {
-        "Text": "CVE-2009-3555",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3555"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "requester",
-      "Timestamp": "2009-11-23T21:29:47Z"
-    },
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-11-30T13:42:39Z"
-    },
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2009-12-01T21:28:40Z"
-    }
-  ]
+	"ID": "200912-01",
+	"Title": "OpenSSL: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities in OpenSSL might allow remote attackers to conduct\n    multiple attacks, including the injection of arbitrary data into encrypted\n    byte streams.\n  ",
+	"Product": {
+		"Text": "openssl",
+		"Type": "ebuild"
+	},
+	"Announced": "2009-12-01",
+	"Revised": {
+		"Text": "2009-12-02",
+		"Count": "02"
+	},
+	"Bug": [
+		"270305",
+		"280591",
+		"292022"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-libs/openssl",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.9.8l-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.9.8l-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    OpenSSL is an Open Source toolkit implementing the Secure Sockets Layer\n    (SSL v2/v3) and Transport Layer Security (TLS v1) as well as a general\n    purpose cryptography library.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Multiple vulnerabilities have been reported in OpenSSL:\n    </p>\n    <ul>\n    <li>Marsh Ray of PhoneFactor and Martin Rex of SAP independently\n    reported that the TLS protocol does not properly handle session\n    renegotiation requests (CVE-2009-3555).</li>\n    <li>The MD2 hash algorithm is no longer considered to be\n    cryptographically strong, as demonstrated by Dan Kaminsky. Certificates\n    using this algorithm are no longer accepted (CVE-2009-2409).</li>\n    <li>Daniel Mentz and Robin Seggelmann reported the following\n    vulnerabilities related to DTLS: A use-after-free flaw (CVE-2009-1379)\n    and a NULL pointer dereference (CVE-2009-1387) in the\n    dtls1_retrieve_buffered_fragment() function in src/d1_both.c, multiple\n    memory leaks in the dtls1_process_out_of_seq_message() function in\n    src/d1_both.c (CVE-2009-1378), and a processing error related to a\n    large amount of DTLS records with a future epoch in the\n    dtls1_buffer_record() function in ssl/d1_pkt.c\n    (CVE-2009-1377).</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote unauthenticated attacker, acting as a Man in the Middle, could\n    inject arbitrary plain text into a TLS session, possibly leading to the\n    ability to send requests as if authenticated as the victim. A remote\n    attacker could furthermore send specially crafted DTLS packages to a\n    service using OpenSSL for DTLS support, possibly resulting in a Denial\n    of Service. Also, a remote attacker might be able to create rogue\n    certificates, facilitated by a MD2 collision. NOTE: The amount of\n    computation needed for this attack is still very large.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All OpenSSL users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/openssl-0.9.8l-r2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2009-1377",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1377"
+			},
+			{
+				"Text": "CVE-2009-1378",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1378"
+			},
+			{
+				"Text": "CVE-2009-1379",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1379"
+			},
+			{
+				"Text": "CVE-2009-1387",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1387"
+			},
+			{
+				"Text": "CVE-2009-2409",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2409"
+			},
+			{
+				"Text": "CVE-2009-3555",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3555"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "requester",
+			"Timestamp": "2009-11-23T21:29:47Z"
+		},
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-11-30T13:42:39Z"
+		},
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2009-12-01T21:28:40Z"
+		}
+	]
 }

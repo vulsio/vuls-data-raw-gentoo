@@ -1,191 +1,191 @@
 {
-  "ID": "201402-24",
-  "Title": "GnuPG, Libgcrypt: Multiple vulnerabilities",
-  "Synopsis": "Multiple vulnerabilities have been discovered in GnuPG and\n    Libgcrypt, which may result in execution of arbitrary code, Denial of\n    Service, or the disclosure of private keys.\n  ",
-  "Product": {
-    "Text": "gnupg libgcrypt",
-    "Type": "ebuild"
-  },
-  "Announced": "2014-02-21",
-  "Revised": {
-    "Text": "2016-08-24",
-    "Count": "3"
-  },
-  "Bug": [
-    "449546",
-    "478184",
-    "484836",
-    "487230",
-    "494658"
-  ],
-  "Access": "local, remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-crypt/gnupg",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.0.22",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "1.4.16",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "1.4.17",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "1.4.18",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "1.4.19",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "1.4.20",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "1.4.21",
-            "Range": "rge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.0.22",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "dev-libs/libgcrypt",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.5.3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.5.3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>The GNU Privacy Guard, GnuPG, is a free replacement for the PGP suite of\n      cryptographic software. Libgcrypt is a cryptographic library based on\n      GnuPG.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Multiple vulnerabilities have been discovered in GnuPG and Libgcrypt.\n      Please review the CVE identifiers referenced below for details.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>An unauthenticated remote attacker may be able to execute arbitrary code\n      with the privileges of the user running GnuPG, cause a Denial of Service\n      condition, or bypass security restrictions. Additionally, a side-channel\n      attack may allow a local attacker to recover a private key, please review\n      “Flush+Reload: a High Resolution, Low Noise, L3 Cache Side-Channel\n      Attack” in the References section for further details.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All GnuPG 2.0 users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "All GnuPG 1.4 users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "All Libgcrypt users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-crypt/gnupg-2.0.22\"\n    ",
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-crypt/gnupg-1.4.16\"\n    ",
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/libgcrypt-1.5.3\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2012-6085",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-6085"
-      },
-      {
-        "Text": "CVE-2013-4242",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4242"
-      },
-      {
-        "Text": "CVE-2013-4351",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4351"
-      },
-      {
-        "Text": "CVE-2013-4402",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4402"
-      },
-      {
-        "Text": "Flush+Reload: a High\n      Resolution, Low Noise, L3 Cache Side-Channel Attack\n    ",
-        "Link": "https://eprint.iacr.org/2013/448"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "ackle",
-      "Tag": "requester",
-      "Timestamp": "2013-01-15T21:37:26Z"
-    },
-    {
-      "Text": "ackle",
-      "Tag": "submitter",
-      "Timestamp": "2016-08-24T12:08:25Z"
-    }
-  ]
+	"ID": "201402-24",
+	"Title": "GnuPG, Libgcrypt: Multiple vulnerabilities",
+	"Synopsis": "Multiple vulnerabilities have been discovered in GnuPG and\n    Libgcrypt, which may result in execution of arbitrary code, Denial of\n    Service, or the disclosure of private keys.\n  ",
+	"Product": {
+		"Text": "gnupg libgcrypt",
+		"Type": "ebuild"
+	},
+	"Announced": "2014-02-21",
+	"Revised": {
+		"Text": "2016-08-24",
+		"Count": "3"
+	},
+	"Bug": [
+		"449546",
+		"478184",
+		"484836",
+		"487230",
+		"494658"
+	],
+	"Access": "local, remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-crypt/gnupg",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.0.22",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "1.4.16",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "1.4.17",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "1.4.18",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "1.4.19",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "1.4.20",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "1.4.21",
+						"Range": "rge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.0.22",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "dev-libs/libgcrypt",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.5.3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.5.3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>The GNU Privacy Guard, GnuPG, is a free replacement for the PGP suite of\n      cryptographic software. Libgcrypt is a cryptographic library based on\n      GnuPG.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Multiple vulnerabilities have been discovered in GnuPG and Libgcrypt.\n      Please review the CVE identifiers referenced below for details.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>An unauthenticated remote attacker may be able to execute arbitrary code\n      with the privileges of the user running GnuPG, cause a Denial of Service\n      condition, or bypass security restrictions. Additionally, a side-channel\n      attack may allow a local attacker to recover a private key, please review\n      “Flush+Reload: a High Resolution, Low Noise, L3 Cache Side-Channel\n      Attack” in the References section for further details.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All GnuPG 2.0 users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "All GnuPG 1.4 users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "All Libgcrypt users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-crypt/gnupg-2.0.22\"\n    ",
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-crypt/gnupg-1.4.16\"\n    ",
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/libgcrypt-1.5.3\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2012-6085",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-6085"
+			},
+			{
+				"Text": "CVE-2013-4242",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4242"
+			},
+			{
+				"Text": "CVE-2013-4351",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4351"
+			},
+			{
+				"Text": "CVE-2013-4402",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-4402"
+			},
+			{
+				"Text": "Flush+Reload: a High\n      Resolution, Low Noise, L3 Cache Side-Channel Attack\n    ",
+				"Link": "https://eprint.iacr.org/2013/448"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "ackle",
+			"Tag": "requester",
+			"Timestamp": "2013-01-15T21:37:26Z"
+		},
+		{
+			"Text": "ackle",
+			"Tag": "submitter",
+			"Timestamp": "2016-08-24T12:08:25Z"
+		}
+	]
 }

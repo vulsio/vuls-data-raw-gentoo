@@ -1,102 +1,102 @@
 {
-  "ID": "200909-19",
-  "Title": "Dnsmasq: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities in Dnsmasq might result in the remote execution of\n    arbitrary code, or a Denial of Service.\n  ",
-  "Product": {
-    "Text": "dnsmasq",
-    "Type": "ebuild"
-  },
-  "Announced": "2009-09-20",
-  "Revised": {
-    "Text": "2009-09-20",
-    "Count": "01"
-  },
-  "Bug": [
-    "282653"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-dns/dnsmasq",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.5.0",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.5.0",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Dnsmasq is a lightweight, easy to configure DNS forwarder and DHCP\n    server. It includes support for Trivial FTP (TFTP).\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Multiple vulnerabilities have been reported in the TFTP functionality\n    included in Dnsmasq:\n    </p>\n    <ul>\n    <li>Pablo Jorge and Alberto Solino\n    discovered a heap-based buffer overflow (CVE-2009-2957).</li>\n    <li>An\n    anonymous researcher reported a NULL pointer reference\n    (CVE-2009-2958).</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker in the local network could exploit these\n    vulnerabilities by sending specially crafted TFTP requests to a machine\n    running Dnsmasq, possibly resulting in the remote execution of\n    arbitrary code with the privileges of the user running the daemon, or a\n    Denial of Service. NOTE: The TFTP server is not enabled by default.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    You can disable the TFTP server either at buildtime by not enabling the\n    \"tftp\" USE flag, or at runtime. Make sure \"--enable-tftp\" is not set in\n    the DNSMASQ_OPTS variable in the /etc/conf.d/dnsmasq file and\n    \"enable-tftp\" is not set in /etc/dnsmasq.conf, either of which would\n    enable TFTP support if it is compiled in.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Dnsmasq users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dns/dnsmasq-2.5.0\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2009-2957",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2957"
-      },
-      {
-        "Text": "CVE-2009-2958",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2958"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-09-01T10:28:12Z"
-    },
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2009-09-20T18:56:49Z"
-    }
-  ]
+	"ID": "200909-19",
+	"Title": "Dnsmasq: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities in Dnsmasq might result in the remote execution of\n    arbitrary code, or a Denial of Service.\n  ",
+	"Product": {
+		"Text": "dnsmasq",
+		"Type": "ebuild"
+	},
+	"Announced": "2009-09-20",
+	"Revised": {
+		"Text": "2009-09-20",
+		"Count": "01"
+	},
+	"Bug": [
+		"282653"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-dns/dnsmasq",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.5.0",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.5.0",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Dnsmasq is a lightweight, easy to configure DNS forwarder and DHCP\n    server. It includes support for Trivial FTP (TFTP).\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Multiple vulnerabilities have been reported in the TFTP functionality\n    included in Dnsmasq:\n    </p>\n    <ul>\n    <li>Pablo Jorge and Alberto Solino\n    discovered a heap-based buffer overflow (CVE-2009-2957).</li>\n    <li>An\n    anonymous researcher reported a NULL pointer reference\n    (CVE-2009-2958).</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker in the local network could exploit these\n    vulnerabilities by sending specially crafted TFTP requests to a machine\n    running Dnsmasq, possibly resulting in the remote execution of\n    arbitrary code with the privileges of the user running the daemon, or a\n    Denial of Service. NOTE: The TFTP server is not enabled by default.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    You can disable the TFTP server either at buildtime by not enabling the\n    \"tftp\" USE flag, or at runtime. Make sure \"--enable-tftp\" is not set in\n    the DNSMASQ_OPTS variable in the /etc/conf.d/dnsmasq file and\n    \"enable-tftp\" is not set in /etc/dnsmasq.conf, either of which would\n    enable TFTP support if it is compiled in.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Dnsmasq users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dns/dnsmasq-2.5.0\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2009-2957",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2957"
+			},
+			{
+				"Text": "CVE-2009-2958",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2958"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-09-01T10:28:12Z"
+		},
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2009-09-20T18:56:49Z"
+		}
+	]
 }

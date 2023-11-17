@@ -1,103 +1,103 @@
 {
-  "ID": "200503-20",
-  "Title": "curl: NTLM response buffer overflow",
-  "Synopsis": "\n    curl is vulnerable to a buffer overflow which could lead to the execution\n    of arbitrary code.\n  ",
-  "Product": {
-    "Text": "curl",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-03-16",
-  "Revised": {
-    "Text": "2005-03-16",
-    "Count": "01"
-  },
-  "Bug": [
-    "82534"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-misc/curl",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "7.13.1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "7.13.1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    curl is a command line tool for transferring files via many\n    different protocols.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    curl fails to properly check boundaries when handling NTLM\n    authentication.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    With a malicious server an attacker could send a carefully crafted\n    NTLM response to a connecting client leading to the execution of\n    arbitrary code with the permissions of the user running curl.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Disable NTLM authentication by not using the --anyauth or --ntlm\n    options.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All curl users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/curl-7.13.1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2005-0490",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0490"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    vorlon078\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-03-12T16:36:42Z"
-    },
-    {
-      "Text": "\n    lewk\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-03-12T17:56:09Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-03-14T05:48:14Z"
-    }
-  ]
+	"ID": "200503-20",
+	"Title": "curl: NTLM response buffer overflow",
+	"Synopsis": "\n    curl is vulnerable to a buffer overflow which could lead to the execution\n    of arbitrary code.\n  ",
+	"Product": {
+		"Text": "curl",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-03-16",
+	"Revised": {
+		"Text": "2005-03-16",
+		"Count": "01"
+	},
+	"Bug": [
+		"82534"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-misc/curl",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "7.13.1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "7.13.1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    curl is a command line tool for transferring files via many\n    different protocols.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    curl fails to properly check boundaries when handling NTLM\n    authentication.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    With a malicious server an attacker could send a carefully crafted\n    NTLM response to a connecting client leading to the execution of\n    arbitrary code with the permissions of the user running curl.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Disable NTLM authentication by not using the --anyauth or --ntlm\n    options.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All curl users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/curl-7.13.1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2005-0490",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0490"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    vorlon078\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-03-12T16:36:42Z"
+		},
+		{
+			"Text": "\n    lewk\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-03-12T17:56:09Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-03-14T05:48:14Z"
+		}
+	]
 }

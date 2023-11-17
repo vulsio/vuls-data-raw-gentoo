@@ -1,158 +1,158 @@
 {
-  "ID": "200805-16",
-  "Title": "OpenOffice.org: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities have been reported in OpenOffice.org, possibly\n    allowing for user-assisted execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "openoffice openoffice-bin",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-05-14",
-  "Revised": {
-    "Text": "2008-05-14",
-    "Count": "02"
-  },
-  "Bug": [
-    "218080"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-office/openoffice",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.4.0",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.4.0",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-office/openoffice-bin",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.4.0",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.4.0",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    OpenOffice.org is an open source office productivity suite, including\n    word processing, spreadsheet, presentation, drawing, data charting,\n    formula editing, and file conversion facilities.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    iDefense Labs reported multiple vulnerabilities in OpenOffice.org:\n    </p>\n    <ul>\n    <li>\n    multiple heap-based buffer overflows when parsing the \"Attribute\" and\n    \"Font\" Description records of Quattro Pro (QPRO) files\n    (CVE-2007-5745),\n    </li>\n    <li>\n    an integer overflow when parsing the EMR_STRETCHBLT record of an EMF\n    file, resulting in a heap-based buffer overflow (CVE-2007-5746),\n    </li>\n    <li>\n    an integer underflow when parsing Quattro Pro (QPRO) files, resulting\n    in an excessive loop and a stack-based buffer overflow\n    (CVE-2007-5747),\n    </li>\n    <li>\n    and a heap-based buffer overflow when parsing the\n    \"DocumentSummaryInformation\" stream in an OLE file (CVE-2008-0320).\n    </li>\n    </ul>\n    <p>\n    Furthermore, Will Drewry (Google Security) reported vulnerabilities in\n    the memory management of the International Components for Unicode\n    (CVE-2007-4770, CVE-2007-4771), which was resolved with GLSA 200803-20.\n    However, the binary version of OpenOffice.org uses an internal copy of\n    said library.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted\n    document, possibly resulting in the remote execution of arbitrary code\n    with the privileges of the user running OpenOffice.org.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All OpenOffice.org users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All OpenOffice.org binary users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-office/openoffice-2.4.0\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-office/openoffice-bin-2.4.0\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-4770",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4770"
-      },
-      {
-        "Text": "CVE-2007-4771",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4771"
-      },
-      {
-        "Text": "CVE-2007-5745",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5745"
-      },
-      {
-        "Text": "CVE-2007-5746",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5746"
-      },
-      {
-        "Text": "CVE-2007-5747",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5747"
-      },
-      {
-        "Text": "CVE-2008-0320",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0320"
-      },
-      {
-        "Text": "GLSA 200803-20",
-        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200803-20.xml"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-04-29T12:59:56Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-05-08T17:40:20Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-05-08T17:40:49Z"
-    }
-  ]
+	"ID": "200805-16",
+	"Title": "OpenOffice.org: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities have been reported in OpenOffice.org, possibly\n    allowing for user-assisted execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "openoffice openoffice-bin",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-05-14",
+	"Revised": {
+		"Text": "2008-05-14",
+		"Count": "02"
+	},
+	"Bug": [
+		"218080"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-office/openoffice",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.4.0",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.4.0",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-office/openoffice-bin",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.4.0",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.4.0",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    OpenOffice.org is an open source office productivity suite, including\n    word processing, spreadsheet, presentation, drawing, data charting,\n    formula editing, and file conversion facilities.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    iDefense Labs reported multiple vulnerabilities in OpenOffice.org:\n    </p>\n    <ul>\n    <li>\n    multiple heap-based buffer overflows when parsing the \"Attribute\" and\n    \"Font\" Description records of Quattro Pro (QPRO) files\n    (CVE-2007-5745),\n    </li>\n    <li>\n    an integer overflow when parsing the EMR_STRETCHBLT record of an EMF\n    file, resulting in a heap-based buffer overflow (CVE-2007-5746),\n    </li>\n    <li>\n    an integer underflow when parsing Quattro Pro (QPRO) files, resulting\n    in an excessive loop and a stack-based buffer overflow\n    (CVE-2007-5747),\n    </li>\n    <li>\n    and a heap-based buffer overflow when parsing the\n    \"DocumentSummaryInformation\" stream in an OLE file (CVE-2008-0320).\n    </li>\n    </ul>\n    <p>\n    Furthermore, Will Drewry (Google Security) reported vulnerabilities in\n    the memory management of the International Components for Unicode\n    (CVE-2007-4770, CVE-2007-4771), which was resolved with GLSA 200803-20.\n    However, the binary version of OpenOffice.org uses an internal copy of\n    said library.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted\n    document, possibly resulting in the remote execution of arbitrary code\n    with the privileges of the user running OpenOffice.org.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All OpenOffice.org users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All OpenOffice.org binary users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-office/openoffice-2.4.0\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-office/openoffice-bin-2.4.0\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-4770",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4770"
+			},
+			{
+				"Text": "CVE-2007-4771",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4771"
+			},
+			{
+				"Text": "CVE-2007-5745",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5745"
+			},
+			{
+				"Text": "CVE-2007-5746",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5746"
+			},
+			{
+				"Text": "CVE-2007-5747",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5747"
+			},
+			{
+				"Text": "CVE-2008-0320",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0320"
+			},
+			{
+				"Text": "GLSA 200803-20",
+				"Link": "https://www.gentoo.org/security/en/glsa/glsa-200803-20.xml"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-04-29T12:59:56Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-05-08T17:40:20Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-05-08T17:40:49Z"
+		}
+	]
 }

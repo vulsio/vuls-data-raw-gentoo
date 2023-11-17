@@ -1,137 +1,137 @@
 {
-  "ID": "200609-07",
-  "Title": "LibXfont, monolithic X.org: Multiple integer overflows",
-  "Synopsis": "\n    Some buffer overflows were discovered in the CID font parser, potentially\n    resulting in the execution of arbitrary code with elevated privileges.\n  ",
-  "Product": {
-    "Text": "libxfont",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-09-13",
-  "Revised": {
-    "Text": "2006-09-13",
-    "Count": "01"
-  },
-  "Bug": [
-    "145513"
-  ],
-  "Access": "local and remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "x11-libs/libXfont",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.2.1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.2.1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "x11-base/xorg-x11",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "7.0",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "7.0",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    libXfont is the X.Org Xfont library, some parts are based on the\n    FreeType code base.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Several integer overflows have been found in the CID font parser.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker could exploit this vulnerability by enticing a user\n    to load a malicious font file resulting in the execution of arbitrary\n    code with the permissions of the user running the X server which\n    typically is the root user. A local user could exploit this\n    vulnerability to gain elevated privileges.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Disable CID-encoded Type 1 fonts by removing the \"type1\" module and\n    replacing it with the \"freetype\" module in xorg.conf.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All libXfont users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All monolithic X.org users are advised to migrate to modular X.org.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-libs/libXfont-1.2.1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-3739",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=2006-3739"
-      },
-      {
-        "Text": "CVE-2006-3740",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=2006-3740"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    frilled\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-09-12T16:30:32Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-09-12T18:16:51Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-09-13T08:07:36Z"
-    }
-  ]
+	"ID": "200609-07",
+	"Title": "LibXfont, monolithic X.org: Multiple integer overflows",
+	"Synopsis": "\n    Some buffer overflows were discovered in the CID font parser, potentially\n    resulting in the execution of arbitrary code with elevated privileges.\n  ",
+	"Product": {
+		"Text": "libxfont",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-09-13",
+	"Revised": {
+		"Text": "2006-09-13",
+		"Count": "01"
+	},
+	"Bug": [
+		"145513"
+	],
+	"Access": "local and remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "x11-libs/libXfont",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.2.1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.2.1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "x11-base/xorg-x11",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "7.0",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "7.0",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    libXfont is the X.Org Xfont library, some parts are based on the\n    FreeType code base.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Several integer overflows have been found in the CID font parser.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker could exploit this vulnerability by enticing a user\n    to load a malicious font file resulting in the execution of arbitrary\n    code with the permissions of the user running the X server which\n    typically is the root user. A local user could exploit this\n    vulnerability to gain elevated privileges.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Disable CID-encoded Type 1 fonts by removing the \"type1\" module and\n    replacing it with the \"freetype\" module in xorg.conf.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All libXfont users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All monolithic X.org users are advised to migrate to modular X.org.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-libs/libXfont-1.2.1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-3739",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=2006-3739"
+			},
+			{
+				"Text": "CVE-2006-3740",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=2006-3740"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    frilled\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-09-12T16:30:32Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-09-12T18:16:51Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-09-13T08:07:36Z"
+		}
+	]
 }

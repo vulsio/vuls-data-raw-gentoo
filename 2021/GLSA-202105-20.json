@@ -1,98 +1,98 @@
 {
-  "ID": "202105-20",
-  "Title": "Dnsmasq: DNS cache poisoning",
-  "Synopsis": "Use of insufficient randomness in Dnsmasq might lead to DNS Cache\n    Poisoning.\n  ",
-  "Product": {
-    "Text": "dnsmasq",
-    "Type": "ebuild"
-  },
-  "Announced": "2021-05-26",
-  "Revised": {
-    "Text": "2021-05-26",
-    "Count": "1"
-  },
-  "Bug": [
-    "782130"
-  ],
-  "Access": "local, remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-dns/dnsmasq",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.85",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.85",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Dnsmasq is a lightweight and easily-configurable DNS forwarder and DHCP\n      server.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>It was discovered that Dnsmasq, when configured with\n      --server=&lt;address&gt;@<interface> or similar (e.g. through dbus),\n        configured a fixed UDP port for all outgoing queries to the specified\n        upstream DNS server.\n      </interface>\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "low",
-    "Text": "\n    <p>An attacker, by sending malicious crafted DNS responses, could perform a\n      DNS Cache Poisoning attack.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All Dnsmasq users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-dns/dnsmasq-2.85\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2021-3448",
-        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-3448"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "whissi",
-      "Tag": "requester",
-      "Timestamp": "2021-05-25T13:34:22Z"
-    },
-    {
-      "Text": "whissi",
-      "Tag": "submitter",
-      "Timestamp": "2021-05-26T08:39:11Z"
-    }
-  ]
+	"ID": "202105-20",
+	"Title": "Dnsmasq: DNS cache poisoning",
+	"Synopsis": "Use of insufficient randomness in Dnsmasq might lead to DNS Cache\n    Poisoning.\n  ",
+	"Product": {
+		"Text": "dnsmasq",
+		"Type": "ebuild"
+	},
+	"Announced": "2021-05-26",
+	"Revised": {
+		"Text": "2021-05-26",
+		"Count": "1"
+	},
+	"Bug": [
+		"782130"
+	],
+	"Access": "local, remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-dns/dnsmasq",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.85",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.85",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Dnsmasq is a lightweight and easily-configurable DNS forwarder and DHCP\n      server.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>It was discovered that Dnsmasq, when configured with\n      --server=&lt;address&gt;@<interface> or similar (e.g. through dbus),\n        configured a fixed UDP port for all outgoing queries to the specified\n        upstream DNS server.\n      </interface>\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "low",
+		"Text": "\n    <p>An attacker, by sending malicious crafted DNS responses, could perform a\n      DNS Cache Poisoning attack.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All Dnsmasq users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-dns/dnsmasq-2.85\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2021-3448",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-3448"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "whissi",
+			"Tag": "requester",
+			"Timestamp": "2021-05-25T13:34:22Z"
+		},
+		{
+			"Text": "whissi",
+			"Tag": "submitter",
+			"Timestamp": "2021-05-26T08:39:11Z"
+		}
+	]
 }

@@ -1,103 +1,103 @@
 {
-  "ID": "200709-02",
-  "Title": "KVIrc: Remote arbitrary code execution",
-  "Synopsis": "\n    A vulnerability has been discovered in KVIrc, allowing for the remote\n    execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "kvirc",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-09-13",
-  "Revised": {
-    "Text": "2007-09-13",
-    "Count": "01"
-  },
-  "Bug": [
-    "183174"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-irc/kvirc",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.2.6_pre20070714",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.2.6_pre20070714",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    KVIrc is a free portable IRC client based on Qt.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Stefan Cornelius from Secunia Research discovered that the\n    \"parseIrcUrl()\" function in file src/kvirc/kernel/kvi_ircurl.cpp does\n    not properly sanitise parts of the URI when building the command for\n    KVIrc's internal script system.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted\n    irc:// URI, possibly leading to the remote execution of arbitrary code\n    with the privileges of the user running KVIrc. Successful exploitation\n    requires that KVIrc is registered as the default handler for irc:// or\n    similar URIs.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All KVIrc users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-irc/kvirc-3.2.6_pre20070714\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-2951",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2951"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-08-06T14:12:16Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-08-19T18:59:16Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-08-20T11:26:17Z"
-    }
-  ]
+	"ID": "200709-02",
+	"Title": "KVIrc: Remote arbitrary code execution",
+	"Synopsis": "\n    A vulnerability has been discovered in KVIrc, allowing for the remote\n    execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "kvirc",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-09-13",
+	"Revised": {
+		"Text": "2007-09-13",
+		"Count": "01"
+	},
+	"Bug": [
+		"183174"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-irc/kvirc",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.2.6_pre20070714",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.2.6_pre20070714",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    KVIrc is a free portable IRC client based on Qt.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Stefan Cornelius from Secunia Research discovered that the\n    \"parseIrcUrl()\" function in file src/kvirc/kernel/kvi_ircurl.cpp does\n    not properly sanitise parts of the URI when building the command for\n    KVIrc's internal script system.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted\n    irc:// URI, possibly leading to the remote execution of arbitrary code\n    with the privileges of the user running KVIrc. Successful exploitation\n    requires that KVIrc is registered as the default handler for irc:// or\n    similar URIs.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All KVIrc users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-irc/kvirc-3.2.6_pre20070714\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-2951",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2951"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-08-06T14:12:16Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-08-19T18:59:16Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-08-20T11:26:17Z"
+		}
+	]
 }

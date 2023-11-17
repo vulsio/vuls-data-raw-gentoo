@@ -1,123 +1,123 @@
 {
-  "ID": "200606-13",
-  "Title": "MySQL: SQL Injection",
-  "Synopsis": "\n    MySQL is vulnerable to an SQL Injection flaw in the multi-byte encoding\n    process.\n  ",
-  "Product": {
-    "Text": "MySQL",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-06-11",
-  "Revised": {
-    "Text": "2006-12-13",
-    "Count": "04"
-  },
-  "Bug": [
-    "135076"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-db/mysql",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "5.0.22",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "4.1.20",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "4.1.21",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "4.1.22",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "4.1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "5.0.22",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    MySQL is a popular multi-threaded, multi-user SQL server.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    MySQL is vulnerable to an injection flaw in mysql_real_escape() when\n    used with multi-byte characters.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    Due to a flaw in the multi-byte character process, an attacker is still\n    able to inject arbitary SQL statements into the MySQL server for\n    execution.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There are a few workarounds available: NO_BACKSLASH_ESCAPES mode as a\n    workaround for a bug in mysql_real_escape_string(): SET\n    sql_mode='NO_BACKSLASH_ESCAPES'; SET GLOBAL\n    sql_mode='NO_BACKSLASH_ESCAPES'; and server command line options:\n    --sql-mode=NO_BACKSLASH_ESCAPES.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All MySQL users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-db/mysql-4.1.20\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-2753",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2753"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-06-01T07:09:29Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-06-05T19:55:54Z"
-    },
-    {
-      "Text": "\n    daxomatic\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-06-07T09:13:55Z"
-    }
-  ]
+	"ID": "200606-13",
+	"Title": "MySQL: SQL Injection",
+	"Synopsis": "\n    MySQL is vulnerable to an SQL Injection flaw in the multi-byte encoding\n    process.\n  ",
+	"Product": {
+		"Text": "MySQL",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-06-11",
+	"Revised": {
+		"Text": "2006-12-13",
+		"Count": "04"
+	},
+	"Bug": [
+		"135076"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-db/mysql",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "5.0.22",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "4.1.20",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "4.1.21",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "4.1.22",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "4.1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "5.0.22",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    MySQL is a popular multi-threaded, multi-user SQL server.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    MySQL is vulnerable to an injection flaw in mysql_real_escape() when\n    used with multi-byte characters.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    Due to a flaw in the multi-byte character process, an attacker is still\n    able to inject arbitary SQL statements into the MySQL server for\n    execution.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There are a few workarounds available: NO_BACKSLASH_ESCAPES mode as a\n    workaround for a bug in mysql_real_escape_string(): SET\n    sql_mode='NO_BACKSLASH_ESCAPES'; SET GLOBAL\n    sql_mode='NO_BACKSLASH_ESCAPES'; and server command line options:\n    --sql-mode=NO_BACKSLASH_ESCAPES.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All MySQL users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-db/mysql-4.1.20\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-2753",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2753"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-06-01T07:09:29Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-06-05T19:55:54Z"
+		},
+		{
+			"Text": "\n    daxomatic\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-06-07T09:13:55Z"
+		}
+	]
 }

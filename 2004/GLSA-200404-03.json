@@ -1,115 +1,115 @@
 {
-  "ID": "200404-03",
-  "Title": "Tcpdump Vulnerabilities in ISAKMP Parsing",
-  "Synopsis": "\n    There are multiple vulnerabilities in tcpdump and libpcap related to\n    parsing of ISAKMP packets.\n  ",
-  "Product": {
-    "Text": "tcpdump",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-03-31",
-  "Revised": {
-    "Text": "2004-03-31",
-    "Count": "01"
-  },
-  "Bug": [
-    "38206",
-    "46258"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-analyzer/tcpdump",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.8.3-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.8.1",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "net-libs/libpcap",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.8.3-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.8.1-r1",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Tcpdump is a program for monitoring IP network traffic. Libpcap is a\n    supporting library which is responsibile for capturing packets off a network\n    interface.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    There are two specific vulnerabilities in tcpdump, outlined in [ reference\n    1 ]. In the first scenario, an attacker may send a specially-crafted ISAKMP\n    Delete packet which causes tcpdump to read past the end of its buffer. In\n    the second scenario, an attacker may send an ISAKMP packet with the wrong\n    payload length, again causing tcpdump to read past the end of a buffer.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    Remote attackers could potentially cause tcpdump to crash or execute\n    arbitrary code as the 'pcap' user.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time. All tcpdump users are encouraged\n    to upgrade to the latest available version.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All tcpdump users should upgrade to the latest available version.\n    ADDITIONALLY, the net-libs/libpcap package should be upgraded.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n\n    # emerge -pv \">=net-libs/libpcap-0.8.3-r1\" \">=net-analyzer/tcpdump-3.8.3-r1\"\n    # emerge \">=net-libs/libpcap-0.8.3-r1\" \">=net-analyzer/tcpdump-3.8.3-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "Rapid7 Advisory",
-        "Link": "https://www.rapid7.com/advisories/R7-0017.html"
-      },
-      {
-        "Text": "Red Hat Security Advisory",
-        "Link": "https://rhn.redhat.com/errata/RHSA-2004-008.html"
-      },
-      {
-        "Text": "CVE Advisory",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2003-0989"
-      }
-    ]
-  },
-  "Metadata": null
+	"ID": "200404-03",
+	"Title": "Tcpdump Vulnerabilities in ISAKMP Parsing",
+	"Synopsis": "\n    There are multiple vulnerabilities in tcpdump and libpcap related to\n    parsing of ISAKMP packets.\n  ",
+	"Product": {
+		"Text": "tcpdump",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-03-31",
+	"Revised": {
+		"Text": "2004-03-31",
+		"Count": "01"
+	},
+	"Bug": [
+		"38206",
+		"46258"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-analyzer/tcpdump",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.8.3-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.8.1",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "net-libs/libpcap",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.8.3-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.8.1-r1",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Tcpdump is a program for monitoring IP network traffic. Libpcap is a\n    supporting library which is responsibile for capturing packets off a network\n    interface.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    There are two specific vulnerabilities in tcpdump, outlined in [ reference\n    1 ]. In the first scenario, an attacker may send a specially-crafted ISAKMP\n    Delete packet which causes tcpdump to read past the end of its buffer. In\n    the second scenario, an attacker may send an ISAKMP packet with the wrong\n    payload length, again causing tcpdump to read past the end of a buffer.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    Remote attackers could potentially cause tcpdump to crash or execute\n    arbitrary code as the 'pcap' user.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time. All tcpdump users are encouraged\n    to upgrade to the latest available version.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All tcpdump users should upgrade to the latest available version.\n    ADDITIONALLY, the net-libs/libpcap package should be upgraded.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n\n    # emerge -pv \">=net-libs/libpcap-0.8.3-r1\" \">=net-analyzer/tcpdump-3.8.3-r1\"\n    # emerge \">=net-libs/libpcap-0.8.3-r1\" \">=net-analyzer/tcpdump-3.8.3-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "Rapid7 Advisory",
+				"Link": "https://www.rapid7.com/advisories/R7-0017.html"
+			},
+			{
+				"Text": "Red Hat Security Advisory",
+				"Link": "https://rhn.redhat.com/errata/RHSA-2004-008.html"
+			},
+			{
+				"Text": "CVE Advisory",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2003-0989"
+			}
+		]
+	},
+	"Metadata": null
 }

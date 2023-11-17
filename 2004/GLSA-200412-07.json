@@ -1,107 +1,107 @@
 {
-  "ID": "200412-07",
-  "Title": "file: Arbitrary code execution",
-  "Synopsis": "\n    The code for parsing ELF headers in file contains a flaw which may allow an\n    attacker to execute arbitrary code.\n  ",
-  "Product": {
-    "Text": "file",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-12-13",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "02"
-  },
-  "Bug": [
-    "72521"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sys-apps/file",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.12",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.12",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    file is a utility used to identify the type of a file.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    A possible stack overflow has been found in the ELF header parsing code\n    of file.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker may be able to create a specially crafted ELF file which,\n    when processed with file, may allow the execution of arbitrary code.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All file users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-apps/file-4.12\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "SecurityTracker Alert ID 1012433",
-        "Link": "http://securitytracker.com/id?1012433"
-      },
-      {
-        "Text": "CVE-2004-1304",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1304"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2004-12-11T10:27:20Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-12-11T10:27:27Z"
-    },
-    {
-      "Text": "\n    vorlon078\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-12-12T20:24:04Z"
-    }
-  ]
+	"ID": "200412-07",
+	"Title": "file: Arbitrary code execution",
+	"Synopsis": "\n    The code for parsing ELF headers in file contains a flaw which may allow an\n    attacker to execute arbitrary code.\n  ",
+	"Product": {
+		"Text": "file",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-12-13",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "02"
+	},
+	"Bug": [
+		"72521"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-apps/file",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.12",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.12",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    file is a utility used to identify the type of a file.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    A possible stack overflow has been found in the ELF header parsing code\n    of file.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker may be able to create a specially crafted ELF file which,\n    when processed with file, may allow the execution of arbitrary code.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All file users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-apps/file-4.12\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "SecurityTracker Alert ID 1012433",
+				"Link": "http://securitytracker.com/id?1012433"
+			},
+			{
+				"Text": "CVE-2004-1304",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1304"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2004-12-11T10:27:20Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-12-11T10:27:27Z"
+		},
+		{
+			"Text": "\n    vorlon078\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-12-12T20:24:04Z"
+		}
+	]
 }

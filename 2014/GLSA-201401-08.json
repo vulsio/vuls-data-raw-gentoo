@@ -1,113 +1,113 @@
 {
-  "ID": "201401-08",
-  "Title": "NTP: Traffic amplification",
-  "Synopsis": "NTP can be abused to amplify Denial of Service attack traffic.",
-  "Product": {
-    "Text": "",
-    "Type": "ebuild"
-  },
-  "Announced": "2014-01-16",
-  "Revised": {
-    "Text": "2014-01-16",
-    "Count": "1"
-  },
-  "Bug": [
-    "496776"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-misc/ntp",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.2.6_p5-r10",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.2.6_p5-r10",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>NTP is a protocol designed to synchronize the clocks of computers over a\n      network. The net-misc/ntp package contains the official reference\n      implementation by the NTP Project.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>ntpd is susceptible to a reflected Denial of Service attack. Please\n      review the CVE identifiers and references below for details.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>An unauthenticated remote attacker may conduct a distributed reflective\n      Denial of Service attack on another user via a vulnerable NTP server.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>We modified the default ntp configuration in =net-misc/ntp-4.2.6_p5-r10\n      and added “noquery” to the default restriction which disallows anyone\n      to query the ntpd status, including “monlist”.\n    </p>\n    \n    <p>If you use a non-default configuration, and provide a ntp service to\n      untrusted networks, we highly recommend you to revise your configuration\n      to disable mode 6 and 7 queries for any untrusted (public) network.\n    </p>\n    \n    <p>You can always enable these queries for specific trusted networks. For\n      more details please see the “Access Control Support” chapter in the\n      ntp.conf(5) man page.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All NTP users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "Note that the updated package contains a modified default configuration\n      only. You may need to modify your configuration further.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/ntp-4.2.6_p5-r10\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2013-5211",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5211"
-      },
-      {
-        "Text": "VU#348126",
-        "Link": "https://www.kb.cert.org/vuls/id/348126"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "requester",
-      "Timestamp": "2014-01-16T20:55:36Z"
-    },
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2014-01-16T22:31:29Z"
-    }
-  ]
+	"ID": "201401-08",
+	"Title": "NTP: Traffic amplification",
+	"Synopsis": "NTP can be abused to amplify Denial of Service attack traffic.",
+	"Product": {
+		"Text": "",
+		"Type": "ebuild"
+	},
+	"Announced": "2014-01-16",
+	"Revised": {
+		"Text": "2014-01-16",
+		"Count": "1"
+	},
+	"Bug": [
+		"496776"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-misc/ntp",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.2.6_p5-r10",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.2.6_p5-r10",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>NTP is a protocol designed to synchronize the clocks of computers over a\n      network. The net-misc/ntp package contains the official reference\n      implementation by the NTP Project.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>ntpd is susceptible to a reflected Denial of Service attack. Please\n      review the CVE identifiers and references below for details.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>An unauthenticated remote attacker may conduct a distributed reflective\n      Denial of Service attack on another user via a vulnerable NTP server.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>We modified the default ntp configuration in =net-misc/ntp-4.2.6_p5-r10\n      and added “noquery” to the default restriction which disallows anyone\n      to query the ntpd status, including “monlist”.\n    </p>\n    \n    <p>If you use a non-default configuration, and provide a ntp service to\n      untrusted networks, we highly recommend you to revise your configuration\n      to disable mode 6 and 7 queries for any untrusted (public) network.\n    </p>\n    \n    <p>You can always enable these queries for specific trusted networks. For\n      more details please see the “Access Control Support” chapter in the\n      ntp.conf(5) man page.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All NTP users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "Note that the updated package contains a modified default configuration\n      only. You may need to modify your configuration further.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/ntp-4.2.6_p5-r10\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2013-5211",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2013-5211"
+			},
+			{
+				"Text": "VU#348126",
+				"Link": "https://www.kb.cert.org/vuls/id/348126"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "requester",
+			"Timestamp": "2014-01-16T20:55:36Z"
+		},
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2014-01-16T22:31:29Z"
+		}
+	]
 }

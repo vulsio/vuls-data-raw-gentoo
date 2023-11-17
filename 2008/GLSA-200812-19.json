@@ -1,108 +1,108 @@
 {
-  "ID": "200812-19",
-  "Title": "PowerDNS: Multiple vulnerabilities",
-  "Synopsis": "\n    Two vulnerabilities have been discovered in PowerDNS, possibly leading to a\n    Denial of Service and easing cache poisoning attacks.\n  ",
-  "Product": {
-    "Text": "pdns",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-12-19",
-  "Revised": {
-    "Text": "2008-12-19",
-    "Count": "01"
-  },
-  "Bug": [
-    "234032",
-    "247079"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-dns/pdns",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.9.21.2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.9.21.2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    The PowerDNS Nameserver is an authoritative-only nameserver which uses\n    a flexible backend architecture.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Daniel Drown reported an error when receiving a HINFO CH query\n    (CVE-2008-5277). Brian J. Dowling of Simplicity Communications\n    discovered a previously unknown security implication of the PowerDNS\n    behavior to not respond to certain queries it considers malformed\n    (CVE-2008-3337).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could send specially crafted queries to cause a\n    Denial of Service. The second vulnerability in itself does not pose a\n    security risk to PowerDNS Nameserver. However, not answering a query\n    for an invalid DNS record within a valid domain allows for a larger\n    spoofing window on third-party nameservers for domains being hosted by\n    PowerDNS Nameserver itself.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All PowerDNS users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dns/pdns-2.9.21.2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-3337",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3337"
-      },
-      {
-        "Text": "CVE-2008-5277",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5277"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-09-06T21:05:59Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-09-06T21:06:12Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-09-10T17:38:51Z"
-    }
-  ]
+	"ID": "200812-19",
+	"Title": "PowerDNS: Multiple vulnerabilities",
+	"Synopsis": "\n    Two vulnerabilities have been discovered in PowerDNS, possibly leading to a\n    Denial of Service and easing cache poisoning attacks.\n  ",
+	"Product": {
+		"Text": "pdns",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-12-19",
+	"Revised": {
+		"Text": "2008-12-19",
+		"Count": "01"
+	},
+	"Bug": [
+		"234032",
+		"247079"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-dns/pdns",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.9.21.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.9.21.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    The PowerDNS Nameserver is an authoritative-only nameserver which uses\n    a flexible backend architecture.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Daniel Drown reported an error when receiving a HINFO CH query\n    (CVE-2008-5277). Brian J. Dowling of Simplicity Communications\n    discovered a previously unknown security implication of the PowerDNS\n    behavior to not respond to certain queries it considers malformed\n    (CVE-2008-3337).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could send specially crafted queries to cause a\n    Denial of Service. The second vulnerability in itself does not pose a\n    security risk to PowerDNS Nameserver. However, not answering a query\n    for an invalid DNS record within a valid domain allows for a larger\n    spoofing window on third-party nameservers for domains being hosted by\n    PowerDNS Nameserver itself.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All PowerDNS users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dns/pdns-2.9.21.2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-3337",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3337"
+			},
+			{
+				"Text": "CVE-2008-5277",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5277"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-09-06T21:05:59Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-09-06T21:06:12Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-09-10T17:38:51Z"
+		}
+	]
 }

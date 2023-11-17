@@ -1,132 +1,132 @@
 {
-  "ID": "200607-04",
-  "Title": "PostgreSQL: SQL injection",
-  "Synopsis": "\n    A flaw in the multibyte character handling allows execution of arbitrary\n    SQL statements.\n  ",
-  "Product": {
-    "Text": "postgresql",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-07-09",
-  "Revised": {
-    "Text": "2007-06-26",
-    "Count": "03"
-  },
-  "Bug": [
-    "134168"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-db/postgresql",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "8.0.8",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "7.4*",
-            "Range": "eq",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "8.0.8",
-            "Range": "lt",
-            "Slot": ""
-          },
-          {
-            "Text": "7.4.13",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    PostgreSQL is an open source object-relational database management\n    system.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    PostgreSQL contains a flaw in the string parsing routines that allows\n    certain backslash-escaped characters to be bypassed with some multibyte\n    character encodings. This vulnerability was discovered by Akio Ishida\n    and Yasuo Ohgaki.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker could execute arbitrary SQL statements on the PostgreSQL\n    server. Be aware that web applications using PostgreSQL as a database\n    back-end might be used to exploit this vulnerability.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All PostgreSQL users should upgrade to the latest version in the\n    respective branch they are using:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    Note: While a fix exists for the 7.3 branch it doesn't currently work\n    on Gentoo. All 7.3.x users of PostgreSQL should consider updating their\n    installations to the 7.4 (or higher) branch as soon as possible!\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose dev-db/postgresql"
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "PostgreSQL technical information",
-        "Link": "https://www.postgresql.org/docs/techdocs.50"
-      },
-      {
-        "Text": "CVE-2006-2313",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2313"
-      },
-      {
-        "Text": "CVE-2006-2314",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2314"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-06-01T07:08:33Z"
-    },
-    {
-      "Text": "\n    frilled\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-06-07T19:43:38Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-07-09T16:30:11Z"
-    }
-  ]
+	"ID": "200607-04",
+	"Title": "PostgreSQL: SQL injection",
+	"Synopsis": "\n    A flaw in the multibyte character handling allows execution of arbitrary\n    SQL statements.\n  ",
+	"Product": {
+		"Text": "postgresql",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-07-09",
+	"Revised": {
+		"Text": "2007-06-26",
+		"Count": "03"
+	},
+	"Bug": [
+		"134168"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-db/postgresql",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "8.0.8",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "7.4*",
+						"Range": "eq",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "8.0.8",
+						"Range": "lt",
+						"Slot": ""
+					},
+					{
+						"Text": "7.4.13",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    PostgreSQL is an open source object-relational database management\n    system.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    PostgreSQL contains a flaw in the string parsing routines that allows\n    certain backslash-escaped characters to be bypassed with some multibyte\n    character encodings. This vulnerability was discovered by Akio Ishida\n    and Yasuo Ohgaki.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker could execute arbitrary SQL statements on the PostgreSQL\n    server. Be aware that web applications using PostgreSQL as a database\n    back-end might be used to exploit this vulnerability.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All PostgreSQL users should upgrade to the latest version in the\n    respective branch they are using:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    Note: While a fix exists for the 7.3 branch it doesn't currently work\n    on Gentoo. All 7.3.x users of PostgreSQL should consider updating their\n    installations to the 7.4 (or higher) branch as soon as possible!\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose dev-db/postgresql"
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "PostgreSQL technical information",
+				"Link": "https://www.postgresql.org/docs/techdocs.50"
+			},
+			{
+				"Text": "CVE-2006-2313",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2313"
+			},
+			{
+				"Text": "CVE-2006-2314",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2314"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-06-01T07:08:33Z"
+		},
+		{
+			"Text": "\n    frilled\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-06-07T19:43:38Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-07-09T16:30:11Z"
+		}
+	]
 }

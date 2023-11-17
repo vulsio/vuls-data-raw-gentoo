@@ -1,129 +1,129 @@
 {
-  "ID": "201701-29",
-  "Title": "Vim, gVim: Remote execution of arbitrary code",
-  "Synopsis": "A vulnerability has been found in Vim and gVim concerning how\n    certain modeline options are treated.\n  ",
-  "Product": {
-    "Text": "vim, gvim",
-    "Type": "ebuild"
-  },
-  "Announced": "2017-01-11",
-  "Revised": {
-    "Text": "2017-01-11",
-    "Count": "1"
-  },
-  "Bug": [
-    "600650"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-editors/vim",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "8.0.0106",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "8.0.0106",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-editors/gvim",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "8.0.0106",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "8.0.0106",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Vim is an efficient, highly configurable improved version of the classic\n      ‘vi’ text editor. gVim is the GUI version of Vim.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Vim and gVim do not properly validate values for the ‘filetype’,\n      ‘syntax’, and ‘keymap’ options.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted file\n      using Vim/gVim with certain modeline options enabled possibly resulting\n      in execution of arbitrary code with the privileges of the process.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>Disabling modeline support in .vimrc by adding “set nomodeline” will\n      prevent exploitation of this flaw. By default, modeline is enabled for\n      ordinary users but disabled for root.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All Vim users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "All gVim users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-editors/vim-8.0.0106\"\n    ",
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-editors/gvim-8.0.0106\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2016-1248",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-1248"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "whissi",
-      "Tag": "requester",
-      "Timestamp": "2017-01-09T17:07:43Z"
-    },
-    {
-      "Text": "whissi",
-      "Tag": "submitter",
-      "Timestamp": "2017-01-11T12:33:33Z"
-    }
-  ]
+	"ID": "201701-29",
+	"Title": "Vim, gVim: Remote execution of arbitrary code",
+	"Synopsis": "A vulnerability has been found in Vim and gVim concerning how\n    certain modeline options are treated.\n  ",
+	"Product": {
+		"Text": "vim, gvim",
+		"Type": "ebuild"
+	},
+	"Announced": "2017-01-11",
+	"Revised": {
+		"Text": "2017-01-11",
+		"Count": "1"
+	},
+	"Bug": [
+		"600650"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-editors/vim",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "8.0.0106",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "8.0.0106",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-editors/gvim",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "8.0.0106",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "8.0.0106",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Vim is an efficient, highly configurable improved version of the classic\n      ‘vi’ text editor. gVim is the GUI version of Vim.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Vim and gVim do not properly validate values for the ‘filetype’,\n      ‘syntax’, and ‘keymap’ options.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could entice a user to open a specially crafted file\n      using Vim/gVim with certain modeline options enabled possibly resulting\n      in execution of arbitrary code with the privileges of the process.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>Disabling modeline support in .vimrc by adding “set nomodeline” will\n      prevent exploitation of this flaw. By default, modeline is enabled for\n      ordinary users but disabled for root.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All Vim users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "All gVim users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-editors/vim-8.0.0106\"\n    ",
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-editors/gvim-8.0.0106\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2016-1248",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-1248"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "whissi",
+			"Tag": "requester",
+			"Timestamp": "2017-01-09T17:07:43Z"
+		},
+		{
+			"Text": "whissi",
+			"Tag": "submitter",
+			"Timestamp": "2017-01-11T12:33:33Z"
+		}
+	]
 }

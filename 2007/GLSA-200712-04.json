@@ -1,103 +1,103 @@
 {
-  "ID": "200712-04",
-  "Title": "Cairo: User-assisted execution of arbitrary code",
-  "Synopsis": "\n    Multiple integer overflows were discovered in Cairo, possibly leading to\n    the execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "cairo",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-12-09",
-  "Revised": {
-    "Text": "2007-12-09",
-    "Count": "01"
-  },
-  "Bug": [
-    "200350"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "x11-libs/cairo",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.4.12",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.4.12",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Cairo is a 2D vector graphics library with cross-device output support.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Multiple integer overflows were reported, one of which Peter Valchev\n    (Google Security) found to be leading to a heap-based buffer overflow\n    in the cairo_image_surface_create_from_png() function that processes\n    PNG images.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to view or process a specially\n    crafted PNG image file in an application linked against Cairo, possibly\n    leading to the execution of arbitrary code with the privileges of the\n    user running the application.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Cairo users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-libs/cairo-1.4.12\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-5503",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5503"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-12-04T23:43:52Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-12-05T01:36:20Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-12-05T01:36:55Z"
-    }
-  ]
+	"ID": "200712-04",
+	"Title": "Cairo: User-assisted execution of arbitrary code",
+	"Synopsis": "\n    Multiple integer overflows were discovered in Cairo, possibly leading to\n    the execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "cairo",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-12-09",
+	"Revised": {
+		"Text": "2007-12-09",
+		"Count": "01"
+	},
+	"Bug": [
+		"200350"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "x11-libs/cairo",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.4.12",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.4.12",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Cairo is a 2D vector graphics library with cross-device output support.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Multiple integer overflows were reported, one of which Peter Valchev\n    (Google Security) found to be leading to a heap-based buffer overflow\n    in the cairo_image_surface_create_from_png() function that processes\n    PNG images.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to view or process a specially\n    crafted PNG image file in an application linked against Cairo, possibly\n    leading to the execution of arbitrary code with the privileges of the\n    user running the application.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Cairo users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-libs/cairo-1.4.12\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-5503",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5503"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-12-04T23:43:52Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-12-05T01:36:20Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-12-05T01:36:55Z"
+		}
+	]
 }

@@ -1,103 +1,103 @@
 {
-  "ID": "200611-13",
-  "Title": "Avahi: \"netlink\" message vulnerability",
-  "Synopsis": "\n    Avahi fails to verify the origin of netlink messages, which could allow\n    local users to spoof network changes.\n  ",
-  "Product": {
-    "Text": "avahi",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-11-20",
-  "Revised": {
-    "Text": "2006-11-20",
-    "Count": "01"
-  },
-  "Bug": [
-    "154322"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-dns/avahi",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.6.15",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.6.15",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Avahi is a system that facilitates service discovery on a local\n    network.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Avahi does not check that the netlink messages come from the kernel\n    instead of a user-space process.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local attacker could exploit this vulnerability by crafting malicious\n    netlink messages and trick Avahi to react to fake network changes. This\n    could lead users to connect to untrusted services without knowing.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Avahi users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dns/avahi-0.6.15\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-5461",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5461"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    vorlon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-11-16T11:46:25Z"
-    },
-    {
-      "Text": "\n    vorlon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-11-16T11:47:51Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-11-20T08:40:32Z"
-    }
-  ]
+	"ID": "200611-13",
+	"Title": "Avahi: \"netlink\" message vulnerability",
+	"Synopsis": "\n    Avahi fails to verify the origin of netlink messages, which could allow\n    local users to spoof network changes.\n  ",
+	"Product": {
+		"Text": "avahi",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-11-20",
+	"Revised": {
+		"Text": "2006-11-20",
+		"Count": "01"
+	},
+	"Bug": [
+		"154322"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-dns/avahi",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.6.15",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.6.15",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Avahi is a system that facilitates service discovery on a local\n    network.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Avahi does not check that the netlink messages come from the kernel\n    instead of a user-space process.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local attacker could exploit this vulnerability by crafting malicious\n    netlink messages and trick Avahi to react to fake network changes. This\n    could lead users to connect to untrusted services without knowing.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Avahi users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dns/avahi-0.6.15\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-5461",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5461"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    vorlon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-11-16T11:46:25Z"
+		},
+		{
+			"Text": "\n    vorlon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-11-16T11:47:51Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-11-20T08:40:32Z"
+		}
+	]
 }

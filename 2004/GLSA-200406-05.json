@@ -1,129 +1,129 @@
 {
-  "ID": "200406-05",
-  "Title": "Apache: Buffer overflow in mod_ssl",
-  "Synopsis": "\n    A bug in mod_ssl may allow a remote attacker to execute remote code when\n    Apache is configured a certain way.\n  ",
-  "Product": {
-    "Text": "Apache",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-06-09",
-  "Revised": {
-    "Text": "2007-12-30",
-    "Count": "03"
-  },
-  "Bug": [
-    "51368"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-www/mod_ssl",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.8.18",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.8.18",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "www-servers/apache",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.0",
-            "Range": "lt",
-            "Slot": ""
-          },
-          {
-            "Text": "2.0.49-r3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.0.49-r2",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Apache is the most popular Web server on the Internet. mod_ssl provides\n    Secure Sockets Layer encryption and authentication to Apache 1.3. Apache 2\n    contains the functionality of mod_ssl.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    A bug in the function ssl_util_uuencode_binary in ssl_util.c may lead to a\n    remote buffer overflow on a server configured to use FakeBasicAuth that\n    will trust a client certificate with an issuing CA with a subject DN longer\n    than 6k.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    Given the right server configuration, an attacker could cause a Denial of\n    Service or execute code as the user running Apache, usually\n    \"apache\". It is thought to be impossible to exploit this to\n    execute code on the x86 platform, but the possibility for other platforms\n    is unknown. This does not preclude a DoS on x86 systems.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    A server should not be vulnerable if it is not configured to use\n    FakeBasicAuth and to trust a client CA with a long subject DN.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    Apache 1.x users should upgrade to the latest version of mod_ssl:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    Apache 2.x users should upgrade to the latest version of Apache:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n\n    # emerge -pv \">=net-www/mod_ssl-2.8.18\"\n    # emerge \">=net-www/mod_ssl-2.8.18\"",
-      "\n    # emerge sync\n\n    # emerge -pv \">=www-servers/apache-2.0.49-r3\"\n    # emerge \">=www-servers/apache-2.0.49-r3\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2004-0488",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0488"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    dmargoli\n  ",
-      "Tag": "submitter",
-      "Timestamp": ""
-    }
-  ]
+	"ID": "200406-05",
+	"Title": "Apache: Buffer overflow in mod_ssl",
+	"Synopsis": "\n    A bug in mod_ssl may allow a remote attacker to execute remote code when\n    Apache is configured a certain way.\n  ",
+	"Product": {
+		"Text": "Apache",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-06-09",
+	"Revised": {
+		"Text": "2007-12-30",
+		"Count": "03"
+	},
+	"Bug": [
+		"51368"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-www/mod_ssl",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.8.18",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.8.18",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "www-servers/apache",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.0",
+						"Range": "lt",
+						"Slot": ""
+					},
+					{
+						"Text": "2.0.49-r3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.0.49-r2",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Apache is the most popular Web server on the Internet. mod_ssl provides\n    Secure Sockets Layer encryption and authentication to Apache 1.3. Apache 2\n    contains the functionality of mod_ssl.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    A bug in the function ssl_util_uuencode_binary in ssl_util.c may lead to a\n    remote buffer overflow on a server configured to use FakeBasicAuth that\n    will trust a client certificate with an issuing CA with a subject DN longer\n    than 6k.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    Given the right server configuration, an attacker could cause a Denial of\n    Service or execute code as the user running Apache, usually\n    \"apache\". It is thought to be impossible to exploit this to\n    execute code on the x86 platform, but the possibility for other platforms\n    is unknown. This does not preclude a DoS on x86 systems.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    A server should not be vulnerable if it is not configured to use\n    FakeBasicAuth and to trust a client CA with a long subject DN.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    Apache 1.x users should upgrade to the latest version of mod_ssl:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    Apache 2.x users should upgrade to the latest version of Apache:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n\n    # emerge -pv \">=net-www/mod_ssl-2.8.18\"\n    # emerge \">=net-www/mod_ssl-2.8.18\"",
+			"\n    # emerge sync\n\n    # emerge -pv \">=www-servers/apache-2.0.49-r3\"\n    # emerge \">=www-servers/apache-2.0.49-r3\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2004-0488",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0488"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    dmargoli\n  ",
+			"Tag": "submitter",
+			"Timestamp": ""
+		}
+	]
 }

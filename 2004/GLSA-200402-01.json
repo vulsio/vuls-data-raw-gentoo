@@ -1,87 +1,87 @@
 {
-  "ID": "200402-01",
-  "Title": "PHP setting leaks from .htaccess files on virtual hosts",
-  "Synopsis": "\n    If the server configuration \"php.ini\" file has\n    \"register_globals = on\" and a request is made to one virtual host\n    (which has \"php_admin_flag register_globals off\") and the next\n    request is sent to the another virtual host (which does not have the\n    setting) global variables may leak and may be used to exploit the \n    site.\n  ",
-  "Product": {
-    "Text": "PHP",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-02-07",
-  "Revised": {
-    "Text": "2004-02-07",
-    "Count": "01"
-  },
-  "Bug": [
-    "39952"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-php/mod_php",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.3.4-r4",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.3.4-r4",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    PHP is a widely-used general-purpose scripting language that is\n    especially suited for Web development and can be embedded into HTML.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    If the server configuration \"php.ini\" file has\n    \"register_globals = on\" and a request is made to one virtual host\n    (which has \"php_admin_flag register_globals off\") and the next\n    request is sent to the another virtual host (which does not have the\n    setting) through the same apache child, the setting will persist.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    Depending on the server and site, an attacker may be able to exploit\n    global variables to gain access to reserved areas, such as MySQL passwords,\n    or this vulnerability may simply cause a lack of functionality. As a\n    result, users are urged to upgrade their PHP installations.\n    </p>\n    <p>\n    Gentoo ships PHP with \"register_globals\" set to \"off\"\n    by default.\n    </p>\n    <p>    \n    This issue affects both servers running Apache 1.x and servers running\n    Apache 2.x.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    No immediate workaround is available; a software upgrade is required.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All users are recommended to upgrade their PHP installation to 4.3.4-r4:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n    # emerge -pv \">=dev-php/mod_php-4.3.4-r4\"\n    # emerge \">=dev-php/mod_php-4.3.4-r4\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "Corresponding PHP bug",
-        "Link": "https://bugs.php.net/bug.php?id=25753"
-      }
-    ]
-  },
-  "Metadata": null
+	"ID": "200402-01",
+	"Title": "PHP setting leaks from .htaccess files on virtual hosts",
+	"Synopsis": "\n    If the server configuration \"php.ini\" file has\n    \"register_globals = on\" and a request is made to one virtual host\n    (which has \"php_admin_flag register_globals off\") and the next\n    request is sent to the another virtual host (which does not have the\n    setting) global variables may leak and may be used to exploit the \n    site.\n  ",
+	"Product": {
+		"Text": "PHP",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-02-07",
+	"Revised": {
+		"Text": "2004-02-07",
+		"Count": "01"
+	},
+	"Bug": [
+		"39952"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-php/mod_php",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.3.4-r4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.3.4-r4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    PHP is a widely-used general-purpose scripting language that is\n    especially suited for Web development and can be embedded into HTML.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    If the server configuration \"php.ini\" file has\n    \"register_globals = on\" and a request is made to one virtual host\n    (which has \"php_admin_flag register_globals off\") and the next\n    request is sent to the another virtual host (which does not have the\n    setting) through the same apache child, the setting will persist.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    Depending on the server and site, an attacker may be able to exploit\n    global variables to gain access to reserved areas, such as MySQL passwords,\n    or this vulnerability may simply cause a lack of functionality. As a\n    result, users are urged to upgrade their PHP installations.\n    </p>\n    <p>\n    Gentoo ships PHP with \"register_globals\" set to \"off\"\n    by default.\n    </p>\n    <p>    \n    This issue affects both servers running Apache 1.x and servers running\n    Apache 2.x.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    No immediate workaround is available; a software upgrade is required.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All users are recommended to upgrade their PHP installation to 4.3.4-r4:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n    # emerge -pv \">=dev-php/mod_php-4.3.4-r4\"\n    # emerge \">=dev-php/mod_php-4.3.4-r4\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "Corresponding PHP bug",
+				"Link": "https://bugs.php.net/bug.php?id=25753"
+			}
+		]
+	},
+	"Metadata": null
 }

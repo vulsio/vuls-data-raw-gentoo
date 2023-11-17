@@ -1,98 +1,98 @@
 {
-  "ID": "200612-19",
-  "Title": "pam_ldap: Authentication bypass vulnerability",
-  "Synopsis": "\n    pam_ldap contains a vulnerability that may allow a remote user with a\n    locked account to gain unauthorized system access.\n  ",
-  "Product": {
-    "Text": "pam_ldap",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-12-20",
-  "Revised": {
-    "Text": "2006-12-20",
-    "Count": "01"
-  },
-  "Bug": [
-    "153916"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sys-auth/pam_ldap",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "183",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "183",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    pam_ldap is a Pluggable Authentication Module which allows\n    authentication against LDAP directories.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Steve Rigler discovered that pam_ldap does not correctly handle\n    \"PasswordPolicyResponse\" control responses from an LDAP directory. This\n    causes the pam_authenticate() function to always succeed, even if the\n    previous authentication failed.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "low",
-    "Text": "\n    <p>\n    A locked user may exploit this vulnerability to bypass the LDAP\n    authentication mechanism, possibly gaining unauthorized access to the\n    system.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All pam_ldap users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-auth/pam_ldap-183\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-5170",
-        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5170"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-12-19T16:57:27Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-12-19T16:58:04Z"
-    }
-  ]
+	"ID": "200612-19",
+	"Title": "pam_ldap: Authentication bypass vulnerability",
+	"Synopsis": "\n    pam_ldap contains a vulnerability that may allow a remote user with a\n    locked account to gain unauthorized system access.\n  ",
+	"Product": {
+		"Text": "pam_ldap",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-12-20",
+	"Revised": {
+		"Text": "2006-12-20",
+		"Count": "01"
+	},
+	"Bug": [
+		"153916"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-auth/pam_ldap",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "183",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "183",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    pam_ldap is a Pluggable Authentication Module which allows\n    authentication against LDAP directories.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Steve Rigler discovered that pam_ldap does not correctly handle\n    \"PasswordPolicyResponse\" control responses from an LDAP directory. This\n    causes the pam_authenticate() function to always succeed, even if the\n    previous authentication failed.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "low",
+		"Text": "\n    <p>\n    A locked user may exploit this vulnerability to bypass the LDAP\n    authentication mechanism, possibly gaining unauthorized access to the\n    system.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All pam_ldap users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-auth/pam_ldap-183\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-5170",
+				"Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5170"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-12-19T16:57:27Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-12-19T16:58:04Z"
+		}
+	]
 }

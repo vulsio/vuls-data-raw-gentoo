@@ -1,95 +1,95 @@
 {
-  "ID": "200311-01",
-  "Title": "kdebase: KDM vulnerabilities",
-  "Synopsis": "\n    A bug in KDM can allow privilege escalation with certain configurations of\n    PAM modules.\n  ",
-  "Product": {
-    "Text": "kdebase",
-    "Type": "ebuild"
-  },
-  "Announced": "2003-11-15",
-  "Revised": {
-    "Text": "2003-11-15",
-    "Count": "01"
-  },
-  "Bug": [
-    "29406"
-  ],
-  "Access": "local / remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "kde-base/kdebase",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.1.4",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.1.3",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    KDM is the desktop manager included with the K Desktop Environment.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Firstly, versions of KDM &lt;=3.1.3 are vulnerable to a privilege escalation\n    bug with a specific configuration of PAM modules.  Users who do not use PAM\n    with KDM and users who use PAM with regular Unix crypt/MD5 based\n    authentication methods are not affected.\n    </p>\n    <p>\n    Secondly, KDM uses a weak cookie generation algorithm.  Users are advised to\n    upgrade to KDE 3.1.4, which uses /dev/urandom as a non-predictable source of\n    entropy to improve security.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote or local attacker could gain root privileges.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    It is recommended that all Gentoo Linux users who are running\n    kde-base/kdebase <=3.1.3 upgrade:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n    # emerge -pv '>=kde-base/kde-3.1.4'\n    # emerge '>=kde-base/kde-3.1.4'\n    # emerge clean"
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2003-0690",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2003-0690"
-      },
-      {
-        "Text": "CAN-2003-0692",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2003-0692"
-      },
-      {
-        "Text": "KDE Security Advisory",
-        "Link": "https://www.kde.org/info/security/advisory-20030916-1.txt"
-      }
-    ]
-  },
-  "Metadata": null
+	"ID": "200311-01",
+	"Title": "kdebase: KDM vulnerabilities",
+	"Synopsis": "\n    A bug in KDM can allow privilege escalation with certain configurations of\n    PAM modules.\n  ",
+	"Product": {
+		"Text": "kdebase",
+		"Type": "ebuild"
+	},
+	"Announced": "2003-11-15",
+	"Revised": {
+		"Text": "2003-11-15",
+		"Count": "01"
+	},
+	"Bug": [
+		"29406"
+	],
+	"Access": "local / remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "kde-base/kdebase",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.1.4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.1.3",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    KDM is the desktop manager included with the K Desktop Environment.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Firstly, versions of KDM &lt;=3.1.3 are vulnerable to a privilege escalation\n    bug with a specific configuration of PAM modules.  Users who do not use PAM\n    with KDM and users who use PAM with regular Unix crypt/MD5 based\n    authentication methods are not affected.\n    </p>\n    <p>\n    Secondly, KDM uses a weak cookie generation algorithm.  Users are advised to\n    upgrade to KDE 3.1.4, which uses /dev/urandom as a non-predictable source of\n    entropy to improve security.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote or local attacker could gain root privileges.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    It is recommended that all Gentoo Linux users who are running\n    kde-base/kdebase <=3.1.3 upgrade:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n    # emerge -pv '>=kde-base/kde-3.1.4'\n    # emerge '>=kde-base/kde-3.1.4'\n    # emerge clean"
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2003-0690",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2003-0690"
+			},
+			{
+				"Text": "CAN-2003-0692",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2003-0692"
+			},
+			{
+				"Text": "KDE Security Advisory",
+				"Link": "https://www.kde.org/info/security/advisory-20030916-1.txt"
+			}
+		]
+	},
+	"Metadata": null
 }

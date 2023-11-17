@@ -1,107 +1,107 @@
 {
-  "ID": "200504-29",
-  "Title": "Pound: Buffer overflow vulnerability",
-  "Synopsis": "\n    Pound is vulnerable to a buffer overflow that could lead to the remote\n    execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "Pound",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-04-30",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "02"
-  },
-  "Bug": [
-    "90851"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-servers/pound",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.8.3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.8.3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Pound is a reverse proxy, load balancer and HTTPS front-end.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Steven Van Acker has discovered a buffer overflow vulnerability in the\n    \"add_port()\" function in Pound.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker could send a request for an overly long hostname\n    parameter, which could lead to the remote execution of arbitrary code\n    with the rights of the Pound daemon process (by default, Gentoo uses\n    the \"nobody\" user to run the Pound daemon).\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Pound users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-servers/pound-1.8.3\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "Original announcement",
-        "Link": "http://www.apsis.ch/pound/pound_list/archive/2005/2005-04/1114516112000"
-      },
-      {
-        "Text": "CVE-2005-1391",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1391"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-04-29T17:01:33Z"
-    },
-    {
-      "Text": "\n    formula7\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-04-29T20:39:56Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-04-30T08:11:33Z"
-    }
-  ]
+	"ID": "200504-29",
+	"Title": "Pound: Buffer overflow vulnerability",
+	"Synopsis": "\n    Pound is vulnerable to a buffer overflow that could lead to the remote\n    execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "Pound",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-04-30",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "02"
+	},
+	"Bug": [
+		"90851"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-servers/pound",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.8.3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.8.3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Pound is a reverse proxy, load balancer and HTTPS front-end.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Steven Van Acker has discovered a buffer overflow vulnerability in the\n    \"add_port()\" function in Pound.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker could send a request for an overly long hostname\n    parameter, which could lead to the remote execution of arbitrary code\n    with the rights of the Pound daemon process (by default, Gentoo uses\n    the \"nobody\" user to run the Pound daemon).\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Pound users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-servers/pound-1.8.3\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "Original announcement",
+				"Link": "http://www.apsis.ch/pound/pound_list/archive/2005/2005-04/1114516112000"
+			},
+			{
+				"Text": "CVE-2005-1391",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1391"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-04-29T17:01:33Z"
+		},
+		{
+			"Text": "\n    formula7\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-04-29T20:39:56Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-04-30T08:11:33Z"
+		}
+	]
 }

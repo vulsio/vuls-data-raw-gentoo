@@ -1,111 +1,111 @@
 {
-  "ID": "200611-06",
-  "Title": "OpenSSH: Multiple Denial of Service vulnerabilities",
-  "Synopsis": "\n    Several Denial of Service vulnerabilities have been identified in OpenSSH.\n  ",
-  "Product": {
-    "Text": "openssh",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-11-13",
-  "Revised": {
-    "Text": "2006-11-13",
-    "Count": "01"
-  },
-  "Bug": [
-    "149502"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-misc/openssh",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.4_p1-r5",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.4_p1-r5",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    OpenSSH is a complete SSH protocol version 1.3, 1.5 and 2.0\n    implementation and includes sftp client and server support.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Tavis Ormandy of the Google Security Team has discovered a\n    pre-authentication vulnerability, causing sshd to spin until the login\n    grace time has been expired. Mark Dowd found an unsafe signal handler\n    that was vulnerable to a race condition. It has also been discovered\n    that when GSSAPI authentication is enabled, GSSAPI will in certain\n    cases incorrectly abort.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    The pre-authentication and signal handler vulnerabilities can cause a\n    Denial of Service in OpenSSH. The vulnerability in the GSSAPI\n    authentication abort could be used to determine the validity of\n    usernames on some platforms.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All OpenSSH users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/openssh-4.4_p1-r5\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-5051",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5051"
-      },
-      {
-        "Text": "CVE-2006-5052",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5052"
-      },
-      {
-        "Text": "OpenSSH Security Advisory",
-        "Link": "https://www.openssh.com/txt/release-4.4"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    vorlon078\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-11-06T00:03:31Z"
-    },
-    {
-      "Text": "\n    vorlon078\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-11-06T12:18:14Z"
-    },
-    {
-      "Text": "\n    daxomatic\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-11-06T19:31:09Z"
-    }
-  ]
+	"ID": "200611-06",
+	"Title": "OpenSSH: Multiple Denial of Service vulnerabilities",
+	"Synopsis": "\n    Several Denial of Service vulnerabilities have been identified in OpenSSH.\n  ",
+	"Product": {
+		"Text": "openssh",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-11-13",
+	"Revised": {
+		"Text": "2006-11-13",
+		"Count": "01"
+	},
+	"Bug": [
+		"149502"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-misc/openssh",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.4_p1-r5",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.4_p1-r5",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    OpenSSH is a complete SSH protocol version 1.3, 1.5 and 2.0\n    implementation and includes sftp client and server support.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Tavis Ormandy of the Google Security Team has discovered a\n    pre-authentication vulnerability, causing sshd to spin until the login\n    grace time has been expired. Mark Dowd found an unsafe signal handler\n    that was vulnerable to a race condition. It has also been discovered\n    that when GSSAPI authentication is enabled, GSSAPI will in certain\n    cases incorrectly abort.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    The pre-authentication and signal handler vulnerabilities can cause a\n    Denial of Service in OpenSSH. The vulnerability in the GSSAPI\n    authentication abort could be used to determine the validity of\n    usernames on some platforms.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All OpenSSH users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/openssh-4.4_p1-r5\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-5051",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5051"
+			},
+			{
+				"Text": "CVE-2006-5052",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5052"
+			},
+			{
+				"Text": "OpenSSH Security Advisory",
+				"Link": "https://www.openssh.com/txt/release-4.4"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    vorlon078\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-11-06T00:03:31Z"
+		},
+		{
+			"Text": "\n    vorlon078\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-11-06T12:18:14Z"
+		},
+		{
+			"Text": "\n    daxomatic\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-11-06T19:31:09Z"
+		}
+	]
 }

@@ -1,92 +1,92 @@
 {
-  "ID": "202209-10",
-  "Title": "Logcheck: Root privilege escalation",
-  "Synopsis": "A vulnerability has been discovered in Logcheck's ebuilds which could allow for root privilege escalation.",
-  "Product": {
-    "Text": "logcheck",
-    "Type": "ebuild"
-  },
-  "Announced": "2022-09-25",
-  "Revised": {
-    "Text": "2022-09-25",
-    "Count": "1"
-  },
-  "Bug": [
-    "630752"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-admin/logcheck",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": null,
-        "Vulnerable": [
-          {
-            "Text": "1.3.23",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n        <p>Logcheck mails anomalies in the system logfiles to the administrator.</p>\n    "
-  },
-  "Description": {
-    "Text": "\n        <p>The pkg_postinst phase of the Logcheck ebuilds recursively chown the /etc/logcheck and /var/lib/logcheck directories. If the logcheck adds hardlinks to other files in these directories, the chown call will follow the link and transfer ownership of any file to the logcheck user.</p>\n    "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n        <p>A local attacker with access to the logcheck user could escalate to root privileges.</p>\n    "
-  },
-  "Workaround": {
-    "Text": "\n        <p>There is no known workaround at this time.</p>\n    "
-  },
-  "Resolution": {
-    "Text": "\n        \n        \n        \n    ",
-    "P": [
-      {
-        "Text": "Gentoo has discontinued support for Logcheck. We recommend that users remove it:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n          # emerge --ask --depclean \"app-admin/logcheck\"\n        "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2017-20148",
-        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2017-20148"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "ajak",
-      "Tag": "requester",
-      "Timestamp": "2022-09-25T13:34:57.482832Z"
-    },
-    {
-      "Text": "ajak",
-      "Tag": "submitter",
-      "Timestamp": "2022-09-25T13:34:57.487714Z"
-    }
-  ]
+	"ID": "202209-10",
+	"Title": "Logcheck: Root privilege escalation",
+	"Synopsis": "A vulnerability has been discovered in Logcheck's ebuilds which could allow for root privilege escalation.",
+	"Product": {
+		"Text": "logcheck",
+		"Type": "ebuild"
+	},
+	"Announced": "2022-09-25",
+	"Revised": {
+		"Text": "2022-09-25",
+		"Count": "1"
+	},
+	"Bug": [
+		"630752"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-admin/logcheck",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": null,
+				"Vulnerable": [
+					{
+						"Text": "1.3.23",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>Logcheck mails anomalies in the system logfiles to the administrator.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>The pkg_postinst phase of the Logcheck ebuilds recursively chown the /etc/logcheck and /var/lib/logcheck directories. If the logcheck adds hardlinks to other files in these directories, the chown call will follow the link and transfer ownership of any file to the logcheck user.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>A local attacker with access to the logcheck user could escalate to root privileges.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "Gentoo has discontinued support for Logcheck. We recommend that users remove it:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --ask --depclean \"app-admin/logcheck\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2017-20148",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2017-20148"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "ajak",
+			"Tag": "requester",
+			"Timestamp": "2022-09-25T13:34:57.482832Z"
+		},
+		{
+			"Text": "ajak",
+			"Tag": "submitter",
+			"Timestamp": "2022-09-25T13:34:57.487714Z"
+		}
+	]
 }

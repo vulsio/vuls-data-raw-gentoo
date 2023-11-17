@@ -1,107 +1,107 @@
 {
-  "ID": "200410-02",
-  "Title": "Netpbm: Multiple temporary file issues",
-  "Synopsis": "\n    Utilities included in old Netpbm versions are vulnerable to multiple\n    temporary files issues, potentially allowing a local attacker to overwrite\n    files with the rights of the user running the utility.\n  ",
-  "Product": {
-    "Text": "Netpbm",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-10-04",
-  "Revised": {
-    "Text": "2004-10-04",
-    "Count": "01"
-  },
-  "Bug": [
-    "65647"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-libs/netpbm",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "10.0",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "9.12-r4",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Netpbm is a toolkit containing more than 200 separate utilities for\n    manipulation and conversion of graphic images.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Utilities contained in the Netpbm package prior to the 9.25 version contain\n    defects in temporary file handling. They create temporary files with\n    predictable names without checking first that the target file doesn't\n    already exist.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary files\n    directory, pointing to a valid file somewhere on the filesystem. When a\n    user or a tool calls one of the affected utilities, this would result in\n    file overwriting with the rights of the user running the utility.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Netpbm users should upgrade to an unaffected version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n\n    # emerge -pv \">=media-libs/netpbm-10.0\"\n    # emerge \">=media-libs/netpbm-10.0\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2003-0924",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0924"
-      },
-      {
-        "Text": "US-CERT VU#487102",
-        "Link": "https://www.kb.cert.org/vuls/id/487102"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    lewk\n  ",
-      "Tag": "requester",
-      "Timestamp": "2004-10-02T00:18:31Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-10-03T10:07:45Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-10-03T13:46:27Z"
-    }
-  ]
+	"ID": "200410-02",
+	"Title": "Netpbm: Multiple temporary file issues",
+	"Synopsis": "\n    Utilities included in old Netpbm versions are vulnerable to multiple\n    temporary files issues, potentially allowing a local attacker to overwrite\n    files with the rights of the user running the utility.\n  ",
+	"Product": {
+		"Text": "Netpbm",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-10-04",
+	"Revised": {
+		"Text": "2004-10-04",
+		"Count": "01"
+	},
+	"Bug": [
+		"65647"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-libs/netpbm",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "10.0",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "9.12-r4",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Netpbm is a toolkit containing more than 200 separate utilities for\n    manipulation and conversion of graphic images.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Utilities contained in the Netpbm package prior to the 9.25 version contain\n    defects in temporary file handling. They create temporary files with\n    predictable names without checking first that the target file doesn't\n    already exist.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary files\n    directory, pointing to a valid file somewhere on the filesystem. When a\n    user or a tool calls one of the affected utilities, this would result in\n    file overwriting with the rights of the user running the utility.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Netpbm users should upgrade to an unaffected version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n\n    # emerge -pv \">=media-libs/netpbm-10.0\"\n    # emerge \">=media-libs/netpbm-10.0\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2003-0924",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-0924"
+			},
+			{
+				"Text": "US-CERT VU#487102",
+				"Link": "https://www.kb.cert.org/vuls/id/487102"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    lewk\n  ",
+			"Tag": "requester",
+			"Timestamp": "2004-10-02T00:18:31Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-10-03T10:07:45Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-10-03T13:46:27Z"
+		}
+	]
 }

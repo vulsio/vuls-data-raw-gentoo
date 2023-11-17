@@ -1,102 +1,102 @@
 {
-  "ID": "201706-21",
-  "Title": "nettle: Information disclosure",
-  "Synopsis": "A cache-related side channel vulnerability was found in nettle\n    which might allow an attacker to obtain sensitive information.\n  ",
-  "Product": {
-    "Text": "nettle",
-    "Type": "ebuild"
-  },
-  "Announced": "2017-06-22",
-  "Revised": {
-    "Text": "2017-06-22",
-    "Count": "1"
-  },
-  "Bug": [
-    "590484"
-  ],
-  "Access": "local, remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-libs/nettle",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.2-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.2-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Nettle is a cryptographic library that is designed to fit easily in\n      almost any context: In cryptographic toolkits for object-oriented\n      languages, such as C++, Python, or Pike, in applications like lsh or\n      GnuPG, or even in kernel space.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>It was found that nettle’s RSA and DSA decryption code was vulnerable\n      to cache-related side channel attacks.\n    </p>\n    \n    <p>See the referenced technical paper “Cache Attacks Enable Bulk Key\n      Recovery on the Cloud” below for details.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>An attacker could recover the private key from a co-located\n      virtual-machine instance.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All nettle users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/nettle-3.2-r1\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2016-6489",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-6489"
-      },
-      {
-        "Text": "Cache Attacks Enable Bulk\n      Key Recovery on the Cloud\n    ",
-        "Link": "https://eprint.iacr.org/2016/596.pdf"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "BlueKnight",
-      "Tag": "requester",
-      "Timestamp": "2017-04-19T05:47:07Z"
-    },
-    {
-      "Text": "whissi",
-      "Tag": "submitter",
-      "Timestamp": "2017-06-22T17:24:59Z"
-    }
-  ]
+	"ID": "201706-21",
+	"Title": "nettle: Information disclosure",
+	"Synopsis": "A cache-related side channel vulnerability was found in nettle\n    which might allow an attacker to obtain sensitive information.\n  ",
+	"Product": {
+		"Text": "nettle",
+		"Type": "ebuild"
+	},
+	"Announced": "2017-06-22",
+	"Revised": {
+		"Text": "2017-06-22",
+		"Count": "1"
+	},
+	"Bug": [
+		"590484"
+	],
+	"Access": "local, remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-libs/nettle",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.2-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.2-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Nettle is a cryptographic library that is designed to fit easily in\n      almost any context: In cryptographic toolkits for object-oriented\n      languages, such as C++, Python, or Pike, in applications like lsh or\n      GnuPG, or even in kernel space.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>It was found that nettle’s RSA and DSA decryption code was vulnerable\n      to cache-related side channel attacks.\n    </p>\n    \n    <p>See the referenced technical paper “Cache Attacks Enable Bulk Key\n      Recovery on the Cloud” below for details.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>An attacker could recover the private key from a co-located\n      virtual-machine instance.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All nettle users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/nettle-3.2-r1\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2016-6489",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-6489"
+			},
+			{
+				"Text": "Cache Attacks Enable Bulk\n      Key Recovery on the Cloud\n    ",
+				"Link": "https://eprint.iacr.org/2016/596.pdf"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "BlueKnight",
+			"Tag": "requester",
+			"Timestamp": "2017-04-19T05:47:07Z"
+		},
+		{
+			"Text": "whissi",
+			"Tag": "submitter",
+			"Timestamp": "2017-06-22T17:24:59Z"
+		}
+	]
 }

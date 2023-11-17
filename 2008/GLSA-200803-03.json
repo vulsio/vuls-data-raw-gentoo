@@ -1,103 +1,103 @@
 {
-  "ID": "200803-03",
-  "Title": "Audacity: Insecure temporary file creation",
-  "Synopsis": "\n    Audacity uses temporary files in an insecure manner, allowing for a symlink\n    attack.\n  ",
-  "Product": {
-    "Text": "audacity",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-03-02",
-  "Revised": {
-    "Text": "2008-03-02",
-    "Count": "01"
-  },
-  "Bug": [
-    "199751"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-sound/audacity",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.3.4-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.3.4-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Audacity is a free cross-platform audio editor.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Viktor Griph reported that the \"AudacityApp::OnInit()\" method in file\n    src/AudacityApp.cpp does not handle temporary files properly.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local attacker could exploit this vulnerability to conduct symlink\n    attacks to delete arbitrary files and directories with the privileges\n    of the user running Audacity.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Audacity users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-sound/audacity-1.3.4-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-6061",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6061"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-02-20T00:55:24Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-02-26T22:46:54Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-02-26T22:47:07Z"
-    }
-  ]
+	"ID": "200803-03",
+	"Title": "Audacity: Insecure temporary file creation",
+	"Synopsis": "\n    Audacity uses temporary files in an insecure manner, allowing for a symlink\n    attack.\n  ",
+	"Product": {
+		"Text": "audacity",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-03-02",
+	"Revised": {
+		"Text": "2008-03-02",
+		"Count": "01"
+	},
+	"Bug": [
+		"199751"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-sound/audacity",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.3.4-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.3.4-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Audacity is a free cross-platform audio editor.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Viktor Griph reported that the \"AudacityApp::OnInit()\" method in file\n    src/AudacityApp.cpp does not handle temporary files properly.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local attacker could exploit this vulnerability to conduct symlink\n    attacks to delete arbitrary files and directories with the privileges\n    of the user running Audacity.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Audacity users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-sound/audacity-1.3.4-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-6061",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6061"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-02-20T00:55:24Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-02-26T22:46:54Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-02-26T22:47:07Z"
+		}
+	]
 }

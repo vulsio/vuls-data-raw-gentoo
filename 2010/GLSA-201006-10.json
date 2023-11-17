@@ -1,114 +1,114 @@
 {
-  "ID": "201006-10",
-  "Title": "multipath-tools: World-writeable socket",
-  "Synopsis": "\n    multipath-tools does not set correct permissions on the socket file, making\n    it possible to send arbitrary commands to the multipath daemon for local\n    users.\n  ",
-  "Product": {
-    "Text": "multipath-tools",
-    "Type": "ebuild"
-  },
-  "Announced": "2010-06-01",
-  "Revised": {
-    "Text": "2010-06-01",
-    "Count": "01"
-  },
-  "Bug": [
-    "264564"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sys-fs/multipath-tools",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.4.8-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.4.8-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    multipath-tools are used to drive the Device Mapper multipathing\n    driver.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    multipath-tools uses world-writable permissions for the socket file\n    (/var/run/multipathd.sock).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    Local users could send arbitrary commands to the multipath daemon,\n    causing cluster failures and data loss.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    chmod o-rwx /var/run/multipath.sock\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All multipath-tools users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    NOTE: This is a legacy GLSA. Updates for all affected architectures are\n    available since November 13, 2009. It is likely that your system is\n    already no longer affected by this issue.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-fs/multipath-tools-0.4.8-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2009-0115",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0115"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    craig\n  ",
-      "Tag": "requester",
-      "Timestamp": "2010-01-29T23:30:44Z"
-    },
-    {
-      "Text": "\n    craig\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2010-04-09T17:36:36Z"
-    },
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2010-06-01T12:41:09Z"
-    }
-  ]
+	"ID": "201006-10",
+	"Title": "multipath-tools: World-writeable socket",
+	"Synopsis": "\n    multipath-tools does not set correct permissions on the socket file, making\n    it possible to send arbitrary commands to the multipath daemon for local\n    users.\n  ",
+	"Product": {
+		"Text": "multipath-tools",
+		"Type": "ebuild"
+	},
+	"Announced": "2010-06-01",
+	"Revised": {
+		"Text": "2010-06-01",
+		"Count": "01"
+	},
+	"Bug": [
+		"264564"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-fs/multipath-tools",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.4.8-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.4.8-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    multipath-tools are used to drive the Device Mapper multipathing\n    driver.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    multipath-tools uses world-writable permissions for the socket file\n    (/var/run/multipathd.sock).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    Local users could send arbitrary commands to the multipath daemon,\n    causing cluster failures and data loss.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    chmod o-rwx /var/run/multipath.sock\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All multipath-tools users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    NOTE: This is a legacy GLSA. Updates for all affected architectures are\n    available since November 13, 2009. It is likely that your system is\n    already no longer affected by this issue.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-fs/multipath-tools-0.4.8-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2009-0115",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0115"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    craig\n  ",
+			"Tag": "requester",
+			"Timestamp": "2010-01-29T23:30:44Z"
+		},
+		{
+			"Text": "\n    craig\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2010-04-09T17:36:36Z"
+		},
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2010-06-01T12:41:09Z"
+		}
+	]
 }

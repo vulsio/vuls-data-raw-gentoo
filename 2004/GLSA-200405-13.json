@@ -1,97 +1,97 @@
 {
-  "ID": "200405-13",
-  "Title": "neon heap-based buffer overflow",
-  "Synopsis": "\n    A vulnerability potentially allowing remote execution of arbitrary code has\n    been discovered in the neon library.\n  ",
-  "Product": {
-    "Text": "neon",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-05-20",
-  "Revised": {
-    "Text": "2004-05-20",
-    "Count": "01"
-  },
-  "Bug": [
-    "51490"
-  ],
-  "Access": "remote ",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-misc/neon",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.24.6",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.24.5",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    neon provides an HTTP and WebDAV client library.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Stefan Esser discovered a vulnerability in the code of the neon library :\n    if a malicious date string is passed to the ne_rfc1036_parse() function, it\n    can trigger a string overflow into static heap variables.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    Depending on the application linked against libneon and when connected to a\n    malicious WebDAV server, this vulnerability could allow execution of\n    arbitrary code with the rights of the user running that application.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time. All users are advised to upgrade\n    to the latest available version of neon.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All users of neon should upgrade to the latest stable version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n\n    # emerge -pv \">=net-misc/neon-0.24.6\"\n    # emerge \">=net-misc/neon-0.24.6\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "E-matters advisory 06/2004",
-        "Link": "http://security.e-matters.de/advisories/062004.html"
-      },
-      {
-        "Text": "CAN-2004-0398",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0398"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": ""
-    }
-  ]
+	"ID": "200405-13",
+	"Title": "neon heap-based buffer overflow",
+	"Synopsis": "\n    A vulnerability potentially allowing remote execution of arbitrary code has\n    been discovered in the neon library.\n  ",
+	"Product": {
+		"Text": "neon",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-05-20",
+	"Revised": {
+		"Text": "2004-05-20",
+		"Count": "01"
+	},
+	"Bug": [
+		"51490"
+	],
+	"Access": "remote ",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-misc/neon",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.24.6",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.24.5",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    neon provides an HTTP and WebDAV client library.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Stefan Esser discovered a vulnerability in the code of the neon library :\n    if a malicious date string is passed to the ne_rfc1036_parse() function, it\n    can trigger a string overflow into static heap variables.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    Depending on the application linked against libneon and when connected to a\n    malicious WebDAV server, this vulnerability could allow execution of\n    arbitrary code with the rights of the user running that application.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time. All users are advised to upgrade\n    to the latest available version of neon.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All users of neon should upgrade to the latest stable version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n\n    # emerge -pv \">=net-misc/neon-0.24.6\"\n    # emerge \">=net-misc/neon-0.24.6\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "E-matters advisory 06/2004",
+				"Link": "http://security.e-matters.de/advisories/062004.html"
+			},
+			{
+				"Text": "CAN-2004-0398",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0398"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": ""
+		}
+	]
 }

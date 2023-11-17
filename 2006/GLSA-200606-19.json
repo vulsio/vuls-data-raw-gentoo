@@ -1,107 +1,107 @@
 {
-  "ID": "200606-19",
-  "Title": "Sendmail: Denial of service",
-  "Synopsis": "\n    Faulty multipart MIME messages can cause forked Sendmail processes to\n    crash.\n  ",
-  "Product": {
-    "Text": "sendmail",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-06-15",
-  "Revised": {
-    "Text": "2006-06-15",
-    "Count": "01"
-  },
-  "Bug": [
-    "135141"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "mail-mta/sendmail",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "8.13.6-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "8.13.6-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Sendmail is a popular mail transfer agent (MTA).\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Frank Sheiness discovered that the mime8to7() function can recurse\n    endlessly during the decoding of multipart MIME messages until the\n    stack of the process is filled and the process crashes.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    By sending specially crafted multipart MIME messages, a remote\n    attacker can cause a subprocess forked by Sendmail to crash. If\n    Sendmail is not set to use a randomized queue processing, the attack\n    will effectively halt the delivery of queued mails as well as the\n    malformed one, incoming mail delivered interactively is not affected.\n    Additionally, on systems where core dumps with an individual naming\n    scheme (like \"core.pid\") are enabled, a filesystem may fill up with\n    core dumps. Core dumps are disabled by default in Gentoo.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    The Sendmail 8.13.7 release information offers some workarounds, please\n    see the Reference below. Note that the issue has actually been fixed in\n    the 8.13.6-r1 ebuild.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Sendmail users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-mta/sendmail-8.13.6-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-1173",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1173"
-      },
-      {
-        "Text": "Sendmail 8.13.7 release information",
-        "Link": "http://www.sendmail.org/releases/8.13.7.html"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-06-14T18:47:59Z"
-    },
-    {
-      "Text": "\n    frilled\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-06-14T19:21:03Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-06-15T16:00:46Z"
-    }
-  ]
+	"ID": "200606-19",
+	"Title": "Sendmail: Denial of service",
+	"Synopsis": "\n    Faulty multipart MIME messages can cause forked Sendmail processes to\n    crash.\n  ",
+	"Product": {
+		"Text": "sendmail",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-06-15",
+	"Revised": {
+		"Text": "2006-06-15",
+		"Count": "01"
+	},
+	"Bug": [
+		"135141"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "mail-mta/sendmail",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "8.13.6-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "8.13.6-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Sendmail is a popular mail transfer agent (MTA).\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Frank Sheiness discovered that the mime8to7() function can recurse\n    endlessly during the decoding of multipart MIME messages until the\n    stack of the process is filled and the process crashes.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    By sending specially crafted multipart MIME messages, a remote\n    attacker can cause a subprocess forked by Sendmail to crash. If\n    Sendmail is not set to use a randomized queue processing, the attack\n    will effectively halt the delivery of queued mails as well as the\n    malformed one, incoming mail delivered interactively is not affected.\n    Additionally, on systems where core dumps with an individual naming\n    scheme (like \"core.pid\") are enabled, a filesystem may fill up with\n    core dumps. Core dumps are disabled by default in Gentoo.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    The Sendmail 8.13.7 release information offers some workarounds, please\n    see the Reference below. Note that the issue has actually been fixed in\n    the 8.13.6-r1 ebuild.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Sendmail users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-mta/sendmail-8.13.6-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-1173",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1173"
+			},
+			{
+				"Text": "Sendmail 8.13.7 release information",
+				"Link": "http://www.sendmail.org/releases/8.13.7.html"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-06-14T18:47:59Z"
+		},
+		{
+			"Text": "\n    frilled\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-06-14T19:21:03Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-06-15T16:00:46Z"
+		}
+	]
 }

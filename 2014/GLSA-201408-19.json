@@ -1,293 +1,293 @@
 {
-  "ID": "201408-19",
-  "Title": "OpenOffice, LibreOffice: Multiple vulnerabilities",
-  "Synopsis": "Multiple vulnerabilities have been found in OpenOffice and\n    LibreOffice, the worst of which may result in execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "openoffice",
-    "Type": "ebuild"
-  },
-  "Announced": "2014-08-31",
-  "Revised": {
-    "Text": "2014-08-31",
-    "Count": "1"
-  },
-  "Bug": [
-    "283370",
-    "305195",
-    "320491",
-    "332321",
-    "352864",
-    "386081",
-    "409509",
-    "429482",
-    "514886"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-office/openoffice-bin",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.5.5.3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.5.5.3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-office/openoffice",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": null,
-        "Vulnerable": [
-          {
-            "Text": "3.5.5.3",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-office/libreoffice",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.2.5.2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.2.5.2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-office/libreoffice-bin",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.2.5.2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.2.5.2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>OpenOffice is the open source version of StarOffice, a full office\n      productivity suite. LibreOffice is a fork of OpenOffice.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Multiple vulnerabilities have been discovered in OpenOffice and\n      Libreoffice. Please review the CVE identifiers referenced below for\n      details.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted file\n      using OpenOffice, possibly resulting in execution of arbitrary code with\n      the privileges of the process, a Denial of Service condition, execution\n      of arbitrary Python code, authentication bypass, or reading and writing\n      of arbitrary files.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All OpenOffice (binary) users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "All LibreOffice users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "All LibreOffice (binary) users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "We recommend that users unmerge OpenOffice:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=app-office/openoffice-bin-3.5.5.3\"\n    ",
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-office/libreoffice-4.2.5.2\"\n    ",
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=app-office/libreoffice-bin-4.2.5.2\"\n    ",
-      "\n      # emerge --unmerge \"app-office/openoffice\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-4339",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2006-4339"
-      },
-      {
-        "Text": "CVE-2009-0200",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-0200"
-      },
-      {
-        "Text": "CVE-2009-0201",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-0201"
-      },
-      {
-        "Text": "CVE-2009-0217",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-0217"
-      },
-      {
-        "Text": "CVE-2009-2949",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-2949"
-      },
-      {
-        "Text": "CVE-2009-2950",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-2950"
-      },
-      {
-        "Text": "CVE-2009-3301",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-3301"
-      },
-      {
-        "Text": "CVE-2009-3302",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-3302"
-      },
-      {
-        "Text": "CVE-2010-0395",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-0395"
-      },
-      {
-        "Text": "CVE-2010-2935",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-2935"
-      },
-      {
-        "Text": "CVE-2010-2936",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-2936"
-      },
-      {
-        "Text": "CVE-2010-3450",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-3450"
-      },
-      {
-        "Text": "CVE-2010-3451",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-3451"
-      },
-      {
-        "Text": "CVE-2010-3452",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-3452"
-      },
-      {
-        "Text": "CVE-2010-3453",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-3453"
-      },
-      {
-        "Text": "CVE-2010-3454",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-3454"
-      },
-      {
-        "Text": "CVE-2010-3689",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-3689"
-      },
-      {
-        "Text": "CVE-2010-4253",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-4253"
-      },
-      {
-        "Text": "CVE-2010-4643",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-4643"
-      },
-      {
-        "Text": "CVE-2011-2713",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2713"
-      },
-      {
-        "Text": "CVE-2012-0037",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0037"
-      },
-      {
-        "Text": "CVE-2012-1149",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1149"
-      },
-      {
-        "Text": "CVE-2012-2149",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-2149"
-      },
-      {
-        "Text": "CVE-2012-2334",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-2334"
-      },
-      {
-        "Text": "CVE-2012-2665",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-2665"
-      },
-      {
-        "Text": "CVE-2014-0247",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0247"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "craig",
-      "Tag": "requester",
-      "Timestamp": "2011-10-07T23:37:58Z"
-    },
-    {
-      "Text": "ackle",
-      "Tag": "submitter",
-      "Timestamp": "2014-08-31T14:48:34Z"
-    }
-  ]
+	"ID": "201408-19",
+	"Title": "OpenOffice, LibreOffice: Multiple vulnerabilities",
+	"Synopsis": "Multiple vulnerabilities have been found in OpenOffice and\n    LibreOffice, the worst of which may result in execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "openoffice",
+		"Type": "ebuild"
+	},
+	"Announced": "2014-08-31",
+	"Revised": {
+		"Text": "2014-08-31",
+		"Count": "1"
+	},
+	"Bug": [
+		"283370",
+		"305195",
+		"320491",
+		"332321",
+		"352864",
+		"386081",
+		"409509",
+		"429482",
+		"514886"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-office/openoffice-bin",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.5.5.3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.5.5.3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-office/openoffice",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": null,
+				"Vulnerable": [
+					{
+						"Text": "3.5.5.3",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-office/libreoffice",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.2.5.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.2.5.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-office/libreoffice-bin",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.2.5.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.2.5.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>OpenOffice is the open source version of StarOffice, a full office\n      productivity suite. LibreOffice is a fork of OpenOffice.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Multiple vulnerabilities have been discovered in OpenOffice and\n      Libreoffice. Please review the CVE identifiers referenced below for\n      details.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could entice a user to open a specially crafted file\n      using OpenOffice, possibly resulting in execution of arbitrary code with\n      the privileges of the process, a Denial of Service condition, execution\n      of arbitrary Python code, authentication bypass, or reading and writing\n      of arbitrary files.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All OpenOffice (binary) users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "All LibreOffice users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "All LibreOffice (binary) users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "We recommend that users unmerge OpenOffice:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=app-office/openoffice-bin-3.5.5.3\"\n    ",
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-office/libreoffice-4.2.5.2\"\n    ",
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose\n      \">=app-office/libreoffice-bin-4.2.5.2\"\n    ",
+			"\n      # emerge --unmerge \"app-office/openoffice\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-4339",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2006-4339"
+			},
+			{
+				"Text": "CVE-2009-0200",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-0200"
+			},
+			{
+				"Text": "CVE-2009-0201",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-0201"
+			},
+			{
+				"Text": "CVE-2009-0217",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-0217"
+			},
+			{
+				"Text": "CVE-2009-2949",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-2949"
+			},
+			{
+				"Text": "CVE-2009-2950",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-2950"
+			},
+			{
+				"Text": "CVE-2009-3301",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-3301"
+			},
+			{
+				"Text": "CVE-2009-3302",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2009-3302"
+			},
+			{
+				"Text": "CVE-2010-0395",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-0395"
+			},
+			{
+				"Text": "CVE-2010-2935",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-2935"
+			},
+			{
+				"Text": "CVE-2010-2936",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-2936"
+			},
+			{
+				"Text": "CVE-2010-3450",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-3450"
+			},
+			{
+				"Text": "CVE-2010-3451",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-3451"
+			},
+			{
+				"Text": "CVE-2010-3452",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-3452"
+			},
+			{
+				"Text": "CVE-2010-3453",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-3453"
+			},
+			{
+				"Text": "CVE-2010-3454",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-3454"
+			},
+			{
+				"Text": "CVE-2010-3689",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-3689"
+			},
+			{
+				"Text": "CVE-2010-4253",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-4253"
+			},
+			{
+				"Text": "CVE-2010-4643",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-4643"
+			},
+			{
+				"Text": "CVE-2011-2713",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2713"
+			},
+			{
+				"Text": "CVE-2012-0037",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0037"
+			},
+			{
+				"Text": "CVE-2012-1149",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1149"
+			},
+			{
+				"Text": "CVE-2012-2149",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-2149"
+			},
+			{
+				"Text": "CVE-2012-2334",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-2334"
+			},
+			{
+				"Text": "CVE-2012-2665",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-2665"
+			},
+			{
+				"Text": "CVE-2014-0247",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-0247"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "craig",
+			"Tag": "requester",
+			"Timestamp": "2011-10-07T23:37:58Z"
+		},
+		{
+			"Text": "ackle",
+			"Tag": "submitter",
+			"Timestamp": "2014-08-31T14:48:34Z"
+		}
+	]
 }

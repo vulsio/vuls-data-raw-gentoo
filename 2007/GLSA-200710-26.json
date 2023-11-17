@@ -1,108 +1,108 @@
 {
-  "ID": "200710-26",
-  "Title": "HPLIP: Privilege escalation",
-  "Synopsis": "\n    The hpssd daemon might allow local attackers to execute arbitrary commands\n    with root privileges.\n  ",
-  "Product": {
-    "Text": "hplip",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-10-24",
-  "Revised": {
-    "Text": "2007-10-24",
-    "Count": "01"
-  },
-  "Bug": [
-    "195565"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-print/hplip",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.7.4a-r2",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "2.7.9-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.7.9-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    The Hewlett-Packard Linux Imaging and Printing system (HPLIP) provides\n    drivers for HP's inkjet and laser printers, scanners and fax machines.\n    It integrates with the Common UNIX Printing System (CUPS) and Scanner\n    Access Now Easy (SANE).\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Kees Cook from the Ubuntu Security team discovered that the hpssd\n    daemon does not correctly validate user supplied data before passing it\n    to a \"popen3()\" call.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A local attacker may be able to exploit this vulnerability by sending a\n    specially crafted request to the hpssd daemon to execute arbitrary\n    commands with the privileges of the user running hpssd, usually root.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All HPLIP users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \"net-print/hplip\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-5208",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5208"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-10-21T20:50:24Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-10-21T20:51:40Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-10-21T21:46:02Z"
-    }
-  ]
+	"ID": "200710-26",
+	"Title": "HPLIP: Privilege escalation",
+	"Synopsis": "\n    The hpssd daemon might allow local attackers to execute arbitrary commands\n    with root privileges.\n  ",
+	"Product": {
+		"Text": "hplip",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-10-24",
+	"Revised": {
+		"Text": "2007-10-24",
+		"Count": "01"
+	},
+	"Bug": [
+		"195565"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-print/hplip",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.7.4a-r2",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "2.7.9-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.7.9-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    The Hewlett-Packard Linux Imaging and Printing system (HPLIP) provides\n    drivers for HP's inkjet and laser printers, scanners and fax machines.\n    It integrates with the Common UNIX Printing System (CUPS) and Scanner\n    Access Now Easy (SANE).\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Kees Cook from the Ubuntu Security team discovered that the hpssd\n    daemon does not correctly validate user supplied data before passing it\n    to a \"popen3()\" call.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A local attacker may be able to exploit this vulnerability by sending a\n    specially crafted request to the hpssd daemon to execute arbitrary\n    commands with the privileges of the user running hpssd, usually root.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All HPLIP users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \"net-print/hplip\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-5208",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5208"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-10-21T20:50:24Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-10-21T20:51:40Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-10-21T21:46:02Z"
+		}
+	]
 }

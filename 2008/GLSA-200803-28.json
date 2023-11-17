@@ -1,107 +1,107 @@
 {
-  "ID": "200803-28",
-  "Title": "OpenLDAP: Denial of Service vulnerabilities",
-  "Synopsis": "\n    Multiple Denial of Service vulnerabilities have been reported in OpenLDAP.\n  ",
-  "Product": {
-    "Text": "openldap",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-03-19",
-  "Revised": {
-    "Text": "2008-03-19",
-    "Count": "01"
-  },
-  "Bug": [
-    "197446",
-    "209677"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-nds/openldap",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.3.41",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.3.41",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    OpenLDAP Software is an open source implementation of the Lightweight\n    Directory Access Protocol.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The following errors have been discovered in OpenLDAP:\n    </p>\n    <ul>\n    <li>\n    Tony Blake discovered an error which exists within the normalisation of\n    \"objectClasses\" (CVE-2007-5707).</li>\n    <li>\n    Thomas Sesselmann reported that, when running as a proxy-caching server\n    the \"add_filter_attrs()\" function in servers/slapd/overlay/pcache.c\n    does not correctly NULL terminate \"new_attrs\" (CVE-2007-5708).</li>\n    <li>\n    A double-free bug exists in attrs_free() in the file\n    servers/slapd/back-bdb/modrdn.c, which was discovered by Jonathan\n    Clarke (CVE-2008-0658).</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker can cause a Denial of Serivce by sending a malformed\n    \"objectClasses\" attribute, and via unknown vectors that prevent the\n    \"new_attrs\" array from being NULL terminated, and via a modrdn\n    operation with a NOOP (LDAP_X_NO_OPERATION) control.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All OpenLDAP users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-nds/openldap-2.3.41\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-5707",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5707"
-      },
-      {
-        "Text": "CVE-2007-5708",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5708"
-      },
-      {
-        "Text": "CVE-2008-0658",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0658"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    mfleming\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-03-15T17:57:19Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-03-19T01:23:44Z"
-    }
-  ]
+	"ID": "200803-28",
+	"Title": "OpenLDAP: Denial of Service vulnerabilities",
+	"Synopsis": "\n    Multiple Denial of Service vulnerabilities have been reported in OpenLDAP.\n  ",
+	"Product": {
+		"Text": "openldap",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-03-19",
+	"Revised": {
+		"Text": "2008-03-19",
+		"Count": "01"
+	},
+	"Bug": [
+		"197446",
+		"209677"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-nds/openldap",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.3.41",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.3.41",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    OpenLDAP Software is an open source implementation of the Lightweight\n    Directory Access Protocol.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The following errors have been discovered in OpenLDAP:\n    </p>\n    <ul>\n    <li>\n    Tony Blake discovered an error which exists within the normalisation of\n    \"objectClasses\" (CVE-2007-5707).</li>\n    <li>\n    Thomas Sesselmann reported that, when running as a proxy-caching server\n    the \"add_filter_attrs()\" function in servers/slapd/overlay/pcache.c\n    does not correctly NULL terminate \"new_attrs\" (CVE-2007-5708).</li>\n    <li>\n    A double-free bug exists in attrs_free() in the file\n    servers/slapd/back-bdb/modrdn.c, which was discovered by Jonathan\n    Clarke (CVE-2008-0658).</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker can cause a Denial of Serivce by sending a malformed\n    \"objectClasses\" attribute, and via unknown vectors that prevent the\n    \"new_attrs\" array from being NULL terminated, and via a modrdn\n    operation with a NOOP (LDAP_X_NO_OPERATION) control.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All OpenLDAP users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-nds/openldap-2.3.41\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-5707",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5707"
+			},
+			{
+				"Text": "CVE-2007-5708",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5708"
+			},
+			{
+				"Text": "CVE-2008-0658",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0658"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    mfleming\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-03-15T17:57:19Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-03-19T01:23:44Z"
+		}
+	]
 }

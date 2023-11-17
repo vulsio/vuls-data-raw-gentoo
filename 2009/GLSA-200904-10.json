@@ -1,103 +1,103 @@
 {
-  "ID": "200904-10",
-  "Title": "Avahi: Denial of service",
-  "Synopsis": "\n    An error in Avahi might lead to a Denial of Service via network and CPU\n    consumption.\n  ",
-  "Product": {
-    "Text": "avahi",
-    "Type": "ebuild"
-  },
-  "Announced": "2009-04-08",
-  "Revised": {
-    "Text": "2009-04-08",
-    "Count": "01"
-  },
-  "Bug": [
-    "260971"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-dns/avahi",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.6.24-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.6.24-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Avahi is a system that facilitates service discovery on a local\n    network.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Rob Leslie reported that the\n    originates_from_local_legacy_unicast_socket() function in\n    avahi-core/server.c does not account for the network byte order of a\n    port number when processing incoming multicast packets, leading to a\n    multicast packet storm.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could send specially crafted legacy unicast mDNS\n    query packets to the Avahi daemon, resulting in a Denial of Service due\n    to network bandwidth and CPU consumption.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Avahi users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dns/avahi-0.6.24-r2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2009-0758",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0758"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2009-04-04T13:49:21Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-04-04T13:56:36Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2009-04-04T13:57:02Z"
-    }
-  ]
+	"ID": "200904-10",
+	"Title": "Avahi: Denial of service",
+	"Synopsis": "\n    An error in Avahi might lead to a Denial of Service via network and CPU\n    consumption.\n  ",
+	"Product": {
+		"Text": "avahi",
+		"Type": "ebuild"
+	},
+	"Announced": "2009-04-08",
+	"Revised": {
+		"Text": "2009-04-08",
+		"Count": "01"
+	},
+	"Bug": [
+		"260971"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-dns/avahi",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.6.24-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.6.24-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Avahi is a system that facilitates service discovery on a local\n    network.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Rob Leslie reported that the\n    originates_from_local_legacy_unicast_socket() function in\n    avahi-core/server.c does not account for the network byte order of a\n    port number when processing incoming multicast packets, leading to a\n    multicast packet storm.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could send specially crafted legacy unicast mDNS\n    query packets to the Avahi daemon, resulting in a Denial of Service due\n    to network bandwidth and CPU consumption.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Avahi users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-dns/avahi-0.6.24-r2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2009-0758",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0758"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2009-04-04T13:49:21Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-04-04T13:56:36Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2009-04-04T13:57:02Z"
+		}
+	]
 }

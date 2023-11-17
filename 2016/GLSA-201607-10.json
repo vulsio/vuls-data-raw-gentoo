@@ -1,98 +1,98 @@
 {
-  "ID": "201607-10",
-  "Title": "Varnish: Multiple vulnerabilities",
-  "Synopsis": "Improper input validation in Varnish allows remote attackers to\n    conduct HTTP smuggling attacks, and possibly trigger a buffer overflow.\n  ",
-  "Product": {
-    "Text": "",
-    "Type": "ebuild"
-  },
-  "Announced": "2016-07-20",
-  "Revised": {
-    "Text": "2016-07-20",
-    "Count": "1"
-  },
-  "Bug": [
-    "542886"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-servers/varnish",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.0.7",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.0.7",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Varnish is a web application accelerator.</p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Varnish fails to properly validate input from HTTP headers, and does not\n      deny requests with multiple Content-Length headers.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>Remote attackers could conduct an HTTP response splitting attack, which\n      may further enable them to conduct Cross-Site Scripting (XSS), Cache\n      Poisoning, Defacement, and Page Hijacking.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All Varnish users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=www-servers/varnish-3.0.7\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2015-8852",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-8852"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "b-man",
-      "Tag": "requester",
-      "Timestamp": "2016-07-02T01:59:09Z"
-    },
-    {
-      "Text": "b-man",
-      "Tag": "submitter",
-      "Timestamp": "2016-07-20T09:01:06Z"
-    }
-  ]
+	"ID": "201607-10",
+	"Title": "Varnish: Multiple vulnerabilities",
+	"Synopsis": "Improper input validation in Varnish allows remote attackers to\n    conduct HTTP smuggling attacks, and possibly trigger a buffer overflow.\n  ",
+	"Product": {
+		"Text": "",
+		"Type": "ebuild"
+	},
+	"Announced": "2016-07-20",
+	"Revised": {
+		"Text": "2016-07-20",
+		"Count": "1"
+	},
+	"Bug": [
+		"542886"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-servers/varnish",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.0.7",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.0.7",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Varnish is a web application accelerator.</p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Varnish fails to properly validate input from HTTP headers, and does not\n      deny requests with multiple Content-Length headers.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>Remote attackers could conduct an HTTP response splitting attack, which\n      may further enable them to conduct Cross-Site Scripting (XSS), Cache\n      Poisoning, Defacement, and Page Hijacking.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All Varnish users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=www-servers/varnish-3.0.7\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2015-8852",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-8852"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "b-man",
+			"Tag": "requester",
+			"Timestamp": "2016-07-02T01:59:09Z"
+		},
+		{
+			"Text": "b-man",
+			"Tag": "submitter",
+			"Timestamp": "2016-07-20T09:01:06Z"
+		}
+	]
 }

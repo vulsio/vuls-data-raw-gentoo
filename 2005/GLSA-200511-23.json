@@ -1,134 +1,134 @@
 {
-  "ID": "200511-23",
-  "Title": "chmlib, KchmViewer: Stack-based buffer overflow",
-  "Synopsis": "\n    chmlib and KchmViewer contain a buffer overflow vulnerability which may\n    lead to the execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "chmlib kchmviewer",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-11-28",
-  "Revised": {
-    "Text": "2009-05-28",
-    "Count": "03"
-  },
-  "Bug": [
-    "110557"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-libs/chmlib",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.37.4",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.37.4",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-text/kchmviewer",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    chmlib is a library for dealing with Microsoft ITSS and CHM format\n    files. KchmViewer is a CHM viewer that includes its own copy of the\n    chmlib library.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Sven Tantau reported about a buffer overflow vulnerability in\n    chmlib. The function \"_chm_decompress_block()\" does not properly\n    perform boundary checking, resulting in a stack-based buffer overflow.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    By convincing a user to open a specially crafted ITSS or CHM file,\n    using KchmViewer or a program makes use of chmlib, a remote attacker\n    could execute arbitrary code with the privileges of the user running\n    the software.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All chmlib users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All KchmViewer users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/chmlib-0.37.4\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/kchmviewer-1.1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2005-3318",
-        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3318"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-11-25T10:03:15Z"
-    },
-    {
-      "Text": "\n    adir\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-11-26T02:10:11Z"
-    },
-    {
-      "Text": "\n    adir\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-11-27T20:16:26Z"
-    }
-  ]
+	"ID": "200511-23",
+	"Title": "chmlib, KchmViewer: Stack-based buffer overflow",
+	"Synopsis": "\n    chmlib and KchmViewer contain a buffer overflow vulnerability which may\n    lead to the execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "chmlib kchmviewer",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-11-28",
+	"Revised": {
+		"Text": "2009-05-28",
+		"Count": "03"
+	},
+	"Bug": [
+		"110557"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-libs/chmlib",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.37.4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.37.4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-text/kchmviewer",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    chmlib is a library for dealing with Microsoft ITSS and CHM format\n    files. KchmViewer is a CHM viewer that includes its own copy of the\n    chmlib library.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Sven Tantau reported about a buffer overflow vulnerability in\n    chmlib. The function \"_chm_decompress_block()\" does not properly\n    perform boundary checking, resulting in a stack-based buffer overflow.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    By convincing a user to open a specially crafted ITSS or CHM file,\n    using KchmViewer or a program makes use of chmlib, a remote attacker\n    could execute arbitrary code with the privileges of the user running\n    the software.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All chmlib users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All KchmViewer users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/chmlib-0.37.4\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/kchmviewer-1.1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2005-3318",
+				"Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3318"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-11-25T10:03:15Z"
+		},
+		{
+			"Text": "\n    adir\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-11-26T02:10:11Z"
+		},
+		{
+			"Text": "\n    adir\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-11-27T20:16:26Z"
+		}
+	]
 }

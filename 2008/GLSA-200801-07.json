@@ -1,146 +1,146 @@
 {
-  "ID": "200801-07",
-  "Title": "Adobe Flash Player: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities have been identified, the worst of which allow\n    arbitrary code execution on a user's system via a malicious Flash file.\n  ",
-  "Product": {
-    "Text": "adobe-flash",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-01-20",
-  "Revised": {
-    "Text": "2009-05-28",
-    "Count": "03"
-  },
-  "Bug": [
-    "193519"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-plugins/adobe-flash",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "9.0.115.0",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "9.0.115.0",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    The Adobe Flash Player is a renderer for the popular SWF file format,\n    which is commonly used to provide interactive websites, digital\n    experiences and mobile content.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <ul>\n    <li>Flash contains a copy of PCRE which is vulnerable to a heap-based\n    buffer overflow (GLSA 200711-30, CVE-2007-4768).</li>\n    <li>Aaron Portnoy reported an unspecified vulnerability related to\n    input validation (CVE-2007-6242).</li>\n    <li>Jesse Michael and Thomas Biege reported that Flash does not\n    correctly set memory permissions (CVE-2007-6246).</li>\n    <li>Dan Boneh, Adam Barth, Andrew Bortz, Collin Jackson, and Weidong\n    Shao reported that Flash does not pin DNS hostnames to a single IP\n    addresses, allowing for DNS rebinding attacks (CVE-2007-5275).</li>\n    <li>David Neu reported an error withing the implementation of the\n    Socket and XMLSocket ActionScript 3 classes (CVE-2007-4324).</li>\n    <li>Toshiharu Sugiyama reported that Flash does not sufficiently\n    restrict the interpretation and usage of cross-domain policy files,\n    allowing for easier cross-site scripting attacks (CVE-2007-6243).</li>\n    <li>Rich Cannings reported a cross-site scripting vulnerability in the\n    way the \"asfunction:\" protocol was handled (CVE-2007-6244).</li>\n    <li>Toshiharu Sugiyama discovered that Flash allows remote attackers to\n    modify HTTP headers for client requests and conduct HTTP Request\n    Splitting attacks (CVE-2007-6245).</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted file\n    (usually in a web browser), possibly leading to the execution of\n    arbitrary code with the privileges of the user running the Adobe Flash\n    Player. The attacker could also cause a user's machine to establish TCP\n    sessions with arbitrary hosts, bypass the Security Sandbox Model,\n    obtain sensitive information, port scan arbitrary hosts, or conduct\n    cross-site-scripting attacks.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Adobe Flash Player users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    Please be advised that unaffected packages of the Adobe Flash Player\n    have known problems when used from within the Konqueror and Opera\n    browsers.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-plugins/adobe-flash-9.0.115.0\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-4324",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4324"
-      },
-      {
-        "Text": "CVE-2007-4768",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4768"
-      },
-      {
-        "Text": "CVE-2007-5275",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5275"
-      },
-      {
-        "Text": "CVE-2007-6242",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6242"
-      },
-      {
-        "Text": "CVE-2007-6243",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6243"
-      },
-      {
-        "Text": "CVE-2007-6244",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6244"
-      },
-      {
-        "Text": "CVE-2007-6245",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6245"
-      },
-      {
-        "Text": "CVE-2007-6246",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6246"
-      },
-      {
-        "Text": "GLSA 200711-30",
-        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200711-30.xml"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-01-01T22:05:12Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-01-15T17:34:55Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-01-15T17:41:04Z"
-    }
-  ]
+	"ID": "200801-07",
+	"Title": "Adobe Flash Player: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities have been identified, the worst of which allow\n    arbitrary code execution on a user's system via a malicious Flash file.\n  ",
+	"Product": {
+		"Text": "adobe-flash",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-01-20",
+	"Revised": {
+		"Text": "2009-05-28",
+		"Count": "03"
+	},
+	"Bug": [
+		"193519"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-plugins/adobe-flash",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "9.0.115.0",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "9.0.115.0",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    The Adobe Flash Player is a renderer for the popular SWF file format,\n    which is commonly used to provide interactive websites, digital\n    experiences and mobile content.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <ul>\n    <li>Flash contains a copy of PCRE which is vulnerable to a heap-based\n    buffer overflow (GLSA 200711-30, CVE-2007-4768).</li>\n    <li>Aaron Portnoy reported an unspecified vulnerability related to\n    input validation (CVE-2007-6242).</li>\n    <li>Jesse Michael and Thomas Biege reported that Flash does not\n    correctly set memory permissions (CVE-2007-6246).</li>\n    <li>Dan Boneh, Adam Barth, Andrew Bortz, Collin Jackson, and Weidong\n    Shao reported that Flash does not pin DNS hostnames to a single IP\n    addresses, allowing for DNS rebinding attacks (CVE-2007-5275).</li>\n    <li>David Neu reported an error withing the implementation of the\n    Socket and XMLSocket ActionScript 3 classes (CVE-2007-4324).</li>\n    <li>Toshiharu Sugiyama reported that Flash does not sufficiently\n    restrict the interpretation and usage of cross-domain policy files,\n    allowing for easier cross-site scripting attacks (CVE-2007-6243).</li>\n    <li>Rich Cannings reported a cross-site scripting vulnerability in the\n    way the \"asfunction:\" protocol was handled (CVE-2007-6244).</li>\n    <li>Toshiharu Sugiyama discovered that Flash allows remote attackers to\n    modify HTTP headers for client requests and conduct HTTP Request\n    Splitting attacks (CVE-2007-6245).</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted file\n    (usually in a web browser), possibly leading to the execution of\n    arbitrary code with the privileges of the user running the Adobe Flash\n    Player. The attacker could also cause a user's machine to establish TCP\n    sessions with arbitrary hosts, bypass the Security Sandbox Model,\n    obtain sensitive information, port scan arbitrary hosts, or conduct\n    cross-site-scripting attacks.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Adobe Flash Player users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    Please be advised that unaffected packages of the Adobe Flash Player\n    have known problems when used from within the Konqueror and Opera\n    browsers.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-plugins/adobe-flash-9.0.115.0\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-4324",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4324"
+			},
+			{
+				"Text": "CVE-2007-4768",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-4768"
+			},
+			{
+				"Text": "CVE-2007-5275",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5275"
+			},
+			{
+				"Text": "CVE-2007-6242",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6242"
+			},
+			{
+				"Text": "CVE-2007-6243",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6243"
+			},
+			{
+				"Text": "CVE-2007-6244",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6244"
+			},
+			{
+				"Text": "CVE-2007-6245",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6245"
+			},
+			{
+				"Text": "CVE-2007-6246",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6246"
+			},
+			{
+				"Text": "GLSA 200711-30",
+				"Link": "https://www.gentoo.org/security/en/glsa/glsa-200711-30.xml"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-01-01T22:05:12Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-01-15T17:34:55Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-01-15T17:41:04Z"
+		}
+	]
 }

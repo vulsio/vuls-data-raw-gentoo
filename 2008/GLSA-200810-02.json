@@ -1,109 +1,109 @@
 {
-  "ID": "200810-02",
-  "Title": "Portage: Untrusted search path local root vulnerability",
-  "Synopsis": "\n    A search path vulnerability in Portage allows local attackers to execute\n    commands with root privileges if emerge is called from untrusted\n    directories.\n  ",
-  "Product": {
-    "Text": "portage",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-10-09",
-  "Revised": {
-    "Text": "2008-10-09",
-    "Count": "01"
-  },
-  "Bug": [
-    "239560"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sys-apps/portage",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.1.4.5",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.1.4.5",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Portage is Gentoo's package manager which is responsible for\n    installing, compiling and updating all packages on the system through\n    the Gentoo rsync tree.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The Gentoo Security Team discovered that several ebuilds, such as\n    sys-apps/portage, net-mail/fetchmail or app-editors/leo execute Python\n    code using \"python -c\", which includes the current working directory in\n    Python's module search path. For several ebuild functions, Portage did\n    not change the working directory from emerge's working directory.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A local attacker could place a specially crafted Python module in a\n    directory (such as /tmp) and entice the root user to run commands such\n    as \"emerge sys-apps/portage\" from that directory, resulting in the\n    execution of arbitrary Python code with root privileges.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Do not run \"emerge\" from untrusted working directories.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Portage users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    NOTE: To upgrade to Portage 2.1.4.5 using 2.1.4.4 or prior, you must\n    run emerge from a trusted working directory, such as \"/root\".\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # cd /root\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-apps/portage-2.1.4.5\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-4394",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4394"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-10-08T16:50:57Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-10-08T16:58:04Z"
-    }
-  ]
+	"ID": "200810-02",
+	"Title": "Portage: Untrusted search path local root vulnerability",
+	"Synopsis": "\n    A search path vulnerability in Portage allows local attackers to execute\n    commands with root privileges if emerge is called from untrusted\n    directories.\n  ",
+	"Product": {
+		"Text": "portage",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-10-09",
+	"Revised": {
+		"Text": "2008-10-09",
+		"Count": "01"
+	},
+	"Bug": [
+		"239560"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-apps/portage",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.1.4.5",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.1.4.5",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Portage is Gentoo's package manager which is responsible for\n    installing, compiling and updating all packages on the system through\n    the Gentoo rsync tree.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The Gentoo Security Team discovered that several ebuilds, such as\n    sys-apps/portage, net-mail/fetchmail or app-editors/leo execute Python\n    code using \"python -c\", which includes the current working directory in\n    Python's module search path. For several ebuild functions, Portage did\n    not change the working directory from emerge's working directory.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A local attacker could place a specially crafted Python module in a\n    directory (such as /tmp) and entice the root user to run commands such\n    as \"emerge sys-apps/portage\" from that directory, resulting in the\n    execution of arbitrary Python code with root privileges.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Do not run \"emerge\" from untrusted working directories.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Portage users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    NOTE: To upgrade to Portage 2.1.4.5 using 2.1.4.4 or prior, you must\n    run emerge from a trusted working directory, such as \"/root\".\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # cd /root\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-apps/portage-2.1.4.5\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-4394",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4394"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-10-08T16:50:57Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-10-08T16:58:04Z"
+		}
+	]
 }

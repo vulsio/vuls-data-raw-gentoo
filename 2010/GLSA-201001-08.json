@@ -1,115 +1,115 @@
 {
-  "ID": "201001-08",
-  "Title": "SquirrelMail: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities were found in SquirrelMail of which the worst\n    results in remote code execution.\n  ",
-  "Product": {
-    "Text": "squirrelmail",
-    "Type": "ebuild"
-  },
-  "Announced": "2010-01-13",
-  "Revised": {
-    "Text": "2010-01-13",
-    "Count": "01"
-  },
-  "Bug": [
-    "269567",
-    "270671"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "mail-client/squirrelmail",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.4.19",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.4.19",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    SquirrelMail is a standards-based webmail package written in PHP.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Multiple vulnerabilities were found in SquirrelMail:\n    </p>\n    <ul><li>Niels\n    Teusink reported multiple input sanitation flaws in certain encrypted\n    strings in e-mail headers, related to contrib/decrypt_headers.php,\n    PHP_SELF and the query string (aka QUERY_STRING) (CVE-2009-1578).\n    </li>\n    <li>Niels Teusink also reported that the map_yp_alias() function\n    in functions/imap_general.php does not filter shell metacharacters in a\n    username and that the original patch was incomplete (CVE-2009-1381,\n    CVE-2009-1579).\n    </li>\n    <li>Tomas Hoger discovered an unspecified session fixation\n    vulnerability (CVE-2009-1580).\n    </li>\n    <li>Luc Beurton reported that functions/mime.php does not protect\n    the application's content from Cascading Style Sheets (CSS) positioning\n    in HTML e-mail messages (CVE-2009-1581).\n    </li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    The vulnerabilities allow remote attackers to execute arbitrary code\n    with the privileges of the user running the web server, to hijack web\n    sessions via a crafted cookie, to spoof the user interface and to\n    conduct Cross-Site Scripting and phishing attacks, via a specially\n    crafted message.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All SquirrelMail users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-client/squirrelmail-1.4.19\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2009-1381",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1381"
-      },
-      {
-        "Text": "CVE-2009-1578",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1578"
-      },
-      {
-        "Text": "CVE-2009-1579",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1579"
-      },
-      {
-        "Text": "CVE-2009-1580",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1580"
-      },
-      {
-        "Text": "CVE-2009-1581",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1581"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    craig\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2010-01-05T21:49:10Z"
-    },
-    {
-      "Text": "\n    craig\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2010-01-13T21:54:28Z"
-    }
-  ]
+	"ID": "201001-08",
+	"Title": "SquirrelMail: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities were found in SquirrelMail of which the worst\n    results in remote code execution.\n  ",
+	"Product": {
+		"Text": "squirrelmail",
+		"Type": "ebuild"
+	},
+	"Announced": "2010-01-13",
+	"Revised": {
+		"Text": "2010-01-13",
+		"Count": "01"
+	},
+	"Bug": [
+		"269567",
+		"270671"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "mail-client/squirrelmail",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.4.19",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.4.19",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    SquirrelMail is a standards-based webmail package written in PHP.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Multiple vulnerabilities were found in SquirrelMail:\n    </p>\n    <ul><li>Niels\n    Teusink reported multiple input sanitation flaws in certain encrypted\n    strings in e-mail headers, related to contrib/decrypt_headers.php,\n    PHP_SELF and the query string (aka QUERY_STRING) (CVE-2009-1578).\n    </li>\n    <li>Niels Teusink also reported that the map_yp_alias() function\n    in functions/imap_general.php does not filter shell metacharacters in a\n    username and that the original patch was incomplete (CVE-2009-1381,\n    CVE-2009-1579).\n    </li>\n    <li>Tomas Hoger discovered an unspecified session fixation\n    vulnerability (CVE-2009-1580).\n    </li>\n    <li>Luc Beurton reported that functions/mime.php does not protect\n    the application's content from Cascading Style Sheets (CSS) positioning\n    in HTML e-mail messages (CVE-2009-1581).\n    </li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    The vulnerabilities allow remote attackers to execute arbitrary code\n    with the privileges of the user running the web server, to hijack web\n    sessions via a crafted cookie, to spoof the user interface and to\n    conduct Cross-Site Scripting and phishing attacks, via a specially\n    crafted message.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All SquirrelMail users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-client/squirrelmail-1.4.19\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2009-1381",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1381"
+			},
+			{
+				"Text": "CVE-2009-1578",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1578"
+			},
+			{
+				"Text": "CVE-2009-1579",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1579"
+			},
+			{
+				"Text": "CVE-2009-1580",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1580"
+			},
+			{
+				"Text": "CVE-2009-1581",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1581"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    craig\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2010-01-05T21:49:10Z"
+		},
+		{
+			"Text": "\n    craig\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2010-01-13T21:54:28Z"
+		}
+	]
 }

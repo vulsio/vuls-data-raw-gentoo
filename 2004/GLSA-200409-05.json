@@ -1,106 +1,106 @@
 {
-  "ID": "200409-05",
-  "Title": "Gallery: Arbitrary command execution",
-  "Synopsis": "\n    The Gallery image upload code contains a temporary file handling\n    vulnerability which could lead to execution of arbitrary commands.\n  ",
-  "Product": {
-    "Text": "Gallery",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-09-02",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "02"
-  },
-  "Bug": [
-    "60742"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-apps/gallery",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.4.4_p2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.4.4_p2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Gallery is a PHP script for maintaining online photo albums.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The upload handling code in Gallery places uploaded files in a\n    temporary directory. After 30 seconds, these files are deleted if they\n    are not valid images. However, since the file exists for 30 seconds, a\n    carefully crafted script could be initiated by the remote attacker\n    during this 30 second timeout. Note that the temporary directory has to\n    be located inside the webroot and an attacker needs to have upload\n    rights either as an authenticated user or via \"EVERYBODY\".\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker could run arbitrary code as the user running PHP.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There are several workarounds to this vulnerability:\n    </p>\n    <ul>\n    <li>Make sure that your temporary directory is not contained in the\n    webroot; by default it is located outside the webroot.</li>\n    <li>Disable upload rights to all albums for \"EVERYBODY\"; upload is\n    disabled by default.</li>\n    <li>Disable debug and dev mode; these settings are disabled by\n    default.</li>\n    <li>Disable allow_url_fopen in php.ini.</li>\n    </ul>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Gallery users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n    \n    # emerge -pv \">=www-apps/gallery-1.4.4_p2\"\n    # emerge \">=www-apps/gallery-1.4.4_p2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "Full Disclosure Announcement",
-        "Link": "http://archives.neohapsis.com/archives/fulldisclosure/2004-08/0757.html"
-      },
-      {
-        "Text": "Gallery Announcement",
-        "Link": "http://gallery.menalto.com/modules.php?op=modload&name=News&file=article&sid=134&mode=thread&order=0&thold=0"
-      },
-      {
-        "Text": "CVE-2004-1466",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1466"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2004-08-22T09:02:45Z"
-    },
-    {
-      "Text": "\n    chriswhite\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-08-25T23:33:36Z"
-    }
-  ]
+	"ID": "200409-05",
+	"Title": "Gallery: Arbitrary command execution",
+	"Synopsis": "\n    The Gallery image upload code contains a temporary file handling\n    vulnerability which could lead to execution of arbitrary commands.\n  ",
+	"Product": {
+		"Text": "Gallery",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-09-02",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "02"
+	},
+	"Bug": [
+		"60742"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-apps/gallery",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.4.4_p2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.4.4_p2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Gallery is a PHP script for maintaining online photo albums.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The upload handling code in Gallery places uploaded files in a\n    temporary directory. After 30 seconds, these files are deleted if they\n    are not valid images. However, since the file exists for 30 seconds, a\n    carefully crafted script could be initiated by the remote attacker\n    during this 30 second timeout. Note that the temporary directory has to\n    be located inside the webroot and an attacker needs to have upload\n    rights either as an authenticated user or via \"EVERYBODY\".\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker could run arbitrary code as the user running PHP.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There are several workarounds to this vulnerability:\n    </p>\n    <ul>\n    <li>Make sure that your temporary directory is not contained in the\n    webroot; by default it is located outside the webroot.</li>\n    <li>Disable upload rights to all albums for \"EVERYBODY\"; upload is\n    disabled by default.</li>\n    <li>Disable debug and dev mode; these settings are disabled by\n    default.</li>\n    <li>Disable allow_url_fopen in php.ini.</li>\n    </ul>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Gallery users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n    \n    # emerge -pv \">=www-apps/gallery-1.4.4_p2\"\n    # emerge \">=www-apps/gallery-1.4.4_p2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "Full Disclosure Announcement",
+				"Link": "http://archives.neohapsis.com/archives/fulldisclosure/2004-08/0757.html"
+			},
+			{
+				"Text": "Gallery Announcement",
+				"Link": "http://gallery.menalto.com/modules.php?op=modload&name=News&file=article&sid=134&mode=thread&order=0&thold=0"
+			},
+			{
+				"Text": "CVE-2004-1466",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1466"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2004-08-22T09:02:45Z"
+		},
+		{
+			"Text": "\n    chriswhite\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-08-25T23:33:36Z"
+		}
+	]
 }

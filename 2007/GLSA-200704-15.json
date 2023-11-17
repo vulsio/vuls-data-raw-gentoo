@@ -1,106 +1,106 @@
 {
-  "ID": "200704-15",
-  "Title": "MadWifi: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities have been discovered in the MadWifi driver,\n    possibly leading to a Denial of Service and information disclosure.\n  ",
-  "Product": {
-    "Text": "Madwifi-ng",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-04-17",
-  "Revised": {
-    "Text": "2007-04-21",
-    "Count": "02"
-  },
-  "Bug": [
-    "173434"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-wireless/madwifi-ng",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.9.3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.9.3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    The MadWifi driver provides support for Atheros based IEEE 802.11\n    Wireless Lan cards.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The driver does not properly process Channel Switch Announcement\n    Information Elements, allowing for an abnormal channel change. The\n    ieee80211_input() function does not properly handle AUTH frames and the\n    driver sends unencrypted packets before WPA authentication succeeds.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could send specially crafted AUTH frames to the\n    vulnerable host, resulting in a Denial of Service by crashing the\n    kernel. A remote attacker could gain access to sensitive information\n    about network architecture by sniffing unencrypted packets. A remote\n    attacker could also send a Channel Switch Count less than or equal to\n    one to trigger a channel change, resulting in a communication loss and\n    a Denial of Service.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All MadWifi users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-wireless/madwifi-ng-0.9.3\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-7178",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-7178"
-      },
-      {
-        "Text": "CVE-2006-7179",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-7179"
-      },
-      {
-        "Text": "CVE-2006-7180",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-7180"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-04-11T12:32:14Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-04-11T18:16:05Z"
-    }
-  ]
+	"ID": "200704-15",
+	"Title": "MadWifi: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities have been discovered in the MadWifi driver,\n    possibly leading to a Denial of Service and information disclosure.\n  ",
+	"Product": {
+		"Text": "Madwifi-ng",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-04-17",
+	"Revised": {
+		"Text": "2007-04-21",
+		"Count": "02"
+	},
+	"Bug": [
+		"173434"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-wireless/madwifi-ng",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.9.3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.9.3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    The MadWifi driver provides support for Atheros based IEEE 802.11\n    Wireless Lan cards.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The driver does not properly process Channel Switch Announcement\n    Information Elements, allowing for an abnormal channel change. The\n    ieee80211_input() function does not properly handle AUTH frames and the\n    driver sends unencrypted packets before WPA authentication succeeds.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could send specially crafted AUTH frames to the\n    vulnerable host, resulting in a Denial of Service by crashing the\n    kernel. A remote attacker could gain access to sensitive information\n    about network architecture by sniffing unencrypted packets. A remote\n    attacker could also send a Channel Switch Count less than or equal to\n    one to trigger a channel change, resulting in a communication loss and\n    a Denial of Service.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All MadWifi users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-wireless/madwifi-ng-0.9.3\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-7178",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-7178"
+			},
+			{
+				"Text": "CVE-2006-7179",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-7179"
+			},
+			{
+				"Text": "CVE-2006-7180",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-7180"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-04-11T12:32:14Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-04-11T18:16:05Z"
+		}
+	]
 }

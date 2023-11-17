@@ -1,98 +1,98 @@
 {
-  "ID": "200706-01",
-  "Title": "libexif: Integer overflow vulnerability",
-  "Synopsis": "\n    libexif fails to handle Exif (EXchangeable Image File) data inputs, making\n    it vulnerable to an integer overflow.\n  ",
-  "Product": {
-    "Text": "libexif",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-06-05",
-  "Revised": {
-    "Text": "2007-06-05",
-    "Count": "01"
-  },
-  "Bug": [
-    "178081"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-libs/libexif",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.6.15",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.6.15",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    libexif is a library for parsing, editing and saving Exif data.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Victor Stinner reported an integer overflow in the\n    exif_data_load_data_entry() function from file exif-data.c while\n    handling Exif data.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker could entice a user to process a file with specially\n    crafted Exif extensions with an application making use of libexif,\n    which will trigger the integer overflow and potentially execute\n    arbitrary code or crash the application.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All libexif users should upgrade to the latest version. Please note\n    that users upgrading from \"<=media-libs/libexif-0.6.13\" should also run\n    revdep-rebuild after their upgrade.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/libexif-0.6.15\"\n    # revdep-rebuild --library=/usr/lib/libexif.so"
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-2645",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2645"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-06-05T18:50:35Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-06-03T06:19:11Z"
-    }
-  ]
+	"ID": "200706-01",
+	"Title": "libexif: Integer overflow vulnerability",
+	"Synopsis": "\n    libexif fails to handle Exif (EXchangeable Image File) data inputs, making\n    it vulnerable to an integer overflow.\n  ",
+	"Product": {
+		"Text": "libexif",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-06-05",
+	"Revised": {
+		"Text": "2007-06-05",
+		"Count": "01"
+	},
+	"Bug": [
+		"178081"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-libs/libexif",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.6.15",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.6.15",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    libexif is a library for parsing, editing and saving Exif data.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Victor Stinner reported an integer overflow in the\n    exif_data_load_data_entry() function from file exif-data.c while\n    handling Exif data.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker could entice a user to process a file with specially\n    crafted Exif extensions with an application making use of libexif,\n    which will trigger the integer overflow and potentially execute\n    arbitrary code or crash the application.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All libexif users should upgrade to the latest version. Please note\n    that users upgrading from \"<=media-libs/libexif-0.6.13\" should also run\n    revdep-rebuild after their upgrade.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/libexif-0.6.15\"\n    # revdep-rebuild --library=/usr/lib/libexif.so"
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-2645",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2645"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-06-05T18:50:35Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-06-03T06:19:11Z"
+		}
+	]
 }

@@ -1,128 +1,128 @@
 {
-  "ID": "200501-07",
-  "Title": "xine-lib: Multiple overflows",
-  "Synopsis": "\n    xine-lib contains multiple overflows potentially allowing execution of\n    arbitrary code.\n  ",
-  "Product": {
-    "Text": "xine-lib",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-01-06",
-  "Revised": {
-    "Text": "2005-01-06",
-    "Count": "01"
-  },
-  "Bug": [
-    "74475"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-libs/xine-lib",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1_rc8-r1",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "1_rc6-r1",
-            "Range": "rge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1_rc8-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    xine-lib is a multimedia library which can be utilized to create\n    multimedia frontends.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Ariel Berkman discovered that xine-lib reads specific input data\n    into an array without checking the input size in demux_aiff.c, making\n    it vulnerable to a buffer overflow (CAN-2004-1300) . iDefense\n    discovered that the PNA_TAG handling code in pnm_get_chunk() does not\n    check if the input size is larger than the buffer size (CAN-2004-1187).\n    iDefense also discovered that in this same function, a negative value\n    could be given to an unsigned variable that specifies the read length\n    of input data (CAN-2004-1188).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could craft a malicious movie or convince a\n    targeted user to connect to a malicious PNM server, which could result\n    in the execution of arbitrary code with the rights of the user running\n    any xine-lib frontend.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All xine-lib users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose media-libs/xine-lib"
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2004-1187",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1187"
-      },
-      {
-        "Text": "CAN-2004-1188",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1188"
-      },
-      {
-        "Text": "CAN-2004-1300",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1300"
-      },
-      {
-        "Text": "iDefense Advisory",
-        "Link": "http://www.idefense.com/application/poi/display?id=176&type=vulnerabilities"
-      },
-      {
-        "Text": "iDefense Advisory",
-        "Link": "http://www.idefense.com/application/poi/display?id=177&type=vulnerabilities"
-      },
-      {
-        "Text": "Ariel Berkman Advisory",
-        "Link": "http://tigger.uic.edu/~jlongs2/holes/xine-lib.txt"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2004-12-21T14:06:44Z"
-    },
-    {
-      "Text": "\n    SeJo\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-12-21T16:57:50Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-01-06T08:50:09Z"
-    }
-  ]
+	"ID": "200501-07",
+	"Title": "xine-lib: Multiple overflows",
+	"Synopsis": "\n    xine-lib contains multiple overflows potentially allowing execution of\n    arbitrary code.\n  ",
+	"Product": {
+		"Text": "xine-lib",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-01-06",
+	"Revised": {
+		"Text": "2005-01-06",
+		"Count": "01"
+	},
+	"Bug": [
+		"74475"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-libs/xine-lib",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1_rc8-r1",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "1_rc6-r1",
+						"Range": "rge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1_rc8-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    xine-lib is a multimedia library which can be utilized to create\n    multimedia frontends.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Ariel Berkman discovered that xine-lib reads specific input data\n    into an array without checking the input size in demux_aiff.c, making\n    it vulnerable to a buffer overflow (CAN-2004-1300) . iDefense\n    discovered that the PNA_TAG handling code in pnm_get_chunk() does not\n    check if the input size is larger than the buffer size (CAN-2004-1187).\n    iDefense also discovered that in this same function, a negative value\n    could be given to an unsigned variable that specifies the read length\n    of input data (CAN-2004-1188).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could craft a malicious movie or convince a\n    targeted user to connect to a malicious PNM server, which could result\n    in the execution of arbitrary code with the rights of the user running\n    any xine-lib frontend.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All xine-lib users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose media-libs/xine-lib"
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2004-1187",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1187"
+			},
+			{
+				"Text": "CAN-2004-1188",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1188"
+			},
+			{
+				"Text": "CAN-2004-1300",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1300"
+			},
+			{
+				"Text": "iDefense Advisory",
+				"Link": "http://www.idefense.com/application/poi/display?id=176&type=vulnerabilities"
+			},
+			{
+				"Text": "iDefense Advisory",
+				"Link": "http://www.idefense.com/application/poi/display?id=177&type=vulnerabilities"
+			},
+			{
+				"Text": "Ariel Berkman Advisory",
+				"Link": "http://tigger.uic.edu/~jlongs2/holes/xine-lib.txt"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2004-12-21T14:06:44Z"
+		},
+		{
+			"Text": "\n    SeJo\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-12-21T16:57:50Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-01-06T08:50:09Z"
+		}
+	]
 }

@@ -1,115 +1,115 @@
 {
-  "ID": "200703-09",
-  "Title": "Smb4K: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities have been identified in Smb4K.\n  ",
-  "Product": {
-    "Text": "smb4k",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-03-09",
-  "Revised": {
-    "Text": "2007-03-09",
-    "Count": "01"
-  },
-  "Bug": [
-    "156152"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-misc/smb4k",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.6.10a",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.6.10a",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Smb4K is a SMB/CIFS (Windows) share browser for KDE.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Kees Cook of the Ubuntu Security Team has identified multiple\n    vulnerabilities in Smb4K.\n    </p>\n    <ul><li>The writeFile() function of\n    smb4k/core/smb4kfileio.cpp makes insecure usage of temporary\n    files.</li>\n    <li>The writeFile() function also stores the contents of\n    the sudoers file with incorrect permissions, allowing for the file's\n    contents to be world-readable.</li>\n    <li>The createLockFile() and\n    removeLockFile() functions improperly handle lock files, possibly\n    allowing for a race condition in file handling.</li>\n    <li>The smb4k_kill\n    utility distributed with Smb4K allows any user in the sudoers group to\n    kill any process on the system.</li>\n    <li>Lastly, there is the potential\n    for multiple stack overflows when any Smb4K utility is used with the\n    sudo command.</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A local attacker could gain unauthorized access to arbitrary files via\n    numerous attack vectors. In some cases to obtain this unauthorized\n    access, an attacker would have to be a member of the sudoers list.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Smb4K users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/smb4k-0.6.10a\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-0472",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0472"
-      },
-      {
-        "Text": "CVE-2007-0473",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0473"
-      },
-      {
-        "Text": "CVE-2007-0474",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0474"
-      },
-      {
-        "Text": "CVE-2007-0475",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0475"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-02-12T22:36:28Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-02-12T22:42:10Z"
-    },
-    {
-      "Text": "\n    shellsage\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-02-27T15:26:26Z"
-    }
-  ]
+	"ID": "200703-09",
+	"Title": "Smb4K: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities have been identified in Smb4K.\n  ",
+	"Product": {
+		"Text": "smb4k",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-03-09",
+	"Revised": {
+		"Text": "2007-03-09",
+		"Count": "01"
+	},
+	"Bug": [
+		"156152"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-misc/smb4k",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.6.10a",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.6.10a",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Smb4K is a SMB/CIFS (Windows) share browser for KDE.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Kees Cook of the Ubuntu Security Team has identified multiple\n    vulnerabilities in Smb4K.\n    </p>\n    <ul><li>The writeFile() function of\n    smb4k/core/smb4kfileio.cpp makes insecure usage of temporary\n    files.</li>\n    <li>The writeFile() function also stores the contents of\n    the sudoers file with incorrect permissions, allowing for the file's\n    contents to be world-readable.</li>\n    <li>The createLockFile() and\n    removeLockFile() functions improperly handle lock files, possibly\n    allowing for a race condition in file handling.</li>\n    <li>The smb4k_kill\n    utility distributed with Smb4K allows any user in the sudoers group to\n    kill any process on the system.</li>\n    <li>Lastly, there is the potential\n    for multiple stack overflows when any Smb4K utility is used with the\n    sudo command.</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A local attacker could gain unauthorized access to arbitrary files via\n    numerous attack vectors. In some cases to obtain this unauthorized\n    access, an attacker would have to be a member of the sudoers list.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Smb4K users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/smb4k-0.6.10a\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-0472",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0472"
+			},
+			{
+				"Text": "CVE-2007-0473",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0473"
+			},
+			{
+				"Text": "CVE-2007-0474",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0474"
+			},
+			{
+				"Text": "CVE-2007-0475",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0475"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-02-12T22:36:28Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-02-12T22:42:10Z"
+		},
+		{
+			"Text": "\n    shellsage\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-02-27T15:26:26Z"
+		}
+	]
 }

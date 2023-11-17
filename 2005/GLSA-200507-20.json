@@ -1,107 +1,107 @@
 {
-  "ID": "200507-20",
-  "Title": "Shorewall: Security policy bypass",
-  "Synopsis": "\n    A vulnerability in Shorewall allows clients authenticated by MAC address\n    filtering to bypass all other security rules.\n  ",
-  "Product": {
-    "Text": "shorewall",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-07-22",
-  "Revised": {
-    "Text": "2005-09-14",
-    "Count": "02"
-  },
-  "Bug": [
-    "99398"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-firewall/shorewall",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.4.2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.4.1",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Shorewall is a high level tool for configuring Netfilter, the firewall\n    facility included in the Linux Kernel.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Shorewall fails to enforce security policies if configured with\n    \"MACLIST_DISPOSITION\" set to \"ACCEPT\" or \"MACLIST_TTL\" set to a value\n    greater or equal to 0.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "low",
-    "Text": "\n    <p>\n    A client authenticated by MAC address filtering could bypass all\n    security policies, possibly allowing him to gain access to restricted\n    services. The default installation has MACLIST_DISPOSITION=REJECT and\n    MACLIST_TTL=(blank) (equivalent to 0). This can be checked by looking\n    at the settings in /etc/shorewall/shorewall.conf\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Set \"MACLIST_TTL\" to \"0\" and \"MACLIST_DISPOSITION\" to \"REJECT\" in the\n    Shorewall configuration file (usually /etc/shorewall/shorewall.conf).\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Shorewall users should upgrade to the latest available version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose net-firewall/shorewall"
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2005-2317",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2317"
-      },
-      {
-        "Text": "Shorewall Announcement",
-        "Link": "http://www.shorewall.net/News.htm#20050717"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-07-20T08:32:24Z"
-    },
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-07-20T09:04:23Z"
-    },
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-07-21T21:07:14Z"
-    }
-  ]
+	"ID": "200507-20",
+	"Title": "Shorewall: Security policy bypass",
+	"Synopsis": "\n    A vulnerability in Shorewall allows clients authenticated by MAC address\n    filtering to bypass all other security rules.\n  ",
+	"Product": {
+		"Text": "shorewall",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-07-22",
+	"Revised": {
+		"Text": "2005-09-14",
+		"Count": "02"
+	},
+	"Bug": [
+		"99398"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-firewall/shorewall",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.4.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.4.1",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Shorewall is a high level tool for configuring Netfilter, the firewall\n    facility included in the Linux Kernel.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Shorewall fails to enforce security policies if configured with\n    \"MACLIST_DISPOSITION\" set to \"ACCEPT\" or \"MACLIST_TTL\" set to a value\n    greater or equal to 0.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "low",
+		"Text": "\n    <p>\n    A client authenticated by MAC address filtering could bypass all\n    security policies, possibly allowing him to gain access to restricted\n    services. The default installation has MACLIST_DISPOSITION=REJECT and\n    MACLIST_TTL=(blank) (equivalent to 0). This can be checked by looking\n    at the settings in /etc/shorewall/shorewall.conf\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Set \"MACLIST_TTL\" to \"0\" and \"MACLIST_DISPOSITION\" to \"REJECT\" in the\n    Shorewall configuration file (usually /etc/shorewall/shorewall.conf).\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Shorewall users should upgrade to the latest available version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose net-firewall/shorewall"
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2005-2317",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2317"
+			},
+			{
+				"Text": "Shorewall Announcement",
+				"Link": "http://www.shorewall.net/News.htm#20050717"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-07-20T08:32:24Z"
+		},
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-07-20T09:04:23Z"
+		},
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-07-21T21:07:14Z"
+		}
+	]
 }

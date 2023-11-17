@@ -1,106 +1,106 @@
 {
-  "ID": "200805-20",
-  "Title": "GnuTLS: Execution of arbitrary code",
-  "Synopsis": "\n    Multiple vulnerabilities might allow for the execution of arbitrary code in\n    daemons using GnuTLS.\n  ",
-  "Product": {
-    "Text": "gnutls",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-05-21",
-  "Revised": {
-    "Text": "2008-05-21",
-    "Count": "01"
-  },
-  "Bug": [
-    "222823"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-libs/gnutls",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.2.5",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.2.5",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    GnuTLS is an implementation of Secure Sockets Layer (SSL) 3.0 and\n    Transport Layer Security (TLS) 1.0, 1.1 and 1.2.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Ossi Herrala and Jukka Taimisto of Codenomicon reported three\n    vulnerabilities in libgnutls of GnuTLS:\n    </p>\n    <ul>\n    <li>\n    \"Client Hello\" messages containing an invalid server name can lead to a\n    buffer overflow when evaluating \"Security Parameters\" (CVE-2008-1948).\n    </li>\n    <li>\n    Multiple \"Client Hello\" messages can lead to a NULL pointer dereference\n    (CVE-2008-1949).\n    </li>\n    <li>\n    A TLS handshake including an encrypted \"Client Hello\" message and an\n    invalid record length could lead to a buffer overread (CVE-2008-1950).\n    </li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    Unauthenticated remote attackers could exploit these vulnerabilities to\n    cause Denial of Service conditions in daemons using GnuTLS. The first\n    vulnerability (CVE-2008-1948) might allow for the execution of\n    arbitrary code with the privileges of the daemon handling incoming TLS\n    connections.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All GnuTLS users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-libs/gnutls-2.2.5\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-1948",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1948"
-      },
-      {
-        "Text": "CVE-2008-1949",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1949"
-      },
-      {
-        "Text": "CVE-2008-1950",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1950"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-05-20T16:44:10Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-05-21T16:32:55Z"
-    }
-  ]
+	"ID": "200805-20",
+	"Title": "GnuTLS: Execution of arbitrary code",
+	"Synopsis": "\n    Multiple vulnerabilities might allow for the execution of arbitrary code in\n    daemons using GnuTLS.\n  ",
+	"Product": {
+		"Text": "gnutls",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-05-21",
+	"Revised": {
+		"Text": "2008-05-21",
+		"Count": "01"
+	},
+	"Bug": [
+		"222823"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-libs/gnutls",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.2.5",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.2.5",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    GnuTLS is an implementation of Secure Sockets Layer (SSL) 3.0 and\n    Transport Layer Security (TLS) 1.0, 1.1 and 1.2.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Ossi Herrala and Jukka Taimisto of Codenomicon reported three\n    vulnerabilities in libgnutls of GnuTLS:\n    </p>\n    <ul>\n    <li>\n    \"Client Hello\" messages containing an invalid server name can lead to a\n    buffer overflow when evaluating \"Security Parameters\" (CVE-2008-1948).\n    </li>\n    <li>\n    Multiple \"Client Hello\" messages can lead to a NULL pointer dereference\n    (CVE-2008-1949).\n    </li>\n    <li>\n    A TLS handshake including an encrypted \"Client Hello\" message and an\n    invalid record length could lead to a buffer overread (CVE-2008-1950).\n    </li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    Unauthenticated remote attackers could exploit these vulnerabilities to\n    cause Denial of Service conditions in daemons using GnuTLS. The first\n    vulnerability (CVE-2008-1948) might allow for the execution of\n    arbitrary code with the privileges of the daemon handling incoming TLS\n    connections.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All GnuTLS users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-libs/gnutls-2.2.5\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-1948",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1948"
+			},
+			{
+				"Text": "CVE-2008-1949",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1949"
+			},
+			{
+				"Text": "CVE-2008-1950",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1950"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-05-20T16:44:10Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-05-21T16:32:55Z"
+		}
+	]
 }

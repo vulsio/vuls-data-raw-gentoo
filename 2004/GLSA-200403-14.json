@@ -1,105 +1,105 @@
 {
-  "ID": "200403-14",
-  "Title": "Multiple Security Vulnerabilities in Monit",
-  "Synopsis": "\n    A denial of service and a buffer overflow vulnerability have been found in\n    Monit.\n  ",
-  "Product": {
-    "Text": "app-admin/monit",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-03-31",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "02"
-  },
-  "Bug": [
-    "43967"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-admin/monit",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.1",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Monit is a system administration utility that allows management and\n    monitoring of processes, files, directories and devices on a Unix\n    system.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    A denial of service may occur due to Monit not sanitizing remotely\n    supplied HTTP parameters before passing them to memory allocation\n    functions. This could allow an attacker to cause an unexpected\n    condition that could lead to the Monit daemon crashing.\n    </p>\n    <p>\n    An overly long http request method may cause a buffer overflow due to\n    Monit performing insufficient bounds checking when handling HTTP\n    requests.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    An attacker may crash the Monit daemon to create a denial of service\n    condition or cause a buffer overflow that would allow arbitrary code to\n    be executed with root privileges.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    A workaround is not currently known for this issue. All users are\n    advised to upgrade to the latest version of the affected package.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    Monit users should upgrade to version 4.2 or later:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      " \n    # emerge sync\n    \n    # emerge -pv \">=app-admin/monit-4.2\"\n    # emerge \">=app-admin/monit-4.2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "Monit HTTP Content-Length Parameter Denial of Service Vulnerability",
-        "Link": "http://www.securityfocus.com/bid/9098"
-      },
-      {
-        "Text": "Monit Overly Long HTTP Request Buffer Overrun Vulnerability",
-        "Link": "http://www.securityfocus.com/bid/9099"
-      },
-      {
-        "Text": "CVE-2003-1083",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-1083"
-      },
-      {
-        "Text": "CVE-2003-1084",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-1084"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-05-22T05:44:45Z"
-    }
-  ]
+	"ID": "200403-14",
+	"Title": "Multiple Security Vulnerabilities in Monit",
+	"Synopsis": "\n    A denial of service and a buffer overflow vulnerability have been found in\n    Monit.\n  ",
+	"Product": {
+		"Text": "app-admin/monit",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-03-31",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "02"
+	},
+	"Bug": [
+		"43967"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-admin/monit",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.1",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Monit is a system administration utility that allows management and\n    monitoring of processes, files, directories and devices on a Unix\n    system.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    A denial of service may occur due to Monit not sanitizing remotely\n    supplied HTTP parameters before passing them to memory allocation\n    functions. This could allow an attacker to cause an unexpected\n    condition that could lead to the Monit daemon crashing.\n    </p>\n    <p>\n    An overly long http request method may cause a buffer overflow due to\n    Monit performing insufficient bounds checking when handling HTTP\n    requests.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    An attacker may crash the Monit daemon to create a denial of service\n    condition or cause a buffer overflow that would allow arbitrary code to\n    be executed with root privileges.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    A workaround is not currently known for this issue. All users are\n    advised to upgrade to the latest version of the affected package.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    Monit users should upgrade to version 4.2 or later:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			" \n    # emerge sync\n    \n    # emerge -pv \">=app-admin/monit-4.2\"\n    # emerge \">=app-admin/monit-4.2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "Monit HTTP Content-Length Parameter Denial of Service Vulnerability",
+				"Link": "http://www.securityfocus.com/bid/9098"
+			},
+			{
+				"Text": "Monit Overly Long HTTP Request Buffer Overrun Vulnerability",
+				"Link": "http://www.securityfocus.com/bid/9099"
+			},
+			{
+				"Text": "CVE-2003-1083",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-1083"
+			},
+			{
+				"Text": "CVE-2003-1084",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-1084"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-05-22T05:44:45Z"
+		}
+	]
 }

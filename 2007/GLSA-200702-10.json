@@ -1,123 +1,123 @@
 {
-  "ID": "200702-10",
-  "Title": "UFO2000: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities have been found in the network components of\n    UFO2000 that could result in the remote execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "ufo2000",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-02-25",
-  "Revised": {
-    "Text": "2007-02-25",
-    "Count": "01"
-  },
-  "Bug": [
-    "142392"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "games-strategy/ufo2000",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.7.1062",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.7.1062",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    UFO2000 is a multi-player, turn-based tactical simulation.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Five vulnerabilities were found: a buffer overflow in recv_add_unit();\n    a problem with improperly trusting user-supplied string information in\n    decode_stringmap(); several issues with array manipulation via various\n    commands during play; an SQL injection in server_protocol.cpp; and\n    finally, a second buffer overflow in recv_map_data().\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker could send crafted network traffic as part of a\n    multi-player game that could result in remote code execution on the\n    remote opponent or the server. A remote attacker could also run\n    arbitrary SQL queries against the server account database, and perform\n    a Denial of Service on a remote opponent by causing the game to crash.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    UFO2000 currently depends on the dumb-0.9.2 library, which has been\n    removed from portage due to security problems (GLSA 200608-14) .\n    Because of this, UFO2000 has been masked, and we recommend unmerging\n    the package until the next beta release can remove the dependency on\n    dumb.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --ask --verbose --unmerge ufo2000"
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-3788",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3788"
-      },
-      {
-        "Text": "CVE-2006-3789",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3789"
-      },
-      {
-        "Text": "CVE-2006-3790",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3790"
-      },
-      {
-        "Text": "CVE-2006-3791",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3791"
-      },
-      {
-        "Text": "CVE-2006-3792",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3792"
-      },
-      {
-        "Text": "GLSA 200608-14",
-        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200608-14.xml"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-02-10T19:42:06Z"
-    },
-    {
-      "Text": "\n    aetius\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-02-14T03:39:23Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-02-19T21:24:04Z"
-    }
-  ]
+	"ID": "200702-10",
+	"Title": "UFO2000: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities have been found in the network components of\n    UFO2000 that could result in the remote execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "ufo2000",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-02-25",
+	"Revised": {
+		"Text": "2007-02-25",
+		"Count": "01"
+	},
+	"Bug": [
+		"142392"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "games-strategy/ufo2000",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.7.1062",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.7.1062",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    UFO2000 is a multi-player, turn-based tactical simulation.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Five vulnerabilities were found: a buffer overflow in recv_add_unit();\n    a problem with improperly trusting user-supplied string information in\n    decode_stringmap(); several issues with array manipulation via various\n    commands during play; an SQL injection in server_protocol.cpp; and\n    finally, a second buffer overflow in recv_map_data().\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker could send crafted network traffic as part of a\n    multi-player game that could result in remote code execution on the\n    remote opponent or the server. A remote attacker could also run\n    arbitrary SQL queries against the server account database, and perform\n    a Denial of Service on a remote opponent by causing the game to crash.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    UFO2000 currently depends on the dumb-0.9.2 library, which has been\n    removed from portage due to security problems (GLSA 200608-14) .\n    Because of this, UFO2000 has been masked, and we recommend unmerging\n    the package until the next beta release can remove the dependency on\n    dumb.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --ask --verbose --unmerge ufo2000"
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-3788",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3788"
+			},
+			{
+				"Text": "CVE-2006-3789",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3789"
+			},
+			{
+				"Text": "CVE-2006-3790",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3790"
+			},
+			{
+				"Text": "CVE-2006-3791",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3791"
+			},
+			{
+				"Text": "CVE-2006-3792",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3792"
+			},
+			{
+				"Text": "GLSA 200608-14",
+				"Link": "https://www.gentoo.org/security/en/glsa/glsa-200608-14.xml"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-02-10T19:42:06Z"
+		},
+		{
+			"Text": "\n    aetius\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-02-14T03:39:23Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-02-19T21:24:04Z"
+		}
+	]
 }

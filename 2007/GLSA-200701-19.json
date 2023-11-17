@@ -1,123 +1,123 @@
 {
-  "ID": "200701-19",
-  "Title": "OpenLDAP: Insecure usage of /tmp during installation",
-  "Synopsis": "\n    A shell script commonly released with OpenLDAP makes insecure usage of\n    files in /tmp during the emerge process.\n  ",
-  "Product": {
-    "Text": "openldap",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-01-23",
-  "Revised": {
-    "Text": "2007-03-11",
-    "Count": "02"
-  },
-  "Bug": [
-    "159508"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-nds/openldap",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.1.30-r10",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "2.2.28-r7",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "2.3.30-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.1.30-r10",
-            "Range": "lt",
-            "Slot": ""
-          },
-          {
-            "Text": "2.2.28-r7",
-            "Range": "lt",
-            "Slot": ""
-          },
-          {
-            "Text": "2.3.30-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    OpenLDAP Software is an open source implementation of the Lightweight\n    Directory Access Protocol.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Tavis Ormandy of the Gentoo Linux Security Team has discovered that the\n    file gencert.sh distributed with the Gentoo ebuild for OpenLDAP does\n    not exit upon the existence of a directory in /tmp during installation\n    allowing for directory traversal.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "low",
-    "Text": "\n    <p>\n    A local attacker could create a symbolic link in /tmp and potentially\n    overwrite arbitrary system files upon a privileged user emerging\n    OpenLDAP.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All OpenLDAP users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \"net-nds/openldap\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-0476",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0476"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-01-13T21:20:49Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-01-14T21:54:19Z"
-    },
-    {
-      "Text": "\n    shellsage\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-01-15T00:28:23Z"
-    }
-  ]
+	"ID": "200701-19",
+	"Title": "OpenLDAP: Insecure usage of /tmp during installation",
+	"Synopsis": "\n    A shell script commonly released with OpenLDAP makes insecure usage of\n    files in /tmp during the emerge process.\n  ",
+	"Product": {
+		"Text": "openldap",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-01-23",
+	"Revised": {
+		"Text": "2007-03-11",
+		"Count": "02"
+	},
+	"Bug": [
+		"159508"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-nds/openldap",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.1.30-r10",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "2.2.28-r7",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "2.3.30-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.1.30-r10",
+						"Range": "lt",
+						"Slot": ""
+					},
+					{
+						"Text": "2.2.28-r7",
+						"Range": "lt",
+						"Slot": ""
+					},
+					{
+						"Text": "2.3.30-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    OpenLDAP Software is an open source implementation of the Lightweight\n    Directory Access Protocol.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Tavis Ormandy of the Gentoo Linux Security Team has discovered that the\n    file gencert.sh distributed with the Gentoo ebuild for OpenLDAP does\n    not exit upon the existence of a directory in /tmp during installation\n    allowing for directory traversal.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "low",
+		"Text": "\n    <p>\n    A local attacker could create a symbolic link in /tmp and potentially\n    overwrite arbitrary system files upon a privileged user emerging\n    OpenLDAP.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All OpenLDAP users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \"net-nds/openldap\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-0476",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0476"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-01-13T21:20:49Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-01-14T21:54:19Z"
+		},
+		{
+			"Text": "\n    shellsage\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-01-15T00:28:23Z"
+		}
+	]
 }

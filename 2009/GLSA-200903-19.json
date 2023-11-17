@@ -1,103 +1,103 @@
 {
-  "ID": "200903-19",
-  "Title": "Xerces-C++: Denial of service",
-  "Synopsis": "\n    An error in Xerces-C++ allows for a Denial of Service via malicious XML\n    schema files.\n  ",
-  "Product": {
-    "Text": "xerces-c",
-    "Type": "ebuild"
-  },
-  "Announced": "2009-03-09",
-  "Revised": {
-    "Text": "2009-03-09",
-    "Count": "01"
-  },
-  "Bug": [
-    "240496"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-libs/xerces-c",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.0.0-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.0.0-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Xerces-C++ is a validating XML parser written in a portable subset of\n    C++.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Frank Rast reported that the XML parser in Xerces-C++ does not\n    correctly handle an XML schema definition with a large maxOccurs value,\n    which triggers excessive memory consumption during the validation of an\n    XML file.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user or automated system to validate\n    an XML file using a specially crafted XML schema file, leading to a\n    Denial of Service (stack consumption and crash).\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Xerces-C++ users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/xerces-c-3.0.0-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-4482",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4482"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "requester",
-      "Timestamp": "2009-01-11T17:39:39Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-02-12T18:13:38Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2009-02-12T18:13:55Z"
-    }
-  ]
+	"ID": "200903-19",
+	"Title": "Xerces-C++: Denial of service",
+	"Synopsis": "\n    An error in Xerces-C++ allows for a Denial of Service via malicious XML\n    schema files.\n  ",
+	"Product": {
+		"Text": "xerces-c",
+		"Type": "ebuild"
+	},
+	"Announced": "2009-03-09",
+	"Revised": {
+		"Text": "2009-03-09",
+		"Count": "01"
+	},
+	"Bug": [
+		"240496"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-libs/xerces-c",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.0.0-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.0.0-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Xerces-C++ is a validating XML parser written in a portable subset of\n    C++.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Frank Rast reported that the XML parser in Xerces-C++ does not\n    correctly handle an XML schema definition with a large maxOccurs value,\n    which triggers excessive memory consumption during the validation of an\n    XML file.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user or automated system to validate\n    an XML file using a specially crafted XML schema file, leading to a\n    Denial of Service (stack consumption and crash).\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Xerces-C++ users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/xerces-c-3.0.0-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-4482",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4482"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "requester",
+			"Timestamp": "2009-01-11T17:39:39Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-02-12T18:13:38Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2009-02-12T18:13:55Z"
+		}
+	]
 }

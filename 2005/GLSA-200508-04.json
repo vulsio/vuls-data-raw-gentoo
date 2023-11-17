@@ -1,152 +1,152 @@
 {
-  "ID": "200508-04",
-  "Title": "Netpbm: Arbitrary code execution in pstopnm",
-  "Synopsis": "\n    The pstopnm utility, part of the Netpbm tools, contains a vulnerability\n    which can potentially result in the execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "Netpbm",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-08-05",
-  "Revised": {
-    "Text": "2009-05-28",
-    "Count": "06"
-  },
-  "Bug": [
-    "100398"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-libs/netpbm",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "10.28",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "10.26.32",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "10.26.33",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "10.26.42",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "10.26.43",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "10.26.44",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "10.26.48",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "10.26.49",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "10.26.59",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "10.26.61",
-            "Range": "rge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "10.28",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Netpbm is a package of 220 graphics programs and a programming\n    libraries, including pstopnm. pstopnm is a tool which converts\n    PostScript files to PNM image files.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Max Vozeler reported that pstopnm calls the GhostScript interpreter on\n    untrusted PostScript files without specifying the -dSAFER option, to\n    convert a PostScript file into a PBM, PGM, or PNM file.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker could craft a malicious PostScript file and entice a user\n    to run pstopnm on it, resulting in the execution of arbitrary commands\n    with the permissions of the user running pstopnm.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Netpbm users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose media-libs/netpbm"
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2005-2471",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2471"
-      },
-      {
-        "Text": "Secunia Advisory SA16184",
-        "Link": "https://secunia.com/advisories/16184/"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-08-02T10:10:20Z"
-    },
-    {
-      "Text": "\n    adir\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-08-02T11:24:11Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-08-05T10:42:23Z"
-    }
-  ]
+	"ID": "200508-04",
+	"Title": "Netpbm: Arbitrary code execution in pstopnm",
+	"Synopsis": "\n    The pstopnm utility, part of the Netpbm tools, contains a vulnerability\n    which can potentially result in the execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "Netpbm",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-08-05",
+	"Revised": {
+		"Text": "2009-05-28",
+		"Count": "06"
+	},
+	"Bug": [
+		"100398"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-libs/netpbm",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "10.28",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "10.26.32",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "10.26.33",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "10.26.42",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "10.26.43",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "10.26.44",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "10.26.48",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "10.26.49",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "10.26.59",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "10.26.61",
+						"Range": "rge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "10.28",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Netpbm is a package of 220 graphics programs and a programming\n    libraries, including pstopnm. pstopnm is a tool which converts\n    PostScript files to PNM image files.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Max Vozeler reported that pstopnm calls the GhostScript interpreter on\n    untrusted PostScript files without specifying the -dSAFER option, to\n    convert a PostScript file into a PBM, PGM, or PNM file.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker could craft a malicious PostScript file and entice a user\n    to run pstopnm on it, resulting in the execution of arbitrary commands\n    with the permissions of the user running pstopnm.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Netpbm users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose media-libs/netpbm"
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2005-2471",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2471"
+			},
+			{
+				"Text": "Secunia Advisory SA16184",
+				"Link": "https://secunia.com/advisories/16184/"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-08-02T10:10:20Z"
+		},
+		{
+			"Text": "\n    adir\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-08-02T11:24:11Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-08-05T10:42:23Z"
+		}
+	]
 }

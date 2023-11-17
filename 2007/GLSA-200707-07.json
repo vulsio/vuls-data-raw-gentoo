@@ -1,108 +1,108 @@
 {
-  "ID": "200707-07",
-  "Title": "MPlayer: Multiple buffer overflows",
-  "Synopsis": "\n    Multiple vulnerabilities have been discovered in MPlayer, possibly allowing\n    for the remote execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "mplayer",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-07-24",
-  "Revised": {
-    "Text": "2007-10-12",
-    "Count": "03"
-  },
-  "Bug": [
-    "181097"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-video/mplayer",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.0.20070622",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "1.0",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.0.20070622",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    MPlayer is a media player incuding support for a wide range of audio\n    and video formats.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Stefan Cornelius and Reimar Doffinger of Secunia Research discovered\n    several boundary errors in the functions cddb_query_parse(),\n    cddb_parse_matches_list() and cddb_read_parse(), each allowing for a\n    stack-based buffer overflow.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted file\n    with malicious CDDB entries, possibly resulting in the execution of\n    arbitrary code with the privileges of the user running MPlayer.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All MPlayer users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-video/mplayer-1.0.20070622\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-2948",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2948"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-07-15T07:30:30Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-07-17T18:47:22Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-07-17T18:48:15Z"
-    }
-  ]
+	"ID": "200707-07",
+	"Title": "MPlayer: Multiple buffer overflows",
+	"Synopsis": "\n    Multiple vulnerabilities have been discovered in MPlayer, possibly allowing\n    for the remote execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "mplayer",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-07-24",
+	"Revised": {
+		"Text": "2007-10-12",
+		"Count": "03"
+	},
+	"Bug": [
+		"181097"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-video/mplayer",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.0.20070622",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "1.0",
+						"Range": "lt",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.0.20070622",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    MPlayer is a media player incuding support for a wide range of audio\n    and video formats.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Stefan Cornelius and Reimar Doffinger of Secunia Research discovered\n    several boundary errors in the functions cddb_query_parse(),\n    cddb_parse_matches_list() and cddb_read_parse(), each allowing for a\n    stack-based buffer overflow.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted file\n    with malicious CDDB entries, possibly resulting in the execution of\n    arbitrary code with the privileges of the user running MPlayer.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All MPlayer users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-video/mplayer-1.0.20070622\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-2948",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2948"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-07-15T07:30:30Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-07-17T18:47:22Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-07-17T18:48:15Z"
+		}
+	]
 }

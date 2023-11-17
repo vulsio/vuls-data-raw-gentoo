@@ -1,119 +1,119 @@
 {
-  "ID": "200410-22",
-  "Title": "MySQL: Multiple vulnerabilities",
-  "Synopsis": "\n    Several vulnerabilities including privilege abuse, Denial of Service, and\n    potentially remote arbitrary code execution have been discovered in MySQL.\n  ",
-  "Product": {
-    "Text": "MySQL",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-10-24",
-  "Revised": {
-    "Text": "2004-10-24",
-    "Count": "01"
-  },
-  "Bug": [
-    "67062"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-db/mysql",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.0.21",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.0.21",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    MySQL is a popular open-source, multi-threaded, multi-user SQL database\n    server.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The following vulnerabilities were found and fixed in MySQL:\n    </p>\n    <p>\n    Oleksandr Byelkin found that ALTER TABLE ... RENAME checks CREATE/INSERT\n    rights of the old table instead of the new one (CAN-2004-0835). Another\n    privilege checking bug allowed users to grant rights on a database they had\n    no rights on.\n    </p>\n    <p>\n    Dean Ellis found a defect where multiple threads ALTERing the MERGE tables\n    to change the UNION could cause the server to crash (CAN-2004-0837).\n    Another crash was found in MATCH ... AGAINST() queries with missing closing\n    double quote.\n    </p>\n    <p>\n    Finally, a buffer overrun in the mysql_real_connect function was found by\n    Lukasz Wojtow (CAN-2004-0836).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    The privilege checking issues could be used by remote users to bypass their\n    rights on databases. The two crashes issues could be exploited by a remote\n    user to perform a Denial of Service attack on MySQL server. The buffer\n    overrun issue could also be exploited as a Denial of Service attack, and\n    may allow to execute arbitrary code with the rights of the MySQL daemon\n    (typically, the \"mysql\" user).\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All MySQL users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n\n    # emerge -pv \">=dev-db/mysql-4.0.21\"\n    # emerge \">=dev-db/mysql-4.0.21\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2004-0835",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0835"
-      },
-      {
-        "Text": "CAN-2004-0836",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0836"
-      },
-      {
-        "Text": "CAN-2004-0837",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0837"
-      },
-      {
-        "Text": "Privilege granting bug",
-        "Link": "https://bugs.mysql.com/bug.php?id=3933"
-      },
-      {
-        "Text": "MATCH ... AGAINST crash bug",
-        "Link": "https://bugs.mysql.com/bug.php?id=3870"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2004-10-19T17:45:22Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-10-22T20:06:53Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-10-23T08:53:17Z"
-    }
-  ]
+	"ID": "200410-22",
+	"Title": "MySQL: Multiple vulnerabilities",
+	"Synopsis": "\n    Several vulnerabilities including privilege abuse, Denial of Service, and\n    potentially remote arbitrary code execution have been discovered in MySQL.\n  ",
+	"Product": {
+		"Text": "MySQL",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-10-24",
+	"Revised": {
+		"Text": "2004-10-24",
+		"Count": "01"
+	},
+	"Bug": [
+		"67062"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-db/mysql",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.0.21",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.0.21",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    MySQL is a popular open-source, multi-threaded, multi-user SQL database\n    server.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The following vulnerabilities were found and fixed in MySQL:\n    </p>\n    <p>\n    Oleksandr Byelkin found that ALTER TABLE ... RENAME checks CREATE/INSERT\n    rights of the old table instead of the new one (CAN-2004-0835). Another\n    privilege checking bug allowed users to grant rights on a database they had\n    no rights on.\n    </p>\n    <p>\n    Dean Ellis found a defect where multiple threads ALTERing the MERGE tables\n    to change the UNION could cause the server to crash (CAN-2004-0837).\n    Another crash was found in MATCH ... AGAINST() queries with missing closing\n    double quote.\n    </p>\n    <p>\n    Finally, a buffer overrun in the mysql_real_connect function was found by\n    Lukasz Wojtow (CAN-2004-0836).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    The privilege checking issues could be used by remote users to bypass their\n    rights on databases. The two crashes issues could be exploited by a remote\n    user to perform a Denial of Service attack on MySQL server. The buffer\n    overrun issue could also be exploited as a Denial of Service attack, and\n    may allow to execute arbitrary code with the rights of the MySQL daemon\n    (typically, the \"mysql\" user).\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All MySQL users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n\n    # emerge -pv \">=dev-db/mysql-4.0.21\"\n    # emerge \">=dev-db/mysql-4.0.21\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2004-0835",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0835"
+			},
+			{
+				"Text": "CAN-2004-0836",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0836"
+			},
+			{
+				"Text": "CAN-2004-0837",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0837"
+			},
+			{
+				"Text": "Privilege granting bug",
+				"Link": "https://bugs.mysql.com/bug.php?id=3933"
+			},
+			{
+				"Text": "MATCH ... AGAINST crash bug",
+				"Link": "https://bugs.mysql.com/bug.php?id=3870"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2004-10-19T17:45:22Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-10-22T20:06:53Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-10-23T08:53:17Z"
+		}
+	]
 }

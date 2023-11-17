@@ -1,98 +1,98 @@
 {
-  "ID": "201412-16",
-  "Title": "CouchDB: Denial of service",
-  "Synopsis": "A vulnerability in CouchDB could result in Denial of Service.",
-  "Product": {
-    "Text": "couchdb",
-    "Type": "ebuild"
-  },
-  "Announced": "2014-12-13",
-  "Revised": {
-    "Text": "2014-12-13",
-    "Count": "1"
-  },
-  "Bug": [
-    "506354"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-db/couchdb",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.5.1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.5.1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Apache CouchDB is a distributed, fault-tolerant and schema-free\n      document-oriented database.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>CouchDB does not properly sanitize the count parameter for Universally\n      Unique Identifiers (UUID) requests. \n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could send a specially crafted request to CouchDB,\n      possibly resulting in a Denial of Service condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>The /_uuids handler can be disabled in local.ini with the following\n      configuration:\n    </p>\n    \n    <p>[httpd_global_handlers]\n      _uuids =\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All CouchDB users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-db/couchdb-1.5.1\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2014-2668",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-2668"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "requester",
-      "Timestamp": "2014-08-04T19:24:09Z"
-    },
-    {
-      "Text": "ackle",
-      "Tag": "submitter",
-      "Timestamp": "2014-12-13T17:06:39Z"
-    }
-  ]
+	"ID": "201412-16",
+	"Title": "CouchDB: Denial of service",
+	"Synopsis": "A vulnerability in CouchDB could result in Denial of Service.",
+	"Product": {
+		"Text": "couchdb",
+		"Type": "ebuild"
+	},
+	"Announced": "2014-12-13",
+	"Revised": {
+		"Text": "2014-12-13",
+		"Count": "1"
+	},
+	"Bug": [
+		"506354"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-db/couchdb",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.5.1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.5.1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Apache CouchDB is a distributed, fault-tolerant and schema-free\n      document-oriented database.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>CouchDB does not properly sanitize the count parameter for Universally\n      Unique Identifiers (UUID) requests. \n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could send a specially crafted request to CouchDB,\n      possibly resulting in a Denial of Service condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>The /_uuids handler can be disabled in local.ini with the following\n      configuration:\n    </p>\n    \n    <p>[httpd_global_handlers]\n      _uuids =\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All CouchDB users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-db/couchdb-1.5.1\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2014-2668",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-2668"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "requester",
+			"Timestamp": "2014-08-04T19:24:09Z"
+		},
+		{
+			"Text": "ackle",
+			"Tag": "submitter",
+			"Timestamp": "2014-12-13T17:06:39Z"
+		}
+	]
 }

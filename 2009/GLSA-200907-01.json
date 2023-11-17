@@ -1,103 +1,103 @@
 {
-  "ID": "200907-01",
-  "Title": "libwmf: User-assisted execution of arbitrary code",
-  "Synopsis": "\n    libwmf bundles an old GD version which contains a \"use-after-free\"\n    vulnerability.\n  ",
-  "Product": {
-    "Text": "libwmf",
-    "Type": "ebuild"
-  },
-  "Announced": "2009-07-02",
-  "Revised": {
-    "Text": "2009-07-02",
-    "Count": "01"
-  },
-  "Bug": [
-    "268161"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-libs/libwmf",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.2.8.4-r3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.2.8.4-r3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    libwmf is a library for converting WMF files.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The embedded fork of the GD library introduced a \"use-after-free\"\n    vulnerability in a modification which is specific to libwmf.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted WMF\n    file, possibly resulting in the execution of arbitrary code with the\n    privileges of the user running the application, or a Denial of Service.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All libwmf users should upgrade to the latest version which no longer\n    builds the GD library:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/libwmf-0.2.8.4-r3\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2009-1364",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1364"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "requester",
-      "Timestamp": "2009-05-22T17:28:39Z"
-    },
-    {
-      "Text": "\n    craig\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-05-24T00:52:28Z"
-    },
-    {
-      "Text": "\n    craig\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2009-06-29T22:09:20Z"
-    }
-  ]
+	"ID": "200907-01",
+	"Title": "libwmf: User-assisted execution of arbitrary code",
+	"Synopsis": "\n    libwmf bundles an old GD version which contains a \"use-after-free\"\n    vulnerability.\n  ",
+	"Product": {
+		"Text": "libwmf",
+		"Type": "ebuild"
+	},
+	"Announced": "2009-07-02",
+	"Revised": {
+		"Text": "2009-07-02",
+		"Count": "01"
+	},
+	"Bug": [
+		"268161"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-libs/libwmf",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.2.8.4-r3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.2.8.4-r3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    libwmf is a library for converting WMF files.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The embedded fork of the GD library introduced a \"use-after-free\"\n    vulnerability in a modification which is specific to libwmf.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted WMF\n    file, possibly resulting in the execution of arbitrary code with the\n    privileges of the user running the application, or a Denial of Service.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All libwmf users should upgrade to the latest version which no longer\n    builds the GD library:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/libwmf-0.2.8.4-r3\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2009-1364",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1364"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "requester",
+			"Timestamp": "2009-05-22T17:28:39Z"
+		},
+		{
+			"Text": "\n    craig\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-05-24T00:52:28Z"
+		},
+		{
+			"Text": "\n    craig\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2009-06-29T22:09:20Z"
+		}
+	]
 }

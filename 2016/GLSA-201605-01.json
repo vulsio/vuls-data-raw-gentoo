@@ -1,111 +1,111 @@
 {
-  "ID": "201605-01",
-  "Title": "Git: Multiple vulnerabilities",
-  "Synopsis": "Git contains multiple vulnerabilities that allow for the remote\n    execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "",
-    "Type": "ebuild"
-  },
-  "Announced": "2016-05-02",
-  "Revised": {
-    "Text": "2016-05-02",
-    "Count": "1"
-  },
-  "Bug": [
-    "562884",
-    "577482"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-vcs/git",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.7.3-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.7.3-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Git is a free and open source distributed version control system\n      designed to handle everything from small to very large projects with\n      speed and efficiency.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Git is vulnerable to the remote execution of arbitrary code by cloning\n      repositories with large filenames or a large number of nested trees. \n      Additionally, some protocols within Git, such as git-remote-ext, can\n      execute arbitrary code found within URLs. These URLs that submodules use\n      may come from arbitrary sources (e.g., .gitmodules files in a remote\n      repository), and can effect those who enable recursive fetch. Restrict\n      the allowed protocols to well known and safe ones.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>Remote attackers could execute arbitrary code on both client and server.</p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All Git users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-vcs/git-2.7.3-r1\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "Buffer overflow in all\n      git versions before 2.7.1\n    ",
-        "Link": "http://seclists.org/oss-sec/2016/q1/645"
-      },
-      {
-        "Text": "CVE-2015-7545",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-7545"
-      },
-      {
-        "Text": "\n      CVE-2016-2315\n    ",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2315"
-      },
-      {
-        "Text": "\n      CVE-2016-2324\n    ",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2324"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    BlueKnight\n  ",
-      "Tag": "requester",
-      "Timestamp": "2015-12-21T19:36:07Z"
-    },
-    {
-      "Text": "b-man",
-      "Tag": "submitter",
-      "Timestamp": "2016-05-02T19:28:17Z"
-    }
-  ]
+	"ID": "201605-01",
+	"Title": "Git: Multiple vulnerabilities",
+	"Synopsis": "Git contains multiple vulnerabilities that allow for the remote\n    execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "",
+		"Type": "ebuild"
+	},
+	"Announced": "2016-05-02",
+	"Revised": {
+		"Text": "2016-05-02",
+		"Count": "1"
+	},
+	"Bug": [
+		"562884",
+		"577482"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-vcs/git",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.7.3-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.7.3-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Git is a free and open source distributed version control system\n      designed to handle everything from small to very large projects with\n      speed and efficiency.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Git is vulnerable to the remote execution of arbitrary code by cloning\n      repositories with large filenames or a large number of nested trees. \n      Additionally, some protocols within Git, such as git-remote-ext, can\n      execute arbitrary code found within URLs. These URLs that submodules use\n      may come from arbitrary sources (e.g., .gitmodules files in a remote\n      repository), and can effect those who enable recursive fetch. Restrict\n      the allowed protocols to well known and safe ones.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>Remote attackers could execute arbitrary code on both client and server.</p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All Git users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-vcs/git-2.7.3-r1\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "Buffer overflow in all\n      git versions before 2.7.1\n    ",
+				"Link": "http://seclists.org/oss-sec/2016/q1/645"
+			},
+			{
+				"Text": "CVE-2015-7545",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-7545"
+			},
+			{
+				"Text": "\n      CVE-2016-2315\n    ",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2315"
+			},
+			{
+				"Text": "\n      CVE-2016-2324\n    ",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2324"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    BlueKnight\n  ",
+			"Tag": "requester",
+			"Timestamp": "2015-12-21T19:36:07Z"
+		},
+		{
+			"Text": "b-man",
+			"Tag": "submitter",
+			"Timestamp": "2016-05-02T19:28:17Z"
+		}
+	]
 }

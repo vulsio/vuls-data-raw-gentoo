@@ -1,107 +1,107 @@
 {
-  "ID": "200412-08",
-  "Title": "nfs-utils: Multiple remote vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities have been discovered in nfs-utils that could lead\n    to a Denial of Service, or the execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "nfs-utils",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-12-14",
-  "Revised": {
-    "Text": "2004-12-14",
-    "Count": "01"
-  },
-  "Bug": [
-    "72113"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-fs/nfs-utils",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.0.6-r6",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.0.6-r6",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    nfs-utils is a package containing the client and daemon\n    implementations for the NFS protocol.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Arjan van de Ven has discovered a buffer overflow on 64-bit\n    architectures in 'rquota_server.c' of nfs-utils (CAN-2004-0946). A\n    remotely exploitable flaw on all architectures also exists in the\n    'statd.c' file of nfs-utils (CAN-2004-1014), which can be triggered by\n    a mishandled SIGPIPE.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker could potentially cause a Denial of Service, or\n    even execute arbitrary code (64-bit architectures only) on a remote NFS\n    server.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All nfs-utils users should upgarde to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-fs/nfs-utils-1.0.6-r6\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2004-0946",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0946"
-      },
-      {
-        "Text": "CAN-2004-1014",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1014"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2004-12-05T18:33:51Z"
-    },
-    {
-      "Text": "\n    lewk\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-12-06T15:50:26Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-12-11T10:25:46Z"
-    }
-  ]
+	"ID": "200412-08",
+	"Title": "nfs-utils: Multiple remote vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities have been discovered in nfs-utils that could lead\n    to a Denial of Service, or the execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "nfs-utils",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-12-14",
+	"Revised": {
+		"Text": "2004-12-14",
+		"Count": "01"
+	},
+	"Bug": [
+		"72113"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-fs/nfs-utils",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.0.6-r6",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.0.6-r6",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    nfs-utils is a package containing the client and daemon\n    implementations for the NFS protocol.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Arjan van de Ven has discovered a buffer overflow on 64-bit\n    architectures in 'rquota_server.c' of nfs-utils (CAN-2004-0946). A\n    remotely exploitable flaw on all architectures also exists in the\n    'statd.c' file of nfs-utils (CAN-2004-1014), which can be triggered by\n    a mishandled SIGPIPE.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker could potentially cause a Denial of Service, or\n    even execute arbitrary code (64-bit architectures only) on a remote NFS\n    server.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All nfs-utils users should upgarde to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-fs/nfs-utils-1.0.6-r6\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2004-0946",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0946"
+			},
+			{
+				"Text": "CAN-2004-1014",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1014"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2004-12-05T18:33:51Z"
+		},
+		{
+			"Text": "\n    lewk\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-12-06T15:50:26Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-12-11T10:25:46Z"
+		}
+	]
 }

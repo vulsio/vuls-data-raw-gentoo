@@ -1,119 +1,119 @@
 {
-  "ID": "200706-05",
-  "Title": "ClamAV: Multiple Denials of Service",
-  "Synopsis": "\n    ClamAV contains several vulnerabilities leading to a Denial of Service.\n  ",
-  "Product": {
-    "Text": "clamav",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-06-15",
-  "Revised": {
-    "Text": "2007-06-15",
-    "Count": "01"
-  },
-  "Bug": [
-    "178082"
-  ],
-  "Access": "remote, local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-antivirus/clamav",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.90.3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.90.3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    ClamAV is a GPL virus scanner.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Several vulnerabilities were discovered in ClamAV by various\n    researchers:\n    </p>\n    <ul><li>Victor Stinner (INL) discovered that the OLE2\n    parser may enter in an infinite loop (CVE-2007-2650).</li>\n    <li>A\n    boundary error was also reported by an anonymous researcher in the file\n    unsp.c, which might lead to a buffer overflow (CVE-2007-3023).</li>\n    <li>The file unrar.c contains a heap-based buffer overflow via a\n    modified vm_codesize value from a RAR file (CVE-2007-3123).</li>\n    <li>The RAR parsing engine can be bypassed via a RAR file with a header\n    flag value of 10 (CVE-2007-3122).</li>\n    <li>The cli_gentempstream()\n    function from clamdscan creates temporary files with insecure\n    permissions (CVE-2007-3024).</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could send a specially crafted file to the scanner,\n    possibly triggering one of the vulnerabilities. The two buffer\n    overflows are reported to only cause Denial of Service. This would lead\n    to a Denial of Service by CPU consumption or a crash of the scanner.\n    The insecure temporary file creation vulnerability could be used by a\n    local user to access sensitive data.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All ClamAV users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-antivirus/clamav-0.90.3\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-2650",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2650"
-      },
-      {
-        "Text": "CVE-2007-3023",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3023"
-      },
-      {
-        "Text": "CVE-2007-3024",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3024"
-      },
-      {
-        "Text": "CVE-2007-3122",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3122"
-      },
-      {
-        "Text": "CVE-2007-3123",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3123"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-06-08T06:17:07Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-06-10T18:13:18Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-06-10T18:15:09Z"
-    }
-  ]
+	"ID": "200706-05",
+	"Title": "ClamAV: Multiple Denials of Service",
+	"Synopsis": "\n    ClamAV contains several vulnerabilities leading to a Denial of Service.\n  ",
+	"Product": {
+		"Text": "clamav",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-06-15",
+	"Revised": {
+		"Text": "2007-06-15",
+		"Count": "01"
+	},
+	"Bug": [
+		"178082"
+	],
+	"Access": "remote, local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-antivirus/clamav",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.90.3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.90.3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    ClamAV is a GPL virus scanner.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Several vulnerabilities were discovered in ClamAV by various\n    researchers:\n    </p>\n    <ul><li>Victor Stinner (INL) discovered that the OLE2\n    parser may enter in an infinite loop (CVE-2007-2650).</li>\n    <li>A\n    boundary error was also reported by an anonymous researcher in the file\n    unsp.c, which might lead to a buffer overflow (CVE-2007-3023).</li>\n    <li>The file unrar.c contains a heap-based buffer overflow via a\n    modified vm_codesize value from a RAR file (CVE-2007-3123).</li>\n    <li>The RAR parsing engine can be bypassed via a RAR file with a header\n    flag value of 10 (CVE-2007-3122).</li>\n    <li>The cli_gentempstream()\n    function from clamdscan creates temporary files with insecure\n    permissions (CVE-2007-3024).</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could send a specially crafted file to the scanner,\n    possibly triggering one of the vulnerabilities. The two buffer\n    overflows are reported to only cause Denial of Service. This would lead\n    to a Denial of Service by CPU consumption or a crash of the scanner.\n    The insecure temporary file creation vulnerability could be used by a\n    local user to access sensitive data.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All ClamAV users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-antivirus/clamav-0.90.3\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-2650",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-2650"
+			},
+			{
+				"Text": "CVE-2007-3023",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3023"
+			},
+			{
+				"Text": "CVE-2007-3024",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3024"
+			},
+			{
+				"Text": "CVE-2007-3122",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3122"
+			},
+			{
+				"Text": "CVE-2007-3123",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3123"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-06-08T06:17:07Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-06-10T18:13:18Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-06-10T18:15:09Z"
+		}
+	]
 }

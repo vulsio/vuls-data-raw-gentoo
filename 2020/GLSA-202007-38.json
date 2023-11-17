@@ -1,109 +1,109 @@
 {
-  "ID": "202007-38",
-  "Title": "QtGui: Arbitrary code execution",
-  "Synopsis": "A use-after-free was discovered in QtGui's Markdown handling code\n    possibly allowing a remote attacker to execute arbitrary code.\n  ",
-  "Product": {
-    "Text": "qtgui",
-    "Type": "ebuild"
-  },
-  "Announced": "2020-07-27",
-  "Revised": {
-    "Text": "2020-07-27",
-    "Count": "1"
-  },
-  "Bug": [
-    "719732"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-qt/qtgui",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "5.14.2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "5.14.2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>QtGui is a module for the Qt toolkit.</p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>QtGui’s setMarkdown has a use-after-free related to\n      QTextMarkdownImporter::insertBlock.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could possibly execute arbitrary code with the\n      privileges of the process, or cause a Denial of Service condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All QtGui users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "Note that the Qt suite is best kept in sync, so a world upgrade may be\n      advisable to keep your system in a good state.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-qt/qtgui-5.14.2\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2020-12267",
-        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-12267"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "sam_c",
-      "Tag": "requester",
-      "Timestamp": "2020-06-06T21:54:28Z"
-    },
-    {
-      "Text": "sam_c",
-      "Tag": "submitter",
-      "Timestamp": "2020-07-27T00:37:49Z"
-    }
-  ]
+	"ID": "202007-38",
+	"Title": "QtGui: Arbitrary code execution",
+	"Synopsis": "A use-after-free was discovered in QtGui's Markdown handling code\n    possibly allowing a remote attacker to execute arbitrary code.\n  ",
+	"Product": {
+		"Text": "qtgui",
+		"Type": "ebuild"
+	},
+	"Announced": "2020-07-27",
+	"Revised": {
+		"Text": "2020-07-27",
+		"Count": "1"
+	},
+	"Bug": [
+		"719732"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-qt/qtgui",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "5.14.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "5.14.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>QtGui is a module for the Qt toolkit.</p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>QtGui’s setMarkdown has a use-after-free related to\n      QTextMarkdownImporter::insertBlock.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could possibly execute arbitrary code with the\n      privileges of the process, or cause a Denial of Service condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All QtGui users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "Note that the Qt suite is best kept in sync, so a world upgrade may be\n      advisable to keep your system in a good state.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-qt/qtgui-5.14.2\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2020-12267",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-12267"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "sam_c",
+			"Tag": "requester",
+			"Timestamp": "2020-06-06T21:54:28Z"
+		},
+		{
+			"Text": "sam_c",
+			"Tag": "submitter",
+			"Timestamp": "2020-07-27T00:37:49Z"
+		}
+	]
 }

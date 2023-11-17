@@ -1,103 +1,103 @@
 {
-  "ID": "200506-13",
-  "Title": "webapp-config: Insecure temporary file handling",
-  "Synopsis": "\n    The webapp-config utility insecurely creates temporary files in a world\n    writable directory, potentially allowing the execution of arbitrary\n    commands.\n  ",
-  "Product": {
-    "Text": "webapp-config",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-06-17",
-  "Revised": {
-    "Text": "2007-12-30",
-    "Count": "03"
-  },
-  "Bug": [
-    "91785"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-admin/webapp-config",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.11",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.11",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    webapp-config is a Gentoo Linux utility to help manage the installation\n    of web-based applications.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Eric Romang discovered webapp-config uses a predictable temporary\n    filename while processing certain options, resulting in a race\n    condition.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    Successful exploitation of the race condition would allow an attacker\n    to disrupt the operation of webapp-config, or execute arbitrary shell\n    commands with the privileges of the user running webapp-config. A local\n    attacker could use a symlink attack to create or overwrite files with\n    the permissions of the user running webapp-config.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All webapp-config users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-admin/webapp-config-1.11\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2005-1707",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1707"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-05-10T15:08:15Z"
-    },
-    {
-      "Text": "\n    taviso\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-05-10T15:49:46Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-06-17T08:32:12Z"
-    }
-  ]
+	"ID": "200506-13",
+	"Title": "webapp-config: Insecure temporary file handling",
+	"Synopsis": "\n    The webapp-config utility insecurely creates temporary files in a world\n    writable directory, potentially allowing the execution of arbitrary\n    commands.\n  ",
+	"Product": {
+		"Text": "webapp-config",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-06-17",
+	"Revised": {
+		"Text": "2007-12-30",
+		"Count": "03"
+	},
+	"Bug": [
+		"91785"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-admin/webapp-config",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.11",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.11",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    webapp-config is a Gentoo Linux utility to help manage the installation\n    of web-based applications.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Eric Romang discovered webapp-config uses a predictable temporary\n    filename while processing certain options, resulting in a race\n    condition.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    Successful exploitation of the race condition would allow an attacker\n    to disrupt the operation of webapp-config, or execute arbitrary shell\n    commands with the privileges of the user running webapp-config. A local\n    attacker could use a symlink attack to create or overwrite files with\n    the permissions of the user running webapp-config.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All webapp-config users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-admin/webapp-config-1.11\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2005-1707",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1707"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-05-10T15:08:15Z"
+		},
+		{
+			"Text": "\n    taviso\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-05-10T15:49:46Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-06-17T08:32:12Z"
+		}
+	]
 }

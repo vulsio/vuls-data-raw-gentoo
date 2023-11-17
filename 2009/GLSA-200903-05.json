@@ -1,107 +1,107 @@
 {
-  "ID": "200903-05",
-  "Title": "PDFjam: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities in the PDFjam scripts allow for local privilege\n    escalation.\n  ",
-  "Product": {
-    "Text": "pdfjam",
-    "Type": "ebuild"
-  },
-  "Announced": "2009-03-07",
-  "Revised": {
-    "Text": "2009-03-07",
-    "Count": "01"
-  },
-  "Bug": [
-    "252734"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-text/pdfjam",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.20-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.20-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    PDFjam is a small collection of shell scripts to edit PDF documents,\n    including pdfnup, pdfjoin and pdf90.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <ul>\n    <li>\n    Martin Vaeth reported multiple untrusted search path vulnerabilities\n    (CVE-2008-5843).\n    </li>\n    <li>Marcus Meissner of the SUSE Security Team reported that\n    temporary files are created with a predictable name (CVE-2008-5743).\n    </li>\n    </ul> <p>\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local attacker could place a specially crafted Python module in the\n    current working directory or the /var/tmp directory, and entice a user\n    to run the PDFjam scripts, leading to the execution of arbitrary code\n    with the privileges of the user running the application. A local\n    attacker could also leverage symlink attacks to overwrite arbitrary\n    files.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All PDFjam users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/pdfjam-1.20-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-5843",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5843"
-      },
-      {
-        "Text": "CVE-2008-5743",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5743"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "requester",
-      "Timestamp": "2009-01-23T21:30:23Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-02-12T16:57:17Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2009-02-12T16:57:35Z"
-    }
-  ]
+	"ID": "200903-05",
+	"Title": "PDFjam: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities in the PDFjam scripts allow for local privilege\n    escalation.\n  ",
+	"Product": {
+		"Text": "pdfjam",
+		"Type": "ebuild"
+	},
+	"Announced": "2009-03-07",
+	"Revised": {
+		"Text": "2009-03-07",
+		"Count": "01"
+	},
+	"Bug": [
+		"252734"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-text/pdfjam",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.20-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.20-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    PDFjam is a small collection of shell scripts to edit PDF documents,\n    including pdfnup, pdfjoin and pdf90.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <ul>\n    <li>\n    Martin Vaeth reported multiple untrusted search path vulnerabilities\n    (CVE-2008-5843).\n    </li>\n    <li>Marcus Meissner of the SUSE Security Team reported that\n    temporary files are created with a predictable name (CVE-2008-5743).\n    </li>\n    </ul> <p>\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local attacker could place a specially crafted Python module in the\n    current working directory or the /var/tmp directory, and entice a user\n    to run the PDFjam scripts, leading to the execution of arbitrary code\n    with the privileges of the user running the application. A local\n    attacker could also leverage symlink attacks to overwrite arbitrary\n    files.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All PDFjam users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/pdfjam-1.20-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-5843",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5843"
+			},
+			{
+				"Text": "CVE-2008-5743",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5743"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "requester",
+			"Timestamp": "2009-01-23T21:30:23Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-02-12T16:57:17Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2009-02-12T16:57:35Z"
+		}
+	]
 }

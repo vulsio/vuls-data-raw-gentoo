@@ -1,103 +1,103 @@
 {
-  "ID": "200801-13",
-  "Title": "ngIRCd: Denial of service",
-  "Synopsis": "\n    ngIRCd does not properly sanitize commands sent by users, allowing for a\n    Denial of Service.\n  ",
-  "Product": {
-    "Text": "ngircd",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-01-27",
-  "Revised": {
-    "Text": "2008-01-27",
-    "Count": "02"
-  },
-  "Bug": [
-    "204834"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-irc/ngircd",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.10.4",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.10.4",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    ngIRCd is a free open source daemon for Internet Relay Chat (IRC).\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The IRC_PART() function in the file irc-channel.c does not properly\n    check the number of parameters, referencing an invalid pointer if no\n    channel is supplied.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker can exploit this vulnerability to crash the ngIRCd\n    daemon.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All ngIRCd users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-irc/ngircd-0.10.4\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-0285",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0285"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-01-15T20:42:37Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-01-20T01:06:19Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-01-20T01:44:35Z"
-    }
-  ]
+	"ID": "200801-13",
+	"Title": "ngIRCd: Denial of service",
+	"Synopsis": "\n    ngIRCd does not properly sanitize commands sent by users, allowing for a\n    Denial of Service.\n  ",
+	"Product": {
+		"Text": "ngircd",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-01-27",
+	"Revised": {
+		"Text": "2008-01-27",
+		"Count": "02"
+	},
+	"Bug": [
+		"204834"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-irc/ngircd",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.10.4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.10.4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    ngIRCd is a free open source daemon for Internet Relay Chat (IRC).\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The IRC_PART() function in the file irc-channel.c does not properly\n    check the number of parameters, referencing an invalid pointer if no\n    channel is supplied.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker can exploit this vulnerability to crash the ngIRCd\n    daemon.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All ngIRCd users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-irc/ngircd-0.10.4\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-0285",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0285"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-01-15T20:42:37Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-01-20T01:06:19Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-01-20T01:44:35Z"
+		}
+	]
 }

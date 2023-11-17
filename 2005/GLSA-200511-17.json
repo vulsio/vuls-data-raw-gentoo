@@ -1,103 +1,103 @@
 {
-  "ID": "200511-17",
-  "Title": "FUSE: mtab corruption through fusermount",
-  "Synopsis": "\n    The fusermount utility from FUSE can be abused to corrupt the /etc/mtab\n    file contents, potentially allowing a local attacker to set unauthorized\n    mount options.\n  ",
-  "Product": {
-    "Text": "FUSE",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-11-22",
-  "Revised": {
-    "Text": "2005-11-22",
-    "Count": "01"
-  },
-  "Bug": [
-    "112902"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sys-fs/fuse",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.4.1-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.4.1-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    FUSE (Filesystem in Userspace) allows implementation of a fully\n    functional filesystem in a userspace program. The fusermount utility is\n    used to mount/unmount FUSE file systems.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Thomas Biege discovered that fusermount fails to securely handle\n    special characters specified in mount points.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local attacker could corrupt the contents of the /etc/mtab file\n    by mounting over a maliciously-named directory using fusermount,\n    potentially allowing the attacker to set unauthorized mount options.\n    This is possible only if fusermount is installed setuid root, which is\n    the default in Gentoo.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All FUSE users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-fs/fuse-2.4.1-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2005-3531",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3531"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-11-20T12:06:35Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-11-21T13:30:54Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-11-22T16:07:17Z"
-    }
-  ]
+	"ID": "200511-17",
+	"Title": "FUSE: mtab corruption through fusermount",
+	"Synopsis": "\n    The fusermount utility from FUSE can be abused to corrupt the /etc/mtab\n    file contents, potentially allowing a local attacker to set unauthorized\n    mount options.\n  ",
+	"Product": {
+		"Text": "FUSE",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-11-22",
+	"Revised": {
+		"Text": "2005-11-22",
+		"Count": "01"
+	},
+	"Bug": [
+		"112902"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-fs/fuse",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.4.1-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.4.1-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    FUSE (Filesystem in Userspace) allows implementation of a fully\n    functional filesystem in a userspace program. The fusermount utility is\n    used to mount/unmount FUSE file systems.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Thomas Biege discovered that fusermount fails to securely handle\n    special characters specified in mount points.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local attacker could corrupt the contents of the /etc/mtab file\n    by mounting over a maliciously-named directory using fusermount,\n    potentially allowing the attacker to set unauthorized mount options.\n    This is possible only if fusermount is installed setuid root, which is\n    the default in Gentoo.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All FUSE users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-fs/fuse-2.4.1-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2005-3531",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3531"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-11-20T12:06:35Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-11-21T13:30:54Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-11-22T16:07:17Z"
+		}
+	]
 }

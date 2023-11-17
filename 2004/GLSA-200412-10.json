@@ -1,134 +1,134 @@
 {
-  "ID": "200412-10",
-  "Title": "Vim, gVim: Vulnerable options in modelines",
-  "Synopsis": "\n    Several vulnerabilities related to the use of options in modelines have\n    been found and fixed in Vim. They could potentially result in a local user\n    escalating privileges.\n  ",
-  "Product": {
-    "Text": "vim",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-12-15",
-  "Revised": {
-    "Text": "2004-12-15",
-    "Count": "01"
-  },
-  "Bug": [
-    "73715"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-editors/vim",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "6.3-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "6.3-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-editors/gvim",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "6.3-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "6.3-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Vim is an efficient, highly configurable improved version of the\n    classic 'vi' text editor. gVim is the GUI version of Vim.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Gentoo's Vim maintainer, Ciaran McCreesh, found several\n    vulnerabilities related to the use of options in Vim modelines. Options\n    like 'termcap', 'printdevice', 'titleold', 'filetype', 'syntax',\n    'backupext', 'keymap', 'patchmode' or 'langmenu' could be abused.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local attacker could write a malicious file in a world readable\n    location which, when opened in a modeline-enabled Vim, could trigger\n    arbitrary commands with the rights of the user opening the file,\n    resulting in privilege escalation. Please note that modelines are\n    disabled by default in the /etc/vimrc file provided in Gentoo.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Vim users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All gVim users should also upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-editors/vim-6.3-r2\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-editors/gvim-6.3-r2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2004-1138",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1138"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2004-12-10T22:32:12Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-12-13T17:03:31Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-12-15T14:00:28Z"
-    }
-  ]
+	"ID": "200412-10",
+	"Title": "Vim, gVim: Vulnerable options in modelines",
+	"Synopsis": "\n    Several vulnerabilities related to the use of options in modelines have\n    been found and fixed in Vim. They could potentially result in a local user\n    escalating privileges.\n  ",
+	"Product": {
+		"Text": "vim",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-12-15",
+	"Revised": {
+		"Text": "2004-12-15",
+		"Count": "01"
+	},
+	"Bug": [
+		"73715"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-editors/vim",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "6.3-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "6.3-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-editors/gvim",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "6.3-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "6.3-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Vim is an efficient, highly configurable improved version of the\n    classic 'vi' text editor. gVim is the GUI version of Vim.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Gentoo's Vim maintainer, Ciaran McCreesh, found several\n    vulnerabilities related to the use of options in Vim modelines. Options\n    like 'termcap', 'printdevice', 'titleold', 'filetype', 'syntax',\n    'backupext', 'keymap', 'patchmode' or 'langmenu' could be abused.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local attacker could write a malicious file in a world readable\n    location which, when opened in a modeline-enabled Vim, could trigger\n    arbitrary commands with the rights of the user opening the file,\n    resulting in privilege escalation. Please note that modelines are\n    disabled by default in the /etc/vimrc file provided in Gentoo.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Vim users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All gVim users should also upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-editors/vim-6.3-r2\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-editors/gvim-6.3-r2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2004-1138",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1138"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2004-12-10T22:32:12Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-12-13T17:03:31Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-12-15T14:00:28Z"
+		}
+	]
 }

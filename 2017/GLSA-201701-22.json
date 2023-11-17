@@ -1,106 +1,106 @@
 {
-  "ID": "201701-22",
-  "Title": "NGINX: Privilege escalation",
-  "Synopsis": "Gentoo's NGINX ebuilds are vulnerable to privilege escalation due\n    to the way log files are handled.\n  ",
-  "Product": {
-    "Text": "nginx",
-    "Type": "ebuild"
-  },
-  "Announced": "2017-01-11",
-  "Revised": {
-    "Text": "2017-01-11",
-    "Count": "1"
-  },
-  "Bug": [
-    "605008"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-servers/nginx",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.10.2-r3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.10.2-r3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>nginx is a robust, small, and high performance HTTP and reverse proxy\n      server.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>It was discovered that Gentoo’s default NGINX installation applied\n      similar problematic permissions on “/var/log/nginx” as Debian\n      (DSA-3701) and is therefore vulnerable to the same attack described in\n      CVE-2016-1247.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A local attacker, who either is already NGINX’s system user or belongs\n      to NGINX’s group, could potentially escalate privileges.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>Ensure that no untrusted user can create files in directories which are\n      used by NGINX (or an NGINX vhost) to store log files.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All NGINX users should upgrade to the latest ebuild revision:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=www-servers/nginx-1.10.2-r3\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2016-1247",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-1247"
-      },
-      {
-        "Text": "DSA-3701",
-        "Link": "https://www.debian.org/security/2016/dsa-3701"
-      },
-      {
-        "Text": "\n      Technical analysis\n    ",
-        "Link": "https://legalhackers.com/advisories/Nginx-Exploit-Deb-Root-PrivEsc-CVE-2016-1247.html"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "whissi",
-      "Tag": "requester",
-      "Timestamp": "2017-01-10T15:37:19Z"
-    },
-    {
-      "Text": "whissi",
-      "Tag": "submitter",
-      "Timestamp": "2017-01-11T12:18:42Z"
-    }
-  ]
+	"ID": "201701-22",
+	"Title": "NGINX: Privilege escalation",
+	"Synopsis": "Gentoo's NGINX ebuilds are vulnerable to privilege escalation due\n    to the way log files are handled.\n  ",
+	"Product": {
+		"Text": "nginx",
+		"Type": "ebuild"
+	},
+	"Announced": "2017-01-11",
+	"Revised": {
+		"Text": "2017-01-11",
+		"Count": "1"
+	},
+	"Bug": [
+		"605008"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-servers/nginx",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.10.2-r3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.10.2-r3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>nginx is a robust, small, and high performance HTTP and reverse proxy\n      server.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>It was discovered that Gentoo’s default NGINX installation applied\n      similar problematic permissions on “/var/log/nginx” as Debian\n      (DSA-3701) and is therefore vulnerable to the same attack described in\n      CVE-2016-1247.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A local attacker, who either is already NGINX’s system user or belongs\n      to NGINX’s group, could potentially escalate privileges.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>Ensure that no untrusted user can create files in directories which are\n      used by NGINX (or an NGINX vhost) to store log files.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All NGINX users should upgrade to the latest ebuild revision:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=www-servers/nginx-1.10.2-r3\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2016-1247",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-1247"
+			},
+			{
+				"Text": "DSA-3701",
+				"Link": "https://www.debian.org/security/2016/dsa-3701"
+			},
+			{
+				"Text": "\n      Technical analysis\n    ",
+				"Link": "https://legalhackers.com/advisories/Nginx-Exploit-Deb-Root-PrivEsc-CVE-2016-1247.html"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "whissi",
+			"Tag": "requester",
+			"Timestamp": "2017-01-10T15:37:19Z"
+		},
+		{
+			"Text": "whissi",
+			"Tag": "submitter",
+			"Timestamp": "2017-01-11T12:18:42Z"
+		}
+	]
 }

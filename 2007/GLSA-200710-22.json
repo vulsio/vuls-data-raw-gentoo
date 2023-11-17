@@ -1,108 +1,108 @@
 {
-  "ID": "200710-22",
-  "Title": "TRAMP: Insecure temporary file creation",
-  "Synopsis": "\n    The TRAMP package for GNU Emacs insecurely creates temporary files.\n  ",
-  "Product": {
-    "Text": "tramp",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-10-20",
-  "Revised": {
-    "Text": "2007-12-30",
-    "Count": "02"
-  },
-  "Bug": [
-    "194713"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-emacs/tramp",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.1.10-r2",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "2.1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.1.10-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    TRAMP is a remote file editing package for GNU Emacs, a highly\n    extensible and customizable text editor.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Stefan Monnier discovered that the tramp-make-tramp-temp-file()\n    function creates temporary files in an insecure manner.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local attacker could create symbolic links in the directory where the\n    temporary files are written, pointing to a valid file somewhere on the\n    filesystem that is writable by the user running TRAMP. When TRAMP\n    writes the temporary file, the target valid file would then be\n    overwritten with the contents of the TRAMP temporary file.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All TRAMP users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-emacs/tramp-2.1.10-r2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-5377",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5377"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-10-11T21:37:14Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-10-18T20:15:33Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-10-18T20:17:00Z"
-    }
-  ]
+	"ID": "200710-22",
+	"Title": "TRAMP: Insecure temporary file creation",
+	"Synopsis": "\n    The TRAMP package for GNU Emacs insecurely creates temporary files.\n  ",
+	"Product": {
+		"Text": "tramp",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-10-20",
+	"Revised": {
+		"Text": "2007-12-30",
+		"Count": "02"
+	},
+	"Bug": [
+		"194713"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-emacs/tramp",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.1.10-r2",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "2.1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.1.10-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    TRAMP is a remote file editing package for GNU Emacs, a highly\n    extensible and customizable text editor.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Stefan Monnier discovered that the tramp-make-tramp-temp-file()\n    function creates temporary files in an insecure manner.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local attacker could create symbolic links in the directory where the\n    temporary files are written, pointing to a valid file somewhere on the\n    filesystem that is writable by the user running TRAMP. When TRAMP\n    writes the temporary file, the target valid file would then be\n    overwritten with the contents of the TRAMP temporary file.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All TRAMP users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-emacs/tramp-2.1.10-r2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-5377",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5377"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-10-11T21:37:14Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-10-18T20:15:33Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-10-18T20:17:00Z"
+		}
+	]
 }

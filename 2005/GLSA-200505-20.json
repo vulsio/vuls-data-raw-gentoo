@@ -1,114 +1,114 @@
 {
-  "ID": "200505-20",
-  "Title": "Mailutils: Multiple vulnerabilities in imap4d and mail",
-  "Synopsis": "\n    The imap4d server and the mail utility from GNU Mailutils contain multiple\n    vulnerabilities, potentially allowing a remote attacker to execute\n    arbitrary code with root privileges.\n  ",
-  "Product": {
-    "Text": "mailutils",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-05-27",
-  "Revised": {
-    "Text": "2005-05-27",
-    "Count": "01"
-  },
-  "Bug": [
-    "94053"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-mail/mailutils",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.6-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.6-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    GNU Mailutils is a collection of mail-related utilities, including\n    an IMAP4 server (imap4d) and a Mail User Agent (mail).\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    infamous41d discovered several vulnerabilities in GNU Mailutils.\n    imap4d does not correctly implement formatted printing of command tags\n    (CAN-2005-1523), fails to validate the range sequence of the \"FETCH\"\n    command (CAN-2005-1522), and contains an integer overflow in the\n    \"fetch_io\" routine (CAN-2005-1521). mail contains a buffer overflow in\n    \"header_get_field_name()\" (CAN-2005-1520).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker can exploit the format string and integer\n    overflow in imap4d to execute arbitrary code as the imap4d user, which\n    is usually root. By sending a specially crafted email message, a remote\n    attacker could exploit the buffer overflow in the \"mail\" utility to\n    execute arbitrary code with the rights of the user running mail.\n    Finally, a remote attacker can also trigger a Denial of Service by\n    sending a malicious FETCH command to an affected imap4d, causing\n    excessive resource consumption.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There are no known workarounds at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All GNU Mailutils users should upgrade to the latest available\n    version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-mail/mailutils-0.6-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2005-1520",
-        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1520"
-      },
-      {
-        "Text": "CAN-2005-1521",
-        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1521"
-      },
-      {
-        "Text": "CAN-2005-1522",
-        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1522"
-      },
-      {
-        "Text": "CAN-2005-1523",
-        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1523"
-      },
-      {
-        "Text": "iDEFENSE 05.25.05 advisories",
-        "Link": "http://www.idefense.com/application/poi/display?type=vulnerabilities&showYear=2005"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-05-26T13:21:14Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-05-27T07:50:06Z"
-    }
-  ]
+	"ID": "200505-20",
+	"Title": "Mailutils: Multiple vulnerabilities in imap4d and mail",
+	"Synopsis": "\n    The imap4d server and the mail utility from GNU Mailutils contain multiple\n    vulnerabilities, potentially allowing a remote attacker to execute\n    arbitrary code with root privileges.\n  ",
+	"Product": {
+		"Text": "mailutils",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-05-27",
+	"Revised": {
+		"Text": "2005-05-27",
+		"Count": "01"
+	},
+	"Bug": [
+		"94053"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-mail/mailutils",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.6-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.6-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    GNU Mailutils is a collection of mail-related utilities, including\n    an IMAP4 server (imap4d) and a Mail User Agent (mail).\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    infamous41d discovered several vulnerabilities in GNU Mailutils.\n    imap4d does not correctly implement formatted printing of command tags\n    (CAN-2005-1523), fails to validate the range sequence of the \"FETCH\"\n    command (CAN-2005-1522), and contains an integer overflow in the\n    \"fetch_io\" routine (CAN-2005-1521). mail contains a buffer overflow in\n    \"header_get_field_name()\" (CAN-2005-1520).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker can exploit the format string and integer\n    overflow in imap4d to execute arbitrary code as the imap4d user, which\n    is usually root. By sending a specially crafted email message, a remote\n    attacker could exploit the buffer overflow in the \"mail\" utility to\n    execute arbitrary code with the rights of the user running mail.\n    Finally, a remote attacker can also trigger a Denial of Service by\n    sending a malicious FETCH command to an affected imap4d, causing\n    excessive resource consumption.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There are no known workarounds at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All GNU Mailutils users should upgrade to the latest available\n    version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-mail/mailutils-0.6-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2005-1520",
+				"Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1520"
+			},
+			{
+				"Text": "CAN-2005-1521",
+				"Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1521"
+			},
+			{
+				"Text": "CAN-2005-1522",
+				"Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1522"
+			},
+			{
+				"Text": "CAN-2005-1523",
+				"Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-1523"
+			},
+			{
+				"Text": "iDEFENSE 05.25.05 advisories",
+				"Link": "http://www.idefense.com/application/poi/display?type=vulnerabilities&showYear=2005"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-05-26T13:21:14Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-05-27T07:50:06Z"
+		}
+	]
 }

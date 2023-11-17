@@ -1,228 +1,228 @@
 {
-  "ID": "201203-12",
-  "Title": "OpenSSL: Multiple vulnerabilities",
-  "Synopsis": "Multiple vulnerabilities have been found in OpenSSL, allowing\n    remote attackers to cause a Denial of Service or obtain sensitive\n    information.\n  ",
-  "Product": {
-    "Text": "openssl",
-    "Type": "ebuild"
-  },
-  "Announced": "2012-03-06",
-  "Revised": {
-    "Text": "2015-06-06",
-    "Count": "9"
-  },
-  "Bug": [
-    "397695",
-    "399365"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-libs/openssl",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.0.0g",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "0.9.8t",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "0.9.8u",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "0.9.8v",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "0.9.8w",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "0.9.8x",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "0.9.8y",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "0.9.8z_p1",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "0.9.8z_p2",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "0.9.8z_p3",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "0.9.8z_p4",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "0.9.8z_p5",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "0.9.8z_p6",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "0.9.8z_p7",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "0.9.8z_p8",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "0.9.8z_p9",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "0.9.8z_p10",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "0.9.8z_p11",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "0.9.8z_p12",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "0.9.8z_p13",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "0.9.8z_p14",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "0.9.8z_p15",
-            "Range": "rge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.0.0g",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>OpenSSL is an Open Source toolkit implementing the Secure Sockets Layer\n      (SSL v2/v3) and Transport Layer Security (TLS v1) as well as a general\n      purpose cryptography library.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Multiple vulnerabilities have been found in OpenSSL:</p>\n    \n    <ul>\n      <li>Timing differences for decryption are exposed by CBC mode encryption\n        in OpenSSL’s implementation of DTLS (CVE-2011-4108).\n      </li>\n      <li>A policy check failure can result in a double-free error when\n        X509_V_FLAG_POLICY_CHECK is set (CVE-2011-4109).\n      </li>\n      <li>Clients and servers using SSL 3.0 handshakes do not clear the block\n        cipher padding, allowing a record to contain up to 15 bytes of\n        uninitialized memory, which could include sensitive information\n        (CVE-2011-4576). \n      </li>\n      <li>Assertion errors can occur during the handling of malformed X.509\n        certificates when OpenSSL is built with RFC 3779 support\n        (CVE-2011-4577).\n      </li>\n      <li>A resource management error can occur when OpenSSL’s server gated\n        cryptography (SGC) does not properly handle handshake restarts\n        (CVE-2011-4619).\n      </li>\n      <li>Invalid parameters in the GOST block cipher are not properly handled\n        by the GOST ENGINE(CVE-2012-0027).\n      </li>\n      <li>An incorrect fix for CVE-2011-4108 creates an unspecified\n        vulnerability for DTLS applications using OpenSSL (CVE-2012-0050). \n      </li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker may be able to cause a Denial of Service or obtain\n      sensitive information, including plaintext passwords. \n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All OpenSSL users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/openssl-1.0.0g\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2011-4108",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-4108"
-      },
-      {
-        "Text": "CVE-2011-4109",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-4109"
-      },
-      {
-        "Text": "CVE-2011-4576",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-4576"
-      },
-      {
-        "Text": "CVE-2011-4577",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-4577"
-      },
-      {
-        "Text": "CVE-2011-4619",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-4619"
-      },
-      {
-        "Text": "CVE-2012-0027",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0027"
-      },
-      {
-        "Text": "\n      CVE-2012-0050 \n    ",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0050 "
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "ago",
-      "Tag": "requester",
-      "Timestamp": "2012-01-16T19:58:37Z"
-    },
-    {
-      "Text": "ackle",
-      "Tag": "submitter",
-      "Timestamp": "2015-06-06T23:08:28Z"
-    }
-  ]
+	"ID": "201203-12",
+	"Title": "OpenSSL: Multiple vulnerabilities",
+	"Synopsis": "Multiple vulnerabilities have been found in OpenSSL, allowing\n    remote attackers to cause a Denial of Service or obtain sensitive\n    information.\n  ",
+	"Product": {
+		"Text": "openssl",
+		"Type": "ebuild"
+	},
+	"Announced": "2012-03-06",
+	"Revised": {
+		"Text": "2015-06-06",
+		"Count": "9"
+	},
+	"Bug": [
+		"397695",
+		"399365"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-libs/openssl",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.0.0g",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "0.9.8t",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "0.9.8u",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "0.9.8v",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "0.9.8w",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "0.9.8x",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "0.9.8y",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "0.9.8z_p1",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "0.9.8z_p2",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "0.9.8z_p3",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "0.9.8z_p4",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "0.9.8z_p5",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "0.9.8z_p6",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "0.9.8z_p7",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "0.9.8z_p8",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "0.9.8z_p9",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "0.9.8z_p10",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "0.9.8z_p11",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "0.9.8z_p12",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "0.9.8z_p13",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "0.9.8z_p14",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "0.9.8z_p15",
+						"Range": "rge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.0.0g",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>OpenSSL is an Open Source toolkit implementing the Secure Sockets Layer\n      (SSL v2/v3) and Transport Layer Security (TLS v1) as well as a general\n      purpose cryptography library.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Multiple vulnerabilities have been found in OpenSSL:</p>\n    \n    <ul>\n      <li>Timing differences for decryption are exposed by CBC mode encryption\n        in OpenSSL’s implementation of DTLS (CVE-2011-4108).\n      </li>\n      <li>A policy check failure can result in a double-free error when\n        X509_V_FLAG_POLICY_CHECK is set (CVE-2011-4109).\n      </li>\n      <li>Clients and servers using SSL 3.0 handshakes do not clear the block\n        cipher padding, allowing a record to contain up to 15 bytes of\n        uninitialized memory, which could include sensitive information\n        (CVE-2011-4576). \n      </li>\n      <li>Assertion errors can occur during the handling of malformed X.509\n        certificates when OpenSSL is built with RFC 3779 support\n        (CVE-2011-4577).\n      </li>\n      <li>A resource management error can occur when OpenSSL’s server gated\n        cryptography (SGC) does not properly handle handshake restarts\n        (CVE-2011-4619).\n      </li>\n      <li>Invalid parameters in the GOST block cipher are not properly handled\n        by the GOST ENGINE(CVE-2012-0027).\n      </li>\n      <li>An incorrect fix for CVE-2011-4108 creates an unspecified\n        vulnerability for DTLS applications using OpenSSL (CVE-2012-0050). \n      </li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker may be able to cause a Denial of Service or obtain\n      sensitive information, including plaintext passwords. \n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All OpenSSL users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-libs/openssl-1.0.0g\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2011-4108",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-4108"
+			},
+			{
+				"Text": "CVE-2011-4109",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-4109"
+			},
+			{
+				"Text": "CVE-2011-4576",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-4576"
+			},
+			{
+				"Text": "CVE-2011-4577",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-4577"
+			},
+			{
+				"Text": "CVE-2011-4619",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-4619"
+			},
+			{
+				"Text": "CVE-2012-0027",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0027"
+			},
+			{
+				"Text": "\n      CVE-2012-0050 \n    ",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0050 "
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "ago",
+			"Tag": "requester",
+			"Timestamp": "2012-01-16T19:58:37Z"
+		},
+		{
+			"Text": "ackle",
+			"Tag": "submitter",
+			"Timestamp": "2015-06-06T23:08:28Z"
+		}
+	]
 }

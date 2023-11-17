@@ -1,87 +1,87 @@
 {
-  "ID": "200311-04",
-  "Title": "FreeRADIUS: heap exploit and NULL pointer dereference vulnerability",
-  "Synopsis": "\n    FreeRADIUS is vulnerable to a heap exploit and a NULL pointer dereference\n    vulnerability.\n  ",
-  "Product": {
-    "Text": "FreeRADIUS",
-    "Type": "ebuild"
-  },
-  "Announced": "2003-11-23",
-  "Revised": {
-    "Text": "2003-11-23",
-    "Count": "01"
-  },
-  "Bug": [
-    "33989"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-dialup/freeradius",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.9.3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.9.2",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    FreeRADIUS is a popular open source RADIUS server.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    FreeRADIUS versions below 0.9.3 are vulnerable to a heap exploit, however,\n    the attack code must be in the form of a valid RADIUS packet which limits\n    the possible exploits.\n    </p>\n    <p>\n    Also corrected in the 0.9.3 release is another vulnerability which causes\n    the RADIUS server to de-reference a NULL pointer and crash when an\n    Access-Request packet with a Tunnel-Password is received.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could craft a RADIUS packet which would cause the RADIUS\n    server to crash, or could possibly overflow the heap resulting in a system\n    compromise.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    Users are encouraged to perform an 'emerge sync' and upgrade the package to\n    the latest available version - 0.9.3 is available in portage and is marked\n    as stable.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n    # emerge -pv '>=net-dialup/freeradius-0.9.3'\n    # emerge '>=net-dialup/freeradius-0.9.3'\n    # emerge clean"
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "SecurityTracker.com Security Alert",
-        "Link": "http://www.securitytracker.com/alerts/2003/Nov/1008263.html"
-      }
-    ]
-  },
-  "Metadata": null
+	"ID": "200311-04",
+	"Title": "FreeRADIUS: heap exploit and NULL pointer dereference vulnerability",
+	"Synopsis": "\n    FreeRADIUS is vulnerable to a heap exploit and a NULL pointer dereference\n    vulnerability.\n  ",
+	"Product": {
+		"Text": "FreeRADIUS",
+		"Type": "ebuild"
+	},
+	"Announced": "2003-11-23",
+	"Revised": {
+		"Text": "2003-11-23",
+		"Count": "01"
+	},
+	"Bug": [
+		"33989"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-dialup/freeradius",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.9.3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.9.2",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    FreeRADIUS is a popular open source RADIUS server.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    FreeRADIUS versions below 0.9.3 are vulnerable to a heap exploit, however,\n    the attack code must be in the form of a valid RADIUS packet which limits\n    the possible exploits.\n    </p>\n    <p>\n    Also corrected in the 0.9.3 release is another vulnerability which causes\n    the RADIUS server to de-reference a NULL pointer and crash when an\n    Access-Request packet with a Tunnel-Password is received.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could craft a RADIUS packet which would cause the RADIUS\n    server to crash, or could possibly overflow the heap resulting in a system\n    compromise.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    Users are encouraged to perform an 'emerge sync' and upgrade the package to\n    the latest available version - 0.9.3 is available in portage and is marked\n    as stable.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n    # emerge -pv '>=net-dialup/freeradius-0.9.3'\n    # emerge '>=net-dialup/freeradius-0.9.3'\n    # emerge clean"
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "SecurityTracker.com Security Alert",
+				"Link": "http://www.securitytracker.com/alerts/2003/Nov/1008263.html"
+			}
+		]
+	},
+	"Metadata": null
 }

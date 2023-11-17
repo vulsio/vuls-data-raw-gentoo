@@ -1,107 +1,107 @@
 {
-  "ID": "200803-23",
-  "Title": "Website META Language: Insecure temporary file usage",
-  "Synopsis": "\n    Multiple insecure temporary file vulnerabilities have been discovered in\n    the Website META Language.\n  ",
-  "Product": {
-    "Text": "wml",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-03-15",
-  "Revised": {
-    "Text": "2008-03-15",
-    "Count": "01"
-  },
-  "Bug": [
-    "209927"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-lang/wml",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.0.11-r3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.0.11-r3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Website META Language is a free and extensible Webdesigner's off-line\n    HTML generation toolkit for Unix.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Temporary files are handled insecurely in the files\n    wml_backend/p1_ipp/ipp.src, wml_contrib/wmg.cgi, and\n    wml_backend/p3_eperl/eperl_sys.c, allowing users to overwrite or delete\n    arbitrary files with the privileges of the user running the program.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    Local users can exploit the insecure temporary file vulnerabilities via\n    symlink attacks to perform certain actions with escalated privileges.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Restrict access to the temporary directory to trusted users only.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Website META Language users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/wml-2.0.11-r3\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-0665",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0665"
-      },
-      {
-        "Text": "CVE-2008-0666",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0666"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-03-11T22:05:35Z"
-    },
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-03-11T22:05:48Z"
-    },
-    {
-      "Text": "\n    mfleming\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-03-15T20:18:51Z"
-    }
-  ]
+	"ID": "200803-23",
+	"Title": "Website META Language: Insecure temporary file usage",
+	"Synopsis": "\n    Multiple insecure temporary file vulnerabilities have been discovered in\n    the Website META Language.\n  ",
+	"Product": {
+		"Text": "wml",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-03-15",
+	"Revised": {
+		"Text": "2008-03-15",
+		"Count": "01"
+	},
+	"Bug": [
+		"209927"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-lang/wml",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.0.11-r3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.0.11-r3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Website META Language is a free and extensible Webdesigner's off-line\n    HTML generation toolkit for Unix.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Temporary files are handled insecurely in the files\n    wml_backend/p1_ipp/ipp.src, wml_contrib/wmg.cgi, and\n    wml_backend/p3_eperl/eperl_sys.c, allowing users to overwrite or delete\n    arbitrary files with the privileges of the user running the program.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    Local users can exploit the insecure temporary file vulnerabilities via\n    symlink attacks to perform certain actions with escalated privileges.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Restrict access to the temporary directory to trusted users only.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Website META Language users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/wml-2.0.11-r3\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-0665",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0665"
+			},
+			{
+				"Text": "CVE-2008-0666",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-0666"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-03-11T22:05:35Z"
+		},
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-03-11T22:05:48Z"
+		},
+		{
+			"Text": "\n    mfleming\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-03-15T20:18:51Z"
+		}
+	]
 }

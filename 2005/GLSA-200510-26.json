@@ -1,134 +1,134 @@
 {
-  "ID": "200510-26",
-  "Title": "XLI, Xloadimage: Buffer overflow",
-  "Synopsis": "\n    XLI and Xloadimage contain a vulnerability which could potentially result\n    in the execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "xli xloadimage",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-10-30",
-  "Revised": {
-    "Text": "2005-10-30",
-    "Count": "01"
-  },
-  "Bug": [
-    "108365"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-gfx/xli",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.17.0-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.17.0-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "media-gfx/xloadimage",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.1-r4",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.1-r4",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    XLI and Xloadimage are X11 image manipulation utilities.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    When XLI or Xloadimage process an image, they create a new image\n    object to contain the new image, copying the title from the old image\n    to the newly created image. Ariel Berkman reported that the 'zoom',\n    'reduce', and 'rotate' functions use a fixed length buffer to contain\n    the new title, which could be overwritten by the NIFF or XPM image\n    processors.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A malicious user could craft a malicious XPM or NIFF file and\n    entice a user to view it using XLI, or manipulate it using Xloadimage,\n    potentially resulting in the execution of arbitrary code with the\n    permissions of the user running XLI or Xloadimage.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All XLI users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All Xloadimage users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/xli-1.17.0-r2\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/xloadimage-4.1-r4\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2005-3178",
-        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-3178"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-10-26T15:18:40Z"
-    },
-    {
-      "Text": "\n    adir\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-10-28T03:10:06Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-10-30T15:11:22Z"
-    }
-  ]
+	"ID": "200510-26",
+	"Title": "XLI, Xloadimage: Buffer overflow",
+	"Synopsis": "\n    XLI and Xloadimage contain a vulnerability which could potentially result\n    in the execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "xli xloadimage",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-10-30",
+	"Revised": {
+		"Text": "2005-10-30",
+		"Count": "01"
+	},
+	"Bug": [
+		"108365"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-gfx/xli",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.17.0-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.17.0-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "media-gfx/xloadimage",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.1-r4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.1-r4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    XLI and Xloadimage are X11 image manipulation utilities.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    When XLI or Xloadimage process an image, they create a new image\n    object to contain the new image, copying the title from the old image\n    to the newly created image. Ariel Berkman reported that the 'zoom',\n    'reduce', and 'rotate' functions use a fixed length buffer to contain\n    the new title, which could be overwritten by the NIFF or XPM image\n    processors.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A malicious user could craft a malicious XPM or NIFF file and\n    entice a user to view it using XLI, or manipulate it using Xloadimage,\n    potentially resulting in the execution of arbitrary code with the\n    permissions of the user running XLI or Xloadimage.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All XLI users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All Xloadimage users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/xli-1.17.0-r2\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/xloadimage-4.1-r4\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2005-3178",
+				"Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-3178"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-10-26T15:18:40Z"
+		},
+		{
+			"Text": "\n    adir\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-10-28T03:10:06Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-10-30T15:11:22Z"
+		}
+	]
 }

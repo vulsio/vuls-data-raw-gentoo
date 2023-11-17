@@ -1,198 +1,198 @@
 {
-  "ID": "200508-08",
-  "Title": "Xpdf, Kpdf, GPdf: Denial of Service vulnerability",
-  "Synopsis": "\n    Xpdf, Kpdf and GPdf may crash as a result of a Denial of Service\n    vulnerability.\n  ",
-  "Product": {
-    "Text": "xpdf kpdf gpdf",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-08-16",
-  "Revised": {
-    "Text": "2005-08-16",
-    "Count": "01"
-  },
-  "Bug": [
-    "99769",
-    "100263",
-    "100265"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-text/xpdf",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.00-r10",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.00-r10",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "kde-base/kdegraphics",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.3.2-r3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.3.2-r3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "kde-base/kpdf",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.4.1-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.4.1-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "app-text/gpdf",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.10.0-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.10.0-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Xpdf, Kpdf and GPdf are PDF file viewers that run under the X\n    Window System. Kpdf and GPdf both contain Xpdf code. Kpdf is also part\n    of kdegraphics.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Xpdf, Kpdf and GPdf do not handle a broken table of embedded\n    TrueType fonts correctly. After detecting such a table, Xpdf, Kpdf and\n    GPdf attempt to reconstruct the information in it by decoding the PDF\n    file, which causes the generation of a huge temporary file.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker may cause a Denial of Service by creating a\n    specially crafted PDF file, sending it to a CUPS printing system (which\n    uses Xpdf), or by enticing a user to open it in Xpdf, Kpdf, or GPdf.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Xpdf users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All GPdf users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All Kpdf users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All KDE Split Ebuild Kpdf users should upgrade to the latest\n    version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/xpdf-3.00-r10\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/gpdf-2.10.0-r1\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=kde-base/kdegraphics-3.3.2-r3\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=kde-base/kpdf-3.4.1-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2005-2097",
-        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2097"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-08-12T15:22:33Z"
-    },
-    {
-      "Text": "\n    adir\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-08-12T20:47:38Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-08-13T08:53:33Z"
-    }
-  ]
+	"ID": "200508-08",
+	"Title": "Xpdf, Kpdf, GPdf: Denial of Service vulnerability",
+	"Synopsis": "\n    Xpdf, Kpdf and GPdf may crash as a result of a Denial of Service\n    vulnerability.\n  ",
+	"Product": {
+		"Text": "xpdf kpdf gpdf",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-08-16",
+	"Revised": {
+		"Text": "2005-08-16",
+		"Count": "01"
+	},
+	"Bug": [
+		"99769",
+		"100263",
+		"100265"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-text/xpdf",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.00-r10",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.00-r10",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "kde-base/kdegraphics",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.3.2-r3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.3.2-r3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "kde-base/kpdf",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.4.1-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.4.1-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "app-text/gpdf",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.10.0-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.10.0-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Xpdf, Kpdf and GPdf are PDF file viewers that run under the X\n    Window System. Kpdf and GPdf both contain Xpdf code. Kpdf is also part\n    of kdegraphics.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Xpdf, Kpdf and GPdf do not handle a broken table of embedded\n    TrueType fonts correctly. After detecting such a table, Xpdf, Kpdf and\n    GPdf attempt to reconstruct the information in it by decoding the PDF\n    file, which causes the generation of a huge temporary file.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker may cause a Denial of Service by creating a\n    specially crafted PDF file, sending it to a CUPS printing system (which\n    uses Xpdf), or by enticing a user to open it in Xpdf, Kpdf, or GPdf.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Xpdf users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All GPdf users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All Kpdf users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All KDE Split Ebuild Kpdf users should upgrade to the latest\n    version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/xpdf-3.00-r10\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/gpdf-2.10.0-r1\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=kde-base/kdegraphics-3.3.2-r3\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=kde-base/kpdf-3.4.1-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2005-2097",
+				"Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2097"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-08-12T15:22:33Z"
+		},
+		{
+			"Text": "\n    adir\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-08-12T20:47:38Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-08-13T08:53:33Z"
+		}
+	]
 }

@@ -1,103 +1,103 @@
 {
-  "ID": "200907-13",
-  "Title": "PulseAudio: Local privilege escalation",
-  "Synopsis": "\n    A vulnerability in PulseAudio may allow a local user to execute code with\n    escalated privileges.\n  ",
-  "Product": {
-    "Text": "pulseaudio",
-    "Type": "ebuild"
-  },
-  "Announced": "2009-07-16",
-  "Revised": {
-    "Text": "2009-07-16",
-    "Count": "01"
-  },
-  "Bug": [
-    "276986"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-sound/pulseaudio",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.9.9-r54",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.9.9-r54",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    PulseAudio is a network-enabled sound server with an advanced plug-in\n    system.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Tavis Ormandy and Julien Tinnes of the Google Security Team discovered\n    that the pulseaudio binary is installed setuid root, and does not drop\n    privileges before re-executing itself. The vulnerability has\n    independently been reported to oCERT by Yorick Koster.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A local user who has write access to any directory on the file system\n    containing /usr/bin can exploit this vulnerability using a race\n    condition to execute arbitrary code with root privileges.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Ensure that the file system holding /usr/bin does not contain\n    directories that are writable for unprivileged users.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All PulseAudio users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-sound/pulseaudio-0.9.9-r54\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2009-1894",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1894"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2009-07-09T16:33:42Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-07-09T16:51:52Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2009-07-16T14:13:15Z"
-    }
-  ]
+	"ID": "200907-13",
+	"Title": "PulseAudio: Local privilege escalation",
+	"Synopsis": "\n    A vulnerability in PulseAudio may allow a local user to execute code with\n    escalated privileges.\n  ",
+	"Product": {
+		"Text": "pulseaudio",
+		"Type": "ebuild"
+	},
+	"Announced": "2009-07-16",
+	"Revised": {
+		"Text": "2009-07-16",
+		"Count": "01"
+	},
+	"Bug": [
+		"276986"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-sound/pulseaudio",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.9.9-r54",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.9.9-r54",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    PulseAudio is a network-enabled sound server with an advanced plug-in\n    system.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Tavis Ormandy and Julien Tinnes of the Google Security Team discovered\n    that the pulseaudio binary is installed setuid root, and does not drop\n    privileges before re-executing itself. The vulnerability has\n    independently been reported to oCERT by Yorick Koster.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A local user who has write access to any directory on the file system\n    containing /usr/bin can exploit this vulnerability using a race\n    condition to execute arbitrary code with root privileges.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Ensure that the file system holding /usr/bin does not contain\n    directories that are writable for unprivileged users.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All PulseAudio users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-sound/pulseaudio-0.9.9-r54\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2009-1894",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1894"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2009-07-09T16:33:42Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-07-09T16:51:52Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2009-07-16T14:13:15Z"
+		}
+	]
 }

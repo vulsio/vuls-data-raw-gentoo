@@ -1,128 +1,128 @@
 {
-  "ID": "201206-26",
-  "Title": "RPM: Multiple vulnerabilities",
-  "Synopsis": "Multiple vulnerabilities have been found in RPM, possibly allowing\n    local attackers to gain elevated privileges or remote attackers to execute\n    arbitrary code.\n  ",
-  "Product": {
-    "Text": "RPM",
-    "Type": "ebuild"
-  },
-  "Announced": "2012-06-24",
-  "Revised": {
-    "Text": "2012-06-24",
-    "Count": "1"
-  },
-  "Bug": [
-    "335880",
-    "384967",
-    "410949"
-  ],
-  "Access": "local, remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-arch/rpm",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.9.1.3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.9.1.3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>The Red Hat Package Manager (RPM) is a command line driven package\n      management system capable of installing, uninstalling, verifying,\n      querying, and updating computer software packages.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Multiple vulnerabilities have been found in RPM:</p>\n    \n    <ul>\n      <li>fsm.c fails to properly strip setuid and setgid bits from executable\n        files during a package upgrade (CVE-2010-2059).\n      </li>\n      <li>RPM does not properly parse spec files (CVE-2010-2197).</li>\n      <li>fsm.c fails to properly strip POSIX file capabilities from executable\n        files during a package upgrade or removal (CVE-2010-2198).\n      </li>\n      <li>fsm.c fails to properly strip POSIX ACLs from executable files during\n        a package upgrade or removal (CVE-2010-2199).\n      </li>\n      <li>header.c does not properly parse region offsets in package files\n        (CVE-2011-3378).\n      </li>\n      <li>RPM does not properly sanitize region tags in package headers\n        (CVE-2012-0060).\n      </li>\n      <li>RPM does not properly sanitize region sizes in package headers\n        (CVE-2012-0061).\n      </li>\n      <li>RPM does not properly sanitize region offsets in package\n        headers(CVE-2012-0815).\n      </li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>A local attacker may be able to gain elevated privileges. Furthermore, a\n      remote attacker could entice a user to open a specially crafted RPM\n      package, possibly resulting in execution of arbitrary code with the\n      privileges of the process or a Denial of Service condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All RPM users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-arch/rpm-4.9.1.3\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2010-2059",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-2059"
-      },
-      {
-        "Text": "CVE-2010-2197",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-2197"
-      },
-      {
-        "Text": "CVE-2010-2198",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-2198"
-      },
-      {
-        "Text": "CVE-2010-2199",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-2199"
-      },
-      {
-        "Text": "CVE-2011-3378",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3378"
-      },
-      {
-        "Text": "CVE-2012-0060",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0060"
-      },
-      {
-        "Text": "CVE-2012-0061",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0061"
-      },
-      {
-        "Text": "CVE-2012-0815",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0815"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    underling\n  ",
-      "Tag": "requester",
-      "Timestamp": "2012-03-25T14:53:26Z"
-    },
-    {
-      "Text": "ackle",
-      "Tag": "submitter",
-      "Timestamp": "2012-06-24T22:36:58Z"
-    }
-  ]
+	"ID": "201206-26",
+	"Title": "RPM: Multiple vulnerabilities",
+	"Synopsis": "Multiple vulnerabilities have been found in RPM, possibly allowing\n    local attackers to gain elevated privileges or remote attackers to execute\n    arbitrary code.\n  ",
+	"Product": {
+		"Text": "RPM",
+		"Type": "ebuild"
+	},
+	"Announced": "2012-06-24",
+	"Revised": {
+		"Text": "2012-06-24",
+		"Count": "1"
+	},
+	"Bug": [
+		"335880",
+		"384967",
+		"410949"
+	],
+	"Access": "local, remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-arch/rpm",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.9.1.3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.9.1.3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>The Red Hat Package Manager (RPM) is a command line driven package\n      management system capable of installing, uninstalling, verifying,\n      querying, and updating computer software packages.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Multiple vulnerabilities have been found in RPM:</p>\n    \n    <ul>\n      <li>fsm.c fails to properly strip setuid and setgid bits from executable\n        files during a package upgrade (CVE-2010-2059).\n      </li>\n      <li>RPM does not properly parse spec files (CVE-2010-2197).</li>\n      <li>fsm.c fails to properly strip POSIX file capabilities from executable\n        files during a package upgrade or removal (CVE-2010-2198).\n      </li>\n      <li>fsm.c fails to properly strip POSIX ACLs from executable files during\n        a package upgrade or removal (CVE-2010-2199).\n      </li>\n      <li>header.c does not properly parse region offsets in package files\n        (CVE-2011-3378).\n      </li>\n      <li>RPM does not properly sanitize region tags in package headers\n        (CVE-2012-0060).\n      </li>\n      <li>RPM does not properly sanitize region sizes in package headers\n        (CVE-2012-0061).\n      </li>\n      <li>RPM does not properly sanitize region offsets in package\n        headers(CVE-2012-0815).\n      </li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>A local attacker may be able to gain elevated privileges. Furthermore, a\n      remote attacker could entice a user to open a specially crafted RPM\n      package, possibly resulting in execution of arbitrary code with the\n      privileges of the process or a Denial of Service condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All RPM users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=app-arch/rpm-4.9.1.3\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2010-2059",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-2059"
+			},
+			{
+				"Text": "CVE-2010-2197",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-2197"
+			},
+			{
+				"Text": "CVE-2010-2198",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-2198"
+			},
+			{
+				"Text": "CVE-2010-2199",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2010-2199"
+			},
+			{
+				"Text": "CVE-2011-3378",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-3378"
+			},
+			{
+				"Text": "CVE-2012-0060",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0060"
+			},
+			{
+				"Text": "CVE-2012-0061",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0061"
+			},
+			{
+				"Text": "CVE-2012-0815",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-0815"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    underling\n  ",
+			"Tag": "requester",
+			"Timestamp": "2012-03-25T14:53:26Z"
+		},
+		{
+			"Text": "ackle",
+			"Tag": "submitter",
+			"Timestamp": "2012-06-24T22:36:58Z"
+		}
+	]
 }

@@ -1,111 +1,111 @@
 {
-  "ID": "200805-05",
-  "Title": "Wireshark: Denial of service",
-  "Synopsis": "\n    Multiple Denial of Service vulnerabilities have been discovered in\n    Wireshark.\n  ",
-  "Product": {
-    "Text": "wireshark",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-05-07",
-  "Revised": {
-    "Text": "2008-05-07",
-    "Count": "01"
-  },
-  "Bug": [
-    "215276"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-analyzer/wireshark",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.0.0",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.0.0",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Wireshark is a network protocol analyzer with a graphical front-end.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Errors exist in:\n    </p>\n    <ul>\n    <li>\n    the X.509sat dissector because of an uninitialized variable and the\n    Roofnet dissector because a NULL pointer may be passed to the\n    g_vsnprintf() function (CVE-2008-1561).</li>\n    <li>\n    the LDAP dissector because a NULL pointer may be passed to the\n    ep_strdup_printf() function (CVE-2008-1562).</li>\n    <li>\n    the SCCP dissector because it does not reset a pointer once the packet\n    has been processed (CVE-2008-1563).</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could exploit these vulnerabilities by sending a\n    malformed packet or enticing a user to read a malformed packet trace\n    file, causing a Denial of Service.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Disable the X.509sat, Roofnet, LDAP, and SCCP dissectors.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Wireshark users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/wireshark-1.0.0\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-1561",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1561"
-      },
-      {
-        "Text": "CVE-2008-1562",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1562"
-      },
-      {
-        "Text": "CVE-2008-1563",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1563"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    vorlon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-04-29T13:11:47Z"
-    },
-    {
-      "Text": "\n    vorlon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-04-29T13:12:26Z"
-    },
-    {
-      "Text": "\n    mfleming\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-04-29T15:31:30Z"
-    }
-  ]
+	"ID": "200805-05",
+	"Title": "Wireshark: Denial of service",
+	"Synopsis": "\n    Multiple Denial of Service vulnerabilities have been discovered in\n    Wireshark.\n  ",
+	"Product": {
+		"Text": "wireshark",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-05-07",
+	"Revised": {
+		"Text": "2008-05-07",
+		"Count": "01"
+	},
+	"Bug": [
+		"215276"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-analyzer/wireshark",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.0.0",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.0.0",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Wireshark is a network protocol analyzer with a graphical front-end.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Errors exist in:\n    </p>\n    <ul>\n    <li>\n    the X.509sat dissector because of an uninitialized variable and the\n    Roofnet dissector because a NULL pointer may be passed to the\n    g_vsnprintf() function (CVE-2008-1561).</li>\n    <li>\n    the LDAP dissector because a NULL pointer may be passed to the\n    ep_strdup_printf() function (CVE-2008-1562).</li>\n    <li>\n    the SCCP dissector because it does not reset a pointer once the packet\n    has been processed (CVE-2008-1563).</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could exploit these vulnerabilities by sending a\n    malformed packet or enticing a user to read a malformed packet trace\n    file, causing a Denial of Service.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Disable the X.509sat, Roofnet, LDAP, and SCCP dissectors.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Wireshark users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/wireshark-1.0.0\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-1561",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1561"
+			},
+			{
+				"Text": "CVE-2008-1562",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1562"
+			},
+			{
+				"Text": "CVE-2008-1563",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1563"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    vorlon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-04-29T13:11:47Z"
+		},
+		{
+			"Text": "\n    vorlon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-04-29T13:12:26Z"
+		},
+		{
+			"Text": "\n    mfleming\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-04-29T15:31:30Z"
+		}
+	]
 }

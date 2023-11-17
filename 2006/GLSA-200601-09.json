@@ -1,108 +1,108 @@
 {
-  "ID": "200601-09",
-  "Title": "Wine: Windows Metafile SETABORTPROC vulnerability",
-  "Synopsis": "\n    There is a flaw in Wine in the handling of Windows Metafiles (WMF) files,\n    which could possibly result in the execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "wine",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-01-13",
-  "Revised": {
-    "Text": "2007-02-26",
-    "Count": "03"
-  },
-  "Bug": [
-    "118101"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-emulation/wine",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.9",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "20060000",
-            "Range": "lt",
-            "Slot": ""
-          },
-          {
-            "Text": "20040000",
-            "Range": "gt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Wine is a free implementation of Windows APIs for Unix-like systems.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    H D Moore discovered that Wine implements the insecure-by-design\n    SETABORTPROC GDI Escape function for Windows Metafile (WMF) files.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker could entice a user to open a specially crafted Windows\n    Metafile (WMF) file from within a Wine executed Windows application,\n    possibly resulting in the execution of arbitrary code with the rights\n    of the user running Wine.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Wine users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-emulation/wine-0.9.0\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-0106",
-        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0106"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-01-08T16:28:07Z"
-    },
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-01-08T17:43:07Z"
-    },
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-01-12T08:25:50Z"
-    }
-  ]
+	"ID": "200601-09",
+	"Title": "Wine: Windows Metafile SETABORTPROC vulnerability",
+	"Synopsis": "\n    There is a flaw in Wine in the handling of Windows Metafiles (WMF) files,\n    which could possibly result in the execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "wine",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-01-13",
+	"Revised": {
+		"Text": "2007-02-26",
+		"Count": "03"
+	},
+	"Bug": [
+		"118101"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-emulation/wine",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.9",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "20060000",
+						"Range": "lt",
+						"Slot": ""
+					},
+					{
+						"Text": "20040000",
+						"Range": "gt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Wine is a free implementation of Windows APIs for Unix-like systems.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    H D Moore discovered that Wine implements the insecure-by-design\n    SETABORTPROC GDI Escape function for Windows Metafile (WMF) files.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker could entice a user to open a specially crafted Windows\n    Metafile (WMF) file from within a Wine executed Windows application,\n    possibly resulting in the execution of arbitrary code with the rights\n    of the user running Wine.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Wine users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-emulation/wine-0.9.0\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-0106",
+				"Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0106"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-01-08T16:28:07Z"
+		},
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-01-08T17:43:07Z"
+		},
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-01-12T08:25:50Z"
+		}
+	]
 }

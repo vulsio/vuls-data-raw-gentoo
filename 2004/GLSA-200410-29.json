@@ -1,111 +1,111 @@
 {
-  "ID": "200410-29",
-  "Title": "PuTTY: Pre-authentication buffer overflow",
-  "Synopsis": "\n    PuTTY contains a vulnerability allowing an SSH server to execute arbitrary\n    code on the connecting client.\n  ",
-  "Product": {
-    "Text": "putty",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-10-27",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "02"
-  },
-  "Bug": [
-    "69123"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-misc/putty",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.56",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.55",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    PuTTY is a free implementation of Telnet and SSH for Win32 and Unix\n    platforms, along with an xterm terminal emulator.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    PuTTY fails to do proper bounds checking on SSH2_MSG_DEBUG packets. The\n    \"stringlen\" parameter value is incorrectly checked due to signedness\n    issues. Note that this vulnerability is similar to the one described in\n    GLSA 200408-04 but not the same.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    When PuTTY connects to a server using the SSH2 protocol, an attacker\n    may be able to send specially crafted packets to the client, resulting\n    in the execution of arbitrary code with the permissions of the user\n    running PuTTY. Note that this is possible during the authentication\n    process but before host key verification.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All PuTTY users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/putty-0.56\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "iDEFENSE Security Advisory 10.27.04",
-        "Link": "http://www.idefense.com/application/poi/display?id=155"
-      },
-      {
-        "Text": "PuTTY ChangeLog",
-        "Link": "https://www.chiark.greenend.org.uk/~sgtatham/putty/changes.html"
-      },
-      {
-        "Text": "CVE-2004-1008",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1008"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2004-10-27T15:40:45Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-10-27T15:40:58Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-10-27T16:43:51Z"
-    }
-  ]
+	"ID": "200410-29",
+	"Title": "PuTTY: Pre-authentication buffer overflow",
+	"Synopsis": "\n    PuTTY contains a vulnerability allowing an SSH server to execute arbitrary\n    code on the connecting client.\n  ",
+	"Product": {
+		"Text": "putty",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-10-27",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "02"
+	},
+	"Bug": [
+		"69123"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-misc/putty",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.56",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.55",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    PuTTY is a free implementation of Telnet and SSH for Win32 and Unix\n    platforms, along with an xterm terminal emulator.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    PuTTY fails to do proper bounds checking on SSH2_MSG_DEBUG packets. The\n    \"stringlen\" parameter value is incorrectly checked due to signedness\n    issues. Note that this vulnerability is similar to the one described in\n    GLSA 200408-04 but not the same.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    When PuTTY connects to a server using the SSH2 protocol, an attacker\n    may be able to send specially crafted packets to the client, resulting\n    in the execution of arbitrary code with the permissions of the user\n    running PuTTY. Note that this is possible during the authentication\n    process but before host key verification.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All PuTTY users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-misc/putty-0.56\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "iDEFENSE Security Advisory 10.27.04",
+				"Link": "http://www.idefense.com/application/poi/display?id=155"
+			},
+			{
+				"Text": "PuTTY ChangeLog",
+				"Link": "https://www.chiark.greenend.org.uk/~sgtatham/putty/changes.html"
+			},
+			{
+				"Text": "CVE-2004-1008",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1008"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2004-10-27T15:40:45Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-10-27T15:40:58Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-10-27T16:43:51Z"
+		}
+	]
 }

@@ -1,111 +1,111 @@
 {
-  "ID": "200503-19",
-  "Title": "MySQL: Multiple vulnerabilities",
-  "Synopsis": "\n    MySQL contains several vulnerabilities potentially leading to the\n    overwriting of local files or to the execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "mysql",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-03-16",
-  "Revised": {
-    "Text": "2005-03-16",
-    "Count": "02"
-  },
-  "Bug": [
-    "84819"
-  ],
-  "Access": "remote and local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-db/mysql",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.0.24",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.0.24",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    MySQL is a fast, multi-threaded, multi-user SQL database server.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    MySQL fails to properly validate input for authenticated users with\n    INSERT and DELETE privileges (CAN-2005-0709 and CAN-2005-0710).\n    Furthermore MySQL uses predictable filenames when creating temporary\n    files with CREATE TEMPORARY TABLE (CAN-2005-0711).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker with INSERT and DELETE privileges could exploit this to\n    manipulate the mysql table or accessing libc calls, potentially leading\n    to the execution of arbitrary code with the permissions of the user\n    running MySQL. An attacker with CREATE TEMPORARY TABLE privileges could\n    exploit this to overwrite arbitrary files via a symlink attack.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All MySQL users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-db/mysql-4.0.24\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2005-0709",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0709"
-      },
-      {
-        "Text": "CAN-2005-0710",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0710"
-      },
-      {
-        "Text": "CAN-2005-0711",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0711"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-03-14T05:33:03Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-03-15T06:04:30Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-03-15T15:41:11Z"
-    }
-  ]
+	"ID": "200503-19",
+	"Title": "MySQL: Multiple vulnerabilities",
+	"Synopsis": "\n    MySQL contains several vulnerabilities potentially leading to the\n    overwriting of local files or to the execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "mysql",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-03-16",
+	"Revised": {
+		"Text": "2005-03-16",
+		"Count": "02"
+	},
+	"Bug": [
+		"84819"
+	],
+	"Access": "remote and local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-db/mysql",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.0.24",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.0.24",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    MySQL is a fast, multi-threaded, multi-user SQL database server.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    MySQL fails to properly validate input for authenticated users with\n    INSERT and DELETE privileges (CAN-2005-0709 and CAN-2005-0710).\n    Furthermore MySQL uses predictable filenames when creating temporary\n    files with CREATE TEMPORARY TABLE (CAN-2005-0711).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker with INSERT and DELETE privileges could exploit this to\n    manipulate the mysql table or accessing libc calls, potentially leading\n    to the execution of arbitrary code with the permissions of the user\n    running MySQL. An attacker with CREATE TEMPORARY TABLE privileges could\n    exploit this to overwrite arbitrary files via a symlink attack.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All MySQL users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-db/mysql-4.0.24\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2005-0709",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0709"
+			},
+			{
+				"Text": "CAN-2005-0710",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0710"
+			},
+			{
+				"Text": "CAN-2005-0711",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-0711"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-03-14T05:33:03Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-03-15T06:04:30Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-03-15T15:41:11Z"
+		}
+	]
 }

@@ -1,122 +1,122 @@
 {
-  "ID": "200812-06",
-  "Title": "libxml2: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities in libxml2 might lead to execution of arbitrary\n    code or Denial of Service.\n  ",
-  "Product": {
-    "Text": "libxml2",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-12-02",
-  "Revised": {
-    "Text": "2008-12-02",
-    "Count": "01"
-  },
-  "Bug": [
-    "234099",
-    "237806",
-    "239346",
-    "245960"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-libs/libxml2",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.7.2-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.7.2-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    libxml2 is the XML (eXtended Markup Language) C parser and toolkit\n    initially developed for the Gnome project.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Multiple vulnerabilities were reported in libxml2:\n    </p>\n    <ul>\n    <li>\n    Andreas Solberg reported that libxml2 does not properly detect\n    recursion during entity expansion in an attribute value\n    (CVE-2008-3281).\n    </li>\n    <li>\n    A heap-based buffer overflow has been reported in the\n    xmlParseAttValueComplex() function in parser.c (CVE-2008-3529).\n    </li>\n    <li>\n    Christian Weiske reported that predefined entity definitions in\n    entities are not properly handled (CVE-2008-4409).\n    </li>\n    <li>\n    Drew Yao of Apple Product Security reported an integer overflow in the\n    xmlBufferResize() function that can lead to an infinite loop\n    (CVE-2008-4225).\n    </li>\n    <li>\n    Drew Yao of Apple Product Security reported an integer overflow in the\n    xmlSAX2Characters() function leading to a memory corruption\n    (CVE-2008-4226).\n    </li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user or automated system to open a\n    specially crafted XML document with an application using libxml2,\n    possibly resulting in the exeution of arbitrary code or a high CPU and\n    memory consumption.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All libxml2 users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/libxml2-2.7.2-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-3281",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3281"
-      },
-      {
-        "Text": "CVE-2008-3529",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3529"
-      },
-      {
-        "Text": "CVE-2008-4409",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4409"
-      },
-      {
-        "Text": "CVE-2008-4225",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4225"
-      },
-      {
-        "Text": "CVE-2008-4226",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4226"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-10-01T21:27:07Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-10-31T00:21:31Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-10-31T00:21:45Z"
-    }
-  ]
+	"ID": "200812-06",
+	"Title": "libxml2: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities in libxml2 might lead to execution of arbitrary\n    code or Denial of Service.\n  ",
+	"Product": {
+		"Text": "libxml2",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-12-02",
+	"Revised": {
+		"Text": "2008-12-02",
+		"Count": "01"
+	},
+	"Bug": [
+		"234099",
+		"237806",
+		"239346",
+		"245960"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-libs/libxml2",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.7.2-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.7.2-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    libxml2 is the XML (eXtended Markup Language) C parser and toolkit\n    initially developed for the Gnome project.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Multiple vulnerabilities were reported in libxml2:\n    </p>\n    <ul>\n    <li>\n    Andreas Solberg reported that libxml2 does not properly detect\n    recursion during entity expansion in an attribute value\n    (CVE-2008-3281).\n    </li>\n    <li>\n    A heap-based buffer overflow has been reported in the\n    xmlParseAttValueComplex() function in parser.c (CVE-2008-3529).\n    </li>\n    <li>\n    Christian Weiske reported that predefined entity definitions in\n    entities are not properly handled (CVE-2008-4409).\n    </li>\n    <li>\n    Drew Yao of Apple Product Security reported an integer overflow in the\n    xmlBufferResize() function that can lead to an infinite loop\n    (CVE-2008-4225).\n    </li>\n    <li>\n    Drew Yao of Apple Product Security reported an integer overflow in the\n    xmlSAX2Characters() function leading to a memory corruption\n    (CVE-2008-4226).\n    </li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user or automated system to open a\n    specially crafted XML document with an application using libxml2,\n    possibly resulting in the exeution of arbitrary code or a high CPU and\n    memory consumption.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All libxml2 users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/libxml2-2.7.2-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-3281",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3281"
+			},
+			{
+				"Text": "CVE-2008-3529",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3529"
+			},
+			{
+				"Text": "CVE-2008-4409",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4409"
+			},
+			{
+				"Text": "CVE-2008-4225",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4225"
+			},
+			{
+				"Text": "CVE-2008-4226",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4226"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-10-01T21:27:07Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-10-31T00:21:31Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-10-31T00:21:45Z"
+		}
+	]
 }

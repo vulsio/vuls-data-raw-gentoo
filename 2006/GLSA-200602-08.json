@@ -1,134 +1,134 @@
 {
-  "ID": "200602-08",
-  "Title": "libtasn1, GNU TLS: Security flaw in DER decoding",
-  "Synopsis": "\n    A flaw in the parsing of Distinguished Encoding Rules (DER) has been\n    discovered in libtasn1, potentially resulting in the execution of arbitrary\n    code.\n  ",
-  "Product": {
-    "Text": "libtasn1",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-02-16",
-  "Revised": {
-    "Text": "2006-02-16",
-    "Count": "01"
-  },
-  "Bug": [
-    "122307"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-libs/libtasn1",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.2.18",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.2.18",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "net-libs/gnutls",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.2.10",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.2.10",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Libtasn1 is a library used to parse ASN.1 (Abstract Syntax\n    Notation One) objects, and perform DER (Distinguished Encoding Rules)\n    decoding. Libtasn1 is included with the GNU TLS library, which is used\n    by applications to provide a cryptographically secure communications\n    channel.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Evgeny Legerov has reported a flaw in the DER decoding routines\n    provided by libtasn1, which could cause an out of bounds access to\n    occur.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker could cause an application using libtasn1 to\n    crash and potentially execute arbitrary code by sending specially\n    crafted input.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All libtasn1 users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All GNU TLS users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/libtasn1-0.2.18\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-libs/gnutls-1.2.10\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-0645",
-        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0645"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-02-13T20:11:10Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-02-13T20:11:49Z"
-    },
-    {
-      "Text": "\n    taviso\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-02-14T22:53:09Z"
-    }
-  ]
+	"ID": "200602-08",
+	"Title": "libtasn1, GNU TLS: Security flaw in DER decoding",
+	"Synopsis": "\n    A flaw in the parsing of Distinguished Encoding Rules (DER) has been\n    discovered in libtasn1, potentially resulting in the execution of arbitrary\n    code.\n  ",
+	"Product": {
+		"Text": "libtasn1",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-02-16",
+	"Revised": {
+		"Text": "2006-02-16",
+		"Count": "01"
+	},
+	"Bug": [
+		"122307"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-libs/libtasn1",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.2.18",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.2.18",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "net-libs/gnutls",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.2.10",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.2.10",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Libtasn1 is a library used to parse ASN.1 (Abstract Syntax\n    Notation One) objects, and perform DER (Distinguished Encoding Rules)\n    decoding. Libtasn1 is included with the GNU TLS library, which is used\n    by applications to provide a cryptographically secure communications\n    channel.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Evgeny Legerov has reported a flaw in the DER decoding routines\n    provided by libtasn1, which could cause an out of bounds access to\n    occur.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker could cause an application using libtasn1 to\n    crash and potentially execute arbitrary code by sending specially\n    crafted input.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All libtasn1 users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All GNU TLS users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-libs/libtasn1-0.2.18\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-libs/gnutls-1.2.10\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-0645",
+				"Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0645"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-02-13T20:11:10Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-02-13T20:11:49Z"
+		},
+		{
+			"Text": "\n    taviso\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-02-14T22:53:09Z"
+		}
+	]
 }

@@ -1,130 +1,130 @@
 {
-  "ID": "201203-16",
-  "Title": "ModPlug: User-assisted execution of arbitrary code",
-  "Synopsis": "Multiple vulnerabilities in ModPlug could result in execution of\n    arbitrary code or Denial of Service.\n  ",
-  "Product": {
-    "Text": "libmodplug",
-    "Type": "ebuild"
-  },
-  "Announced": "2012-03-16",
-  "Revised": {
-    "Text": "2012-03-16",
-    "Count": "2"
-  },
-  "Bug": [
-    "362503",
-    "379557"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-libs/libmodplug",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.8.8.4",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.8.8.4",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>ModPlug is a library for playing MOD-like music.</p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Multiple vulnerabilities have been found in ModPlug:</p>\n    \n    <ul>\n      <li>The ReadS3M method in load_s3m.cpp fails to validate user-supplied\n        information, which could cause a stack-based buffer overflow\n        (CVE-2011-1574).\n      </li>\n      <li>The \"CSoundFile::ReadWav()\" function in load_wav.cpp contains an\n        integer overflow which could cause a heap-based buffer overflow\n        (CVE-2011-2911). \n      </li>\n      <li>The \"CSoundFile::ReadS3M()\" function in load_s3m.cpp contains\n        multiple boundary errors which could cause a stack-based buffer\n        overflow (CVE-2011-2912).\n      </li>\n      <li>The \"CSoundFile::ReadAMS()\" function in load_ams.cpp contains an\n        off-by-one error which could cause memory corruption (CVE-2011-2913).\n      </li>\n      <li>The \"CSoundFile::ReadDSM()\" function in load_dms.cpp contains an\n        off-by-one error which could cause memory corruption (CVE-2011-2914).\n      </li>\n      <li>The \"CSoundFile::ReadAMS2()\" function in load_ams.cpp contains an\n        off-by-one error which could cause memory corruption (CVE-2011-2915).\n      </li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could entice a user to open a specially crafted media\n      file, possibly resulting in execution of arbitrary code, or a Denial of\n      Service condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All ModPlug users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "NOTE: This is a legacy GLSA. Updates for all affected architectures are\n      available since August 27, 2011. It is likely that your system is already\n      no longer affected by this issue.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/libmodplug-0.8.8.4\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2011-1574",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-1574"
-      },
-      {
-        "Text": "CVE-2011-2911",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2911"
-      },
-      {
-        "Text": "CVE-2011-2912",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2912"
-      },
-      {
-        "Text": "CVE-2011-2913",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2913"
-      },
-      {
-        "Text": "CVE-2011-2914",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2914"
-      },
-      {
-        "Text": "CVE-2011-2915",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2915"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    underling\n  ",
-      "Tag": "requester",
-      "Timestamp": "2011-10-07T23:37:18Z"
-    },
-    {
-      "Text": "ackle",
-      "Tag": "submitter",
-      "Timestamp": "2012-03-16T11:02:28Z"
-    }
-  ]
+	"ID": "201203-16",
+	"Title": "ModPlug: User-assisted execution of arbitrary code",
+	"Synopsis": "Multiple vulnerabilities in ModPlug could result in execution of\n    arbitrary code or Denial of Service.\n  ",
+	"Product": {
+		"Text": "libmodplug",
+		"Type": "ebuild"
+	},
+	"Announced": "2012-03-16",
+	"Revised": {
+		"Text": "2012-03-16",
+		"Count": "2"
+	},
+	"Bug": [
+		"362503",
+		"379557"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-libs/libmodplug",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.8.8.4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.8.8.4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>ModPlug is a library for playing MOD-like music.</p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Multiple vulnerabilities have been found in ModPlug:</p>\n    \n    <ul>\n      <li>The ReadS3M method in load_s3m.cpp fails to validate user-supplied\n        information, which could cause a stack-based buffer overflow\n        (CVE-2011-1574).\n      </li>\n      <li>The \"CSoundFile::ReadWav()\" function in load_wav.cpp contains an\n        integer overflow which could cause a heap-based buffer overflow\n        (CVE-2011-2911). \n      </li>\n      <li>The \"CSoundFile::ReadS3M()\" function in load_s3m.cpp contains\n        multiple boundary errors which could cause a stack-based buffer\n        overflow (CVE-2011-2912).\n      </li>\n      <li>The \"CSoundFile::ReadAMS()\" function in load_ams.cpp contains an\n        off-by-one error which could cause memory corruption (CVE-2011-2913).\n      </li>\n      <li>The \"CSoundFile::ReadDSM()\" function in load_dms.cpp contains an\n        off-by-one error which could cause memory corruption (CVE-2011-2914).\n      </li>\n      <li>The \"CSoundFile::ReadAMS2()\" function in load_ams.cpp contains an\n        off-by-one error which could cause memory corruption (CVE-2011-2915).\n      </li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could entice a user to open a specially crafted media\n      file, possibly resulting in execution of arbitrary code, or a Denial of\n      Service condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All ModPlug users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "NOTE: This is a legacy GLSA. Updates for all affected architectures are\n      available since August 27, 2011. It is likely that your system is already\n      no longer affected by this issue.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/libmodplug-0.8.8.4\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2011-1574",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-1574"
+			},
+			{
+				"Text": "CVE-2011-2911",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2911"
+			},
+			{
+				"Text": "CVE-2011-2912",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2912"
+			},
+			{
+				"Text": "CVE-2011-2913",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2913"
+			},
+			{
+				"Text": "CVE-2011-2914",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2914"
+			},
+			{
+				"Text": "CVE-2011-2915",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2011-2915"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    underling\n  ",
+			"Tag": "requester",
+			"Timestamp": "2011-10-07T23:37:18Z"
+		},
+		{
+			"Text": "ackle",
+			"Tag": "submitter",
+			"Timestamp": "2012-03-16T11:02:28Z"
+		}
+	]
 }

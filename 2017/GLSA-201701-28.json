@@ -1,98 +1,98 @@
 {
-  "ID": "201701-28",
-  "Title": "c-ares: Heap-based buffer overflow",
-  "Synopsis": "A heap-based buffer overflow in c-ares might allow remote attackers\n    to cause a Denial of Service condition.\n  ",
-  "Product": {
-    "Text": "c-ares",
-    "Type": "ebuild"
-  },
-  "Announced": "2017-01-11",
-  "Revised": {
-    "Text": "2017-01-11",
-    "Count": "1"
-  },
-  "Bug": [
-    "595536"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-dns/c-ares",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.12.0",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.12.0",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>c-ares is a C library for asynchronous DNS requests (including name\n      resolves).\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>A hostname with an escaped trailing dot (such as “hello\\.”) would\n      have its size calculated incorrectly leading to a single byte written\n      beyond the end of a buffer on the heap.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker, able to provide a specially crafted hostname to an\n      application using c-ares, could potentially cause a Denial of Service\n      condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All c-ares users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-dns/c-ares-1.12.0\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2016-5180",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-5180"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "whissi",
-      "Tag": "requester",
-      "Timestamp": "2017-01-09T14:14:23Z"
-    },
-    {
-      "Text": "whissi",
-      "Tag": "submitter",
-      "Timestamp": "2017-01-11T12:29:54Z"
-    }
-  ]
+	"ID": "201701-28",
+	"Title": "c-ares: Heap-based buffer overflow",
+	"Synopsis": "A heap-based buffer overflow in c-ares might allow remote attackers\n    to cause a Denial of Service condition.\n  ",
+	"Product": {
+		"Text": "c-ares",
+		"Type": "ebuild"
+	},
+	"Announced": "2017-01-11",
+	"Revised": {
+		"Text": "2017-01-11",
+		"Count": "1"
+	},
+	"Bug": [
+		"595536"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-dns/c-ares",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.12.0",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.12.0",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>c-ares is a C library for asynchronous DNS requests (including name\n      resolves).\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>A hostname with an escaped trailing dot (such as “hello\\.”) would\n      have its size calculated incorrectly leading to a single byte written\n      beyond the end of a buffer on the heap.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker, able to provide a specially crafted hostname to an\n      application using c-ares, could potentially cause a Denial of Service\n      condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All c-ares users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-dns/c-ares-1.12.0\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2016-5180",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-5180"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "whissi",
+			"Tag": "requester",
+			"Timestamp": "2017-01-09T14:14:23Z"
+		},
+		{
+			"Text": "whissi",
+			"Tag": "submitter",
+			"Timestamp": "2017-01-11T12:29:54Z"
+		}
+	]
 }

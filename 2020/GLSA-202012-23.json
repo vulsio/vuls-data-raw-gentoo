@@ -1,120 +1,120 @@
 {
-  "ID": "202012-23",
-  "Title": "Apache Tomcat: Information disclosure",
-  "Synopsis": "A vulnerability has been discovered in Apache Tomcat that allows\n    for the disclosure of sensitive information.\n  ",
-  "Product": {
-    "Text": "tomcat",
-    "Type": "ebuild"
-  },
-  "Announced": "2020-12-24",
-  "Revised": {
-    "Text": "2020-12-24",
-    "Count": "1"
-  },
-  "Bug": [
-    "758338"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-servers/tomcat",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "8.5.60",
-            "Range": "ge",
-            "Slot": "8.5"
-          },
-          {
-            "Text": "9.0.40",
-            "Range": "ge",
-            "Slot": "9"
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "8.5.60",
-            "Range": "lt",
-            "Slot": "8.5"
-          },
-          {
-            "Text": "9.0.40",
-            "Range": "lt",
-            "Slot": "9"
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Apache Tomcat is a Servlet-3.0/JSP-2.2 Container.</p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>It was discovered that Apache Tomcat could re-use an HTTP request header\n      value from the previous stream received on an HTTP/2 connection for the\n      request associated with the subsequent stream.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "low",
-    "Text": "\n    <p>A remote attacker, by sending well-timed HTTP/2 requests, could possibly\n      obtain sensitive information.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>Disable HTTP/2 support.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All Apache Tomcat 8.5.x users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "All Apache Tomcat 9.x users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=www-servers/tomcat-8.5.60:8.5\"\n    ",
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=www-servers/tomcat-9.0.40:9\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2020-17527",
-        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-17527"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "whissi",
-      "Tag": "requester",
-      "Timestamp": "2020-12-23T01:20:53Z"
-    },
-    {
-      "Text": "whissi",
-      "Tag": "submitter",
-      "Timestamp": "2020-12-24T14:11:02Z"
-    }
-  ]
+	"ID": "202012-23",
+	"Title": "Apache Tomcat: Information disclosure",
+	"Synopsis": "A vulnerability has been discovered in Apache Tomcat that allows\n    for the disclosure of sensitive information.\n  ",
+	"Product": {
+		"Text": "tomcat",
+		"Type": "ebuild"
+	},
+	"Announced": "2020-12-24",
+	"Revised": {
+		"Text": "2020-12-24",
+		"Count": "1"
+	},
+	"Bug": [
+		"758338"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-servers/tomcat",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "8.5.60",
+						"Range": "ge",
+						"Slot": "8.5"
+					},
+					{
+						"Text": "9.0.40",
+						"Range": "ge",
+						"Slot": "9"
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "8.5.60",
+						"Range": "lt",
+						"Slot": "8.5"
+					},
+					{
+						"Text": "9.0.40",
+						"Range": "lt",
+						"Slot": "9"
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Apache Tomcat is a Servlet-3.0/JSP-2.2 Container.</p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>It was discovered that Apache Tomcat could re-use an HTTP request header\n      value from the previous stream received on an HTTP/2 connection for the\n      request associated with the subsequent stream.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "low",
+		"Text": "\n    <p>A remote attacker, by sending well-timed HTTP/2 requests, could possibly\n      obtain sensitive information.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>Disable HTTP/2 support.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All Apache Tomcat 8.5.x users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "All Apache Tomcat 9.x users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=www-servers/tomcat-8.5.60:8.5\"\n    ",
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=www-servers/tomcat-9.0.40:9\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2020-17527",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-17527"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "whissi",
+			"Tag": "requester",
+			"Timestamp": "2020-12-23T01:20:53Z"
+		},
+		{
+			"Text": "whissi",
+			"Tag": "submitter",
+			"Timestamp": "2020-12-24T14:11:02Z"
+		}
+	]
 }

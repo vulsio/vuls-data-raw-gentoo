@@ -1,121 +1,121 @@
 {
-  "ID": "200910-02",
-  "Title": "Pidgin: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities have been discovered in Pidgin, leading to the\n    remote execution of arbitrary code, unauthorized information disclosure, or\n    Denial of Service.\n  ",
-  "Product": {
-    "Text": "pidgin",
-    "Type": "ebuild"
-  },
-  "Announced": "2009-10-22",
-  "Revised": {
-    "Text": "2009-10-22",
-    "Count": "01"
-  },
-  "Bug": [
-    "276000",
-    "281545",
-    "283324"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-im/pidgin",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.5.9-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.5.9-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Pidgin is a client for a variety of instant messaging protocols.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Multiple vulnerabilities were found in Pidgin:\n    </p>\n    <ul>\n    <li>Yuriy\n    Kaminskiy reported that the OSCAR protocol implementation in Pidgin\n    misinterprets the ICQWebMessage message type as the ICQSMS message\n    type, triggering an allocation of a large amount of memory\n    (CVE-2009-1889).</li>\n    <li>Federico Muttis of Core Security Technologies\n    reported that the msn_slplink_process_msg() function in\n    libpurple/protocols/msn/slplink.c in libpurple as used in Pidgin\n    doesn't properly process incoming SLP messages, triggering an overwrite\n    of an arbitrary memory location (CVE-2009-2694). NOTE: This issue\n    reportedly exists because of an incomplete fix for CVE-2009-1376 (GLSA\n    200905-07).</li>\n    <li>bugdave reported that protocols/jabber/auth.c in\n    libpurple as used in Pidgin does not follow the \"require TSL/SSL\"\n    preference when connecting to older Jabber servers that do not follow\n    the XMPP specification, resulting in a connection to the server without\n    the expected encryption (CVE-2009-3026).</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker could send specially crafted SLP (via MSN) or ICQ web\n    messages, possibly leading to execution of arbitrary code with the\n    privileges of the user running Pidgin, unauthorized information\n    disclosure, or a Denial of Service.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Pidgin users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-im/pidgin-2.5.9-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2009-1376",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1376"
-      },
-      {
-        "Text": "CVE-2009-1889",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1889"
-      },
-      {
-        "Text": "CVE-2009-2694",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2694"
-      },
-      {
-        "Text": "CVE-2009-3026",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3026"
-      },
-      {
-        "Text": "GLSA 200905-07",
-        "Link": "https://www.gentoo.org/security/en/glsa/glsa-200905-07.xml"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "requester",
-      "Timestamp": "2009-08-31T02:16:12Z"
-    },
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-08-31T07:10:07Z"
-    },
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2009-10-22T19:06:35Z"
-    }
-  ]
+	"ID": "200910-02",
+	"Title": "Pidgin: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities have been discovered in Pidgin, leading to the\n    remote execution of arbitrary code, unauthorized information disclosure, or\n    Denial of Service.\n  ",
+	"Product": {
+		"Text": "pidgin",
+		"Type": "ebuild"
+	},
+	"Announced": "2009-10-22",
+	"Revised": {
+		"Text": "2009-10-22",
+		"Count": "01"
+	},
+	"Bug": [
+		"276000",
+		"281545",
+		"283324"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-im/pidgin",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.5.9-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.5.9-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Pidgin is a client for a variety of instant messaging protocols.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Multiple vulnerabilities were found in Pidgin:\n    </p>\n    <ul>\n    <li>Yuriy\n    Kaminskiy reported that the OSCAR protocol implementation in Pidgin\n    misinterprets the ICQWebMessage message type as the ICQSMS message\n    type, triggering an allocation of a large amount of memory\n    (CVE-2009-1889).</li>\n    <li>Federico Muttis of Core Security Technologies\n    reported that the msn_slplink_process_msg() function in\n    libpurple/protocols/msn/slplink.c in libpurple as used in Pidgin\n    doesn't properly process incoming SLP messages, triggering an overwrite\n    of an arbitrary memory location (CVE-2009-2694). NOTE: This issue\n    reportedly exists because of an incomplete fix for CVE-2009-1376 (GLSA\n    200905-07).</li>\n    <li>bugdave reported that protocols/jabber/auth.c in\n    libpurple as used in Pidgin does not follow the \"require TSL/SSL\"\n    preference when connecting to older Jabber servers that do not follow\n    the XMPP specification, resulting in a connection to the server without\n    the expected encryption (CVE-2009-3026).</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker could send specially crafted SLP (via MSN) or ICQ web\n    messages, possibly leading to execution of arbitrary code with the\n    privileges of the user running Pidgin, unauthorized information\n    disclosure, or a Denial of Service.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Pidgin users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-im/pidgin-2.5.9-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2009-1376",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1376"
+			},
+			{
+				"Text": "CVE-2009-1889",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1889"
+			},
+			{
+				"Text": "CVE-2009-2694",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2694"
+			},
+			{
+				"Text": "CVE-2009-3026",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3026"
+			},
+			{
+				"Text": "GLSA 200905-07",
+				"Link": "https://www.gentoo.org/security/en/glsa/glsa-200905-07.xml"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "requester",
+			"Timestamp": "2009-08-31T02:16:12Z"
+		},
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-08-31T07:10:07Z"
+		},
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2009-10-22T19:06:35Z"
+		}
+	]
 }

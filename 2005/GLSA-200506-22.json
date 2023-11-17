@@ -1,103 +1,103 @@
 {
-  "ID": "200506-22",
-  "Title": "sudo: Arbitrary command execution",
-  "Synopsis": "\n    A vulnerability in sudo may allow local users to elevate privileges.\n  ",
-  "Product": {
-    "Text": "sudo",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-06-23",
-  "Revised": {
-    "Text": "2005-06-23",
-    "Count": "01"
-  },
-  "Bug": [
-    "96618"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-admin/sudo",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.6.8_p9",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.6.8_p9",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    sudo allows a system administrator to give users the ability to\n    run commands as other users.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The sudoers file is used to define the actions sudo users are\n    permitted to perform. Charles Morris discovered that a specific layout\n    of the sudoers file could cause the results of an internal check to be\n    clobbered, leaving sudo vulnerable to a race condition.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    Successful exploitation would permit a local sudo user to execute\n    arbitrary commands as another user.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Reorder the sudoers file using the visudo utility to ensure the\n    'ALL' pseudo-command precedes other command definitions.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All sudo users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-admin/sudo-1.6.8_p9\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "Sudo Announcement",
-        "Link": "https://www.sudo.ws/sudo/alerts/path_race.html"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-06-21T20:05:11Z"
-    },
-    {
-      "Text": "\n    taviso\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-06-22T15:18:20Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-06-23T06:48:01Z"
-    }
-  ]
+	"ID": "200506-22",
+	"Title": "sudo: Arbitrary command execution",
+	"Synopsis": "\n    A vulnerability in sudo may allow local users to elevate privileges.\n  ",
+	"Product": {
+		"Text": "sudo",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-06-23",
+	"Revised": {
+		"Text": "2005-06-23",
+		"Count": "01"
+	},
+	"Bug": [
+		"96618"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-admin/sudo",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.6.8_p9",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.6.8_p9",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    sudo allows a system administrator to give users the ability to\n    run commands as other users.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The sudoers file is used to define the actions sudo users are\n    permitted to perform. Charles Morris discovered that a specific layout\n    of the sudoers file could cause the results of an internal check to be\n    clobbered, leaving sudo vulnerable to a race condition.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    Successful exploitation would permit a local sudo user to execute\n    arbitrary commands as another user.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Reorder the sudoers file using the visudo utility to ensure the\n    'ALL' pseudo-command precedes other command definitions.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All sudo users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-admin/sudo-1.6.8_p9\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "Sudo Announcement",
+				"Link": "https://www.sudo.ws/sudo/alerts/path_race.html"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-06-21T20:05:11Z"
+		},
+		{
+			"Text": "\n    taviso\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-06-22T15:18:20Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-06-23T06:48:01Z"
+		}
+	]
 }

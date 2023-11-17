@@ -1,139 +1,139 @@
 {
-  "ID": "200801-06",
-  "Title": "Xfce: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities in Xfce might allow user-assisted attackers to\n    execute arbitrary code.\n  ",
-  "Product": {
-    "Text": "xfce4-panel libxfcegui4",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-01-09",
-  "Revised": {
-    "Text": "2008-01-10",
-    "Count": "03"
-  },
-  "Bug": [
-    "201292",
-    "201293"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "xfce-base/xfce4-panel",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.4.2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.4.2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "xfce-base/libxfcegui4",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.4.2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.4.2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Xfce is a GTK+ 2 based desktop environment that allows to run a modern\n    desktop environment on modest hardware.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Gregory Andersen reported that the Xfce4 panel does not correctly\n    calculate memory boundaries, leading to a stack-based buffer overflow\n    in the launcher_update_panel_entry() function (CVE-2007-6531). Daichi\n    Kawahata reported libxfcegui4 did not copy provided values when\n    creating \"SessionClient\" structs, possibly leading to access of freed\n    memory areas (CVE-2007-6532).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to install a specially crafted\n    \"rc\" file to execute arbitrary code via long strings in the \"Name\" and\n    \"Comment\" fields or via unspecified vectors involving the second\n    vulnerability.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Xfce4 panel users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All libxfcegui4 users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=xfce-base/xfce4-panel-4.4.2\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=xfce-base/libxfcegui4-4.4.2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-6531",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6531"
-      },
-      {
-        "Text": "CVE-2007-6532",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6532"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    p-y\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-12-08T23:45:36Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-12-22T13:22:06Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-12-22T16:37:18Z"
-    }
-  ]
+	"ID": "200801-06",
+	"Title": "Xfce: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities in Xfce might allow user-assisted attackers to\n    execute arbitrary code.\n  ",
+	"Product": {
+		"Text": "xfce4-panel libxfcegui4",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-01-09",
+	"Revised": {
+		"Text": "2008-01-10",
+		"Count": "03"
+	},
+	"Bug": [
+		"201292",
+		"201293"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "xfce-base/xfce4-panel",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.4.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.4.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "xfce-base/libxfcegui4",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.4.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.4.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Xfce is a GTK+ 2 based desktop environment that allows to run a modern\n    desktop environment on modest hardware.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Gregory Andersen reported that the Xfce4 panel does not correctly\n    calculate memory boundaries, leading to a stack-based buffer overflow\n    in the launcher_update_panel_entry() function (CVE-2007-6531). Daichi\n    Kawahata reported libxfcegui4 did not copy provided values when\n    creating \"SessionClient\" structs, possibly leading to access of freed\n    memory areas (CVE-2007-6532).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to install a specially crafted\n    \"rc\" file to execute arbitrary code via long strings in the \"Name\" and\n    \"Comment\" fields or via unspecified vectors involving the second\n    vulnerability.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Xfce4 panel users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All libxfcegui4 users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=xfce-base/xfce4-panel-4.4.2\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=xfce-base/libxfcegui4-4.4.2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-6531",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6531"
+			},
+			{
+				"Text": "CVE-2007-6532",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6532"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    p-y\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-12-08T23:45:36Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-12-22T13:22:06Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-12-22T16:37:18Z"
+		}
+	]
 }

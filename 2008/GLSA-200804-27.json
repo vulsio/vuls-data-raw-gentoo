@@ -1,175 +1,175 @@
 {
-  "ID": "200804-27",
-  "Title": "SILC: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities were found in SILC Client, Server, and Toolkit,\n    allowing for Denial of Service and execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "silc-toolkit silc-client silc-server",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-04-24",
-  "Revised": {
-    "Text": "2008-04-24",
-    "Count": "01"
-  },
-  "Bug": [
-    "212362",
-    "214116",
-    "214812"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-im/silc-toolkit",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.1.7",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.1.7",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "net-im/silc-client",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.1.4",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.1.4",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "net-im/silc-server",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.1.2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.1.2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    SILC (Secure Internet Live Conferencing protocol) Toolkit is a software\n    development kit for use in clients, SILC Server is a communication\n    server, and SILC Client is an IRSSI-based text client.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <ul>\n    <li>Nathan G. Grennan reported a boundary error in SILC Toolkit\n    within the silc_fingerprint() function in the file\n    lib/silcutil/silcutil.c when passing overly long data, resulting in a\n    stack-based buffer overflow (CVE-2008-1227).</li>\n    <li>A vulnerability\n    has been reported in SILC Server which is caused due to an error in the\n    handling of \"NEW_CLIENT\" packets that do not contain a nickname\n    (CVE-2008-1429).</li>\n    <li>Ariel Waissbein, Pedro Varangot, Martin\n    Mizrahi, Oren Isacson, Carlos Garcia, and Ivan Arce of Core Security\n    Technologies reported that SILC Client, Server, and Toolkit contain a\n    vulnerability in the silc_pkcs1_decode() function in the silccrypt\n    library (silcpkcs1.c), resulting in an integer underflow, signedness\n    error, and a buffer overflow (CVE-2008-1552).</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could exploit these vulnerabilities to cause a Denial\n    of Service or execute arbitrary code with the privileges of the user\n    running the application.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All SILC Toolkit users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All SILC Client users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All SILC Server users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-im/silc-toolkit-1.1.7\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-im/silc-client-1.1.4\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-im/silc-server-1.1.2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-1227",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1227"
-      },
-      {
-        "Text": "CVE-2008-1429",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1429"
-      },
-      {
-        "Text": "CVE-2008-1552",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1552"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-03-21T02:19:53Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-04-03T14:49:27Z"
-    },
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-04-23T16:41:55Z"
-    }
-  ]
+	"ID": "200804-27",
+	"Title": "SILC: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities were found in SILC Client, Server, and Toolkit,\n    allowing for Denial of Service and execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "silc-toolkit silc-client silc-server",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-04-24",
+	"Revised": {
+		"Text": "2008-04-24",
+		"Count": "01"
+	},
+	"Bug": [
+		"212362",
+		"214116",
+		"214812"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-im/silc-toolkit",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.1.7",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.1.7",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "net-im/silc-client",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.1.4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.1.4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "net-im/silc-server",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.1.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.1.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    SILC (Secure Internet Live Conferencing protocol) Toolkit is a software\n    development kit for use in clients, SILC Server is a communication\n    server, and SILC Client is an IRSSI-based text client.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <ul>\n    <li>Nathan G. Grennan reported a boundary error in SILC Toolkit\n    within the silc_fingerprint() function in the file\n    lib/silcutil/silcutil.c when passing overly long data, resulting in a\n    stack-based buffer overflow (CVE-2008-1227).</li>\n    <li>A vulnerability\n    has been reported in SILC Server which is caused due to an error in the\n    handling of \"NEW_CLIENT\" packets that do not contain a nickname\n    (CVE-2008-1429).</li>\n    <li>Ariel Waissbein, Pedro Varangot, Martin\n    Mizrahi, Oren Isacson, Carlos Garcia, and Ivan Arce of Core Security\n    Technologies reported that SILC Client, Server, and Toolkit contain a\n    vulnerability in the silc_pkcs1_decode() function in the silccrypt\n    library (silcpkcs1.c), resulting in an integer underflow, signedness\n    error, and a buffer overflow (CVE-2008-1552).</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could exploit these vulnerabilities to cause a Denial\n    of Service or execute arbitrary code with the privileges of the user\n    running the application.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All SILC Toolkit users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All SILC Client users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All SILC Server users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-im/silc-toolkit-1.1.7\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-im/silc-client-1.1.4\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-im/silc-server-1.1.2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-1227",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1227"
+			},
+			{
+				"Text": "CVE-2008-1429",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1429"
+			},
+			{
+				"Text": "CVE-2008-1552",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1552"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-03-21T02:19:53Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-04-03T14:49:27Z"
+		},
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-04-23T16:41:55Z"
+		}
+	]
 }

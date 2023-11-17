@@ -1,112 +1,112 @@
 {
-  "ID": "200412-04",
-  "Title": "Perl: Insecure temporary file creation",
-  "Synopsis": "\n    Perl is vulnerable to symlink attacks, potentially allowing a local user to\n    overwrite arbitrary files.\n  ",
-  "Product": {
-    "Text": "perl",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-12-07",
-  "Revised": {
-    "Text": "2004-12-07",
-    "Count": "01"
-  },
-  "Bug": [
-    "66360"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-lang/perl",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "5.8.5-r2",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "5.8.6-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "5.8.5-r2",
-            "Range": "lt",
-            "Slot": ""
-          },
-          {
-            "Text": "5.8.6",
-            "Range": "eq",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Perl is a stable, cross-platform programming language created by\n    Larry Wall.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Some Perl modules create temporary files in world-writable\n    directories with predictable names.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary\n    files directory, pointing to a valid file somewhere on the filesystem.\n    When a Perl script is executed, this would result in the file being\n    overwritten with the rights of the user running the utility, which\n    could be the root user.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Perl users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=perl-5.8.5-r2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2004-0976",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0976"
-      },
-      {
-        "Text": "Trustix Advisory #2004-0050",
-        "Link": "https://www.trustix.org/errata/2004/0050/"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    lewk\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-12-05T01:07:23Z"
-    },
-    {
-      "Text": "\n    lewk\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-12-06T21:18:17Z"
-    }
-  ]
+	"ID": "200412-04",
+	"Title": "Perl: Insecure temporary file creation",
+	"Synopsis": "\n    Perl is vulnerable to symlink attacks, potentially allowing a local user to\n    overwrite arbitrary files.\n  ",
+	"Product": {
+		"Text": "perl",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-12-07",
+	"Revised": {
+		"Text": "2004-12-07",
+		"Count": "01"
+	},
+	"Bug": [
+		"66360"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-lang/perl",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "5.8.5-r2",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "5.8.6-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "5.8.5-r2",
+						"Range": "lt",
+						"Slot": ""
+					},
+					{
+						"Text": "5.8.6",
+						"Range": "eq",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Perl is a stable, cross-platform programming language created by\n    Larry Wall.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Some Perl modules create temporary files in world-writable\n    directories with predictable names.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary\n    files directory, pointing to a valid file somewhere on the filesystem.\n    When a Perl script is executed, this would result in the file being\n    overwritten with the rights of the user running the utility, which\n    could be the root user.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Perl users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=perl-5.8.5-r2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2004-0976",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0976"
+			},
+			{
+				"Text": "Trustix Advisory #2004-0050",
+				"Link": "https://www.trustix.org/errata/2004/0050/"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    lewk\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-12-05T01:07:23Z"
+		},
+		{
+			"Text": "\n    lewk\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-12-06T21:18:17Z"
+		}
+	]
 }

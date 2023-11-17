@@ -1,103 +1,103 @@
 {
-  "ID": "200608-18",
-  "Title": "Net::Server: Format string vulnerability",
-  "Synopsis": "\n    A format string vulnerability has been reported in Net::Server which can be\n    exploited to cause a Denial of Service.\n  ",
-  "Product": {
-    "Text": "net-server",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-08-10",
-  "Revised": {
-    "Text": "2006-08-10",
-    "Count": "01"
-  },
-  "Bug": [
-    "142386"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-perl/net-server",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.88",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.88",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Net::Server is an extensible, generic Perl server engine. It is used by\n    several Perl applications like Postgrey.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The log function of Net::Server does not handle format string\n    specifiers properly before they are sent to syslog.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    By sending a specially crafted datastream to an application using\n    Net::Server, an attacker could cause a Denial of Service.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Net::Server should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-perl/net-server-0.88\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2005-1127",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1127"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-08-07T08:06:01Z"
-    },
-    {
-      "Text": "\n    dizzutch\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-08-07T12:30:18Z"
-    },
-    {
-      "Text": "\n    vorlon078\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-08-08T10:05:21Z"
-    }
-  ]
+	"ID": "200608-18",
+	"Title": "Net::Server: Format string vulnerability",
+	"Synopsis": "\n    A format string vulnerability has been reported in Net::Server which can be\n    exploited to cause a Denial of Service.\n  ",
+	"Product": {
+		"Text": "net-server",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-08-10",
+	"Revised": {
+		"Text": "2006-08-10",
+		"Count": "01"
+	},
+	"Bug": [
+		"142386"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-perl/net-server",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.88",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.88",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Net::Server is an extensible, generic Perl server engine. It is used by\n    several Perl applications like Postgrey.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The log function of Net::Server does not handle format string\n    specifiers properly before they are sent to syslog.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    By sending a specially crafted datastream to an application using\n    Net::Server, an attacker could cause a Denial of Service.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Net::Server should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-perl/net-server-0.88\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2005-1127",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1127"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-08-07T08:06:01Z"
+		},
+		{
+			"Text": "\n    dizzutch\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-08-07T12:30:18Z"
+		},
+		{
+			"Text": "\n    vorlon078\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-08-08T10:05:21Z"
+		}
+	]
 }

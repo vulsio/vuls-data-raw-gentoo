@@ -1,169 +1,169 @@
 {
-  "ID": "200408-16",
-  "Title": "glibc: Information leak with LD_DEBUG",
-  "Synopsis": "\n    glibc contains an information leak vulnerability allowing the debugging of\n    SUID binaries.\n  ",
-  "Product": {
-    "Text": "glibc",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-08-16",
-  "Revised": {
-    "Text": "2006-05-28",
-    "Count": "04"
-  },
-  "Bug": [
-    "59526"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sys-libs/glibc",
-        "Auto": "yes",
-        "Arch": "alpha arm hppa ia64 sparc s390",
-        "Unaffected": [
-          {
-            "Text": "2.3.2-r11",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.3.2-r10",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "sys-libs/glibc",
-        "Auto": "yes",
-        "Arch": "x86 ppc",
-        "Unaffected": [
-          {
-            "Text": "2.3.3.20040420-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.3.3.20040420",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "sys-libs/glibc",
-        "Auto": "yes",
-        "Arch": "mips",
-        "Unaffected": [
-          {
-            "Text": "2.3.4.20040619-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.3.3.20040420",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "sys-libs/glibc",
-        "Auto": "yes",
-        "Arch": "amd64",
-        "Unaffected": [
-          {
-            "Text": "2.3.4.20040619-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.3.4.20040619",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "sys-libs/glibc",
-        "Auto": "yes",
-        "Arch": "ppc64",
-        "Unaffected": [
-          {
-            "Text": "2.3.4.20040808",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.3.4.20040605",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    The GNU C library defines various Unix-like \"system calls\" and other\n    basic facilities needed for a standard POSIX-like application to\n    operate.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Silvio Cesare discovered a potential information leak in glibc. It\n    allows LD_DEBUG on SUID binaries where it should not be allowed. This\n    has various security implications, which may be used to gain\n    confidentional information.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "low",
-    "Text": "\n    <p>\n    An attacker can gain the list of symbols a SUID application uses and\n    their locations and can then use a trojaned library taking precendence\n    over those symbols to gain information or perform further exploitation.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time. All users are encouraged to\n    upgrade to the latest available version of glibc.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All glibc users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n    \n    # emerge -pv your_version\n    # emerge your_version"
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2004-1453",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1453"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-08-05T17:16:41Z"
-    }
-  ]
+	"ID": "200408-16",
+	"Title": "glibc: Information leak with LD_DEBUG",
+	"Synopsis": "\n    glibc contains an information leak vulnerability allowing the debugging of\n    SUID binaries.\n  ",
+	"Product": {
+		"Text": "glibc",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-08-16",
+	"Revised": {
+		"Text": "2006-05-28",
+		"Count": "04"
+	},
+	"Bug": [
+		"59526"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-libs/glibc",
+				"Auto": "yes",
+				"Arch": "alpha arm hppa ia64 sparc s390",
+				"Unaffected": [
+					{
+						"Text": "2.3.2-r11",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.3.2-r10",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "sys-libs/glibc",
+				"Auto": "yes",
+				"Arch": "x86 ppc",
+				"Unaffected": [
+					{
+						"Text": "2.3.3.20040420-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.3.3.20040420",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "sys-libs/glibc",
+				"Auto": "yes",
+				"Arch": "mips",
+				"Unaffected": [
+					{
+						"Text": "2.3.4.20040619-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.3.3.20040420",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "sys-libs/glibc",
+				"Auto": "yes",
+				"Arch": "amd64",
+				"Unaffected": [
+					{
+						"Text": "2.3.4.20040619-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.3.4.20040619",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "sys-libs/glibc",
+				"Auto": "yes",
+				"Arch": "ppc64",
+				"Unaffected": [
+					{
+						"Text": "2.3.4.20040808",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.3.4.20040605",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    The GNU C library defines various Unix-like \"system calls\" and other\n    basic facilities needed for a standard POSIX-like application to\n    operate.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Silvio Cesare discovered a potential information leak in glibc. It\n    allows LD_DEBUG on SUID binaries where it should not be allowed. This\n    has various security implications, which may be used to gain\n    confidentional information.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "low",
+		"Text": "\n    <p>\n    An attacker can gain the list of symbols a SUID application uses and\n    their locations and can then use a trojaned library taking precendence\n    over those symbols to gain information or perform further exploitation.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time. All users are encouraged to\n    upgrade to the latest available version of glibc.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All glibc users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n    \n    # emerge -pv your_version\n    # emerge your_version"
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2004-1453",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1453"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-08-05T17:16:41Z"
+		}
+	]
 }

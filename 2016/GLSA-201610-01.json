@@ -1,98 +1,98 @@
 {
-  "ID": "201610-01",
-  "Title": "Groovy: Arbitrary code execution",
-  "Synopsis": "Groovy is vulnerable to a remote execution of arbitrary code when\n    java serialization is used.\n  ",
-  "Product": {
-    "Text": "groovy",
-    "Type": "ebuild"
-  },
-  "Announced": "2016-10-06",
-  "Revised": {
-    "Text": "2016-10-06",
-    "Count": "1"
-  },
-  "Bug": [
-    "555470"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-java/groovy",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.4.5",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.4.5",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>A multi-faceted language for the Java platform</p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Groovy’s MethodClosure class, in runtime/MethodClosure.java, is\n      vulnerable to a crafted serialized object.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>Remote attackers could potentially execute arbitrary code, or cause\n      Denial of Service condition\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>A workaround exists by using a custom security policy file utilizing the\n      standard Java security manager, or do not rely on serialization to\n      communicate remotely.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All Groovy users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-java/groovy-2.4.5\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2015-3253",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-3253"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "b-man",
-      "Tag": "requester",
-      "Timestamp": "2016-03-15T09:21:07Z"
-    },
-    {
-      "Text": "b-man",
-      "Tag": "submitter",
-      "Timestamp": "2016-10-06T14:32:23Z"
-    }
-  ]
+	"ID": "201610-01",
+	"Title": "Groovy: Arbitrary code execution",
+	"Synopsis": "Groovy is vulnerable to a remote execution of arbitrary code when\n    java serialization is used.\n  ",
+	"Product": {
+		"Text": "groovy",
+		"Type": "ebuild"
+	},
+	"Announced": "2016-10-06",
+	"Revised": {
+		"Text": "2016-10-06",
+		"Count": "1"
+	},
+	"Bug": [
+		"555470"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-java/groovy",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.4.5",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.4.5",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>A multi-faceted language for the Java platform</p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Groovy’s MethodClosure class, in runtime/MethodClosure.java, is\n      vulnerable to a crafted serialized object.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>Remote attackers could potentially execute arbitrary code, or cause\n      Denial of Service condition\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>A workaround exists by using a custom security policy file utilizing the\n      standard Java security manager, or do not rely on serialization to\n      communicate remotely.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All Groovy users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-java/groovy-2.4.5\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2015-3253",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-3253"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "b-man",
+			"Tag": "requester",
+			"Timestamp": "2016-03-15T09:21:07Z"
+		},
+		{
+			"Text": "b-man",
+			"Tag": "submitter",
+			"Timestamp": "2016-10-06T14:32:23Z"
+		}
+	]
 }

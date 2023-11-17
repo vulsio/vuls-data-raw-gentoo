@@ -1,132 +1,132 @@
 {
-  "ID": "201509-06",
-  "Title": "Git: Arbitrary command execution ",
-  "Synopsis": "An attacker could execute arbitrary commands via Git repositories\n    in a case-insensitive or case-normalizing filesystem.\n  ",
-  "Product": {
-    "Text": "git",
-    "Type": "ebuild"
-  },
-  "Announced": "2015-09-24",
-  "Revised": {
-    "Text": "2015-09-24",
-    "Count": "1"
-  },
-  "Bug": [
-    "532984"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-vcs/git",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.8.5.6",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "1.9.5",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "2.0.5",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.0.5",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Git is a free and open source distributed version control system\n      designed to handle everything from small to very large projects with\n      speed and efficiency.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>A vulnerability in Git causing Git-compatible clients that access\n      case-insensitive or case-normalizing filesystems to overwrite the\n      .git/config when cloning or checking out a repository, leading to\n      execution of arbitrary commands.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>An attacker can execute arbitrary commands on a client machine that\n      clones a crafted malicious Git tree.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All Git 1.8.x users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "All Git 1.9.x users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "All Git 2.0.x users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-vcs/git-1.8.5.6\"\n    ",
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-vcs/git-1.9.5\"\n    ",
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-vcs/git-2.0.5\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2014-9390",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-9390"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    BlueKnight\n  ",
-      "Tag": "requester",
-      "Timestamp": "2014-12-29T01:59:41Z"
-    },
-    {
-      "Text": "mrueg",
-      "Tag": "submitter",
-      "Timestamp": "2015-09-24T17:01:53Z"
-    }
-  ]
+	"ID": "201509-06",
+	"Title": "Git: Arbitrary command execution ",
+	"Synopsis": "An attacker could execute arbitrary commands via Git repositories\n    in a case-insensitive or case-normalizing filesystem.\n  ",
+	"Product": {
+		"Text": "git",
+		"Type": "ebuild"
+	},
+	"Announced": "2015-09-24",
+	"Revised": {
+		"Text": "2015-09-24",
+		"Count": "1"
+	},
+	"Bug": [
+		"532984"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-vcs/git",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.8.5.6",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "1.9.5",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "2.0.5",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.0.5",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Git is a free and open source distributed version control system\n      designed to handle everything from small to very large projects with\n      speed and efficiency.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>A vulnerability in Git causing Git-compatible clients that access\n      case-insensitive or case-normalizing filesystems to overwrite the\n      .git/config when cloning or checking out a repository, leading to\n      execution of arbitrary commands.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>An attacker can execute arbitrary commands on a client machine that\n      clones a crafted malicious Git tree.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All Git 1.8.x users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "All Git 1.9.x users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "All Git 2.0.x users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-vcs/git-1.8.5.6\"\n    ",
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-vcs/git-1.9.5\"\n    ",
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=dev-vcs/git-2.0.5\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2014-9390",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2014-9390"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    BlueKnight\n  ",
+			"Tag": "requester",
+			"Timestamp": "2014-12-29T01:59:41Z"
+		},
+		{
+			"Text": "mrueg",
+			"Tag": "submitter",
+			"Timestamp": "2015-09-24T17:01:53Z"
+		}
+	]
 }

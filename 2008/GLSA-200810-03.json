@@ -1,103 +1,103 @@
 {
-  "ID": "200810-03",
-  "Title": "libspf2: DNS response buffer overflow",
-  "Synopsis": "\n    A memory management error in libspf2 might allow for remote execution of\n    arbitrary code.\n  ",
-  "Product": {
-    "Text": "libspf2",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-10-30",
-  "Revised": {
-    "Text": "2008-10-30",
-    "Count": "01"
-  },
-  "Bug": [
-    "242254"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "mail-filter/libspf2",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.2.8",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.2.8",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    libspf2 is a library that implements the Sender Policy Framework,\n    allowing mail transfer agents to make sure that an email is authorized\n    by the domain name that it is coming from. Currently, only the exim MTA\n    uses libspf2 in Gentoo.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    libspf2 uses a fixed-length buffer to receive DNS responses and does\n    not properly check the length of TXT records, leading to buffer\n    overflows.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A remote attacker could store a specially crafted DNS entry and entice\n    a user or automated system using libspf2 to lookup that SPF entry (e.g.\n    by sending an email to the MTA), possibly allowing for the execution of\n    arbitrary code.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All libspf2 users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-filter/libspf2-1.2.8\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-2469",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2469"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2008-10-18T16:51:58Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-10-19T19:27:11Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-10-23T13:43:28Z"
-    }
-  ]
+	"ID": "200810-03",
+	"Title": "libspf2: DNS response buffer overflow",
+	"Synopsis": "\n    A memory management error in libspf2 might allow for remote execution of\n    arbitrary code.\n  ",
+	"Product": {
+		"Text": "libspf2",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-10-30",
+	"Revised": {
+		"Text": "2008-10-30",
+		"Count": "01"
+	},
+	"Bug": [
+		"242254"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "mail-filter/libspf2",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.2.8",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.2.8",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    libspf2 is a library that implements the Sender Policy Framework,\n    allowing mail transfer agents to make sure that an email is authorized\n    by the domain name that it is coming from. Currently, only the exim MTA\n    uses libspf2 in Gentoo.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    libspf2 uses a fixed-length buffer to receive DNS responses and does\n    not properly check the length of TXT records, leading to buffer\n    overflows.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A remote attacker could store a specially crafted DNS entry and entice\n    a user or automated system using libspf2 to lookup that SPF entry (e.g.\n    by sending an email to the MTA), possibly allowing for the execution of\n    arbitrary code.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All libspf2 users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=mail-filter/libspf2-1.2.8\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-2469",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-2469"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2008-10-18T16:51:58Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-10-19T19:27:11Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-10-23T13:43:28Z"
+		}
+	]
 }

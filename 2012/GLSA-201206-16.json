@@ -1,118 +1,118 @@
 {
-  "ID": "201206-16",
-  "Title": "TagLib: Multiple vulnerabilities",
-  "Synopsis": "Multiple vulnerabilities have been found in TagLib, possibly\n    resulting in Denial of Service.\n  ",
-  "Product": {
-    "Text": "TagLib",
-    "Type": "ebuild"
-  },
-  "Announced": "2012-06-22",
-  "Revised": {
-    "Text": "2012-06-22",
-    "Count": "1"
-  },
-  "Bug": [
-    "407673",
-    "410953"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-libs/taglib",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.7.1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.7.1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>TagLib is a library for reading and editing audio meta data.</p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>Multiple vulnerabilities have been found in TagLib:</p>\n    \n    <ul>\n      <li>The \"analyzeCurrent()\" function in ape/apeproperties.cpp contains a\n        division by zero error (CVE-2012-1107).\n      </li>\n      <li>The \"parse()\" function in inogg/xiphcomment.cpp contains an error\n        when processing the \"vendorLength\" field (CVE-2012-1108).\n      </li>\n      <li>The \"mid()\" function in toolkit/tbytevector.cpp contains an integer\n        overflow error (CVE-2012-1584).\n      </li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could entice a user or automated system to open a\n      specially crafted OGG file with an application using TagLib, possibly\n      resulting in a Denial of Service condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All TagLib users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "Packages which depend on this library may need to be recompiled. Tools\n      such as  revdep-rebuild may assist in identifying  some of these\n      packages.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/taglib-1.7.1\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2012-1107",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1107"
-      },
-      {
-        "Text": "CVE-2012-1108",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1108"
-      },
-      {
-        "Text": "CVE-2012-1584",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1584"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "ackle",
-      "Tag": "requester",
-      "Timestamp": "2012-04-06T15:50:48Z"
-    },
-    {
-      "Text": "ackle",
-      "Tag": "submitter",
-      "Timestamp": "2012-06-22T16:29:31Z"
-    }
-  ]
+	"ID": "201206-16",
+	"Title": "TagLib: Multiple vulnerabilities",
+	"Synopsis": "Multiple vulnerabilities have been found in TagLib, possibly\n    resulting in Denial of Service.\n  ",
+	"Product": {
+		"Text": "TagLib",
+		"Type": "ebuild"
+	},
+	"Announced": "2012-06-22",
+	"Revised": {
+		"Text": "2012-06-22",
+		"Count": "1"
+	},
+	"Bug": [
+		"407673",
+		"410953"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-libs/taglib",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.7.1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.7.1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>TagLib is a library for reading and editing audio meta data.</p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>Multiple vulnerabilities have been found in TagLib:</p>\n    \n    <ul>\n      <li>The \"analyzeCurrent()\" function in ape/apeproperties.cpp contains a\n        division by zero error (CVE-2012-1107).\n      </li>\n      <li>The \"parse()\" function in inogg/xiphcomment.cpp contains an error\n        when processing the \"vendorLength\" field (CVE-2012-1108).\n      </li>\n      <li>The \"mid()\" function in toolkit/tbytevector.cpp contains an integer\n        overflow error (CVE-2012-1584).\n      </li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could entice a user or automated system to open a\n      specially crafted OGG file with an application using TagLib, possibly\n      resulting in a Denial of Service condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All TagLib users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "Packages which depend on this library may need to be recompiled. Tools\n      such as  revdep-rebuild may assist in identifying  some of these\n      packages.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/taglib-1.7.1\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2012-1107",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1107"
+			},
+			{
+				"Text": "CVE-2012-1108",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1108"
+			},
+			{
+				"Text": "CVE-2012-1584",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2012-1584"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "ackle",
+			"Tag": "requester",
+			"Timestamp": "2012-04-06T15:50:48Z"
+		},
+		{
+			"Text": "ackle",
+			"Tag": "submitter",
+			"Timestamp": "2012-06-22T16:29:31Z"
+		}
+	]
 }

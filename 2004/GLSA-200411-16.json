@@ -1,107 +1,107 @@
 {
-  "ID": "200411-16",
-  "Title": "zip: Path name buffer overflow",
-  "Synopsis": "\n    zip contains a buffer overflow when creating a ZIP archive of files with\n    very long path names. This could lead to the execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "zip",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-11-09",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "02"
-  },
-  "Bug": [
-    "70227"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-arch/zip",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.3-r4",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.3-r3",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    zip is a compression and file packaging utility.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    zip does not check the resulting path length when doing recursive\n    folder compression.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker could exploit this by enticing another user or web\n    application to create an archive including a specially-crafted path\n    name, potentially resulting in the execution of arbitrary code with the\n    permissions of the user running zip.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All zip users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-arch/zip-2.3-r4\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "HexView zip Advisory",
-        "Link": "http://www.hexview.com/docs/20041103-1.txt"
-      },
-      {
-        "Text": "CVE-2004-1010",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1010"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2004-11-07T18:59:20Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-11-08T15:14:42Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-11-08T20:46:08Z"
-    }
-  ]
+	"ID": "200411-16",
+	"Title": "zip: Path name buffer overflow",
+	"Synopsis": "\n    zip contains a buffer overflow when creating a ZIP archive of files with\n    very long path names. This could lead to the execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "zip",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-11-09",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "02"
+	},
+	"Bug": [
+		"70227"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-arch/zip",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.3-r4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.3-r3",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    zip is a compression and file packaging utility.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    zip does not check the resulting path length when doing recursive\n    folder compression.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker could exploit this by enticing another user or web\n    application to create an archive including a specially-crafted path\n    name, potentially resulting in the execution of arbitrary code with the\n    permissions of the user running zip.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All zip users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-arch/zip-2.3-r4\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "HexView zip Advisory",
+				"Link": "http://www.hexview.com/docs/20041103-1.txt"
+			},
+			{
+				"Text": "CVE-2004-1010",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1010"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2004-11-07T18:59:20Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-11-08T15:14:42Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-11-08T20:46:08Z"
+		}
+	]
 }

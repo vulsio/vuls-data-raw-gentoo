@@ -1,155 +1,155 @@
 {
-  "ID": "200608-02",
-  "Title": "Mozilla SeaMonkey: Multiple vulnerabilities",
-  "Synopsis": "\n    The Mozilla Foundation has reported numerous security vulnerabilities\n    related to Mozilla SeaMonkey.\n  ",
-  "Product": {
-    "Text": "SeaMonkey",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-08-03",
-  "Revised": {
-    "Text": "2006-08-03",
-    "Count": "01"
-  },
-  "Bug": [
-    "141842"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-client/seamonkey",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.0.3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.0.3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    The Mozilla SeaMonkey project is a community effort to deliver\n    production-quality releases of code derived from the application\n    formerly known as \"Mozilla Application Suite\".\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The following vulnerabilities have been reported:\n    </p>\n    <ul>\n    <li>Benjamin Smedberg discovered that chrome URL's could be made to\n    reference remote files.</li>\n    <li>Developers in the Mozilla community\n    looked for and fixed several crash bugs to improve the stability of\n    Mozilla clients, which could lead to the execution of arbitrary code by\n    a remote attacker.</li>\n    <li>\"shutdown\" reports that cross-site\n    scripting (XSS) attacks could be performed using the construct\n    XPCNativeWrapper(window).Function(...), which created a function that\n    appeared to belong to the window in question even after it had been\n    navigated to the target site.</li>\n    <li>\"shutdown\" reports that scripts\n    granting the UniversalBrowserRead privilege can leverage that into the\n    equivalent of the far more powerful UniversalXPConnect since they are\n    allowed to \"read\" into a privileged context.</li>\n    <li>\"moz_bug_r_a4\"\n    reports that A malicious Proxy AutoConfig (PAC) server could serve a\n    PAC script that can execute code with elevated privileges by setting\n    the required FindProxyForURL function to the eval method on a\n    privileged object that leaked into the PAC sandbox.</li>\n    <li>\"moz_bug_r_a4\" discovered that Named JavaScript functions have a\n    parent object created using the standard Object() constructor\n    (ECMA-specified behavior) and that this constructor can be redefined by\n    script (also ECMA-specified behavior).</li>\n    <li>Igor Bukanov and\n    shutdown found additional places where an untimely garbage collection\n    could delete a temporary object that was in active use.</li>\n    <li>Georgi\n    Guninski found potential integer overflow issues with long strings in\n    the toSource() methods of the Object, Array and String objects as well\n    as string function arguments.</li>\n    <li>H. D. Moore reported a testcase\n    that was able to trigger a race condition where JavaScript garbage\n    collection deleted a temporary variable still being used in the\n    creation of a new Function object.</li>\n    <li>A malicious page can hijack\n    native DOM methods on a document object in another domain, which will\n    run the attacker's script when called by the victim page.</li>\n    <li>Secunia Research has discovered a vulnerability which is caused due\n    to an memory corruption error within the handling of simultaneously\n    happening XPCOM events. This leads to use of a deleted timer\n    object.</li>\n    <li>An anonymous researcher for TippingPoint and the Zero\n    Day Initiative showed that when used in a web page Java would reference\n    properties of the window.navigator object as it started up.</li>\n    <li>Thilo Girmann discovered that in certain circumstances a JavaScript\n    reference to a frame or window was not properly cleared when the\n    referenced content went away.</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A user can be enticed to open specially crafted URLs, visit webpages\n    containing malicious JavaScript or execute a specially crafted script.\n    These events could lead to the execution of arbitrary code, or the\n    installation of malware on the user's computer.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Thunderbird users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/seamonkey-1.0.3\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-3113",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3113"
-      },
-      {
-        "Text": "CVE-2006-3677",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3677"
-      },
-      {
-        "Text": "CVE-2006-3801",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3801"
-      },
-      {
-        "Text": "CVE-2006-3802",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3802"
-      },
-      {
-        "Text": "CVE-2006-3803",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3803"
-      },
-      {
-        "Text": "CVE-2006-3804",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3804"
-      },
-      {
-        "Text": "CVE-2006-3805",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3805"
-      },
-      {
-        "Text": "CVE-2006-3806",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3806"
-      },
-      {
-        "Text": "CVE-2006-3807",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3807"
-      },
-      {
-        "Text": "CVE-2006-3808",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3808"
-      },
-      {
-        "Text": "CVE-2006-3809",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3809"
-      },
-      {
-        "Text": "CVE-2006-3810",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3810"
-      },
-      {
-        "Text": "CVE-2006-3811",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3811"
-      },
-      {
-        "Text": "CVE-2006-3812",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3812"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-07-28T14:37:24Z"
-    },
-    {
-      "Text": "\n    dizzutch\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-07-28T18:00:11Z"
-    },
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-08-03T16:55:20Z"
-    }
-  ]
+	"ID": "200608-02",
+	"Title": "Mozilla SeaMonkey: Multiple vulnerabilities",
+	"Synopsis": "\n    The Mozilla Foundation has reported numerous security vulnerabilities\n    related to Mozilla SeaMonkey.\n  ",
+	"Product": {
+		"Text": "SeaMonkey",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-08-03",
+	"Revised": {
+		"Text": "2006-08-03",
+		"Count": "01"
+	},
+	"Bug": [
+		"141842"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-client/seamonkey",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.0.3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.0.3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    The Mozilla SeaMonkey project is a community effort to deliver\n    production-quality releases of code derived from the application\n    formerly known as \"Mozilla Application Suite\".\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The following vulnerabilities have been reported:\n    </p>\n    <ul>\n    <li>Benjamin Smedberg discovered that chrome URL's could be made to\n    reference remote files.</li>\n    <li>Developers in the Mozilla community\n    looked for and fixed several crash bugs to improve the stability of\n    Mozilla clients, which could lead to the execution of arbitrary code by\n    a remote attacker.</li>\n    <li>\"shutdown\" reports that cross-site\n    scripting (XSS) attacks could be performed using the construct\n    XPCNativeWrapper(window).Function(...), which created a function that\n    appeared to belong to the window in question even after it had been\n    navigated to the target site.</li>\n    <li>\"shutdown\" reports that scripts\n    granting the UniversalBrowserRead privilege can leverage that into the\n    equivalent of the far more powerful UniversalXPConnect since they are\n    allowed to \"read\" into a privileged context.</li>\n    <li>\"moz_bug_r_a4\"\n    reports that A malicious Proxy AutoConfig (PAC) server could serve a\n    PAC script that can execute code with elevated privileges by setting\n    the required FindProxyForURL function to the eval method on a\n    privileged object that leaked into the PAC sandbox.</li>\n    <li>\"moz_bug_r_a4\" discovered that Named JavaScript functions have a\n    parent object created using the standard Object() constructor\n    (ECMA-specified behavior) and that this constructor can be redefined by\n    script (also ECMA-specified behavior).</li>\n    <li>Igor Bukanov and\n    shutdown found additional places where an untimely garbage collection\n    could delete a temporary object that was in active use.</li>\n    <li>Georgi\n    Guninski found potential integer overflow issues with long strings in\n    the toSource() methods of the Object, Array and String objects as well\n    as string function arguments.</li>\n    <li>H. D. Moore reported a testcase\n    that was able to trigger a race condition where JavaScript garbage\n    collection deleted a temporary variable still being used in the\n    creation of a new Function object.</li>\n    <li>A malicious page can hijack\n    native DOM methods on a document object in another domain, which will\n    run the attacker's script when called by the victim page.</li>\n    <li>Secunia Research has discovered a vulnerability which is caused due\n    to an memory corruption error within the handling of simultaneously\n    happening XPCOM events. This leads to use of a deleted timer\n    object.</li>\n    <li>An anonymous researcher for TippingPoint and the Zero\n    Day Initiative showed that when used in a web page Java would reference\n    properties of the window.navigator object as it started up.</li>\n    <li>Thilo Girmann discovered that in certain circumstances a JavaScript\n    reference to a frame or window was not properly cleared when the\n    referenced content went away.</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A user can be enticed to open specially crafted URLs, visit webpages\n    containing malicious JavaScript or execute a specially crafted script.\n    These events could lead to the execution of arbitrary code, or the\n    installation of malware on the user's computer.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Thunderbird users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/seamonkey-1.0.3\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-3113",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3113"
+			},
+			{
+				"Text": "CVE-2006-3677",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3677"
+			},
+			{
+				"Text": "CVE-2006-3801",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3801"
+			},
+			{
+				"Text": "CVE-2006-3802",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3802"
+			},
+			{
+				"Text": "CVE-2006-3803",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3803"
+			},
+			{
+				"Text": "CVE-2006-3804",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3804"
+			},
+			{
+				"Text": "CVE-2006-3805",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3805"
+			},
+			{
+				"Text": "CVE-2006-3806",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3806"
+			},
+			{
+				"Text": "CVE-2006-3807",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3807"
+			},
+			{
+				"Text": "CVE-2006-3808",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3808"
+			},
+			{
+				"Text": "CVE-2006-3809",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3809"
+			},
+			{
+				"Text": "CVE-2006-3810",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3810"
+			},
+			{
+				"Text": "CVE-2006-3811",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3811"
+			},
+			{
+				"Text": "CVE-2006-3812",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-3812"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-07-28T14:37:24Z"
+		},
+		{
+			"Text": "\n    dizzutch\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-07-28T18:00:11Z"
+		},
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-08-03T16:55:20Z"
+		}
+	]
 }

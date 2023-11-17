@@ -1,111 +1,111 @@
 {
-  "ID": "200712-17",
-  "Title": "exiftags: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities in exiftags possibly allow for the execution of\n    arbitrary code or a Denial of Service.\n  ",
-  "Product": {
-    "Text": "exiftags",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-12-29",
-  "Revised": {
-    "Text": "2007-12-29",
-    "Count": "01"
-  },
-  "Bug": [
-    "202354"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-gfx/exiftags",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.01",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.01",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    exiftags is a library and set of tools for parsing, editing and saving\n    Exif metadata from images. Exif, the Exchangeable image file format,\n    specifies the addition of metadata tags to JPEG, TIFF and RIFF files.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Meder Kydyraliev (Google Security) discovered that Exif metadata is not\n    properly sanitized before being processed, resulting in illegal memory\n    access in the postprop() and other functions (CVE-2007-6354). He also\n    discovered integer overflow vulnerabilities in the parsetag() and other\n    functions (CVE-2007-6355) and an infinite recursion in the readifds()\n    function caused by recursive IFD references (CVE-2007-6356).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker could entice the user of an application making use of\n    exiftags or an application included in exiftags to load an image file\n    with specially crafted Exif tags, possibly resulting in the execution\n    of arbitrary code with the privileges of the user running the\n    application or a Denial of Service.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All exiftags users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/exiftags-1.01\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-6354",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6354"
-      },
-      {
-        "Text": "CVE-2007-6355",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6355"
-      },
-      {
-        "Text": "CVE-2007-6356",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6356"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-12-18T01:37:57Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-12-23T19:27:52Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-12-23T19:28:18Z"
-    }
-  ]
+	"ID": "200712-17",
+	"Title": "exiftags: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities in exiftags possibly allow for the execution of\n    arbitrary code or a Denial of Service.\n  ",
+	"Product": {
+		"Text": "exiftags",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-12-29",
+	"Revised": {
+		"Text": "2007-12-29",
+		"Count": "01"
+	},
+	"Bug": [
+		"202354"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-gfx/exiftags",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.01",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.01",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    exiftags is a library and set of tools for parsing, editing and saving\n    Exif metadata from images. Exif, the Exchangeable image file format,\n    specifies the addition of metadata tags to JPEG, TIFF and RIFF files.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Meder Kydyraliev (Google Security) discovered that Exif metadata is not\n    properly sanitized before being processed, resulting in illegal memory\n    access in the postprop() and other functions (CVE-2007-6354). He also\n    discovered integer overflow vulnerabilities in the parsetag() and other\n    functions (CVE-2007-6355) and an infinite recursion in the readifds()\n    function caused by recursive IFD references (CVE-2007-6356).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker could entice the user of an application making use of\n    exiftags or an application included in exiftags to load an image file\n    with specially crafted Exif tags, possibly resulting in the execution\n    of arbitrary code with the privileges of the user running the\n    application or a Denial of Service.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All exiftags users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-gfx/exiftags-1.01\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-6354",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6354"
+			},
+			{
+				"Text": "CVE-2007-6355",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6355"
+			},
+			{
+				"Text": "CVE-2007-6356",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6356"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-12-18T01:37:57Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-12-23T19:27:52Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-12-23T19:28:18Z"
+		}
+	]
 }

@@ -1,98 +1,98 @@
 {
-  "ID": "201610-03",
-  "Title": "Quagga: Arbitrary code execution",
-  "Synopsis": "A buffer overflow in Quagga might allow remote attackers to execute\n    arbitrary code.\n  ",
-  "Product": {
-    "Text": "quagga",
-    "Type": "ebuild"
-  },
-  "Announced": "2016-10-10",
-  "Revised": {
-    "Text": "2016-10-10",
-    "Count": "1"
-  },
-  "Bug": [
-    "577156"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-misc/quagga",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.0.20160315",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.0.20160315",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>Quagga is a free routing daemon replacing Zebra supporting RIP, OSPF and\n      BGP.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>A memcpy function in the VPNv4 NLRI parser of bgp_mplsvpn.c does not\n      properly check the upper-bound length of received Labeled-VPN SAFI routes\n      data, which may allow for arbitrary code execution on the stack.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>A remote attacker could send a specially crafted packet, possibly\n      resulting in execution of arbitrary code with the privileges of the\n      process or a Denial of Service condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All Quagga users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/quagga-1.0.20160315\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2016-2342",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-2342"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    pinkbyte\n  ",
-      "Tag": "requester",
-      "Timestamp": "2016-10-06T14:23:47Z"
-    },
-    {
-      "Text": "\n    pinkbyte\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2016-10-10T08:11:56Z"
-    }
-  ]
+	"ID": "201610-03",
+	"Title": "Quagga: Arbitrary code execution",
+	"Synopsis": "A buffer overflow in Quagga might allow remote attackers to execute\n    arbitrary code.\n  ",
+	"Product": {
+		"Text": "quagga",
+		"Type": "ebuild"
+	},
+	"Announced": "2016-10-10",
+	"Revised": {
+		"Text": "2016-10-10",
+		"Count": "1"
+	},
+	"Bug": [
+		"577156"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-misc/quagga",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.0.20160315",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.0.20160315",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>Quagga is a free routing daemon replacing Zebra supporting RIP, OSPF and\n      BGP.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>A memcpy function in the VPNv4 NLRI parser of bgp_mplsvpn.c does not\n      properly check the upper-bound length of received Labeled-VPN SAFI routes\n      data, which may allow for arbitrary code execution on the stack.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>A remote attacker could send a specially crafted packet, possibly\n      resulting in execution of arbitrary code with the privileges of the\n      process or a Denial of Service condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All Quagga users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=net-misc/quagga-1.0.20160315\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2016-2342",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2016-2342"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    pinkbyte\n  ",
+			"Tag": "requester",
+			"Timestamp": "2016-10-06T14:23:47Z"
+		},
+		{
+			"Text": "\n    pinkbyte\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2016-10-10T08:11:56Z"
+		}
+	]
 }

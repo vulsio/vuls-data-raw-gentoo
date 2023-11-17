@@ -1,98 +1,98 @@
 {
-  "ID": "202105-18",
-  "Title": "LittleCMS: User-assisted execution of arbitrary code",
-  "Synopsis": "A heap-based buffer overflow in LittleCMS might allow remote\n    attackers to execute arbitrary code.\n  ",
-  "Product": {
-    "Text": "lcms",
-    "Type": "ebuild"
-  },
-  "Announced": "2021-05-26",
-  "Revised": {
-    "Text": "2021-05-26",
-    "Count": "1"
-  },
-  "Bug": [
-    "761418"
-  ],
-  "Access": "local, remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-libs/lcms",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.10",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.10",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>LittleCMS, or short lcms, is a color management system for working with\n      ICC profiles. It is used by many applications including GIMP, Firefox and\n      Chromium.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>It was discovered that LittleCMS (aka Little Color Management System)\n      had an integer overflow in the AllocateDataSet function in cmscgats.c.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>A remote attacker could entice a user or automated system to open a\n      specially crafted file containing malicious color data, possibly\n      resulting in execution of arbitrary code with the privileges of the\n      process or a Denial of Service condition.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All LittleCMS users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/lcms-2.10\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2018-16435",
-        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2018-16435"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "whissi",
-      "Tag": "requester",
-      "Timestamp": "2021-05-24T14:14:12Z"
-    },
-    {
-      "Text": "whissi",
-      "Tag": "submitter",
-      "Timestamp": "2021-05-26T08:38:28Z"
-    }
-  ]
+	"ID": "202105-18",
+	"Title": "LittleCMS: User-assisted execution of arbitrary code",
+	"Synopsis": "A heap-based buffer overflow in LittleCMS might allow remote\n    attackers to execute arbitrary code.\n  ",
+	"Product": {
+		"Text": "lcms",
+		"Type": "ebuild"
+	},
+	"Announced": "2021-05-26",
+	"Revised": {
+		"Text": "2021-05-26",
+		"Count": "1"
+	},
+	"Bug": [
+		"761418"
+	],
+	"Access": "local, remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-libs/lcms",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.10",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.10",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>LittleCMS, or short lcms, is a color management system for working with\n      ICC profiles. It is used by many applications including GIMP, Firefox and\n      Chromium.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>It was discovered that LittleCMS (aka Little Color Management System)\n      had an integer overflow in the AllocateDataSet function in cmscgats.c.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>A remote attacker could entice a user or automated system to open a\n      specially crafted file containing malicious color data, possibly\n      resulting in execution of arbitrary code with the privileges of the\n      process or a Denial of Service condition.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All LittleCMS users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=media-libs/lcms-2.10\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2018-16435",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2018-16435"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "whissi",
+			"Tag": "requester",
+			"Timestamp": "2021-05-24T14:14:12Z"
+		},
+		{
+			"Text": "whissi",
+			"Tag": "submitter",
+			"Timestamp": "2021-05-26T08:38:28Z"
+		}
+	]
 }

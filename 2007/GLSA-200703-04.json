@@ -1,223 +1,223 @@
 {
-  "ID": "200703-04",
-  "Title": "Mozilla Firefox: Multiple vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities have been reported in Mozilla Firefox, some of\n    which may allow user-assisted arbitrary remote code execution.\n  ",
-  "Product": {
-    "Text": "mozilla-firefox",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-03-02",
-  "Revised": {
-    "Text": "2007-03-02",
-    "Count": "01"
-  },
-  "Bug": [
-    "165555"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-client/mozilla-firefox",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.5.0.10",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "2.0.0.2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.0.0.2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "www-client/mozilla-firefox-bin",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.5.0.10",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "2.0.0.2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.0.0.2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Mozilla Firefox is a popular open-source web browser from the Mozilla\n    Project.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Tom Ferris reported a heap-based buffer overflow involving wide SVG\n    stroke widths that affects Mozilla Firefox 2 only. Various researchers\n    reported some errors in the JavaScript engine potentially leading to\n    memory corruption. Mozilla Firefox also contains minor vulnerabilities\n    involving cache collision and unsafe pop-up restrictions, filtering or\n    CSS rendering under certain conditions.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker could entice a user to view a specially crafted web page\n    that will trigger one of the vulnerabilities, possibly leading to the\n    execution of arbitrary code. It is also possible for an attacker to\n    spoof the address bar, steal information through cache collision,\n    bypass the local files protection mechanism with pop-ups, or perform\n    cross-site scripting attacks, leading to the exposure of sensitive\n    information, like user credentials.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time for all of these issues, but\n    most of them can be avoided by disabling JavaScript.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    Users upgrading to the following releases of Mozilla Firefox should\n    note that this upgrade has been found to lose the saved passwords file\n    in some cases. The saved passwords are encrypted and stored in the\n    'signons.txt' file of ~/.mozilla/ and we advise our users to save that\n    file before performing the upgrade.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All Mozilla Firefox 1.5 users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All Mozilla Firefox 1.5 binary users should upgrade to the latest\n    version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All Mozilla Firefox 2.0 users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All Mozilla Firefox 2.0 binary users should upgrade to the latest\n    version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/mozilla-firefox-1.5.0.10\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/mozilla-firefox-bin-1.5.0.10\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/mozilla-firefox-2.0.0.2\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/mozilla-firefox-bin-2.0.0.2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-6077",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6077"
-      },
-      {
-        "Text": "CVE-2007-0775",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0775"
-      },
-      {
-        "Text": "CVE-2007-0776",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0776"
-      },
-      {
-        "Text": "CVE-2007-0777",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0777"
-      },
-      {
-        "Text": "CVE-2007-0778",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0778"
-      },
-      {
-        "Text": "CVE-2007-0779",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0779"
-      },
-      {
-        "Text": "CVE-2007-0780",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0780"
-      },
-      {
-        "Text": "CVE-2007-0800",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0800"
-      },
-      {
-        "Text": "CVE-2007-0801",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0801"
-      },
-      {
-        "Text": "CVE-2007-0981",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0981"
-      },
-      {
-        "Text": "CVE-2007-0995",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0995"
-      },
-      {
-        "Text": "Mozilla password loss bug",
-        "Link": "https://bugzilla.mozilla.org/show_bug.cgi?id=360493#c366"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-02-27T18:38:44Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-03-01T15:14:03Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-03-01T15:15:57Z"
-    }
-  ]
+	"ID": "200703-04",
+	"Title": "Mozilla Firefox: Multiple vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities have been reported in Mozilla Firefox, some of\n    which may allow user-assisted arbitrary remote code execution.\n  ",
+	"Product": {
+		"Text": "mozilla-firefox",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-03-02",
+	"Revised": {
+		"Text": "2007-03-02",
+		"Count": "01"
+	},
+	"Bug": [
+		"165555"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-client/mozilla-firefox",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.5.0.10",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "2.0.0.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.0.0.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "www-client/mozilla-firefox-bin",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.5.0.10",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "2.0.0.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.0.0.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Mozilla Firefox is a popular open-source web browser from the Mozilla\n    Project.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Tom Ferris reported a heap-based buffer overflow involving wide SVG\n    stroke widths that affects Mozilla Firefox 2 only. Various researchers\n    reported some errors in the JavaScript engine potentially leading to\n    memory corruption. Mozilla Firefox also contains minor vulnerabilities\n    involving cache collision and unsafe pop-up restrictions, filtering or\n    CSS rendering under certain conditions.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker could entice a user to view a specially crafted web page\n    that will trigger one of the vulnerabilities, possibly leading to the\n    execution of arbitrary code. It is also possible for an attacker to\n    spoof the address bar, steal information through cache collision,\n    bypass the local files protection mechanism with pop-ups, or perform\n    cross-site scripting attacks, leading to the exposure of sensitive\n    information, like user credentials.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time for all of these issues, but\n    most of them can be avoided by disabling JavaScript.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    Users upgrading to the following releases of Mozilla Firefox should\n    note that this upgrade has been found to lose the saved passwords file\n    in some cases. The saved passwords are encrypted and stored in the\n    'signons.txt' file of ~/.mozilla/ and we advise our users to save that\n    file before performing the upgrade.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All Mozilla Firefox 1.5 users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All Mozilla Firefox 1.5 binary users should upgrade to the latest\n    version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All Mozilla Firefox 2.0 users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All Mozilla Firefox 2.0 binary users should upgrade to the latest\n    version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/mozilla-firefox-1.5.0.10\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/mozilla-firefox-bin-1.5.0.10\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/mozilla-firefox-2.0.0.2\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-client/mozilla-firefox-bin-2.0.0.2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-6077",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6077"
+			},
+			{
+				"Text": "CVE-2007-0775",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0775"
+			},
+			{
+				"Text": "CVE-2007-0776",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0776"
+			},
+			{
+				"Text": "CVE-2007-0777",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0777"
+			},
+			{
+				"Text": "CVE-2007-0778",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0778"
+			},
+			{
+				"Text": "CVE-2007-0779",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0779"
+			},
+			{
+				"Text": "CVE-2007-0780",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0780"
+			},
+			{
+				"Text": "CVE-2007-0800",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0800"
+			},
+			{
+				"Text": "CVE-2007-0801",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0801"
+			},
+			{
+				"Text": "CVE-2007-0981",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0981"
+			},
+			{
+				"Text": "CVE-2007-0995",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0995"
+			},
+			{
+				"Text": "Mozilla password loss bug",
+				"Link": "https://bugzilla.mozilla.org/show_bug.cgi?id=360493#c366"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-02-27T18:38:44Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-03-01T15:14:03Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-03-01T15:15:57Z"
+		}
+	]
 }

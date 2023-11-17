@@ -1,107 +1,107 @@
 {
-  "ID": "200702-11",
-  "Title": "MPlayer: Buffer overflow",
-  "Synopsis": "\n    A buffer overflow was found in MPlayer's RTSP plugin that could lead to a\n    Denial of Service or arbitrary code execution.\n  ",
-  "Product": {
-    "Text": "MPlayer",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-02-27",
-  "Revised": {
-    "Text": "2007-02-27",
-    "Count": "01"
-  },
-  "Bug": [
-    "159727"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-video/mplayer",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.0_rc1-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.0_rc1-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    MPlayer is a media player capable of playing multiple media formats.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    When checking for matching asm rules in the asmrp.c code, the results\n    are stored in a fixed-size array without boundary checks which may\n    allow a buffer overflow.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker can entice a user to connect to a manipulated RTSP server\n    resulting in a Denial of Service and possibly execution of arbitrary\n    code.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All MPlayer users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-video/mplayer-1.0_rc1-r2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "Original Advisory",
-        "Link": "http://www.mplayerhq.hu/design7/news.html#vuln14"
-      },
-      {
-        "Text": "CVE-2006-6172",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6172"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-02-12T12:10:45Z"
-    },
-    {
-      "Text": "\n    daxomatic\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-02-13T11:54:03Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-02-13T12:06:52Z"
-    }
-  ]
+	"ID": "200702-11",
+	"Title": "MPlayer: Buffer overflow",
+	"Synopsis": "\n    A buffer overflow was found in MPlayer's RTSP plugin that could lead to a\n    Denial of Service or arbitrary code execution.\n  ",
+	"Product": {
+		"Text": "MPlayer",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-02-27",
+	"Revised": {
+		"Text": "2007-02-27",
+		"Count": "01"
+	},
+	"Bug": [
+		"159727"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-video/mplayer",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.0_rc1-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.0_rc1-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    MPlayer is a media player capable of playing multiple media formats.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    When checking for matching asm rules in the asmrp.c code, the results\n    are stored in a fixed-size array without boundary checks which may\n    allow a buffer overflow.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker can entice a user to connect to a manipulated RTSP server\n    resulting in a Denial of Service and possibly execution of arbitrary\n    code.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All MPlayer users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-video/mplayer-1.0_rc1-r2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "Original Advisory",
+				"Link": "http://www.mplayerhq.hu/design7/news.html#vuln14"
+			},
+			{
+				"Text": "CVE-2006-6172",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6172"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-02-12T12:10:45Z"
+		},
+		{
+			"Text": "\n    daxomatic\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-02-13T11:54:03Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-02-13T12:06:52Z"
+		}
+	]
 }

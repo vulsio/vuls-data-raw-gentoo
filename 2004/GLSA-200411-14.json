@@ -1,148 +1,148 @@
 {
-  "ID": "200411-14",
-  "Title": "Kaffeine, gxine: Remotely exploitable buffer overflow",
-  "Synopsis": "\n    Kaffeine and gxine both contain a buffer overflow that can be exploited\n    when accessing content from a malicious HTTP server with specially crafted\n    headers.\n  ",
-  "Product": {
-    "Text": "kaffeine gxine",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-11-07",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "02"
-  },
-  "Bug": [
-    "69663",
-    "70055"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-video/kaffeine",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.5_rc1-r1",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "0.4.3b-r1",
-            "Range": "rge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.5_rc1-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "media-video/gxine",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.3.3-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.3.3-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Kaffeine and gxine are graphical front-ends for xine-lib multimedia\n    library.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    KF of Secure Network Operations has discovered an overflow that occurs\n    during the Content-Type header processing of Kaffeine. The vulnerable\n    code in Kaffeine is reused from gxine, making gxine vulnerable as well.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker could create a specially-crafted Content-type header from a\n    malicious HTTP server, and crash a user's instance of Kaffeine or\n    gxine, potentially allowing the execution of arbitrary code.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Kaffeine users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All gxine users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-video/kaffeine-0.4.3b-r1\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-video/gxine-0.3.3-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "SecurityTracker Advisory",
-        "Link": "http://securitytracker.com/alerts/2004/Oct/1011936.html"
-      },
-      {
-        "Text": "gxine Bug Report",
-        "Link": "https://sourceforge.net/tracker/index.php?func=detail&aid=1060299&group_id=9655&atid=109655"
-      },
-      {
-        "Text": "CVE-2004-1034",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1034"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2004-11-03T13:13:11Z"
-    },
-    {
-      "Text": "\n    lewk\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-11-05T01:34:00Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-11-07T19:19:00Z"
-    }
-  ]
+	"ID": "200411-14",
+	"Title": "Kaffeine, gxine: Remotely exploitable buffer overflow",
+	"Synopsis": "\n    Kaffeine and gxine both contain a buffer overflow that can be exploited\n    when accessing content from a malicious HTTP server with specially crafted\n    headers.\n  ",
+	"Product": {
+		"Text": "kaffeine gxine",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-11-07",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "02"
+	},
+	"Bug": [
+		"69663",
+		"70055"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-video/kaffeine",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.5_rc1-r1",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "0.4.3b-r1",
+						"Range": "rge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.5_rc1-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "media-video/gxine",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.3.3-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.3.3-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Kaffeine and gxine are graphical front-ends for xine-lib multimedia\n    library.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    KF of Secure Network Operations has discovered an overflow that occurs\n    during the Content-Type header processing of Kaffeine. The vulnerable\n    code in Kaffeine is reused from gxine, making gxine vulnerable as well.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker could create a specially-crafted Content-type header from a\n    malicious HTTP server, and crash a user's instance of Kaffeine or\n    gxine, potentially allowing the execution of arbitrary code.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Kaffeine users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All gxine users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-video/kaffeine-0.4.3b-r1\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-video/gxine-0.3.3-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "SecurityTracker Advisory",
+				"Link": "http://securitytracker.com/alerts/2004/Oct/1011936.html"
+			},
+			{
+				"Text": "gxine Bug Report",
+				"Link": "https://sourceforge.net/tracker/index.php?func=detail&aid=1060299&group_id=9655&atid=109655"
+			},
+			{
+				"Text": "CVE-2004-1034",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-1034"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2004-11-03T13:13:11Z"
+		},
+		{
+			"Text": "\n    lewk\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-11-05T01:34:00Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-11-07T19:19:00Z"
+		}
+	]
 }

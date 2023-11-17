@@ -1,103 +1,103 @@
 {
-  "ID": "200606-22",
-  "Title": "aRts: Privilege escalation",
-  "Synopsis": "\n    The artswrapper part of aRts allows local users to execute arbitrary code\n    with elevated privileges.\n  ",
-  "Product": {
-    "Text": "aRts",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-06-22",
-  "Revised": {
-    "Text": "2006-06-22",
-    "Count": "01"
-  },
-  "Bug": [
-    "135970"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "kde-base/arts",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.5.2-r1",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "3.4.3-r1",
-            "Range": "rge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.5.2-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    aRts is a real time modular system for synthesizing audio used by KDE.\n    artswrapper is a helper application used to start the aRts daemon.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    artswrapper fails to properly check whether it can drop privileges\n    accordingly if setuid() fails due to a user exceeding assigned resource\n    limits.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    Local attackers could exploit this vulnerability to execute arbitrary\n    code with elevated privileges. Note that the aRts package provided by\n    Gentoo is only vulnerable if the artswrappersuid USE-flag is enabled.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All aRts users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose kde-base/arts"
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-2916",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2916"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-06-15T13:39:42Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-06-17T13:17:47Z"
-    }
-  ]
+	"ID": "200606-22",
+	"Title": "aRts: Privilege escalation",
+	"Synopsis": "\n    The artswrapper part of aRts allows local users to execute arbitrary code\n    with elevated privileges.\n  ",
+	"Product": {
+		"Text": "aRts",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-06-22",
+	"Revised": {
+		"Text": "2006-06-22",
+		"Count": "01"
+	},
+	"Bug": [
+		"135970"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "kde-base/arts",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.5.2-r1",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "3.4.3-r1",
+						"Range": "rge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.5.2-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    aRts is a real time modular system for synthesizing audio used by KDE.\n    artswrapper is a helper application used to start the aRts daemon.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    artswrapper fails to properly check whether it can drop privileges\n    accordingly if setuid() fails due to a user exceeding assigned resource\n    limits.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    Local attackers could exploit this vulnerability to execute arbitrary\n    code with elevated privileges. Note that the aRts package provided by\n    Gentoo is only vulnerable if the artswrappersuid USE-flag is enabled.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All aRts users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose kde-base/arts"
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-2916",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2916"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-06-15T13:39:42Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-06-17T13:17:47Z"
+		}
+	]
 }

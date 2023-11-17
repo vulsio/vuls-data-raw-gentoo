@@ -1,98 +1,98 @@
 {
-  "ID": "200512-18",
-  "Title": "XnView: Privilege escalation",
-  "Synopsis": "\n    XnView may search for shared libraries in an untrusted location,\n    potentially allowing local users to execute arbitrary code with the\n    privileges of another user.\n  ",
-  "Product": {
-    "Text": "xnview",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-12-30",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "02"
-  },
-  "Bug": [
-    "117063"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "x11-misc/xnview",
-        "Auto": "yes",
-        "Arch": "x86",
-        "Unaffected": [
-          {
-            "Text": "1.70-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.70-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    XnView is an efficient multimedia viewer, browser and converter,\n    distributed free for non-commercial use.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Krzysiek Pawlik of Gentoo Linux discovered that the XnView package for\n    IA32 used the DT_RPATH field insecurely, causing the dynamic loader to\n    search for shared libraries in potentially untrusted directories.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local attacker could create a malicious shared object that would be\n    loaded and executed when a user attempted to use an XnView utility.\n    This would allow a malicious user to effectively hijack XnView and\n    execute arbitrary code with the privileges of the user running the\n    program.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    The system administrator may use the chrpath utility to remove the\n    DT_RPATH field from the XnView utilities:\n    </p>\n    <code>\n    # emerge app-admin/chrpath\n    # chrpath --delete /opt/bin/nconvert /opt/bin/nview /opt/bin/xnview</code>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All XnView users on the x86 platform should upgrade to the latest\n    version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-misc/xnview-1.70-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2005-4595",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-4595"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    taviso\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-12-29T17:05:23Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-12-30T12:33:06Z"
-    }
-  ]
+	"ID": "200512-18",
+	"Title": "XnView: Privilege escalation",
+	"Synopsis": "\n    XnView may search for shared libraries in an untrusted location,\n    potentially allowing local users to execute arbitrary code with the\n    privileges of another user.\n  ",
+	"Product": {
+		"Text": "xnview",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-12-30",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "02"
+	},
+	"Bug": [
+		"117063"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "x11-misc/xnview",
+				"Auto": "yes",
+				"Arch": "x86",
+				"Unaffected": [
+					{
+						"Text": "1.70-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.70-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    XnView is an efficient multimedia viewer, browser and converter,\n    distributed free for non-commercial use.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Krzysiek Pawlik of Gentoo Linux discovered that the XnView package for\n    IA32 used the DT_RPATH field insecurely, causing the dynamic loader to\n    search for shared libraries in potentially untrusted directories.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local attacker could create a malicious shared object that would be\n    loaded and executed when a user attempted to use an XnView utility.\n    This would allow a malicious user to effectively hijack XnView and\n    execute arbitrary code with the privileges of the user running the\n    program.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    The system administrator may use the chrpath utility to remove the\n    DT_RPATH field from the XnView utilities:\n    </p>\n    <code>\n    # emerge app-admin/chrpath\n    # chrpath --delete /opt/bin/nconvert /opt/bin/nview /opt/bin/xnview</code>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All XnView users on the x86 platform should upgrade to the latest\n    version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=x11-misc/xnview-1.70-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2005-4595",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-4595"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    taviso\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-12-29T17:05:23Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-12-30T12:33:06Z"
+		}
+	]
 }

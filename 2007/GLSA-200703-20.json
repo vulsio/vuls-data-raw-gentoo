@@ -1,103 +1,103 @@
 {
-  "ID": "200703-20",
-  "Title": "LSAT: Insecure temporary file creation",
-  "Synopsis": "\n    LSAT insecurely creates temporary files which can lead to symlink attacks\n    allowing a local user to overwrite arbitrary files.\n  ",
-  "Product": {
-    "Text": "lsat",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-03-18",
-  "Revised": {
-    "Text": "2007-05-11",
-    "Count": "02"
-  },
-  "Bug": [
-    "159542"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-admin/lsat",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.9.5",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.9.5",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    The Linux Security Auditing Tool (LSAT) is a post install security\n    auditor which checks many system configurations and local network\n    settings on the system for common security or configuration errors and\n    for packages that are not needed.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    LSAT insecurely writes in /tmp with a predictable filename.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "low",
-    "Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary files\n    directory, pointing to a valid file somewhere on the filesystem. When\n    the LSAT script is executed, this would result in the file being\n    overwritten with the rights of the user running the software, which\n    could be the root user.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All lsat users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-admin/lsat-0.9.5\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-1500",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1500"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-03-15T22:15:51Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-03-16T10:34:49Z"
-    },
-    {
-      "Text": "\n    vorlon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-03-16T11:42:45Z"
-    }
-  ]
+	"ID": "200703-20",
+	"Title": "LSAT: Insecure temporary file creation",
+	"Synopsis": "\n    LSAT insecurely creates temporary files which can lead to symlink attacks\n    allowing a local user to overwrite arbitrary files.\n  ",
+	"Product": {
+		"Text": "lsat",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-03-18",
+	"Revised": {
+		"Text": "2007-05-11",
+		"Count": "02"
+	},
+	"Bug": [
+		"159542"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-admin/lsat",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.9.5",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.9.5",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    The Linux Security Auditing Tool (LSAT) is a post install security\n    auditor which checks many system configurations and local network\n    settings on the system for common security or configuration errors and\n    for packages that are not needed.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    LSAT insecurely writes in /tmp with a predictable filename.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "low",
+		"Text": "\n    <p>\n    A local attacker could create symbolic links in the temporary files\n    directory, pointing to a valid file somewhere on the filesystem. When\n    the LSAT script is executed, this would result in the file being\n    overwritten with the rights of the user running the software, which\n    could be the root user.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All lsat users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-admin/lsat-0.9.5\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-1500",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1500"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-03-15T22:15:51Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-03-16T10:34:49Z"
+		},
+		{
+			"Text": "\n    vorlon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-03-16T11:42:45Z"
+		}
+	]
 }

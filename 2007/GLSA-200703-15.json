@@ -1,137 +1,137 @@
 {
-  "ID": "200703-15",
-  "Title": "PostgreSQL: Multiple vulnerabilities",
-  "Synopsis": "\n    PostgreSQL contains two vulnerabilities that could result in a Denial of\n    Service or unauthorized access to certain information.\n  ",
-  "Product": {
-    "Text": "postgresql",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-03-16",
-  "Revised": {
-    "Text": "2009-05-28",
-    "Count": "04"
-  },
-  "Bug": [
-    "165482"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-db/postgresql",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "8.0.11",
-            "Range": "ge",
-            "Slot": ""
-          },
-          {
-            "Text": "7.4.17",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "7.4.16",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "7.3.19",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "7.3.13",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "7.3.21",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "7.4.19",
-            "Range": "rge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "8.0.11",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    PostgreSQL is an open source object-relational database management\n    system.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    PostgreSQL does not correctly check the data types of the SQL function\n    arguments under unspecified circumstances nor the format of the\n    provided tables in the query planner.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote authenticated attacker could send specially crafted queries to\n    the server that could result in a server crash and possibly the\n    unauthorized reading of some database content or arbitrary memory.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All PostgreSQL users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \"dev-db/postgresql\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-0555",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0555"
-      },
-      {
-        "Text": "CVE-2007-0556",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0556"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-03-09T22:33:46Z"
-    },
-    {
-      "Text": "\n    vorlon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-03-12T16:09:31Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-03-13T19:55:02Z"
-    }
-  ]
+	"ID": "200703-15",
+	"Title": "PostgreSQL: Multiple vulnerabilities",
+	"Synopsis": "\n    PostgreSQL contains two vulnerabilities that could result in a Denial of\n    Service or unauthorized access to certain information.\n  ",
+	"Product": {
+		"Text": "postgresql",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-03-16",
+	"Revised": {
+		"Text": "2009-05-28",
+		"Count": "04"
+	},
+	"Bug": [
+		"165482"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-db/postgresql",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "8.0.11",
+						"Range": "ge",
+						"Slot": ""
+					},
+					{
+						"Text": "7.4.17",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "7.4.16",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "7.3.19",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "7.3.13",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "7.3.21",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "7.4.19",
+						"Range": "rge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "8.0.11",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    PostgreSQL is an open source object-relational database management\n    system.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    PostgreSQL does not correctly check the data types of the SQL function\n    arguments under unspecified circumstances nor the format of the\n    provided tables in the query planner.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote authenticated attacker could send specially crafted queries to\n    the server that could result in a server crash and possibly the\n    unauthorized reading of some database content or arbitrary memory.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All PostgreSQL users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \"dev-db/postgresql\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-0555",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0555"
+			},
+			{
+				"Text": "CVE-2007-0556",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-0556"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-03-09T22:33:46Z"
+		},
+		{
+			"Text": "\n    vorlon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-03-12T16:09:31Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-03-13T19:55:02Z"
+		}
+	]
 }

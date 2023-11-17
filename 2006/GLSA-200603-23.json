@@ -1,150 +1,150 @@
 {
-  "ID": "200603-23",
-  "Title": "NetHack, Slash'EM, Falcon's Eye: Local privilege escalation",
-  "Synopsis": "\n    NetHack, Slash'EM and Falcon's Eye are vulnerable to local privilege\n    escalation vulnerabilities that could potentially allow the execution of\n    arbitrary code as other users.\n  ",
-  "Product": {
-    "Text": "nethack slashem falconseye",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-03-23",
-  "Revised": {
-    "Text": "2006-03-30",
-    "Count": "01"
-  },
-  "Bug": [
-    "125902",
-    "122376",
-    "127167",
-    "127319"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "games-roguelike/nethack",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": null,
-        "Vulnerable": [
-          {
-            "Text": "3.4.3-r1",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "games-roguelike/falconseye",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": null,
-        "Vulnerable": [
-          {
-            "Text": "1.9.4a",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "games-roguelike/slashem",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": null,
-        "Vulnerable": [
-          {
-            "Text": "0.0.760",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    NetHack is the classic single player dungeon exploration game. Slash'EM\n    and Falcon's Eye are NetHack variants.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    NetHack, Slash'EM and Falcon's Eye have been found to be incompatible\n    with the system used for managing games on Gentoo Linux. As a result,\n    they cannot be played securely on systems with multiple users.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local user who is a member of group \"games\" may be able to modify the\n    state data used by NetHack, Slash'EM or Falcon's Eye to trigger the\n    execution of arbitrary code with the privileges of other players.\n    Additionally, the games may create save game files in a manner not\n    suitable for use on Gentoo Linux, potentially allowing a local user to\n    create or overwrite files with the permissions of other players.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Do not add untrusted users to the \"games\" group.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    NetHack has been masked in Portage pending the resolution of these\n    issues. Vulnerable NetHack users are advised to uninstall the package\n    until further notice.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    Slash'EM has been masked in Portage pending the resolution of these\n    issues. Vulnerable Slash'EM users are advised to uninstall the package\n    until further notice.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    Falcon's Eye has been masked in Portage pending the resolution of these\n    issues. Vulnerable Falcon's Eye users are advised to uninstall the\n    package until further notice.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --ask --verbose --unmerge \"games-roguelike/nethack\"",
-      "\n    # emerge --ask --verbose --unmerge \"games-roguelike/slashem\"",
-      "\n    # emerge --ask --verbose --unmerge \"games-roguelike/falconseye\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-1390",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1390"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-03-22T22:13:28Z"
-    },
-    {
-      "Text": "\n    taviso\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-03-22T22:57:23Z"
-    },
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-03-23T22:05:55Z"
-    }
-  ]
+	"ID": "200603-23",
+	"Title": "NetHack, Slash'EM, Falcon's Eye: Local privilege escalation",
+	"Synopsis": "\n    NetHack, Slash'EM and Falcon's Eye are vulnerable to local privilege\n    escalation vulnerabilities that could potentially allow the execution of\n    arbitrary code as other users.\n  ",
+	"Product": {
+		"Text": "nethack slashem falconseye",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-03-23",
+	"Revised": {
+		"Text": "2006-03-30",
+		"Count": "01"
+	},
+	"Bug": [
+		"125902",
+		"122376",
+		"127167",
+		"127319"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "games-roguelike/nethack",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": null,
+				"Vulnerable": [
+					{
+						"Text": "3.4.3-r1",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "games-roguelike/falconseye",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": null,
+				"Vulnerable": [
+					{
+						"Text": "1.9.4a",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "games-roguelike/slashem",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": null,
+				"Vulnerable": [
+					{
+						"Text": "0.0.760",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    NetHack is the classic single player dungeon exploration game. Slash'EM\n    and Falcon's Eye are NetHack variants.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    NetHack, Slash'EM and Falcon's Eye have been found to be incompatible\n    with the system used for managing games on Gentoo Linux. As a result,\n    they cannot be played securely on systems with multiple users.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local user who is a member of group \"games\" may be able to modify the\n    state data used by NetHack, Slash'EM or Falcon's Eye to trigger the\n    execution of arbitrary code with the privileges of other players.\n    Additionally, the games may create save game files in a manner not\n    suitable for use on Gentoo Linux, potentially allowing a local user to\n    create or overwrite files with the permissions of other players.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Do not add untrusted users to the \"games\" group.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    NetHack has been masked in Portage pending the resolution of these\n    issues. Vulnerable NetHack users are advised to uninstall the package\n    until further notice.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    Slash'EM has been masked in Portage pending the resolution of these\n    issues. Vulnerable Slash'EM users are advised to uninstall the package\n    until further notice.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    Falcon's Eye has been masked in Portage pending the resolution of these\n    issues. Vulnerable Falcon's Eye users are advised to uninstall the\n    package until further notice.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --ask --verbose --unmerge \"games-roguelike/nethack\"",
+			"\n    # emerge --ask --verbose --unmerge \"games-roguelike/slashem\"",
+			"\n    # emerge --ask --verbose --unmerge \"games-roguelike/falconseye\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-1390",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1390"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-03-22T22:13:28Z"
+		},
+		{
+			"Text": "\n    taviso\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-03-22T22:57:23Z"
+		},
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-03-23T22:05:55Z"
+		}
+	]
 }

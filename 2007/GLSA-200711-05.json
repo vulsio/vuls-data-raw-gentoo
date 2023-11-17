@@ -1,118 +1,118 @@
 {
-  "ID": "200711-05",
-  "Title": "SiteBar: Multiple issues",
-  "Synopsis": "\n    Multiple issues have been identified in SiteBar that might allow execution\n    of arbitrary code and arbitrary file disclosure.\n  ",
-  "Product": {
-    "Text": "sitebar",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-11-06",
-  "Revised": {
-    "Text": "2007-11-06",
-    "Count": "01"
-  },
-  "Bug": [
-    "195810"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-apps/sitebar",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.3.9",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.3.9",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    SiteBar is a PHP application that allows users to store their bookmarks\n    on a web server.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Tim Brown discovered these multiple issues: the translation module does\n    not properly sanitize the value to the \"dir\" parameter (CVE-2007-5491,\n    CVE-2007-5694); the translation module also does not sanitize the\n    values of the \"edit\" and \"value\" parameters which it passes to eval()\n    and include() (CVE-2007-5492, CVE-2007-5693); the log-in command does\n    not validate the URL to redirect users to after logging in\n    (CVE-2007-5695); SiteBar also contains several cross-site scripting\n    vulnerabilities (CVE-2007-5692).\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    An authenticated attacker in the \"Translators\" or \"Admins\" group could\n    execute arbitrary code, read arbitrary files and possibly change their\n    permissions with the privileges of the user running the web server by\n    passing a specially crafted parameter string to the \"translator.php\"\n    file. An unauthenticated attacker could entice a user to browse a\n    specially crafted URL, allowing for the execution of script code in the\n    context of the user's browser, for the theft of browser credentials or\n    for a redirection to an arbitrary web site after login.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All SiteBar users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/sitebar-3.3.9\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-5491",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5491"
-      },
-      {
-        "Text": "CVE-2007-5492",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5492"
-      },
-      {
-        "Text": "CVE-2007-5692",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5692"
-      },
-      {
-        "Text": "CVE-2007-5693",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5693"
-      },
-      {
-        "Text": "CVE-2007-5694",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5694"
-      },
-      {
-        "Text": "CVE-2007-5695",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5695"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-10-18T20:00:51Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-10-18T20:01:07Z"
-    }
-  ]
+	"ID": "200711-05",
+	"Title": "SiteBar: Multiple issues",
+	"Synopsis": "\n    Multiple issues have been identified in SiteBar that might allow execution\n    of arbitrary code and arbitrary file disclosure.\n  ",
+	"Product": {
+		"Text": "sitebar",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-11-06",
+	"Revised": {
+		"Text": "2007-11-06",
+		"Count": "01"
+	},
+	"Bug": [
+		"195810"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-apps/sitebar",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.3.9",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.3.9",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    SiteBar is a PHP application that allows users to store their bookmarks\n    on a web server.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Tim Brown discovered these multiple issues: the translation module does\n    not properly sanitize the value to the \"dir\" parameter (CVE-2007-5491,\n    CVE-2007-5694); the translation module also does not sanitize the\n    values of the \"edit\" and \"value\" parameters which it passes to eval()\n    and include() (CVE-2007-5492, CVE-2007-5693); the log-in command does\n    not validate the URL to redirect users to after logging in\n    (CVE-2007-5695); SiteBar also contains several cross-site scripting\n    vulnerabilities (CVE-2007-5692).\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    An authenticated attacker in the \"Translators\" or \"Admins\" group could\n    execute arbitrary code, read arbitrary files and possibly change their\n    permissions with the privileges of the user running the web server by\n    passing a specially crafted parameter string to the \"translator.php\"\n    file. An unauthenticated attacker could entice a user to browse a\n    specially crafted URL, allowing for the execution of script code in the\n    context of the user's browser, for the theft of browser credentials or\n    for a redirection to an arbitrary web site after login.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All SiteBar users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apps/sitebar-3.3.9\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-5491",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5491"
+			},
+			{
+				"Text": "CVE-2007-5492",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5492"
+			},
+			{
+				"Text": "CVE-2007-5692",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5692"
+			},
+			{
+				"Text": "CVE-2007-5693",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5693"
+			},
+			{
+				"Text": "CVE-2007-5694",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5694"
+			},
+			{
+				"Text": "CVE-2007-5695",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5695"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-10-18T20:00:51Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-10-18T20:01:07Z"
+		}
+	]
 }

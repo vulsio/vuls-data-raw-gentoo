@@ -1,98 +1,98 @@
 {
-  "ID": "200804-18",
-  "Title": "Poppler: User-assisted execution of arbitrary code",
-  "Synopsis": "\n    Poppler does not handle fonts inside PDF files safely, allowing for\n    execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "poppler",
-    "Type": "ebuild"
-  },
-  "Announced": "2008-04-17",
-  "Revised": {
-    "Text": "2008-04-17",
-    "Count": "02"
-  },
-  "Bug": [
-    "216850"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-text/poppler",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.6.3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.6.3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Poppler is a cross-platform PDF rendering library originally based on\n    Xpdf.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Kees Cook from the Ubuntu Security Team reported that the\n    CairoFont::create() function in the file CairoFontEngine.cc does not\n    verify the type of an embedded font object inside a PDF file before\n    dereferencing a function pointer from it.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted PDF\n    file with a Poppler-based PDF viewer such as Gentoo's Xpdf, Epdfview,\n    or Evince, potentially resulting in the execution of arbitrary code\n    with the privileges of the user running the application.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Poppler users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/poppler-0.6.3\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-1693",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1693"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2008-04-14T01:16:23Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2008-04-17T11:28:12Z"
-    }
-  ]
+	"ID": "200804-18",
+	"Title": "Poppler: User-assisted execution of arbitrary code",
+	"Synopsis": "\n    Poppler does not handle fonts inside PDF files safely, allowing for\n    execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "poppler",
+		"Type": "ebuild"
+	},
+	"Announced": "2008-04-17",
+	"Revised": {
+		"Text": "2008-04-17",
+		"Count": "02"
+	},
+	"Bug": [
+		"216850"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-text/poppler",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.6.3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.6.3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Poppler is a cross-platform PDF rendering library originally based on\n    Xpdf.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Kees Cook from the Ubuntu Security Team reported that the\n    CairoFont::create() function in the file CairoFontEngine.cc does not\n    verify the type of an embedded font object inside a PDF file before\n    dereferencing a function pointer from it.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to open a specially crafted PDF\n    file with a Poppler-based PDF viewer such as Gentoo's Xpdf, Epdfview,\n    or Evince, potentially resulting in the execution of arbitrary code\n    with the privileges of the user running the application.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Poppler users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/poppler-0.6.3\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-1693",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-1693"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2008-04-14T01:16:23Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2008-04-17T11:28:12Z"
+		}
+	]
 }

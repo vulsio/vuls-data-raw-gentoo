@@ -1,91 +1,91 @@
 {
-  "ID": "200406-22",
-  "Title": "Pavuk: Remote buffer overflow",
-  "Synopsis": "\n    Pavuk contains a bug potentially allowing an attacker to run arbitrary\n    code.\n  ",
-  "Product": {
-    "Text": "Pavuk",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-06-30",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "02"
-  },
-  "Bug": null,
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-misc/pavuk",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.9.28-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.9.28-r1",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Pavuk is web spider and website mirroring tool.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    When Pavuk connects to a web server and the server sends back the HTTP\n    status code 305 (Use Proxy), Pavuk copies data from the HTTP Location\n    header in an unsafe manner.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    An attacker could cause a stack-based buffer overflow which could lead\n    to arbitrary code execution with the rights of the user running Pavuk.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time. All users are encouraged to\n    upgrade to the latest available version.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Pavuk users should upgrade to the latest stable version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n    \n    # emerge -pv \">=net-misc/pavuk-0.9.28-r2\"\n    # emerge \">=\"net-misc/pavuk-0.9.28-r2"
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2004-0456",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0456"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "submitter",
-      "Timestamp": ""
-    }
-  ]
+	"ID": "200406-22",
+	"Title": "Pavuk: Remote buffer overflow",
+	"Synopsis": "\n    Pavuk contains a bug potentially allowing an attacker to run arbitrary\n    code.\n  ",
+	"Product": {
+		"Text": "Pavuk",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-06-30",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "02"
+	},
+	"Bug": null,
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-misc/pavuk",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.9.28-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.9.28-r1",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Pavuk is web spider and website mirroring tool.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    When Pavuk connects to a web server and the server sends back the HTTP\n    status code 305 (Use Proxy), Pavuk copies data from the HTTP Location\n    header in an unsafe manner.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    An attacker could cause a stack-based buffer overflow which could lead\n    to arbitrary code execution with the rights of the user running Pavuk.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time. All users are encouraged to\n    upgrade to the latest available version.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Pavuk users should upgrade to the latest stable version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n    \n    # emerge -pv \">=net-misc/pavuk-0.9.28-r2\"\n    # emerge \">=\"net-misc/pavuk-0.9.28-r2"
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2004-0456",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0456"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "submitter",
+			"Timestamp": ""
+		}
+	]
 }

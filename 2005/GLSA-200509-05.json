@@ -1,103 +1,103 @@
 {
-  "ID": "200509-05",
-  "Title": "Net-SNMP: Insecure RPATH",
-  "Synopsis": "\n    The Gentoo Net-SNMP package may provide Perl modules containing an insecure\n    DT_RPATH, potentially allowing privilege escalation.\n  ",
-  "Product": {
-    "Text": "net-snmp",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-09-06",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "02"
-  },
-  "Bug": [
-    "103776"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-analyzer/net-snmp",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "5.2.1.2-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "5.2.1.2-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Net-SNMP is a suite of applications used to implement the Simple\n    Network Management Protocol.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    James Cloos reported that Perl modules from the Net-SNMP package look\n    for libraries in an untrusted location. This is due to a flaw in the\n    Gentoo package, and not the Net-SNMP suite.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local attacker (member of the portage group) may be able to create a\n    shared object that would be loaded by the Net-SNMP Perl modules,\n    executing arbitrary code with the privileges of the user invoking the\n    Perl script.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Limit group portage access to trusted users.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Net-SNMP users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/net-snmp-5.2.1.2-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2005-2811",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2811"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-09-04T14:57:52Z"
-    },
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-09-04T15:49:44Z"
-    },
-    {
-      "Text": "\n    adir\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-09-04T23:48:38Z"
-    }
-  ]
+	"ID": "200509-05",
+	"Title": "Net-SNMP: Insecure RPATH",
+	"Synopsis": "\n    The Gentoo Net-SNMP package may provide Perl modules containing an insecure\n    DT_RPATH, potentially allowing privilege escalation.\n  ",
+	"Product": {
+		"Text": "net-snmp",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-09-06",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "02"
+	},
+	"Bug": [
+		"103776"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-analyzer/net-snmp",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "5.2.1.2-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "5.2.1.2-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Net-SNMP is a suite of applications used to implement the Simple\n    Network Management Protocol.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    James Cloos reported that Perl modules from the Net-SNMP package look\n    for libraries in an untrusted location. This is due to a flaw in the\n    Gentoo package, and not the Net-SNMP suite.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local attacker (member of the portage group) may be able to create a\n    shared object that would be loaded by the Net-SNMP Perl modules,\n    executing arbitrary code with the privileges of the user invoking the\n    Perl script.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Limit group portage access to trusted users.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Net-SNMP users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/net-snmp-5.2.1.2-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2005-2811",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2811"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-09-04T14:57:52Z"
+		},
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-09-04T15:49:44Z"
+		},
+		{
+			"Text": "\n    adir\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-09-04T23:48:38Z"
+		}
+	]
 }

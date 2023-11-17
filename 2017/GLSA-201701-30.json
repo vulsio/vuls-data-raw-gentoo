@@ -1,98 +1,98 @@
 {
-  "ID": "201701-30",
-  "Title": "vzctl: Security bypass",
-  "Synopsis": "A vulnerability in vzctl might allow attackers to gain control over\n    ploop containers.\n  ",
-  "Product": {
-    "Text": "vzctl",
-    "Type": "ebuild"
-  },
-  "Announced": "2017-01-11",
-  "Revised": {
-    "Text": "2017-01-11",
-    "Count": "1"
-  },
-  "Bug": [
-    "560522"
-  ],
-  "Access": "local, remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sys-cluster/vzctl",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.9.4",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.9.4",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>vzctl is a set of control tools for the OpenVZ server virtualization\n      solution.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>It was discovered that vzctl determined the virtual environment (VE)\n      layout based on the presence of root.hdd/DiskDescriptor.xml in the VE\n      private directory.  This allows local simfs container (CT) root users to\n      change the root password for arbitrary ploop containers.  This is\n      demonstrated by a symlink attack on the ploop container root.hdd file\n      which can then be used to access a control panel.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>An attacker with root privileges, in a simfs-based container, could gain\n      control over ploop-based containers.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All vzctl users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-cluster/vzctl-4.9.4\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2015-6927",
-        "Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-6927"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "whissi",
-      "Tag": "requester",
-      "Timestamp": "2017-01-10T16:32:14Z"
-    },
-    {
-      "Text": "whissi",
-      "Tag": "submitter",
-      "Timestamp": "2017-01-11T12:39:20Z"
-    }
-  ]
+	"ID": "201701-30",
+	"Title": "vzctl: Security bypass",
+	"Synopsis": "A vulnerability in vzctl might allow attackers to gain control over\n    ploop containers.\n  ",
+	"Product": {
+		"Text": "vzctl",
+		"Type": "ebuild"
+	},
+	"Announced": "2017-01-11",
+	"Revised": {
+		"Text": "2017-01-11",
+		"Count": "1"
+	},
+	"Bug": [
+		"560522"
+	],
+	"Access": "local, remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-cluster/vzctl",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.9.4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.9.4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>vzctl is a set of control tools for the OpenVZ server virtualization\n      solution.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>It was discovered that vzctl determined the virtual environment (VE)\n      layout based on the presence of root.hdd/DiskDescriptor.xml in the VE\n      private directory.  This allows local simfs container (CT) root users to\n      change the root password for arbitrary ploop containers.  This is\n      demonstrated by a symlink attack on the ploop container root.hdd file\n      which can then be used to access a control panel.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>An attacker with root privileges, in a simfs-based container, could gain\n      control over ploop-based containers.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All vzctl users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sys-cluster/vzctl-4.9.4\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2015-6927",
+				"Link": "https://nvd.nist.gov/nvd.cfm?cvename=CVE-2015-6927"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "whissi",
+			"Tag": "requester",
+			"Timestamp": "2017-01-10T16:32:14Z"
+		},
+		{
+			"Text": "whissi",
+			"Tag": "submitter",
+			"Timestamp": "2017-01-11T12:39:20Z"
+		}
+	]
 }

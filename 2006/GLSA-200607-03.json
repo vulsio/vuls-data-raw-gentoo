@@ -1,102 +1,102 @@
 {
-  "ID": "200607-03",
-  "Title": "libTIFF: Multiple buffer overflows",
-  "Synopsis": "\n    libTIFF contains buffer overflows that could result in arbitrary code\n    execution.\n  ",
-  "Product": {
-    "Text": "tiff",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-07-09",
-  "Revised": {
-    "Text": "2006-07-09",
-    "Count": "01"
-  },
-  "Bug": [
-    "135881"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "media-libs/tiff",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.8.2-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.8.2-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    libTIFF provides support for reading and manipulating TIFF images.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    A buffer overflow has been found in the t2p_write_pdf_string function\n    in tiff2pdf, which can been triggered with a TIFF file containing a\n    DocumentName tag with UTF-8 characters. An additional buffer overflow\n    has been found in the handling of the parameters in tiffsplit.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote attacker could entice a user to load a specially crafted TIFF\n    file, resulting in the possible execution of arbitrary code.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All libTIFF users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/tiff-3.8.2-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-2193",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2193"
-      },
-      {
-        "Text": "CVE-2006-2656",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2656"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-07-05T16:38:15Z"
-    },
-    {
-      "Text": "\n    falco\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-07-05T16:38:38Z"
-    }
-  ]
+	"ID": "200607-03",
+	"Title": "libTIFF: Multiple buffer overflows",
+	"Synopsis": "\n    libTIFF contains buffer overflows that could result in arbitrary code\n    execution.\n  ",
+	"Product": {
+		"Text": "tiff",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-07-09",
+	"Revised": {
+		"Text": "2006-07-09",
+		"Count": "01"
+	},
+	"Bug": [
+		"135881"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-libs/tiff",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.8.2-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.8.2-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    libTIFF provides support for reading and manipulating TIFF images.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    A buffer overflow has been found in the t2p_write_pdf_string function\n    in tiff2pdf, which can been triggered with a TIFF file containing a\n    DocumentName tag with UTF-8 characters. An additional buffer overflow\n    has been found in the handling of the parameters in tiffsplit.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote attacker could entice a user to load a specially crafted TIFF\n    file, resulting in the possible execution of arbitrary code.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All libTIFF users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=media-libs/tiff-3.8.2-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-2193",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2193"
+			},
+			{
+				"Text": "CVE-2006-2656",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2656"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-07-05T16:38:15Z"
+		},
+		{
+			"Text": "\n    falco\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-07-05T16:38:38Z"
+		}
+	]
 }

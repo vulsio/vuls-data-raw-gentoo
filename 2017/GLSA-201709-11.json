@@ -1,98 +1,98 @@
 {
-  "ID": "201709-11",
-  "Title": "GIMPS: Root privilege escalation",
-  "Synopsis": "Gentoo's GIMPS ebuilds are vulnerable to privilege escalation due\n    to improper permissions. A local attacker could use it to gain root\n    privileges.\n  ",
-  "Product": {
-    "Text": "gimps",
-    "Type": "ebuild"
-  },
-  "Announced": "2017-09-17",
-  "Revised": {
-    "Text": "2017-09-17",
-    "Count": "1"
-  },
-  "Bug": [
-    "603408"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sci-mathematics/gimps",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "28.10-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "28.10-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>GIMPS, the Great Internet Mersenne Prime Search, is a software capable\n      of find Mersenne Primes, which are used in cryptography. GIMPS is also\n      used for hardware testing.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>It was discovered that Gentoo’s default GIMPS installation suffered\n      from a privilege escalation vulnerability in the init script. This script\n      calls an unsafe “chown -R” command in checkconfig() function.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>A local attacker who does not belong to the root group, but has the\n      ability to modify the /var/lib/gimps directory can escalate privileges to\n      the root group.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>There is no known workaround at this time.</p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "All GIMPS users should upgrade to the latest version:",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sci-mathematics/gimps-28.10-r1\"\n    "
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2017-14484",
-        "Link": "https://nvd.nist.gov/vuln/detail/CVE-2017-14484"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "BlueKnight",
-      "Tag": "requester",
-      "Timestamp": "2017-09-10T06:41:04Z"
-    },
-    {
-      "Text": "chrisadr",
-      "Tag": "submitter",
-      "Timestamp": "2017-09-17T19:05:30Z"
-    }
-  ]
+	"ID": "201709-11",
+	"Title": "GIMPS: Root privilege escalation",
+	"Synopsis": "Gentoo's GIMPS ebuilds are vulnerable to privilege escalation due\n    to improper permissions. A local attacker could use it to gain root\n    privileges.\n  ",
+	"Product": {
+		"Text": "gimps",
+		"Type": "ebuild"
+	},
+	"Announced": "2017-09-17",
+	"Revised": {
+		"Text": "2017-09-17",
+		"Count": "1"
+	},
+	"Bug": [
+		"603408"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sci-mathematics/gimps",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "28.10-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "28.10-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>GIMPS, the Great Internet Mersenne Prime Search, is a software capable\n      of find Mersenne Primes, which are used in cryptography. GIMPS is also\n      used for hardware testing.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>It was discovered that Gentoo’s default GIMPS installation suffered\n      from a privilege escalation vulnerability in the init script. This script\n      calls an unsafe “chown -R” command in checkconfig() function.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>A local attacker who does not belong to the root group, but has the\n      ability to modify the /var/lib/gimps directory can escalate privileges to\n      the root group.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>There is no known workaround at this time.</p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "All GIMPS users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n      # emerge --sync\n      # emerge --ask --oneshot --verbose \">=sci-mathematics/gimps-28.10-r1\"\n    "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2017-14484",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2017-14484"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "BlueKnight",
+			"Tag": "requester",
+			"Timestamp": "2017-09-10T06:41:04Z"
+		},
+		{
+			"Text": "chrisadr",
+			"Tag": "submitter",
+			"Timestamp": "2017-09-17T19:05:30Z"
+		}
+	]
 }

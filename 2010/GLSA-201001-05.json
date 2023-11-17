@@ -1,103 +1,103 @@
 {
-  "ID": "201001-05",
-  "Title": "net-snmp: Authorization bypass",
-  "Synopsis": "\n    A remote attacker can bypass the tcp-wrappers client authorization in\n    net-snmp.\n  ",
-  "Product": {
-    "Text": "net-snmp",
-    "Type": "ebuild"
-  },
-  "Announced": "2010-01-13",
-  "Revised": {
-    "Text": "2010-01-13",
-    "Count": "01"
-  },
-  "Bug": [
-    "250429"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-analyzer/net-snmp",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "5.4.2.1-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "5.4.2.1-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    net-snmp bundles software for generating and retrieving SNMP data.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The netsnmp_udp_fmtaddr() function (snmplib/snmpUDPDomain.c), when\n    using TCP wrappers for client authorization, does not properly parse\n    hosts.allow rules.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A remote, unauthenticated attacker could bypass the ACL filtering,\n    possibly resulting in the execution of arbitrary SNMP queries.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    If possible, protect net-snmp with custom iptables rules:\n    </p>\n    <code>\n    iptables -s [client] -d [host] -p udp --dport 161 -j ACCEPT\n    iptables -s 0.0.0.0/0 -d [host] -p udp --dport 161 -j DROP</code>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All net-snmp users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/net-snmp-5.4.2.1-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-6123",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-6123"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    craig\n  ",
-      "Tag": "requester",
-      "Timestamp": "2009-09-28T18:16:15Z"
-    },
-    {
-      "Text": "\n    craig\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2010-01-05T21:17:32Z"
-    },
-    {
-      "Text": "\n    craig\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2010-01-10T19:40:57Z"
-    }
-  ]
+	"ID": "201001-05",
+	"Title": "net-snmp: Authorization bypass",
+	"Synopsis": "\n    A remote attacker can bypass the tcp-wrappers client authorization in\n    net-snmp.\n  ",
+	"Product": {
+		"Text": "net-snmp",
+		"Type": "ebuild"
+	},
+	"Announced": "2010-01-13",
+	"Revised": {
+		"Text": "2010-01-13",
+		"Count": "01"
+	},
+	"Bug": [
+		"250429"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-analyzer/net-snmp",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "5.4.2.1-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "5.4.2.1-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    net-snmp bundles software for generating and retrieving SNMP data.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The netsnmp_udp_fmtaddr() function (snmplib/snmpUDPDomain.c), when\n    using TCP wrappers for client authorization, does not properly parse\n    hosts.allow rules.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A remote, unauthenticated attacker could bypass the ACL filtering,\n    possibly resulting in the execution of arbitrary SNMP queries.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    If possible, protect net-snmp with custom iptables rules:\n    </p>\n    <code>\n    iptables -s [client] -d [host] -p udp --dport 161 -j ACCEPT\n    iptables -s 0.0.0.0/0 -d [host] -p udp --dport 161 -j DROP</code>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All net-snmp users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/net-snmp-5.4.2.1-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-6123",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-6123"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    craig\n  ",
+			"Tag": "requester",
+			"Timestamp": "2009-09-28T18:16:15Z"
+		},
+		{
+			"Text": "\n    craig\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2010-01-05T21:17:32Z"
+		},
+		{
+			"Text": "\n    craig\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2010-01-10T19:40:57Z"
+		}
+	]
 }

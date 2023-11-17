@@ -1,103 +1,103 @@
 {
-  "ID": "200510-22",
-  "Title": "SELinux PAM: Local password guessing attack",
-  "Synopsis": "\n    A vulnerability in the SELinux version of PAM allows a local attacker to\n    brute-force system passwords.\n  ",
-  "Product": {
-    "Text": "PAM",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-10-28",
-  "Revised": {
-    "Text": "2005-10-28",
-    "Count": "01"
-  },
-  "Bug": [
-    "109485"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sys-libs/pam",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "0.78-r3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "0.78-r3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    PAM (Pluggable Authentication Modules) is an architecture allowing\n    the separation of the development of privilege granting software from\n    the development of secure and appropriate authentication schemes.\n    SELinux is an operating system based on Linux which includes Mandatory\n    Access Control.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The SELinux patches for PAM introduce a vulnerability allowing a\n    password to be checked with the unix_chkpwd utility without delay or\n    logging. This vulnerability doesn't affect users who do not run\n    SELinux.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local attacker could exploit this vulnerability to brute-force\n    passwords and escalate privileges on an SELinux system.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All SELinux PAM users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-libs/pam-0.78-r3\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2005-2977",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2977"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-10-26T15:44:45Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-10-27T07:49:03Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-10-27T12:12:27Z"
-    }
-  ]
+	"ID": "200510-22",
+	"Title": "SELinux PAM: Local password guessing attack",
+	"Synopsis": "\n    A vulnerability in the SELinux version of PAM allows a local attacker to\n    brute-force system passwords.\n  ",
+	"Product": {
+		"Text": "PAM",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-10-28",
+	"Revised": {
+		"Text": "2005-10-28",
+		"Count": "01"
+	},
+	"Bug": [
+		"109485"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-libs/pam",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.78-r3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.78-r3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    PAM (Pluggable Authentication Modules) is an architecture allowing\n    the separation of the development of privilege granting software from\n    the development of secure and appropriate authentication schemes.\n    SELinux is an operating system based on Linux which includes Mandatory\n    Access Control.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The SELinux patches for PAM introduce a vulnerability allowing a\n    password to be checked with the unix_chkpwd utility without delay or\n    logging. This vulnerability doesn't affect users who do not run\n    SELinux.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local attacker could exploit this vulnerability to brute-force\n    passwords and escalate privileges on an SELinux system.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All SELinux PAM users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-libs/pam-0.78-r3\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2005-2977",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2977"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-10-26T15:44:45Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-10-27T07:49:03Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-10-27T12:12:27Z"
+		}
+	]
 }

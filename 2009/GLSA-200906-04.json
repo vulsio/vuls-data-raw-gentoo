@@ -1,103 +1,103 @@
 {
-  "ID": "200906-04",
-  "Title": "Apache Tomcat JK Connector: Information disclosure",
-  "Synopsis": "\n    An error in the Apache Tomcat JK Connector might allow for an information\n    disclosure flaw.\n  ",
-  "Product": {
-    "Text": "mod_jk",
-    "Type": "ebuild"
-  },
-  "Announced": "2009-06-29",
-  "Revised": {
-    "Text": "2009-06-29",
-    "Count": "01"
-  },
-  "Bug": [
-    "265455"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "www-apache/mod_jk",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.2.27",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.2.27",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    The Apache Tomcat JK Connector (aka mod_jk) connects the Tomcat\n    application server with the Apache HTTP Server.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The Red Hat Security Response Team discovered that mod_jk does not\n    properly handle (1) requests setting the \"Content-Length\" header while\n    not providing data and (2) clients sending repeated requests very\n    quickly.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "low",
-    "Text": "\n    <p>\n    A remote attacker could send specially crafted requests or a large\n    number of requests at a time, possibly resulting in the disclosure of a\n    response intended for another client.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Apache Tomcat JK Connector users should upgrade to the latest\n    version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apache/mod_jk-1.2.27\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2008-5519",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5519"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    keytoaster\n  ",
-      "Tag": "requester",
-      "Timestamp": "2009-06-24T16:46:40Z"
-    },
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-06-28T12:27:09Z"
-    },
-    {
-      "Text": "\n    a3li\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2009-06-29T22:42:43Z"
-    }
-  ]
+	"ID": "200906-04",
+	"Title": "Apache Tomcat JK Connector: Information disclosure",
+	"Synopsis": "\n    An error in the Apache Tomcat JK Connector might allow for an information\n    disclosure flaw.\n  ",
+	"Product": {
+		"Text": "mod_jk",
+		"Type": "ebuild"
+	},
+	"Announced": "2009-06-29",
+	"Revised": {
+		"Text": "2009-06-29",
+		"Count": "01"
+	},
+	"Bug": [
+		"265455"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "www-apache/mod_jk",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.2.27",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.2.27",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    The Apache Tomcat JK Connector (aka mod_jk) connects the Tomcat\n    application server with the Apache HTTP Server.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The Red Hat Security Response Team discovered that mod_jk does not\n    properly handle (1) requests setting the \"Content-Length\" header while\n    not providing data and (2) clients sending repeated requests very\n    quickly.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "low",
+		"Text": "\n    <p>\n    A remote attacker could send specially crafted requests or a large\n    number of requests at a time, possibly resulting in the disclosure of a\n    response intended for another client.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Apache Tomcat JK Connector users should upgrade to the latest\n    version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=www-apache/mod_jk-1.2.27\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2008-5519",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5519"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    keytoaster\n  ",
+			"Tag": "requester",
+			"Timestamp": "2009-06-24T16:46:40Z"
+		},
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-06-28T12:27:09Z"
+		},
+		{
+			"Text": "\n    a3li\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2009-06-29T22:42:43Z"
+		}
+	]
 }

@@ -1,149 +1,149 @@
 {
-  "ID": "200907-08",
-  "Title": "Multiple Ralink wireless drivers: Execution of arbitrary code",
-  "Synopsis": "\n    An integer overflow in multiple Ralink wireless drivers might lead to the\n    execution of arbitrary code with elevated privileges.\n  ",
-  "Product": {
-    "Text": "rt2400 rt2500 rt2570 rt61 ralink-rt61",
-    "Type": "ebuild"
-  },
-  "Announced": "2009-07-12",
-  "Revised": {
-    "Text": "2009-07-12",
-    "Count": "01"
-  },
-  "Bug": [
-    "257023"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-wireless/rt2400",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": null,
-        "Vulnerable": [
-          {
-            "Text": "1.2.2_beta3",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "net-wireless/rt2500",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": null,
-        "Vulnerable": [
-          {
-            "Text": "1.1.0_pre2007071515",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "net-wireless/rt2570",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": null,
-        "Vulnerable": [
-          {
-            "Text": "20070209",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "net-wireless/rt61",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": null,
-        "Vulnerable": [
-          {
-            "Text": "1.1.0_beta2",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      },
-      {
-        "Name": "net-wireless/ralink-rt61",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": null,
-        "Vulnerable": [
-          {
-            "Text": "1.1.1.0",
-            "Range": "le",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    All listed packages are external kernel modules that provide drivers\n    for multiple Ralink devices. ralink-rt61 is released by ralinktech.com,\n    the other packages by the rt2x00.serialmonkey.com project.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Aviv reported an integer overflow in multiple Ralink wireless card\n    drivers when processing a probe request packet with a long SSID,\n    possibly related to an integer signedness error.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A physically proximate attacker could send specially crafted packets to\n    a user who has wireless networking enabled, possibly resulting in the\n    execution of arbitrary code with root privileges.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Unload the kernel modules.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All external kernel modules have been masked and we recommend that\n    users unmerge those drivers. The Linux mainline kernel has equivalent\n    support for these devices and the vulnerability has been resolved in\n    stable versions of sys-kernel/gentoo-sources.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --unmerge \"net-wireless/rt2400\"\n    # emerge --unmerge \"net-wireless/rt2500\"\n    # emerge --unmerge \"net-wireless/rt2570\"\n    # emerge --unmerge \"net-wireless/rt61\"\n    # emerge --unmerge \"net-wireless/ralink-rt61\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2009-0282",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0282"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2009-07-09T18:18:38Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-07-09T18:30:24Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2009-07-12T15:41:07Z"
-    }
-  ]
+	"ID": "200907-08",
+	"Title": "Multiple Ralink wireless drivers: Execution of arbitrary code",
+	"Synopsis": "\n    An integer overflow in multiple Ralink wireless drivers might lead to the\n    execution of arbitrary code with elevated privileges.\n  ",
+	"Product": {
+		"Text": "rt2400 rt2500 rt2570 rt61 ralink-rt61",
+		"Type": "ebuild"
+	},
+	"Announced": "2009-07-12",
+	"Revised": {
+		"Text": "2009-07-12",
+		"Count": "01"
+	},
+	"Bug": [
+		"257023"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-wireless/rt2400",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": null,
+				"Vulnerable": [
+					{
+						"Text": "1.2.2_beta3",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "net-wireless/rt2500",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": null,
+				"Vulnerable": [
+					{
+						"Text": "1.1.0_pre2007071515",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "net-wireless/rt2570",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": null,
+				"Vulnerable": [
+					{
+						"Text": "20070209",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "net-wireless/rt61",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": null,
+				"Vulnerable": [
+					{
+						"Text": "1.1.0_beta2",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "net-wireless/ralink-rt61",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": null,
+				"Vulnerable": [
+					{
+						"Text": "1.1.1.0",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    All listed packages are external kernel modules that provide drivers\n    for multiple Ralink devices. ralink-rt61 is released by ralinktech.com,\n    the other packages by the rt2x00.serialmonkey.com project.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Aviv reported an integer overflow in multiple Ralink wireless card\n    drivers when processing a probe request packet with a long SSID,\n    possibly related to an integer signedness error.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A physically proximate attacker could send specially crafted packets to\n    a user who has wireless networking enabled, possibly resulting in the\n    execution of arbitrary code with root privileges.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Unload the kernel modules.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All external kernel modules have been masked and we recommend that\n    users unmerge those drivers. The Linux mainline kernel has equivalent\n    support for these devices and the vulnerability has been resolved in\n    stable versions of sys-kernel/gentoo-sources.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --unmerge \"net-wireless/rt2400\"\n    # emerge --unmerge \"net-wireless/rt2500\"\n    # emerge --unmerge \"net-wireless/rt2570\"\n    # emerge --unmerge \"net-wireless/rt61\"\n    # emerge --unmerge \"net-wireless/ralink-rt61\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2009-0282",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0282"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2009-07-09T18:18:38Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-07-09T18:30:24Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2009-07-12T15:41:07Z"
+		}
+	]
 }

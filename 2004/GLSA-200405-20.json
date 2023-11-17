@@ -1,97 +1,97 @@
 {
-  "ID": "200405-20",
-  "Title": "Insecure Temporary File Creation In MySQL",
-  "Synopsis": "\n    Two MySQL utilities create temporary files with hardcoded paths, allowing\n    an attacker to use a symlink to trick MySQL into overwriting important\n    data.\n  ",
-  "Product": {
-    "Text": "MySQL",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-05-25",
-  "Revised": {
-    "Text": "2004-05-25",
-    "Count": "01"
-  },
-  "Bug": [
-    "46242"
-  ],
-  "Access": "local ",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-db/mysql",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "4.0.18-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.0.18-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    MySQL is a popular open-source multi-threaded, multi-user SQL database\n    server.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The MySQL bug reporting utility (mysqlbug) creates a temporary file to log\n    bug reports to. A malicious local user with write access to the /tmp\n    directory could create a symbolic link of the name mysqlbug-<i>N</i>\n    pointing to a protected file, such as /etc/passwd, such that when mysqlbug\n    creates the <i>N</i>th log file, it would end up overwriting the target\n    file. A similar vulnerability exists with the mysql_multi utility, which\n    creates a temporary file called mysql_multi.log.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    Since mysql_multi runs as root, a local attacker could use this to destroy\n    any other users' data or corrupt and destroy system files.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    One could modify both scripts to log to a directory that users do not have\n    write permission to, such as /var/log/mysql/.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All users should upgrade to the latest stable version of MySQL.\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge sync\n\n    # emerge -pv \">=dev-db/mysql-4.0.18-r2\"\n    # emerge \">=dev-db/mysql-4.0.18-r2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2004-0381",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0381"
-      },
-      {
-        "Text": "CAN-2004-0388",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0388"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    dmargoli\n  ",
-      "Tag": "submitter",
-      "Timestamp": ""
-    }
-  ]
+	"ID": "200405-20",
+	"Title": "Insecure Temporary File Creation In MySQL",
+	"Synopsis": "\n    Two MySQL utilities create temporary files with hardcoded paths, allowing\n    an attacker to use a symlink to trick MySQL into overwriting important\n    data.\n  ",
+	"Product": {
+		"Text": "MySQL",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-05-25",
+	"Revised": {
+		"Text": "2004-05-25",
+		"Count": "01"
+	},
+	"Bug": [
+		"46242"
+	],
+	"Access": "local ",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-db/mysql",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.0.18-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.0.18-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    MySQL is a popular open-source multi-threaded, multi-user SQL database\n    server.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The MySQL bug reporting utility (mysqlbug) creates a temporary file to log\n    bug reports to. A malicious local user with write access to the /tmp\n    directory could create a symbolic link of the name mysqlbug-<i>N</i>\n    pointing to a protected file, such as /etc/passwd, such that when mysqlbug\n    creates the <i>N</i>th log file, it would end up overwriting the target\n    file. A similar vulnerability exists with the mysql_multi utility, which\n    creates a temporary file called mysql_multi.log.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    Since mysql_multi runs as root, a local attacker could use this to destroy\n    any other users' data or corrupt and destroy system files.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    One could modify both scripts to log to a directory that users do not have\n    write permission to, such as /var/log/mysql/.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All users should upgrade to the latest stable version of MySQL.\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge sync\n\n    # emerge -pv \">=dev-db/mysql-4.0.18-r2\"\n    # emerge \">=dev-db/mysql-4.0.18-r2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2004-0381",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0381"
+			},
+			{
+				"Text": "CAN-2004-0388",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0388"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    dmargoli\n  ",
+			"Tag": "submitter",
+			"Timestamp": ""
+		}
+	]
 }

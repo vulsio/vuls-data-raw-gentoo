@@ -1,103 +1,103 @@
 {
-  "ID": "200904-07",
-  "Title": "Xpdf: Untrusted search path",
-  "Synopsis": "\n    A vulnerability in Xpdf might allow local attackers to execute arbitrary\n    code.\n  ",
-  "Product": {
-    "Text": "xpdf",
-    "Type": "ebuild"
-  },
-  "Announced": "2009-04-07",
-  "Revised": {
-    "Text": "2009-04-07",
-    "Count": "01"
-  },
-  "Bug": [
-    "242930"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "app-text/xpdf",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "3.02-r2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "3.02-r2",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Xpdf is a PDF file viewer that runs under the X Window System.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Erik Wallin reported that Gentoo's Xpdf attempts to read the \"xpdfrc\"\n    file from the current working directory if it cannot find a \".xpdfrc\"\n    file in the user's home directory. This is caused by a missing\n    definition of the SYSTEM_XPDFRC macro when compiling a repackaged\n    version of Xpdf.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A local attacker could entice a user to run \"xpdf\" from a directory\n    containing a specially crafted \"xpdfrc\" file, resulting in the\n    execution of arbitrary code when attempting to, e.g., print a file.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    Do not run Xpdf from untrusted working directories.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Xpdf users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/xpdf-3.02-r2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2009-1144",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1144"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2009-04-04T12:41:57Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2009-04-04T12:52:05Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2009-04-04T12:52:11Z"
-    }
-  ]
+	"ID": "200904-07",
+	"Title": "Xpdf: Untrusted search path",
+	"Synopsis": "\n    A vulnerability in Xpdf might allow local attackers to execute arbitrary\n    code.\n  ",
+	"Product": {
+		"Text": "xpdf",
+		"Type": "ebuild"
+	},
+	"Announced": "2009-04-07",
+	"Revised": {
+		"Text": "2009-04-07",
+		"Count": "01"
+	},
+	"Bug": [
+		"242930"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-text/xpdf",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.02-r2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.02-r2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Xpdf is a PDF file viewer that runs under the X Window System.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Erik Wallin reported that Gentoo's Xpdf attempts to read the \"xpdfrc\"\n    file from the current working directory if it cannot find a \".xpdfrc\"\n    file in the user's home directory. This is caused by a missing\n    definition of the SYSTEM_XPDFRC macro when compiling a repackaged\n    version of Xpdf.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A local attacker could entice a user to run \"xpdf\" from a directory\n    containing a specially crafted \"xpdfrc\" file, resulting in the\n    execution of arbitrary code when attempting to, e.g., print a file.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    Do not run Xpdf from untrusted working directories.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Xpdf users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=app-text/xpdf-3.02-r2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2009-1144",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1144"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2009-04-04T12:41:57Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2009-04-04T12:52:05Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2009-04-04T12:52:11Z"
+		}
+	]
 }

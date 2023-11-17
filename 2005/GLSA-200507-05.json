@@ -1,98 +1,98 @@
 {
-  "ID": "200507-05",
-  "Title": "zlib: Buffer overflow",
-  "Synopsis": "\n    A buffer overflow has been discovered in zlib, potentially resulting in the\n    execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "zlib",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-07-06",
-  "Revised": {
-    "Text": "2005-07-06",
-    "Count": "01"
-  },
-  "Bug": [
-    "98121"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sys-libs/zlib",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.2.2-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.2.2-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    zlib is a widely used free and patent unencumbered data\n    compression library.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Tavis Ormandy of the Gentoo Linux Security Audit Team discovered a\n    buffer overflow in zlib. A bounds checking operation failed to take\n    invalid data into account, allowing a specifically malformed deflate\n    data stream to overrun a buffer.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    An attacker could construct a malformed data stream, embedding it\n    within network communication or an application file format, potentially\n    resulting in the execution of arbitrary code when decoded by the\n    application using the zlib library.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All zlib users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-libs/zlib-1.2.2-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CAN-2005-2096",
-        "Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2096"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    taviso\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-07-04T06:51:26Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-07-06T14:21:00Z"
-    }
-  ]
+	"ID": "200507-05",
+	"Title": "zlib: Buffer overflow",
+	"Synopsis": "\n    A buffer overflow has been discovered in zlib, potentially resulting in the\n    execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "zlib",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-07-06",
+	"Revised": {
+		"Text": "2005-07-06",
+		"Count": "01"
+	},
+	"Bug": [
+		"98121"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-libs/zlib",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.2.2-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.2.2-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    zlib is a widely used free and patent unencumbered data\n    compression library.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Tavis Ormandy of the Gentoo Linux Security Audit Team discovered a\n    buffer overflow in zlib. A bounds checking operation failed to take\n    invalid data into account, allowing a specifically malformed deflate\n    data stream to overrun a buffer.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    An attacker could construct a malformed data stream, embedding it\n    within network communication or an application file format, potentially\n    resulting in the execution of arbitrary code when decoded by the\n    application using the zlib library.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All zlib users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-libs/zlib-1.2.2-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CAN-2005-2096",
+				"Link": "https://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2005-2096"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    taviso\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-07-04T06:51:26Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-07-06T14:21:00Z"
+		}
+	]
 }

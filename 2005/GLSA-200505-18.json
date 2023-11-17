@@ -1,103 +1,103 @@
 {
-  "ID": "200505-18",
-  "Title": "Net-SNMP: fixproc insecure temporary file creation",
-  "Synopsis": "\n    Net-SNMP creates temporary files in an insecure manner, possibly allowing\n    the execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "net-snmp",
-    "Type": "ebuild"
-  },
-  "Announced": "2005-05-23",
-  "Revised": {
-    "Text": "2006-05-22",
-    "Count": "02"
-  },
-  "Bug": [
-    "91792"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-analyzer/net-snmp",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "5.2.1-r1",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "5.2.1-r1",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    Net-SNMP is a suite of applications used to implement the Simple\n    Network Management Protocol.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    The fixproc application of Net-SNMP creates temporary files with\n    predictable filenames.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    A malicious local attacker could exploit a race condition to change the\n    content of the temporary files before they are executed by fixproc,\n    possibly leading to the execution of arbitrary code. A local attacker\n    could also create symbolic links in the temporary files directory,\n    pointing to a valid file somewhere on the filesystem. When fixproc is\n    executed, this would result in the file being overwritten.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All Net-SNMP users should upgrade to the latest available version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/net-snmp-5.2.1-r1\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2005-1740",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1740"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    vorlon078\n  ",
-      "Tag": "requester",
-      "Timestamp": "2005-05-22T14:27:59Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2005-05-22T15:33:11Z"
-    },
-    {
-      "Text": "\n    DerCorny\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2005-05-22T23:22:24Z"
-    }
-  ]
+	"ID": "200505-18",
+	"Title": "Net-SNMP: fixproc insecure temporary file creation",
+	"Synopsis": "\n    Net-SNMP creates temporary files in an insecure manner, possibly allowing\n    the execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "net-snmp",
+		"Type": "ebuild"
+	},
+	"Announced": "2005-05-23",
+	"Revised": {
+		"Text": "2006-05-22",
+		"Count": "02"
+	},
+	"Bug": [
+		"91792"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-analyzer/net-snmp",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "5.2.1-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "5.2.1-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    Net-SNMP is a suite of applications used to implement the Simple\n    Network Management Protocol.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    The fixproc application of Net-SNMP creates temporary files with\n    predictable filenames.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    A malicious local attacker could exploit a race condition to change the\n    content of the temporary files before they are executed by fixproc,\n    possibly leading to the execution of arbitrary code. A local attacker\n    could also create symbolic links in the temporary files directory,\n    pointing to a valid file somewhere on the filesystem. When fixproc is\n    executed, this would result in the file being overwritten.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All Net-SNMP users should upgrade to the latest available version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-analyzer/net-snmp-5.2.1-r1\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2005-1740",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-1740"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    vorlon078\n  ",
+			"Tag": "requester",
+			"Timestamp": "2005-05-22T14:27:59Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2005-05-22T15:33:11Z"
+		},
+		{
+			"Text": "\n    DerCorny\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2005-05-22T23:22:24Z"
+		}
+	]
 }

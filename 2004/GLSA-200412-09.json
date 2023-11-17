@@ -1,107 +1,107 @@
 {
-  "ID": "200412-09",
-  "Title": "ncpfs: Buffer overflow in ncplogin and ncpmap",
-  "Synopsis": "\n    ncpfs is vulnerable to a buffer overflow that could lead to local execution\n    of arbitrary code with elevated privileges.\n  ",
-  "Product": {
-    "Text": "ncpfs",
-    "Type": "ebuild"
-  },
-  "Announced": "2004-12-15",
-  "Revised": {
-    "Text": "2004-12-15",
-    "Count": "01"
-  },
-  "Bug": [
-    "72820"
-  ],
-  "Access": "local",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "net-fs/ncpfs",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "2.2.5",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "2.2.5",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    ncpfs is a NCP protocol network filesystem that allows access to\n    Netware services, for example to mount volumes of NetWare servers or\n    print to NetWare print queues.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Karol Wiesek discovered a buffer overflow in the handling of the\n    '-T' option in the ncplogin and ncpmap utilities, which are both\n    installed as SUID root by default.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "high",
-    "Text": "\n    <p>\n    A local attacker could trigger the buffer overflow by calling one\n    of these utilities with a carefully crafted command line, potentially\n    resulting in execution of arbitrary code with root privileges.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All ncpfs users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-fs/ncpfs-2.2.5\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "Full Disclosure Advisory",
-        "Link": "http://lists.netsys.com/pipermail/full-disclosure/2004-November/029563.html"
-      },
-      {
-        "Text": "CAN-2004-1079",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1079"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    jaervosz\n  ",
-      "Tag": "requester",
-      "Timestamp": "2004-12-09T07:35:34Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2004-12-14T14:41:20Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2004-12-14T16:10:38Z"
-    }
-  ]
+	"ID": "200412-09",
+	"Title": "ncpfs: Buffer overflow in ncplogin and ncpmap",
+	"Synopsis": "\n    ncpfs is vulnerable to a buffer overflow that could lead to local execution\n    of arbitrary code with elevated privileges.\n  ",
+	"Product": {
+		"Text": "ncpfs",
+		"Type": "ebuild"
+	},
+	"Announced": "2004-12-15",
+	"Revised": {
+		"Text": "2004-12-15",
+		"Count": "01"
+	},
+	"Bug": [
+		"72820"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-fs/ncpfs",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.2.5",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.2.5",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    ncpfs is a NCP protocol network filesystem that allows access to\n    Netware services, for example to mount volumes of NetWare servers or\n    print to NetWare print queues.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Karol Wiesek discovered a buffer overflow in the handling of the\n    '-T' option in the ncplogin and ncpmap utilities, which are both\n    installed as SUID root by default.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n    <p>\n    A local attacker could trigger the buffer overflow by calling one\n    of these utilities with a carefully crafted command line, potentially\n    resulting in execution of arbitrary code with root privileges.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All ncpfs users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=net-fs/ncpfs-2.2.5\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "Full Disclosure Advisory",
+				"Link": "http://lists.netsys.com/pipermail/full-disclosure/2004-November/029563.html"
+			},
+			{
+				"Text": "CAN-2004-1079",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-1079"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    jaervosz\n  ",
+			"Tag": "requester",
+			"Timestamp": "2004-12-09T07:35:34Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2004-12-14T14:41:20Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2004-12-14T16:10:38Z"
+		}
+	]
 }

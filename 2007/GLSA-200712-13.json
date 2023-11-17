@@ -1,103 +1,103 @@
 {
-  "ID": "200712-13",
-  "Title": "E2fsprogs: Multiple buffer overflows",
-  "Synopsis": "\n    Multiple heap-based buffer overflows in E2fsprogs could result in the\n    execution of arbitrary code.\n  ",
-  "Product": {
-    "Text": "e2fsprogs",
-    "Type": "ebuild"
-  },
-  "Announced": "2007-12-18",
-  "Revised": {
-    "Text": "2007-12-18",
-    "Count": "01"
-  },
-  "Bug": [
-    "201546"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "sys-fs/e2fsprogs",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "1.40.3",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "1.40.3",
-            "Range": "lt",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    E2fsprogs provides utilities for use with the ext2 and ext3 file\n    systems including the libext2fs library that allows user-level programs\n    to manipulate an ext2 or ext3 file system.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Rafal Wojtczuk (McAfee AVERT Research) discovered multiple integer\n    overflows in libext2fs, that are triggered when processing information\n    from within the file system, resulting in heap-based buffer overflows.\n    </p>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    An attacker could entice a user to process a specially-crafted ext2 or\n    ext3 file system image (with tools linking against libext2fs, e.g.\n    fsck, forensic tools or Xen's pygrub), possibly resulting in the\n    execution of arbitrary code with the privileges of the user running the\n    application.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All E2fsprogs users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-fs/e2fsprogs-1.40.3\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2007-5497",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5497"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "requester",
-      "Timestamp": "2007-12-12T09:56:09Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2007-12-13T21:11:04Z"
-    },
-    {
-      "Text": "\n    rbu\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2007-12-13T23:03:39Z"
-    }
-  ]
+	"ID": "200712-13",
+	"Title": "E2fsprogs: Multiple buffer overflows",
+	"Synopsis": "\n    Multiple heap-based buffer overflows in E2fsprogs could result in the\n    execution of arbitrary code.\n  ",
+	"Product": {
+		"Text": "e2fsprogs",
+		"Type": "ebuild"
+	},
+	"Announced": "2007-12-18",
+	"Revised": {
+		"Text": "2007-12-18",
+		"Count": "01"
+	},
+	"Bug": [
+		"201546"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-fs/e2fsprogs",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.40.3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.40.3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    E2fsprogs provides utilities for use with the ext2 and ext3 file\n    systems including the libext2fs library that allows user-level programs\n    to manipulate an ext2 or ext3 file system.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Rafal Wojtczuk (McAfee AVERT Research) discovered multiple integer\n    overflows in libext2fs, that are triggered when processing information\n    from within the file system, resulting in heap-based buffer overflows.\n    </p>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    An attacker could entice a user to process a specially-crafted ext2 or\n    ext3 file system image (with tools linking against libext2fs, e.g.\n    fsck, forensic tools or Xen's pygrub), possibly resulting in the\n    execution of arbitrary code with the privileges of the user running the\n    application.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All E2fsprogs users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=sys-fs/e2fsprogs-1.40.3\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2007-5497",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5497"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "requester",
+			"Timestamp": "2007-12-12T09:56:09Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2007-12-13T21:11:04Z"
+		},
+		{
+			"Text": "\n    rbu\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2007-12-13T23:03:39Z"
+		}
+	]
 }

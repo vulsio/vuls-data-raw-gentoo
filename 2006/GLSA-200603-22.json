@@ -1,142 +1,142 @@
 {
-  "ID": "200603-22",
-  "Title": "PHP: Format string and XSS vulnerabilities",
-  "Synopsis": "\n    Multiple vulnerabilities in PHP allow remote attackers to inject arbitrary\n    HTTP headers, perform cross site scripting or in some cases execute\n    arbitrary code.\n  ",
-  "Product": {
-    "Text": "php",
-    "Type": "ebuild"
-  },
-  "Announced": "2006-03-22",
-  "Revised": {
-    "Text": "2006-03-22",
-    "Count": "01"
-  },
-  "Bug": [
-    "125878"
-  ],
-  "Access": "remote",
-  "Affected": {
-    "Package": [
-      {
-        "Name": "dev-lang/php",
-        "Auto": "yes",
-        "Arch": "*",
-        "Unaffected": [
-          {
-            "Text": "5.1.2",
-            "Range": "ge",
-            "Slot": ""
-          }
-        ],
-        "Vulnerable": [
-          {
-            "Text": "4.4.2",
-            "Range": "lt",
-            "Slot": ""
-          },
-          {
-            "Text": "5.1.1",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "5.0.5",
-            "Range": "rge",
-            "Slot": ""
-          },
-          {
-            "Text": "5.0.4",
-            "Range": "rge",
-            "Slot": ""
-          }
-        ]
-      }
-    ],
-    "Service": {
-      "Text": "",
-      "Type": "",
-      "Fixed": ""
-    }
-  },
-  "Background": {
-    "Text": "\n    <p>\n    PHP is a general-purpose scripting language widely used to develop\n    web-based applications. It can run on a web server with the mod_php\n    module or the CGI version and also stand-alone in a CLI.\n    </p>\n  "
-  },
-  "Description": {
-    "Text": "\n    <p>\n    Stefan Esser of the Hardened PHP project has reported a few\n    vulnerabilities found in PHP:\n    </p>\n    <ul>\n    <li>Input passed to the session\n    ID in the session extension isn't properly sanitised before being\n    returned to the user via a \"Set-Cookie\" HTTP header, which can contain\n    arbitrary injected data.</li>\n    <li>A format string error while\n    processing error messages using the mysqli extension in version 5.1 and\n    above.</li>\n    </ul>\n  "
-  },
-  "Impact": {
-    "Type": "normal",
-    "Text": "\n    <p>\n    By sending a specially crafted request, a remote attacker can\n    exploit this vulnerability to inject arbitrary HTTP headers, which will\n    be included in the response sent to the user. The format string\n    vulnerability may be exploited to execute arbitrary code.\n    </p>\n  "
-  },
-  "Workaround": {
-    "Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
-  },
-  "Resolution": {
-    "Text": "\n    \n    \n    \n    \n  ",
-    "P": [
-      {
-        "Text": "\n    All PHP 5.x users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      },
-      {
-        "Text": "\n    All PHP 4.x users should upgrade to the latest version:\n    ",
-        "URI": {
-          "Text": "",
-          "Link": ""
-        },
-        "Br": null,
-        "I": null,
-        "Code": "",
-        "P": ""
-      }
-    ],
-    "Code": [
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/php-5.1.2\"",
-      "\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/php-4.4.2\""
-    ]
-  },
-  "References": {
-    "URI": [
-      {
-        "Text": "CVE-2006-0207",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0207"
-      },
-      {
-        "Text": "CVE-2006-0208",
-        "Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0208"
-      },
-      {
-        "Text": "Hardened-PHP Advisory 01/2006",
-        "Link": "https://www.hardened-php.net/advisory_022006.112.html"
-      },
-      {
-        "Text": "Hardened-PHP Advisory 02/2006",
-        "Link": "https://www.hardened-php.net/advisory_012006.113.html"
-      }
-    ]
-  },
-  "Metadata": [
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "requester",
-      "Timestamp": "2006-03-14T21:28:04Z"
-    },
-    {
-      "Text": "\n    koon\n  ",
-      "Tag": "bugReady",
-      "Timestamp": "2006-03-14T21:28:11Z"
-    },
-    {
-      "Text": "\n    adir\n  ",
-      "Tag": "submitter",
-      "Timestamp": "2006-03-18T03:27:49Z"
-    }
-  ]
+	"ID": "200603-22",
+	"Title": "PHP: Format string and XSS vulnerabilities",
+	"Synopsis": "\n    Multiple vulnerabilities in PHP allow remote attackers to inject arbitrary\n    HTTP headers, perform cross site scripting or in some cases execute\n    arbitrary code.\n  ",
+	"Product": {
+		"Text": "php",
+		"Type": "ebuild"
+	},
+	"Announced": "2006-03-22",
+	"Revised": {
+		"Text": "2006-03-22",
+		"Count": "01"
+	},
+	"Bug": [
+		"125878"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-lang/php",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "5.1.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.4.2",
+						"Range": "lt",
+						"Slot": ""
+					},
+					{
+						"Text": "5.1.1",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "5.0.5",
+						"Range": "rge",
+						"Slot": ""
+					},
+					{
+						"Text": "5.0.4",
+						"Range": "rge",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n    <p>\n    PHP is a general-purpose scripting language widely used to develop\n    web-based applications. It can run on a web server with the mod_php\n    module or the CGI version and also stand-alone in a CLI.\n    </p>\n  "
+	},
+	"Description": {
+		"Text": "\n    <p>\n    Stefan Esser of the Hardened PHP project has reported a few\n    vulnerabilities found in PHP:\n    </p>\n    <ul>\n    <li>Input passed to the session\n    ID in the session extension isn't properly sanitised before being\n    returned to the user via a \"Set-Cookie\" HTTP header, which can contain\n    arbitrary injected data.</li>\n    <li>A format string error while\n    processing error messages using the mysqli extension in version 5.1 and\n    above.</li>\n    </ul>\n  "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n    <p>\n    By sending a specially crafted request, a remote attacker can\n    exploit this vulnerability to inject arbitrary HTTP headers, which will\n    be included in the response sent to the user. The format string\n    vulnerability may be exploited to execute arbitrary code.\n    </p>\n  "
+	},
+	"Workaround": {
+		"Text": "\n    <p>\n    There is no known workaround at this time.\n    </p>\n  "
+	},
+	"Resolution": {
+		"Text": "\n    \n    \n    \n    \n  ",
+		"P": [
+			{
+				"Text": "\n    All PHP 5.x users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "\n    All PHP 4.x users should upgrade to the latest version:\n    ",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/php-5.1.2\"",
+			"\n    # emerge --sync\n    # emerge --ask --oneshot --verbose \">=dev-lang/php-4.4.2\""
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2006-0207",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0207"
+			},
+			{
+				"Text": "CVE-2006-0208",
+				"Link": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-0208"
+			},
+			{
+				"Text": "Hardened-PHP Advisory 01/2006",
+				"Link": "https://www.hardened-php.net/advisory_022006.112.html"
+			},
+			{
+				"Text": "Hardened-PHP Advisory 02/2006",
+				"Link": "https://www.hardened-php.net/advisory_012006.113.html"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "requester",
+			"Timestamp": "2006-03-14T21:28:04Z"
+		},
+		{
+			"Text": "\n    koon\n  ",
+			"Tag": "bugReady",
+			"Timestamp": "2006-03-14T21:28:11Z"
+		},
+		{
+			"Text": "\n    adir\n  ",
+			"Tag": "submitter",
+			"Timestamp": "2006-03-18T03:27:49Z"
+		}
+	]
 }
