@@ -1,0 +1,98 @@
+{
+	"ID": "202311-07",
+	"Title": "AIDE: Root Privilege Escalation",
+	"Synopsis": "A vulnerability has been found in AIDE which can lead to root privilege escalation.",
+	"Product": {
+		"Text": "aide",
+		"Type": "ebuild"
+	},
+	"Announced": "2023-11-25",
+	"Revised": {
+		"Text": "2023-11-25",
+		"Count": "1"
+	},
+	"Bug": [
+		"831658"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-forensics/aide",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.17.4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.17.4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>AIDE (Advanced Intrusion Detection Environment) is a file and directory integrity checker.\r\n\r\nIt creates a database from the regular expression rules that it finds from the config file(s). Once this database is initialized it can be used to verify the integrity of the files. It has several message digest algorithms (see below) that are used to check the integrity of the file. All of the usual file attributes can also be checked for inconsistencies.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>A vulnerability has been discovered in AIDE. Please review the CVE identifier referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n        <p>AIDE before 0.17.4 allows local users to obtain root privileges via crafted file metadata (such as XFS extended attributes or tmpfs ACLs), because of a heap-based buffer overflow.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All AIDE users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=app-forensics/aide-0.17.4\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2021-45417",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-45417"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2023-11-25T08:24:47.076936Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2023-11-25T08:24:47.079410Z"
+		}
+	]
+}

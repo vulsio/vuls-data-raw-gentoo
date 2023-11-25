@@ -1,0 +1,98 @@
+{
+	"ID": "202311-08",
+	"Title": "GNU Libmicrohttpd: Buffer Overflow Vulnerability",
+	"Synopsis": "A buffer overflow vulnerability has been discovered in GNU Libmicrohttpd.",
+	"Product": {
+		"Text": "libmicrohttpd",
+		"Type": "ebuild"
+	},
+	"Announced": "2023-11-25",
+	"Revised": {
+		"Text": "2023-11-25",
+		"Count": "1"
+	},
+	"Bug": [
+		"778296"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-libs/libmicrohttpd",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.9.70",
+						"Range": "gt",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.9.70",
+						"Range": "eq",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>GNU libmicrohttpd is a small C library that makes it easy to run an HTTP server as part of another application. GNU Libmicrohttpd is free software and part of the GNU project.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>A buffer overflow vulnerability has been discovered in GNU Libmicrohttpd. Please review the CVE identifier referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n        <p>A missing bounds check in the post_process_urlencoded function leads to a buffer overflow, allowing a remote attacker to write arbitrary data in an application that uses libmicrohttpd. The highest threat from this vulnerability is to data confidentiality and integrity as well as system availability.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All GNU Libmicrohttpd users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">net-libs/libmicrohttpd-0.9.70\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2021-3466",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-3466"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2023-11-25T08:29:39.007233Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2023-11-25T08:29:39.010725Z"
+		}
+	]
+}
