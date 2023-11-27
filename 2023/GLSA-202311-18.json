@@ -1,0 +1,107 @@
+{
+	"ID": "202311-18",
+	"Title": "GLib: Multiple Vulnerabilities",
+	"Synopsis": "Multiple vulnerabilities have been discovered in GLib.",
+	"Product": {
+		"Text": "glib",
+		"Type": "ebuild"
+	},
+	"Announced": "2023-11-27",
+	"Revised": {
+		"Text": "2023-11-27",
+		"Count": "1"
+	},
+	"Bug": [
+		"886197",
+		"887807"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-libs/glib",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.74.4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.74.4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>GLib is a library providing a number of GNOME&#39;s core objects and functions.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>Multiple vulnerabilities have been discovered in GLib. Please review the referenced CVEs for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n        <p>GVariant deserialization is vulnerable to an exponential blowup issue where a crafted GVariant can cause excessive processing, leading to denial of service.\r\n\r\nGVariant deserialization fails to validate that the input conforms to the expected format, leading to denial of service.\r\n\r\nGVariant deserialization is vulnerable to a slowdown issue where a crafted GVariant can cause excessive processing, leading to denial of service.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All GLib users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=dev-libs/glib-2.74.4\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2023-29499",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2023-29499"
+			},
+			{
+				"Text": "CVE-2023-32611",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2023-32611"
+			},
+			{
+				"Text": "CVE-2023-32665",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2023-32665"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2023-11-27T12:24:33.325998Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2023-11-27T12:24:33.328076Z"
+		}
+	]
+}
