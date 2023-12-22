@@ -1,0 +1,98 @@
+{
+	"ID": "202312-08",
+	"Title": "LibRaw: Heap Buffer Overflow",
+	"Synopsis": "A vulnerability has been found in LibRaw where a heap buffer overflow may lead to an application crash.",
+	"Product": {
+		"Text": "libraw",
+		"Type": "ebuild"
+	},
+	"Announced": "2023-12-22",
+	"Revised": {
+		"Text": "2023-12-22",
+		"Count": "1"
+	},
+	"Bug": [
+		"908041"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-libs/libraw",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.21.1-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.21.1-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>LibRaw is a library for reading RAW files obtained from digital photo cameras.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>A vulnerability has been discovered in LibRaw. Please review the CVE identifier referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n        <p>A heap-buffer-overflow in raw2image_ex() caused by a maliciously crafted file may lead to an application crash.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All LibRaw users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=media-libs/libraw-0.21.1-r1\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2023-1729",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2023-1729"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2023-12-22T11:43:10.877313Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2023-12-22T11:43:10.880686Z"
+		}
+	]
+}
