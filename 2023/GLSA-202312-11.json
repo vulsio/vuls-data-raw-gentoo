@@ -1,0 +1,98 @@
+{
+	"ID": "202312-11",
+	"Title": "SABnzbd: Remote Code Execution",
+	"Synopsis": "A vulnerability has been found in SABnzbd which allows for remote code execution.",
+	"Product": {
+		"Text": "sabnzbd",
+		"Type": "ebuild"
+	},
+	"Announced": "2023-12-23",
+	"Revised": {
+		"Text": "2023-12-23",
+		"Count": "1"
+	},
+	"Bug": [
+		"908032"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-nntp/sabnzbd",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.0.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.0.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>Free and easy binary newsreader with web interface.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>A vulnerability has been discovered in SABnzbd. Please review the CVE identifier referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n        <p>A design flaw was discovered in SABnzbd that could allow remote code execution. Manipulating the Parameters setting in the Notification Script functionality allows code execution with the privileges of the SABnzbd process. Exploiting the vulnerabilities requires access to the web interface. Remote exploitation is possible if users exposed their setup to the internet or other untrusted networks without setting a username/password. By default SABnzbd is only accessible from `localhost`, with no authentication required for the web interface.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All SABnzbd users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=net-nntp/sabnzbd-4.0.2\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2023-34237",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2023-34237"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2023-12-23T08:21:16.397965Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2023-12-23T08:21:16.402529Z"
+		}
+	]
+}
