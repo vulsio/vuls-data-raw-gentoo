@@ -1,0 +1,98 @@
+{
+	"ID": "202401-01",
+	"Title": "Joblib: Arbitrary Code Execution",
+	"Synopsis": "A vulnerability has been found in Joblib which allows for arbitrary code execution.",
+	"Product": {
+		"Text": "joblib",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-01-02",
+	"Revised": {
+		"Text": "2024-01-02",
+		"Count": "1"
+	},
+	"Bug": [
+		"873151"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-python/joblib",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.2.0",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.2.0",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>Joblib is a set of tools to provide lightweight pipelining in Python. In particular:\r\n\r\n1. transparent disk-caching of functions and lazy re-evaluation (memoize pattern)\r\n2. easy simple parallel computing\r\n\r\nJoblib is optimized to be fast and robust on large data in particular and has specific optimizations for numpy arrays.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>A vulnerability has been discovered in Joblib. Please review the CVE identifier referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n        <p>Joblib is vulnerable to arbitrary code execution via the pre_dispatch flag in Parallel() class due to the eval() statement.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All Joblib users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=dev-python/joblib-1.2.0\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2022-21797",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-21797"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-01-02T14:38:14.200471Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-01-02T14:38:14.202528Z"
+		}
+	]
+}
