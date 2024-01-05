@@ -1,0 +1,98 @@
+{
+	"ID": "202401-05",
+	"Title": "RDoc: Command Injection",
+	"Synopsis": "A vulnerability has been found in RDoc which allows for command injection.",
+	"Product": {
+		"Text": "rdoc",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-01-05",
+	"Revised": {
+		"Text": "2024-01-05",
+		"Count": "1"
+	},
+	"Bug": [
+		"801301"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-ruby/rdoc",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "6.3.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "6.3.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>RDoc produces HTML and command-line documentation for Ruby projects.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>A vulnerability has been discovered in RDoc. Please review the CVE identifier referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>RDoc used to call Kernel#open to open a local file. If a Ruby project has a file whose name starts with | and ends with tags, the command following the pipe character is executed. A malicious Ruby project could exploit it to run an arbitrary command execution against a user who attempts to run the rdoc command.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All RDoc users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=dev-ruby/rdoc-6.3.2\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2021-31799",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-31799"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-01-05T13:34:12.712050Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-01-05T13:34:12.715693Z"
+		}
+	]
+}
