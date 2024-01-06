@@ -1,0 +1,106 @@
+{
+	"ID": "202401-07",
+	"Title": "R: Directory Traversal",
+	"Synopsis": "A vulnerability was found in R which could allow for remote code execution.",
+	"Product": {
+		"Text": "R",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-01-06",
+	"Revised": {
+		"Text": "2024-01-06",
+		"Count": "1"
+	},
+	"Bug": [
+		"765361"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-lang/R",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.0.4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.0.4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>R is a language and environment for statistical computing and graphics.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>The native R package installation mechanisms do not sufficiently validate installed source packages for path traversal.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>Installation of a malicious R package could result in an arbitrary file overwrite which could result in arbitrary code execution, as might be seen with the overwrite of an authorized_keys file.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All R users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=dev-lang/R-4.0.4\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2020-27637",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-27637"
+			},
+			{
+				"Text": "-fno-common",
+				"Link": ""
+			},
+			{
+				"Text": "gcc-10",
+				"Link": ""
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "ajak",
+			"Tag": "requester",
+			"Timestamp": "2024-01-06T09:03:55.341282Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-01-06T09:03:55.343880Z"
+		}
+	]
+}
