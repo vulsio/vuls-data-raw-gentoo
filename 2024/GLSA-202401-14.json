@@ -1,0 +1,98 @@
+{
+	"ID": "202401-14",
+	"Title": "RedCloth: ReDoS Vulnerability",
+	"Synopsis": "A denial of service vulnerability has been found in RedCloth.",
+	"Product": {
+		"Text": "redcloth",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-01-10",
+	"Revised": {
+		"Text": "2024-01-10",
+		"Count": "1"
+	},
+	"Bug": [
+		"908035"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-ruby/redcloth",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.3.2-r5",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.3.2-r5",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>RedCloth is a module for using Textile in Ruby</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>A vulnerability has been discovered in RedCloth. Please review the CVE identifier referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "low",
+		"Text": "\n        <p>RedCloth is vulnerable to a regular expression denial of service (&#34;ReDoS&#34;) attack via the sanitize_html function.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All RedCloth users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=dev-ruby/redcloth-4.3.2-r5\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2023-31606",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2023-31606"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "ajak",
+			"Tag": "requester",
+			"Timestamp": "2024-01-10T13:10:26.781895Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-01-10T13:10:26.785113Z"
+		}
+	]
+}
