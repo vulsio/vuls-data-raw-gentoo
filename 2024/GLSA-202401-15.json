@@ -1,0 +1,98 @@
+{
+	"ID": "202401-15",
+	"Title": "Prometheus SNMP Exporter: Basic Authentication Bypass",
+	"Synopsis": "A vulnerability has been found in Prometheus SNMP Exporter which could allow for authentication bypass.",
+	"Product": {
+		"Text": "snmp_exporter",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-01-12",
+	"Revised": {
+		"Text": "2024-01-12",
+		"Count": "1"
+	},
+	"Bug": [
+		"883649"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-metrics/snmp_exporter",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.24.1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.24.1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>The Prometheus SNMP Exporter is the recommended way to expose SNMP data in a format which Prometheus can ingest.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>A vulnerability has been discovered in Prometheus SNMP Exporter. Please review the CVE identifier referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "low",
+		"Text": "\n        <p>A user who knows the password hash of a user capable of performing HTTP basic authentication with a vulnerable exporter can use the hash to successfully authenticate as that user via cache manipulation, without knowing the password from which the hash was derived.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All Prometheus SNMP Exporter users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=app-metrics/snmp_exporter-0.24.1\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2022-46146",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-46146"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "ajak",
+			"Tag": "requester",
+			"Timestamp": "2024-01-12T10:52:37.002879Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-01-12T10:52:37.005288Z"
+		}
+	]
+}
