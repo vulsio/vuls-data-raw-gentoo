@@ -1,0 +1,98 @@
+{
+	"ID": "202401-17",
+	"Title": "libgit2: Privilege Escalation Vulnerability",
+	"Synopsis": "A vulnerability has been found in libgit2 which could result in privilege escalation.",
+	"Product": {
+		"Text": "libgit2",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-01-14",
+	"Revised": {
+		"Text": "2024-01-14",
+		"Count": "1"
+	},
+	"Bug": [
+		"857792"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-libs/libgit2",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.4.4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.4.4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>libgit2 is a portable, pure C implementation of the Git core methods provided as a re-entrant linkable library with a solid API.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>A vulnerability has been discovered in libgit2. Please review the CVE identifier referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>Usages of a malicious crafted Git repository could allow the creator of the repository to elevate privileges to those of the user accessing the repository.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>Administrators can ensure that their usages of libgit2 only interact with repositories which have only been modified by trusted users.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All libgit2 users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=dev-libs/libgit2-1.4.4\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2022-29187",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-29187"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "ajak",
+			"Tag": "requester",
+			"Timestamp": "2024-01-14T09:13:55.679015Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-01-14T09:13:55.681859Z"
+		}
+	]
+}
