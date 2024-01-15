@@ -1,0 +1,106 @@
+{
+	"ID": "202401-22",
+	"Title": "libspf2: Multiple vulnerabilities",
+	"Synopsis": "Multiple vulnerabilities have been discovered in libspf2, the worst of which can lead to remote code execution.",
+	"Product": {
+		"Text": "libspf2",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-01-15",
+	"Revised": {
+		"Text": "2024-01-15",
+		"Count": "1"
+	},
+	"Bug": [
+		"807739"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "mail-filter/libspf2",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.2.11",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.2.11",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>libspf2 is a library that implements the Sender Policy Framework, allowing mail transfer agents to make sure that an email is authorized by the domain name that it is coming from.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>Multiple vulnerabilities have been discovered in libspf2. Please review the CVE identifiers referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>Various buffer overflows have been identified that can lead to denial of service and possibly arbitrary code execution.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All libspf2 users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=mail-filter/libspf2-1.2.11\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2021-20314",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-20314"
+			},
+			{
+				"Text": "CVE-2021-33912",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-33912"
+			},
+			{
+				"Text": "CVE-2021-33913",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-33913"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-01-15T15:55:54.972939Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-01-15T15:55:54.975403Z"
+		}
+	]
+}
