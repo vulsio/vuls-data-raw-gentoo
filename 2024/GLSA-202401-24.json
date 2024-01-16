@@ -1,0 +1,103 @@
+{
+	"ID": "202401-24",
+	"Title": "Nettle: Denial of Service",
+	"Synopsis": "Multiple denial of service vulnerabilities have been discovered in Nettle.",
+	"Product": {
+		"Text": "nettle",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-01-16",
+	"Revised": {
+		"Text": "2024-01-16",
+		"Count": "1"
+	},
+	"Bug": [
+		"806839",
+		"907673"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-libs/nettle",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.9.1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.9.1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>Nettle is a cryptographic library that is designed to fit easily in almost any context: In cryptographic toolkits for object-oriented languages, such as C++, Python, or Pike, in applications like lsh or GnuPG, or even in kernel space.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>Multiple vulnerabilities have been discovered in Nettle. Please review the CVE identifiers referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>A flaw was found in the way nettle&#39;s RSA decryption functions handled specially crafted ciphertext. An attacker could use this flaw to provide a manipulated ciphertext leading to application crash and denial of service.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All Nettle users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=dev-libs/nettle-3.9.1\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2021-3580",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-3580"
+			},
+			{
+				"Text": "CVE-2023-36660",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2023-36660"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-01-16T13:42:42.515739Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-01-16T13:42:42.518143Z"
+		}
+	]
+}
