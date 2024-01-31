@@ -1,0 +1,167 @@
+{
+	"ID": "202401-30",
+	"Title": "X.Org X Server, XWayland: Multiple Vulnerabilities",
+	"Synopsis": "Multiple vulnerabilities have been discovered in the Xorg Server and XWayland, the worst of which can result in privilege escalation or remote code execution.",
+	"Product": {
+		"Text": "xorg-server,xwayland",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-01-31",
+	"Revised": {
+		"Text": "2024-01-31",
+		"Count": "1"
+	},
+	"Bug": [
+		"916254",
+		"919803",
+		"922395"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "x11-base/xorg-server",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "21.1.11",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "21.1.11",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "x11-base/xwayland",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "23.2.4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "23.2.4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>The X Window System is a graphical windowing system based on a client/server model.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>Multiple vulnerabilities have been discovered in X.Org X Server and XWayland. Please review the CVE identifiers referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>The X server can be crashed by a malicious client, or potentially be compromised for remote code execution in environments with X11 forwarding.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>Users can ensure no untrusted clients can access the running X implementation.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n        \n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All X.Org X Server users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "All XWayland users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=x11-base/xorg-server-21.1.11\"\n        ",
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=x11-base/xwayland-23.2.4\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2023-5367",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2023-5367"
+			},
+			{
+				"Text": "CVE-2023-5380",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2023-5380"
+			},
+			{
+				"Text": "CVE-2023-6377",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2023-6377"
+			},
+			{
+				"Text": "CVE-2023-6478",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2023-6478"
+			},
+			{
+				"Text": "CVE-2023-6816",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2023-6816"
+			},
+			{
+				"Text": "CVE-2024-0229",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2024-0229"
+			},
+			{
+				"Text": "CVE-2024-0408",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2024-0408"
+			},
+			{
+				"Text": "CVE-2024-0409",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2024-0409"
+			},
+			{
+				"Text": "CVE-2024-21885",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2024-21885"
+			},
+			{
+				"Text": "CVE-2024-21886",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2024-21886"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "ajak",
+			"Tag": "requester",
+			"Timestamp": "2024-01-31T11:33:19.783411Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-01-31T11:33:19.787307Z"
+		}
+	]
+}
