@@ -1,0 +1,98 @@
+{
+	"ID": "202402-02",
+	"Title": "SDDM: Privilege Escalation",
+	"Synopsis": "A vulnerability has been discovered in SDDM which can lead to privilege escalation.",
+	"Product": {
+		"Text": "sddm",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-02-03",
+	"Revised": {
+		"Text": "2024-02-03",
+		"Count": "1"
+	},
+	"Bug": [
+		"753104"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "x11-misc/sddm",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.18.1-r6",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.18.1-r6",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>SDDM is a modern display manager for X11 and Wayland sessions aiming to be fast, simple and beautiful. It uses modern technologies like QtQuick, which in turn gives the designer the ability to create smooth, animated user interfaces.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>A vulnerability has been discovered in SDDM. Please review the CVE identifier referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>SDDM passes the -auth and -displayfd command line arguments when\r\nstarting the Xserver. It then waits for the display number to be\r\nreceived from the Xserver via the `displayfd`, before the Xauthority\r\nfile specified via the `-auth` parameter is actually written. This\r\nresults in a race condition, creating a time window in which no valid\r\nXauthority file is existing while the Xserver is already running.\r\n\r\nThe X.Org server, when encountering a non-existing, empty or\r\ncorrupt/incomplete Xauthority file, will grant any connecting client\r\naccess to the Xorg display. A local unprivileged attacker can thus\r\ncreate an unauthorized connection to the Xserver and grab e.g. keyboard\r\ninput events from other legitimate users accessing the Xserver.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All SDDM users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=x11-misc/sddm-0.18.1-r6\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2020-28049",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-28049"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-02-03T06:18:59.426090Z"
+		},
+		{
+			"Text": "ajak",
+			"Tag": "submitter",
+			"Timestamp": "2024-02-03T06:18:59.429353Z"
+		}
+	]
+}
