@@ -1,0 +1,98 @@
+{
+	"ID": "202402-19",
+	"Title": "libcaca: Arbitary Code Execution",
+	"Synopsis": "A vulnerability has been discovered in libcaca which can lead to arbitrary code execution.",
+	"Product": {
+		"Text": "libcaca",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-02-18",
+	"Revised": {
+		"Text": "2024-02-18",
+		"Count": "1"
+	},
+	"Bug": [
+		"772317"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-libs/libcaca",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.99_beta19-r4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.99_beta19-r4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>libcaca is a library that creates colored ASCII-art graphics.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>A vulnerability has been discovered in libcaca. Please review the CVE identifier referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>A buffer overflow issue in caca_resize function in libcaca/caca/canvas.c may lead to local execution of arbitrary code in the user context.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All libcaca users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=media-libs/libcaca-0.99_beta19-r4\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2021-3410",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-3410"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-02-18T10:22:11.346423Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-02-18T10:22:11.349349Z"
+		}
+	]
+}

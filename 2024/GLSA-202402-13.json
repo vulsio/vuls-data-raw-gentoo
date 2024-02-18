@@ -1,0 +1,92 @@
+{
+	"ID": "202402-13",
+	"Title": "TACACS+: Remote Code Execution",
+	"Synopsis": "A vulnerability has been discovered in TACACS+ which could lead to remote code execution.",
+	"Product": {
+		"Text": "tac_plus",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-02-18",
+	"Revised": {
+		"Text": "2024-02-18",
+		"Count": "1"
+	},
+	"Bug": [
+		"918536"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-nds/tac_plus",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": null,
+				"Vulnerable": [
+					{
+						"Text": "4.0.4.27a-r3",
+						"Range": "le",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>An updated version of Cisco&#39;s TACACS+ server.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>A vulnerabilitiy has been discovered in TACACS+. Please review the CVE identifier referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n        <p>A lack of input validation exists in tac_plus which, when pre or post auth commands are enabled, allows an attacker who can control the username, rem-addr, or NAC address sent to tac_plus to inject shell commands and gain remote code execution on the tac_plus server.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "Gentoo has discontinued support for TACACS+. We recommend that users unmerge it:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --ask --depclean \"net-nds/tac_plus\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2023-45239",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2023-45239"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-02-18T07:32:10.393499Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-02-18T07:32:10.395789Z"
+		}
+	]
+}

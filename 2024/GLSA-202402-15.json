@@ -1,0 +1,98 @@
+{
+	"ID": "202402-15",
+	"Title": "e2fsprogs: Arbitrary Code Execution",
+	"Synopsis": "A vulnerability has been discovered in e2fsprogs which can lead to arbitrary code execution.",
+	"Product": {
+		"Text": "e2fsprogs",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-02-18",
+	"Revised": {
+		"Text": "2024-02-18",
+		"Count": "1"
+	},
+	"Bug": [
+		"838388"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-fs/e2fsprogs",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.46.6",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.46.6",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>e2fsprogs is a set of utilities for maintaining the ext2, ext3 and ext4 file systems.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>Multiple vulnerabilities have been discovered in e2fsprogs. Please review the CVE identifiers referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n        <p>An out-of-bounds read/write vulnerability was found in e2fsprogs. This issue leads to a segmentation fault and possibly arbitrary code execution via a specially crafted filesystem.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All e2fsprogs users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=sys-fs/e2fsprogs-1.46.6\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2022-1304",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-1304"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-02-18T07:59:58.426596Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-02-18T07:59:58.430463Z"
+		}
+	]
+}

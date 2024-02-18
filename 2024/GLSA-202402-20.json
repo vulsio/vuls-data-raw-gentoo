@@ -1,0 +1,98 @@
+{
+	"ID": "202402-20",
+	"Title": "Thunar: Arbitrary Code Execution",
+	"Synopsis": "A vulnerability has been discovered in Thunar which may lead to arbitrary code execution",
+	"Product": {
+		"Text": "thunar",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-02-18",
+	"Revised": {
+		"Text": "2024-02-18",
+		"Count": "1"
+	},
+	"Bug": [
+		"789396"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "xfce-base/thunar",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.17.3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.17.3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>Thunar is a modern file manager for the Xfce Desktop Environment. Thunar has been designed from the ground up to be fast and easy to use. Its user interface is clean and intuitive and does not include any confusing or useless options by default. Thunar starts up quickly and navigating through files and folders is fast and responsive.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>A vulnerability has been discovered in Thunar. Please review the CVE identifier referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>When called with a regular file as command line argument, Thunar\r\nwould delegate to some other program without user confirmation\r\nbased on the file type. This could be exploited to trigger code\r\nexecution in a chain of vulnerabilities.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All Thunar users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=xfce-base/thunar-4.17.3\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2021-32563",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-32563"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-02-18T10:48:22.149721Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-02-18T10:48:22.154139Z"
+		}
+	]
+}
