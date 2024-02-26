@@ -1,0 +1,98 @@
+{
+	"ID": "202402-33",
+	"Title": "PyYAML: Arbitrary Code Execution",
+	"Synopsis": "A vulnerability has been found in PyYAML which can lead to arbitrary code execution.",
+	"Product": {
+		"Text": "pyyaml",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-02-26",
+	"Revised": {
+		"Text": "2024-02-26",
+		"Count": "1"
+	},
+	"Bug": [
+		"766228"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-python/pyyaml",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "5.4",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "5.4",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>PyYAML is a YAML parser and emitter for Python.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>A vulnerability has been discovered in PyYAML. Please review the CVE identifier referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>A vulnerability was discovered in the PyYAML library, where it is susceptible to arbitrary code execution when it processes untrusted YAML files through the full_load method or with the FullLoader loader. Applications that use the library to process untrusted input may be vulnerable to this flaw. This flaw allows an attacker to execute arbitrary code on the system by abusing the python/object/new constructor. This flaw is due to an incomplete fix for CVE-2020-1747.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All PyYAML users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=dev-python/pyyaml-5.4\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2020-14343",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2020-14343"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-02-26T15:44:41.690132Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-02-26T15:44:41.694949Z"
+		}
+	]
+}
