@@ -1,0 +1,102 @@
+{
+	"ID": "202403-03",
+	"Title": "UltraJSON: Multiple Vulnerabilities",
+	"Synopsis": "Multiple vulnerabilities have been discovered in UltraJSON, the worst of which could lead to key confusion and value overwriting.",
+	"Product": {
+		"Text": "ujson",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-03-03",
+	"Revised": {
+		"Text": "2024-03-03",
+		"Count": "1"
+	},
+	"Bug": [
+		"855689"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-python/ujson",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "5.4.0",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "5.4.0",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>UltraJSON is an ultra fast JSON encoder and decoder written in pure C with bindings for Python 3.8+.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>Affected versions were found to improperly decode certain characters. JSON strings that contain escaped surrogate characters not part of a proper surrogate pair were decoded incorrectly. Besides corrupting strings, this allowed for potential key confusion and value overwriting in dictionaries. All users parsing JSON from untrusted sources are vulnerable. From version 5.4.0, UltraJSON decodes lone surrogates in the same way as the standard library&#39;s `json` module does, preserving them in the parsed output.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>Please review the referenced CVE identifiers for details.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All UltraJSON users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=dev-python/ujson-5.4.0\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2022-31116",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-31116"
+			},
+			{
+				"Text": "CVE-2022-31117",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-31117"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-03-03T10:43:37.084240Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-03-03T10:43:37.087046Z"
+		}
+	]
+}
