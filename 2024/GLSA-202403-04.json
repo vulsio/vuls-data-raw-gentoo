@@ -1,0 +1,98 @@
+{
+	"ID": "202403-04",
+	"Title": "XZ utils: Backdoor in release tarballs",
+	"Synopsis": "A backdoor has been discovered in XZ utils that could lead to remote compromise of systems.",
+	"Product": {
+		"Text": "xz-utils",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-03-29",
+	"Revised": {
+		"Text": "2024-03-29",
+		"Count": "1"
+	},
+	"Bug": [
+		"928134"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-arch/xz-utils",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "5.6.0",
+						"Range": "lt",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "5.6.0",
+						"Range": "ge",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>XZ Utils is free general-purpose data compression software with a high compression ratio.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>A backdoor has been discovered in XZ utils. Please review the CVE identifier referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n        <p>Our current understanding of the backdoor is that is does not affect Gentoo systems, because\r\n\r\n1. the backdoor only appears to be included on specific systems and Gentoo does not qualify;\r\n2. the backdoor as it is currently understood targets OpenSSH patched to work with systemd-notify support. Gentoo does not support or include these patches;\r\n\r\nAnalysis is still ongoing, however, and additional vectors may still be identified. For this reason we are still issuing this advisory as if that will be the case.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All XZ utils users should downgrade to the latest version before the backdoor was introduced:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \"<app-arch/xz-utils-5.6.0\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2024-3094",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2024-3094"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-03-29T21:48:56.283016Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-03-29T21:48:56.285132Z"
+		}
+	]
+}
