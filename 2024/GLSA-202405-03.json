@@ -1,0 +1,98 @@
+{
+	"ID": "202405-03",
+	"Title": "Dalli: Code Injection",
+	"Synopsis": "A vulnerability has been discovered in Dalli, which can lead to code injection.",
+	"Product": {
+		"Text": "dalli",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-05-04",
+	"Revised": {
+		"Text": "2024-05-04",
+		"Count": "1"
+	},
+	"Bug": [
+		"882077"
+	],
+	"Access": "local and remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-ruby/dalli",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.2.3",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.2.3",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>Dalli is a high performance pure Ruby client for accessing memcached servers.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>A vulnerability was found in Dalli. Affected is the function self.meta_set of the file lib/dalli/protocol/meta/request_formatter.rb of the component Meta Protocol Handler. The manipulation leads to injection.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>Please review the referenced CVE identifiers for details.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All Dalli users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=dev-ruby/dalli-3.2.3\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2022-4064",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-4064"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-05-04T06:43:24.230534Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-05-04T06:43:24.233626Z"
+		}
+	]
+}
