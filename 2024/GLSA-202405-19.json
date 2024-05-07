@@ -1,0 +1,98 @@
+{
+	"ID": "202405-19",
+	"Title": "xar: Unsafe Extraction",
+	"Synopsis": "A vulnerability has been discovered in xar, which can lead to privilege escalation.",
+	"Product": {
+		"Text": "xar",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-05-07",
+	"Revised": {
+		"Text": "2024-05-07",
+		"Count": "1"
+	},
+	"Bug": [
+		"820641"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-arch/xar",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.8.0.0.487.100.1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.8.0.0.487.100.1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>xar provides an easily extensible archive format.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>A vulnerability has been discovered in xar. Please review the CVE identifier referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>xar allows for a forward-slash separated path to be specified in the file name property, e.g. &lt;name&gt;x/foo&lt;/name&gt; – as long as it doesn’t traverse upwards, and the path exists within the current directory. This means an attacker can create a .xar file which contains both a directory symlink, and a file with a name property which points into the extracted symlink directory. By abusing symlink directories in this manner, an attacker can write arbitrary files to any directory on the filesystem – providing the user has permissions to write to it.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All xar users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=app-arch/xar-1.8.0.0.487.100.1\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2021-30833",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-30833"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-05-07T04:42:07.751840Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-05-07T04:42:07.755662Z"
+		}
+	]
+}
