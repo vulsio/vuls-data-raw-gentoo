@@ -1,0 +1,98 @@
+{
+	"ID": "202406-04",
+	"Title": "LZ4: Memory Corruption",
+	"Synopsis": "A vulnerability has been discovered in LZ4, which can lead to memory corruption.",
+	"Product": {
+		"Text": "lz4",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-06-22",
+	"Revised": {
+		"Text": "2024-06-22",
+		"Count": "1"
+	},
+	"Bug": [
+		"791952"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-arch/lz4",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.9.3-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.9.3-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>LZ4 is a lossless compression algorithm, providing compression speed &gt; 500 MB/s per core, scalable with multi-cores CPU. It features an extremely fast decoder, with speed in multiple GB/s per core, typically reaching RAM speed limits on multi-core systems.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>An attacker who submits a crafted file to an application linked with lz4 may be able to trigger an integer overflow, leading to calling of memmove() on a negative size argument, causing an out-of-bounds write and/or a crash.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>The greatest impact of this flaw is to availability, with some potential impact to confidentiality and integrity as well.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All LZ4 users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=app-arch/lz4-1.9.3-r1\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2021-3520",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-3520"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-06-22T08:02:03.295621Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-06-22T08:02:03.298226Z"
+		}
+	]
+}
