@@ -1,0 +1,98 @@
+{
+	"ID": "202407-05",
+	"Title": "SSSD: Command Injection",
+	"Synopsis": "A vulnerability has been discovered in SSSD, which can lead to arbitrary code execution.",
+	"Product": {
+		"Text": "sssd",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-07-01",
+	"Revised": {
+		"Text": "2024-07-01",
+		"Count": "1"
+	},
+	"Bug": [
+		"808911"
+	],
+	"Access": "local and remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-auth/sssd",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.5.2-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.5.2-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>SSSD provides a set of daemons to manage access to remote directories and authentication mechanisms such as LDAP, Kerberos or FreeIPA. It provides an NSS and PAM interface toward the system and a pluggable backend system to connect to multiple different account sources.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>A vulnerability has been discovered in SSSD. Please review the CVE identifier referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>A flaw was found in SSSD, where the sssctl command was vulnerable to shell command injection via the logs-fetch and cache-expire subcommands. This flaw allows an attacker to trick the root user into running a specially crafted sssctl command, such as via sudo, to gain root access.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All SSSD users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=sys-auth/sssd-2.5.2-r1\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2021-3621",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-3621"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-07-01T05:58:27.689393Z"
+		},
+		{
+			"Text": "ajak",
+			"Tag": "submitter",
+			"Timestamp": "2024-07-01T05:58:27.691896Z"
+		}
+	]
+}

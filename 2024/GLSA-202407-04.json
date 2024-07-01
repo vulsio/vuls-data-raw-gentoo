@@ -1,0 +1,98 @@
+{
+	"ID": "202407-04",
+	"Title": "Pixman: Heap Buffer Overflow",
+	"Synopsis": "A vulnerability has been discovered in Pixman, which can lead to a heap buffer overflow.",
+	"Product": {
+		"Text": "pixman",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-07-01",
+	"Revised": {
+		"Text": "2024-07-01",
+		"Count": "1"
+	},
+	"Bug": [
+		"879207"
+	],
+	"Access": "local and remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "x11-libs/pixman",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.42.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.42.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>Pixman is a pixel manipulation library.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>A vulnerability has been discovered in Pixman. Please review the CVE identifiers referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>An out-of-bounds write (aka heap-based buffer overflow) in rasterize_edges_8 can occur due to an integer overflow in pixman_sample_floor_y.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All Pixman users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=x11-libs/pixman-0.42.2\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2022-44638",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-44638"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-07-01T05:56:53.181940Z"
+		},
+		{
+			"Text": "ajak",
+			"Tag": "submitter",
+			"Timestamp": "2024-07-01T05:56:53.184714Z"
+		}
+	]
+}

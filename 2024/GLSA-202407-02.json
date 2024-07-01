@@ -1,0 +1,98 @@
+{
+	"ID": "202407-02",
+	"Title": "SDL_ttf: Arbitrary Memory Write",
+	"Synopsis": "A vulnerability has been discovered in SDL_ttf, which can lead to arbitrary memory writes.",
+	"Product": {
+		"Text": "sdl2-ttf",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-07-01",
+	"Revised": {
+		"Text": "2024-07-01",
+		"Count": "1"
+	},
+	"Bug": [
+		"843434"
+	],
+	"Access": "local and remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-libs/sdl2-ttf",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.20.0",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.20.0",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>SDL_ttf is a wrapper around the FreeType and Harfbuzz libraries, allowing you to use TrueType fonts to render text in SDL applications.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>A vulnerability has been discovered in SDL_ttf. Please review the CVE identifier referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>SDL_ttf was discovered to contain an arbitrary memory write via the function TTF_RenderText_Solid(). This vulnerability is triggered via a crafted TTF file.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All SDL_ttf users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=media-libs/sdl2-ttf-2.20.0\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2022-27470",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-27470"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-07-01T05:56:15.409960Z"
+		},
+		{
+			"Text": "ajak",
+			"Tag": "submitter",
+			"Timestamp": "2024-07-01T05:56:15.413752Z"
+		}
+	]
+}

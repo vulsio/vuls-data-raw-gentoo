@@ -1,0 +1,98 @@
+{
+	"ID": "202407-01",
+	"Title": "Zsh: Prompt Expansion Vulnerability",
+	"Synopsis": "A vulnerability has been discovered in Zsh, which can lead to execution of arbitrary code.",
+	"Product": {
+		"Text": "zsh",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-07-01",
+	"Revised": {
+		"Text": "2024-07-01",
+		"Count": "1"
+	},
+	"Bug": [
+		"833252"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-shells/zsh",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "5.8.1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "5.8.1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>A shell designed for interactive use, although it is also a powerful scripting language.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>Multiple vulnerabilities have been discovered in Zsh. Please review the CVE identifiers referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>A vulnerability in prompt expansion could be exploited through e.g. VCS_Info to execute arbitrary shell commands without a user&#39;s knowledge.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All Zsh users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=app-shells/zsh-5.8.1\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2021-45444",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-45444"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-07-01T05:51:00.103014Z"
+		},
+		{
+			"Text": "ajak",
+			"Tag": "submitter",
+			"Timestamp": "2024-07-01T05:51:00.106061Z"
+		}
+	]
+}

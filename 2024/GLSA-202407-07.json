@@ -1,0 +1,106 @@
+{
+	"ID": "202407-07",
+	"Title": "cpio: Arbitrary Code Execution",
+	"Synopsis": "A vulnerability has been discovered in cpio, which can lead to arbitrary code execution.",
+	"Product": {
+		"Text": "cpio",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-07-01",
+	"Revised": {
+		"Text": "2024-07-01",
+		"Count": "1"
+	},
+	"Bug": [
+		"807088"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-arch/cpio",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "2.13-r1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "2.13-r1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>cpio is a file archival tool which can also read and write tar files.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>Multiple vulnerabilities have been discovered in cpio. Please review the CVE identifiers referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>GNU cpio allows attackers to execute arbitrary code via a crafted pattern file, because of a dstring.c ds_fgetstr integer overflow that triggers an out-of-bounds heap write. NOTE: it is unclear whether there are common cases where the pattern file, associated with the -E option, is untrusted data.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All cpio users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=app-arch/cpio-2.13-r1\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2016-2037",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2016-2037"
+			},
+			{
+				"Text": "CVE-2019-14866",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2019-14866"
+			},
+			{
+				"Text": "CVE-2021-38185",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-38185"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-07-01T05:59:20.652714Z"
+		},
+		{
+			"Text": "ajak",
+			"Tag": "submitter",
+			"Timestamp": "2024-07-01T05:59:20.655189Z"
+		}
+	]
+}
