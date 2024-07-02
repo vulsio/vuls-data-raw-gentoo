@@ -1,0 +1,122 @@
+{
+	"ID": "202407-09",
+	"Title": "OpenSSH: Remote Code Execution",
+	"Synopsis": "A vulnerability has been discovered in OpenSSH, which can lead to remote code execution with root privileges.",
+	"Product": {
+		"Text": "openssh",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-07-01",
+	"Revised": {
+		"Text": "2024-07-01",
+		"Count": "1"
+	},
+	"Bug": [
+		"935271"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "net-misc/openssh",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "9.7_p1-r6",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "9.7_p1-r6",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>OpenSSH is a free application suite consisting of server and clients that replace tools like telnet, rlogin, rcp and ftp with more secure versions offering additional functionality.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>A vulnerability has been discovered in OpenSSH. Please review the CVE identifier referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n        <p>A critical vulnerability in sshd(8) was present in Portable OpenSSH\r\nversions that may allow arbitrary code execution with root privileges.\r\n\r\nSuccessful exploitation has been demonstrated on 32-bit Linux/glibc\r\nsystems with ASLR. Under lab conditions, the attack requires on\r\naverage 6-8 hours of continuous connections up to the maximum the\r\nserver will accept. Exploitation on 64-bit systems is believed to be\r\npossible but has not been demonstrated at this time. It&#39;s likely that\r\nthese attacks will be improved upon.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.\r\n\r\nNote that Gentoo has backported the fix to the following versions:\r\n\r\nnet-misc/openssh-9.6_p1-r5\r\nnet-misc/openssh-9.7_p1-r6</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n        \n        \n        \n        \n        \n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All OpenSSH users should upgrade to the latest version and restart the sshd server (to ensure access for new sessions and no vulnerable code keeps running).",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "With OpenRC:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "With systemd:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=net-misc/openssh-9.7_p1-r6\"\n        ",
+			"\n          # rc-service sshd restart\n        ",
+			"\n          #  systemctl try-restart sshd.service\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2024-6387",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2024-6387"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-07-01T18:03:48.914047Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-07-01T18:03:48.917560Z"
+		}
+	]
+}
