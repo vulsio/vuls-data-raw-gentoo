@@ -1,0 +1,98 @@
+{
+	"ID": "202407-18",
+	"Title": "Stellarium: Arbitrary File Write",
+	"Synopsis": "A vulnerability has been discovered in Stellarium, which can lead to arbitrary file writes.",
+	"Product": {
+		"Text": "stellarium",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-07-05",
+	"Revised": {
+		"Text": "2024-07-05",
+		"Count": "1"
+	},
+	"Bug": [
+		"905300"
+	],
+	"Access": "local and remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sci-astronomy/stellarium",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "23.1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "23.1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>Stellarium is a free open source planetarium for your computer. It shows a realistic sky in 3D, just like what you see with the naked eye, binoculars or a telescope.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>A vulnerability has been discovered in Stellarium. Please review the CVE identifier referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>Attackers can write to files that are typically unintended, such as ones with absolute pathnames or .. directory traversal.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All Stellarium users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=sci-astronomy/stellarium-23.1\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2023-28371",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2023-28371"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-07-05T17:31:39.463505Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-07-05T17:31:39.467808Z"
+		}
+	]
+}
