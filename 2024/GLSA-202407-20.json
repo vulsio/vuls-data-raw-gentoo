@@ -1,0 +1,98 @@
+{
+	"ID": "202407-20",
+	"Title": "KDE Plasma Workspaces: Privilege Escalation",
+	"Synopsis": "A vulnerability has been discovered in KDE Plasma Workspaces, which can lead to privilege escalation.",
+	"Product": {
+		"Text": "plasma-workspace",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-07-06",
+	"Revised": {
+		"Text": "2024-07-06",
+		"Count": "1"
+	},
+	"Bug": [
+		"933342"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "kde-plasma/plasma-workspace",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "5.27.11.1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "5.27.11.1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>KDE Plasma workspace is a widget based desktop environment designed to be fast and efficient.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>Multiple vulnerabilities have been discovered in KDE Plasma Workspaces. Please review the CVE identifiers referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n        <p>KSmserver, KDE&#39;s XSMP manager, incorrectly allows connections via ICE\r\nbased purely on the host, allowing all local connections. This allows\r\nanother user on the same machine to gain access to the session\r\nmanager.\r\n\r\nA well crafted client could use the session restore feature to execute\r\narbitrary code as the user on the next boot.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All KDE Plasma Workspaces users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=kde-plasma/plasma-workspace-5.27.11.1\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2024-36041",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2024-36041"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-07-06T06:45:04.101679Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-07-06T06:45:04.105556Z"
+		}
+	]
+}
