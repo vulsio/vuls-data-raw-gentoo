@@ -1,0 +1,122 @@
+{
+	"ID": "202407-24",
+	"Title": "HarfBuzz: Denial of Service",
+	"Synopsis": "A vulnerability has been discovered in HarfBuzz, which can lead to a denial of service.",
+	"Product": {
+		"Text": "harfbuzz",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-07-10",
+	"Revised": {
+		"Text": "2024-07-10",
+		"Count": "1"
+	},
+	"Bug": [
+		"905310"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "media-libs/harfbuzz",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "7.1.0",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "7.1.0",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>HarfBuzz is an OpenType text shaping engine.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>Multiple vulnerabilities have been discovered in HarfBuzz. Please review the CVE identifiers referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>hb-ot-layout-gsubgpos.hh in HarfBuzz allows attackers to trigger O(n^2) growth via consecutive marks during the process of looking back for base glyphs when attaching marks.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All HarfBuzz users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=media-libs/harfbuzz-7.1.0\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2023-22006",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2023-22006"
+			},
+			{
+				"Text": "CVE-2023-22036",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2023-22036"
+			},
+			{
+				"Text": "CVE-2023-22041",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2023-22041"
+			},
+			{
+				"Text": "CVE-2023-22044",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2023-22044"
+			},
+			{
+				"Text": "CVE-2023-22045",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2023-22045"
+			},
+			{
+				"Text": "CVE-2023-22049",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2023-22049"
+			},
+			{
+				"Text": "CVE-2023-25193",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2023-25193"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-07-10T06:11:01.173024Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-07-10T06:11:01.176040Z"
+		}
+	]
+}
