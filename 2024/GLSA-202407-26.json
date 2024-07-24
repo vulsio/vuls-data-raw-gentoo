@@ -1,0 +1,98 @@
+{
+	"ID": "202407-26",
+	"Title": "Dmidecode: Privilege Escalation",
+	"Synopsis": "A vulnerability has been discovered in Dmidecode, which can lead to privilege escalation.",
+	"Product": {
+		"Text": "dmidecode",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-07-24",
+	"Revised": {
+		"Text": "2024-07-24",
+		"Count": "1"
+	},
+	"Bug": [
+		"905093"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-apps/dmidecode",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "3.5",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "3.5",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>Dmidecode reports information about your system&#39;s hardware as described in your system BIOS according to the SMBIOS/DMI standard (see a sample output). This information typically includes system manufacturer, model name, serial number, BIOS version, asset tag as well as a lot of other details of varying level of interest and reliability depending on the manufacturer. This will often include usage status for the CPU sockets, expansion slots (e.g. AGP, PCI, ISA) and memory module slots, and the list of I/O ports (e.g. serial, parallel, USB).</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>Dmidecode -dump-bin can overwrite a local file. This has security relevance because, for example, execution of Dmidecode via sudo is plausible.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>Please review the referenced CVE identifier for details.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All Dmidecode users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=sys-apps/dmidecode-3.5\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2023-30630",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2023-30630"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-07-24T06:06:10.030561Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-07-24T06:06:10.033680Z"
+		}
+	]
+}
