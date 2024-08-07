@@ -1,0 +1,93 @@
+{
+	"ID": "202408-04",
+	"Title": "Levenshtein: Remote Code Execution",
+	"Synopsis": "A vulnerability has been discovered in Levenshtein, which could lead to a remote code execution.",
+	"Product": {
+		"Text": "Levenshtein",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-08-07",
+	"Revised": {
+		"Text": "2024-08-07",
+		"Count": "1"
+	},
+	"Bug": [
+		"766009"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-python/Levenshtein",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.12.1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.12.1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>Levenshtein is a Python extension for computing string edit distances and similarities.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>Fixed handling of numerous possible wraparounds in calculating the size  of memory allocations; incorrect handling of which could cause denial of service or even possible remote code execution.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>Fixed handling of numerous possible wraparounds in calculating the size  of memory allocations; incorrect handling of which could cause denial of service or even possible remote code execution.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All Levenshtein users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=dev-python/Levenshtein-0.12.1\"\n        "
+		]
+	},
+	"References": {
+		"URI": null
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-08-07T06:14:52.905613Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-08-07T06:14:52.912037Z"
+		}
+	]
+}

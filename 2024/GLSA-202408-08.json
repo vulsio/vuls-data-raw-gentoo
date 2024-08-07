@@ -1,0 +1,98 @@
+{
+	"ID": "202408-08",
+	"Title": "json-c: Buffer Overflow",
+	"Synopsis": "A vulnerability has been discovered in json-c, which can lead to a stack buffer overflow.",
+	"Product": {
+		"Text": "json-c",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-08-07",
+	"Revised": {
+		"Text": "2024-08-07",
+		"Count": "1"
+	},
+	"Bug": [
+		"918555"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-libs/json-c",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "0.16",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "0.16",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>json-c is a JSON implementation in C.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>Please review the CVE identifier referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>A stack-buffer-overflow exists in the auxiliary sample program json_parse which is located in the function parseit.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All json-c users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=dev-libs/json-c-0.16\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2021-32292",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2021-32292"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-08-07T11:00:32.063764Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-08-07T11:00:32.067004Z"
+		}
+	]
+}
