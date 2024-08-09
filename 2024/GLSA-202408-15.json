@@ -1,0 +1,128 @@
+{
+	"ID": "202408-15",
+	"Title": "Percona XtraBackup: Multiple Vulnerabilities",
+	"Synopsis": "Multiple vulnerabilities have been discovered in Percona XtraBackup, the worst of which could lead to arbitrary code execution.",
+	"Product": {
+		"Text": "percona-xtrabackup,percona-xtrabackup-bin",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-08-09",
+	"Revised": {
+		"Text": "2024-08-09",
+		"Count": "1"
+	},
+	"Bug": [
+		"849389",
+		"908033"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-db/percona-xtrabackup",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "8.0.29.22",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "8.0.29.22",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			},
+			{
+				"Name": "dev-db/percona-xtrabackup-bin",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": null,
+				"Vulnerable": [
+					{
+						"Text": "8.0.29.22",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>Percona XtraBackup is a complete and open source online backup solution for all versions of MySQL.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>Multiple vulnerabilities have been discovered in Percona XtraBackup. Please review the CVE identifiers referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>Please review the referenced CVE identifiers for details.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n        \n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All Percona XtraBackup users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "Gentoo has discontinued support for the binary package. Users should remove this from their system:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=dev-db/percona-xtrabackup-8.0.29.22\"\n        ",
+			"\n          # emerge --sync\n          # emerge --ask --verbose --depclean \"dev-db/percona-xtrabackup-bin\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2022-25834",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-25834"
+			},
+			{
+				"Text": "CVE-2022-26944",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-26944"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-08-09T06:59:52.845544Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-08-09T06:59:52.849111Z"
+		}
+	]
+}
