@@ -1,0 +1,108 @@
+{
+	"ID": "202408-24",
+	"Title": "Ruby on Rails: Remote Code Execution",
+	"Synopsis": "A vulnerability has been discovered in Ruby on Rails, which can lead to remote code execution via serialization of data.",
+	"Product": {
+		"Text": "rails",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-08-11",
+	"Revised": {
+		"Text": "2024-08-11",
+		"Count": "1"
+	},
+	"Bug": [
+		"857840"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-ruby/rails",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "7.0.3.1",
+						"Range": "ge",
+						"Slot": "7.0"
+					},
+					{
+						"Text": "6.1.6.1",
+						"Range": "ge",
+						"Slot": "6.1"
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "7.0.3.1",
+						"Range": "lt",
+						"Slot": "7.0"
+					},
+					{
+						"Text": "6.1.6.1",
+						"Range": "lt",
+						"Slot": "6.1"
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>Ruby on Rails is a free web framework used to develop database-driven web applications.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>Multiple vulnerabilities have been discovered in Ruby on Rails. Please review the CVE identifiers referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>When serialized columns that use YAML (the default) are deserialized, Rails uses YAML.unsafe_load to convert the YAML data in to Ruby objects. If an attacker can manipulate data in the database (via means like SQL injection), then it may be possible for the attacker to escalate to an RCE.\r\n\r\nImpacted Active Record models will look something like this:\r\n\r\nclass User &lt; ApplicationRecord\r\n  serialize :options       # Vulnerable: Uses YAML for serialization\r\n  serialize :values, Array # Vulnerable: Uses YAML for serialization\r\n  serialize :values, JSON  # Not vulnerable\r\nend\r\n\r\nThe released versions change the default YAML deserializer to use YAML.safe_load, which prevents deserialization of possibly dangerous objects. This may introduce backwards compatibility issues with existing data.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All Ruby on Rails users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=dev-ruby/rails-6.1.6.1:6.1\"\n          # emerge --ask --oneshot --verbose \">=dev-ruby/rails-7.0.3.1:7.0\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2022-32224",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-32224"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-08-11T05:35:49.928407Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-08-11T05:35:49.931387Z"
+		}
+	]
+}
