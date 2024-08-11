@@ -1,0 +1,98 @@
+{
+	"ID": "202408-28",
+	"Title": "rsyslog: Heap Buffer Overflow",
+	"Synopsis": "A vulnerability has been discovered in rsyslog, which could possibly lead to remote code execution.",
+	"Product": {
+		"Text": "rsyslog",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-08-11",
+	"Revised": {
+		"Text": "2024-08-11",
+		"Count": "1"
+	},
+	"Bug": [
+		"842846"
+	],
+	"Access": "local and remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-admin/rsyslog",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "8.2206.0",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "8.2206.0",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>rsyslog is an enhanced multi-threaded syslogd with database support and more.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>Multiple vulnerabilities have been discovered in rsyslog. Please review the CVE identifiers referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>Modules for TCP syslog reception have a heap buffer overflow when octet-counted framing is used. The attacker can corrupt heap values, leading to data integrity issues and availability impact. Remote code execution is unlikely to happen but not impossible.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All rsyslog users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=app-admin/rsyslog-8.2206.0\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2022-24903",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-24903"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-08-11T14:42:54.282784Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-08-11T14:42:54.286434Z"
+		}
+	]
+}

@@ -1,0 +1,98 @@
+{
+	"ID": "202408-27",
+	"Title": "AFLplusplus: Arbitrary Code Execution",
+	"Synopsis": "A vulnerability has been discovered in AFLplusplus, which can lead to arbitrary code execution via an untrusted CWD.",
+	"Product": {
+		"Text": "aflplusplus",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-08-11",
+	"Revised": {
+		"Text": "2024-08-11",
+		"Count": "1"
+	},
+	"Bug": [
+		"897924"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-forensics/aflplusplus",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.06c",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.06c",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>The fuzzer afl++ is afl with community patches, qemu 5.1 upgrade, collision-free coverage, enhanced laf-intel &amp; redqueen, AFLfast++ power schedules, MOpt mutators, unicorn_mode, and a lot more!</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>In AFL++ 4.05c, the CmpLog component uses the current working directory to resolve and execute unprefixed fuzzing targets, allowing code execution.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>In AFL++ 4.05c, the CmpLog component uses the current working directory to resolve and execute unprefixed fuzzing targets, allowing code execution.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All AFLplusplus users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=app-forensics/aflplusplus-4.06c\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2023-26266",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2023-26266"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-08-11T14:41:12.220665Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-08-11T14:41:12.227036Z"
+		}
+	]
+}
