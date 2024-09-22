@@ -1,0 +1,138 @@
+{
+	"ID": "202409-02",
+	"Title": "PostgreSQL: Privilege Escalation",
+	"Synopsis": "A vulnerability has been discovered in PostgreSQL, which can lead to privilege escalation.",
+	"Product": {
+		"Text": "postgresql",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-09-22",
+	"Revised": {
+		"Text": "2024-09-22",
+		"Count": "1"
+	},
+	"Bug": [
+		"937573"
+	],
+	"Access": "local and remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-db/postgresql",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "12.20",
+						"Range": "ge",
+						"Slot": "12"
+					},
+					{
+						"Text": "13.16",
+						"Range": "ge",
+						"Slot": "13"
+					},
+					{
+						"Text": "14.13",
+						"Range": "ge",
+						"Slot": "14"
+					},
+					{
+						"Text": "15.8",
+						"Range": "ge",
+						"Slot": "15"
+					},
+					{
+						"Text": "16.4",
+						"Range": "ge",
+						"Slot": "16"
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "12.20",
+						"Range": "lt",
+						"Slot": "12"
+					},
+					{
+						"Text": "13.16",
+						"Range": "lt",
+						"Slot": "13"
+					},
+					{
+						"Text": "14.13",
+						"Range": "lt",
+						"Slot": "14"
+					},
+					{
+						"Text": "15.8",
+						"Range": "lt",
+						"Slot": "15"
+					},
+					{
+						"Text": "16.4",
+						"Range": "lt",
+						"Slot": "16"
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>PostgreSQL is an open source object-relational database management system.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>A vulnerability has been discovered in PostgreSQL. Please review the CVE identifier referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n        <p>An attacker able to create and drop non-temporary objects could inject SQL code that would be executed by a concurrent pg_dump session with the privileges of the role running pg_dump (which is often a superuser). The attack involves replacing a sequence or similar object with a view or foreign table that will execute malicious code. To prevent this, introduce a new server parameter restrict_nonsystem_relation_kind that can disable expansion of non-builtin views as well as access to foreign tables, and teach pg_dump to set it when available. Note that the attack is prevented only if both pg_dump and the server it is dumping from are new enough to have this fix.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All PostgreSQL users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=dev-db/postgresql-12.20:12\"\n          # emerge --ask --oneshot --verbose \">=dev-db/postgresql-13.16:13\"\n          # emerge --ask --oneshot --verbose \">=dev-db/postgresql-14.13:14\"\n          # emerge --ask --oneshot --verbose \">=dev-db/postgresql-15.8:15\"\n          # emerge --ask --oneshot --verbose \">=dev-db/postgresql-16.4:16\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2024-7348",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2024-7348"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-09-22T05:47:12.326843Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-09-22T05:47:12.329535Z"
+		}
+	]
+}
