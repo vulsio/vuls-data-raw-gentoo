@@ -1,0 +1,98 @@
+{
+	"ID": "202409-09",
+	"Title": "Exo: Arbitrary Code Execution",
+	"Synopsis": "A vulnerability has been discovered in Exo, which can lead to arbitrary code execution.",
+	"Product": {
+		"Text": "exo",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-09-22",
+	"Revised": {
+		"Text": "2024-09-22",
+		"Count": "1"
+	},
+	"Bug": [
+		"851201"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "xfce-base/exo",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.17.2",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.17.2",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>Exo is an Xfce library targeted at application development, originally developed by os-cillation. It contains various custom widgets and APIs extending the functionality of GLib and GTK. It also has some helper applications that are used throughout the entire Xfce desktop to manage preferred applications and edit .desktop files.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>A vulnerability has been discovered in Exo. Please review the CVE identifiers referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>Exo executes remote desktop files which may lead to unexpected arbitrary code execution.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All Exo users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=xfce-base/exo-4.17.2\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2022-32278",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-32278"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-09-22T06:39:07.184860Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-09-22T06:39:07.187259Z"
+		}
+	]
+}

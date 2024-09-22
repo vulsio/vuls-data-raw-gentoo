@@ -1,0 +1,98 @@
+{
+	"ID": "202409-06",
+	"Title": "file: Stack Buffer Overread",
+	"Synopsis": "A vulnerability has been discovered in file, which could lead to a denial of service.",
+	"Product": {
+		"Text": "file",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-09-22",
+	"Revised": {
+		"Text": "2024-09-22",
+		"Count": "1"
+	},
+	"Bug": [
+		"918554"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-apps/file",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "5.42",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "5.42",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>The file utility attempts to identify a file’s format by scanning binary data for patterns.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>Multiple vulnerabilities have been discovered in file. Please review the CVE identifiers referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>File has an stack-based buffer over-read in file_copystr in funcs.c.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All file users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=sys-apps/file-5.42\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2022-48554",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2022-48554"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-09-22T06:04:59.257322Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-09-22T06:04:59.260356Z"
+		}
+	]
+}

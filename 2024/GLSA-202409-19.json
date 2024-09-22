@@ -1,0 +1,173 @@
+{
+	"ID": "202409-19",
+	"Title": "Emacs, org-mode: Command Execution Vulnerability",
+	"Synopsis": "A vulnerability has been found in Emacs and org-mode which could result in arbitrary code execution.",
+	"Product": {
+		"Text": "emacs,org-mode",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-09-22",
+	"Revised": {
+		"Text": "2024-09-22",
+		"Count": "1"
+	},
+	"Bug": [
+		"934736"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "app-editors/emacs",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "26.3-r19",
+						"Range": "ge",
+						"Slot": "26"
+					},
+					{
+						"Text": "27.2-r17",
+						"Range": "ge",
+						"Slot": "27"
+					},
+					{
+						"Text": "28.2-r13",
+						"Range": "ge",
+						"Slot": "28"
+					},
+					{
+						"Text": "29.3-r3",
+						"Range": "ge",
+						"Slot": "29"
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "26.3-r19",
+						"Range": "lt",
+						"Slot": "26"
+					},
+					{
+						"Text": "27.2-r17",
+						"Range": "lt",
+						"Slot": "27"
+					},
+					{
+						"Text": "28.2-r13",
+						"Range": "lt",
+						"Slot": "28"
+					},
+					{
+						"Text": "29.3-r3",
+						"Range": "lt",
+						"Slot": "29"
+					}
+				]
+			},
+			{
+				"Name": "app-emacs/org-mode",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "9.7.5",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "9.7.5",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>Emacs is the extensible, customizable, self-documenting real-time display editor. org-mode is an Emacs mode for notes and project planning.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>%(...) link abbreviations could specify unsafe functions.</p>\n    "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n        <p>Opening a malicious org-mode file could result in arbitrary code execution.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n        \n        \n        \n        \n        \n        \n        \n        \n        \n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All Emacs users should upgrade to the latest version according to the installed slot, one of:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "Alternatively:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "All org-mode users should upgrade to the latest package:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=app-editors/emacs-26.3-r19:26\"\n        ",
+			"\n          # emerge --ask --oneshot --verbose \">=app-editors/emacs-27.2-r17:27\"\n        ",
+			"\n          # emerge --ask --oneshot --verbose \">=app-editors/emacs-28.2-r13:28\"\n        ",
+			"\n          # emerge --ask --oneshot --verbose \">=app-editors/emacs-29.3-r3:29\"\n        ",
+			"\n          # emerge --ask --oneshot --verbose \">=app-emacs/org-mode-9.7.5\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2024-39331",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2024-39331"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "ajak",
+			"Tag": "requester",
+			"Timestamp": "2024-09-22T09:04:08.173072Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-09-22T09:04:08.176708Z"
+		}
+	]
+}
