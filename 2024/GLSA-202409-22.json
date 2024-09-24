@@ -1,0 +1,122 @@
+{
+	"ID": "202409-22",
+	"Title": "GCC: Flawed Code Generation",
+	"Synopsis": "A vulnerability has been discovered in GCC, which can lead to flawed code generation.",
+	"Product": {
+		"Text": "gcc",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-09-24",
+	"Revised": {
+		"Text": "2024-09-24",
+		"Count": "1"
+	},
+	"Bug": [
+		"719466"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-devel/gcc",
+				"Auto": "yes",
+				"Arch": "ppc  ppc64",
+				"Unaffected": [
+					{
+						"Text": "10.0",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "10.0",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, Go, D and Modula-2 as well as libraries for these languages (libstdc++,...).</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>A vulnerability has been discovered in GCC. Please review the CVE identifier referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "normal",
+		"Text": "\n        <p>The POWER9 backend in GNU Compiler Collection (GCC) could optimize multiple calls of the __builtin_darn intrinsic into a single call, thus reducing the entropy of the random number generator. This occurred because a volatile operation was not specified. For example, within a single execution of a program, the output of every __builtin_darn() call may be the same.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n        \n        \n        \n        \n        \n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All GCC users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "And then select it with gcc-config:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			},
+			{
+				"Text": "In this case, users should also rebuild all affected packages with emerge -e, e.g.:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=sys-devel/gcc-10.0\"\n        ",
+			"\n          # gcc-config latest\n        ",
+			"\n          # emerge --usepkg=n --emptytree @world\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2019-15847",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2019-15847"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-09-24T05:11:59.047098Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-09-24T05:11:59.050051Z"
+		}
+	]
+}
