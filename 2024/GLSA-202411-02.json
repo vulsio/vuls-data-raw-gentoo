@@ -1,0 +1,98 @@
+{
+	"ID": "202411-02",
+	"Title": "Flatpak: Sandbox Escape",
+	"Synopsis": "A vulnerability has been discovered in Flatpak, which can lead to a sandbox escape.",
+	"Product": {
+		"Text": "flatpak",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-11-06",
+	"Revised": {
+		"Text": "2024-11-06",
+		"Count": "1"
+	},
+	"Bug": [
+		"937936"
+	],
+	"Access": "remote",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "sys-apps/flatpak",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "1.4.10",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "1.4.10",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>Flatpak is a Linux application sandboxing and distribution framework.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>A vulnerability has been discovered in Flatpak. Please review the CVE identifier referenced below for details.</p>\n    "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n        <p>A malicious or compromised Flatpak app using persistent directories could\r\nread and write files in locations it would not normally have access to.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All Flatpak users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=sys-apps/flatpak-1.4.10\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2024-42472",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2024-42472"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-11-06T12:12:48.512741Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-11-06T12:12:48.515088Z"
+		}
+	]
+}
