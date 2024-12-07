@@ -1,0 +1,98 @@
+{
+	"ID": "202412-01",
+	"Title": "R: Arbitrary Code Execution",
+	"Synopsis": "A vulnerability has been discovered in R, which can lead to arbitrary code execution.",
+	"Product": {
+		"Text": "R",
+		"Type": "ebuild"
+	},
+	"Announced": "2024-12-07",
+	"Revised": {
+		"Text": "2024-12-07",
+		"Count": "1"
+	},
+	"Bug": [
+		"930936"
+	],
+	"Access": "local",
+	"Affected": {
+		"Package": [
+			{
+				"Name": "dev-lang/R",
+				"Auto": "yes",
+				"Arch": "*",
+				"Unaffected": [
+					{
+						"Text": "4.4.1",
+						"Range": "ge",
+						"Slot": ""
+					}
+				],
+				"Vulnerable": [
+					{
+						"Text": "4.4.1",
+						"Range": "lt",
+						"Slot": ""
+					}
+				]
+			}
+		],
+		"Service": {
+			"Text": "",
+			"Type": "",
+			"Fixed": ""
+		}
+	},
+	"Background": {
+		"Text": "\n        <p>R is a language and environment for statistical computing and graphics.</p>\n    "
+	},
+	"Description": {
+		"Text": "\n        <p>Deserialization of untrusted data can occur in the R statistical programming language, enabling a maliciously crafted RDS (R Data Serialization) formatted file or R package to run arbitrary code on an end user’s system when interacted with.</p>\n    "
+	},
+	"Impact": {
+		"Type": "high",
+		"Text": "\n        <p>Arbitrary code may be run when deserializing untrusted data.</p>\n    "
+	},
+	"Workaround": {
+		"Text": "\n        <p>There is no known workaround at this time.</p>\n    "
+	},
+	"Resolution": {
+		"Text": "\n        \n        \n        \n    ",
+		"P": [
+			{
+				"Text": "All R users should upgrade to the latest version:",
+				"URI": {
+					"Text": "",
+					"Link": ""
+				},
+				"Br": null,
+				"I": null,
+				"Code": "",
+				"P": ""
+			}
+		],
+		"Code": [
+			"\n          # emerge --sync\n          # emerge --ask --oneshot --verbose \">=dev-lang/R-4.4.1\"\n        "
+		]
+	},
+	"References": {
+		"URI": [
+			{
+				"Text": "CVE-2024-27322",
+				"Link": "https://nvd.nist.gov/vuln/detail/CVE-2024-27322"
+			}
+		]
+	},
+	"Metadata": [
+		{
+			"Text": "graaff",
+			"Tag": "requester",
+			"Timestamp": "2024-12-07T08:53:34.596478Z"
+		},
+		{
+			"Text": "graaff",
+			"Tag": "submitter",
+			"Timestamp": "2024-12-07T08:53:34.602412Z"
+		}
+	]
+}
